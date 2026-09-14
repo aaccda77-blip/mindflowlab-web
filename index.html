@@ -3927,6 +3927,48 @@
         </div>
 
 
+              <!-- 사회적 철학 인트로 배너 -->
+        <div class="mt-8 max-w-4xl mx-auto p-7 sm:p-9 rounded-3xl bg-slate-900/95 border-2 border-emerald-500/40 text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
+          <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-black uppercase tracking-wider mb-4">
+            <span>🌱 명심코칭의 사회적 임팩트 (Social Impact)</span>
+          </div>
+          <h3 class="text-xl sm:text-3xl font-black text-white leading-snug mb-3">
+            사람 하나가 무너지면, <span class="text-emerald-300">한 사람만 힘든 것이 아닙니다.</span>
+          </h3>
+          <div class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
+            <p>
+              한 사람이 번아웃으로 무너지면 그 사람만 아픈 것이 아닙니다.<br />
+              가족의 생활이 흔들릴 수 있습니다. 직장의 동료들이 일을 나눠 맡게 됩니다. 아이와 대화할 여유가 줄어듭니다. 부부 사이가 멀어지기도 합니다.
+            </p>
+            <p class="text-slate-200 font-semibold">
+              반대로 한 사람이 자기 패턴을 조금 더 잘 다루게 되면 변화 역시 그 사람에게서 끝나지 않습니다:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <strong class="text-emerald-400 block mb-1">✓ 팀장의 알아차림</strong>
+                <span class="text-slate-300">화가 올라오는 순간 바로 쏘아붙이지 않습니다.</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <strong class="text-emerald-400 block mb-1">✓ 부모의 멈춤</strong>
+                <span class="text-slate-300">오늘 쌓인 분노를 아이에게 그대로 넘기지 않습니다.</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <strong class="text-emerald-400 block mb-1">✓ 자영업자의 관점 분리</strong>
+                <span class="text-slate-300">실패를 인생의 판결문으로 만들지 않고 다시 숫자를 봅니다.</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <strong class="text-emerald-400 block mb-1">✓ 간병인의 자기 돌봄</strong>
+                <span class="text-slate-300">자신의 몸이 보내는 신호도 함께 돌봅니다.</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-500/20 via-slate-900 to-indigo-500/20 border border-emerald-400/30 text-white font-black text-xs sm:text-sm text-center leading-relaxed mt-2">
+              “명심코칭이 궁극적으로 바꾸려는 것은 한 사람의 기분만이 아니라,<br class="hidden sm:inline" />
+              <span class="text-emerald-300">한 사람이 가족·직장·사회에 전달하는 다음 행동입니다.”</span>
+            </div>
+          </div>
+        </div>
+
+
       <!-- 실시간 검색 & 카테고리 필터 컨트롤러 -->
       <div class="mb-10 space-y-4">
         <!-- 검색창 -->
@@ -3946,7 +3988,10 @@
         <!-- 카테고리 탭 버튼들 -->
         <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
           <button onclick="setQaCategory('all')" id="qa-tab-all" class="qa-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20">
-            전체 사이다 질문 (121)
+            전체 사이다 질문 (135)
+          </button>
+          <button onclick="setQaCategory('social')" id="qa-tab-social" class="qa-tab-btn px-4 py-2 rounded-xl text-xs font-medium transition bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800">
+            🌱 사회적 생태계 (일자리·가족·조직·윤리)
           </button>
           <button onclick="setQaCategory('turning')" id="qa-tab-turning" class="qa-tab-btn px-4 py-2 rounded-xl text-xs font-medium transition bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800">
             🌅 인생 전환점 (결혼·이직·상실·노후)
@@ -9433,6 +9478,634 @@
             </div>
           </div>
         </div>
+
+      
+
+        <!-- 🌱 Q122 ~ Q135: 사회적 지식 생태계 & 가치 창출 특별 기획 사이다 문답 (14문항) -->
+
+        <!-- Q122. 개인의 변화 vs 세상의 변화 -->
+        <div id="qa-122" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-amber-500/40 transition shadow-lg" data-category="social" data-keywords="세상변화 아버지 회사 무시 아이 소리침 상처이동 알아차림 상처줄임 전달하지않은상처 자동반응">
+          <button onclick="toggleQaItem(122)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-amber-500/30">
+                Q122
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30">개인의 변화 vs 세상의 변화</span>
+                  <span class="text-xs text-slate-500">내가 전달하지 않은 상처 하나가 세상을 바꾼다</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition leading-snug">
+                  “저 하나 바뀐다고 세상이 뭐가 달라지나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-122" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-122" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-amber-300">사이다 한 줄 요약:</strong> 세상은 거대한 사람 한 명이 아니라, 평범한 사람들이 매일 서로에게 건네는 수많은 반응으로도 만들어집니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">아버지가 회사에서 무시당했습니다.<br />집에 돌아와 아이에게 소리칩니다.<br />아이는 학교에서 친구에게 날카롭게 말합니다.<br />친구는 집에 돌아와 동생에게 화를 냅니다.<br />감정과 행동은 사람 사이를 이동합니다.</p>
+            <p class="mb-2 text-slate-300">반대도 가능합니다.<br />아버지가 화가 올라온 순간 알아차립니다.<br />‘지금 이 아이가 문제가 아니라 오늘 내가 너무 힘들었구나.’<br />그리고 말합니다. “아빠가 오늘 좀 지쳤어. 네 잘못은 아니야.”</p>
+            <p class="mb-2 text-slate-300">한 문장입니다. 하지만 그 한 문장이 다음 사람에게 전달될 상처 하나를 줄일 수도 있습니다.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-amber-400 text-amber-200 text-xs sm:text-sm font-semibold leading-relaxed">내 반응 하나가 세상을 구하지는 않습니다.<br />그러나 내가 전달하지 않은 상처 하나는 분명 존재할 수 있습니다.</div>
+            <p class="mb-2 text-slate-300">명심코칭이 한 사람의 자동반응을 중요하게 보는 이유입니다.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(122)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-122" class="font-mono font-bold">589</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 사회적 연쇄반응 솔루션</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q123. 마음공부와 생업의 연결 -->
+        <div id="qa-123" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-emerald-500/40 transition shadow-lg" data-category="social" data-keywords="돈벌기 마음공부 실제삶 고객화 실수 부족 싸움 투자실패 연습장 경영문제 조직문화 교육">
+          <button onclick="toggleQaItem(123)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/30">
+                Q123
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">마음공부와 생업의 연결</span>
+                  <span class="text-xs text-slate-500">마음은 삶과 따로 있는 과목이 아니다</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition leading-snug">
+                  “돈 벌기도 바쁜데 마음공부까지 해야 하나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-123" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-123" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-emerald-300">사이다 한 줄 요약:</strong> 명심코칭의 목적은 삶을 떠나 마음만 들여다보게 하는 것이 아니라, 실제 삶에서 더 잘 일하고 더 잘 관계하고 더 잘 선택하도록 돕는 것입니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">마음공부를 위해 산속으로 갈 필요가 없습니다.<br />고객이 화를 냈을 때. 직원이 실수했을 때. 돈이 부족할 때. 배우자와 싸웠을 때. 투자를 실패했을 때. 바로 그곳이 연습장입니다.</p>
+            <p class="mb-2 text-slate-300">사업하는 사람에게는 감정조절이 경영문제일 수 있습니다.<br />리더에게는 자기패턴이 조직문화가 될 수 있습니다.<br />부모에게는 한 번의 반응이 교육이 될 수 있습니다.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-emerald-400 text-emerald-200 text-xs sm:text-sm font-semibold leading-relaxed">마음은 삶과 따로 있는 과목이 아닙니다.<br />우리가 돈을 벌고 사람을 만나고 아이를 키우는 방식 안에 이미 들어 있습니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(123)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-123" class="font-mono font-bold">542</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 실전생업 솔루션</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q124. 불안 장사가 아닌 지식 일자리 -->
+        <div id="qa-124" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-emerald-500/40 transition shadow-lg" data-category="social" data-keywords="생계 일자리 퇴직 경력단절 교육코칭 관리자 학부모 강사 워크숍 기업프로그램 선택권 산업">
+          <button onclick="toggleQaItem(124)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/30">
+                Q124
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">불안 장사가 아닌 지식 일자리</span>
+                  <span class="text-xs text-slate-500">사람의 불안이 아닌 선택권을 키우는 산업</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition leading-snug">
+                  “명심코칭이 정말 사람들의 생계에도 도움이 될 수 있나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-124" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-124" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-emerald-300">사이다 한 줄 요약:</strong> 가능합니다. 단, ‘누구나 돈 번다’는 약속이 아니라 실제로 필요한 도움을 제공할 수 있는 교육·코칭 역량을 만드는 방향이어야 합니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">대한민국에는 수많은 사람이 있습니다.<br />퇴직 후 자신의 경험을 다른 사람에게 나누고 싶은 사람. 경력단절 후 다시 일하고 싶은 사람. 사람을 돕는 일을 하고 싶지만 무엇부터 공부해야 할지 모르는 사람. 기업에서 사람을 교육하는 관리자. 학부모. 강사. 코치. 지역사회 활동가.</p>
+            <p class="mb-2 text-slate-300">이 사람들이 제대로 훈련받아 사람의 이야기를 함부로 진단하지 않고, 운명을 단정하지 않고, 치료 영역을 침범하지 않고, 현실적인 질문과 행동실험을 도울 수 있다면 새로운 일이 만들어질 수 있습니다.<br />책이 팔리는 것만으로 끝나는 것이 아닙니다. 교육, 워크숍, 기업 프로그램, 부모교육, 리더십교육, 건강생활 교육, 콘텐츠 제작, 코칭도구, AI 지원서비스 같은 여러 형태로 확장할 수 있습니다.</p>
+            <p class="mb-2 text-slate-300">단 하나의 원칙은 분명해야 합니다:</p>
+            <div class="my-3 p-4 rounded-xl bg-slate-950 border-l-4 border-emerald-400 text-emerald-200 text-xs sm:text-sm font-semibold leading-relaxed">사람의 불안을 팔아서 먹고사는 산업이 아니라,<br />사람의 선택권을 키워서 함께 살아가는 산업이어야 합니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(124)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-124" class="font-mono font-bold">615</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 지식생태계 비전</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q125. 전통 명리의 전문성 확장 -->
+        <div id="qa-125" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-amber-500/40 transition shadow-lg" data-category="social" data-keywords="명리상담 사주직업 맞히는사람 질문잘하는사람 가족 사업 결혼 상실 자산 예언전달 자기삶관찰">
+          <button onclick="toggleQaItem(125)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-amber-500/30">
+                Q125
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30">전통 명리의 전문성 확장</span>
+                  <span class="text-xs text-slate-500">예언자에서 삶을 잘 살피도록 돕는 전문 조력자로</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition leading-snug">
+                  “사주를 직업으로 하는 분들도 명심코칭을 배울 수 있나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-125" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-125" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-amber-300">사이다 한 줄 요약:</strong> 오히려 중요한 대상이 될 수 있습니다. ‘맞히는 사람’에서 ‘질문을 잘하는 사람’으로 역할을 확장할 수 있기 때문입니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">오랫동안 명리를 공부한 사람에게는 자산이 있습니다. 수많은 사람의 삶을 들었습니다. 가족문제, 사업문제, 결혼문제, 돈문제, 상실과 실패의 이야기를 접했습니다. 그 경험을 모두 버릴 필요는 없습니다.<br />다만 상담의 방향을 바꿀 수 있습니다.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-amber-400 text-amber-200 text-xs sm:text-sm space-y-1.5 font-medium"><p>• “당신은 이 사주라 이혼합니다” 대신 &rarr; <strong>“관계에서 어떤 상황이 반복되고 있습니까?”</strong></p><p>• “사업운이 없습니다” 대신 &rarr; <strong>“현재 사업에서 실제 위험요인은 무엇입니까?”</strong></p><p>• “올해 움직이지 마세요” 대신 &rarr; <strong>“움직였을 때의 위험과 움직이지 않았을 때의 비용을 함께 봅시다.”</strong></p></div>
+            <p class="mb-2 text-slate-300">그 순간 명리상담의 역할이 달라집니다.</p>
+            <div class="mt-3 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-300"><strong class="text-white">예언을 전달하는 사람에서, 사람이 자기 삶을 더 잘 살펴보도록 돕는 사람으로.</strong> 명심코칭이 전통과 현대를 연결할 수 있는 가장 의미 있는 지점 중 하나입니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(125)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-125" class="font-mono font-bold">578</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 명리전환 솔루션</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q126. 미래 예측 vs 문제 해결 가치 -->
+        <div id="qa-126" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-amber-500/40 transition shadow-lg" data-category="social" data-keywords="미래예측 문제해결 지불비용 취업결혼 대화정리 선택지 행동계획 전문성">
+          <button onclick="toggleQaItem(126)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-amber-500/30">
+                Q126
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30">미래 예측 vs 문제 해결 가치</span>
+                  <span class="text-xs text-slate-500">미래를 맞히는 가치에서 삶을 잘 다루게 하는 가치로</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition leading-snug">
+                  “철학관 선생님이 미래를 안 맞히면 고객이 왜 돈을 내죠?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-126" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-126" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-amber-300">사이다 한 줄 요약:</strong> 사람은 반드시 미래예언에만 돈을 내는 것이 아닙니다. 자신의 문제를 더 정확하게 이해하고 다음 행동을 결정하는 데에도 비용을 지불합니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">어떤 사람은 철학관에서 이런 말을 듣고 싶어 합니다. “몇 월에 취업됩니다.”, “내년에 결혼합니다.” 그 수요는 존재합니다.<br />하지만 다른 수요도 있습니다.<br />“제가 왜 매번 이런 사람을 만나는지 알고 싶어요.”<br />“직장을 그만둘지 모르겠어요.”<br />“아이와 어떻게 대화해야 할지 모르겠습니다.”<br />“사업에 실패했는데 다시 시작할 수 있을까요?”</p>
+            <p class="mb-2 text-slate-300">이 질문에 필요한 것은 날짜 하나가 아닐 수 있습니다. 정확한 질문, 현실정리, 선택지, 행동계획입니다.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-amber-400 text-amber-200 text-xs sm:text-sm font-semibold leading-relaxed">미래를 맞혀주는 가치에서, 삶을 더 잘 다루게 하는 가치로 이동할 수 있습니다.<br />이것이 훨씬 지속 가능한 전문성입니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(126)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-126" class="font-mono font-bold">530</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 전문성 진화 가이드</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q127. AI 시대 인간 코치의 고유 가치 -->
+        <div id="qa-127" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-cyan-500/40 transition shadow-lg" data-category="social" data-keywords="AI인공지능 코치일자리 맥락 침묵 윤리 위험신호 전문가연결 사람다운일">
+          <button onclick="toggleQaItem(127)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-cyan-500/30">
+                Q127
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">AI 시대 인간 코치의 고유 가치</span>
+                  <span class="text-xs text-slate-500">AI 때문에 사람이 더 사람다운 일을 할 수 있게 되는 산업</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-cyan-300 transition leading-snug">
+                  “AI가 발달하면 코치나 상담하는 사람들의 일자리는 없어지지 않을까요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-127" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-127" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-cyan-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-cyan-300">사이다 한 줄 요약:</strong> AI가 정보와 초안을 빠르게 제공할수록, 사람에게는 ‘맥락을 이해하고 책임 있게 관계 맺는 능력’이 더 중요해질 수 있습니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">AI는 질문을 만들 수 있습니다. 기록을 정리할 수 있습니다. 패턴 후보를 보여줄 수도 있습니다.<br />하지만 사람이 힘든 순간에는 다른 것이 필요할 때가 있습니다.<br />말 사이의 침묵을 기다려주는 것. 섣불리 진단하지 않는 것. 상대가 아직 준비되지 않았다는 것을 알아차리는 것. 위험신호가 있을 때 코칭을 멈추고 전문가에게 연결하는 것. 삶 전체의 맥락을 함께 보는 것.</p>
+            <p class="mb-2 text-slate-300">그래서 명심AI의 목표도 인간코치를 없애는 방향보다,</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-cyan-400 text-cyan-200 text-xs sm:text-sm font-semibold">“AI는 기록과 질문을 돕고, 인간은 관계·윤리·맥락·중요한 판단을 맡는 구조”</div>
+            <p class="mb-2 text-slate-300">가 더 건강합니다. AI가 사람을 대체하는 산업보다 <strong class="text-cyan-300">AI 때문에 사람이 더 사람다운 일을 할 수 있게 되는 산업</strong>으로 만들 수 있습니다.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(127)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-127" class="font-mono font-bold">642</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 휴먼-AI 협업 비전</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q128. 코칭 윤리와 멈춤의 기준 -->
+        <div id="qa-128" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-slate-500/40 transition shadow-lg" data-category="trust" data-keywords="윤리 코칭자격 진단금지 질병치료약속금지 의존금지 개인정보 위험상태 전문기관연결 멈춤">
+          <button onclick="toggleQaItem(128)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-slate-500/20 text-slate-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-slate-500/30">
+                Q128
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-500/10 text-slate-300 border border-slate-500/30">코칭 윤리와 멈춤의 기준</span>
+                  <span class="text-xs text-slate-500">얼마나 아느냐보다 어디서 멈춰야 하는가를 배우기</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-slate-300 transition leading-snug">
+                  “명심코칭을 배운 사람이 아무나 다른 사람을 코칭해도 되나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-128" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-128" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-slate-950/30 border border-slate-500/30 text-slate-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-slate-300">사이다 한 줄 요약:</strong> 아닙니다. 사람의 마음을 다루는 일일수록 ‘얼마나 많이 아느냐’보다 ‘어디까지 해야 하고 어디에서 멈춰야 하는가’를 배우는 것이 중요합니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">명심코칭 교육이 커질수록 가장 중요해질 것이 윤리입니다.<br />• 사람을 진단하지 않는다.<br />• 질병치료를 약속하지 않는다.<br />• 사주로 죽음·질병·이혼을 확정하지 않는다.<br />• 내담자를 의존시키지 않는다.<br />• 개인정보를 함부로 다루지 않는다.<br />• 위험한 상태에서는 전문기관으로 연결한다.<br />• 자신이 모르는 것을 안다고 말하지 않는다.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-slate-400 text-slate-200 text-xs sm:text-sm font-semibold">이런 교육을 제대로 해야 합니다. 그래야 명심코칭이 사람을 많이 배출하는 사업이 아니라 사람을 안전하게 도울 수 있는 사람을 키우는 교육이 됩니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(128)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-128" class="font-mono font-bold">560</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 윤리강령</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q129. 가치 제공과 정당한 대가 -->
+        <div id="qa-129" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-emerald-500/40 transition shadow-lg" data-category="social" data-keywords="진정성 가난 정당한대가 지속가능성 공포마케팅금지 상위과정결제유도금지 자립 가치창출">
+          <button onclick="toggleQaItem(129)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/30">
+                Q129
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">가치 제공과 정당한 대가</span>
+                  <span class="text-xs text-slate-500">고객이 스스로 설 수 있게 도우며 만드는 지속 가능한 가치</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition leading-snug">
+                  “사람을 도우면서 돈을 받는 게 나쁜 건가요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-129" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-129" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-emerald-300">사이다 한 줄 요약:</strong> 좋은 일을 한다고 가난해야 하는 것도 아니고, 돈을 받는다고 진정성이 사라지는 것도 아닙니다. 중요한 것은 어떤 가치를 제공하고 어떤 방식으로 돈을 받는가입니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">코치도 살아야 합니다. 강사도 살아야 합니다. 연구자도 살아야 합니다. 콘텐츠 만드는 사람도 살아야 합니다.<br />좋은 교육을 지속하려면 공간도 필요하고, 기술도 필요하고, 사람도 필요하고, 시간도 필요합니다. 돈을 버는 것 자체를 부끄러워할 필요는 없습니다.</p>
+            <p class="mb-2 text-slate-300">하지만 사람이 불안할수록 더 결제하게 만드는 구조, “이걸 안 하면 불행해진다”는 공포, 끝없이 상위과정을 사야만 완성된다는 구조는 피해야 합니다.</p>
+            <div class="my-3 p-4 rounded-xl bg-slate-950 border-l-4 border-emerald-400 text-emerald-200 text-xs sm:text-sm font-semibold leading-relaxed">좋은 비즈니스는 고객이 약해질수록 돈을 버는 구조가 아니라,<br />고객이 점점 스스로 설 수 있게 도우면서도 지속 가능한 가치를 만드는 구조입니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(129)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-129" class="font-mono font-bold">595</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 지속가능성 철학</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q130. 지역사회 생활밀착 예방교육 -->
+        <div id="qa-130" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-emerald-500/40 transition shadow-lg" data-category="social" data-keywords="지역사회 스트레스 갈등 은퇴 상실 중년 고립 돌봄노동 방치된생활문제 조기개입 건강습관">
+          <button onclick="toggleQaItem(130)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/30">
+                Q130
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">지역사회 생활밀착 예방교육</span>
+                  <span class="text-xs text-slate-500">병이 생기기 전 평범한 일상을 건강하게 살아가도록 돕기</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition leading-snug">
+                  “명심코칭이 지역사회에도 도움이 될 수 있나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-130" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-130" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-emerald-300">사이다 한 줄 요약:</strong> 가능합니다. 사람들의 일상문제를 ‘병이 생긴 뒤’가 아니라 더 이른 생활단계에서 다루는 교육으로 확장할 수 있습니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">직장인의 스트레스, 부모와 자녀의 갈등, 은퇴 후의 상실감, 중년의 관계변화, 건강습관, 고립, 돌봄노동. 지역사회에는 병원에 가기 전부터 사람들이 힘들어하는 문제가 많습니다.<br />모든 어려움이 질병은 아닙니다. 하지만 방치된 생활문제는 삶의 질을 크게 떨어뜨릴 수 있습니다.</p>
+            <p class="mb-2 text-slate-300">명심코칭이 이 지점에서 할 수 있는 것은 진단이나 치료가 아닙니다.<br />자기상태를 알아차리는 법, 건강에 유익한 행동을 선택하는 법, 도움이 필요할 때 요청하는 법, 갈등을 다르게 다루는 법, 전문가가 필요한 순간을 구분하는 법. 이런 생활교육입니다.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-emerald-400 text-emerald-200 text-xs sm:text-sm font-semibold leading-relaxed">사람이 아파진 뒤에만 돕는 것이 아니라, 평범한 일상을 조금 더 건강하게 살아가도록 돕는 것. 그것도 충분히 사회적 가치가 있습니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(130)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-130" class="font-mono font-bold">525</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 지역사회 연계 모델</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q131. 기업 조직문화와 행동 선택지 -->
+        <div id="qa-131" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-emerald-500/40 transition shadow-lg" data-category="social" data-keywords="기업 조직문화 회의방어 리더마이크로매니징 완벽주의마감 갈등회피 사주인사배치금지 행동선택지">
+          <button onclick="toggleQaItem(131)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/30">
+                Q131
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">기업 조직문화와 행동 선택지</span>
+                  <span class="text-xs text-slate-500">유형에 맞춰 사람을 가두지 않고 행동 선택지를 넓히기</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition leading-snug">
+                  “명심코칭이 기업에서는 어디에 도움이 될 수 있나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-131" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-131" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-emerald-300">사이다 한 줄 요약:</strong> 사람을 ‘좋은 성격·나쁜 성격’으로 분류하지 않고, 실제 업무장면에서 반복되는 행동을 다루는 교육으로 사용할 수 있습니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">회의에서 방어적으로 말하는 순간. 팀원이 실수했을 때 바로 일을 빼앗아 오는 리더. 완벽하게 하느라 마감을 놓치는 직원. 도움을 요청하지 못하고 혼자 버티는 관리자. 갈등을 피하다가 한 번에 폭발하는 팀. 이것은 모두 조직에서 실제 비용을 만듭니다.</p>
+            <p class="mb-2 text-slate-300">명심코칭이 기업에 들어간다면 사주로 인사를 결정하는 방식이어서는 안 됩니다.<br />“이 사주는 관리자형”, “이 사람은 이 코드니까 영업형” 같은 식의 채용·평가는 엄격히 피해야 합니다.</p>
+            <p class="mb-2 text-slate-300">대신 현재 업무행동을 중심으로,</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-emerald-400 text-emerald-200 text-xs sm:text-sm font-semibold">“어떤 상황에서 어떤 반응이 반복되고, 더 효과적인 행동을 어떻게 연습할 것인가?”</div>
+            <p class="mb-2 text-slate-300">를 다룰 수 있습니다. 사람을 유형에 맞춰 배치하는 것이 아니라 <strong class="text-white">사람이 가진 행동 선택지를 넓히는 교육</strong>이 되는 것입니다.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(131)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-131" class="font-mono font-bold">580</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 기업HRD 솔루션</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q132. 청소년 정체성 보호 교육 -->
+        <div id="qa-132" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-purple-500/40 transition shadow-lg" data-category="social" data-keywords="학교 청소년 낙인금지 의지약함 사주정체성 감정조절 실수재시도 도움요청 수면선택지경험">
+          <button onclick="toggleQaItem(132)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-purple-500/30">
+                Q132
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/30">청소년 정체성 보호 교육</span>
+                  <span class="text-xs text-slate-500">정답을 정해주기보다 여러 선택을 연습하는 경험 주기</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-purple-300 transition leading-snug">
+                  “명심코칭을 학교나 청소년에게도 가르칠 수 있나요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-132" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-132" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-purple-950/30 border border-purple-500/30 text-purple-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-purple-300">사이다 한 줄 요약:</strong> 가능한 부분은 있지만, 아이에게 사주나 성격코드를 정체성처럼 붙이지 않는 것이 무엇보다 중요합니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">청소년에게 가장 위험한 문장은 이런 것입니다.<br />“넌 원래 의지가 약해.”, “너는 사주가 이래서 공부가 안 맞아.”, “너는 이 유형이니까 리더가 아니야.”<br />아직 자신을 만들어가는 아이에게 어른이 정체성을 너무 빨리 결정해줄 수 있습니다.</p>
+            <p class="mb-2 text-slate-300">대신 가르칠 수 있습니다.<br />• 화가 날 때 바로 행동하지 않는 법.<br />• 친구의 평가와 자기 가치를 분리하는 법.<br />• 실수 후 다시 시도하는 법.<br />• 도움을 요청하는 법.<br />• 수면과 생활습관을 돌보는 법.<br />• 자기 생각을 사실처럼 믿기 전에 확인하는 법.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-purple-400 text-purple-200 text-xs sm:text-sm font-semibold leading-relaxed">아이에게 필요한 것은 ‘너는 이런 사람’이라는 정답보다,<br />‘너는 여러 선택을 연습할 수 있다’는 경험일 수 있습니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(132)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-132" class="font-mono font-bold">630</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 청소년 교육철학</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q133. 시니어 신중년 경력전환 -->
+        <div id="qa-133" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-amber-500/40 transition shadow-lg" data-category="social" data-keywords="퇴직 50대 60대 신중년 경력전환 30년경험 조직경험 멘토링 코칭교육 디지털도구 사용처">
+          <button onclick="toggleQaItem(133)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-amber-500/30">
+                Q133
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30">시니어 신중년 경력전환</span>
+                  <span class="text-xs text-slate-500">은퇴는 경험의 폐기가 아니라 사용처를 다시 찾는 시간</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition leading-snug">
+                  “퇴직한 50대·60대도 명심코칭을 배워 새로운 일을 할 수 있을까요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-133" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-133" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-amber-300">사이다 한 줄 요약:</strong> 가능성을 충분히 열어둘 수 있습니다. 다만 자격 하나만 따면 소득이 보장된다고 약속해서는 안 됩니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">퇴직하면 이상한 일이 생깁니다. 30년 동안 쌓은 경험이 갑자기 쓸모없어진 것처럼 느껴집니다.<br />명함이 사라지고, 후배들은 바쁘고, 집에서는 내가 없어도 잘 돌아갑니다. 그때 묻습니다. ‘이제 나는 뭘 하지?’</p>
+            <p class="mb-2 text-slate-300">그 사람이 가진 것은 생각보다 많을 수 있습니다.<br />조직경험, 사람을 상대해본 경험, 실패해본 경험, 후배를 키워본 경험, 부모와 자녀를 모두 경험한 세대의 시선.<br />여기에 체계적인 코칭교육, 윤리, 경계, 행동변화 기술, 디지털 도구 사용능력을 더하면 교육·멘토링·코칭 같은 새로운 활동 가능성이 생길 수 있습니다.</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-amber-400 text-amber-200 text-xs sm:text-sm font-semibold">은퇴는 경험의 폐기가 아니라, 경험의 사용처를 다시 찾는 시간이 될 수도 있습니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(133)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-133" class="font-mono font-bold">575</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 신중년 커리어 모델</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q134. 경력단절과 돌봄경험의 전문화 -->
+        <div id="qa-134" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-purple-500/40 transition shadow-lg" data-category="social" data-keywords="경력단절 돌봄 빈칸 뒤처짐 인간경험 갈등중재 문제조정 전문성 무가치한공백아님">
+          <button onclick="toggleQaItem(134)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-purple-500/30">
+                Q134
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/30">경력단절과 돌봄경험의 전문화</span>
+                  <span class="text-xs text-slate-500">지나온 삶 전체가 무가치한 공백은 아니다</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-purple-300 transition leading-snug">
+                  “경력단절 여성이나 돌봄 때문에 일을 놓았던 사람에게도 도움이 될까요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-134" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-134" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-purple-950/30 border border-purple-500/30 text-purple-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-purple-300">사이다 한 줄 요약:</strong> ‘쉰 기간’만 보는 대신 그 기간 동안 쌓인 인간경험과 앞으로 익힐 전문성을 함께 볼 수 있습니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">아이를 키웠습니다. 부모를 돌봤습니다. 직장을 몇 년 쉬었습니다.<br />다시 이력서를 쓰려니 빈칸처럼 보입니다. ‘나는 뒤처졌구나.’<br />하지만 그 시간에 아무것도 하지 않은 것은 아닙니다. 문제를 조정했습니다. 사람을 돌봤습니다. 갈등을 중재했습니다. 수많은 예상치 못한 일을 처리했습니다.</p>
+            <p class="mb-2 text-slate-300">물론 돌봄 경험만으로 전문코치가 되는 것은 아닙니다. 전문교육이 필요합니다. 하지만,</p>
+            <div class="my-3 p-3.5 rounded-xl bg-slate-950 border-l-4 border-purple-400 text-purple-200 text-xs sm:text-sm font-semibold">지나온 삶 전체가 무가치한 공백은 아닙니다.</div>
+            <p class="mb-2 text-slate-300">배우고 검증하고 윤리를 지킨다면 새로운 전문성을 만들 수 있습니다.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(134)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-134" class="font-mono font-bold">620</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 돌봄역량 재발견</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q135. 선순환 지식생태계의 조건 -->
+        <div id="qa-135" class="qa-item rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-emerald-500/40 transition shadow-lg" data-category="social" data-keywords="산업 생태계 선순환 고객가치 유용한문제해결 부모대화 직장인선택권 리더십 코치윤리 일자리순환">
+          <button onclick="toggleQaItem(135)" class="w-full p-6 text-left flex justify-between items-start gap-4 transition group">
+            <div class="flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/30">
+                Q135
+              </span>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">선순환 지식생태계의 조건</span>
+                  <span class="text-xs text-slate-500">가치가 새로운 일을 만들어내는 선순환 구조</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition leading-snug">
+                  “명심코칭이 정말 많은 사람을 먹여 살리는 산업이 되려면 무엇이 가장 중요할까요?”
+                </h3>
+              </div>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white shrink-0 mt-1">
+              <svg id="qa-icon-135" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div id="qa-body-135" class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-sm text-slate-300 leading-relaxed">
+            <div class="mb-4 p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm font-semibold flex items-start gap-2.5">
+              <span class="text-base">💡</span>
+              <div>
+                <strong class="text-emerald-300">사이다 한 줄 요약:</strong> ‘사람을 많이 모집하는 것’이 아니라 ‘사람들이 실제로 돈을 지불할 만큼 유용한 문제를 해결하는 것’이 먼저입니다.
+              </div>
+            </div>
+            <p class="mb-2 text-slate-300">책만 많이 만드는 것으로는 부족합니다. 자격증만 많이 발급해도 안 됩니다. AI만 화려해도 안 됩니다. 결국 누군가의 삶에서 실제 가치가 있어야 합니다.</p>
+            <p class="mb-2 text-slate-300">명심코칭 생태계가 건강하게 커지려면 한 방향으로 연결되어야 합니다:<br />• 일반 독자는 자신의 반복패턴을 이해하고 실제 행동을 바꿀 수 있어야 합니다.<br />• 부모는 아이를 낙인찍지 않고 더 잘 대화할 수 있어야 합니다.<br />• 직장인은 갈등·완벽주의·과잉책임을 현실에서 다르게 다룰 수 있어야 합니다.<br />• 리더는 자신의 패턴을 팀 전체에 전염시키지 않는 법을 배울 수 있어야 합니다.<br />• 코치는 안전한 범위 안에서 그 과정을 도울 수 있어야 합니다.<br />• 전문적인 치료가 필요한 사람은 적절한 전문가에게 연결되어야 합니다.<br />• 콘텐츠 제작자·교육자·개발자·운영자에게는 그 가치를 전달하는 정당한 일이 생겨야 합니다.</p>
+            <div class="my-3 p-4 rounded-xl bg-slate-950 border-l-4 border-emerald-400 text-emerald-200 text-xs sm:text-sm font-semibold leading-relaxed">이렇게 고객 가치 &rarr; 교육 &rarr; 전문인력 &rarr; 기술 &rarr; 콘텐츠 &rarr; 다시 고객 가치가 순환해야 합니다.<br />그래야 사람이 사람을 데려오는 피라미드가 아니라, 가치가 새로운 일을 만들어내는 생태계가 됩니다.</div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <button onclick="likeQa(135)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition">
+                <span>👍 속 시원해요</span>
+                <span id="qa-like-135" class="font-mono font-bold">750</span>
+              </button>
+              <span class="text-[11px] text-slate-500">명심코칭 생태계 비전의 정점</span>
+            </div>
+          </div>
+        </div>
+
+            <!-- 명심코칭 공식 사회적 대선언문 & 장기 비전 히어로 카드 -->
+      <div class="mt-14 max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-950 via-emerald-950/40 to-slate-950 border-2 border-emerald-400/60 text-center relative overflow-hidden shadow-2xl backdrop-blur-md">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-black uppercase tracking-widest mb-6">
+          <span>🏛️ 마인드플로우랩 공식 사회적 비전 선언문 🏛️</span>
+        </div>
+        
+        <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight mb-4">
+          사람이 사람을 살리고,<br />
+          <span class="text-emerald-300">그 일이 다시 사람을 살게 하는 생태계.</span>
+        </h2>
+        
+        <p class="text-sm sm:text-base text-amber-300 font-black mb-8 leading-relaxed">
+          “명심코칭은 운명을 파는 산업이 아니라, 사람의 선택권을 키우는 지식산업을 지향합니다.”
+        </p>
+
+        <div class="max-w-2xl mx-auto text-left text-xs sm:text-sm text-slate-300 leading-relaxed space-y-4 mb-8 bg-slate-950/80 p-6 sm:p-8 rounded-2xl border border-slate-800">
+          <p class="font-bold text-white text-sm sm:text-base border-b border-slate-800 pb-2">
+            한 사람을 살리는 일이, 또 다른 사람의 일이 되도록
+          </p>
+          <p>
+            세상에는 위로가 필요한 사람, 다시 일어나야 하는 사람, 내가 왜 이러는지 몰라 자신을 미워하는 사람, 사주 한마디 때문에 수십 년 동안 인생을 겁내는 사람, 아이를 위해 자신을 다 써버린 부모, 회사를 위해 몸이 무너질 때까지 버틴 사람이 있습니다.
+          </p>
+          <p>
+            그리고 또 다른 곳에는 누군가를 돕고 싶지만 어떻게 도와야 하는지 몰라 서 있는 퇴직자, 경력단절 후 돌아온 사람, 평생 명리를 공부해온 사람, 교육자가 되고 싶은 사람, 좋은 기술을 만들고 싶은 청년이 있습니다.
+          </p>
+          <p class="p-3.5 rounded-xl bg-slate-900 border-l-4 border-emerald-400 text-emerald-200 font-semibold">
+            명심코칭이 꿈꾸는 가장 큰 그림은 이 두 사람을 ‘공포’나 ‘의존’이 아닌, <strong class="text-white">“당신의 삶은 결국 당신에게 돌아가야 합니다”</strong>라는 존중과 선택권으로 연결하는 것입니다.
+          </p>
+          <p>
+            누군가는 그 과정을 돕습니다. 정당한 교육을 받고, 정당한 일을 하고, 정당한 대가를 받습니다. 그리고 도움받았던 누군가가 언젠가 또 다른 사람을 돕습니다.
+          </p>
+          <p class="text-amber-200 font-bold">
+            그렇게 한 사람의 회복이 다른 사람의 전문성이 되고, 한 사람의 전문성이 또 다른 가정의 생계가 되며, 그 가정에서 자란 아이에게 조금 더 건강한 관계가 전달됩니다.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-500/20 to-indigo-500/20 border border-emerald-400/40 text-white font-black text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          “사람을 살리는 지식이 사람을 먹여 살리고,<br />
+          사람을 먹여 살리는 일이 다시 사람을 해치지 않는 것.”
+        </div>
+      </div>
+
 
       </div>
 
