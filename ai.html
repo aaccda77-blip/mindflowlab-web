@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>명심AI: 변화의 기록을 이어주는 지능형 세션 | 명심코칭 (MindflowLab)</title>
   <meta name="description" content="답을 대신 내려주는 AI보다, 상황→자동반응→선택→행동실험→복귀시간의 변화를 누적하고 이어주는 인지행동 세션 트래커." />
-  <link rel="canonical" href="https://mindflowlab-web.vercel.app/ai.html" />
+  <link rel="canonical" href="https://lab.mindflowlab.co.kr/ai" />
 
   <!-- Open Graph / SEO -->
   <meta property="og:type" content="website" />
@@ -204,7 +204,7 @@
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="명심코칭 홈">
+      <a class="brand" href="/" aria-label="명심코칭 홈">
         <span class="brand-mark" aria-hidden="true">
           <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
         </span>
@@ -212,26 +212,26 @@
         <small>MYEONGSIM</small>
       </a>
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="index.html#why">왜 반복할까</a>
-        <a href="index.html#codes">3대 코드</a>
-        <a href="faq.html" class="">사이다 Q&amp;A</a>
-        <a href="library.html" class="">31권 시리즈</a>
-        <a href="self-check.html" class="">Self Check</a>
-        <a href="ai.html" class="active">명심AI</a>
-        <a href="trust.html" class="">윤리·신뢰</a>
-        <a class="btn btn-primary" href="self-check.html">내 패턴 확인하기</a>
+        <a href="/#why">왜 반복할까</a>
+        <a href="/#codes">3대 코드</a>
+        <a href="/faq" class="">사이다 Q&amp;A</a>
+        <a href="/library" class="">31권 시리즈</a>
+        <a href="/self-check" class="">Self Check</a>
+        <a href="/ai" class="active">명심AI</a>
+        <a href="/trust" class="">윤리·신뢰</a>
+        <a class="btn btn-primary" href="/self-check">내 패턴 확인하기</a>
       </nav>
       <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="메뉴 열기">메뉴</button>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴">
-      <a href="index.html#why">왜 반복할까</a>
-      <a href="index.html#codes">3대 코드</a>
-      <a href="faq.html">사이다 Q&amp;A</a>
-      <a href="library.html">31권 시리즈</a>
-      <a href="self-check.html">Self Check (패턴 자각)</a>
-      <a href="ai.html">명심AI</a>
-      <a href="trust.html">윤리·신뢰</a>
-      <a class="btn btn-primary" href="self-check.html">내 패턴 확인하기</a>
+      <a href="/#why">왜 반복할까</a>
+      <a href="/#codes">3대 코드</a>
+      <a href="/faq">사이다 Q&amp;A</a>
+      <a href="/library">31권 시리즈</a>
+      <a href="/self-check">Self Check (패턴 자각)</a>
+      <a href="/ai">명심AI</a>
+      <a href="/trust">윤리·신뢰</a>
+      <a class="btn btn-primary" href="/self-check">내 패턴 확인하기</a>
     </nav>
   </header>
 
@@ -293,51 +293,93 @@
         <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-md mb-12">
           <div class="flex items-center justify-between pb-6 border-b border-slate-100 mb-6">
             <div>
-              <span class="text-xs font-bold text-[#007A55]">LIVE SESSION SIMULATOR</span>
-              <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">명심AI 인지 세션 기록하기</h2>
+              <span class="text-xs font-bold text-[#007A55]">LIVE 7-STEP PROTOCOL</span>
+              <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">명심AI 7단계 인지 세션 기록기</h2>
             </div>
             <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
-              Client Ready
+              Session Active
             </span>
+          </div>
+
+          <!-- Chained Next Experiment Banner (if previous session exists) -->
+          <div id="chained-experiment-box" class="hidden mb-6 p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200 text-xs text-emerald-950 flex items-start gap-3">
+            <span class="text-base shrink-0">🎯</span>
+            <div>
+              <strong class="font-bold block text-emerald-900 mb-0.5">지난 세션에서 약속한 다음 행동실험 과제:</strong>
+              <span id="chained-experiment-text" class="text-slate-700"></span>
+            </div>
           </div>
 
           <form id="ai-session-form" onsubmit="handleSessionSubmit(event)" class="space-y-6">
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1.5">1. 어떤 상황에서 코드가 켜졌나요? (장면 묘사)</label>
-              <input type="text" id="ai-scene" required placeholder="예: 팀 회의 중 내 기획서가 예상치 못한 지적을 받았을 때" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                <span class="inline-block w-4 h-4 rounded-full bg-slate-900 text-white text-[10px] text-center leading-4 mr-1">1</span>
+                구체적 장면 (Scene)
+              </label>
+              <input type="text" id="ai-scene" required placeholder="예: 팀 회의 중 내 기획서가 예상치 못한 비판을 받았을 때" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5">2. 무의식적 자동반응 (Dark Code)</label>
-                <input type="text" id="ai-dark" required placeholder="예: 심장이 뛰며 '내 능력을 무시하나' 방어적 분노 발생" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                  <span class="inline-block w-4 h-4 rounded-full bg-purple-600 text-white text-[10px] text-center leading-4 mr-1">2</span>
+                  무의식 자동반응 (Dark Code)
+                </label>
+                <input type="text" id="ai-dark" required placeholder="예: 심장이 조이며 '내 능력을 무시하나' 방어적 분노 발생" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5">3. 이번에 시험해 볼 작은 선택 (Neural Shift)</label>
-                <input type="text" id="ai-neural" required placeholder="예: 바로 반박하지 않고 '어떤 부분에서 그렇게 보셨나요?' 질문하기" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                  <span class="inline-block w-4 h-4 rounded-full bg-emerald-600 text-white text-[10px] text-center leading-4 mr-1">3</span>
+                  이번에 시도한 행동 (Neural Shift)
+                </label>
+                <input type="text" id="ai-action" required placeholder="예: 3초 호흡 후 '어떤 부분에서 그렇게 보셨나요?' 차분히 질문" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5">4. 머릿속 예상 위험 vs 실제 현실 결과</label>
-                <input type="text" id="ai-result" required placeholder="예: 예상(공격받음) vs 실제(동료가 더 구체적인 피드백 줌)" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                  <span class="inline-block w-4 h-4 rounded-full bg-rose-600 text-white text-[10px] text-center leading-4 mr-1">4</span>
+                  머릿속 예상 위험 (Anticipated)
+                </label>
+                <input type="text" id="ai-anticipation" required placeholder="예: '내가 공격당해 바보 취급을 받을 것이다'라는 극단적 공포" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5">5. 평온 상태로 복귀하는 데 걸린 시간</label>
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                  <span class="inline-block w-4 h-4 rounded-full bg-blue-600 text-white text-[10px] text-center leading-4 mr-1">5</span>
+                  실제 현실 결과 (Observed Reality)
+                </label>
+                <input type="text" id="ai-actual" required placeholder="예: 동료가 기획서 3페이지의 수치 보완점을 구체적으로 짚어줌" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                  <span class="inline-block w-4 h-4 rounded-full bg-amber-600 text-white text-[10px] text-center leading-4 mr-1">6</span>
+                  평형 복귀시간 (Recovery Latency)
+                </label>
                 <select id="ai-recovery" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white">
-                  <option value="5분 이내 (즉각 복귀)">5분 이내 (즉각 복귀)</option>
-                  <option value="30분 이내 (빠른 복귀)">30분 이내 (빠른 복귀)</option>
-                  <option value="반나절 (점진 복귀)">반나절 (점진 복귀)</option>
-                  <option value="하루 이상 (여운 잔존)">하루 이상 (여운 잔존)</option>
+                  <option value="1분 미만 (초단기 즉각 회복)">⚡ 1분 미만 (초단기 즉각 회복)</option>
+                  <option value="5분 이내 (안정적 복귀)">🟢 5분 이내 (안정적 복귀)</option>
+                  <option value="30분 이내 (점진적 완화)">🟡 30분 이내 (점진적 완화)</option>
+                  <option value="반나절 (여운 잔존)">🟠 반나절 (여운 잔존)</option>
+                  <option value="하루 이상 (반추 지속)">🔴 하루 이상 (반추 지속)</option>
                 </select>
               </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                  <span class="inline-block w-4 h-4 rounded-full bg-emerald-700 text-white text-[10px] text-center leading-4 mr-1">7</span>
+                  다음 행동실험 과제 (Next Micro-Experiment)
+                </label>
+                <input type="text" id="ai-next-exp" required placeholder="예: 다음 회의 때 지적받으면 '좋은 관점이네요' 먼저 인정해보기" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-[#007A55] focus:bg-white" />
+              </div>
             </div>
 
-            <div class="pt-2 flex items-center justify-between">
-              <span class="text-xs text-slate-400">※ 입력된 세션은 브라우저에 안전하게 보관됩니다.</span>
-              <button type="submit" class="btn btn-primary">
-                세션 누적 기록하기 &rarr;
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span class="text-xs text-slate-400">※ 입력된 모든 세션은 브라우저(LocalStorage)에 안전하게 암호화 보관됩니다.</span>
+              <button type="submit" class="btn btn-primary w-full sm:w-auto">
+                7단계 세션 누적 저장하기 &rarr;
               </button>
             </div>
           </form>
@@ -345,9 +387,18 @@
 
         <!-- Session Timeline History -->
         <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="text-lg font-bold text-slate-900">누적된 인지 변화 타임라인</h3>
-            <button onclick="clearAiSessions()" class="text-xs text-slate-400 hover:text-rose-600">세션 초기화</button>
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <span>📈 사용자별 누적 인지 변화 타임라인</span>
+                <span id="session-count" class="text-xs font-normal text-slate-400">(0회 세션)</span>
+              </h3>
+              <p class="text-xs text-slate-500 mt-0.5">장면별 자동반응과 다음 실험이 연결되어 신경가소성 루프를 형성합니다.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="exportAiSessions()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600">데이터 백업(JSON)</button>
+              <button onclick="clearAiSessions()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-rose-50 text-slate-400 hover:text-rose-600">세션 초기화</button>
+            </div>
           </div>
           <div id="ai-sessions-list" class="space-y-4">
             <!-- Populated via JS -->
@@ -394,11 +445,11 @@
         <div class="md:col-span-3 space-y-3 text-xs">
           <p class="font-bold text-slate-900 mb-2 uppercase tracking-wider">서비스 바로가기</p>
           <ul class="space-y-1.5 text-slate-600">
-            <li><a href="self-check.html" class="text-[#007A55] font-bold hover:underline">✨ Self Check (패턴 자각)</a></li>
-            <li><a href="faq.html" class="hover:text-slate-900">사이다 Q&amp;A (128문항)</a></li>
-            <li><a href="library.html" class="hover:text-slate-900">31권 마스터 시리즈</a></li>
-            <li><a href="ai.html" class="hover:text-slate-900">명심AI 세션 트래커</a></li>
-            <li><a href="trust.html" class="hover:text-slate-900">윤리 가드레일 &amp; 개인정보</a></li>
+            <li><a href="/self-check" class="hover:text-slate-900">✨ Self Check (패턴 자각)</a></li>
+            <li><a href="/faq" class="hover:text-slate-900">사이다 Q&amp;A (134문항)</a></li>
+            <li><a href="/library" class="hover:text-slate-900">31권 마스터 시리즈</a></li>
+            <li><a href="/ai" class="text-[#007A55] font-bold hover:underline">명심AI 7단계 트래커</a></li>
+            <li><a href="/trust" class="hover:text-slate-900">윤리 가드레일 &amp; 개인정보</a></li>
             <li><a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-900">📲 명심코칭닷컴 (공식 앱)</a></li>
           </ul>
         </div>
@@ -426,7 +477,6 @@
     });
   </script>
 
-
   <script>
     function handleSessionSubmit(e) {
       e.preventDefault();
@@ -435,9 +485,11 @@
         date: new Date().toLocaleDateString('ko-KR') + ' ' + new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
         scene: document.getElementById('ai-scene').value.trim(),
         dark: document.getElementById('ai-dark').value.trim(),
-        neural: document.getElementById('ai-neural').value.trim(),
-        result: document.getElementById('ai-result').value.trim(),
-        recovery: document.getElementById('ai-recovery').value
+        action: document.getElementById('ai-action').value.trim(),
+        anticipation: document.getElementById('ai-anticipation').value.trim(),
+        actual: document.getElementById('ai-actual').value.trim(),
+        recovery: document.getElementById('ai-recovery').value,
+        nextExp: document.getElementById('ai-next-exp').value.trim()
       };
 
       try {
@@ -446,51 +498,121 @@
         localStorage.setItem('myeongsim_ai_sessions', JSON.stringify(list));
         renderAiSessions();
         document.getElementById('ai-session-form').reset();
-        alert('✓ 새로운 인지 변화 세션이 성공적으로 누적되었습니다!');
-      } catch (err) {}
+        updateChainedExperiment();
+        alert('✓ 7단계 인지 세션이 성공적으로 누적되었습니다! 다음 실험 과제가 자동으로 연결됩니다.');
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function updateChainedExperiment() {
+      try {
+        const list = JSON.parse(localStorage.getItem('myeongsim_ai_sessions') || '[]');
+        const box = document.getElementById('chained-experiment-box');
+        const text = document.getElementById('chained-experiment-text');
+        if (list.length > 0 && list[0].nextExp) {
+          box.classList.remove('hidden');
+          text.innerText = list[0].nextExp;
+        } else {
+          box.classList.add('hidden');
+        }
+      } catch (e) {}
     }
 
     function renderAiSessions() {
       try {
         const list = JSON.parse(localStorage.getItem('myeongsim_ai_sessions') || '[]');
         const container = document.getElementById('ai-sessions-list');
+        const countEl = document.getElementById('session-count');
+        if (countEl) countEl.innerText = '(' + list.length + '회 세션)';
+
+        updateChainedExperiment();
 
         if (list.length === 0) {
-          container.innerHTML = '<p class="text-slate-400 text-xs py-8 text-center">아직 기록된 세션이 없습니다. 일상에서 반복되는 장면을 위 양식에 입력해 보세요.</p>';
+          container.innerHTML = `
+            <div class="text-center py-10 bg-slate-50 rounded-2xl border border-slate-200">
+              <p class="text-slate-400 text-xs mb-2">아직 기록된 7단계 인지 세션이 없습니다.</p>
+              <p class="text-slate-500 text-xs">일상에서 반복되는 장면을 상단 양식에 입력하면 당신만의 행동변화 체인이 누적됩니다.</p>
+            </div>
+          `;
           return;
         }
 
-        container.innerHTML = list.map(s => `
-          <div class="p-5 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-400">${s.date}</span>
-              <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">복귀: ${s.recovery}</span>
-            </div>
-            <div class="text-sm font-bold text-slate-900">장면: ${s.scene}</div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-              <div class="p-3 rounded-xl bg-purple-50/70 border border-purple-100 text-purple-900">
-                <strong>Dark:</strong> ${s.dark}
+        container.innerHTML = list.map((s, idx) => `
+          <div class="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-4 hover:border-slate-300 transition shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-slate-900 text-white text-[11px] font-bold">#${list.length - idx}</span>
+                <span class="text-xs font-mono text-slate-500">${s.date}</span>
               </div>
-              <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-100 text-emerald-900">
-                <strong>Neural:</strong> ${s.neural}
+              <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                평형 복귀: ${s.recovery}
+              </span>
+            </div>
+
+            <div>
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">1. 장면 (Scene)</span>
+              <p class="text-sm font-bold text-slate-900">${s.scene}</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-purple-50/70 border border-purple-100 text-purple-950">
+                <strong class="block text-purple-700 font-bold mb-1">2. 자동반응 (Dark Code)</strong>
+                <p class="leading-relaxed">${s.dark}</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-100 text-emerald-950">
+                <strong class="block text-emerald-700 font-bold mb-1">3. 시도한 행동 (Neural Shift)</strong>
+                <p class="leading-relaxed">${s.action}</p>
               </div>
             </div>
-            <div class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-slate-200">
-              <strong>현실 결과:</strong> ${s.result}
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-100 text-rose-950">
+                <strong class="block text-rose-700 font-bold mb-1">4. 머릿속 예상 위험 (Anticipated)</strong>
+                <p class="leading-relaxed">${s.anticipation}</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-100 text-blue-950">
+                <strong class="block text-blue-700 font-bold mb-1">5. 실제 현실 결과 (Observed Reality)</strong>
+                <p class="leading-relaxed">${s.actual}</p>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-emerald-100/40 border border-emerald-300/80 text-xs text-emerald-950">
+              <strong class="block text-emerald-800 font-bold mb-1">🎯 7. 다음 번 행동실험 과제 (Next Experiment)</strong>
+              <p class="leading-relaxed font-semibold">${s.nextExp}</p>
             </div>
           </div>
         `).join('');
-      } catch (e) {}
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function exportAiSessions() {
+      try {
+        const list = localStorage.getItem('myeongsim_ai_sessions') || '[]';
+        const blob = new Blob([list], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `myeongsim-ai-sessions-${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+      } catch (e) {
+        alert('내보내기 실패: ' + e.message);
+      }
     }
 
     function clearAiSessions() {
-      if (confirm('모든 누적 세션을 삭제하시겠습니까?')) {
+      if (confirm('모든 누적 인지 세션을 삭제하시겠습니까? (삭제 후 복구 불가)')) {
         localStorage.removeItem('myeongsim_ai_sessions');
         renderAiSessions();
       }
     }
 
-    document.addEventListener('DOMContentLoaded', renderAiSessions);
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAiSessions();
+    });
   </script>
 </body>
 </html>
