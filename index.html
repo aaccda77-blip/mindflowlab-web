@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>마인드플로우랩 (MindflowLab) | 마음의 흐름을 읽는 에듀·멘탈테크 R&D</title>
-  <meta name="description" content="심리학, 인지과학, 그리고 데이터 기술을 융합하여 일상의 마인드셋 케어와 전문 자격 합격을 돕는 에듀·멘탈테크 연구소 마인드플로우랩 공식 홈페이지입니다." />
-  <meta name="keywords" content="마인드플로우랩, 보건교육사 2급, 명심코칭, 다크코드, 뉴럴코드, 메타코드, 더시프트, START48, 인지과학, 멘탈테크" />
+  <title>명심코칭 | 당신은 사주보다 큽니다 (MindflowLab)</title>
+  <meta name="description" content="반복되는 패턴을 발견하고, 다른 선택을 배우고, 다시 내 삶으로. 사주를 운명으로 소비하지 않는 자기이해·행동변화 코칭." />
+  <meta name="keywords" content="마인드플로우랩, 명심코칭, 다크코드, 뉴럴코드, 메타코드, 더시프트, START48, 인지과학, 멘탈테크" />
 
   <!-- Open Graph / SEO -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="마인드플로우랩 (MindflowLab)" />
-  <meta property="og:description" content="마음의 인지 구조를 데이터로 밝히고, 더 나은 잠재력의 흐름을 설계합니다." />
-  <meta property="og:url" content="https://lab.mindflowlab.co.kr" />
+  <meta property="og:title" content="명심코칭 | 당신은 사주보다 큽니다" />
+  <meta property="og:description" content="반복되는 패턴을 발견하고, 다른 선택을 배우고, 다시 내 삶으로. 사주를 운명으로 소비하지 않는 자기이해·행동변화 코칭." />
+  <meta property="og:site_name" content="명심코칭" />
+  <meta property="og:url" content="https://myeongsimcoaching.com" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,17 +23,12 @@
         extend: {
           colors: {
             brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81',
-              950: '#0b0f19',
+              green: '#007A55',
+              greenHover: '#006646',
+              mint: '#EAF7EE',
+              sky: '#EAF4FE',
+              warm: '#FEF2EC',
+              gold: '#FEF9EE',
             },
           },
           fontFamily: {
@@ -47,291 +43,748 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 
   <style>
+    :root {
+      --primary-green: #007A55;
+      --primary-hover: #006646;
+      --bg-main: #FAF9F6;
+      --bg-white: #FFFFFF;
+      --bg-soft: #F8FAFC;
+      --text-dark: #0F172A;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --border-light: #E2E8F0;
+    }
     body {
-      font-family: 'Pretendard', sans-serif;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
       letter-spacing: -0.02em;
     }
-    .gradient-text {
-      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 10px;
+      background: var(--primary-green);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      z-index: 100;
+      font-weight: 700;
+      transition: top 0.2s;
     }
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .skip-link:focus {
+      top: 10px;
     }
-    @keyframes pulse-slow {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.05); }
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      background: var(--bg-white);
+      color: var(--text-dark);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      cursor: pointer;
     }
-    .animate-pulse-slow {
-      animation: pulse-slow 6s ease-in-out infinite;
+    .btn:hover {
+      background: #F1F5F9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
     }
+    .btn-primary {
+      background: var(--primary-green) !important;
+      color: #FFFFFF !important;
+      border-color: var(--primary-green) !important;
+      box-shadow: 0 4px 16px rgba(0, 122, 85, 0.24) !important;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover) !important;
+      border-color: var(--primary-hover) !important;
+      box-shadow: 0 6px 22px rgba(0, 122, 85, 0.34) !important;
+      transform: translateY(-2px);
+    }
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #007A55 0%, #10B981 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 122, 85, 0.3);
+    }
+    .brand small {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 2px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav a:hover {
+      color: var(--primary-green);
+    }
+    .mobile-menu-btn {
+      display: none;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-white);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+    }
+    @media (max-width: 1023px) {
+      .nav { display: none; }
+      .mobile-menu-btn { display: block; }
+      .mobile-nav.open {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px 24px;
+        background: white;
+        border-bottom: 1px solid var(--border-light);
+      }
+    }
+    /* Hero */
+    .hero {
+      padding: 84px 24px 76px;
+      background: linear-gradient(180deg, #FAF9F6 0%, #F0F7F3 60%, #FFFFFF 100%);
+      position: relative;
+    }
+    .hero-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 52px;
+      align-items: center;
+    }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--primary-green);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 900;
+      color: #0B132B;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 36px; }
+    }
+    .hero .lead {
+      font-size: 18px;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 34px;
+      word-break: keep-all;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill {
+      padding: 6px 15px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .hero-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 38px 34px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 20px 48px -12px rgba(0, 122, 85, 0.1), 0 4px 12px rgba(0,0,0,0.03);
+      position: relative;
+    }
+    .hero-card h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.38;
+      margin: 10px 0 16px;
+    }
+    .hero-card p {
+      font-size: 14px;
+      color: #64748B;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+    .badges {
+      display: flex;
+      gap: 8px;
+    }
+    .badge {
+      padding: 5px 13px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      background: #F1F5F9;
+      color: #334155;
+    }
+    .badge.neural { background: #E0F2FE; color: #0284C7; }
+    .badge.meta { background: #EDE9FE; color: #7C3AED; }
+
+    /* Sections */
+    .section {
+      padding: 92px 24px;
+    }
+    .section.white { background: #FFFFFF; }
+    .section.soft { background: #F8FAFC; }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 740px;
+      margin: 0 auto 52px;
+    }
+    .section-heading h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+    .section-heading p {
+      font-size: 16px;
+      color: #64748B;
+      line-height: 1.6;
+    }
+
+    /* Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 860px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 960px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .grid-4 { grid-template-columns: 1fr; }
+    }
+    .card {
+      border-radius: 24px;
+      padding: 34px 30px;
+      border: 1px solid var(--border-light);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.06);
+    }
+    .card.mint { background: #EAF7EE; border-color: #D1EEDC; }
+    .card.mint .eyebrow { color: #007A55; }
+    .card.sky { background: #EAF4FE; border-color: #D0E6FC; }
+    .card.sky .eyebrow { color: #0284C7; }
+    .card.warm { background: #FEF2EC; border-color: #FCDCCE; }
+    .card.warm .eyebrow { color: #EA580C; }
+    .card.gold { background: #FEF9EE; border-color: #FDE8C0; }
+    .card.gold .eyebrow { color: #D97706; }
+    .card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.42;
+      margin: 10px 0 14px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    /* Codes Grid */
+    .code-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 960px) {
+      .code-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .code-grid { grid-template-columns: 1fr; }
+    }
+    .code {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+    }
+    .code:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    }
+    .code b {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #F1F5F9;
+      color: #475569;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .code.neural b { background: #E0F2FE; color: #0284C7; }
+    .code.meta b { background: #EDE9FE; color: #7C3AED; }
+    .code.shift b { background: #FEF3C7; color: #D97706; }
+    .code h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 8px;
+    }
+    .code p {
+      font-size: 13px;
+      color: #64748B;
+      line-height: 1.55;
+    }
+
+    /* Saju Grid */
+    .saju-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .saju-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mini {
+      border-radius: 20px;
+      padding: 24px 26px;
+      border: 1px solid transparent;
+    }
+    .mini.mint { background: #EAF7EE; border-color: #D1EEDC; }
+    .mini.sky { background: #EAF4FE; border-color: #D0E6FC; }
+    .mini.warm { background: #FEF2EC; border-color: #FCDCCE; }
+    .mini h3 { font-size: 17px; font-weight: 800; color: #0F172A; margin-bottom: 6px; }
+    .mini p { font-size: 13.5px; color: #475569; line-height: 1.6; margin: 0; }
+
+    /* AI Block */
+    .ai-block {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: 28px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.4);
+    }
+    @media (max-width: 860px) {
+      .ai-block { grid-template-columns: 1fr; padding: 32px 24px; }
+    }
+    .check-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .check-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #A7F3D0;
+    }
+
+    /* Trust Grid */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 860px) {
+      .trust-grid { grid-template-columns: 1fr; }
+    }
+    .trust-grid .card {
+      background: #FFFFFF;
+      border-radius: 22px;
+      padding: 30px 26px;
+      border: 1px solid var(--border-light);
+      text-align: left;
+    }
+    .trust-grid .card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 10px;
+    }
+    .trust-grid .card p {
+      font-size: 13.5px;
+      color: #64748B;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta {
+      background: #007A55;
+      color: #FFFFFF;
+      border-radius: 32px;
+      padding: 68px 32px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 122, 85, 0.28);
+    }
+    .cta h2 {
+      font-size: 34px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+    .cta p {
+      font-size: 17px;
+      color: #E6F4EA;
+      margin-bottom: 32px;
+    }
+    .cta .btn {
+      background: #FFFFFF;
+      color: #007A55;
+      font-size: 16px;
+      padding: 16px 36px;
+      border: none;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .cta .btn:hover {
+      background: #F0FDF4;
+      transform: scale(1.03);
+    }
+
   </style>
 </head>
 
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white relative overflow-x-hidden min-h-screen">
+<body class="bg-[#FAF9F6] text-slate-900 antialiased selection:bg-[#007A55] selection:text-white relative overflow-x-hidden min-h-screen">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
 
-  <!-- Ambient Background Glows -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-indigo-600/20 via-purple-600/10 to-transparent blur-3xl -z-10 pointer-events-none animate-pulse-slow"></div>
-  <div class="fixed top-[30%] right-[-10%] w-[600px] h-[600px] bg-cyan-600/10 blur-3xl -z-10 pointer-events-none"></div>
-  <div class="fixed top-[65%] left-[-10%] w-[600px] h-[600px] bg-purple-600/10 blur-3xl -z-10 pointer-events-none"></div>
-
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-slate-950/75 backdrop-blur-xl border-b border-slate-800/80 transition-all">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-400 p-[1.5px] shadow-lg shadow-indigo-500/20">
-          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-            <span class="text-white font-black text-lg group-hover:scale-110 transition-transform">M</span>
-          </div>
-        </div>
-        <div class="flex flex-col">
-          <span class="text-xl font-black tracking-tight text-white flex items-center gap-1.5">
-            Mindflow<span class="text-indigo-400 font-extrabold">Lab</span>
-          </span>
-          <span class="text-[10px] font-medium text-slate-400 tracking-wider uppercase -mt-0.5">Mind & Tech R&D</span>
-        </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="명심코칭 홈">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        </span>
+        <span>명심코칭</span>
+        <small>MYEONGSIM</small>
       </a>
-
-      <!-- Desktop Nav (골든래빗 스타일 핫 배지 및 도서/CBT 탭) -->
-      <nav class="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-300">
-        <a href="#books" class="hover:text-white transition flex items-center gap-1.5 text-amber-300 font-bold">
-          <span>📘 도서 라인업 (31권)</span>
-          <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/40">목차공개</span>
-        </a>
-        <a href="#cbt" class="px-3 py-1 rounded-lg bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-400 hover:to-rose-500 text-white text-xs font-black shadow-md shadow-red-500/30 flex items-center gap-1.5 transition hover:scale-105">
-          <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
-          <span>시험 정복 CBT 🎯</span>
-        </a>
-        <a href="#sample-report" class="hover:text-white transition flex items-center gap-1.5 text-amber-300">
-          <span>START 48 샘플</span>
-          <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-400/20 text-amber-300 rounded border border-amber-400/40">샘플링</span>
-        </a>
-        <a href="#technology" class="hover:text-white transition">핵심 기술</a>
-        <a href="#patent" class="hover:text-white transition flex items-center gap-1.5">
-          <span>특허 &amp; 과학</span>
-          <span class="px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-500/20 text-indigo-300 rounded border border-indigo-500/30">IP</span>
-        </a>
-                <a href="#essay" class="hover:text-amber-300 transition flex items-center gap-1 font-bold text-amber-300">
-          <span>✨ 공감 에세이</span>
-          <span class="px-1.5 py-0.5 text-[9px] font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/40">23선</span>
-        </a>
-        <a href="#faq" class="hover:text-amber-300 transition flex items-center gap-1 font-semibold text-slate-300">
-          <span>💡 사이다 Q&amp;A</span>
-          <span class="px-1.5 py-0.5 text-[9px] font-bold bg-amber-500/20 text-amber-300 rounded">궁금증해소</span>
-        </a>
-        <a href="#newsletter-banner" class="hover:text-cyan-300 transition flex items-center gap-1">
-          <span>소식 구독</span>
-        </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#why">왜 반복할까</a>
+        <a href="#codes">3대 코드</a>
+        <a href="faq.html">사이다 Q&amp;A</a>
+        <a href="library.html">31권 시리즈</a>
+        <a href="self-check.html">Self Check</a>
+        <a href="ai.html">명심AI</a>
+        <a href="trust.html">윤리·신뢰</a>
+        <a class="btn btn-primary" href="self-check.html">내 패턴 확인하기</a>
       </nav>
-
-      <!-- Action Button (명심코칭닷컴 앱 접속 & 제휴 문의) -->
-      <div class="flex items-center gap-2.5 sm:gap-3">
-        <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="px-3.5 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 text-slate-950 font-black text-xs sm:text-xs shadow-lg shadow-amber-500/30 hover:shadow-amber-400/50 hover:scale-105 transition flex items-center gap-1.5 border border-amber-300">
-          <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
-          <span>📲 명심코칭닷컴 앱</span>
-        </a>
-        <a href="#contact" class="hidden md:inline-flex px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-200 transition">
-          제휴 &amp; 문의
-        </a>
-      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="메뉴 열기">메뉴</button>
     </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴">
+      <a href="#why">왜 반복할까</a>
+      <a href="#codes">3대 코드</a>
+      <a href="faq.html">사이다 Q&amp;A</a>
+      <a href="library.html">31권 시리즈</a>
+      <a href="self-check.html">Self Check (패턴 자각)</a>
+      <a href="ai.html">명심AI</a>
+      <a href="trust.html">윤리·신뢰</a>
+      <a class="btn btn-primary" href="self-check.html">내 패턴 확인하기</a>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-24 pb-20 px-6 max-w-6xl mx-auto text-center relative">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 text-xs font-semibold text-indigo-300 mb-8 backdrop-blur-md shadow-inner">
-      <span class="flex h-2 w-2 relative">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-      </span>
-      <span>Cognitive Psychology &amp; Data-Driven AI Architecture</span>
-    </div>
-
-    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.15] max-w-5xl mx-auto">
-      마음의 인지 구조를 데이터로 밝히고,<br />
-      <span class="gradient-text">더 나은 잠재력의 흐름</span>을 설계합니다.
-    </h1>
-
-    <p class="mt-8 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal">
-      마인드플로우랩은 인지행동과학(CBT), 적응형 지식 추적 알고리즘, 그리고 생체신호 분석 기술을 결합하여 
-      <strong>일상의 정서 안정</strong>과 <strong>국가 전문 자격의 단기 합격</strong>을 이끄는 지능형 솔루션을 연구하고 개발합니다.
-    </p>
-
-    <!-- CTAs (명심코칭닷컴 앱 공식 접속 연동) -->
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-      <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black rounded-2xl transition shadow-2xl shadow-amber-500/30 hover:shadow-amber-400/60 hover:-translate-y-1 flex items-center gap-2.5 border-2 border-amber-300/80 group">
-        <span class="text-xl group-hover:scale-125 transition-transform">📲</span>
-        <span class="text-base sm:text-lg">명심코칭닷컴 앱 바로가기</span>
-        <span class="px-2 py-0.5 rounded-full bg-slate-950 text-amber-300 text-[11px] font-bold ml-1">Web/App</span>
-      </a>
-      <a href="#books" class="px-7 py-4 bg-slate-900/90 hover:bg-slate-800 text-amber-300 font-bold border border-amber-500/40 rounded-2xl transition shadow-lg flex items-center gap-2">
-        <span>📖 31권 출판기획 &amp; 목차</span>
-      </a>
-      <a href="#faq" class="px-6 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
-        <span>💡 사이다 Q&amp;A 게시판</span>
-      </a>
-      <a href="#sample-report" class="px-6 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-300 font-medium border border-slate-800 rounded-2xl transition flex items-center gap-2">
-        <span>📑 START 48 샘플</span>
-      </a>
-    </div>
-
-    <!-- 명심코칭닷컴 전용 앱 공식 론칭 하이라이트 배지 바 -->
-    <div class="mt-8 max-w-2xl mx-auto p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-xl shrink-0">
-          📱
-        </div>
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <div class="text-xs font-black text-amber-300 flex items-center gap-1.5">
-            <span>공식 웹/모바일 앱 오픈</span>
-            <span class="px-1.5 py-0.2 rounded text-[10px] bg-amber-400 text-slate-950 font-bold">LIVE</span>
+          <div class="eyebrow">MYEONGSIM COACHING · MINDFLOW</div>
+          <h1>당신은 사주보다 큽니다.</h1>
+          <p class="lead">
+            반복되는 패턴을 발견하고, 다른 선택을 배우고, 다시 내 삶으로.<br />
+            사주를 운명으로 소비하지 않고 삶을 이해하는 질문으로 바꿉니다.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="self-check.html">
+              <span>내 패턴 가볍게 확인하기</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a class="btn" href="#codes">명심코칭이 뭐예요?</a>
           </div>
-          <p class="text-xs text-slate-300 mt-0.5">
-            내 무의식 다크코드 진단과 3S 실전 프로토콜을 앱에서 바로 경험하세요!
+          <div class="pills">
+            <span class="pill">✨ 사주를 믿지 않아도 됩니다</span>
+            <span class="pill">🔍 유형보다 장면을 봅니다</span>
+            <span class="pill">🛡️ 치료를 대체하지 않습니다</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="eyebrow">오늘의 패턴</div>
+            <h3>“왜 나는 알면서도<br />또 같은 선택을 할까?”</h3>
+            <p>생각은 떠오를 수 있습니다. 감정도 올라올 수 있습니다. 그러나 그것이 곧 행동이 되어야 하는 것은 아닙니다.</p>
+            <div class="badges">
+              <span class="badge">Dark</span>
+              <span class="badge neural">Neural</span>
+              <span class="badge meta">Meta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Why (피그마 3색 파스텔 카드) -->
+    <section class="section white" id="why">
+      <div class="container">
+        <div class="section-heading">
+          <h2>왜 나는 알면서도 또 같은 선택을 할까?</h2>
+          <p>문제를 설명하는 데서 끝나지 않고, 실제 장면에서 무엇이 자동으로 켜지는지부터 봅니다.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card mint">
+            <div class="eyebrow">내 이야기 같은 질문</div>
+            <h3>왜 회사에서는 참다가 집에만 오면 터질까요?</h3>
+            <p>하루 동안 눌러둔 반응이 가장 안전한 곳에서 뒤늦게 터질 수 있습니다.</p>
+          </article>
+          <article class="card sky">
+            <div class="eyebrow">내 이야기 같은 질문</div>
+            <h3>왜 좋은 사람을 만나도 가까워지면 도망가고 싶을까요?</h3>
+            <p>사랑이 싫은 것이 아니라 가까워짐 자체가 위험처럼 느껴질 수도 있습니다.</p>
+          </article>
+          <article class="card warm">
+            <div class="eyebrow">내 이야기 같은 질문</div>
+            <h3>왜 쉬고 있는데도 죄책감이 들까요?</h3>
+            <p>휴식보다 “뒤처질까 봐”라는 오래된 예측이 더 빨리 켜질 수 있습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Codes (피그마 4대 코드 그리드) -->
+    <section class="section soft" id="codes">
+      <div class="container">
+        <div class="section-heading">
+          <h2>코드를 없애지 않습니다. 사용법을 바꿉니다.</h2>
+          <p>Dark는 나쁜 내가 아니고, Neural은 우월한 내가 아닙니다. 서로 다른 질문을 다룹니다.</p>
+        </div>
+        <div class="code-grid">
+          <div class="code">
+            <b>Dark</b>
+            <h3>패턴 안에 있음</h3>
+            <p>“왜 또 이러지?”</p>
+          </div>
+          <div class="code neural">
+            <b>Neural</b>
+            <h3>패턴을 알아차림 · 재학습</h3>
+            <p>“지금 무엇을 다르게 선택할까?”</p>
+          </div>
+          <div class="code meta">
+            <b>Meta · Zero</b>
+            <h3>알아차림 자체가 자각됨</h3>
+            <p>“지금 알아차리고 있음 자체가 자각되는가?”</p>
+          </div>
+          <div class="code shift">
+            <b>SHIFT</b>
+            <h3>다시 삶으로 참여함</h3>
+            <p>“이 자리에서 지금 무엇을 선택할 것인가?”</p>
+          </div>
+        </div>
+        <p class="text-center text-xs sm:text-sm text-slate-500 mt-8 max-w-2xl mx-auto leading-relaxed">
+          Dark는 판에 갇힌다. Neural은 다른 수를 배운다. Meta·Zero는 판과 나를 모두 알아차린다. SHIFT는 그 자리에서 다시 판으로 들어가 자유롭게 논다.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: Saju Grid (피그마 사주보다 큰 나) -->
+    <section class="section white" id="saju">
+      <div class="container saju-grid">
+        <div>
+          <div class="eyebrow">사주를 버리라는 이야기가 아닙니다.</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
+            사주보다 큰 나로 살아보자는 이야기입니다.
+          </h2>
+          <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+            60갑자·십성·주역은 전통 속에서 사용된 상징적 해석 언어입니다. 명심코칭은 이를 미래를 확정하는 과학적 예측도구로 주장하지 않습니다. 자기성찰의 질문으로 활용하고 실제 변화는 현재의 경험과 행동에서 확인합니다.
           </p>
         </div>
-      </div>
-      <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-black transition shadow">
-        myeongsimcoaching.com 접속 &rarr;
-      </a>
-    </div>
-
-    <!-- Key Metrics Grid -->
-    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-10 border-t border-slate-800/80">
-      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-        <div class="text-3xl font-black text-indigo-400">1건</div>
-        <div class="text-xs text-slate-400 mt-1 font-medium">특허 출원 완료 (스트레스 관리)</div>
-      </div>
-      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-        <div class="text-3xl font-black text-amber-400">4부작 + 48p</div>
-        <div class="text-xs text-slate-400 mt-1 font-medium">명심코칭 출판 &amp; 리포트 체계</div>
-      </div>
-      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-        <div class="text-3xl font-black text-cyan-400">3,200+</div>
-        <div class="text-xs text-slate-400 mt-1 font-medium">AI 기출 변형 데이터셋</div>
-      </div>
-      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-        <div class="text-3xl font-black text-emerald-400">4.9 / 5.0</div>
-        <div class="text-xs text-slate-400 mt-1 font-medium">합격 솔루션 유저 만족도</div>
-      </div>
-
-
-    </div>
-  </section>
-
-  <!-- Section: Golden Rabbit (골든래빗/AI100) Style Trending Banner & Newsletter Subscription -->
-  <section id="newsletter-banner" class="px-6 py-6 max-w-6xl mx-auto -mt-6 mb-12">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-      
-      <!-- 좌측: AI 트렌드 & 출간 인사이트 배너 (골든래빗 블루 배너 오마주) -->
-      <div class="lg:col-span-7 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-blue-700 via-indigo-700 to-indigo-950 border border-blue-400/40 shadow-2xl flex flex-col justify-between text-white relative overflow-hidden">
-        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-cyan-400/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs font-bold mb-4 backdrop-blur-sm border border-white/25">
-            <span class="w-2 h-2 rounded-full bg-cyan-300 animate-pulse"></span>
-            <span>AI &amp; Cognitive Psychology Trends</span>
+        <div class="stack">
+          <div class="mini mint">
+            <h3>전통의 언어</h3>
+            <p>명리·주역의 상징체계는 정답이 아니라 질문을 만드는 렌즈로 사용합니다.</p>
           </div>
-          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
-            AI &amp; 마음 인지 트렌드를<br />
-            <span class="text-cyan-200">놓치지 마세요</span>
-          </h3>
-          <p class="mt-4 text-sm sm:text-base text-blue-100/90 leading-relaxed max-w-lg">
-            마인드플로우랩이 엄선한 최신 인지행동 재학습(Neural Code), 생체데이터 AI 특허 솔루션, 그리고 <strong>명심코칭 31권 마스터 시리즈 신간</strong> 소식을 가장 먼저 받아보세요.
-          </p>
-        </div>
-        <div class="mt-8 pt-6 border-t border-white/15 flex flex-wrap items-center gap-4 text-xs text-blue-200">
-          <span class="inline-flex items-center gap-1.5 font-semibold">
-            <svg class="w-4 h-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            명심코칭 31권 출간 알림
-          </span>
-          <span class="inline-flex items-center gap-1.5 font-semibold">
-            <svg class="w-4 h-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            보건교육사 CBT 기출 변형
-          </span>
-          <span class="inline-flex items-center gap-1.5 font-semibold">
-            <svg class="w-4 h-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            START 48 얼리버드 혜택
-          </span>
-        </div>
-      </div>
-
-      <!-- 우측: 소식 받아보기 폼 (골든래빗의 "소식 받아보기" 박스 디자인 완벽 구현) -->
-      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-2xl">📬</span>
-            <h4 class="text-xl font-bold text-white tracking-tight">소식 받아보기</h4>
+          <div class="mini sky">
+            <h3>명심코칭 고유 프레임</h3>
+            <p>Dark · Neural · Meta와 3S는 사람을 낙인찍는 유형표가 아니라 자기관찰과 행동훈련 구조입니다.</p>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            MindflowLab의 엄선된 신간 도서 출간 일정, CBT 업데이트, 개인 분석 리포트 소식을 가장 먼저 안내드립니다.
-          </p>
-        </div>
-
-        <div class="my-6 space-y-3">
-          <div class="relative">
-            <input type="email" id="subscribe-email-input" placeholder="이메일 주소를 입력하세요 (example@domain.com)" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-indigo-500 transition shadow-inner" />
-          </div>
-          <button onclick="handleSubscribe()" class="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
-            <span>구독하기 (얼리버드 사전신청)</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </button>
-          <div id="subscribe-alert" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium">
-            🎉 구독 신청이 완료되었습니다! 신간 소식을 빠르게 전해드리겠습니다.
+          <div class="mini warm">
+            <h3>근거기반 행동 원리</h3>
+            <p>행동실험, 실행계획, 거리두기, 가치행동 등의 원리에서 영감을 받되 의료 진단·치료를 대신하지 않습니다.</p>
           </div>
         </div>
-
-        <div class="text-[11px] text-slate-500 text-center leading-relaxed">
-          스팸 없이 출판 제휴 소식과 핵심 연구 업데이트만 제공됩니다.
-        </div>
       </div>
+    </section>
 
+    <!-- 골든래빗 & 피그마 스타일: 카테고리 필터 탭 바 -->
+    <div class="px-6 py-4 max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-center justify-center gap-2.5 p-2 rounded-2xl bg-white border border-slate-200 text-xs font-semibold shadow-sm">
+        <a href="#books" class="px-4 py-2 rounded-xl bg-[#007A55] text-white font-bold hover:bg-[#006646] transition shadow-sm">
+          📘 31권 시리즈 목차
+        </a>
+        <a href="#sample-report" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5">
+          <span>📑 START 48 샘플 뷰어</span>
+        </a>
+        <a href="#patent" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5">
+          <span>🧠 생체데이터 &amp; AI 특허</span>
+        </a>
+        <a href="#faq" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5">
+          <span>💡 사이다 Q&amp;A (128선)</span>
+        </a>
+        <a href="#essay" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5">
+          <span>✨ 공감 에세이 23선</span>
+        </a>
+        <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-800 transition flex items-center gap-1.5 font-bold">
+          <span>📲 명심코칭닷컴 앱</span>
+        </a>
+      </div>
     </div>
 
-    <!-- 골든래빗 스타일: 카테고리 필터 탭 바 -->
-    <div class="mt-8 flex flex-wrap items-center justify-center gap-2 p-2 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs font-medium">
-      <a href="#books" class="px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition shadow-sm">
-        전체
-      </a>
-      <a href="#books" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
-        <span>📘 명심코칭 시리즈 (31권)</span>
-      </a>
-      <a href="#cbt" class="px-4 py-2 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 transition flex items-center gap-1.5 border border-rose-500/30 font-bold">
-        <span>🎯 시험 정복 CBT</span>
-      </a>
-      <a href="#sample-report" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
-        <span>📑 START 48 리포트 샘플</span>
-      </a>
-      <a href="#technology" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
-        <span>🧠 생체데이터 &amp; AI 특허</span>
-      </a>
-      <a href="#contact" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
-        <span>🤝 출판·제휴 제안</span>
-      </a>
-
-
-    </div>
-  </section>
-
-  <!-- Section: Books & Publication (명심코칭 4부작 상세 목차 전체 공개 섹션) -->
-    <!-- Section: Books & Publication (명심코칭 MASTER SERIES 총 31권 마스터 체계 및 뉴럴코드 42장 완제 수록) -->
-    <!-- Section: Books & Publication (명심코칭 CODE SERIES — 31권 MASTER PUBLISHING PLAN) -->
-  <section id="books" class="py-24 px-6 border-t border-slate-800/80 bg-slate-950 relative">
+  <!-- Section: Books & Publication (피그마 4대 라이브러리 & 31권 MASTER PUBLISHING PLAN) -->
+  <section id="books" class="py-24 px-6 border-t border-slate-200 bg-white relative">
     <div class="max-w-6xl mx-auto">
       
-      <!-- Section Header (골든래빗 스타일 헤더 & 훅 카피) -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-300 mb-4 shadow-inner">
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+      <!-- Figma Section Heading -->
+      <div class="section-heading mb-12">
+        <div class="eyebrow mb-2">MYEONGSIM LIBRARY · 31 BOOKS</div>
+        <h2>한 권으로 끝내지 않고, 필요한 순간 꺼내 쓰는 삶의 라이브러리</h2>
+        <p>31권을 모두 읽어야 하는 교과서가 아니라, 문제에 따라 골라 들어가는 31개의 입구입니다.</p>
+      </div>
+
+      <!-- 피그마 4대 라이브러리 카드 그리드 -->
+      <div class="grid-4 mb-16">
+        <div class="card mint">
+          <b class="text-xs font-black text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md mb-3 inline-block">01–03 · CORE</b>
+          <p class="font-bold text-slate-800 leading-relaxed text-sm">《다크 코드》<br>《뉴럴 코드》<br>《메타 코드》</p>
+        </div>
+        <div class="card sky">
+          <b class="text-xs font-black text-sky-800 bg-sky-100 px-2.5 py-1 rounded-md mb-3 inline-block">04–18 · SYMBOLS</b>
+          <p class="font-medium text-slate-700 leading-relaxed text-sm">천간 · 지지 · 60갑자 · 십성 · 주역 64를 Dark / Neural / Meta로 확장</p>
+        </div>
+        <div class="card warm">
+          <b class="text-xs font-black text-orange-800 bg-orange-100 px-2.5 py-1 rounded-md mb-3 inline-block">19–30 · LIFE AREAS</b>
+          <p class="font-medium text-slate-700 leading-relaxed text-sm">년주 · 월주 · 일주 · 시주를 Dark / Neural / Meta로 깊게 탐색</p>
+        </div>
+        <div class="card gold">
+          <b class="text-xs font-black text-amber-800 bg-amber-100 px-2.5 py-1 rounded-md mb-3 inline-block">31 · ZERO POINT</b>
+          <p class="font-medium text-slate-700 leading-relaxed text-sm">모든 설명을 지나 다시 삶으로 돌아오는 마지막 문</p>
+        </div>
+      </div>
+
+      <!-- 상세 아키텍처 헤더 -->
+      <div class="text-center max-w-3xl mx-auto mb-16 pt-10 border-t border-slate-100">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-4 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>Official Publishing Plan • 31권 마스터 출판 기획</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+        <h3 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
           명심코칭 CODE SERIES<br />
-          <span class="gold-gradient-text">31권 MASTER PUBLISHING PLAN</span>
-        </h2>
-        <p class="mt-5 text-slate-300 text-sm sm:text-base leading-relaxed">
+          <span class="text-[#007A55]">31권 MASTER PUBLISHING PLAN</span>
+        </h3>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
           “<strong>왜 반복하는가</strong> ➔ <strong>어떻게 다르게 살아볼 것인가</strong> ➔ <strong>나는 그 모든 경험과 어떤 관계를 맺을 것인가</strong> ➔ <strong>다시 현실의 삶으로 돌아간다</strong>”<br class="hidden sm:inline" />
           31권이 따로 노는 책이 아닌, 한 사람의 인생을 근본적으로 바꾸는 웅장한 하나의 독서 여정입니다.
         </p>
@@ -392,10 +845,10 @@
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2">
               <span>★ The Core Canon of Mindflow</span>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-white">
-              명심코칭 캐논 (Canon) — <span class="gold-gradient-text">대표 7권 컬렉션</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-slate-900">
+              명심코칭 캐논 (Canon) — <span class="text-[#007A55]">대표 7권 컬렉션</span>
             </h3>
-            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
               독자의 폭발적 구매와 인지 변화를 이끌어낼 명심코칭의 가장 강력한 7대 마스터피스입니다.
             </p>
           </div>
@@ -733,10 +1186,10 @@
           <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-300 mb-3">
             <span>Complete Master Publishing Table • 31권 전권 세부 명세표</span>
           </div>
-          <h3 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-            명심코칭 31권 <span class="gold-gradient-text">전체 출판기획표 (Master Plan)</span>
+          <h3 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            명심코칭 31권 <span class="text-[#007A55]">전체 출판기획표 (Master Plan)</span>
           </h3>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
             실제 출판 시리즈로 즉시 계약 및 집필 가능한 형태의 정식 타이틀, 부제, 타깃 독자, PART 구성 및 예상 페이지 수입니다.
           </p>
         </div>
@@ -1054,17 +1507,17 @@
   </section>
 
   <!-- Section: Interactive Sample Report Viewer (MYEONGSIM START 48 실제 샘플링) -->
-  <section id="sample-report" class="py-24 px-6 border-t border-slate-800/80 bg-slate-900/40 relative">
+  <section id="sample-report" class="py-24 px-6 border-t border-slate-200 bg-[#F8FAFC] relative">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-300 mb-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-4 shadow-sm">
           <span>Exclusive Sample Preview</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
           MYEONGSIM START 48<br />
-          <span class="gold-gradient-text">실제 48페이지 리포트북 샘플링</span>
+          <span class="text-[#007A55]">실제 48페이지 리포트북 샘플링</span>
         </h2>
-        <p class="mt-4 text-slate-300 text-base leading-relaxed">
+        <p class="mt-4 text-slate-600 text-base leading-relaxed">
           전통명리 × 심리코칭 × 현실전략이 만난 48페이지 프리미엄 개인화 리포트.<br class="hidden sm:inline" />
           실제 발행되는 리포트북의 표지, 체계적인 목차, 정밀한 내지 분석표, 전체 전개도 구성을 직접 확인해 보세요.
         </p>
@@ -1072,16 +1525,16 @@
 
       <!-- Sample Navigation Tabs -->
       <div class="flex flex-wrap justify-center gap-2.5 mb-10">
-        <button onclick="switchTab('cover')" id="tab-btn-cover" class="sample-tab-btn active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20">
+        <button onclick="switchTab('cover')" id="tab-btn-cover" class="sample-tab-btn active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-[#007A55] text-white shadow-lg shadow-emerald-700/20">
           ① 프리미엄 표지
         </button>
-        <button onclick="switchTab('contents')" id="tab-btn-contents" class="sample-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+        <button onclick="switchTab('contents')" id="tab-btn-contents" class="sample-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">
           ② 15개 챕터 목차
         </button>
-        <button onclick="switchTab('sample')" id="tab-btn-sample" class="sample-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+        <button onclick="switchTab('sample')" id="tab-btn-sample" class="sample-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">
           ③ 내지 분석 샘플 (08p)
         </button>
-        <button onclick="switchTab('fullmap')" id="tab-btn-fullmap" class="sample-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+        <button onclick="switchTab('fullmap')" id="tab-btn-fullmap" class="sample-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">
           ④ 48페이지 전체 전개도
         </button>
       </div>
@@ -1246,66 +1699,65 @@
   </section>
 
   <!-- Section 1: Vision & Research Philosophy -->
-  <section id="vision" class="py-24 px-6 border-t border-slate-800/80 bg-slate-950/60">
+  <section id="vision" class="py-24 px-6 border-t border-slate-200 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl">
-        <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Our Vision</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
+        <span class="text-[#007A55] text-xs font-bold uppercase tracking-widest">Our Vision</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">
           인간의 마음을 이해하고,<br />성장의 한계를 넘어서는 도구를 만듭니다.
         </h2>
-        <p class="mt-4 text-slate-400 leading-relaxed text-base">
+        <p class="mt-4 text-slate-600 leading-relaxed text-base">
           마인드플로우랩은 '마음의 흐름(Mindflow)'이란 보이지 않는 추상적 개념이 아닌, 
           데이터와 인지 패턴을 통해 측정하고 긍정적인 방향으로 유도할 수 있는 과학적 시스템이라고 믿습니다.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 mt-16">
-        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-xl mb-6 border border-indigo-500/20">
+        <div class="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200 hover:border-[#007A55] transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#007A55] flex items-center justify-center font-bold text-xl mb-6 border border-emerald-200">
             01
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">인지과학 기반 접근</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">인지과학 기반 접근</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
             단순 암기나 일시적 위로가 아닌, 사람이 정보를 받아들이고 정서를 처리하는 인지 구조적 메커니즘을 심층 분석하여 시스템을 설계합니다.
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-xl mb-6 border border-purple-500/20">
+        <div class="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200 hover:border-[#007A55] transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#007A55] flex items-center justify-center font-bold text-xl mb-6 border border-emerald-200">
             02
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">데이터 기반 맞춤형 설계</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">데이터 기반 맞춤형 설계</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
             학습자의 오답 패턴, 스트레스 반응 수치, 일상 라이프로그를 유기적으로 결합하여 가장 최적화된 맞춤형 성장 피드백을 전달합니다.
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6 border border-cyan-500/20">
+        <div class="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200 hover:border-[#007A55] transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#007A55] flex items-center justify-center font-bold text-xl mb-6 border border-emerald-200">
             03
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">실용적 디지털 도구 개발</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">실용적 디지털 도구 개발</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
             연구실에 갇힌 이론에 머무르지 않고, 스마트폰 앱과 모바일 인터페이스를 통해 누구나 일상에서 손쉽게 혜택을 누릴 수 있는 제품을 출시합니다.
           </p>
         </div>
       </div>
 
-
     </div>
   </section>
 
   <!-- Section 2: Core Technology 4 Pillars (특허출원 제10-2025-0166877호 명세서 기반 완벽 팩트체크) -->
-  <section id="technology" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/80">
+  <section id="technology" class="py-24 px-6 bg-[#FAF9F6] border-t border-slate-200">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-bold text-indigo-300 mb-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-3 shadow-sm">
           <span>Patent Specification Architecture • 특허 명세서 원문 반영</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          마인드플로우랩 <span class="gradient-text">4대 핵심 테크놀로지</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+          마인드플로우랩 <span class="text-[#007A55]">4대 핵심 테크놀로지</span>
         </h2>
-        <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
           특허출원(제10-2025-0166877호) 서류에 정식 기재된 심리·생체 융합 알고리즘 및 맞춤형 스트레스 관리 파이프라인입니다.
         </p>
       </div>
@@ -1474,91 +1926,54 @@
   </section>
 
   <!-- Section 3: Product Ecosystem -->
-  <div id="cbt"></div>
-  <section id="ecosystem" class="py-24 px-6 border-t border-slate-800/80">
+  <section id="ecosystem" class="py-24 px-6 border-t border-slate-200 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Product Portfolio</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">디지털 솔루션 생태계</h2>
-        <p class="mt-4 text-slate-400">연구 결과를 담아내어 현실의 문제를 해결하는 마인드플로우랩의 솔루션</p>
+        <span class="text-[#007A55] text-xs font-bold uppercase tracking-widest">Product Portfolio</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">디지털 솔루션 생태계</h2>
+        <p class="mt-4 text-slate-600">연구 결과를 담아내어 일상의 회복과 마인드셋 전환을 이끄는 마인드플로우랩의 솔루션</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Product 1: 보건교육사 2급 -->
-        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-indigo-500/30 relative overflow-hidden flex flex-col justify-between shadow-xl">
-          <div class="absolute top-0 right-0 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
-
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
-                <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-                출시 완료 (Live)
-              </span>
-              <span class="text-xs text-slate-400">수험 전문 에듀테크</span>
-            </div>
-
-            <div class="inline-flex items-center justify-center w-14 h-14 bg-indigo-600 text-white rounded-2xl font-black text-xl mb-6 shadow-lg shadow-indigo-600/30">
-              CBT
-            </div>
-
-            <h3 class="text-2xl font-extrabold text-white">보건교육사 2급 합격패스</h3>
-            <p class="text-sm font-semibold text-indigo-400 mt-1">AI 기출 변형 &amp; 자동 오답노트 모바일 솔루션</p>
-
-            <p class="text-sm text-slate-300 mt-5 leading-relaxed">
-              보건교육사 2급 국가시험 수험생을 위한 필수 앱입니다. 방대한 법령과 이론을 최신 출제 경향에 맞게 AI로 변형 출제하고, 취약 챕터를 분석하여 오답을 완전히 정복할 때까지 반복 학습을 자동화합니다.
-            </p>
-
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">모의고사 CBT 모드</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">단원별 족집게 학습</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">합격 확률 실시간 진단</span>
-            </div>
-          </div>
-
-          <div class="mt-10 pt-6 border-t border-slate-800/80 flex items-center justify-between">
-            <a href="https://play.google.com/store/apps/details?id=com.healtheducator.cbt.exam" target="_blank" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 text-sm font-bold transition shadow-md">
-              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.597 1.597 0 0 1-.61-.926V2.74c0-.361.222-.705.609-.926zm11.365 11.366l2.368-2.369-2.368-2.368-3.036 3.036 3.036 1.701zm3.504-3.505l2.457 1.378c.847.476.847 1.254 0 1.73l-2.457 1.378-1.921-1.921 1.921-2.565zm-4.636-2.227L3.61 1.814c.269-.153.585-.18.892-.079l11.34 6.347-2.001 2.001zm0 9.097l2.001 2.001-11.34 6.347c-.307.101-.623.074-.892-.079l10.231-8.269z"/></svg>
-              Google Play에서 다운로드
-            </a>
-            <span class="text-xs text-slate-400">Android 전용</span>
-          </div>
-        </div>
-
-        <!-- Product 2: 명심코칭 앱 -->
-        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-emerald-500/30 relative overflow-hidden flex flex-col justify-between shadow-xl">
-          <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="max-w-3xl mx-auto">
+        <!-- Main Product: 명심코칭 플랫폼 & 앱 -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-emerald-500/40 relative overflow-hidden flex flex-col justify-between shadow-2xl">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                정식 출시 준비 중 (Beta R&amp;D)
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                공식 앱 서비스 중 (LIVE)
               </span>
-              <span class="text-xs text-slate-400">디지털 멘탈케어</span>
+              <span class="text-xs text-slate-400 font-medium">디지털 멘탈케어 &amp; 인지행동 솔루션</span>
             </div>
 
-            <div class="inline-flex items-center justify-center w-14 h-14 bg-emerald-600 text-white rounded-2xl font-black text-xl mb-6 shadow-lg shadow-emerald-600/30">
+            <div class="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl font-black text-xl mb-6 shadow-lg shadow-emerald-600/30">
               MC
             </div>
 
-            <h3 class="text-2xl font-extrabold text-white">명심코칭 (Myeongsim Coaching)</h3>
-            <p class="text-sm font-semibold text-emerald-400 mt-1">인지행동 기반 자기 객관화 &amp; 멘탈 케어 플랫폼</p>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">명심코칭 (Myeongsim Coaching)</h3>
+            <p class="text-sm sm:text-base font-semibold text-emerald-400 mt-1">인지행동 기반 자기 객관화 &amp; 멘탈 케어 플랫폼</p>
 
-            <p class="text-sm text-slate-300 mt-5 leading-relaxed">
-              복잡한 일상과 스트레스 속에서 마음의 객관적 상태를 거울처럼 비추어주는 솔루션입니다. 정서 조절 프레임워크를 기반으로 인지적 전환(Shift)을 유도하고 건강한 마인드셋을 습관화합니다.
+            <p class="text-sm sm:text-base text-slate-300 mt-5 leading-relaxed">
+              복잡한 일상과 스트레스 속에서 마음의 객관적 상태를 거울처럼 비추어주는 지능형 솔루션입니다. 정서 조절 프레임워크를 기반으로 인지적 전환(Shift)을 유도하고 건강한 마인드셋을 습관화합니다.
             </p>
 
             <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">생각 기록 &amp; 인지 왜곡 분석</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">심리 코칭 피드백</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">데일리 마인드 리포트</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60 font-medium">무의식 다크코드 진단</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60 font-medium">3S 인지재구성 프로토콜</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60 font-medium">START 48 정량 리포트</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60 font-medium">실시간 심리 피드백</span>
             </div>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-slate-800/80 flex items-center justify-between">
-            <span class="text-sm font-semibold text-emerald-400">사전 테스트 및 고도화 진행 중</span>
-            <a href="mailto:admin@mindflowlab.co.kr?subject=[명심코칭 사전알림 신청]" class="text-xs font-semibold text-slate-300 hover:text-white underline">
-              사전 출시 알림 신청 &rarr;
+          <div class="mt-10 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm transition shadow-lg shadow-amber-500/30 hover:scale-105">
+              <span>📲 명심코칭닷컴 앱 바로가기</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="mailto:admin@mindflowlab.co.kr?subject=[명심코칭 제휴 및 도입 문의]" class="text-xs font-semibold text-slate-400 hover:text-white underline">
+              기관·기업 도입 및 제휴 문의 &rarr;
             </a>
           </div>
         </div>
@@ -1569,7 +1984,7 @@
   </section>
 
   <!-- Section 4: Patent & Scientific Rigor (특허출원 통지서 및 출원서 원문 100% 팩트체크 반영) -->
-  <section id="patent" class="py-24 px-6 bg-slate-900/40 border-t border-slate-800/80">
+  <section id="patent" class="py-24 px-6 bg-[#FAF9F6] border-t border-slate-200">
     <div class="max-w-5xl mx-auto">
       <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-indigo-950/80 via-slate-900 to-purple-950/80 border border-indigo-500/40 shadow-2xl relative overflow-hidden">
         <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
@@ -1630,7 +2045,7 @@
   <!-- ================================================================= -->
   <!-- Section: 온라인 확산용 특별 기획 공감 에세이 23선 & 대표 7문장 -->
   <!-- ================================================================= -->
-  <section id="essay" class="py-24 px-6 border-t border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950 relative overflow-hidden">
+  <section id="essay" class="py-24 px-6 border-t border-slate-800 bg-[#0B1120] text-slate-100 relative overflow-hidden">
     <!-- Ambient Background Glow -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-purple-500/5 blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-10 right-10 w-[500px] h-[300px] bg-amber-500/5 blur-3xl pointer-events-none"></div>
@@ -3644,7 +4059,7 @@
 
 
     <!-- Section: 속시원한 사이다 Q&A 게시판 (명심코칭에 대한 사람들의 모든 궁금증 해소) -->
-  <section id="faq" class="py-24 px-6 border-t border-slate-800/80 bg-slate-950/90 relative">
+  <section id="faq" class="py-24 px-6 border-t border-slate-800 bg-[#060D1A] text-slate-100 relative">
     <!-- Background Glow -->
     <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-500/5 blur-3xl pointer-events-none"></div>
 
@@ -10156,83 +10571,140 @@
     </div>
   </section>
 
-  <!-- Section 6: Contact & Partnership -->
-  <section id="contact" class="py-24 px-6 border-t border-slate-800/80 bg-gradient-to-b from-slate-950 to-slate-900">
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Contact &amp; Partnership</span>
-      <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tight">더 나은 성장의 미래를 함께 만듭니다</h2>
-      <p class="mt-4 text-slate-300 max-w-xl mx-auto leading-relaxed">
-        마인드플로우랩의 솔루션에 대한 문의나 도서 출판 제휴, 비즈니스 파트너십 제안을 환영합니다.
-      </p>
-
-      <div class="mt-10 p-8 rounded-3xl bg-slate-900/90 border border-slate-800 max-w-xl mx-auto shadow-xl">
-        <div class="text-xs text-slate-400 mb-2 font-medium">공식 비즈니스 및 제휴 문의 이메일</div>
-        <div class="flex items-center justify-center gap-3">
-          <a href="mailto:admin@mindflowlab.co.kr" class="text-xl sm:text-2xl font-mono font-bold text-indigo-400 hover:text-indigo-300 underline underline-offset-4 transition">
-            admin@mindflowlab.co.kr
+  <!-- Section: MYEONGSIM AI (피그마 공식 AI 블록) -->
+  <section class="section white border-t border-slate-200" id="ai">
+    <div class="container">
+      <div class="ai-block">
+        <div>
+          <div class="eyebrow text-emerald-400">MYEONGSIM AI</div>
+          <h2 style="font-size:28px" class="font-extrabold text-white mb-3">답을 대신 내려주는 AI보다, 변화의 기록을 이어주는 AI</h2>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            어떤 상황에서 코드가 켜졌는지, 무엇을 시도했는지, 예상과 실제가 어떻게 달랐는지를 이어서 기록합니다. AI보다 사용자의 실제 삶이 우선입니다.
+          </p>
+          <a class="btn btn-primary" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer">
+            <span>명심AI 알아보기 →</span>
           </a>
-          <button onclick="copyEmail()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition" title="이메일 주소 복사">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-          </button>
         </div>
-        <p id="copy-toast" class="text-xs text-emerald-400 font-semibold mt-3 opacity-0 transition-opacity">
-          ✓ 이메일 주소가 클립보드에 복사되었습니다.
-        </p>
+        <div class="check-list">
+          <div class="check-item">✓ 반복패턴 기록</div>
+          <div class="check-item">✓ 행동실험 추적</div>
+          <div class="check-item">✓ 복귀시간 비교</div>
+          <div class="check-item">✓ 필요시 인간 전문가 연결</div>
+        </div>
       </div>
-
-
     </div>
   </section>
 
-  <!-- Global Premium Footer -->
-  <footer class="bg-slate-950 text-slate-400 py-16 px-6 text-xs border-t border-slate-800/90">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
-      
-      <div class="md:col-span-4 space-y-4">
-        <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">
-            M
+  <!-- Section: Ethics & Trust + 피그마 와이드 CTA 배너 -->
+  <section class="section soft border-t border-slate-200" id="trust">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">ETHICS &amp; TRUST</div>
+        <h2>사람의 불안을 팔지 않는 것이 우리의 원칙입니다.</h2>
+        <p>의존을 만들지 않고 스스로 선택할 수 있도록 돕는 건강한 가이드라인을 준수합니다.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="card">
+          <h3>운명을 단정하지 않습니다</h3>
+          <p>사주로 질병·수명·이혼·성공을 확정하지 않습니다.</p>
+        </div>
+        <div class="card">
+          <h3>치료를 대체하지 않습니다</h3>
+          <p>심각한 증상이나 위험신호는 적절한 의료·정신건강 전문가에게 연결합니다.</p>
+        </div>
+        <div class="card">
+          <h3>의존을 만들지 않습니다</h3>
+          <p>좋은 코칭의 목적은 결국 사용자가 스스로 선택할 수 있게 하는 것입니다.</p>
+        </div>
+      </div>
+
+      <!-- 피그마 시그니처 딥그린 와이드 CTA 배너 -->
+      <div class="cta">
+        <h2>당신에게 패턴은 있지만, 당신이 곧 그 패턴은 아닙니다.</h2>
+        <p>오늘은 나를 고치기보다, 다음 한 번의 선택을 다르게 해보세요.</p>
+        <a class="btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer">
+          <span>내 패턴 가볍게 확인하기 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Contact & Partnership (피그마 라이트 톤) -->
+  <section id="contact" class="py-20 px-6 border-t border-slate-200 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="eyebrow">Contact &amp; Partnership</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">더 나은 성장의 미래를 함께 만듭니다</h2>
+      <p class="mt-3 text-slate-600 max-w-xl mx-auto leading-relaxed text-sm sm:text-base">
+        마인드플로우랩의 솔루션에 대한 문의나 도서 출판 제휴, 비즈니스 파트너십 제안을 환영합니다.
+      </p>
+
+      <div class="mt-8 p-6 sm:p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200 max-w-lg mx-auto shadow-sm">
+        <div class="text-xs text-slate-500 mb-2 font-medium">공식 비즈니스 및 제휴 문의 이메일</div>
+        <div class="flex items-center justify-center gap-3">
+          <a href="mailto:admin@mindflowlab.co.kr" class="text-xl sm:text-2xl font-mono font-bold text-[#007A55] hover:text-[#006646] underline underline-offset-4 transition">
+            admin@mindflowlab.co.kr
+          </a>
+          <button onclick="copyEmail()" class="p-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 transition shadow-sm" title="이메일 주소 복사">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </button>
+        </div>
+        <p id="copy-toast" class="text-xs text-[#007A55] font-bold mt-2 opacity-0 transition-opacity">
+          ✓ 이메일 주소가 클립보드에 복사되었습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Global Footer (피그마 공식 라이트 푸터) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-200">
+        <div class="md:col-span-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="brand-mark" aria-hidden="true">
+              <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+            <span class="text-lg font-black tracking-tight text-slate-900">
+              명심코칭 <small class="text-xs text-slate-500 font-bold ml-1">MYEONGSIM · MINDFLOW</small>
+            </span>
           </div>
-          <span class="text-lg font-black tracking-tight text-white">
-            Mindflow<span class="text-indigo-400">Lab</span>
-          </span>
+          <p class="text-slate-600 leading-relaxed text-xs pr-4">
+            마인드플로우랩은 심리학, 인지과학, 그리고 데이터 기술을 결합하여 일상의 멘탈 케어와 잠재력 성장을 돕는 디지털 솔루션을 설계합니다.
+          </p>
+          <p class="text-slate-500 text-[11px]">
+            &copy; 2026 MindflowLab. All rights reserved.
+          </p>
         </div>
-        <p class="text-slate-500 leading-relaxed text-xs pr-4">
-          마인드플로우랩은 심리학, 인지과학, 그리고 데이터 기술을 결합하여 일상의 멘탈 케어와 전문 자격 합격을 돕는 디지털 솔루션을 설계합니다.
-        </p>
-        <p class="text-slate-600 text-[11px]">
-          &copy; 2026 MindflowLab. All rights reserved.
-        </p>
-      </div>
 
-      <div class="md:col-span-5 space-y-2 text-slate-400">
-        <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">사업자 정보</p>
-        <p><span class="text-slate-500">상호명:</span> 마인드플로우랩 &nbsp;|&nbsp; <span class="text-slate-500">대표자:</span> 이경윤</p>
-        <p><span class="text-slate-500">사업자등록번호:</span> 838-03-03892</p>
-        <p><span class="text-slate-500">통신판매업신고번호:</span> 2026-세종-0576</p>
-        <p><span class="text-slate-500">사업장 소재지:</span> 세종특별자치시 산울7로 10 (산울마을8단지) 808동 204호 (우 : 30091)</p>
-        <p><span class="text-slate-500">공식 문의:</span> <a href="mailto:admin@mindflowlab.co.kr" class="text-indigo-400 hover:underline">admin@mindflowlab.co.kr</a></p>
-
-        <div class="mt-4 pt-3 border-t border-slate-900 text-[11px] text-slate-500 leading-relaxed">
-          <p><strong class="text-slate-400 font-medium">특허출원:</strong> 제10-2025-0166877호</p>
-          <p class="mt-0.5 text-slate-500">(발명의 명칭: 심리 및 생체데이터 기반 스트레스 관리 솔루션 제공 장치 및 방법 / 특허출원 중이며 의료적 진단·치료 효과나 정부 인증을 의미하지 않는 비의료적 웰니스 솔루션입니다)</p>
+        <div class="md:col-span-5 space-y-2 text-slate-600 text-xs">
+          <p class="font-bold text-slate-900 mb-2 uppercase tracking-wider">사업자 및 특허 정보</p>
+          <p><span class="text-slate-400">상호명:</span> 마인드플로우랩 &nbsp;|&nbsp; <span class="text-slate-400">대표자:</span> 이경윤</p>
+          <p><span class="text-slate-400">사업자등록번호:</span> 838-03-03892 &nbsp;|&nbsp; <span class="text-slate-400">통신판매업신고:</span> 2026-세종-0576</p>
+          <p><span class="text-slate-400">사업장 소재지:</span> 세종특별자치시 산울7로 10 (산울마을8단지) 808동 204호 (우 : 30091)</p>
+          <p><span class="text-slate-400">공식 문의:</span> <a href="mailto:admin@mindflowlab.co.kr" class="text-[#007A55] font-semibold hover:underline">admin@mindflowlab.co.kr</a></p>
+          <p class="text-[11px] text-slate-500 pt-2 border-t border-slate-200 mt-2">
+            <strong>특허출원:</strong> 제10-2025-0166877호 (심리 및 생체데이터 기반 스트레스 관리 솔루션 제공 장치 및 방법 / 비의료적 웰니스 솔루션)
+          </p>
         </div>
-      </div>
 
-      <div class="md:col-span-3 flex flex-col justify-between space-y-4">
-        <div>
-          <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">서비스 &amp; 출판</p>
-          <ul class="space-y-2">
-            <li><a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="text-amber-300 font-bold hover:underline flex items-center gap-1"><span>📲 명심코칭닷컴 (공식 앱)</span><span class="text-[10px] px-1 py-0.2 bg-amber-500/20 rounded">LIVE</span></a></li>
-            <li><a href="#faq" class="hover:text-amber-300 transition">💡 속시원한 사이다 Q&amp;A</a></li>
-            <li><a href="#books" class="hover:text-amber-300 transition">명심코칭 도서 &amp; 전체 목차 (31권)</a></li>
-            <li><a href="#sample-report" class="hover:text-amber-300 transition">START 48 샘플 뷰어</a></li>
-            <li><a href="#ecosystem" class="hover:text-white transition">보건교육사 2급 합격패스</a></li>
-            <li><a href="#patent" class="hover:text-white transition">특허 R&amp;D 정보</a></li>
+        <div class="md:col-span-3 space-y-3 text-xs">
+          <p class="font-bold text-slate-900 mb-2 uppercase tracking-wider">바로가기</p>
+          <ul class="space-y-1.5 text-slate-600">
+            <li><a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="text-[#007A55] font-bold hover:underline">📲 명심코칭닷컴 (공식 앱)</a></li>
+            <li><a href="#why" class="hover:text-slate-900">왜 반복할까</a></li>
+            <li><a href="#codes" class="hover:text-slate-900">3대 코드</a></li>
+            <li><a href="#faq" class="hover:text-slate-900">사이다 Q&amp;A</a></li>
+            <li><a href="#books" class="hover:text-slate-900">31권 시리즈 목차</a></li>
+            <li><a href="#patent" class="hover:text-slate-900">특허 &amp; 과학</a></li>
           </ul>
         </div>
       </div>
-
+      
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <div>&copy; Mindflow Lab · 명심코칭</div>
+        <div>비의료적 자기이해·행동변화 코칭/교육 · 의료 진단·치료를 대체하지 않습니다.</div>
+      </div>
     </div>
   </footer>
 
@@ -10246,19 +10718,35 @@
 
   <!-- Scripts -->
   <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-nav');
+      if (nav) {
+        nav.classList.toggle('open');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('#mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          const nav = document.getElementById('mobile-nav');
+          if (nav) nav.classList.remove('open');
+        });
+      });
+    });
+
     function switchTab(tabKey) {
       const tabs = ['cover', 'contents', 'sample', 'fullmap'];
       tabs.forEach(t => {
         const content = document.getElementById('tab-content-' + t);
         const btn = document.getElementById('tab-btn-' + t);
-        if (t === tabKey) {
-          content.classList.remove('hidden');
-          btn.classList.remove('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
-          btn.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg', 'shadow-amber-500/20');
-        } else {
-          content.classList.add('hidden');
-          btn.classList.add('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
-          btn.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg', 'shadow-amber-500/20');
+        if (content && btn) {
+          if (t === tabKey) {
+            content.classList.remove('hidden');
+            btn.className = 'sample-tab-btn active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-[#007A55] text-white shadow-lg shadow-emerald-700/20';
+          } else {
+            content.classList.add('hidden');
+            btn.className = 'sample-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-100';
+          }
         }
       });
     }

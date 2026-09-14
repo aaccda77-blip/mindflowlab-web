@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>31권 시리즈 & START 48 마스터 라이브러리 | 명심코칭 (MindflowLab)</title>
+  <meta name="description" content="31권 전체 출판기획표 명세서, 캐논 7권 대표작, 뉴럴코드 42개 장 목차, 그리고 48페이지 START 48 리포트북 샘플 뷰어." />
+  <link rel="canonical" href="https://mindflowlab-web.vercel.app/library.html" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="31권 시리즈 & START 48 마스터 라이브러리 | 명심코칭" />
+  <meta property="og:description" content="31권 전체 출판기획표 명세서, 캐논 7권 대표작, 뉴럴코드 42개 장 목차, 그리고 48페이지 START 48 리포트북 샘플 뷰어." />
+  <meta property="og:site_name" content="명심코칭" />
+  <meta property="og:url" content="https://mindflowlab-web.vercel.app/library.html" />
+  <meta property="og:image" content="https://mindflowlab-web.vercel.app/assets/start48-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#007A55',
+              greenHover: '#006646',
+              mint: '#EAF7EE',
+              sky: '#EAF4FE',
+              warm: '#FEF2EC',
+              gold: '#FEF9EE',
+            },
+          },
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Pretendard Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+  <style>
+    :root {
+      --primary-green: #007A55;
+      --primary-hover: #006646;
+      --bg-main: #FAF9F6;
+      --bg-white: #FFFFFF;
+      --bg-soft: #F8FAFC;
+      --text-dark: #0F172A;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --border-light: #E2E8F0;
+    }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      background: var(--bg-white);
+      color: var(--text-dark);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      cursor: pointer;
+      min-height: 44px;
+    }
+    .btn:hover {
+      background: #F1F5F9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+    .btn-primary {
+      background: var(--primary-green) !important;
+      color: #FFFFFF !important;
+      border-color: var(--primary-green) !important;
+      box-shadow: 0 4px 16px rgba(0, 122, 85, 0.24) !important;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover) !important;
+      border-color: var(--primary-hover) !important;
+      box-shadow: 0 6px 22px rgba(0, 122, 85, 0.34) !important;
+      transform: translateY(-2px);
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #007A55 0%, #10B981 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 122, 85, 0.3);
+    }
+    .brand small {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 2px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .nav a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav a:hover, .nav a.active {
+      color: var(--primary-green);
+      font-weight: 700;
+    }
+    .mobile-menu-btn {
+      display: none;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-white);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 44px;
+    }
+    .mobile-nav {
+      display: none;
+    }
+    @media (max-width: 1023px) {
+      .nav { display: none; }
+      .mobile-menu-btn { display: block; }
+      .mobile-nav.open {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px 24px;
+        background: white;
+        border-bottom: 1px solid var(--border-light);
+      }
+    }
+    .footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 56px 24px 40px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+  </style>
+
+</head>
+<body class="bg-[#FAF9F6] text-slate-900 antialiased min-h-screen flex flex-col justify-between">
+  <div>
+    
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="명심코칭 홈">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        </span>
+        <span>명심코칭</span>
+        <small>MYEONGSIM</small>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="index.html#why">왜 반복할까</a>
+        <a href="index.html#codes">3대 코드</a>
+        <a href="faq.html" class="">사이다 Q&amp;A</a>
+        <a href="library.html" class="active">31권 시리즈</a>
+        <a href="self-check.html" class="">Self Check</a>
+        <a href="ai.html" class="">명심AI</a>
+        <a href="trust.html" class="">윤리·신뢰</a>
+        <a class="btn btn-primary" href="self-check.html">내 패턴 확인하기</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="메뉴 열기">메뉴</button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴">
+      <a href="index.html#why">왜 반복할까</a>
+      <a href="index.html#codes">3대 코드</a>
+      <a href="faq.html">사이다 Q&amp;A</a>
+      <a href="library.html">31권 시리즈</a>
+      <a href="self-check.html">Self Check (패턴 자각)</a>
+      <a href="ai.html">명심AI</a>
+      <a href="trust.html">윤리·신뢰</a>
+      <a class="btn btn-primary" href="self-check.html">내 패턴 확인하기</a>
+    </nav>
+  </header>
+
+
+    <main class="py-14 px-6">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-4 shadow-sm">
+            <span>MYEONGSIM LIBRARY · 31 MASTER BOOKS</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+            한 권으로 끝내지 않고,<br />
+            <span class="text-[#007A55]">필요한 순간 꺼내 쓰는 삶의 도서관</span>
+          </h1>
+          <p class="text-slate-600 text-base max-w-2xl mx-auto leading-relaxed">
+            31권을 모두 읽어야 하는 교과서가 아니라, 문제에 따라 골라 들어가는 31개의 입구입니다.<br />
+            “왜 반복하는가 &rarr; 어떻게 다르게 살 것인가 &rarr; 어떤 관계를 맺을 것인가 &rarr; 다시 삶으로”
+          </p>
+        </div>
+
+        <!-- 4 Library Categories -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          <div class="p-6 rounded-2xl bg-[#EAF7EE] border border-emerald-200">
+            <span class="text-xs font-black text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md mb-3 inline-block">01–03 · CORE</span>
+            <p class="font-bold text-slate-900 text-sm leading-relaxed">《다크 코드》<br>《뉴럴 코드》<br>《메타 코드》</p>
+            <p class="text-xs text-slate-600 mt-2">인간 변화를 관통하는 핵심 3부작</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#EAF4FE] border border-sky-200">
+            <span class="text-xs font-black text-sky-800 bg-sky-100 px-2.5 py-1 rounded-md mb-3 inline-block">04–18 · SYMBOLS</span>
+            <p class="font-bold text-slate-900 text-sm leading-relaxed">천간 · 지지 · 60갑자 · 십성 · 주역 64</p>
+            <p class="text-xs text-slate-600 mt-2">Dark / Neural / Meta로 확장된 상징 언어</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#FEF2EC] border border-orange-200">
+            <span class="text-xs font-black text-orange-800 bg-orange-100 px-2.5 py-1 rounded-md mb-3 inline-block">19–30 · LIFE AREAS</span>
+            <p class="font-bold text-slate-900 text-sm leading-relaxed">년주 · 월주 · 일주 · 시주 시간축</p>
+            <p class="text-xs text-slate-600 mt-2">삶의 영역과 시간축에서 풀어내는 적용서</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#FEF9EE] border border-amber-200">
+            <span class="text-xs font-black text-amber-800 bg-amber-100 px-2.5 py-1 rounded-md mb-3 inline-block">31 · ZERO POINT</span>
+            <p class="font-bold text-slate-900 text-sm leading-relaxed">최종 대통합 완결편</p>
+            <p class="text-xs text-slate-600 mt-2">모든 설명을 지나 다시 삶으로 돌아오는 문</p>
+          </div>
+        </div>
+
+        <!-- Canon 7 Collection Showcase -->
+        <div class="mb-20">
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <span class="text-xs font-bold text-[#007A55]">THE CORE CANON</span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">명심코칭 캐논 — 대표 7권 컬렉션</h2>
+            </div>
+            <a href="#master-table" class="text-xs font-bold text-[#007A55] hover:underline">31권 전체 기획표 보기 &darr;</a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Vol 01 -->
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#007A55] transition shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-mono font-black text-emerald-700">VOL.01</span>
+                <div class="w-full h-40 rounded-2xl bg-gradient-to-b from-indigo-950 to-slate-950 p-4 text-center text-white flex flex-col justify-center items-center my-4">
+                  <span class="text-xs text-indigo-300">인간 변화의 첫 문</span>
+                  <h3 class="text-xl font-black mt-1">다크 코드</h3>
+                  <span class="text-[11px] text-slate-400 mt-1">340~380p</span>
+                </div>
+                <h4 class="font-black text-slate-900">《다크 코드》</h4>
+                <p class="text-xs text-slate-500 mt-1">왜 나는 알면서도 같은 삶을 반복하는가</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 mt-4 text-xs font-bold text-[#007A55]">
+                출시 완료 (발간)
+              </div>
+            </div>
+
+            <!-- Vol 02 -->
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#007A55] transition shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-mono font-black text-purple-700">VOL.02</span>
+                <div class="w-full h-40 rounded-2xl bg-gradient-to-b from-purple-950 to-slate-950 p-4 text-center text-white flex flex-col justify-center items-center my-4">
+                  <span class="text-xs text-purple-300">행동 재학습 실전서</span>
+                  <h3 class="text-xl font-black mt-1">뉴럴 코드</h3>
+                  <span class="text-[11px] text-slate-400 mt-1">330~370p</span>
+                </div>
+                <h4 class="font-black text-slate-900">《뉴럴 코드》</h4>
+                <p class="text-xs text-slate-500 mt-1">알면서도 바뀌지 않는 나를 실제 행동으로</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 mt-4 text-xs font-bold text-purple-600">
+                42개 장 완제 집필 중
+              </div>
+            </div>
+
+            <!-- Vol 03 -->
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#007A55] transition shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-mono font-black text-sky-700">VOL.03</span>
+                <div class="w-full h-40 rounded-2xl bg-gradient-to-b from-cyan-950 to-slate-950 p-4 text-center text-white flex flex-col justify-center items-center my-4">
+                  <span class="text-xs text-cyan-300">알아차림의 자각</span>
+                  <h3 class="text-xl font-black mt-1">메타 코드</h3>
+                  <span class="text-[11px] text-slate-400 mt-1">300~340p</span>
+                </div>
+                <h4 class="font-black text-slate-900">《메타 코드》</h4>
+                <p class="text-xs text-slate-500 mt-1">생각과 감정을 넘어 알아차림으로</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 mt-4 text-xs font-bold text-sky-600">
+                집필 기획 완료
+              </div>
+            </div>
+
+            <!-- Vol 31 -->
+            <div class="p-6 rounded-3xl bg-white border-2 border-[#007A55] shadow-md flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-mono font-black text-amber-700">VOL.31 (FINAL)</span>
+                <div class="w-full h-40 rounded-2xl bg-gradient-to-br from-amber-600 via-amber-700 to-slate-950 p-4 text-center text-white flex flex-col justify-center items-center my-4">
+                  <span class="text-xs text-amber-200">대단원의 완결</span>
+                  <h3 class="text-xl font-black mt-1">ZERO POINT</h3>
+                  <span class="text-[11px] text-amber-200 mt-1">300~340p</span>
+                </div>
+                <h4 class="font-black text-slate-900">《ZERO POINT》</h4>
+                <p class="text-xs text-slate-500 mt-1">아무것도 바꾸지 않아도 선택할 수 있는 자리</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 mt-4 text-xs font-bold text-amber-600">
+                대통합 최종 완결권
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- START 48 Interactive Report Viewer -->
+        <div class="mb-20">
+          <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="text-xs font-bold text-[#007A55] uppercase tracking-wider">PREMIUM REPORTBOOK</span>
+            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">MYEONGSIM START 48 리포트 샘플링</h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2">실제 발행되는 48페이지 개인 맞춤형 리포트북의 표지, 목차, 내지 분석 샘플, 전체 전개도입니다.</p>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button onclick="switchTab('cover')" id="tab-btn-cover" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-[#007A55] text-white shadow-md">① 프리미엄 표지</button>
+            <button onclick="switchTab('contents')" id="tab-btn-contents" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">② 15개 챕터 목차</button>
+            <button onclick="switchTab('sample')" id="tab-btn-sample" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">③ 내지 분석 샘플 (08p)</button>
+            <button onclick="switchTab('fullmap')" id="tab-btn-fullmap" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">④ 48페이지 전체 전개도</button>
+          </div>
+
+          <div class="bg-slate-950 rounded-3xl p-6 sm:p-10 border border-slate-800 text-center shadow-2xl">
+            <div id="content-cover" class="tab-pane">
+              <img src="assets/start48-cover.jpg" alt="START 48 표지" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
+            </div>
+            <div id="content-contents" class="tab-pane hidden">
+              <img src="assets/start48-contents.jpg" alt="START 48 목차" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
+            </div>
+            <div id="content-sample" class="tab-pane hidden">
+              <img src="assets/start48-sample-page.jpg" alt="START 48 내지 분석표" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
+            </div>
+            <div id="content-fullmap" class="tab-pane hidden">
+              <img src="assets/start48-full-map.jpg" alt="START 48 전체 전개도" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Table Anchor Point -->
+        <div id="master-table" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-bold text-[#007A55]">MASTER PUBLISHING TABLE</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">31권 전체 출판기획표 상세 명세</h2>
+            <p class="text-xs text-slate-500 mt-2">출판 계약 및 완제 집필 규격의 전권 부제, 타깃 독자, PART 요약, 예상 분량입니다.</p>
+          </div>
+
+          <p class="text-xs text-slate-600 text-center leading-relaxed">
+            전체 31권의 상세 테이블은 공식 홈페이지 메인 홈(<a href="index.html#master-table" class="text-[#007A55] font-bold underline">index.html#master-table</a>)에서 언제든지 100% 완전한 원문 데이터로 확인하실 수 있습니다.
+          </p>
+          <div class="text-center mt-6">
+            <a href="index.html#books" class="btn btn-primary text-xs">
+              홈에서 31권 전체 테이블 원문 보기 &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-200">
+        <div class="md:col-span-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="brand-mark" aria-hidden="true">
+              <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+            <span class="text-lg font-black tracking-tight text-slate-900">
+              명심코칭 <small class="text-xs text-slate-500 font-bold ml-1">MYEONGSIM · MINDFLOW</small>
+            </span>
+          </div>
+          <p class="text-slate-600 leading-relaxed text-xs pr-4">
+            마인드플로우랩은 심리학, 인지과학, 데이터 기술을 융합하여 일상의 멘탈 케어와 잠재력 성장을 돕는 디지털 솔루션을 연구·설계합니다.
+          </p>
+          <p class="text-slate-500 text-[11px]">
+            &copy; 2026 MindflowLab. All rights reserved.
+          </p>
+        </div>
+
+        <div class="md:col-span-5 space-y-2 text-slate-600 text-xs">
+          <p class="font-bold text-slate-900 mb-2 uppercase tracking-wider">사업자 및 특허 정보</p>
+          <p><span class="text-slate-400">상호명:</span> 마인드플로우랩 &nbsp;|&nbsp; <span class="text-slate-400">대표자:</span> 이경윤</p>
+          <p><span class="text-slate-400">사업자등록번호:</span> 838-03-03892 &nbsp;|&nbsp; <span class="text-slate-400">통신판매업신고:</span> 2026-세종-0576</p>
+          <p><span class="text-slate-400">사업장 소재지:</span> 세종특별자치시 산울7로 10 (산울마을8단지) 808동 204호 (우 : 30091)</p>
+          <p><span class="text-slate-400">공식 문의:</span> <a href="mailto:admin@mindflowlab.co.kr" class="text-[#007A55] font-semibold hover:underline">admin@mindflowlab.co.kr</a></p>
+          <p class="text-[11px] text-slate-500 pt-2 border-t border-slate-200 mt-2">
+            <strong>특허출원:</strong> 제10-2025-0166877호 (심리 및 생체데이터 기반 스트레스 관리 솔루션 제공 장치 및 방법 / 비의료적 웰니스 솔루션)
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-3 text-xs">
+          <p class="font-bold text-slate-900 mb-2 uppercase tracking-wider">서비스 바로가기</p>
+          <ul class="space-y-1.5 text-slate-600">
+            <li><a href="self-check.html" class="text-[#007A55] font-bold hover:underline">✨ Self Check (패턴 자각)</a></li>
+            <li><a href="faq.html" class="hover:text-slate-900">사이다 Q&amp;A (128문항)</a></li>
+            <li><a href="library.html" class="hover:text-slate-900">31권 마스터 시리즈</a></li>
+            <li><a href="ai.html" class="hover:text-slate-900">명심AI 세션 트래커</a></li>
+            <li><a href="trust.html" class="hover:text-slate-900">윤리 가드레일 &amp; 개인정보</a></li>
+            <li><a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-900">📲 명심코칭닷컴 (공식 앱)</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <div>&copy; Mindflow Lab · 명심코칭</div>
+        <div>비의료적 자기이해·행동변화 코칭/교육 · 의료 진단·치료를 대체하지 않습니다.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-nav');
+      if (nav) nav.classList.toggle('open');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('#mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          const nav = document.getElementById('mobile-nav');
+          if (nav) nav.classList.remove('open');
+        });
+      });
+    });
+  </script>
+
+
+  <script>
+    function switchTab(key) {
+      const tabs = ['cover', 'contents', 'sample', 'fullmap'];
+      tabs.forEach(t => {
+        const pane = document.getElementById('content-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === key) {
+          pane.classList.remove('hidden');
+          btn.className = 'sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-[#007A55] text-white shadow-md';
+        } else {
+          pane.classList.add('hidden');
+          btn.className = 'sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
