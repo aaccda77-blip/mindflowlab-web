@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마인드플로우랩 (MindflowLab)</title>
+  <meta name="description" content="심리학과 기술을 융합하여 일상의 성장과 자격 취득을 돕는 에듀·멘탈테크 랩" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard 웹폰트 (CDN) -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <style>
+    body { font-family: 'Pretendard', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900">
+        Mindflow<span class="text-indigo-600">Lab</span>
+      </a>
+      <nav class="flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#services" class="hover:text-indigo-600 transition">서비스</a>
+        <a href="#about" class="hover:text-indigo-600 transition">소개</a>
+        <a href="#contact" class="hover:text-indigo-600 transition">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-24 px-6 text-center max-w-4xl mx-auto">
+    <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-semibold rounded-full uppercase tracking-wider mb-4">
+      Mind & Technology Laboratory
+    </span>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+      마음의 흐름을 읽고,<br />더 나은 성장을 설계합니다.
+    </h1>
+    <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+      마인드플로우랩은 심리학, 인지과학, 그리고 데이터 기술을 결합하여 일상의 멘탈 케어와 전문 자격 합격을 돕는 체계적인 솔루션을 만듭니다.
+    </p>
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <a href="#services" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition shadow-sm">
+        출시 서비스 둘러보기
+      </a>
+      <a href="mailto:admin@mindflowlab.co.kr" class="px-6 py-3 bg-white hover:bg-slate-100 text-slate-700 font-semibold border border-slate-200 rounded-xl transition">
+        제휴 및 문의
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white border-y border-slate-100 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">핵심 서비스 & 프로젝트</h2>
+        <p class="mt-2 text-slate-500">과학적 프레임워크를 기반으로 구축된 에듀·멘탈 케어 플랫폼</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Service Card 1 -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-indigo-600 text-white rounded-xl mb-6 font-bold text-lg">
+              CBT
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">보건교육사 2급 합격패스</h3>
+            <p class="mt-1 text-sm font-semibold text-indigo-600">AI 기출 변형 & 오답노트 모바일 앱</p>
+            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+              최신 출제 기준을 반영한 기출 변형 문제 풀이, 자동 오답노트 시스템, 취약 영역 집중 학습을 통해 단기간 합격을 지원하는 수험 전문 솔루션입니다.
+            </p>
+          </div>
+          <div class="mt-8">
+            <a href="https://play.google.com/store/apps/details?id=com.healtheducator.cbt.exam" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800">
+              Google Play에서 확인하기 &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-emerald-600 text-white rounded-xl mb-6 font-bold text-lg">
+              MC
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">명심코칭 (Myeongsim Coaching)</h3>
+            <p class="mt-1 text-sm font-semibold text-emerald-600">인지행동 기반 심리 케어 플랫폼</p>
+            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+              인지과학과 정서 조절 프레임워크를 기반으로 자기 객관화와 인지적 전환(Shift)을 돕는 모바일 라이프·멘탈 코칭 솔루션입니다.
+            </p>
+          </div>
+          <div class="mt-8">
+            <span class="inline-block text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-md border border-emerald-200">
+              정식 출시 준비 중
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">데이터와 심리학의 조화</h2>
+    <p class="mt-4 text-slate-600 leading-relaxed max-w-2xl mx-auto">
+      마인드플로우랩은 단순한 지식 전달을 넘어 사람의 인지 구조와 심리적 패턴을 연구합니다. 자격시험의 효율적인 합격 과정부터 건강한 마인드셋 유지까지, 일상에서 체감할 수 있는 실용적인 디지털 도구를 개발하고 제공합니다.
+    </p>
+  </section>
+
+  <!-- Footer & Business Information -->
+  <footer id="contact" class="bg-slate-900 text-slate-400 py-16 px-6 text-sm">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="text-lg font-bold text-white mb-2">마인드플로우랩</div>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          MindflowLab은 배움과 마음의 성장을 돕는 디지털 솔루션을 설계합니다.
+        </p>
+      </div>
+
+      <div class="space-y-1 text-xs text-slate-400">
+        <p class="font-semibold text-slate-200 mb-2">사업자 정보</p>
+        <p>상호명: 마인드플로우랩</p>
+        <p>대표자: 이경윤</p>
+        <p>사업장 소재지: 세종특별자치시 산울7로 10</p>
+        <p>공식 문의: admin@mindflowlab.co.kr</p>
+      </div>
+
+      <div class="flex flex-col md:items-end justify-between">
+        <div class="flex gap-4 text-xs">
+          <a href="#" class="hover:text-white transition">개인정보처리방침</a>
+          <a href="#" class="hover:text-white transition">이용약관</a>
+        </div>
+        <p class="mt-6 md:mt-0 text-xs text-slate-500">
+          &copy; 2026 MindflowLab. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
