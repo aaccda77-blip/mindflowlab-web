@@ -95,30 +95,37 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#vision" class="hover:text-white transition">연구 비전</a>
-        <a href="#technology" class="hover:text-white transition">핵심 기술</a>
-        <a href="#ecosystem" class="hover:text-white transition">서비스 생태계</a>
-        <a href="#books" class="hover:text-white transition flex items-center gap-1.5">
-          <span>명심 도서 시리즈</span>
-          <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/30">BOOK</span>
+      <!-- Desktop Nav (골든래빗 스타일 핫 배지 및 도서/CBT 탭) -->
+      <nav class="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-300">
+        <a href="#books" class="hover:text-white transition flex items-center gap-1.5 text-amber-300 font-bold">
+          <span>📘 도서 라인업 (31권)</span>
+          <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/40">목차공개</span>
+        </a>
+        <a href="#cbt" class="px-3 py-1 rounded-lg bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-400 hover:to-rose-500 text-white text-xs font-black shadow-md shadow-red-500/30 flex items-center gap-1.5 transition hover:scale-105">
+          <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+          <span>시험 정복 CBT 🎯</span>
         </a>
         <a href="#sample-report" class="hover:text-white transition flex items-center gap-1.5 text-amber-300">
           <span>START 48 샘플</span>
           <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-400/20 text-amber-300 rounded border border-amber-400/40">샘플링</span>
         </a>
+        <a href="#technology" class="hover:text-white transition">핵심 기술</a>
         <a href="#patent" class="hover:text-white transition flex items-center gap-1.5">
           <span>특허 &amp; 과학</span>
           <span class="px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-500/20 text-indigo-300 rounded border border-indigo-500/30">IP</span>
         </a>
-        <a href="#faq" class="hover:text-white transition">자주 묻는 질문</a>
+        <a href="#newsletter-banner" class="hover:text-cyan-300 transition flex items-center gap-1">
+          <span>소식 구독</span>
+        </a>
       </nav>
 
       <!-- Action Button -->
-      <div class="flex items-center gap-4">
-        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5">
-          제휴 및 문의
+      <div class="flex items-center gap-3">
+        <a href="#newsletter-banner" class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-200 transition">
+          소식 받아보기
+        </a>
+        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5">
+          제휴 &amp; 출간 문의
         </a>
       </div>
     </div>
@@ -146,15 +153,15 @@
 
     <!-- CTAs -->
     <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-      <a href="#ecosystem" class="px-8 py-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-2xl transition shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 flex items-center gap-2">
-        <span>출시 서비스 둘러보기</span>
+      <a href="#books" class="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black rounded-2xl transition shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 flex items-center gap-2">
+        <span>📖 명심코칭 도서 전체 목차 보기</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
-      <a href="#sample-report" class="px-7 py-4 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 font-semibold border border-amber-500/30 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
+      <a href="#sample-report" class="px-7 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
         <span>📑 START 48 샘플 뷰어</span>
       </a>
-      <a href="#patent" class="px-7 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
-        <span>특허 출원 기술 R&amp;D</span>
+      <a href="#ecosystem" class="px-7 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
+        <span>출시 서비스 둘러보기</span>
       </a>
     </div>
 
@@ -165,8 +172,8 @@
         <div class="text-xs text-slate-400 mt-1 font-medium">특허 출원 완료 (스트레스 관리)</div>
       </div>
       <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-        <div class="text-3xl font-black text-amber-400">48 Pages</div>
-        <div class="text-xs text-slate-400 mt-1 font-medium">START 48 맞춤형 코칭북</div>
+        <div class="text-3xl font-black text-amber-400">4부작 + 48p</div>
+        <div class="text-xs text-slate-400 mt-1 font-medium">명심코칭 출판 &amp; 리포트 체계</div>
       </div>
       <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
         <div class="text-3xl font-black text-cyan-400">3,200+</div>
@@ -177,215 +184,783 @@
         <div class="text-xs text-slate-400 mt-1 font-medium">합격 솔루션 유저 만족도</div>
       </div>
     </div>
+  </section>
 
-    <!-- Visual Dashboard Mockup Card -->
-    <div class="mt-16 p-2 rounded-3xl bg-gradient-to-b from-slate-800 to-slate-900/40 border border-slate-800/90 shadow-2xl shadow-indigo-950/50">
-      <div class="rounded-[22px] bg-slate-950 p-6 md:p-8 border border-slate-800/80 text-left">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
-          <div class="flex items-center gap-3">
-            <div class="flex gap-1.5">
-              <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
-              <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
-              <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-            </div>
-            <span class="text-xs text-slate-400 font-mono">Mindflow AI Engine v2.4 • Live Simulation</span>
+  <!-- Section: Golden Rabbit (골든래빗/AI100) Style Trending Banner & Newsletter Subscription -->
+  <section id="newsletter-banner" class="px-6 py-6 max-w-6xl mx-auto -mt-6 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      
+      <!-- 좌측: AI 트렌드 & 출간 인사이트 배너 (골든래빗 블루 배너 오마주) -->
+      <div class="lg:col-span-7 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-blue-700 via-indigo-700 to-indigo-950 border border-blue-400/40 shadow-2xl flex flex-col justify-between text-white relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-cyan-400/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs font-bold mb-4 backdrop-blur-sm border border-white/25">
+            <span class="w-2 h-2 rounded-full bg-cyan-300 animate-pulse"></span>
+            <span>AI &amp; Cognitive Psychology Trends</span>
           </div>
-          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-            Real-time Active
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
+            AI &amp; 마음 인지 트렌드를<br />
+            <span class="text-cyan-200">놓치지 마세요</span>
+          </h3>
+          <p class="mt-4 text-sm sm:text-base text-blue-100/90 leading-relaxed max-w-lg">
+            마인드플로우랩이 엄선한 최신 인지행동 재학습(Neural Code), 생체데이터 AI 특허 솔루션, 그리고 <strong>명심코칭 31권 마스터 시리즈 신간</strong> 소식을 가장 먼저 받아보세요.
+          </p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/15 flex flex-wrap items-center gap-4 text-xs text-blue-200">
+          <span class="inline-flex items-center gap-1.5 font-semibold">
+            <svg class="w-4 h-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            명심코칭 31권 출간 알림
+          </span>
+          <span class="inline-flex items-center gap-1.5 font-semibold">
+            <svg class="w-4 h-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            보건교육사 CBT 기출 변형
+          </span>
+          <span class="inline-flex items-center gap-1.5 font-semibold">
+            <svg class="w-4 h-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            START 48 얼리버드 혜택
           </span>
         </div>
+      </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
-            <div class="flex justify-between items-center mb-3">
-              <span class="text-xs text-slate-400">스트레스 및 각성도 추이</span>
-              <span class="text-xs font-semibold text-indigo-400">안정화 84%</span>
-            </div>
-            <div class="h-16 w-full flex items-end">
-              <svg class="w-full h-full text-indigo-500" fill="none" viewBox="0 0 200 60" preserveAspectRatio="none">
-                <path d="M0 45 Q 25 10, 50 35 T 100 20 T 150 40 T 200 15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                <path d="M0 45 Q 25 10, 50 35 T 100 20 T 150 40 T 200 15 L 200 60 L 0 60 Z" fill="currentColor" fill-opacity="0.15"/>
-              </svg>
-            </div>
-            <p class="text-[11px] text-slate-500 mt-2">생체신호(HRV) 기반 심리적 이완 모드 활성화</p>
+      <!-- 우측: 소식 받아보기 폼 (골든래빗의 "소식 받아보기" 박스 디자인 완벽 구현) -->
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">📬</span>
+            <h4 class="text-xl font-bold text-white tracking-tight">소식 받아보기</h4>
           </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            MindflowLab의 엄선된 신간 도서 출간 일정, CBT 업데이트, 개인 분석 리포트 소식을 가장 먼저 안내드립니다.
+          </p>
+        </div>
 
-          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
-            <div class="flex justify-between items-center mb-3">
-              <span class="text-xs text-slate-400">인지 재구조화 (Cognitive Shift)</span>
-              <span class="text-xs font-semibold text-purple-400">완료율 92%</span>
-            </div>
-            <div class="space-y-2 mt-2">
-              <div class="flex justify-between text-xs">
-                <span class="text-slate-400">부정적 편향 자동 필터링</span>
-                <span class="text-slate-200">탐지 0건</span>
-              </div>
-              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 w-[92%] rounded-full"></div>
-              </div>
-              <p class="text-[11px] text-slate-500 pt-1">자동적 사고를 합리적 대안 사고로 성공적 전환</p>
-            </div>
+        <div class="my-6 space-y-3">
+          <div class="relative">
+            <input type="email" id="subscribe-email-input" placeholder="이메일 주소를 입력하세요 (example@domain.com)" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-indigo-500 transition shadow-inner" />
           </div>
-
-          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
-            <div class="flex justify-between items-center mb-3">
-              <span class="text-xs text-slate-400">수험 지식 망각 방어율</span>
-              <span class="text-xs font-semibold text-emerald-400">합격 안정권</span>
-            </div>
-            <div class="space-y-2 mt-2">
-              <div class="flex justify-between text-xs">
-                <span class="text-slate-400">보건교육학 핵심 빈출 테마</span>
-                <span class="text-emerald-400 font-bold">96.8점 예상</span>
-              </div>
-              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-                <div class="h-full bg-emerald-500 w-[96%] rounded-full"></div>
-              </div>
-              <p class="text-[11px] text-slate-500 pt-1">에빙하우스 망각주기 오답 자동 반복 알고리즘</p>
-            </div>
+          <button onclick="handleSubscribe()" class="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
+            <span>구독하기 (얼리버드 사전신청)</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+          <div id="subscribe-alert" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium">
+            🎉 구독 신청이 완료되었습니다! 신간 소식을 빠르게 전해드리겠습니다.
           </div>
         </div>
+
+        <div class="text-[11px] text-slate-500 text-center leading-relaxed">
+          스팸 없이 출판 제휴 소식과 핵심 연구 업데이트만 제공됩니다.
+        </div>
       </div>
+
+    </div>
+
+    <!-- 골든래빗 스타일: 카테고리 필터 탭 바 -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-2 p-2 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs font-medium">
+      <a href="#books" class="px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition shadow-sm">
+        전체
+      </a>
+      <a href="#books" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
+        <span>📘 명심코칭 시리즈 (31권)</span>
+      </a>
+      <a href="#cbt" class="px-4 py-2 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 transition flex items-center gap-1.5 border border-rose-500/30 font-bold">
+        <span>🎯 시험 정복 CBT</span>
+      </a>
+      <a href="#sample-report" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
+        <span>📑 START 48 리포트 샘플</span>
+      </a>
+      <a href="#technology" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
+        <span>🧠 생체데이터 &amp; AI 특허</span>
+      </a>
+      <a href="#contact" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5">
+        <span>🤝 출판·제휴 제안</span>
+      </a>
     </div>
   </section>
 
-  <!-- Section: Books & Publication -->
+  <!-- Section: Books & Publication (명심코칭 4부작 상세 목차 전체 공개 섹션) -->
   <section id="books" class="py-24 px-6 border-t border-slate-800/80 bg-slate-950 relative">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Books &amp; Publications</span>
-        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tight">
-          명심코칭 도서 시리즈 &amp; 맞춤형 리포트
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-300 mb-4">
+          <span>Complete Table of Contents • 전체 목차 정식 공개</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          명심코칭 도서 시리즈<br />
+          <span class="gold-gradient-text">전체 목차 &amp; 핵심 챕터 공개</span>
         </h2>
         <p class="mt-4 text-slate-400 text-base leading-relaxed">
-          무의식의 자동반응에서 완전한 삶의 자유로 나아가는 여정.<br class="hidden sm:inline" />
-          마인드플로우랩의 인지과학·심리학 연구 체계를 집대성한 공식 출판물 라인업을 소개합니다.
+          무의식의 자동반응(Dark)에서 인지행동 재학습(Neural), 순수 자각(Meta·Zero), 그리고 삶으로의 귀환(THE SHIFT)까지.<br class="hidden sm:inline" />
+          향후 출간될 전 권의 상세 Part와 장(Chapter) 목차를 웹사이트에서 바로 읽어보실 수 있습니다.
         </p>
       </div>
 
-      <!-- 4 Books Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- 4 Books Detailed Cards with Full Inlined TOC -->
+      <div class="space-y-12">
 
-        <!-- Book 1: 다크 코드 -->
-        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-indigo-500/50 transition-all flex flex-col justify-between group shadow-lg">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-[11px] font-mono text-indigo-400 font-semibold">BOOK 01</span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
-                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-                출시 완료
-              </span>
-            </div>
-            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
-              <div class="text-xs text-indigo-400 font-bold">무의식 패턴 분석</div>
-              <div>
-                <div class="text-xl font-black text-white group-hover:text-indigo-300 transition-colors leading-tight">다크 코드</div>
-                <div class="text-[11px] text-slate-400 font-medium mt-1">Dark Code</div>
+        <!-- 1. 다크 코드 (Dark Code) - 출시 완료 -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-indigo-500/30 shadow-2xl relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xs font-mono font-bold text-indigo-400">BOOK 01</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
+                  <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                  출시 완료 (발간)
+                </span>
               </div>
-              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white">
+                《다크 코드 (Dark Code)》
+              </h3>
+              <p class="text-sm font-semibold text-indigo-300 mt-1">부제: 왜 나는 알면서도 반복하는가 — 무의식적 자동반응의 심층 해체</p>
             </div>
-            <h4 class="text-base font-bold text-white mb-1">왜 나는 알면서도 반복하는가</h4>
-            <p class="text-xs text-slate-400 leading-relaxed mt-2">
-              무의식적으로 작동하는 자동적 방어기제와 보호행동, 알면서도 끊어내지 못했던 삶의 고착된 패턴을 해부하고 마주하는 첫 번째 관문입니다.
-            </p>
+            <div class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 text-xs text-indigo-200 max-w-md">
+              💬 <strong>다크 코드의 핵심 질문:</strong> “왜 중요한 일일수록 더 예민해질까? 왜 결국 내가 다 하게 될까? 오래된 보호행동이 어떻게 오늘의 나를 가두고 있는가?”
+            </div>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-800/80">
-            <span class="text-xs font-semibold text-indigo-400 flex items-center justify-between">
-              <span>정식 출간 도서</span>
-              <span>확인하기 &rarr;</span>
-            </span>
+
+          <!-- TOC Content -->
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-slate-300">
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-indigo-400 text-sm mb-2">PART 1. 무의식의 자동반응</div>
+              <p class="text-[11px] text-slate-400 mb-3">알면서도 같은 선택을 하는 이유</p>
+              <ul class="space-y-1.5 text-slate-300">
+                <li>• 01장. 알면서도 같은 선택을 반복하는 뇌</li>
+                <li>• 02장. 과거의 성공 전략이 오늘날의 덫이 될 때</li>
+                <li>• 03장. 보호행동의 역설: 지키려 할수록 잃는다</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-indigo-400 text-sm mb-2">PART 2. 5대 다크 패턴의 해체</div>
+              <p class="text-[11px] text-slate-400 mb-3">나를 옭아매는 5가지 무의식 코드</p>
+              <ul class="space-y-1.5 text-slate-300">
+                <li>• 04장. 확인·통제형: 불안을 통제로 덮다</li>
+                <li>• 05장. 직접수행형: “내가 해야 빠르다”의 함정</li>
+                <li>• 06장. 완벽기준형: 100점 아니면 실패라는 왜곡</li>
+                <li>• 07장. 기회집착형: 놓치는 것에 대한 공포(FOMO)</li>
+                <li>• 08장. 과잉책임형: 남의 짐까지 짊어지는 습관</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-indigo-400 text-sm mb-2">PART 3. 일과 관계의 병목</div>
+              <p class="text-[11px] text-slate-400 mb-3">리더십과 소통에서 드러나는 그림자</p>
+              <ul class="space-y-1.5 text-slate-300">
+                <li>• 09장. 모든 결정을 쥐고 있는 사람의 번아웃</li>
+                <li>• 10장. 대화의 트리거: 상대의 한마디에 켜지는 방어</li>
+                <li>• 11장. 인정욕구와 끊임없는 증명의 피로감</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-indigo-400 text-sm mb-2">PART 4. 에너지의 전환</div>
+              <p class="text-[11px] text-slate-400 mb-3">다크에서 뉴럴로 가는 관문</p>
+              <ul class="space-y-1.5 text-slate-300">
+                <li>• 12장. 코드를 없애지 않고 알아차리기</li>
+                <li>• 13장. 같은 힘의 다른 사용법을 준비하며</li>
+                <li>• 14장. 나를 고치기 전에 먼저 이해하기</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <!-- Book 2: 뉴럴 코드 -->
-        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-purple-500/50 transition-all flex flex-col justify-between group shadow-lg">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-[11px] font-mono text-purple-400 font-semibold">BOOK 02</span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-                출시 예정 (출간 준비)
-              </span>
-            </div>
-            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-purple-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
-              <div class="text-xs text-purple-400 font-bold">행동 재학습 프로토콜</div>
-              <div>
-                <div class="text-xl font-black text-white group-hover:text-purple-300 transition-colors leading-tight">뉴럴 코드</div>
-                <div class="text-[11px] text-slate-400 font-medium mt-1">Neural Code</div>
+        <!-- 2. 뉴럴 코드 (Neural Code) - 출시 예정 (상세 6개 Part, 32장 전체 공개!) -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-purple-500/40 shadow-2xl relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xs font-mono font-bold text-purple-400">BOOK 02</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-purple-500/20 text-purple-300 border border-purple-500/40">
+                  <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+                  출시 예정 (출간 준비 중 • 32개 장 완제)
+                </span>
               </div>
-              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white">
+                《뉴럴 코드 (Neural Code)》
+              </h3>
+              <p class="text-sm font-semibold text-purple-300 mt-1">부제: 이제 이 에너지를 어떻게 다르게 사용할 것인가 — 행동 재학습 실전서</p>
             </div>
-            <h4 class="text-base font-bold text-white mb-1">에너지를 어떻게 다르게 쓸 것인가</h4>
-            <p class="text-xs text-slate-400 leading-relaxed mt-2">
-              인지행동(CBT)·수용전념(ACT) 원리를 적용하여 FACT와 STORY를 나누고, 통제력을 정밀함으로, 완벽주의를 품질감각으로 전환하는 훈련서입니다.
-            </p>
+            <div class="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/30 text-xs text-purple-200 max-w-md">
+              💬 <strong>뉴럴 코드의 제1원칙:</strong> “다르게 느껴져야 다르게 행동하는 것이 아니다. 다르게 행동하면서 비로소 다르게 배운다. 내 안에서 일어나는 충동은 나의 경험이지만, 나의 명령은 아니다.”
+            </div>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-800/80">
-            <span class="text-xs font-semibold text-purple-400">집필 완료 · 출간 준비 중</span>
+
+          <!-- 6 Parts Grid -->
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs text-slate-300">
+            
+            <!-- Part 1 -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-purple-400 text-sm mb-1">PART 1. 반응과 선택 사이의 거리</div>
+              <p class="text-[11px] text-slate-500 mb-3">내 안의 신호를 읽고 즉시 반응하지 않는 자유</p>
+              <ul class="space-y-1 text-slate-300">
+                <li>• <strong>1장</strong>. 자동반응은 왜 이렇게 빠른가</li>
+                <li>• <strong>2장</strong>. 감정은 진짜지만 해석까지 사실은 아니다</li>
+                <li>• <strong>3장</strong>. “불안한 사람”에서 “불안이 올라오고 있다”로</li>
+                <li>• <strong>4장</strong>. 생각을 생각으로 볼 수 있다는 것 (메타인지)</li>
+                <li>• <strong>5장</strong>. 몸은 생각보다 먼저 반응한다 (신체 경고등)</li>
+                <li>• <strong>6장</strong>. 충동과 행동 사이의 시간 (바로 하지 않는 자유)</li>
+              </ul>
+            </div>
+
+            <!-- Part 2 -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-purple-400 text-sm mb-1">PART 2. 생각과 싸우지 않고 빠져나오기</div>
+              <p class="text-[11px] text-slate-500 mb-3">ACT 탈융합과 인지적 유연성의 기술</p>
+              <ul class="space-y-1 text-slate-300">
+                <li>• <strong>7장</strong>. 생각을 없애려 할수록 더 커지는 이유</li>
+                <li>• <strong>8장</strong>. ACT의 탈융합: 생각에서 한 걸음 물러서기</li>
+                <li>• <strong>9장</strong>. FACT(사실)와 STORY(해석)를 나누는 연습</li>
+                <li>• <strong>10장</strong>. 마음이 붙인 제목을 바꾸어본다</li>
+                <li>• <strong>11장</strong>. 낙관이 아닌 더 유연하고 행동 가능한 해석</li>
+              </ul>
+            </div>
+
+            <!-- Part 3 -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-purple-400 text-sm mb-1">PART 3. 오래된 패턴을 이기는 행동실험</div>
+              <p class="text-[11px] text-slate-500 mb-3">가장 강한 논리는 실제로 다르게 살아본 경험이다</p>
+              <ul class="space-y-1 text-slate-300">
+                <li>• <strong>16장</strong>. “내가 해야 빠르다”를 시험해본다</li>
+                <li>• <strong>17장</strong>. “거절하면 버림받는다”를 시험해본다</li>
+                <li>• <strong>18장</strong>. “완벽하지 않으면 끝이다” (80점 제출 실험)</li>
+                <li>• <strong>19장</strong>. “쉬면 뒤처진다” (아무것도 생산하지 않는 시간)</li>
+                <li>• <strong>20장</strong>. 안전은 무사고가 아닌 회복 가능성이다</li>
+              </ul>
+            </div>
+
+            <!-- Part 4 (Core) -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-purple-500/30">
+              <div class="font-bold text-purple-300 text-sm mb-1">PART 4. 같은 힘을 다른 방식으로 (핵심)</div>
+              <p class="text-[11px] text-purple-400 mb-3">코드를 없애지 않고 에너지를 재사용한다</p>
+              <ul class="space-y-1 text-slate-200">
+                <li>• <strong>21장</strong>. 통제력을 정확성으로 바꾼다 (통제 → 기준)</li>
+                <li>• <strong>22장</strong>. 완벽주의를 품질감각으로 (완벽 → 정밀)</li>
+                <li>• <strong>23장</strong>. 과잉책임을 신뢰할 수 있는 책임감으로</li>
+                <li>• <strong>24장</strong>. 인정욕구를 가치의 건강한 표현으로</li>
+                <li>• <strong>25장</strong>. 경쟁을 성장의 에너지로 바꾼다</li>
+                <li>• <strong>26장</strong>. 회피를 전략적 거리두기로 바꾼다</li>
+                <li>• <strong>27장</strong>. 분노를 명료한 경계의 언어로 바꾼다</li>
+                <li>• <strong>28장</strong>. 불안을 준비의 능력으로 바꾼다</li>
+              </ul>
+            </div>
+
+            <!-- Part 5 -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-purple-400 text-sm mb-1">PART 5. 내가 중요하게 여기는 방향으로</div>
+              <p class="text-[11px] text-slate-500 mb-3">평가가 아닌 가치로 인생을 결정한다</p>
+              <ul class="space-y-1 text-slate-300">
+                <li>• <strong>25장</strong>. “사람들이 나를 어떻게 볼까”에서 가치로</li>
+                <li>• <strong>26장</strong>. 원하는 결과와 원하는 삶은 다를 수 있다</li>
+                <li>• <strong>27장</strong>. 두려움이 사라지기를 기다리지 않는다</li>
+                <li>• <strong>28장</strong>. 큰 변화보다 10% 다른 작은 행동실험</li>
+                <li>• <strong>30장</strong>. 선택에는 포기가 포함된다 (NO의 힘)</li>
+              </ul>
+            </div>
+
+            <!-- Part 6 -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-purple-400 text-sm mb-1">PART 6. 새로운 경험이 예측을 수정한다</div>
+              <p class="text-[11px] text-slate-500 mb-3">설명보다 실제 경험이 뇌를 바꾼다</p>
+              <ul class="space-y-1 text-slate-300">
+                <li>• <strong>31장</strong>. 마음은 설명보다 경험에서 배운다</li>
+                <li>• <strong>32장</strong>. 맡겨도 일이 끝난다는 것을 배운다 (위임)</li>
+                <li>• <strong>에필로그</strong>. 이미 가진 힘의 사용법을 다시 배운 당신에게</li>
+              </ul>
+            </div>
+
           </div>
         </div>
 
-        <!-- Book 3: 메타 코드 -->
-        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between group shadow-lg">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-[11px] font-mono text-cyan-400 font-semibold">BOOK 03</span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                출시 예정 (집필 중)
-              </span>
-            </div>
-            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-cyan-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
-              <div class="text-xs text-cyan-400 font-bold">자각과 제로 포인트</div>
-              <div>
-                <div class="text-xl font-black text-white group-hover:text-cyan-300 transition-colors leading-tight">메타 코드</div>
-                <div class="text-[11px] text-slate-400 font-medium mt-1">Meta Code · Zero Point</div>
+        <!-- 3. 메타 코드 · 제로 포인트 (Meta Code) - 출시 예정 -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-cyan-500/40 shadow-2xl relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xs font-mono font-bold text-cyan-400">BOOK 03</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                  출시 예정 (집필 진행 중)
+                </span>
               </div>
-              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white">
+                《메타 코드 (Meta Code) · 제로 포인트》
+              </h3>
+              <p class="text-sm font-semibold text-cyan-300 mt-1">부제: 알아차림 자체가 자각될 때 무엇이 달라지는가 — 심층 의식 탐구</p>
             </div>
-            <h4 class="text-base font-bold text-white mb-1">알아차림 자체가 자각되는 자리</h4>
-            <p class="text-xs text-slate-400 leading-relaxed mt-2">
-              생각을 바라보는 '나'를 넘어, 모든 생각과 감정이 일어나는 순수한 자각(Zero Point)을 발견하고 삶의 진정한 자유를 얻는 심층 의식 탐구서입니다.
-            </p>
+            <div class="p-4 rounded-2xl bg-cyan-950/40 border border-cyan-500/30 text-xs text-cyan-200 max-w-md">
+              💬 <strong>메타 코드의 정점:</strong> “생각도, 감정도, 그것을 바라보는 관찰자 감각까지 지금 알아차림 안에 나타난다. 지금 이 순간, 알아차리고 있음 자체가 자각되는가?”
+            </div>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-800/80">
-            <span class="text-xs font-semibold text-cyan-400">집필 진행 중</span>
+
+          <!-- TOC Content -->
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-slate-300">
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-cyan-400 text-sm mb-2">PART 1. 생각하는 나, 보는 나</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 01장. 일상적 메타인지와 순수 자각의 경계</li>
+                <li>• 02장. 관찰자 자아의 발견과 거리두기</li>
+                <li>• 03장. 생각과 나를 동일시하던 감옥에서의 탈출</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-cyan-400 text-sm mb-2">PART 2. Zero Point의 발견</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 04장. 자각 자체가 자각되는 영점(Zero Point)</li>
+                <li>• 05장. 모든 판단과 조건이 멈추는 순수한 자리</li>
+                <li>• 06장. 상황을 있는 그대로 허용하는 힘</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-cyan-400 text-sm mb-2">PART 3. 초월의 함정을 넘어</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 07장. 깨달음을 핑계로 삶을 회피하는 위험</li>
+                <li>• 08장. 뉴럴 코드(재학습) 없는 메타의 맹점</li>
+                <li>• 09장. 삶을 건너뛰지 않고 현실로 통합하기</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-cyan-400 text-sm mb-2">PART 4. 제로 포인트에서의 선택</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 10장. 이 자리에서 지금 무엇을 선택할 것인가</li>
+                <li>• 11장. SHIFT: 삶의 현장으로 돌아오는 첫 움직임</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <!-- Book 4: THE SHIFT -->
-        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between group shadow-lg">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-[11px] font-mono text-amber-400 font-semibold">SPECIAL EDITION</span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                출시 예정 (통합 실전서)
-              </span>
-            </div>
-            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-amber-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
-              <div class="text-xs text-amber-400 font-bold">3S 실전 프로토콜</div>
-              <div>
-                <div class="text-xl font-black text-white group-hover:text-amber-300 transition-colors leading-tight">THE SHIFT</div>
-                <div class="text-[11px] text-slate-400 font-medium mt-1">더 시프트</div>
+        <!-- 4. THE SHIFT (더 시프트) - 출시 예정 -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-amber-500/40 shadow-2xl relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xs font-mono font-bold text-amber-400">SPECIAL EDITION</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                  출시 예정 (통합 실전 응용서)
+                </span>
               </div>
-              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white">
+                《THE SHIFT (더 시프트)》
+              </h3>
+              <p class="text-sm font-semibold text-amber-300 mt-1">부제: 알아차림을 삶의 선택으로 바꾸는 3S 실전 프로토콜</p>
             </div>
-            <h4 class="text-base font-bold text-white mb-1">알아차림을 삶의 선택으로</h4>
-            <p class="text-xs text-slate-400 leading-relaxed mt-2">
-              "판을 바꾸지 못해도 판을 대하는 나는 자유롭다." Zero Point에서 다시 삶의 현장으로 복귀하여 일과 관계에서 자유롭게 행동하는 3S 실전 응용서입니다.
-            </p>
+            <div class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/30 text-xs text-amber-200 max-w-md">
+              💬 <strong>THE SHIFT의 정의:</strong> “판을 바꾸지 못해도, 판을 대하는 나는 자유로울 수 있다. SHIFT는 인생을 통제하는 기술이 아니라, 주어진 판에서 자유롭게 노는 능력이다.”
+            </div>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-800/80">
-            <span class="text-xs font-semibold text-amber-400">실전 프로토콜 기획 중</span>
+
+          <!-- TOC Content -->
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-slate-300">
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-amber-400 text-sm mb-2">PART 1. SHIFT의 본질</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 01장. Dark 갇힘 → Neural 배움 → Meta 자각 → SHIFT</li>
+                <li>• 02장. 이겨야만 하는 게임에서 자유로운 놀이로</li>
+                <li>• 03장. 현실은 그대로 두고 관계 방식을 바꾼다</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-amber-400 text-sm mb-2">PART 2. 3S 실전 프로토콜</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 04장. <strong>SCAN</strong>: 오래된 자동 충동을 즉시 알아차린다</li>
+                <li>• 05장. <strong>SYNC</strong>: Zero Point에서 나의 본질적 가치와 정렬</li>
+                <li>• 06장. <strong>SHIFT</strong>: 새로운 관점으로 현실에 귀환한다</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-amber-400 text-sm mb-2">PART 3. 현장 실전 적용</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 07장. 일과 비즈니스: 통제 대신 명료한 기준 세우기</li>
+                <li>• 08장. 갈등과 대화: 상대를 바꾸려 하지 않는 대화</li>
+                <li>• 09장. 리더십: 혼자 다 하지 않고 전체 흐름 보기</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="font-bold text-amber-400 text-sm mb-2">PART 4. 자유로운 삶으로 귀환</div>
+              <ul class="space-y-1 text-slate-300">
+                <li>• 10장. 삶을 지나치게 꽉 붙잡지 않는 가벼움</li>
+                <li>• 11장. 매 순간 새롭게 선택하는 예술</li>
+                <li>• 12장. 일상에서 완성되는 명심코칭의 여정</li>
+              </ul>
+            </div>
           </div>
         </div>
 
       </div>
+
+      <!-- NEW: 골든래빗 스타일 [추천 도서 & 큐레이션 시리즈 쇼케이스] (골든래빗 우측 사이드바 오마주) -->
+      <div class="mt-16 p-8 rounded-3xl bg-amber-500/5 border border-amber-500/20 shadow-2xl relative overflow-hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-amber-500/20">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+              <span>★ Golden Rabbit Style Curated Showcase</span>
+            </div>
+            <h3 class="text-2xl font-black text-white mt-2">
+              마인드플로우랩 <span class="text-amber-400">추천 도서 &amp; 시리즈 컬렉션</span>
+            </h3>
+            <p class="text-xs text-slate-300 mt-1">인간 무의식의 다크 패턴부터 인지 재학습, 국가자격 CBT까지 한눈에 둘러보는 핵심 라인업</p>
+          </div>
+          <a href="#roadmap31" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition shadow-md flex items-center gap-1.5 self-start sm:self-center">
+            <span>31권 전체 로드맵 보기</span>
+            <span>&darr;</span>
+          </a>
+        </div>
+
+        <!-- 5 Curated Books Grid (골든래빗 추천 도서 카드 리스트 완벽 구현) -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+          
+          <!-- Card 1: 다크 코드 -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/60 transition group flex flex-col justify-between">
+            <div>
+              <div class="w-full h-44 rounded-xl bg-gradient-to-b from-indigo-950 to-slate-950 border border-indigo-500/30 flex flex-col items-center justify-center p-4 text-center relative overflow-hidden mb-4 shadow-lg group-hover:scale-105 transition duration-300">
+                <span class="text-[10px] font-mono font-bold text-indigo-400">VOL.01</span>
+                <span class="text-base font-black text-white mt-1">다크 코드</span>
+                <span class="text-[11px] text-indigo-300 mt-0.5">Dark Code</span>
+                <div class="mt-3 px-2 py-0.5 rounded-full bg-indigo-500/20 text-[10px] text-indigo-300 font-bold border border-indigo-500/40">
+                  출시 완료 (발간)
+                </div>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-indigo-300 transition">《다크 코드》</h4>
+              <p class="text-[11px] text-slate-400 mt-1 line-clamp-2">왜 나는 알면서도 반복하는가 — 무의식적 자동반응의 심층 해체</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-semibold text-indigo-400">
+              Part 1~4 (14개 장 완비)
+            </div>
+          </div>
+
+          <!-- Card 2: 뉴럴 코드 -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-purple-500/60 transition group flex flex-col justify-between">
+            <div>
+              <div class="w-full h-44 rounded-xl bg-gradient-to-b from-purple-950 to-slate-950 border border-purple-500/30 flex flex-col items-center justify-center p-4 text-center relative overflow-hidden mb-4 shadow-lg group-hover:scale-105 transition duration-300">
+                <span class="text-[10px] font-mono font-bold text-purple-400">VOL.02</span>
+                <span class="text-base font-black text-white mt-1">뉴럴 코드</span>
+                <span class="text-[11px] text-purple-300 mt-0.5">Neural Code</span>
+                <div class="mt-3 px-2 py-0.5 rounded-full bg-purple-500/20 text-[10px] text-purple-300 font-bold border border-purple-500/40 animate-pulse">
+                  출시 예정 (32장 완제)
+                </div>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-purple-300 transition">《뉴럴 코드》</h4>
+              <p class="text-[11px] text-slate-400 mt-1 line-clamp-2">아는 것만으로는 왜 바뀌지 않는가 — 행동 재학습 실전서</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-semibold text-purple-400">
+              Part 1~6 (32개 장 완제)
+            </div>
+          </div>
+
+          <!-- Card 3: 메타 코드 -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/60 transition group flex flex-col justify-between">
+            <div>
+              <div class="w-full h-44 rounded-xl bg-gradient-to-b from-cyan-950 to-slate-950 border border-cyan-500/30 flex flex-col items-center justify-center p-4 text-center relative overflow-hidden mb-4 shadow-lg group-hover:scale-105 transition duration-300">
+                <span class="text-[10px] font-mono font-bold text-cyan-400">VOL.03</span>
+                <span class="text-base font-black text-white mt-1">메타 코드</span>
+                <span class="text-[11px] text-cyan-300 mt-0.5">Zero Point</span>
+                <div class="mt-3 px-2 py-0.5 rounded-full bg-cyan-500/20 text-[10px] text-cyan-300 font-bold border border-cyan-500/40">
+                  출시 예정 (집필중)
+                </div>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-cyan-300 transition">《메타 코드》</h4>
+              <p class="text-[11px] text-slate-400 mt-1 line-clamp-2">생각을 바라보는 나를 넘어, 알아차림을 알아차리는 법</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-semibold text-cyan-400">
+              Part 1~4 (Zero Point)
+            </div>
+          </div>
+
+          <!-- Card 4: THE SHIFT -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/60 transition group flex flex-col justify-between">
+            <div>
+              <div class="w-full h-44 rounded-xl bg-gradient-to-b from-amber-950 to-slate-950 border border-amber-500/30 flex flex-col items-center justify-center p-4 text-center relative overflow-hidden mb-4 shadow-lg group-hover:scale-105 transition duration-300">
+                <span class="text-[10px] font-mono font-bold text-amber-400">SPECIAL</span>
+                <span class="text-base font-black text-white mt-1">THE SHIFT</span>
+                <span class="text-[11px] text-amber-300 mt-0.5">3S Protocol</span>
+                <div class="mt-3 px-2 py-0.5 rounded-full bg-amber-500/20 text-[10px] text-amber-300 font-bold border border-amber-500/40">
+                  출시 예정 (실전서)
+                </div>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-amber-300 transition">《THE SHIFT》</h4>
+              <p class="text-[11px] text-slate-400 mt-1 line-clamp-2">알아차림을 삶의 선택으로 바꾸는 3S 실전 프로토콜</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-semibold text-amber-400">
+              Part 1~4 (3S 프로토콜)
+            </div>
+          </div>
+
+          <!-- Card 5: 보건교육사 2급 합격패스 (골든래빗 시험 정복 연계) -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-rose-500/60 transition group flex flex-col justify-between">
+            <div>
+              <div class="w-full h-44 rounded-xl bg-gradient-to-b from-rose-950 to-slate-950 border border-rose-500/30 flex flex-col items-center justify-center p-4 text-center relative overflow-hidden mb-4 shadow-lg group-hover:scale-105 transition duration-300">
+                <span class="text-[10px] font-mono font-bold text-rose-400">CBT APP</span>
+                <span class="text-sm font-black text-white mt-1">보건교육사 2급</span>
+                <span class="text-[10px] text-rose-300 mt-0.5">합격패스 CBT</span>
+                <div class="mt-3 px-2 py-0.5 rounded-full bg-rose-500/20 text-[10px] text-rose-300 font-bold border border-rose-500/40">
+                  Google Play 출시
+                </div>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-rose-300 transition">보건교육사 합격패스</h4>
+              <p class="text-[11px] text-slate-400 mt-1 line-clamp-2">3,200+ 변형 문항 &amp; 적응형 오답노트 국가전문자격 CBT</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-semibold text-rose-400">
+              <a href="https://play.google.com/store/apps/details?id=com.mflow.edu2" target="_blank" class="hover:underline flex items-center gap-1">
+                <span>앱 바로가기</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NEW: 명심코칭 MASTER SERIES 31권 전체 출간 로드맵 (ChatGPT 공유 링크 기반 완전 수록!) -->
+      <div id="roadmap31" class="mt-20 pt-16 border-t border-slate-800/80">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-bold text-indigo-300 mb-3">
+            <span>Mindflow Coaching Master Series (31 Volumes Roadmap)</span>
+          </div>
+          <h3 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            향후 출시될 <span class="gradient-text">명심코칭 31권 마스터 시리즈</span> 전체 로드맵
+          </h3>
+          <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+            무의식의 구조(다크)에서 인지 재학습(뉴럴), 메타인지 순수 자각(메타), 그리고 60갑자·십성·주역·4주 심화까지.<br class="hidden sm:inline" />
+            마인드플로우랩이 순차적으로 출간하는 전 31권의 확정 도서 제목과 핵심 탐구 질문입니다.
+          </p>
+        </div>
+
+        <!-- 31 Volumes Structured Table View -->
+        <div class="rounded-3xl bg-slate-900/70 border border-slate-800 overflow-hidden shadow-2xl">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm text-slate-300">
+              <thead class="bg-slate-950 text-slate-400 font-bold border-b border-slate-800 text-xs uppercase tracking-wider">
+                <tr>
+                  <th class="py-4 px-5 w-20 text-center">권수</th>
+                  <th class="py-4 px-5 w-56">도서명</th>
+                  <th class="py-4 px-6">핵심 탐구 질문 (Core Question)</th>
+                  <th class="py-4 px-5 w-32 text-center">출간 상태</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60">
+                
+                <!-- 01~03 핵심 3부작 -->
+                <tr class="bg-indigo-950/20 hover:bg-indigo-950/40 transition">
+                  <td class="py-3.5 px-5 font-mono font-bold text-indigo-400 text-center">01</td>
+                  <td class="py-3.5 px-5 font-extrabold text-white">《다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">나는 왜 알면서도 같은 패턴을 반복하는가 (무의식적 자동반응)</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">출시 완료</span></td>
+                </tr>
+                <tr class="bg-purple-950/20 hover:bg-purple-950/40 transition">
+                  <td class="py-3.5 px-5 font-mono font-bold text-purple-400 text-center">02</td>
+                  <td class="py-3.5 px-5 font-extrabold text-white">《뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">아는 것만으로는 왜 바뀌지 않는가 — 이 에너지를 어떻게 다르게 사용할 것인가 (32개 장 완제)</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40 animate-pulse">출간 준비중</span></td>
+                </tr>
+                <tr class="bg-cyan-950/20 hover:bg-cyan-950/40 transition">
+                  <td class="py-3.5 px-5 font-mono font-bold text-cyan-400 text-center">03</td>
+                  <td class="py-3.5 px-5 font-extrabold text-white">《메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">생각을 바라보는 나를 넘어, 알아차림을 알아차리는 법 (Zero Point)</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">출간 준비중</span></td>
+                </tr>
+
+                <!-- 04~06 천간 3부작 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">04</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《천간 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">나의 기본 장르는 어떤 방식으로 과출력되는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">05</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《천간 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">타고난 장르를 어떻게 능력으로 다시 사용할 것인가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">06</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《천간 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">내 장르를 알되 장르가 되지 않는 법</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 07~09 지지 3부작 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">07</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《지지 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">반복을 촉발하는 지지의 패턴은 무엇인가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">08</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《지지 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">지지의 에너지를 어떻게 새롭게 사용할 것인가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">09</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《지지 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">지지의 작동을 알아차리되 거기에 갇히지 않는 법</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 10~12 60갑자 3부작 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">10</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《60갑자 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">천간과 지지가 만나 어떤 반복 장르가 만들어지는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">11</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《60갑자 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">나의 60갑자 장르를 어떻게 재학습할 것인가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">12</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《60갑자 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">나의 장르를 사용하면서도 그 장르에 갇히지 않는 법</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 13~15 십성 3부작 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">13</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《십성 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">내 욕망과 관계의 자동동력은 무엇인가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">14</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《십성 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">십성의 심리동력을 어떻게 능력으로 바꿀 것인가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">15</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《십성 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">욕망과 역할을 알아차리며 사용하는 법</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 16~18 주역 64 3부작 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">16</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《주역 64 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">변화 상황에서 나는 왜 같은 방식으로 반응하는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">17</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《주역 64 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">변화의 순간 새로운 선택을 어떻게 학습하는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">18</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《주역 64 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">변화 속에서도 변화에 갇히지 않는 법</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 19~22 4주 다크 코드 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">19</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《년주 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">세상과 사회적 배경에서 무엇이 반복되는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">20</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《월주 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">일·사회·역할에서 무엇이 자동 실행되는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">21</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《일주 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">나와 가장 가까운 관계에서 무엇이 반복되는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">22</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《시주 다크 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">미래와 가능성 영역에서 무엇이 반복되는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 23~26 4주 뉴럴 코드 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">23</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《년주 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">세상과의 관계를 어떻게 새롭게 학습하는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">24</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《월주 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">일과 사회적 역할을 어떻게 새롭게 사용하는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">25</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《일주 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">사랑과 관계에서 어떻게 다른 선택을 배우는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">26</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《시주 뉴럴 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">미래와 가능성을 어떻게 새롭게 사용하는가</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 27~30 4주 메타 코드 -->
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">27</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《년주 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">세상 속 역할을 하되 역할이 되지 않는 법</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">28</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《월주 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">성취와 사회적 정체성을 알아차리는 법</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">29</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《일주 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">사랑과 관계 속에서도 자신을 잃지 않는 알아차림</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="py-3.5 px-5 font-mono text-slate-400 text-center">30</td>
+                  <td class="py-3.5 px-5 font-bold text-white">《시주 메타 코드》</td>
+                  <td class="py-3.5 px-6 text-slate-300">미래와 가능성을 바라보는 더 깊은 자리</td>
+                  <td class="py-3.5 px-5 text-center"><span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-400">집필 예정</span></td>
+                </tr>
+
+                <!-- 31 종결편: 제로 포인트 / THE SHIFT -->
+                <tr class="bg-amber-500/10 hover:bg-amber-500/20 transition">
+                  <td class="py-4 px-5 font-mono font-black text-amber-400 text-center">31</td>
+                  <td class="py-4 px-5 font-black text-white text-base">《제로 포인트 · THE SHIFT》</td>
+                  <td class="py-4 px-6 text-amber-200 font-semibold">알아차림을 알아차리는 가장 깊은 자리 — 삶의 선택으로 바꾸는 3S 실전 프로토콜 마스터</td>
+                  <td class="py-4 px-5 text-center"><span class="px-3 py-1 rounded-full text-[11px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">출간 준비중</span></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- NEW Section: Interactive Sample Report Viewer (MYEONGSIM START 48 실제 샘플링) -->
+  <!-- Section: Interactive Sample Report Viewer (MYEONGSIM START 48 실제 샘플링) -->
   <section id="sample-report" class="py-24 px-6 border-t border-slate-800/80 bg-slate-900/40 relative">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -693,6 +1268,7 @@
   </section>
 
   <!-- Section 3: Product Ecosystem -->
+  <div id="cbt"></div>
   <section id="ecosystem" class="py-24 px-6 border-t border-slate-800/80">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -831,7 +1407,6 @@
       </div>
 
       <div class="space-y-4">
-        <!-- FAQ 1 -->
         <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
           <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
             <span class="font-bold text-white text-base">Q. '보건교육사 2급 합격패스'는 일반 문제집 앱과 어떻게 다른가요?</span>
@@ -842,7 +1417,6 @@
           </div>
         </div>
 
-        <!-- FAQ 2 -->
         <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
           <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
             <span class="font-bold text-white text-base">Q. '명심코칭' 도서 시리즈와 개인 리포트북은 어떤 관계인가요?</span>
@@ -853,7 +1427,6 @@
           </div>
         </div>
 
-        <!-- FAQ 3 -->
         <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
           <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
             <span class="font-bold text-white text-base">Q. 출원된 특허 기술은 실제 서비스에 어떻게 접목되나요?</span>
@@ -864,7 +1437,6 @@
           </div>
         </div>
 
-        <!-- FAQ 4 -->
         <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
           <button onclick="toggleFaq(4)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
             <span class="font-bold text-white text-base">Q. 기관 및 기업 대상 B2B 멘탈헬스·에듀테크 제휴가 가능한가요?</span>
@@ -884,7 +1456,7 @@
       <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Contact &amp; Partnership</span>
       <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tight">더 나은 성장의 미래를 함께 만듭니다</h2>
       <p class="mt-4 text-slate-300 max-w-xl mx-auto leading-relaxed">
-        마인드플로우랩의 솔루션에 대한 문의나 도서 제휴, 비즈니스 파트너십 제안을 환영합니다.
+        마인드플로우랩의 솔루션에 대한 문의나 도서 출판 제휴, 비즈니스 파트너십 제안을 환영합니다.
       </p>
 
       <div class="mt-10 p-8 rounded-3xl bg-slate-900/90 border border-slate-800 max-w-xl mx-auto shadow-xl">
@@ -908,7 +1480,6 @@
   <footer class="bg-slate-950 text-slate-400 py-16 px-6 text-xs border-t border-slate-800/90">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
       
-      <!-- Col 1: Brand & Identity -->
       <div class="md:col-span-4 space-y-4">
         <div class="flex items-center gap-2">
           <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">
@@ -926,7 +1497,6 @@
         </p>
       </div>
 
-      <!-- Col 2: Business Information -->
       <div class="md:col-span-5 space-y-2 text-slate-400">
         <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">사업자 정보</p>
         <p><span class="text-slate-500">상호명:</span> 마인드플로우랩 &nbsp;|&nbsp; <span class="text-slate-500">대표자:</span> 이경윤</p>
@@ -935,20 +1505,18 @@
         <p><span class="text-slate-500">사업장 소재지:</span> 세종특별자치시 산울7로 10 (산울마을8단지) 808동 204호 (우 : 30091)</p>
         <p><span class="text-slate-500">공식 문의:</span> <a href="mailto:admin@mindflowlab.co.kr" class="text-indigo-400 hover:underline">admin@mindflowlab.co.kr</a></p>
 
-        <!-- Patent Legal Notice -->
         <div class="mt-4 pt-3 border-t border-slate-900 text-[11px] text-slate-500 leading-relaxed">
           <p><strong class="text-slate-400 font-medium">특허출원:</strong> 제10-2025-0166877호</p>
           <p class="mt-0.5 text-slate-500">(발명의 명칭: 심리 및 생체데이터 기반 스트레스 관리 솔루션 제공 장치 및 방법 / 특허출원 중이며 의료적 효과나 정부인증을 의미하지 않습니다)</p>
         </div>
       </div>
 
-      <!-- Col 3: Links & Privacy -->
       <div class="md:col-span-3 flex flex-col justify-between space-y-4">
         <div>
           <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">서비스 &amp; 출판</p>
           <ul class="space-y-2">
+            <li><a href="#books" class="hover:text-amber-300 transition">명심코칭 도서 &amp; 전체 목차</a></li>
             <li><a href="#sample-report" class="hover:text-amber-300 transition">START 48 샘플 뷰어</a></li>
-            <li><a href="#books" class="hover:text-amber-300 transition">명심코칭 도서 시리즈</a></li>
             <li><a href="#ecosystem" class="hover:text-white transition">보건교육사 2급 합격패스</a></li>
             <li><a href="#ecosystem" class="hover:text-white transition">명심코칭 (출시 예정)</a></li>
             <li><a href="#patent" class="hover:text-white transition">특허 R&amp;D 정보</a></li>
@@ -969,7 +1537,6 @@
 
   <!-- Scripts -->
   <script>
-    // Tab switching for START 48 sample viewer
     function switchTab(tabKey) {
       const tabs = ['cover', 'contents', 'sample', 'fullmap'];
       tabs.forEach(t => {
@@ -987,7 +1554,6 @@
       });
     }
 
-    // Lightbox modal functions
     function openLightbox(src) {
       const modal = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
@@ -1004,7 +1570,6 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // FAQ Toggle
     function toggleFaq(index) {
       const body = document.getElementById('faq-body-' + index);
       const icon = document.getElementById('faq-icon-' + index);
@@ -1017,7 +1582,31 @@
       }
     }
 
-    // Copy Email
+    // Newsletter Subscription Handler
+    function handleSubscribe() {
+      const emailInput = document.getElementById('subscribe-email-input');
+      const alertBox = document.getElementById('subscribe-alert');
+      const email = emailInput ? emailInput.value.trim() : '';
+      
+      if (!email || !email.includes('@')) {
+        alert('올바른 이메일 주소를 입력해 주세요.');
+        if (emailInput) emailInput.focus();
+        return;
+      }
+
+      if (alertBox) {
+        alertBox.classList.remove('hidden');
+      }
+      if (emailInput) {
+        emailInput.value = '';
+      }
+
+      // Hide after 5 seconds
+      setTimeout(() => {
+        if (alertBox) alertBox.classList.add('hidden');
+      }, 5000);
+    }
+
     function copyEmail() {
       navigator.clipboard.writeText('admin@mindflowlab.co.kr').then(() => {
         const toast = document.getElementById('copy-toast');
