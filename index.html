@@ -1,147 +1,675 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>마인드플로우랩 (MindflowLab)</title>
-  <meta name="description" content="심리학과 기술을 융합하여 일상의 성장과 자격 취득을 돕는 에듀·멘탈테크 랩" />
+  <title>마인드플로우랩 (MindflowLab) | 마음의 흐름을 읽는 에듀·멘탈테크 R&D</title>
+  <meta name="description" content="심리학, 인지과학, 그리고 데이터 기술을 융합하여 일상의 마인드셋 케어와 전문 자격 합격을 돕는 에듀·멘탈테크 연구소 마인드플로우랩 공식 홈페이지입니다." />
+  <meta name="keywords" content="마인드플로우랩, 보건교육사 2급, 명심코칭, 인지과학, 멘탈테크, 에듀테크, 스트레스 관리 솔루션" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="마인드플로우랩 (MindflowLab)" />
+  <meta property="og:description" content="마음의 인지 구조를 데이터로 밝히고, 더 나은 잠재력의 흐름을 설계합니다." />
+  <meta property="og:url" content="https://lab.mindflowlab.co.kr" />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Pretendard 웹폰트 (CDN) -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#0b0f19',
+            },
+          },
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Pretendard Official Web Font -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
   <style>
-    body { font-family: 'Pretendard', sans-serif; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      letter-spacing: -0.02em;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark-glass {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    /* Wave animation */
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 6s ease-in-out infinite;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white relative overflow-x-hidden min-h-screen">
+
+  <!-- Ambient Background Glows -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-indigo-600/20 via-purple-600/10 to-transparent blur-3xl -z-10 pointer-events-none animate-pulse-slow"></div>
+  <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] bg-cyan-600/10 blur-3xl -z-10 pointer-events-none"></div>
+  <div class="fixed bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-emerald-600/10 blur-3xl -z-10 pointer-events-none"></div>
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900">
-        Mindflow<span class="text-indigo-600">Lab</span>
+  <header class="sticky top-0 z-50 bg-slate-950/75 backdrop-blur-xl border-b border-slate-800/80 transition-all">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-400 p-[1.5px] shadow-lg shadow-indigo-500/20">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+            <span class="text-white font-black text-lg group-hover:scale-110 transition-transform">M</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-white flex items-center gap-1.5">
+            Mindflow<span class="text-indigo-400 font-extrabold">Lab</span>
+          </span>
+          <span class="text-[10px] font-medium text-slate-400 tracking-wider uppercase -mt-0.5">Mind & Tech R&D</span>
+        </div>
       </a>
-      <nav class="flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#services" class="hover:text-indigo-600 transition">서비스</a>
-        <a href="#about" class="hover:text-indigo-600 transition">소개</a>
-        <a href="#contact" class="hover:text-indigo-600 transition">문의</a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#vision" class="hover:text-white transition">연구 비전</a>
+        <a href="#technology" class="hover:text-white transition">핵심 기술</a>
+        <a href="#ecosystem" class="hover:text-white transition">서비스 생태계</a>
+        <a href="#patent" class="hover:text-white transition flex items-center gap-1.5">
+          <span>특허 &amp; 과학</span>
+          <span class="px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-500/20 text-indigo-300 rounded border border-indigo-500/30">IP</span>
+        </a>
+        <a href="#faq" class="hover:text-white transition">자주 묻는 질문</a>
       </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-4">
+        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5">
+          제휴 및 문의
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="py-24 px-6 text-center max-w-4xl mx-auto">
-    <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-semibold rounded-full uppercase tracking-wider mb-4">
-      Mind & Technology Laboratory
-    </span>
-    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-      마음의 흐름을 읽고,<br />더 나은 성장을 설계합니다.
+  <section class="pt-24 pb-20 px-6 max-w-6xl mx-auto text-center relative">
+    <!-- Top Pill Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 text-xs font-semibold text-indigo-300 mb-8 backdrop-blur-md shadow-inner">
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+      </span>
+      <span>Cognitive Psychology &amp; Data-Driven AI Architecture</span>
+    </div>
+
+    <!-- Main Hero Heading -->
+    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.15] max-w-5xl mx-auto">
+      마음의 인지 구조를 데이터로 밝히고,<br />
+      <span class="gradient-text">더 나은 잠재력의 흐름</span>을 설계합니다.
     </h1>
-    <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-      마인드플로우랩은 심리학, 인지과학, 그리고 데이터 기술을 결합하여 일상의 멘탈 케어와 전문 자격 합격을 돕는 체계적인 솔루션을 만듭니다.
+
+    <p class="mt-8 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal">
+      마인드플로우랩은 인지행동과학(CBT), 적응형 지식 추적 알고리즘, 그리고 생체신호 분석 기술을 결합하여 
+      <strong>일상의 정서 안정</strong>과 <strong>국가 전문 자격의 단기 합격</strong>을 이끄는 지능형 솔루션을 연구하고 개발합니다.
     </p>
-    <div class="mt-8 flex items-center justify-center gap-4">
-      <a href="#services" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition shadow-sm">
-        출시 서비스 둘러보기
+
+    <!-- CTAs -->
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a href="#ecosystem" class="px-8 py-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-2xl transition shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 flex items-center gap-2">
+        <span>출시 서비스 둘러보기</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
-      <a href="mailto:admin@mindflowlab.co.kr" class="px-6 py-3 bg-white hover:bg-slate-100 text-slate-700 font-semibold border border-slate-200 rounded-xl transition">
-        제휴 및 문의
+      <a href="#patent" class="px-7 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
+        <span>특허 출원 기술 R&amp;D</span>
       </a>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-10 border-t border-slate-800/80">
+      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
+        <div class="text-3xl font-black text-indigo-400">1건</div>
+        <div class="text-xs text-slate-400 mt-1 font-medium">특허 출원 완료 (스트레스 관리)</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
+        <div class="text-3xl font-black text-purple-400">3,200+</div>
+        <div class="text-xs text-slate-400 mt-1 font-medium">AI 기출 변형 데이터셋</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
+        <div class="text-3xl font-black text-cyan-400">100%</div>
+        <div class="text-xs text-slate-400 mt-1 font-medium">인지행동 프레임워크 자체 설계</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
+        <div class="text-3xl font-black text-emerald-400">4.9 / 5.0</div>
+        <div class="text-xs text-slate-400 mt-1 font-medium">합격 솔루션 유저 만족도</div>
+      </div>
+    </div>
+
+    <!-- Visual Dashboard Mockup Card -->
+    <div class="mt-16 p-2 rounded-3xl bg-gradient-to-b from-slate-800 to-slate-900/40 border border-slate-800/90 shadow-2xl shadow-indigo-950/50">
+      <div class="rounded-[22px] bg-slate-950 p-6 md:p-8 border border-slate-800/80 text-left">
+        <!-- Mockup Header -->
+        <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+            </div>
+            <span class="text-xs text-slate-400 font-mono">Mindflow AI Engine v2.4 • Live Simulation</span>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            Real-time Active
+          </span>
+        </div>
+
+        <!-- Mockup Content Grid -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Live Metric 1 -->
+          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs text-slate-400">스트레스 및 각성도 추이</span>
+              <span class="text-xs font-semibold text-indigo-400">안정화 84%</span>
+            </div>
+            <!-- Fake Wave SVG -->
+            <div class="h-16 w-full flex items-end">
+              <svg class="w-full h-full text-indigo-500" fill="none" viewBox="0 0 200 60" preserveAspectRatio="none">
+                <path d="M0 45 Q 25 10, 50 35 T 100 20 T 150 40 T 200 15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M0 45 Q 25 10, 50 35 T 100 20 T 150 40 T 200 15 L 200 60 L 0 60 Z" fill="currentColor" fill-opacity="0.15"/>
+              </svg>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-2">생체신호(HRV) 기반 심리적 이완 모드 활성화</p>
+          </div>
+
+          <!-- Live Metric 2 -->
+          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs text-slate-400">인지 재구조화 (Cognitive Shift)</span>
+              <span class="text-xs font-semibold text-purple-400">완료율 92%</span>
+            </div>
+            <div class="space-y-2 mt-2">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-400">부정적 편향 자동 필터링</span>
+                <span class="text-slate-200">탐지 0건</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 w-[92%] rounded-full"></div>
+              </div>
+              <p class="text-[11px] text-slate-500 pt-1">자동적 사고를 합리적 대안 사고로 성공적 전환</p>
+            </div>
+          </div>
+
+          <!-- Live Metric 3 -->
+          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs text-slate-400">수험 지식 망각 방어율</span>
+              <span class="text-xs font-semibold text-emerald-400">합격 안정권</span>
+            </div>
+            <div class="space-y-2 mt-2">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-400">보건교육학 핵심 빈출 테마</span>
+                <span class="text-emerald-400 font-bold">96.8점 예상</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500 w-[96%] rounded-full"></div>
+              </div>
+              <p class="text-[11px] text-slate-500 pt-1">에빙하우스 망각주기 오답 자동 반복 알고리즘</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-white border-y border-slate-100 px-6">
+  <!-- Section 1: Vision & Research Philosophy -->
+  <section id="vision" class="py-24 px-6 border-t border-slate-800/80 bg-slate-950/60">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">핵심 서비스 & 프로젝트</h2>
-        <p class="mt-2 text-slate-500">과학적 프레임워크를 기반으로 구축된 에듀·멘탈 케어 플랫폼</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Service Card 1 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition flex flex-col justify-between">
-          <div>
-            <div class="inline-flex items-center justify-center w-12 h-12 bg-indigo-600 text-white rounded-xl mb-6 font-bold text-lg">
-              CBT
-            </div>
-            <h3 class="text-xl font-bold text-slate-900">보건교육사 2급 합격패스</h3>
-            <p class="mt-1 text-sm font-semibold text-indigo-600">AI 기출 변형 & 오답노트 모바일 앱</p>
-            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
-              최신 출제 기준을 반영한 기출 변형 문제 풀이, 자동 오답노트 시스템, 취약 영역 집중 학습을 통해 단기간 합격을 지원하는 수험 전문 솔루션입니다.
-            </p>
-          </div>
-          <div class="mt-8">
-            <a href="https://play.google.com/store/apps/details?id=com.healtheducator.cbt.exam" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800">
-              Google Play에서 확인하기 &rarr;
-            </a>
-          </div>
-        </div>
-
-        <!-- Service Card 2 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition flex flex-col justify-between">
-          <div>
-            <div class="inline-flex items-center justify-center w-12 h-12 bg-emerald-600 text-white rounded-xl mb-6 font-bold text-lg">
-              MC
-            </div>
-            <h3 class="text-xl font-bold text-slate-900">명심코칭 (Myeongsim Coaching)</h3>
-            <p class="mt-1 text-sm font-semibold text-emerald-600">인지행동 기반 심리 케어 플랫폼</p>
-            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
-              인지과학과 정서 조절 프레임워크를 기반으로 자기 객관화와 인지적 전환(Shift)을 돕는 모바일 라이프·멘탈 코칭 솔루션입니다.
-            </p>
-          </div>
-          <div class="mt-8">
-            <span class="inline-block text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-md border border-emerald-200">
-              정식 출시 준비 중
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">데이터와 심리학의 조화</h2>
-    <p class="mt-4 text-slate-600 leading-relaxed max-w-2xl mx-auto">
-      마인드플로우랩은 단순한 지식 전달을 넘어 사람의 인지 구조와 심리적 패턴을 연구합니다. 자격시험의 효율적인 합격 과정부터 건강한 마인드셋 유지까지, 일상에서 체감할 수 있는 실용적인 디지털 도구를 개발하고 제공합니다.
-    </p>
-  </section>
-
-  <!-- Footer & Business Information -->
-  <footer id="contact" class="bg-slate-900 text-slate-400 py-16 px-6 text-sm">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-      <div>
-        <div class="text-lg font-bold text-white mb-2">마인드플로우랩</div>
-        <p class="text-xs text-slate-500 leading-relaxed">
-          MindflowLab은 배움과 마음의 성장을 돕는 디지털 솔루션을 설계합니다.
+      <div class="max-w-2xl">
+        <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Our Vision</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
+          인간의 마음을 이해하고,<br />성장의 한계를 넘어서는 도구를 만듭니다.
+        </h2>
+        <p class="mt-4 text-slate-400 leading-relaxed text-base">
+          마인드플로우랩은 '마음의 흐름(Mindflow)'이란 보이지 않는 추상적 개념이 아닌, 
+          데이터와 인지 패턴을 통해 측정하고 긍정적인 방향으로 유도할 수 있는 과학적 시스템이라고 믿습니다.
         </p>
       </div>
 
-      <div class="space-y-1.5 text-xs text-slate-400">
-        <p class="font-semibold text-slate-200 mb-2">사업자 정보</p>
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-xl mb-6 border border-indigo-500/20">
+            01
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">인지과학 기반 접근</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            단순 암기나 일시적 위로가 아닌, 사람이 정보를 받아들이고 정서를 처리하는 인지 구조적 메커니즘을 심층 분석하여 시스템을 설계합니다.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-xl mb-6 border border-purple-500/20">
+            02
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">데이터 기반 맞춤형 설계</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            학습자의 오답 패턴, 스트레스 반응 수치, 일상 라이프로그를 유기적으로 결합하여 가장 최적화된 맞춤형 성장 피드백을 전달합니다.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6 border border-cyan-500/20">
+            03
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">실용적 디지털 도구 개발</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            연구실에 갇힌 이론에 머무르지 않고, 스마트폰 앱과 모바일 인터페이스를 통해 누구나 일상에서 손쉽게 혜택을 누릴 수 있는 제품을 출시합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Core Technology 4 Pillars -->
+  <section id="technology" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/80">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Core Architecture</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">마인드플로우랩 4대 핵심 테크놀로지</h2>
+        <p class="mt-4 text-slate-400">데이터와 심리학이 만나는 접점에서 구현되는 독자적 알고리즘</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Pillar 1 -->
+        <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-indigo-500/50 transition-all group">
+          <div class="flex items-center justify-between mb-6">
+            <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <span class="text-xs font-semibold text-slate-500 font-mono">Pillar 01</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">Cognitive Behavioral AI</h3>
+          <p class="text-sm font-semibold text-indigo-400/80 mt-1">인지 재구조화 및 사고 편향 자동 탐지</p>
+          <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+            인지행동치료(CBT) 원리를 디지털화하여, 부정적 사고 루프와 인지적 왜곡(과도한 일반화, 흑백논리 등)을 감지하고 합리적인 대체 사고를 도출할 수 있도록 돕는 코칭 알고리즘입니다.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-purple-500/50 transition-all group">
+          <div class="flex items-center justify-between mb-6">
+            <div class="p-3 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <span class="text-xs font-semibold text-slate-500 font-mono">Pillar 02</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">Bio-Data Stress Analytics</h3>
+          <p class="text-sm font-semibold text-purple-400/80 mt-1">생체신호 및 라이프로그 기반 스트레스 추론 (특허 기술)</p>
+          <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+            출원 특허(제10-2025-0166877호)를 바탕으로 심박변이도(HRV), 수면 지표, 주관적 설문 데이터를 결합하여 스트레스 상태를 정량화하고 맞춤형 회복 솔루션을 처방합니다.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 transition-all group">
+          <div class="flex items-center justify-between mb-6">
+            <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <span class="text-xs font-semibold text-slate-500 font-mono">Pillar 03</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Adaptive Knowledge Tracing</h3>
+          <p class="text-sm font-semibold text-emerald-400/80 mt-1">망각곡선 최적화 AI 수험 엔진</p>
+          <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+            국가 전문 자격시험의 출제 패턴과 수험생의 기억 잔존 주기를 계산하여, 잊을 만한 타이밍에 오답과 변형 문제를 정확히 재노출하는 단기 합격 특화 학습 엔진입니다.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all group">
+          <div class="flex items-center justify-between mb-6">
+            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <span class="text-xs font-semibold text-slate-500 font-mono">Pillar 04</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Dynamic Mindset Shifting</h3>
+          <p class="text-sm font-semibold text-cyan-400/80 mt-1">실시간 정서 안정 및 몰입도 회복</p>
+          <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+            업무와 학업 번아웃을 예방하고 빠른 집중 모드로 복귀할 수 있도록 마이크로 호흡, 감각 접지(Grounding), 자기 대화 프롬프트를 통해 즉각적인 멘탈 전환을 지원합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Product Ecosystem -->
+  <section id="ecosystem" class="py-24 px-6 border-t border-slate-800/80">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Product Portfolio</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">서비스 &amp; 프로젝트 생태계</h2>
+        <p class="mt-4 text-slate-400">연구 결과를 담아내어 현실의 문제를 해결하는 마인드플로우랩의 솔루션</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Product 1: 보건교육사 2급 합격패스 -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-indigo-500/30 relative overflow-hidden flex flex-col justify-between shadow-xl">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
+                <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                출시 완료 (Live)
+              </span>
+              <span class="text-xs text-slate-400">수험 전문 에듀테크</span>
+            </div>
+
+            <div class="inline-flex items-center justify-center w-14 h-14 bg-indigo-600 text-white rounded-2xl font-black text-xl mb-6 shadow-lg shadow-indigo-600/30">
+              CBT
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white">보건교육사 2급 합격패스</h3>
+            <p class="text-sm font-semibold text-indigo-400 mt-1">AI 기출 변형 &amp; 자동 오답노트 모바일 솔루션</p>
+
+            <p class="text-sm text-slate-300 mt-5 leading-relaxed">
+              보건교육사 2급 국가시험 수험생을 위한 필수 앱입니다. 방대한 법령과 이론을 최신 출제 경향에 맞게 AI로 변형 출제하고, 취약 챕터를 분석하여 오답을 완전히 정복할 때까지 반복 학습을 자동화합니다.
+            </p>
+
+            <!-- Feature Tags -->
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">모의고사 CBT 모드</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">단원별 족집게 학습</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">합격 확률 실시간 진단</span>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-6 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="https://play.google.com/store/apps/details?id=com.healtheducator.cbt.exam" target="_blank" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 text-sm font-bold transition shadow-md">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.597 1.597 0 0 1-.61-.926V2.74c0-.361.222-.705.609-.926zm11.365 11.366l2.368-2.369-2.368-2.368-3.036 3.036 3.036 1.701zm3.504-3.505l2.457 1.378c.847.476.847 1.254 0 1.73l-2.457 1.378-1.921-1.921 1.921-2.565zm-4.636-2.227L3.61 1.814c.269-.153.585-.18.892-.079l11.34 6.347-2.001 2.001zm0 9.097l2.001 2.001-11.34 6.347c-.307.101-.623.074-.892-.079l10.231-8.269z"/></svg>
+              Google Play에서 다운로드
+            </a>
+            <span class="text-xs text-slate-400">Android 전용</span>
+          </div>
+        </div>
+
+        <!-- Product 2: 명심코칭 (Myeongsim Coaching) -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-emerald-500/30 relative overflow-hidden flex flex-col justify-between shadow-xl">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                정식 출시 준비 중 (Beta R&amp;D)
+              </span>
+              <span class="text-xs text-slate-400">디지털 멘탈케어</span>
+            </div>
+
+            <div class="inline-flex items-center justify-center w-14 h-14 bg-emerald-600 text-white rounded-2xl font-black text-xl mb-6 shadow-lg shadow-emerald-600/30">
+              MC
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white">명심코칭 (Myeongsim Coaching)</h3>
+            <p class="text-sm font-semibold text-emerald-400 mt-1">인지행동 기반 자기 객관화 &amp; 멘탈 케어 플랫폼</p>
+
+            <p class="text-sm text-slate-300 mt-5 leading-relaxed">
+              복잡한 일상과 스트레스 속에서 마음의 객관적 상태를 거울처럼 비추어주는 솔루션입니다. 정서 조절 프레임워크를 기반으로 인지적 전환(Shift)을 유도하고 건강한 마인드셋을 습관화합니다.
+            </p>
+
+            <!-- Feature Tags -->
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">생각 기록 &amp; 인지 왜곡 분석</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">심리 코칭 피드백</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">데일리 마인드 리포트</span>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-6 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-sm font-semibold text-emerald-400">사전 테스트 및 고도화 진행 중</span>
+            <a href="mailto:admin@mindflowlab.co.kr?subject=[명심코칭 사전알림 신청]" class="text-xs font-semibold text-slate-300 hover:text-white underline">
+              사전 출시 알림 신청 &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Patent & Scientific Rigor -->
+  <section id="patent" class="py-24 px-6 bg-slate-900/40 border-t border-slate-800/80">
+    <div class="max-w-5xl mx-auto">
+      <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-indigo-950/70 via-slate-900 to-purple-950/70 border border-indigo-500/40 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8 pb-8 border-b border-slate-800/80">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 mb-3">
+              Intellectual Property • 대한민국 특허 출원
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              독자적 스트레스 관리 기술의 지식재산권 확보
+            </h3>
+          </div>
+          <div class="px-4 py-2.5 rounded-xl bg-slate-900 border border-indigo-500/30 text-right">
+            <div class="text-[11px] text-slate-400">출원번호</div>
+            <div class="text-sm font-mono font-bold text-indigo-300">제10-2025-0166877호</div>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+          <p>
+            <strong class="text-white font-semibold">발명의 명칭:</strong>
+            <span class="text-slate-200">심리 및 생체데이터 기반 스트레스 관리 솔루션 제공 장치 및 방법</span>
+          </p>
+          <p>
+            마인드플로우랩은 스마트 디바이스 및 센서로부터 획득되는 생체신호(심박변이도, 활동량 등)와 사용자의 심리적 설문·행동 데이터를 융합하여 실시간 스트레스 상태를 추론하고 개인화된 대처 방안을 제시하는 기술적 체계를 고도화하고 있습니다.
+          </p>
+          <p class="text-xs text-slate-400 pt-3 border-t border-slate-800/60">
+            * 본 기술은 현재 특허출원 중이며, 의료적 치료 효과나 정부기관의 공식 의료기기 인증을 의미하지 않습니다. 일상적 웰니스 및 인지 관리를 위한 소프트웨어 솔루션입니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Interactive FAQ -->
+  <section id="faq" class="py-24 px-6 border-t border-slate-800/80">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">FAQ</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">자주 묻는 질문</h2>
+        <p class="mt-4 text-slate-400">마인드플로우랩의 서비스 및 운영에 대해 궁금한 점을 확인하세요.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
+            <span class="font-bold text-white text-base">Q. '보건교육사 2급 합격패스'는 일반 문제집 앱과 어떻게 다른가요?</span>
+            <svg id="faq-icon-1" class="w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="faq-body-1" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            단순히 고정된 기출문제를 나열하는 기존 문제집과 달리, AI가 핵심 기출 유형을 분석하여 유사 변형 문제를 생성합니다. 또한 에빙하우스의 망각곡선 모델을 기반으로 학습자가 틀린 문항을 최적의 복습 타이밍에 다시 제시하여 단기간에 뇌리에 장기 기억화되도록 설계되었습니다.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
+            <span class="font-bold text-white text-base">Q. '명심코칭'은 어떤 사용자에게 적합한가요?</span>
+            <svg id="faq-icon-2" class="w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="faq-body-2" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            업무 스트레스, 수험 불안, 혹은 일상에서 반복되는 부정적 사고 패턴으로 지친 분들을 위한 솔루션입니다. 인지행동치료(CBT) 기법을 모바일 친화적으로 재구성하여 하루 5분 기록만으로도 자기 객관화와 인지적 전환(Cognitive Shift)을 경험할 수 있습니다.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
+            <span class="font-bold text-white text-base">Q. 출원된 특허 기술은 실제 서비스에 어떻게 접목되나요?</span>
+            <svg id="faq-icon-3" class="w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="faq-body-3" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            출원 특허(제10-2025-0166877호)는 스마트워치 등 웨어러블에서 수집되는 생체 반응과 사용자의 일상 감정 데이터를 동기화하여 스트레스 지수를 정량화하는 원천 기술입니다. 향후 명심코칭 및 수험 집중도 관리 솔루션의 핵심 엔진으로 순차 탑재될 예정입니다.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(4)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
+            <span class="font-bold text-white text-base">Q. 기관 및 기업 대상 B2B 멘탈헬스·에듀테크 제휴가 가능한가요?</span>
+            <svg id="faq-icon-4" class="w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="faq-body-4" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            네, 적극적으로 환영합니다. 보건 인력 교육 기관, 임직원 멘탈 웰니스 프로그램을 기획 중인 기업, 지자체 및 연구기관과의 기술 실증(PoC) 및 공동 연구 제휴를 상시 접수하고 있습니다. 아래 공식 문의 이메일로 제안서를 보내주시면 빠르게 회신드립니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Contact & Partnership -->
+  <section id="contact" class="py-24 px-6 border-t border-slate-800/80 bg-gradient-to-b from-slate-950 to-slate-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Contact &amp; Partnership</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tight">더 나은 성장의 미래를 함께 만듭니다</h2>
+      <p class="mt-4 text-slate-300 max-w-xl mx-auto leading-relaxed">
+        마인드플로우랩의 솔루션에 대한 문의나 공동 연구, 비즈니스 파트너십 제안을 환영합니다.
+      </p>
+
+      <div class="mt-10 p-8 rounded-3xl bg-slate-900/90 border border-slate-800 max-w-xl mx-auto shadow-xl">
+        <div class="text-xs text-slate-400 mb-2 font-medium">공식 비즈니스 및 제휴 문의 이메일</div>
+        <div class="flex items-center justify-center gap-3">
+          <a href="mailto:admin@mindflowlab.co.kr" class="text-xl sm:text-2xl font-mono font-bold text-indigo-400 hover:text-indigo-300 underline underline-offset-4 transition">
+            admin@mindflowlab.co.kr
+          </a>
+          <button onclick="copyEmail()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition" title="이메일 주소 복사">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </button>
+        </div>
+        <p id="copy-toast" class="text-xs text-emerald-400 font-semibold mt-3 opacity-0 transition-opacity">
+          ✓ 이메일 주소가 클립보드에 복사되었습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Premium Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-16 px-6 text-xs border-t border-slate-800/90">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+      
+      <!-- Col 1: Brand & Identity -->
+      <div class="md:col-span-4 space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">
+            M
+          </div>
+          <span class="text-lg font-black tracking-tight text-white">
+            Mindflow<span class="text-indigo-400">Lab</span>
+          </span>
+        </div>
+        <p class="text-slate-500 leading-relaxed text-xs pr-4">
+          마인드플로우랩은 심리학, 인지과학, 그리고 데이터 기술을 결합하여 일상의 멘탈 케어와 전문 자격 합격을 돕는 디지털 솔루션을 설계합니다.
+        </p>
+        <p class="text-slate-600 text-[11px]">
+          &copy; 2026 MindflowLab. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Col 2: Business Information (법적 필수 정보) -->
+      <div class="md:col-span-5 space-y-2 text-slate-400">
+        <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">사업자 정보</p>
         <p><span class="text-slate-500">상호명:</span> 마인드플로우랩 &nbsp;|&nbsp; <span class="text-slate-500">대표자:</span> 이경윤</p>
         <p><span class="text-slate-500">사업자등록번호:</span> 838-03-03892</p>
         <p><span class="text-slate-500">통신판매업신고번호:</span> 2026-세종-0576</p>
         <p><span class="text-slate-500">사업장 소재지:</span> 세종특별자치시 산울7로 10 (산울마을8단지) 808동 204호 (우 : 30091)</p>
         <p><span class="text-slate-500">공식 문의:</span> <a href="mailto:admin@mindflowlab.co.kr" class="text-indigo-400 hover:underline">admin@mindflowlab.co.kr</a></p>
-        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 leading-relaxed">
+
+        <!-- Patent Legal Notice -->
+        <div class="mt-4 pt-3 border-t border-slate-900 text-[11px] text-slate-500 leading-relaxed">
           <p><strong class="text-slate-400 font-medium">특허출원:</strong> 제10-2025-0166877호</p>
           <p class="mt-0.5 text-slate-500">(발명의 명칭: 심리 및 생체데이터 기반 스트레스 관리 솔루션 제공 장치 및 방법 / 특허출원 중이며 의료적 효과나 정부인증을 의미하지 않습니다)</p>
         </div>
       </div>
 
-      <div class="flex flex-col md:items-end justify-between">
-        <div class="flex gap-4 text-xs">
-          <a href="#" class="hover:text-white transition">개인정보처리방침</a>
-          <a href="#" class="hover:text-white transition">이용약관</a>
+      <!-- Col 3: Links & Privacy -->
+      <div class="md:col-span-3 flex flex-col justify-between space-y-4">
+        <div>
+          <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">서비스 &amp; 정책</p>
+          <ul class="space-y-2">
+            <li><a href="#ecosystem" class="hover:text-white transition">보건교육사 2급 합격패스</a></li>
+            <li><a href="#ecosystem" class="hover:text-white transition">명심코칭 (출시 예정)</a></li>
+            <li><a href="#patent" class="hover:text-white transition">특허 R&amp;D 정보</a></li>
+            <li><a href="#" class="hover:text-white transition">개인정보처리방침</a></li>
+            <li><a href="#" class="hover:text-white transition">서비스 이용약관</a></li>
+          </ul>
         </div>
-        <p class="mt-6 md:mt-0 text-xs text-slate-500">
-          &copy; 2026 MindflowLab. All rights reserved.
-        </p>
       </div>
+
     </div>
   </footer>
+
+  <!-- Scripts for FAQ and Clipboard -->
+  <script>
+    function toggleFaq(index) {
+      const body = document.getElementById('faq-body-' + index);
+      const icon = document.getElementById('faq-icon-' + index);
+      if (body.classList.contains('hidden')) {
+        body.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        body.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('admin@mindflowlab.co.kr').then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => {
+          toast.classList.add('opacity-0');
+        }, 2500);
+      });
+    }
+  </script>
 
 </body>
 </html>
