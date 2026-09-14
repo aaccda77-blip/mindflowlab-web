@@ -1,0 +1,10 @@
+{
+  "name": "mindflowlab-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MindflowLab & Myeongsim Coaching Official Web Service",
+  "scripts": {
+    "build": "node scripts/build-seo.js",
+    "qa:seo": "node scripts/verify-qa.js"
+  }
+}
