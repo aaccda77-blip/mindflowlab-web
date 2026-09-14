@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "buildCommand": "node scripts/build-seo.js",
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*)",
