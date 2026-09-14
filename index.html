@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>마인드플로우랩 (MindflowLab) | 마음의 흐름을 읽는 에듀·멘탈테크 R&D</title>
   <meta name="description" content="심리학, 인지과학, 그리고 데이터 기술을 융합하여 일상의 마인드셋 케어와 전문 자격 합격을 돕는 에듀·멘탈테크 연구소 마인드플로우랩 공식 홈페이지입니다." />
-  <meta name="keywords" content="마인드플로우랩, 보건교육사 2급, 명심코칭, 인지과학, 멘탈테크, 에듀테크, 스트레스 관리 솔루션" />
+  <meta name="keywords" content="마인드플로우랩, 보건교육사 2급, 명심코칭, 다크코드, 뉴럴코드, 메타코드, 더시프트, 인지과학, 멘탈테크, 에듀테크" />
 
   <!-- Open Graph / SEO -->
   <meta property="og:type" content="website" />
@@ -56,21 +56,11 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .glow-bg {
-      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #b45309 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(226, 232, 240, 0.8);
-    }
-    .dark-glass {
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    /* Wave animation */
     @keyframes pulse-slow {
       0%, 100% { opacity: 0.4; transform: scale(1); }
       50% { opacity: 0.8; transform: scale(1.05); }
@@ -85,8 +75,8 @@
 
   <!-- Ambient Background Glows -->
   <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-indigo-600/20 via-purple-600/10 to-transparent blur-3xl -z-10 pointer-events-none animate-pulse-slow"></div>
-  <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] bg-cyan-600/10 blur-3xl -z-10 pointer-events-none"></div>
-  <div class="fixed bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-emerald-600/10 blur-3xl -z-10 pointer-events-none"></div>
+  <div class="fixed top-[30%] right-[-10%] w-[600px] h-[600px] bg-cyan-600/10 blur-3xl -z-10 pointer-events-none"></div>
+  <div class="fixed top-[65%] left-[-10%] w-[600px] h-[600px] bg-purple-600/10 blur-3xl -z-10 pointer-events-none"></div>
 
   <!-- Navigation -->
   <header class="sticky top-0 z-50 bg-slate-950/75 backdrop-blur-xl border-b border-slate-800/80 transition-all">
@@ -106,10 +96,14 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#vision" class="hover:text-white transition">연구 비전</a>
         <a href="#technology" class="hover:text-white transition">핵심 기술</a>
         <a href="#ecosystem" class="hover:text-white transition">서비스 생태계</a>
+        <a href="#books" class="hover:text-white transition flex items-center gap-1.5">
+          <span>명심 도서 시리즈</span>
+          <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/30">BOOK</span>
+        </a>
         <a href="#patent" class="hover:text-white transition flex items-center gap-1.5">
           <span>특허 &amp; 과학</span>
           <span class="px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-500/20 text-indigo-300 rounded border border-indigo-500/30">IP</span>
@@ -154,6 +148,9 @@
         <span>출시 서비스 둘러보기</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
+      <a href="#books" class="px-7 py-4 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 font-semibold border border-amber-500/30 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
+        <span>📖 명심코칭 도서 시리즈</span>
+      </a>
       <a href="#patent" class="px-7 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 rounded-2xl transition backdrop-blur-sm flex items-center gap-2">
         <span>특허 출원 기술 R&amp;D</span>
       </a>
@@ -166,12 +163,12 @@
         <div class="text-xs text-slate-400 mt-1 font-medium">특허 출원 완료 (스트레스 관리)</div>
       </div>
       <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-        <div class="text-3xl font-black text-purple-400">3,200+</div>
-        <div class="text-xs text-slate-400 mt-1 font-medium">AI 기출 변형 데이터셋</div>
+        <div class="text-3xl font-black text-amber-400">4부작 + 리포트</div>
+        <div class="text-xs text-slate-400 mt-1 font-medium">명심코칭 북스 &amp; 리포트 체계</div>
       </div>
       <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-        <div class="text-3xl font-black text-cyan-400">100%</div>
-        <div class="text-xs text-slate-400 mt-1 font-medium">인지행동 프레임워크 자체 설계</div>
+        <div class="text-3xl font-black text-cyan-400">3,200+</div>
+        <div class="text-xs text-slate-400 mt-1 font-medium">AI 기출 변형 데이터셋</div>
       </div>
       <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
         <div class="text-3xl font-black text-emerald-400">4.9 / 5.0</div>
@@ -182,7 +179,6 @@
     <!-- Visual Dashboard Mockup Card -->
     <div class="mt-16 p-2 rounded-3xl bg-gradient-to-b from-slate-800 to-slate-900/40 border border-slate-800/90 shadow-2xl shadow-indigo-950/50">
       <div class="rounded-[22px] bg-slate-950 p-6 md:p-8 border border-slate-800/80 text-left">
-        <!-- Mockup Header -->
         <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
           <div class="flex items-center gap-3">
             <div class="flex gap-1.5">
@@ -198,7 +194,6 @@
           </span>
         </div>
 
-        <!-- Mockup Content Grid -->
         <div class="grid md:grid-cols-3 gap-6">
           <!-- Live Metric 1 -->
           <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
@@ -206,7 +201,6 @@
               <span class="text-xs text-slate-400">스트레스 및 각성도 추이</span>
               <span class="text-xs font-semibold text-indigo-400">안정화 84%</span>
             </div>
-            <!-- Fake Wave SVG -->
             <div class="h-16 w-full flex items-end">
               <svg class="w-full h-full text-indigo-500" fill="none" viewBox="0 0 200 60" preserveAspectRatio="none">
                 <path d="M0 45 Q 25 10, 50 35 T 100 20 T 150 40 T 200 15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
@@ -251,6 +245,165 @@
               <p class="text-[11px] text-slate-500 pt-1">에빙하우스 망각주기 오답 자동 반복 알고리즘</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Books & Publication (명심코칭 도서 & 리포트 시리즈) -->
+  <section id="books" class="py-24 px-6 border-t border-slate-800/80 bg-slate-950 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Books &amp; Publications</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tight">
+          명심코칭 도서 시리즈 &amp; 맞춤형 리포트
+        </h2>
+        <p class="mt-4 text-slate-400 text-base leading-relaxed">
+          무의식의 자동반응에서 완전한 삶의 자유로 나아가는 여정.<br class="hidden sm:inline" />
+          마인드플로우랩의 인지과학·심리학 연구 체계를 집대성한 공식 출판물 라인업을 소개합니다.
+        </p>
+      </div>
+
+      <!-- 4 Books Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Book 1: 다크 코드 (Dark Code) - 출시 완료 -->
+        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-indigo-500/50 transition-all flex flex-col justify-between group shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono text-indigo-400 font-semibold">BOOK 01</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                출시 완료
+              </span>
+            </div>
+            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
+              <div class="text-xs text-indigo-400 font-bold">무의식 패턴 분석</div>
+              <div>
+                <div class="text-xl font-black text-white group-hover:text-indigo-300 transition-colors leading-tight">다크 코드</div>
+                <div class="text-[11px] text-slate-400 font-medium mt-1">Dark Code</div>
+              </div>
+              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">왜 나는 알면서도 반복하는가</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-2">
+              무의식적으로 작동하는 자동적 방어기제와 보호행동, 알면서도 끊어내지 못했던 삶의 고착된 패턴을 해부하고 마주하는 첫 번째 관문입니다.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <span class="text-xs font-semibold text-indigo-400 flex items-center justify-between">
+              <span>정식 출간 도서</span>
+              <span>확인하기 &rarr;</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Book 2: 뉴럴 코드 (Neural Code) - 출시 예정 -->
+        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-purple-500/50 transition-all flex flex-col justify-between group shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono text-purple-400 font-semibold">BOOK 02</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+                출시 예정 (출간 준비)
+              </span>
+            </div>
+            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-purple-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
+              <div class="text-xs text-purple-400 font-bold">행동 재학습 프로토콜</div>
+              <div>
+                <div class="text-xl font-black text-white group-hover:text-purple-300 transition-colors leading-tight">뉴럴 코드</div>
+                <div class="text-[11px] text-slate-400 font-medium mt-1">Neural Code</div>
+              </div>
+              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">에너지를 어떻게 다르게 쓸 것인가</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-2">
+              인지행동(CBT)·수용전념(ACT) 원리를 적용하여 FACT와 STORY를 나누고, 통제력을 정밀함으로, 완벽주의를 품질감각으로 전환하는 훈련서입니다.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <span class="text-xs font-semibold text-purple-400">집필 완료 · 출간 준비 중</span>
+          </div>
+        </div>
+
+        <!-- Book 3: 메타 코드 (Meta Code) - 출시 예정 -->
+        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between group shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono text-cyan-400 font-semibold">BOOK 03</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                출시 예정 (집필 중)
+              </span>
+            </div>
+            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-cyan-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
+              <div class="text-xs text-cyan-400 font-bold">자각과 제로 포인트</div>
+              <div>
+                <div class="text-xl font-black text-white group-hover:text-cyan-300 transition-colors leading-tight">메타 코드</div>
+                <div class="text-[11px] text-slate-400 font-medium mt-1">Meta Code · Zero Point</div>
+              </div>
+              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">알아차림 자체가 자각되는 자리</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-2">
+              생각을 바라보는 '나'를 넘어, 모든 생각과 감정이 일어나는 순수한 자각(Zero Point)을 발견하고 삶의 진정한 자유를 얻는 심층 의식 탐구서입니다.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <span class="text-xs font-semibold text-cyan-400">집필 진행 중</span>
+          </div>
+        </div>
+
+        <!-- Book 4: THE SHIFT - 출시 예정 -->
+        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between group shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono text-amber-400 font-semibold">SPECIAL EDITION</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                출시 예정 (통합 실전서)
+              </span>
+            </div>
+            <div class="h-44 rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-amber-950/60 border border-slate-700/60 p-5 flex flex-col justify-between mb-5 shadow-inner">
+              <div class="text-xs text-amber-400 font-bold">3S 실전 프로토콜</div>
+              <div>
+                <div class="text-xl font-black text-white group-hover:text-amber-300 transition-colors leading-tight">THE SHIFT</div>
+                <div class="text-[11px] text-slate-400 font-medium mt-1">더 시프트</div>
+              </div>
+              <div class="text-[10px] text-slate-500 font-mono">MindflowLab Publication</div>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">알아차림을 삶의 선택으로</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-2">
+              "판을 바꾸지 못해도 판을 대하는 나는 자유롭다." Zero Point에서 다시 삶의 현장으로 복귀하여 일과 관계에서 자유롭게 행동하는 3S 실전 응용서입니다.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <span class="text-xs font-semibold text-amber-400">실전 프로토콜 기획 중</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Personalized Report Banner: MYEONGSIM START 48 -->
+      <div class="mt-12 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-amber-950/40 via-slate-900 to-indigo-950/40 border border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+              Personalized Report • 제공 중
+            </span>
+            <span class="text-xs text-slate-400 font-mono">MYEONGSIM START 48</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            당신의 운명을 점치는 리포트가 아닙니다.
+          </h3>
+          <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+            <strong class="text-amber-300 font-semibold">《MYEONGSIM START 48》</strong>은 사주 메타포와 SELF Scan 15문항 검사를 결합하여, 왜 중요한 일일수록 예민해지고 같은 실수를 반복하는지 48페이지에 걸쳐 개인의 인지 하드웨어와 동력을 분석하고 실제 삶에서 다르게 사용할 수 있는 해법을 제공하는 초개인화 맞춤 코칭북입니다.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <a href="mailto:admin@mindflowlab.co.kr?subject=[START 48 리포트북 구매 및 상담 문의]" class="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm rounded-xl transition shadow-lg text-center whitespace-nowrap">
+            START 48 리포트 문의
+          </a>
         </div>
       </div>
     </div>
@@ -382,7 +535,7 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Product Portfolio</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">서비스 &amp; 프로젝트 생태계</h2>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">디지털 솔루션 생태계</h2>
         <p class="mt-4 text-slate-400">연구 결과를 담아내어 현실의 문제를 해결하는 마인드플로우랩의 솔루션</p>
       </div>
 
@@ -411,7 +564,6 @@
               보건교육사 2급 국가시험 수험생을 위한 필수 앱입니다. 방대한 법령과 이론을 최신 출제 경향에 맞게 AI로 변형 출제하고, 취약 챕터를 분석하여 오답을 완전히 정복할 때까지 반복 학습을 자동화합니다.
             </p>
 
-            <!-- Feature Tags -->
             <div class="mt-6 flex flex-wrap gap-2">
               <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">모의고사 CBT 모드</span>
               <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">단원별 족집게 학습</span>
@@ -452,7 +604,6 @@
               복잡한 일상과 스트레스 속에서 마음의 객관적 상태를 거울처럼 비추어주는 솔루션입니다. 정서 조절 프레임워크를 기반으로 인지적 전환(Shift)을 유도하고 건강한 마인드셋을 습관화합니다.
             </p>
 
-            <!-- Feature Tags -->
             <div class="mt-6 flex flex-wrap gap-2">
               <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">생각 기록 &amp; 인지 왜곡 분석</span>
               <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-xs text-slate-300 border border-slate-700/60">심리 코칭 피드백</span>
@@ -532,11 +683,11 @@
         <!-- FAQ 2 -->
         <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
           <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:text-indigo-300 transition">
-            <span class="font-bold text-white text-base">Q. '명심코칭'은 어떤 사용자에게 적합한가요?</span>
+            <span class="font-bold text-white text-base">Q. '명심코칭' 도서 시리즈와 개인 리포트북은 어떤 관계인가요?</span>
             <svg id="faq-icon-2" class="w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div id="faq-body-2" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
-            업무 스트레스, 수험 불안, 혹은 일상에서 반복되는 부정적 사고 패턴으로 지친 분들을 위한 솔루션입니다. 인지행동치료(CBT) 기법을 모바일 친화적으로 재구성하여 하루 5분 기록만으로도 자기 객관화와 인지적 전환(Cognitive Shift)을 경험할 수 있습니다.
+            도서 시리즈(《다크 코드》, 《뉴럴 코드》, 《메타 코드》, 《THE SHIFT》)는 인지 패턴의 발견부터 새로운 행동 재학습, 그리고 궁극적인 삶의 자유에 이르는 철학적·이론적 체계를 다룹니다. 반면 《MYEONGSIM START 48》 리포트북은 설문과 개인 데이터를 바탕으로 독자 본인의 고유한 행동 패턴과 동력을 1:1로 진단해주는 맞춤형 실행서입니다.
           </div>
         </div>
 
@@ -571,7 +722,7 @@
       <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Contact &amp; Partnership</span>
       <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tight">더 나은 성장의 미래를 함께 만듭니다</h2>
       <p class="mt-4 text-slate-300 max-w-xl mx-auto leading-relaxed">
-        마인드플로우랩의 솔루션에 대한 문의나 공동 연구, 비즈니스 파트너십 제안을 환영합니다.
+        마인드플로우랩의 솔루션에 대한 문의나 도서 제휴, 비즈니스 파트너십 제안을 환영합니다.
       </p>
 
       <div class="mt-10 p-8 rounded-3xl bg-slate-900/90 border border-slate-800 max-w-xl mx-auto shadow-xl">
@@ -632,13 +783,13 @@
       <!-- Col 3: Links & Privacy -->
       <div class="md:col-span-3 flex flex-col justify-between space-y-4">
         <div>
-          <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">서비스 &amp; 정책</p>
+          <p class="text-xs font-bold text-slate-200 mb-3 uppercase tracking-wider">서비스 &amp; 출판</p>
           <ul class="space-y-2">
+            <li><a href="#books" class="hover:text-amber-300 transition">명심코칭 도서 시리즈</a></li>
+            <li><a href="#books" class="hover:text-amber-300 transition">MYEONGSIM START 48</a></li>
             <li><a href="#ecosystem" class="hover:text-white transition">보건교육사 2급 합격패스</a></li>
             <li><a href="#ecosystem" class="hover:text-white transition">명심코칭 (출시 예정)</a></li>
             <li><a href="#patent" class="hover:text-white transition">특허 R&amp;D 정보</a></li>
-            <li><a href="#" class="hover:text-white transition">개인정보처리방침</a></li>
-            <li><a href="#" class="hover:text-white transition">서비스 이용약관</a></li>
           </ul>
         </div>
       </div>
