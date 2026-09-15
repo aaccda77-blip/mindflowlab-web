@@ -284,31 +284,31 @@
       <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-2">
         
         <button onclick="setCategory('all')" id="tab-all" class="faq-tab-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#007A55] text-white shadow-md">
-          전체 (128+)
+          전체 (134)
         </button>
         
         <button onclick="setCategory('nature')" id="tab-nature" class="faq-tab-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-100">
-          운명론 타파
+          운명론 타파 (10)
         </button>
         
         <button onclick="setCategory('conflict')" id="tab-conflict" class="faq-tab-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-100">
-          갈등·대처
+          갈등·대처 (19)
         </button>
         
         <button onclick="setCategory('relation')" id="tab-relation" class="faq-tab-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-100">
-          관계·심리
+          관계·심리 (28)
         </button>
         
         <button onclick="setCategory('career')" id="tab-career" class="faq-tab-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-100">
-          진로·성과
+          진로·성과 (33)
         </button>
         
         <button onclick="setCategory('habit')" id="tab-habit" class="faq-tab-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-100">
-          습관·행동
+          습관·행동 (17)
         </button>
         
         <button onclick="setCategory('code')" id="tab-code" class="faq-tab-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-100">
-          3대 코드·세계관
+          3대 코드·세계관 (27)
         </button>
         
       </div>
@@ -8680,6 +8680,17 @@
   <script>
     let currentCat = 'all';
 
+    // Grouping mapping between 6 Filter Tabs and 134 FAQ data-categories
+    const categoryMapping = {
+      all: null,
+      nature: ['nature'], // 운명론 타파 (10)
+      conflict: ['conflict', 'doubt', 'reality', 'diff'], // 갈등·대처 및 의문 돌파 (19)
+      relation: ['relation', 'daily', 'mind'], // 관계·심리 및 일상 소통 (28)
+      career: ['career', 'turning', 'social'], // 진로·성과 및 인생 전환점 (33)
+      habit: ['habit', 'health'], // 습관·행동 및 건강 루틴 (17)
+      code: ['code', 'tech', 'trust'] // 3대 코드·세계관 및 특허 검증 (27)
+    };
+
     function setCategory(cat) {
       currentCat = cat;
       document.querySelectorAll('.faq-tab-btn').forEach(btn => {
@@ -8709,13 +8720,15 @@
       const items = document.querySelectorAll('.faq-item');
       let visibleCount = 0;
 
+      const targetCats = categoryMapping[currentCat];
+
       items.forEach(item => {
         const cat = item.getAttribute('data-category');
-        const keywords = item.getAttribute('data-keywords') || '';
-        const title = item.getAttribute('data-title') || '';
+        const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+        const title = (item.getAttribute('data-title') || '').toLowerCase();
         const text = item.innerText.toLowerCase();
 
-        const matchCat = (currentCat === 'all' || cat === currentCat);
+        const matchCat = (currentCat === 'all' || (targetCats && targetCats.includes(cat)));
         const matchQuery = (!q || title.includes(q) || keywords.includes(q) || text.includes(q));
 
         if (matchCat && matchQuery) {
@@ -8727,10 +8740,12 @@
       });
 
       const noRes = document.getElementById('no-results');
-      if (visibleCount === 0) {
-        noRes.classList.remove('hidden');
-      } else {
-        noRes.classList.add('hidden');
+      if (noRes) {
+        if (visibleCount === 0) {
+          noRes.classList.remove('hidden');
+        } else {
+          noRes.classList.add('hidden');
+        }
       }
     }
 
