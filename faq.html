@@ -271,10 +271,59 @@
           결정적인 순간 당신에게 자동으로 일어나는 패턴과 다음 한 번의 선택을 명쾌하게 짚어드립니다.
         </p>
 
-        <!-- Search Bar -->
+        
+        <!-- Search Bar with Clear Button -->
         <div class="max-w-xl mx-auto relative">
-          <input type="text" id="faq-search" oninput="filterFaq()" placeholder="궁금한 질문이나 키워드를 검색해 보세요 (예: 완벽주의, 사주, 부모, 번아웃...)" class="w-full px-5 py-4 pl-12 rounded-2xl bg-[#F8FAFC] border border-slate-200 text-sm text-slate-900 placeholder:text-slate-600 focus:outline-none focus:border-[#007A55] focus:bg-white shadow-sm transition" />
-          <svg class="w-5 h-5 text-slate-600 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" id="faq-search" oninput="handleSearchInput()" placeholder="궁금한 질문이나 키워드를 검색해 보세요 (예: 완벽주의, 사주, 번아웃, 가스라이팅...)" class="w-full px-5 py-4 pl-12 pr-12 rounded-2xl bg-[#F8FAFC] border border-slate-200 text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-[#007A55] focus:bg-white shadow-sm transition" />
+          <svg class="w-5 h-5 text-slate-500 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <button id="input-clear-btn" onclick="clearSearch()" class="hidden absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 flex items-center justify-center text-xs font-bold transition" aria-label="검색어 지우기">✕</button>
+        </div>
+
+        <!-- Mentalist Problem Solver Keyword Chips -->
+        <div class="mt-6 max-w-2xl mx-auto text-left">
+          <div class="flex items-center justify-between gap-2 mb-3 px-1">
+            <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+              <span class="text-base">⚡</span> <span><strong>세계적 멘탈리스트 해결사가 짚어낸 인생사 핵심 고민</strong> (클릭 시 즉시 솔루션)</span>
+            </span>
+            <button onclick="clearSearch()" id="clear-search-btn" class="hidden text-xs text-rose-600 hover:text-rose-700 font-bold flex items-center gap-1 transition cursor-pointer">
+              <span>✕ 초기화</span>
+            </button>
+          </div>
+          <div class="flex flex-wrap items-center gap-2" id="keyword-chips">
+            <button onclick="searchByKeyword('전체')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-[#006042] border border-emerald-300 hover:bg-[#007A55] hover:text-white transition shadow-2xs cursor-pointer">
+              🔥 전체 134문항
+            </button>
+            <button onclick="searchByKeyword('가스라이팅')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              💔 가스라이팅·손절
+            </button>
+            <button onclick="searchByKeyword('돈그릇')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              💸 돈그릇·사업실패·빚
+            </button>
+            <button onclick="searchByKeyword('유리멘탈')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              🛡️ 유리멘탈·자책·불안
+            </button>
+            <button onclick="searchByKeyword('번아웃')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              💼 번아웃·이직퇴사·성과
+            </button>
+            <button onclick="searchByKeyword('결정장애')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              🌪️ 결정장애·미루기·작심삼일
+            </button>
+            <button onclick="searchByKeyword('부모원망')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              👪 부모원망·가족독립
+            </button>
+            <button onclick="searchByKeyword('회피형')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              ❤️ 연애애착·회피형·눈치
+            </button>
+            <button onclick="searchByKeyword('사주미신')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              🔮 사주미신·삼재·운명역전
+            </button>
+            <button onclick="searchByKeyword('완벽주의')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              🎯 완벽주의·인정욕구·비교
+            </button>
+            <button onclick="searchByKeyword('다크코드')" class="kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer">
+              ⚡ 3대코드·제로포인트
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -318,7 +367,7 @@
     <section class="py-12 px-6">
       <div class="max-w-4xl mx-auto space-y-4" id="faq-list">
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="사주 명리 점술 운명 점 사주팔자 심리학 과학 미신" data-title="명심코칭이 사주팔자나 점술 같은 건가요? 아니면 심리학/코칭인가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="사주 명리 점술 운명 점 사주팔자 심리학 과학 미신 사주풀이 운명론 팔자타령 신점 타로 사주잘보는곳 개운법 운명역전 멘탈리스트 십성 인지과학 사주미신 삼재 팔자개혁 철학관사기 액땜 점술타파" data-title="명심코칭이 사주팔자나 점술 같은 건가요? 아니면 심리학/코칭인가요?">
           <button onclick="toggleItem(1)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -389,7 +438,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="diff" data-keywords="성격검사 심리상담 정신과 병원 차이점 위로 변화 제자리" data-title="심리상담, 정신과, 기존 코칭, 기성 성격검사도 많이 해봤는데 왜 제 삶은 그대로일까요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="diff" data-keywords="성격검사 심리상담 정신과 병원 차이점 위로 변화 제자리 심리상담센터 정신건강의학과 정신과약 MBTI한계 코칭상담 제자리걸음 무력감 위로의한계 근본해결 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="심리상담, 정신과, 기존 코칭, 기성 성격검사도 많이 해봤는데 왜 제 삶은 그대로일까요?">
           <button onclick="toggleItem(2)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -449,7 +498,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="다크코드 뉴럴코드 메타코드 제로포인트 더시프트 원리 뜻 개념" data-title="다크 코드, 뉴럴 코드, 메타 코드가 도대체 무슨 뜻인가요? 쉽게 알려주세요!">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="다크코드 뉴럴코드 메타코드 제로포인트 더시프트 원리 뜻 개념 의식성장 무의식패턴 뇌신경가소성 인지재구조화 마음챙김 각성 3대코드 멘탈해결사" data-title="다크 코드, 뉴럴 코드, 메타 코드가 도대체 무슨 뜻인가요? 쉽게 알려주세요!">
           <button onclick="toggleItem(3)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -517,7 +566,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="운명 팔자 사주 나쁨 액운 흉살 절망 망함" data-title="철학관에서 사주팔자가 안 좋다고 들었습니다. 제 인생도 망한 건가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="운명 팔자 사주 나쁨 액운 흉살 절망 망함 사주나쁨 사주팔자절망 백호살 도화살 역마살 살풀이 굿 부적 액땜 인생망함 희망고문 운명극복 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 점술타파" data-title="철학관에서 사주팔자가 안 좋다고 들었습니다. 제 인생도 망한 건가요?">
           <button onclick="toggleItem(4)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -584,7 +633,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="tech" data-keywords="특허 기술 ai 알고리즘 생체신호 스트레스 과학 데이터" data-title="특허까지 출원되었다는데, mindflow ai 알고리즘은 구체적으로 어떤 원리인가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="tech" data-keywords="특허 기술 ai 알고리즘 생체신호 스트레스 과학 데이터 MindflowAI 특허알고리즘 스트레스지수 인지패턴분석 심리테크 멘탈솔루션 감정데이터 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="특허까지 출원되었다는데, mindflow ai 알고리즘은 구체적으로 어떤 원리인가요?">
           <button onclick="toggleItem(5)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -644,7 +693,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="diff" data-keywords="종교 신비주의 명상 기수련 이단 단체 믿음" data-title="혹시 어떤 종교 단체나 기 수련, 신비주의 명상 집단과 관련이 있나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="diff" data-keywords="종교 신비주의 명상 기수련 이단 단체 믿음 사이비종교 단월드 명상센터 영성 세뇌 가스라이팅건전성 과학적인지코칭 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계" data-title="혹시 어떤 종교 단체나 기 수련, 신비주의 명상 집단과 관련이 있나요?">
           <button onclick="toggleItem(6)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -701,7 +750,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="31권 책 독서 부담 언제 다 읽나 시작 어디서부터" data-title="시리즈가 31권이나 되는데, 이 책들을 다 읽어야 제 삶에 변화가 생기나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="31권 책 독서 부담 언제 다 읽나 시작 어디서부터 명심코칭31권 자기계발서 멘탈도서 심리학책추천 마음공부 인생교과서 실천지침서 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="시리즈가 31권이나 되는데, 이 책들을 다 읽어야 제 삶에 변화가 생기나요?">
           <button onclick="toggleItem(7)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -770,7 +819,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="tech" data-keywords="효과 변화 체감 언제 구체적 어떻게 행동 결단 관계" data-title="명심코칭을 거치면 실제로 일상이나 인간관계에서 무엇이 달라지나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="tech" data-keywords="효과 변화 체감 언제 구체적 어떻게 행동 결단 관계 행동변화 인간관계개선 대인기피증극복 감정조절 말실수방지 자존감향상 스트레스해소 삶의변화 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="명심코칭을 거치면 실제로 일상이나 인간관계에서 무엇이 달라지나요?">
           <button onclick="toggleItem(8)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -835,7 +884,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="생년월일 끼워맞추기 ai 가설 질문 출발점 사주 과학 신뢰" data-title="생년월일 몇 개 입력했다고 ai가 어떻게 저를 안다는 거죠? 너무 끼워 맞추는 것 아닌가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="생년월일 끼워맞추기 ai 가설 질문 출발점 사주 과학 신뢰 바넘효과 생년월일운세 AI사주 AI심리 족집게 도사 사기검증 과학적데이터 검증 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="생년월일 몇 개 입력했다고 ai가 어떻게 저를 안다는 거죠? 너무 끼워 맞추는 것 아닌가요?">
           <button onclick="toggleItem(9)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -907,7 +956,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="같은 사주 쌍둥이 운명표 판결문 재료 선택 환경" data-title="같은 사주를 가진 사람도 많은데, 왜 인생은 전부 다른가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="같은 사주 쌍둥이 운명표 판결문 재료 선택 환경 같은사주다른인생 쌍둥이사주 사주통계학 환경의영향 선택의힘 운명의주도권 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="같은 사주를 가진 사람도 많은데, 왜 인생은 전부 다른가요?">
           <button onclick="toggleItem(10)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -977,7 +1026,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="성격검사 에니어그램 유형 분류 작동과정 trigger 자동반응 선택" data-title="기성 성격검사나 에니어그램 같은 검사와 뭐가 다른가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="성격검사 에니어그램 유형 분류 작동과정 trigger 자동반응 선택 MBTI유형 T와F 성격유형검사 라벨링 틀에가두기 낙인효과 입체적분석" data-title="기성 성격검사나 에니어그램 같은 검사와 뭐가 다른가요?">
           <button onclick="toggleItem(11)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1045,7 +1094,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="다크코드 dark code 오해 나쁜 성격 결함 문제 보호전략 통제 완벽주의" data-title="제 dark code가 강하면 제가 문제가 많은 사람이라는 뜻인가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="다크코드 dark code 오해 나쁜 성격 결함 문제 보호전략 통제 완벽주의 다크코드오해 자기혐오 자책감 열등감 콤플렉스 상처 무의식방어기제 마음의그림자 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 3대코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="제 dark code가 강하면 제가 문제가 많은 사람이라는 뜻인가요?">
           <button onclick="toggleItem(12)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1107,7 +1156,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="뉴럴코드 아는데 왜 반복 행동실험 증거 재학습" data-title="저는 제 문제를 이미 다 알아요. 그런데 왜 그 순간만 되면 또 똑같이 행동하죠?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="뉴럴코드 아는데 왜 반복 행동실험 증거 재학습 작심삼일 자동반응 뇌의습관 충동조절실패 이성마비 후회반복 악순환끊기 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 결정장애 미루기 선택마비 우유부단 행동력 실천력" data-title="저는 제 문제를 이미 다 알아요. 그런데 왜 그 순간만 되면 또 똑같이 행동하죠?">
           <button onclick="toggleItem(13)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1168,7 +1217,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="변화 효과 기간 얼마나 7일 30일 3개월 독점 10초" data-title="그래서 얼마나 해야 실제로 바뀌나요? 7일? 30일? 3개월?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="변화 효과 기간 얼마나 7일 30일 3개월 독점 10초 습관형성 21일의법칙 66일의기적 100일변화 뇌회로재배선 지속가능한변화 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력" data-title="그래서 얼마나 해야 실제로 바뀌나요? 7일? 30일? 3개월?">
           <button onclick="toggleItem(14)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1230,7 +1279,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="메타코드 meta code 명상 영적 각성 알아차림 자각 종교 신비주의" data-title="메타 코드는 명상이나 영적 각성 같은 건가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="메타코드 meta code 명상 영적 각성 알아차림 자각 종교 신비주의 메타인지 관조 순수의식 제3자시선 마음관찰 감정거리두기 탈동일시 3대코드 다크코드 뉴럴코드 제로포인트 더시프트 멘탈해결사" data-title="메타 코드는 명상이나 영적 각성 같은 건가요?">
           <button onclick="toggleItem(15)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1291,7 +1340,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="제로포인트 zero point 텅 빈 상태 평온 동일시 탈출구 기준점" data-title="zero point에 가면 머릿속이 텅 비고 계속 평온해지는 건가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="제로포인트 zero point 텅 빈 상태 평온 동일시 탈출구 기준점 평정심 내면의평화 무념무상 생각비우기 마음의고요 번뇌소멸 3대코드 다크코드 뉴럴코드 메타코드 더시프트 멘탈해결사" data-title="zero point에 가면 머릿속이 텅 비고 계속 평온해지는 건가요?">
           <button onclick="toggleItem(16)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1361,7 +1410,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="시프트 shift 긍정주의 판 관계맺기 자유 억지긍정" data-title="shift라는 게 결국 “좋게 생각하세요”, “긍정적으로 보세요” 아닌가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="시프트 shift 긍정주의 판 관계맺기 자유 억지긍정 더시프트 관점전환 긍정확언한계 가짜긍정 현실왜곡 인지전환 프레이밍 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 멘탈해결사" data-title="shift라는 게 결국 “좋게 생각하세요”, “긍정적으로 보세요” 아닌가요?">
           <button onclick="toggleItem(17)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1431,7 +1480,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="ai 진단 불신 단정 라벨 질문 가설 우선" data-title="ai가 저를 몇 가지 코드로 분류해서 “당신은 이런 사람”이라고 단정하는 것 아닌가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="ai 진단 불신 단정 라벨 질문 가설 우선 사람단정짓기 카테고리화 유연한사고 잠재력발휘 가능성열기 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="ai가 저를 몇 가지 코드로 분류해서 “당신은 이런 사람”이라고 단정하는 것 아닌가요?">
           <button onclick="toggleItem(18)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1494,7 +1543,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="상담 정신과 병원 치료 대체 비의료 전문평가 훈련" data-title="그럼 명심코칭만 하면 심리상담이나 정신과 치료는 필요 없는 건가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="상담 정신과 병원 치료 대체 비의료 전문평가 훈련 정신과의료상담 병원치료병행 우울증약 공황장애약 심리치료협업 안전한가이드" data-title="그럼 명심코칭만 하면 심리상담이나 정신과 치료는 필요 없는 건가요?">
           <button onclick="toggleItem(19)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1558,7 +1607,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="정확도 의심 나 아닌데 틀림 오류 수정 피드백" data-title="결과를 봤는데 “이거 나 아닌데?” 싶으면 어떡하죠?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="정확도 의심 나 아닌데 틀림 오류 수정 피드백 자기부정 방어기제 저항감 인지부조화 내면의진실 수용과자각 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="결과를 봤는데 “이거 나 아닌데?” 싶으면 어떡하죠?">
           <button onclick="toggleItem(20)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1630,7 +1679,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="사주 안믿음 불신 상징적 탐색 렌즈 신념체계 경험 확인" data-title="솔직히 저는 사주를 안 믿는데, 그래도 명심코칭을 사용할 수 있나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="사주 안믿음 불신 상징적 탐색 렌즈 신념체계 경험 확인 사주혐오자 무신론자 과학주의자 이성적접근 실용주의 멘탈도구 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="솔직히 저는 사주를 안 믿는데, 그래도 명심코칭을 사용할 수 있나요?">
           <button onclick="toggleItem(21)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1701,7 +1750,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="특허 효과 입증 기술보호 검증 정직 신뢰" data-title="특허가 있다는 건 명심코칭의 효과가 과학적으로 입증됐다는 뜻인가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="특허 효과 입증 기술보호 검증 정직 신뢰 특허출원 과학적검증 알고리즘신뢰도 특허청인증 시스템차별성" data-title="특허가 있다는 건 명심코칭의 효과가 과학적으로 입증됐다는 뜻인가요?">
           <button onclick="toggleItem(22)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1764,7 +1813,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="성격 예민 소심 불변 변화 자동반응 패턴 장면 선택지" data-title="저는 원래 성격이 예민하고 소심한 사람 아닌가요? 그게 정말 바뀔 수 있나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="성격 예민 소심 불변 변화 자동반응 패턴 장면 선택지 예민한성격 소심함 내향인 HSP 고감도인간 기질극복 성격개조 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="저는 원래 성격이 예민하고 소심한 사람 아닌가요? 그게 정말 바뀔 수 있나요?">
           <button onclick="toggleItem(23)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1834,7 +1883,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="직장 회사 퇴근 집 분노 짜증 가족 억압 폭발 긴장 선" data-title="회사에서는 참다가 왜 집에만 오면 가족한테 짜증이 날까요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="직장 회사 퇴근 집 분노 짜증 가족 억압 폭발 긴장 선 감정쓰레기통 가족한테짜증 분노전이 퇴근후짜증 가면우울증 직장가면 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="회사에서는 참다가 왜 집에만 오면 가족한테 짜증이 날까요?">
           <button onclick="toggleItem(24)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1907,7 +1956,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="연애 관계 애착 회피 마음 식음 도망 잠수 속도 위험 신호" data-title="좋은 사람을 만나도 왜 저는 갑자기 마음이 식는 것 같고 도망가고 싶을까요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="연애 관계 애착 회피 마음 식음 도망 잠수 속도 위험 신호 회피형애착 회피형인간 잠수이별 마음식음 도망치는연애 친밀감공포 파혼충동 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등" data-title="좋은 사람을 만나도 왜 저는 갑자기 마음이 식는 것 같고 도망가고 싶을까요?">
           <button onclick="toggleItem(25)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -1975,7 +2024,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="부부 커플 표현 눈치 소통 기대 알아서 낭만 마음읽기 사랑의기술" data-title="왜 저는 상대가 알아서 해주길 바라면서 정작 원하는 건 말을 못 할까요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="부부 커플 표현 눈치 소통 기대 알아서 낭만 마음읽기 사랑의기술 눈치시험 말안하고바라기 독심술요구 수동공격 연인갈등 부부대화단절 속마음표현 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 회피형 불안형애착 연애고민 이혼위기 부부싸움 외도 궁합갈등" data-title="왜 저는 상대가 알아서 해주길 바라면서 정작 원하는 건 말을 못 할까요?">
           <button onclick="toggleItem(26)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2043,7 +2092,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="거절 눈치 no yes 관계위협 서운 지침 선택권 작은거절" data-title="왜 ‘싫어요’, ‘못 합니다’ 한마디가 이렇게 어려운 거죠?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="거절 눈치 no yes 관계위협 서운 지침 선택권 작은거절 거절못하는성격 착한아이콤플렉스 호구탈출 부탁거절 호의가권리 부탁공포증 가스라이팅 손절 나르시시스트 인간관계스트레스 대인관계 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="왜 ‘싫어요’, ‘못 합니다’ 한마디가 이렇게 어려운 거죠?">
           <button onclick="toggleItem(27)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2113,7 +2162,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="완벽주의 일 품질 경쟁력 기준 과잉통제 수정 집중 효율" data-title="저는 완벽주의라서 일을 잘하는 건데, 그걸 고치면 경쟁력이 떨어지지 않나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="완벽주의 일 품질 경쟁력 기준 과잉통제 수정 집중 효율 완벽주의함정 강박증 마감공포 시작못함 실수공포증 자기검열 프로지연러 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="저는 완벽주의라서 일을 잘하는 건데, 그걸 고치면 경쟁력이 떨어지지 않나요?">
           <button onclick="toggleItem(28)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2180,7 +2229,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="일중독 번아웃 휴식 쉼 불안 뒤처짐 비용 자기효능 가치" data-title="쉬면 불안한데, 저는 그냥 원래 일을 좋아하는 사람 아닌가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="일중독 번아웃 휴식 쉼 불안 뒤처짐 비용 자기효능 가치 워커홀릭 휴식불안 번아웃증후군 쉼에대한죄책감 멍때리기불안 퇴사 이직 직장생활 조직문화 성과압박 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="쉬면 불안한데, 저는 그냥 원래 일을 좋아하는 사람 아닌가요?">
           <button onclick="toggleItem(29)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2246,7 +2295,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="책임감 과잉책임 오지랖 희생 번아웃 해결사 내몫 남의몫 경계" data-title="저는 그냥 책임감이 강한 건데 왜 자꾸 ‘과잉책임’이라고 하나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="책임감 과잉책임 오지랖 희생 번아웃 해결사 내몫 남의몫 경계 과잉책임감 통제욕구 내가다해야해 독박육아 독박업무 내려놓기 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="저는 그냥 책임감이 강한 건데 왜 자꾸 ‘과잉책임’이라고 하나요?">
           <button onclick="toggleItem(30)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2314,7 +2363,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="인정욕구 칭찬 갱신 외부평가 불안 증명 가치 연료 운전대" data-title="왜 칭찬을 많이 받아도 며칠 지나면 또 불안해질까요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="인정욕구 칭찬 갱신 외부평가 불안 증명 가치 연료 운전대 인정중독 칭찬집착 칭찬뒤불안 가면증후군 사기꾼증후군 자존감도둑 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 완벽주의 비교지옥 질투심 열등감" data-title="왜 칭찬을 많이 받아도 며칠 지나면 또 불안해질까요?">
           <button onclick="toggleItem(31)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2380,7 +2429,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="비교 질투 부러움 동료 승진 데이터 훈련방향 에너지" data-title="다른 사람이 잘되면 축하해주고 싶은데 왜 속으로는 배가 아플까요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="비교 질투 부러움 동료 승진 데이터 훈련방향 에너지 사촌이땅을사면 배아픔 질투심 열등감 비교지옥 SNS피로증 샤덴프로이데 완벽주의 인정욕구 인정중독 가면증후군" data-title="다른 사람이 잘되면 축하해주고 싶은데 왜 속으로는 배가 아플까요?">
           <button onclick="toggleItem(32)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2446,7 +2495,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="결정장애 선택 생각 후회 불안 완벽확신 행동 분석" data-title="생각을 많이 하면 더 좋은 결정을 해야 하는데, 왜 저는 생각할수록 아무것도 못 하죠?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="결정장애 선택 생각 후회 불안 완벽확신 행동 분석 선택마비 생각과잉 오버씽킹 햄릿증후군 고민지옥 우유부단 미루기 작심삼일 행동력 실천력" data-title="생각을 많이 하면 더 좋은 결정을 해야 하는데, 왜 저는 생각할수록 아무것도 못 하죠?">
           <button onclick="toggleItem(33)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2512,7 +2561,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="분노 욱함 화 조절 경계 공격 언어 부당함 신호" data-title="저는 화가 너무 빨리 납니다. 분노조절부터 해야 하는 것 아닌가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="분노 욱함 화 조절 경계 공격 언어 부당함 신호 분노조절장애 욱하는성격 홧병 감정폭발 뒷감당불가 3초의법칙 쿨다운 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="저는 화가 너무 빨리 납니다. 분노조절부터 해야 하는 것 아닌가요?">
           <button onclick="toggleItem(34)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2578,7 +2627,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="불안 행동 회피 면접 발표 자유 틈 입장조건 감정" data-title="불안이 없어져야 제대로 행동할 수 있는 것 아닌가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="불안 행동 회피 면접 발표 자유 틈 입장조건 감정 불안장애 미래불안 걱정인형 안절부절 행동마비 불안속행동 실천력 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 결정장애 미루기 작심삼일 선택마비 우유부단 행동력" data-title="불안이 없어져야 제대로 행동할 수 있는 것 아닌가요?">
           <button onclick="toggleItem(35)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2650,7 +2699,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="부모 자녀 아이 성격 진로 낙인 대화 양육 관찰 미래" data-title="명심코칭으로 아이 성격이나 진로까지 맞힐 수 있나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="부모 자녀 아이 성격 진로 낙인 대화 양육 관찰 미래 자녀진로 양육태도 사주육아 아이성격맞춤 자녀잠재력 부모자녀궁합 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="명심코칭으로 아이 성격이나 진로까지 맞힐 수 있나요?">
           <button onclick="toggleItem(36)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2718,7 +2767,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="생시 태어난시간 출생시간 삼주 행동데이터 정확성 모르는것" data-title="태어난 시간을 모르는데도 명심코칭을 받을 수 있나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="생시 태어난시간 출생시간 삼주 행동데이터 정확성 모르는것 태어난시간모름 사주시간모를때 삼주육자 멘탈패턴분석 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="태어난 시간을 모르는데도 명심코칭을 받을 수 있나요?">
           <button onclick="toggleItem(37)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2788,7 +2837,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="chatgpt ai 챗봇 차별점 기록 추적 코칭시스템 이전실험 누적" data-title="chatgpt에 고민 말하면 되는데 굳이 명심ai가 왜 필요한가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="chatgpt ai 챗봇 차별점 기록 추적 코칭시스템 이전실험 누적 ChatGPT상담 인공지능코칭 명심AI차별점 심층인지패턴 맞춤형멘탈케어" data-title="chatgpt에 고민 말하면 되는데 굳이 명심ai가 왜 필요한가요?">
           <button onclick="toggleItem(38)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2851,7 +2900,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="ai의존 자율성 선택권 질문 독립 스스로 결정 판단력박탈" data-title="ai 코칭을 계속 받다 보면 오히려 ai 없이는 결정 못 하는 사람 되는 것 아닌가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="doubt" data-keywords="ai의존 자율성 선택권 질문 독립 스스로 결정 판단력박탈 AI의존성 주체적결정 자기주도성 내면의나침반 자립심코칭 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력" data-title="ai 코칭을 계속 받다 보면 오히려 ai 없이는 결정 못 하는 사람 되는 것 아닌가요?">
           <button onclick="toggleItem(39)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2916,7 +2965,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="개인정보 프라이버시 데이터 보안 투명성 삭제 보관 암호화 신뢰" data-title="사주정보, 고민, 관계 이야기까지 입력하면 개인정보는 안전한가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="개인정보 프라이버시 데이터 보안 투명성 삭제 보관 암호화 신뢰 개인정보보호 비밀보장 보안서버 익명고민상담 안심상담" data-title="사주정보, 고민, 관계 이야기까지 입력하면 개인정보는 안전한가요?">
           <button onclick="toggleItem(40)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -2982,7 +3031,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="효과 과장 보장 후기 실제행동 지표 정직 검증 100프로" data-title="후기 보면 다 좋아졌다는데, 명심코칭 하면 누구나 변하나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="효과 과장 보장 후기 실제행동 지표 정직 검증 100프로 후기신뢰도 개인차 맞춤형적용 실행력의차이 솔직한후기" data-title="후기 보면 다 좋아졌다는데, 명심코칭 하면 누구나 변하나요?">
           <button onclick="toggleItem(41)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3046,7 +3095,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="비추천 적합성 점술 의존 정답 권위자 주체성 진로결정" data-title="명심코칭이 잘 맞지 않는 사람도 있나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="비추천 적합성 점술 의존 정답 권위자 주체성 진로결정 비추천대상 코칭부적합자 현실부정자 맹신주의자 자발적의지필수" data-title="명심코칭이 잘 맞지 않는 사람도 있나요?">
           <button onclick="toggleItem(42)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3118,7 +3167,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="작심삼일 의지박약 마이크로행동 10분 작은실험 결심 의지탓" data-title="작심삼일이 반복되면 저는 의지가 약한 사람인가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="작심삼일 의지박약 마이크로행동 10분 작은실험 결심 의지탓 작심삼일극복 의지력낭비 시스템설계 환경설정 습관루틴 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 결정장애 미루기 선택마비 우유부단 행동력 실천력" data-title="작심삼일이 반복되면 저는 의지가 약한 사람인가요?">
           <button onclick="toggleItem(43)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3193,7 +3242,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="트리거 버튼 상대 잘못 자동반응 분리 투사 방어기제 선택권" data-title="저를 제일 힘들게 하는 사람이 사실 제 ‘코드 버튼’을 누르는 사람인가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="트리거 버튼 상대 잘못 자동반응 분리 투사 방어기제 선택권 인생빌런 꼴보기싫은사람 버튼눌림 역린 무의식투사 그림자투사 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="저를 제일 힘들게 하는 사람이 사실 제 ‘코드 버튼’을 누르는 사람인가요?">
           <button onclick="toggleItem(44)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3260,7 +3309,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="운 탓 사주팔자 운명론 선택권 통제영역 환경 무기력" data-title="일이 안 풀릴 때 “운이 안 좋아서 그렇다”고 생각하면 마음은 편한데, 왜 굳이 패턴까지 봐야 하나요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="운 탓 사주팔자 운명론 선택권 통제영역 환경 무기력 운명탓 남탓 환경탓 피해자의식 주체적삶 내면통제소 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="일이 안 풀릴 때 “운이 안 좋아서 그렇다”고 생각하면 마음은 편한데, 왜 굳이 패턴까지 봐야 하나요?">
           <button onclick="toggleItem(45)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3330,7 +3379,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="긍정확언 끌어당김 감사일기 행동실험 업데이트 억지믿음 인지학습" data-title="저는 긍정확언, 감사일기, 끌어당김도 많이 해봤는데 오래 못 갔어요. 명심코칭도 비슷한 건가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="긍정확언 끌어당김 감사일기 행동실험 업데이트 억지믿음 인지학습 시크릿한계 끌어당김의법칙 감사일기확언 역효과 실천적행동 현실주의" data-title="저는 긍정확언, 감사일기, 끌어당김도 많이 해봤는데 오래 못 갔어요. 명심코칭도 비슷한 건가요?">
           <button onclick="toggleItem(46)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3394,7 +3443,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="목표 지향 인간상 선택가능한인간 브랜드슬로건 메타코드 복귀 자유" data-title="명심코칭이 최종적으로 만들고 싶은 사람은 어떤 사람인가요?">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="목표 지향 인간상 선택가능한인간 브랜드슬로건 메타코드 복귀 자유 최종목표 자율적인가 내면의자유 멘탈마스터 흔들리지않는삶 주체자 3대코드 다크코드 뉴럴코드 제로포인트 더시프트 멘탈해결사" data-title="명심코칭이 최종적으로 만들고 싶은 사람은 어떤 사람인가요?">
           <button onclick="toggleItem(47)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3467,7 +3516,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="mbti 성격유형검사 사주 자기이해 정체성 존재 렌즈 지도 주소 반응 갑목 상관 정관 60갑자" data-title="“사주도 보고, mbti 같은 성격유형검사도 해봤는데 왜 저는 아직도 제가 누군지 모르겠죠?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="mbti 성격유형검사 사주 자기이해 정체성 존재 렌즈 지도 주소 반응 갑목 상관 정관 60갑자 정체성혼란 내가누구인가 자아탐색 인생방황 사춘기중년 오춘기 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“사주도 보고, mbti 같은 성격유형검사도 해봤는데 왜 저는 아직도 제가 누군지 모르겠죠?”">
           <button onclick="toggleItem(48)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3527,7 +3576,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="성격검사 결과 변화 이상한가 본체 상황 시기 자기인식 문항해석 회의 내향형 행동변화" data-title="“성격검사 결과가 매번 달라집니다. 제가 이상한 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="성격검사 결과 변화 이상한가 본체 상황 시기 자기인식 문항해석 회의 내향형 행동변화 성격검사불일치 다중인격 가면서브캐릭터 상황별페르소나 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="“성격검사 결과가 매번 달라집니다. 제가 이상한 건가요?”">
           <button onclick="toggleItem(49)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3584,7 +3633,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="강한사주 무너짐 버티기 도움요청 약함 기대 허락 진짜강함 회복" data-title="“사주에서는 제가 강한 사람이라는데, 저는 왜 이렇게 쉽게 무너질까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="강한사주 무너짐 버티기 도움요청 약함 기대 허락 진짜강함 회복 외강내유 멘탈붕괴 겉은멀쩡 속은만신창이 눈물흘림 무너짐극복 유리멘탈 자책 멘탈관리 회복탄력성 멘탈치유 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="“사주에서는 제가 강한 사람이라는데, 저는 왜 이렇게 쉽게 무너질까요?”">
           <button onclick="toggleItem(50)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3649,7 +3698,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="재물운 돈 돈복 재성 소비 불안 인정욕구 거절 기회 자동반응 선택지" data-title="“제 사주에는 재물운이 약하다고 들었습니다. 그래서 돈이 잘 안 모이는 걸까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="재물운 돈 돈복 재성 소비 불안 인정욕구 거절 기회 자동반응 선택지 돈복없는사주 재물운부족 통장잔고 빚더미 돈그릇키우기 부자마인드 경제적자유 돈그릇 사업실패 빚 재테크" data-title="“제 사주에는 재물운이 약하다고 들었습니다. 그래서 돈이 잘 안 모이는 걸까요?”">
           <button onclick="toggleItem(51)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3707,7 +3756,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="돈 성공 욕망 욕심 가치 건강 관계 희생 현실적 질문" data-title="“돈을 많이 벌고 싶은 마음은 욕심인가요? 명심코칭은 욕망을 내려놓으라고 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="돈 성공 욕망 욕심 가치 건강 관계 희생 현실적 질문 돈욕심 물질만능주의 세속적욕망 부의창출 돈에대한죄책감 가난의대물림 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복" data-title="“돈을 많이 벌고 싶은 마음은 욕심인가요? 명심코칭은 욕망을 내려놓으라고 하나요?”">
           <button onclick="toggleItem(52)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3764,7 +3813,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="건강 사주 질병 위험 의학적판단 진단 검진 증상 생활습관 국민건강증진법 보건교육 신호" data-title="“사주에 건강이 약하다고 하면 정말 병에 걸릴 확률이 높은 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="건강 사주 질병 위험 의학적판단 진단 검진 증상 생활습관 국민건강증진법 보건교육 신호 단명사주 건강운 질병운 건강염려증 섭생 만성질환예방" data-title="“사주에 건강이 약하다고 하면 정말 병에 걸릴 확률이 높은 건가요?”">
           <button onclick="toggleItem(53)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3822,7 +3871,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="괜찮아 통증 피로 수면문제 우울 불안 전문가평가 의료 정신건강 민폐 자기희생 건강문해력" data-title="“저는 몸이 아파도 늘 ‘괜찮아’라고 합니다. 왜 그럴까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="괜찮아 통증 피로 수면문제 우울 불안 전문가평가 의료 정신건강 민폐 자기희생 건강문해력 괜찮아병 착한사람병 고통참기 아픔숨기기 신체화증상 화병 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“저는 몸이 아파도 늘 ‘괜찮아’라고 합니다. 왜 그럴까요?”">
           <button onclick="toggleItem(54)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3880,7 +3929,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="수면 잠 성공 게으름 건강관리 집중 기분 충동 오류 내일의나 보건교육" data-title="“잠을 줄여야 성공할 수 있다는 말, 정말 맞나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="수면 잠 성공 게으름 건강관리 집중 기분 충동 오류 내일의나 보건교육 4당5락 잠줄이기 수면부족 만성피로 수면의과학 뇌회복 브레인포그 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“잠을 줄여야 성공할 수 있다는 말, 정말 맞나요?”">
           <button onclick="toggleItem(55)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3938,7 +3987,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="스트레스 질병 마음탓 마음가짐 죄책감 생물학적 요인 의료전문가 생활습관 행동선택" data-title="“스트레스가 많으면 병이 생긴다는데, 그럼 제가 아픈 것도 다 제 마음 때문인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="스트레스 질병 마음탓 마음가짐 죄책감 생물학적 요인 의료전문가 생활습관 행동선택 마음의병 신체화장애 심신상관 스트레스위염 두통 과민성대장증후군 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="“스트레스가 많으면 병이 생긴다는데, 그럼 제가 아픈 것도 다 제 마음 때문인가요?”">
           <button onclick="toggleItem(56)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -3995,7 +4044,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="우울 불안 dark code 의학적 진단명 우울증 공황장애 정신건강 전문가 자해 자살 위험신호" data-title="“우울하거나 불안할 때도 dark code라고 보면 되나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="우울 불안 dark code 의학적 진단명 우울증 공황장애 정신건강 전문가 자해 자살 위험신호 우울증초기 불안장애 다크코드활용 감정수용 무기력탈출 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="“우울하거나 불안할 때도 dark code라고 보면 되나요?”">
           <button onclick="toggleItem(57)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4051,7 +4100,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="사주 불안 코드 불안장애 기호 긴장 민감성 임상적진단 전문가평가 확인 회피 병명" data-title="“사주에 불안이 많은 코드가 있다면 불안장애가 생긴다는 뜻인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="사주 불안 코드 불안장애 기호 긴장 민감성 임상적진단 전문가평가 확인 회피 병명 사주불안 살성 공황발작 과호흡 예기불안 호흡법 신경계안정 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="“사주에 불안이 많은 코드가 있다면 불안장애가 생긴다는 뜻인가요?”">
           <button onclick="toggleItem(58)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4108,7 +4157,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="술 음주 스트레스 대처 긴장완화 외로움 잠 분노 안전한대처 건강행동" data-title="“저는 술 한잔해야 스트레스가 풀립니다. 이것도 코드인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="술 음주 스트레스 대처 긴장완화 외로움 잠 분노 안전한대처 건강행동 술의존 알코올중독 혼술 스트레스해소 폭음 도파민보상 중독탈출" data-title="“저는 술 한잔해야 스트레스가 풀립니다. 이것도 코드인가요?”">
           <button onclick="toggleItem(59)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4172,7 +4221,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="피곤 운동 식사 의지 건강관리 환경설계 10분걷기 기본값" data-title="“왜 피곤할수록 운동도 식사도 다 놓아버릴까요? 의지 문제인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="피곤 운동 식사 의지 건강관리 환경설계 10분걷기 기본값 피로누적 번아웃 폭식 야식 누워만있기 침대와한몸 무기력의고리 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“왜 피곤할수록 운동도 식사도 다 놓아버릴까요? 의지 문제인가요?”">
           <button onclick="toggleItem(60)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4229,7 +4278,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="건강검진 정상 불안 확인행동 병원검색 감각 확인 정보 불안관리" data-title="“건강검진 결과가 정상인데도 계속 불안합니다. 어떻게 해야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="건강검진 정상 불안 확인행동 병원검색 감각 확인 정보 불안관리 건강염려증 검진정상 암공포 질병불안 신체망상 마음안정 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="“건강검진 결과가 정상인데도 계속 불안합니다. 어떻게 해야 하나요?”">
           <button onclick="toggleItem(61)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4287,7 +4336,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="야식 과음 늦게자기 운동미루기 과로 휴대폰 즉각적보상 위로 흥분 긴장완화 도망 기능 코칭 보건교육" data-title="“왜 건강에 나쁜 줄 알면서도 계속 같은 행동을 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="야식 과음 늦게자기 운동미루기 과로 휴대폰 즉각적보상 위로 흥분 긴장완화 도망 기능 코칭 보건교육 나쁜습관반복 야식중독 스마트폰중독 쇼핑중독 쾌락중독 행동교정 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력" data-title="“왜 건강에 나쁜 줄 알면서도 계속 같은 행동을 하나요?”">
           <button onclick="toggleItem(62)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4344,7 +4393,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="성격검사 유형 완벽 과잉책임 인정욕구 불확실성 건강행동 취약순간" data-title="“성격검사에서 ‘나는 이런 유형’이라고 알게 되면 건강관리에도 도움이 되나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="성격검사 유형 완벽 과잉책임 인정욕구 불확실성 건강행동 취약순간 체질맞춤 바이오리듬 라이프스타일 헬스케어 루틴 최적화" data-title="“성격검사에서 ‘나는 이런 유형’이라고 알게 되면 건강관리에도 도움이 되나요?”">
           <button onclick="toggleItem(63)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4400,7 +4449,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="mbti 대체검사 저작권 판례 창작적표현 대법원 98도112 자체문항 자체코드 차별화" data-title="“명심코칭은 mbti를 대체하는 검사인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="mbti 대체검사 저작권 판례 창작적표현 대법원 98도112 자체문항 자체코드 차별화 MBTI대체 인지신경망 60갑자코드 입체적성격분석 행동나침반" data-title="“명심코칭은 mbti를 대체하는 검사인가요?”">
           <button onclick="toggleItem(64)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4457,7 +4506,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="심리상담 성격검사 소용 치료 역할 빈칸 행동설계 실험 신뢰" data-title="“기존 심리상담이나 성격검사는 왜 소용없었다고 말하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="심리상담 성격검사 소용 치료 역할 빈칸 행동설계 실험 신뢰 기존상담한계 겉도는대화 라포형성만끝남 근본코드발견 속시원한해결" data-title="“기존 심리상담이나 성격검사는 왜 소용없었다고 말하나요?”">
           <button onclick="toggleItem(65)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4513,7 +4562,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="질병 예방 보장 유익한생활행동 국민건강증진법 제19조 수면 스트레스 검진 의료광고제한" data-title="“명심코칭을 하면 병을 예방할 수 있나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="질병 예방 보장 유익한생활행동 국민건강증진법 제19조 수면 스트레스 검진 의료광고제한 질병예방 생활습관교정 면역력강화 심신통합 스트레스관리" data-title="“명심코칭을 하면 병을 예방할 수 있나요?”">
           <button onclick="toggleItem(66)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4569,7 +4618,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="건강 진료 의료행위 진단 치료 비의료인 의료광고 의료법 제56조 전문가연결" data-title="“그럼 명심코칭에서 건강 이야기를 하면 의료행위가 되는 것 아닌가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="건강 진료 의료행위 진단 치료 비의료인 의료광고 의료법 제56조 전문가연결 비의료행위 코칭윤리 정신과전문의연계 안전한멘탈가이드 경계준수" data-title="“그럼 명심코칭에서 건강 이야기를 하면 의료행위가 되는 것 아닌가요?”">
           <button onclick="toggleItem(67)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4625,7 +4674,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="버티기 용기 도움요청 오버 정신력 고통자격 상담예약 의료기관 검진" data-title="“몸도 마음도 너무 힘든데, 그래도 저는 더 버텨야 할 것 같습니다.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="버티기 용기 도움요청 오버 정신력 고통자격 상담예약 의료기관 검진 버티기한계 존버의위험 번아웃임계점 쉬어갈용기 항복의지혜 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="“몸도 마음도 너무 힘든데, 그래도 저는 더 버텨야 할 것 같습니다.”">
           <button onclick="toggleItem(68)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4682,7 +4731,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="건강정보 건강행동 보건지식 기본값 물 운동 잠 자발적실행 국민건강증진법 제2조" data-title="“저는 건강정보를 많이 아는데 왜 건강하게 못 살까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="건강정보 건강행동 보건지식 기본값 물 운동 잠 자발적실행 국민건강증진법 제2조 건강지식과잉 실천불가 아는것과행동 간극줄이기 마이크로습관 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력" data-title="“저는 건강정보를 많이 아는데 왜 건강하게 못 살까요?”">
           <button onclick="toggleItem(69)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4739,7 +4788,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="병원검사 미루기 회피 결과무서움 인정 작은행동 쪼개기 예약 질문" data-title="“왜 저는 병원 가는 것도 미루고, 중요한 검사도 자꾸 뒤로 미룰까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="병원검사 미루기 회피 결과무서움 인정 작은행동 쪼개기 예약 질문 병원미루기 회피반응 건강검진공포 현실도피 직면의용기 결정장애 작심삼일 선택마비 우유부단 행동력 실천력" data-title="“왜 저는 병원 가는 것도 미루고, 중요한 검사도 자꾸 뒤로 미룰까요?”">
           <button onclick="toggleItem(70)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4796,7 +4845,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="수명 단명 큰병 공포 사주 확정적판단 검진 생활습관 오늘돌봄" data-title="“사주에서 수명이 짧다거나 큰 병이 온다는 말을 들었습니다. 너무 무섭습니다.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="수명 단명 큰병 공포 사주 확정적판단 검진 생활습관 오늘돌봄 단명예언 저주의말 철학관악담 죽음공포 공포마케팅 사기수법타파 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“사주에서 수명이 짧다거나 큰 병이 온다는 말을 들었습니다. 너무 무섭습니다.”">
           <button onclick="toggleItem(71)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4853,7 +4902,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="부모 사주 낙인 원래이래 성질 세다 남편복 돈 못모은다 정체성 분리 마지막문장" data-title="“부모가 제 사주를 보고 아이 때부터 ‘너는 원래 이래’라고 했습니다. 그 말이 아직도 머릿속에 있어요.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="부모 사주 낙인 원래이래 성질 세다 남편복 돈 못모은다 정체성 분리 마지막문장 부모의가스라이팅 부모의말 꼬리표 족쇄풀기 내면아이치유 상처극복 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“부모가 제 사주를 보고 아이 때부터 ‘너는 원래 이래’라고 했습니다. 그 말이 아직도 머릿속에 있어요.”">
           <button onclick="toggleItem(72)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4911,7 +4960,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="아이사주 자녀양육 리더형 예민 필터 관찰 공간 코드" data-title="“아이 사주를 미리 보면 아이를 더 잘 키울 수 있지 않을까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="mind" data-keywords="아이사주 자녀양육 리더형 예민 필터 관찰 공간 코드 자녀조기사주 편견없는양육 아이의개성 잠재력존중 부모의조바심 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“아이 사주를 미리 보면 아이를 더 잘 키울 수 있지 않을까요?”">
           <button onclick="toggleItem(73)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -4968,7 +5017,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="사주 심리학 과학적증명 상징체계 독자적코칭프레임 정직한구분 질문 행동확인" data-title="“사주와 심리학을 함께 쓰면 과학적으로 사주가 증명됐다는 뜻인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="사주 심리학 과학적증명 상징체계 독자적코칭프레임 정직한구분 질문 행동확인 사주과학화 융합학문 상징해석학 인지행동치료 융심리학 접목 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“사주와 심리학을 함께 쓰면 과학적으로 사주가 증명됐다는 뜻인가요?”">
           <button onclick="toggleItem(74)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5025,7 +5074,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="사람고치기 사용법바꾸기 완벽주의 품질감각 통제 위험 과잉책임 약속 인정욕구 경쟁 분노 경계 불안 준비 뉴럴코드" data-title="“왜 명심코칭은 사람을 고치는 대신 ‘사용법을 바꾼다’고 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="사람고치기 사용법바꾸기 완벽주의 품질감각 통제 위험 과잉책임 약속 인정욕구 경쟁 분노 경계 불안 준비 뉴럴코드 사람사용법 인생설명서 나라는기계 취급설명서 단점의재발견 강점레버리지 3대코드 다크코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="“왜 명심코칭은 사람을 고치는 대신 ‘사용법을 바꾼다’고 하나요?”">
           <button onclick="toggleItem(75)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5089,7 +5138,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="최종목적 더나은인간 삶으로복귀 자기계발 자각 선택 자유 삶속으로" data-title="“그럼 명심코칭의 마지막은 결국 무엇인가요? 더 나은 인간이 되는 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="최종목적 더나은인간 삶으로복귀 자기계발 자각 선택 자유 삶속으로 완성된인간 슈퍼맨환상 불완전함의수용 내삶의마스터 인간다운행복 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="“그럼 명심코칭의 마지막은 결국 무엇인가요? 더 나은 인간이 되는 건가요?”">
           <button onclick="toggleItem(76)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5154,7 +5203,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="철학관 세군데 말이다름 해석차이 절대적판결문 사업 결혼운 이직 결정 현실자료 해석쇼핑" data-title="“철학관 세 군데를 갔는데 세 곳 말이 다 달라요. 도대체 누구 말이 맞는 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="철학관 세군데 말이다름 해석차이 절대적판결문 사업 결혼운 이직 결정 현실자료 해석쇼핑 철학관말다름 엉터리해석 점술가실력 사현사색 코현걸귀현 중심잡기 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“철학관 세 군데를 갔는데 세 곳 말이 다 달라요. 도대체 누구 말이 맞는 건가요?”">
           <button onclick="toggleItem(77)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5219,7 +5268,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="대운 나쁜운 대운공포 삶의보류 이직 사업 연애 공부 위험요인 준비 속도조절" data-title="“대운이 안 좋다고 들었습니다. 그럼 몇 년 동안 아무것도 시작하지 말아야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="대운 나쁜운 대운공포 삶의보류 이직 사업 연애 공부 위험요인 준비 속도조절 대운불리 암흑기 은둔존버 학습의시기 칼을가는시기 운의흐름타기 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“대운이 안 좋다고 들었습니다. 그럼 몇 년 동안 아무것도 시작하지 말아야 하나요?”">
           <button onclick="toggleItem(78)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5277,7 +5326,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="대박운 좋은운 행동대신 기회 사람지원 채용 시장반응 준비 움직임" data-title="“반대로 올해 대박 나는 운이라고 들었는데 왜 아무 일도 안 생기죠?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="대박운 좋은운 행동대신 기회 사람지원 채용 시장반응 준비 움직임 대박운환상 로또심리 복권당첨 감나무밑입벌리기 준비된자 기회포착 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“반대로 올해 대박 나는 운이라고 들었는데 왜 아무 일도 안 생기죠?”">
           <button onclick="toggleItem(79)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5335,7 +5384,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="궁합 궁합표 연애 사랑 이별 갈등존중 no 경계 가치충돌 차이다루는능력" data-title="“궁합이 안 좋다고 들었습니다. 사랑하는데 헤어져야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="궁합 궁합표 연애 사랑 이별 갈등존중 no 경계 가치충돌 차이다루는능력 나쁜궁합 극복 파혼위기 결별고민 천생연분환상 상호존중 갈등해결기술 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등" data-title="“궁합이 안 좋다고 들었습니다. 사랑하는데 헤어져야 하나요?”">
           <button onclick="toggleItem(80)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5393,7 +5442,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="이혼수 결혼 이혼 파혼 두려움 불안 시험 확인 관계행동 관찰 예언" data-title="“사주에 이혼수가 있다고 들었습니다. 결혼해도 결국 헤어지는 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="이혼수 결혼 이혼 파혼 두려움 불안 시험 확인 관계행동 관찰 예언 이혼수극복 별거 이혼위기 외도상간 졸혼 부부치료 관계회복 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 회피형 불안형애착 연애고민 눈치시험 부부싸움 외도 궁합갈등" data-title="“사주에 이혼수가 있다고 들었습니다. 결혼해도 결국 헤어지는 건가요?”">
           <button onclick="toggleItem(81)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5450,7 +5499,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="자녀운 아이문제 부모사주 죄책감 공부 관계 학교 전문가 대화방식 필요한행동" data-title="“자녀운이 약하다고 들었습니다. 아이 문제까지 제 팔자 때문인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="자녀운 아이문제 부모사주 죄책감 공부 관계 학교 전문가 대화방식 필요한행동 자녀운약함 무자식상팔자 불임난임 자녀스트레스 양육부담 굴레벗기 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“자녀운이 약하다고 들었습니다. 아이 문제까지 제 팔자 때문인가요?”">
           <button onclick="toggleItem(82)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5506,7 +5555,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="부모복 부모원망 결핍 무관심 폭언 통제 사실 해석 분리 가족관계 과거 미래" data-title="“저는 사주 때문에 부모를 원망하게 됐습니다. ‘부모복이 없다’는 말을 들었거든요.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="부모복 부모원망 결핍 무관심 폭언 통제 사실 해석 분리 가족관계 과거 미래 부모복없음 흙수저 원가족단절 마음의독립 심리적탯줄 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“저는 사주 때문에 부모를 원망하게 됐습니다. ‘부모복이 없다’는 말을 들었거든요.”">
           <button onclick="toggleItem(83)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5563,7 +5612,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="쌍둥이 같은사주 성격차이 인생차이 바코드 친구 교사 경험 선택 복제코드 실제경험" data-title="“쌍둥이는 거의 같은 사주인데 왜 성격도 인생도 다를까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="쌍둥이 같은사주 성격차이 인생차이 바코드 친구 교사 경험 선택 복제코드 실제경험 쌍둥이운명 후천적선택 환경차이 뇌회로차이 인생의다양성 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“쌍둥이는 거의 같은 사주인데 왜 성격도 인생도 다를까요?”">
           <button onclick="toggleItem(84)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5619,7 +5668,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="개명 이름 운 개운 새출발 돈문제 관계 직업 건강습관 새로운행동" data-title="“개명하면 운이 바뀌나요? 이름을 잘못 지어서 인생이 꼬였다는 말을 들었습니다.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="개명 이름 운 개운 새출발 돈문제 관계 직업 건강습관 새로운행동 개명효과 이름바꾸기 작명소사기 자기선언 새로운아이덴티티 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“개명하면 운이 바뀌나요? 이름을 잘못 지어서 인생이 꼬였다는 말을 들었습니다.”">
           <button onclick="toggleItem(85)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5683,7 +5732,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="부적 개운물건 위안 상징물 현실대응 의존 치료 계약검토 재무판단 운전대 도구" data-title="“부적이나 개운 물건을 가져야 마음이 놓입니다. 이런 것도 잘못된 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="부적 개운물건 위안 상징물 현실대응 의존 치료 계약검토 재무판단 운전대 도구 부적미신 심리적위안 플라시보효과 의존증탈피 내면의힘 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“부적이나 개운 물건을 가져야 마음이 놓입니다. 이런 것도 잘못된 건가요?”">
           <button onclick="toggleItem(86)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5745,7 +5794,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="사업 망한다 사업운 고객 시장수요 자금 역량 행동실험 프로젝트 가설시험 neural" data-title="“제가 사업하면 망한다고 들었습니다. 그런데 정말 사업을 해보고 싶어요.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="사업 망한다 사업운 고객 시장수요 자금 역량 행동실험 프로젝트 가설시험 neural 사업망함사주 창업도전 스타트업 자영업성패 비즈니스리스크관리 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복" data-title="“제가 사업하면 망한다고 들었습니다. 그런데 정말 사업을 해보고 싶어요.”">
           <button onclick="toggleItem(87)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5802,7 +5851,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="직업 성공 적성 환경 능력 교육 사업가 조직생활 업무 상사 팀문화 자율성 조건" data-title="“사주에 맞는 직업을 찾아야 성공하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="직업 성공 적성 환경 능력 교육 사업가 조직생활 업무 상사 팀문화 자율성 조건 적성직업 천직찾기 커리어전환 사주직업론 강점기반커리어 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“사주에 맞는 직업을 찾아야 성공하나요?”">
           <button onclick="toggleItem(88)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5858,7 +5907,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="조직생활 회사 부적응 상사 업무 자율성 성과평가 출퇴근 라벨분해 선택지" data-title="“제 사주는 조직생활이 안 맞는다고 하는데, 저는 회사를 계속 다녀도 될까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="조직생활 회사 부적응 상사 업무 자율성 성과평가 출퇴근 라벨분해 선택지 조직부적응 프리랜서 1인기업 퇴사각 회사원생존법 직장상사스트레스 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“제 사주는 조직생활이 안 맞는다고 하는데, 저는 회사를 계속 다녀도 될까요?”">
           <button onclick="toggleItem(89)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5913,7 +5962,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="좋은운 불안 연애성장 칭찬 위험예상 낯섦 행복 언제끝나지 데이터수용" data-title="“운이 좋을 때도 저는 왜 불안할까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="좋은운 불안 연애성장 칭찬 위험예상 낯섦 행복 언제끝나지 데이터수용 호사다마 번영불안 성공공포 행복공포 징크스 멘탈안정 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="“운이 좋을 때도 저는 왜 불안할까요?”">
           <button onclick="toggleItem(90)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -5969,7 +6018,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="자기방해 성공 회피 기대 책임 노출 자책 발목잡기 부담 문제정확화" data-title="“왜 저는 일이 잘되기 시작하면 갑자기 망칠 행동을 할까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="자기방해 성공 회피 기대 책임 노출 자책 발목잡기 부담 문제정확화 자기파괴적행동 다된밥에재뿌리기 성공직전탈선 자격미달의식 무의식저항 유리멘탈 멘탈붕괴 멘탈관리 회복탄력성 멘탈치유 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="“왜 저는 일이 잘되기 시작하면 갑자기 망칠 행동을 할까요?”">
           <button onclick="toggleItem(91)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6026,7 +6075,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="패턴탓 자기탓 자기책임 무례 불공정 차별 폭력 dark code 현실직시 선택권" data-title="“명심코칭을 하다 보면 모든 문제를 제 패턴 탓으로 돌리게 되지 않을까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="패턴탓 자기탓 자기책임 무례 불공정 차별 폭력 dark code 현실직시 선택권 자기검열 자책금지 환경분석 시스템사고 객관적문제해결 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="“명심코칭을 하다 보면 모든 문제를 제 패턴 탓으로 돌리게 되지 않을까요?”">
           <button onclick="toggleItem(92)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6083,7 +6132,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="감정 무감각 흔들림 사랑 상실 슬픔 화 분노 불안 발언권 결정권 인간" data-title="“명심코칭을 오래 하면 결국 감정에 흔들리지 않는 사람이 되나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="감정 무감각 흔들림 사랑 상실 슬픔 화 분노 불안 발언권 결정권 인간 감정기계 무감정환상 감정의파도타기 회복탄력성 감정지능 유리멘탈 멘탈붕괴 자책 멘탈관리 멘탈치유 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="“명심코칭을 오래 하면 결국 감정에 흔들리지 않는 사람이 되나요?”">
           <button onclick="toggleItem(93)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6139,7 +6188,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="변화지표 측정 기분 선택 회복속도 알아차림 거절 실수 자책 업무메시지" data-title="“명심코칭이 잘되고 있다는 걸 어떻게 알 수 있나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="reality" data-keywords="변화지표 측정 기분 선택 회복속도 알아차림 거절 실수 자책 업무메시지 변화의증거 성장지표 일상의평온 반응속도지연 선택의여유 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="“명심코칭이 잘되고 있다는 걸 어떻게 알 수 있나요?”">
           <button onclick="toggleItem(94)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6194,7 +6243,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="한문장설명 궁극의정의 상징언어 반복패턴 행동선택 태어난날 어린시절 상처 대답 변화" data-title="“명심코칭을 한 문장으로 설명하면 도대체 뭔가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="한문장설명 궁극의정의 상징언어 반복패턴 행동선택 태어난날 어린시절 상처 대답 변화 명심코칭정의 삶의주인 무의식자각 인생내비게이션 운명창조자 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="“명심코칭을 한 문장으로 설명하면 도대체 뭔가요?”">
           <button onclick="toggleItem(95)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6256,7 +6305,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="결혼나이 배우자운 늦은결혼 시간표 만남 확신 상처 체념 혼자 삶의시간 실패" data-title="“결혼할 나이가 지났다고 합니다. 사주에도 배우자운이 늦다고 하는데, 이제 좋은 사람 만나기는 어려운 걸까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="결혼나이 배우자운 늦은결혼 시간표 만남 확신 상처 체념 혼자 삶의시간 실패 노처녀노총각 만혼 결혼불안 비혼주의 배우자찾기 연애세포 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등" data-title="“결혼할 나이가 지났다고 합니다. 사주에도 배우자운이 늦다고 하는데, 이제 좋은 사람 만나기는 어려운 걸까요?”">
           <button onclick="toggleItem(96)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6315,7 +6364,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="재혼수 이혼 침묵 의무 첫관계 배움 갈등 침묵 버팀 다른행동" data-title="“사주에 재혼수가 있다고 들었습니다. 첫 결혼이 끝났으니 이제 운명대로 재혼해야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="재혼수 이혼 침묵 의무 첫관계 배움 갈등 버팀 다른행동 돌싱 재혼고민 상처받은마음 두번째결혼 행복한가정 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등" data-title="“사주에 재혼수가 있다고 들었습니다. 첫 결혼이 끝났으니 이제 운명대로 재혼해야 하나요?”">
           <button onclick="toggleItem(97)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6374,7 +6423,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="천생연분 궁합 현실 싸움 대화 경제문제 무시 존중 안전 약속 희생" data-title="“궁합은 좋은데 현실에서는 계속 싸웁니다. 그래도 궁합이 좋으니 참고 살아야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="천생연분 궁합 현실 싸움 대화 경제문제 무시 존중 안전 약속 희생 궁합좋은데파혼 성격차이 생활습관갈등 의사소통부재 가치관충돌 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등" data-title="“궁합은 좋은데 현실에서는 계속 싸웁니다. 그래도 궁합이 좋으니 참고 살아야 하나요?”">
           <button onclick="toggleItem(98)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6431,7 +6480,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="부모반대 궁합반대 결정권 경제적위험 폭력 거짓말 중독 갈등 현실 분리" data-title="“부모님이 궁합이 나쁘다며 결혼을 반대합니다. 부모님 말을 따라야 할까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="부모반대 궁합반대 결정권 경제적위험 폭력 거짓말 중독 갈등 현실 분리 시월드결혼반대 부모님반대 결혼허락 장서갈등 원가족독립의지 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등" data-title="“부모님이 궁합이 나쁘다며 결혼을 반대합니다. 부모님 말을 따라야 할까요?”">
           <button onclick="toggleItem(99)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6488,7 +6537,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="출산일 임신 좋은날 건강 의학적조건 산모 태아 안전 의료진판단 첫선물" data-title="“아이를 언제 가져야 좋을지 사주로 결정해도 되나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="health" data-keywords="출산일 임신 좋은날 건강 의학적조건 산모 태아 안전 의료진판단 첫선물 출산시기 사주임신 택일 자연주의출산 아이계획 부모의준비 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“아이를 언제 가져야 좋을지 사주로 결정해도 되나요?”">
           <button onclick="toggleItem(100)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6545,7 +6594,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="아이사주 부모자녀 기질차이 빠름 느림 계획 즉흥 대화 혼자 충돌 조정 관계" data-title="“아이 사주가 저와 안 맞는다고 합니다. 그래서 자꾸 부딪히는 걸까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="아이사주 부모자녀 기질차이 빠름 느림 계획 즉흥 대화 혼자 충돌 조정 관계 자녀와의불화 사춘기자녀 금쪽이 부모자식갈등 기질이해 감정코칭 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“아이 사주가 저와 안 맞는다고 합니다. 그래서 자꾸 부딪히는 걸까요?”">
           <button onclick="toggleItem(101)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6603,7 +6652,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="시험운 모의점수 오답유형 집중시간 긴장 시간배분 불확실성 합격운 준비상태" data-title="“시험운이 없는 해라고 들었습니다. 중요한 시험을 미뤄야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="시험운 모의점수 오답유형 집중시간 긴장 시간배분 불확실성 합격운 준비상태 시험운불합격 수험생불안 수능고시 공시생 임용고시 멘탈관리 유리멘탈 멘탈붕괴 자책 회복탄력성 멘탈치유" data-title="“시험운이 없는 해라고 들었습니다. 중요한 시험을 미뤄야 하나요?”">
           <button onclick="toggleItem(102)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6660,7 +6709,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="시험실패 반복낙방 진로 재검토 점수부족 과목 공부방법 여력 용기 현실" data-title="“시험에 계속 떨어집니다. 이 길이 제 사주와 안 맞는다는 뜻일까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="시험실패 반복낙방 진로 재검토 점수부족 과목 공부방법 여력 용기 현실 N수생 장수생 시험포기 진로변경 포기의기술 플랜B설계 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력" data-title="“시험에 계속 떨어집니다. 이 길이 제 사주와 안 맞는다는 뜻일까요?”">
           <button onclick="toggleItem(103)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6717,7 +6766,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="취업운 50군데지원 시장상황 경력 이력서 포트폴리오 면접 가치 선택받을가치" data-title="“취업운이 들어온다는데 취업이 안 됩니다. 제가 기회를 놓친 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="취업운 50군데지원 시장상황 경력 이력서 포트폴리오 면접 가치 선택받을가치 취업난 청년백수 서류탈락 면접울렁증 취준생멘탈 구직활동 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="“취업운이 들어온다는데 취업이 안 됩니다. 제가 기회를 놓친 건가요?”">
           <button onclick="toggleItem(104)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6774,7 +6823,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="승진운 탈락 축하 눈물 평가기준 역량 기여 조직구조 정치적요인 내탓" data-title="“승진운이 있다고 했는데 다른 사람이 승진했습니다. 제가 부족한 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="승진운 탈락 축하 눈물 평가기준 역량 기여 조직구조 정치적요인 내탓 승진누락 사내정치 인사고과 유리천장 직장내소외 이직준비 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭 완벽주의 인정욕구 비교지옥 인정중독 질투심 가면증후군 열등감" data-title="“승진운이 있다고 했는데 다른 사람이 승진했습니다. 제가 부족한 건가요?”">
           <button onclick="toggleItem(105)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6830,7 +6879,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="이직운 퇴사 출근답답 모욕 재직비용 재정여유 건강상태 조직문제 남아있는위험" data-title="“직장을 그만두고 싶은데 ‘올해 이직운이 없다’는 말을 들었습니다. 버텨야 할까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="이직운 퇴사 출근답답 모욕 재직비용 재정여유 건강상태 조직문제 남아있는위험 퇴사타이밍 이직운존버 퇴사마려울때 충동퇴사방지 이직전략 번아웃 이직 직장생활 조직문화 성과압박 워커홀릭 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력" data-title="“직장을 그만두고 싶은데 ‘올해 이직운이 없다’는 말을 들었습니다. 버텨야 할까요?”">
           <button onclick="toggleItem(106)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6887,7 +6936,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="이사 장소 통근시간 햇빛 운동 환경변화 경제부담 대박 원하는생활" data-title="“이사하면 운이 바뀐다는데 정말 장소를 바꾸면 인생도 바뀔까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="이사 장소 통근시간 햇빛 운동 환경변화 경제부담 대박 원하는생활 풍수지리 이사운 방위 풍수방향 리셋효과 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“이사하면 운이 바뀐다는데 정말 장소를 바꾸면 인생도 바뀔까요?”">
           <button onclick="toggleItem(107)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -6951,7 +7000,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="이민 해외 새로운문화 기회 눈치 완벽 상처 거리두기 장소변경 반응방식" data-title="“이민을 가면 제 팔자가 달라지나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="이민 해외 새로운문화 기회 눈치 완벽 상처 거리두기 장소변경 반응방식 해외이민 이민운 어학연수 해외취업 탈조선 도피성이민 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“이민을 가면 제 팔자가 달라지나요?”">
           <button onclick="toggleItem(108)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7015,7 +7064,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="사업실패 폐업 빚 사업복 가격 현금흐름 제품 고객 팀 운영 경기 경쟁 판결" data-title="“사업에 실패했습니다. 사주에 사업복이 없었던 걸까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="사업실패 폐업 빚 사업복 가격 현금흐름 제품 고객 팀 운영 경기 경쟁 판결 스타트업도산 부도 자영업폐업 재기전략 돈그릇 재물운 부자마인드 경제적자유 재테크 돈복" data-title="“사업에 실패했습니다. 사주에 사업복이 없었던 걸까요?”">
           <button onclick="toggleItem(109)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7073,7 +7122,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="빚 채무 돈복 도덕적낙인 저주 숫자 금리 상환일 생활비 재무상담 절망확인 선택범위" data-title="“빚이 생겼습니다. 제가 돈복 없는 사람이라서 그런 걸까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="빚 채무 돈복 도덕적낙인 저주 숫자 금리 상환일 생활비 재무상담 절망확인 선택범위 빚더미 신용불량 빚갚기 개인회생 파산면책 돈에대한공포 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 돈그릇 재물운 사업실패 부자마인드 경제적자유 재테크" data-title="“빚이 생겼습니다. 제가 돈복 없는 사람이라서 그런 걸까요?”">
           <button onclick="toggleItem(110)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7130,7 +7179,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="사업실패 재시작 극단 채무정리 회복 만회 담보 복수 판단 선택" data-title="“사업 망하고 빚까지 졌습니다. 다시 시작해도 될까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="사업실패 재시작 극단 채무정리 회복 만회 담보 복수 판단 선택 재창업 패자부활전 바닥치고올라오기 인생2회차 회복력 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 돈그릇 재물운 빚 부자마인드 경제적자유 재테크 돈복" data-title="“사업 망하고 빚까지 졌습니다. 다시 시작해도 될까요?”">
           <button onclick="toggleItem(111)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7188,7 +7237,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="상속 부모빚 재산 형제갈등 가치 비교 자원 세금 법률 전문가조력" data-title="“상속을 많이 받으면 인생이 좋아지는 사주인가요? 반대로 상속이 없으면 복이 없는 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="상속 부모빚 재산 형제갈등 가치 비교 자원 세금 법률 전문가조력 상속분쟁 유산싸움 금수저흙수저 자수성가마인드 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복" data-title="“상속을 많이 받으면 인생이 좋아지는 사주인가요? 반대로 상속이 없으면 복이 없는 건가요?”">
           <button onclick="toggleItem(112)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7245,7 +7294,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="노후운 말년운 가난 외로움 건강 돈 배우자 자녀 죽음 준비 습관 구조" data-title="“노후운이 좋지 않다고 들었습니다. 늙어서 외롭고 가난해질까 봐 무섭습니다.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="노후운 말년운 가난 외로움 건강 돈 배우자 자녀 죽음 준비 습관 구조 노후빈곤 고독사공포 은퇴불안 국민연금 100세시대준비 건강수명 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복" data-title="“노후운이 좋지 않다고 들었습니다. 늙어서 외롭고 가난해질까 봐 무섭습니다.”">
           <button onclick="toggleItem(113)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7301,7 +7350,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="자식복 희생 독립 허전함 거래 경계 사랑 소유 각자의삶" data-title="“자식복이 있다는데, 나이 들어서 자식에게 기대도 되는 걸까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="자식복 희생 독립 허전함 거래 경계 사랑 소유 각자의삶 자식농사 노후봉양 효도바라기 캥거루족 자식독립 부모노후 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“자식복이 있다는데, 나이 들어서 자식에게 기대도 되는 걸까요?”">
           <button onclick="toggleItem(114)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7358,7 +7407,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="배우자사별 먼저간다 수명 죽음 공포 전화안됨 심장뜀 확인전화 오늘의관계 오늘" data-title="“사주에서 배우자가 먼저 간다는 말을 들었습니다. 그 뒤부터 남편이 늦게 들어오기만 해도 무섭습니다.”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="배우자사별 먼저간다 수명 죽음 공포 전화안됨 심장뜀 확인전화 오늘의관계 오늘 상실공포 남편죽음불안 아내건강불안 분리불안 애도과정 회피형 불안형애착 연애고민 눈치시험 이혼위기 부부싸움 외도 궁합갈등" data-title="“사주에서 배우자가 먼저 간다는 말을 들었습니다. 그 뒤부터 남편이 늦게 들어오기만 해도 무섭습니다.”">
           <button onclick="toggleItem(115)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7415,7 +7464,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="죽음 두려움 수명날짜 확정 부모상실 큰병 사랑한다는말 건강검진 오늘 우선순위" data-title="“저는 죽는 게 너무 무섭습니다. 사주라도 보면 언제까지 살지 알 수 있지 않을까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="죽음 두려움 수명날짜 확정 부모상실 큰병 사랑한다는말 건강검진 오늘 우선순위 죽음공포 타나토포비아 영생 사후세계 유한성의자각 오늘을살기 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유" data-title="“저는 죽는 게 너무 무섭습니다. 사주라도 보면 언제까지 살지 알 수 있지 않을까요?”">
           <button onclick="toggleItem(116)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7473,7 +7522,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="부모상실 죽음 죄책감 만약 애도 일상복귀 전문가상담 정신건강지원" data-title="“부모님이 돌아가시고 나니 사주를 더 찾게 됩니다. 제가 뭘 잘못해서 그런 건 아닐까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="turning" data-keywords="부모상실 죽음 죄책감 만약 애도 일상복귀 전문가상담 정신건강지원 부모사별 미안함 불효자책감 상실의고통 애도상담 유리멘탈 멘탈붕괴 자책 멘탈관리 회복탄력성 멘탈치유 부모원망 가족독립 원가족상처 효도강박 시월드 가족갈등 내면아이" data-title="“부모님이 돌아가시고 나니 사주를 더 찾게 됩니다. 제가 뭘 잘못해서 그런 건 아닐까요?”">
           <button onclick="toggleItem(117)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7530,7 +7579,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="삼재 공포 조심 계약 여행 투자 계약확인 건강검진 안전수칙 예방행동" data-title="“삼재라고 해서 겁납니다. 그 기간에는 조심만 하면서 살아야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="nature" data-keywords="삼재 공포 조심 계약 여행 투자 계약확인 건강검진 안전수칙 예방행동 삼재풀이 아홉수 복삼재 악삼재 삼재미신 공포마케팅격파 당당한삶 사주미신 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“삼재라고 해서 겁납니다. 그 기간에는 조심만 하면서 살아야 하나요?”">
           <button onclick="toggleItem(118)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7593,7 +7642,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="사주중독 철학관 유튜브 블로그 앱 확신 불안 반복행동 확인행동 선택정보" data-title="“사주를 많이 볼수록 오히려 결정하기가 더 어려워집니다. 왜 그렇죠?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="daily" data-keywords="사주중독 철학관 유튜브 블로그 앱 확신 불안 반복행동 확인행동 선택정보 점집중독 사주의존증 결정마비 철학관순례 자립심회복 주체적결단 결정장애 미루기 작심삼일 선택마비 우유부단 행동력 실천력 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“사주를 많이 볼수록 오히려 결정하기가 더 어려워집니다. 왜 그렇죠?”">
           <button onclick="toggleItem(119)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7649,7 +7698,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="사주좋아함 명리공부 고전 재미 상징언어 도구 주인 선택권 자유" data-title="“제가 사주를 너무 좋아하는데 명심코칭을 하면 사주를 못 보게 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="사주좋아함 명리공부 고전 재미 상징언어 도구 주인 선택권 자유 사주매니아 명리학도 사주인문학 지혜로운활용 운명의지도 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파" data-title="“제가 사주를 너무 좋아하는데 명심코칭을 하면 사주를 못 보게 하나요?”">
           <button onclick="toggleItem(120)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7713,7 +7762,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="운바꾸기 우주미래 행동변화 방어 상사 부모 요구 실수 수정 삶의다음장면" data-title="“그럼 명심코칭에서 말하는 ‘운을 바꾼다’는 건 정확히 무슨 뜻인가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="code" data-keywords="운바꾸기 우주미래 행동변화 방어 상사 부모 요구 실수 수정 삶의다음장면 개운의본질 팔자고치기 운의역전 인지변화 행동혁명 인생개혁 사주미신 삼재 운명역전 팔자개혁 개운법 철학관사기 액땜 점술타파 3대코드 다크코드 뉴럴코드 메타코드 제로포인트 더시프트 멘탈해결사" data-title="“그럼 명심코칭에서 말하는 ‘운을 바꾼다’는 건 정확히 무슨 뜻인가요?”">
           <button onclick="toggleItem(121)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7776,7 +7825,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="세상변화 아버지 회사 무시 아이 소리침 상처이동 알아차림 상처줄임 전달하지않은상처 자동반응" data-title="“저 하나 바뀐다고 세상이 뭐가 달라지나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="세상변화 아버지 회사 무시 아이 소리침 상처이동 알아차림 상처줄임 전달하지않은상처 자동반응 나비효과 사회변화 선한영향력 한사람의변화 세상을바꾸는힘" data-title="“저 하나 바뀐다고 세상이 뭐가 달라지나요?”">
           <button onclick="toggleItem(122)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7841,7 +7890,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="돈벌기 마음공부 실제삶 고객화 실수 부족 싸움 투자실패 연습장 경영문제 조직문화 교육" data-title="“돈 벌기도 바쁜데 마음공부까지 해야 하나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="돈벌기 마음공부 실제삶 고객화 실수 부족 싸움 투자실패 연습장 경영문제 조직문화 교육 현생살기 생계와마음공부 현실적철학 밥벌이와영성 조화로운삶 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복 번아웃 퇴사 이직 직장생활 성과압박 워커홀릭" data-title="“돈 벌기도 바쁜데 마음공부까지 해야 하나요?”">
           <button onclick="toggleItem(123)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7897,7 +7946,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="생계 일자리 퇴직 경력단절 교육코칭 관리자 학부모 강사 워크숍 기업프로그램 선택권 산업" data-title="“명심코칭이 정말 사람들의 생계에도 도움이 될 수 있나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="생계 일자리 퇴직 경력단절 교육코칭 관리자 학부모 강사 워크숍 기업프로그램 선택권 산업 생계도움 멘탈생산성 수입증대 업무효율 스트레스비용절감 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“명심코칭이 정말 사람들의 생계에도 도움이 될 수 있나요?”">
           <button onclick="toggleItem(124)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -7954,7 +8003,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="명리상담 사주직업 맞히는사람 질문잘하는사람 가족 사업 결혼 상실 자산 예언전달 자기삶관찰" data-title="“사주를 직업으로 하는 분들도 명심코칭을 배울 수 있나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="명리상담 사주직업 맞히는사람 질문잘하는사람 가족 사업 결혼 상실 자산 예언전달 자기삶관찰 명리학자전향 철학관혁신 상담업그레이드 현대적해석 코칭전문가" data-title="“사주를 직업으로 하는 분들도 명심코칭을 배울 수 있나요?”">
           <button onclick="toggleItem(125)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8018,7 +8067,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="미래예측 문제해결 지불비용 취업결혼 대화정리 선택지 행동계획 전문성" data-title="“철학관 선생님이 미래를 안 맞히면 고객이 왜 돈을 내죠?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="미래예측 문제해결 지불비용 취업결혼 대화정리 선택지 행동계획 전문성 상담비용 미래예측의한계 솔루션제공 문제해결형상담 가치창출" data-title="“철학관 선생님이 미래를 안 맞히면 고객이 왜 돈을 내죠?”">
           <button onclick="toggleItem(126)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8081,7 +8130,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="ai인공지능 코치일자리 맥락 침묵 윤리 위험신호 전문가연결 사람다운일" data-title="“ai가 발달하면 코치나 상담하는 사람들의 일자리는 없어지지 않을까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="ai인공지능 코치일자리 맥락 침묵 윤리 위험신호 전문가연결 사람다운일 AI시대일자리 코칭상담미래 인간고유영역 공감과통찰 멘탈리스트전망" data-title="“ai가 발달하면 코치나 상담하는 사람들의 일자리는 없어지지 않을까요?”">
           <button onclick="toggleItem(127)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8138,7 +8187,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="윤리 코칭자격 진단금지 질병치료약속금지 의존금지 개인정보 위험상태 전문기관연결 멈춤" data-title="“명심코칭을 배운 사람이 아무나 다른 사람을 코칭해도 되나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="trust" data-keywords="윤리 코칭자격 진단금지 질병치료약속금지 의존금지 개인정보 위험상태 전문기관연결 멈춤 전문코치윤리 자격검증 비전문가위험 수련과정 명심코치인증" data-title="“명심코칭을 배운 사람이 아무나 다른 사람을 코칭해도 되나요?”">
           <button onclick="toggleItem(128)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8193,7 +8242,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="진정성 가난 정당한대가 지속가능성 공포마케팅금지 상위과정결제유도금지 자립 가치창출" data-title="“사람을 도우면서 돈을 받는 게 나쁜 건가요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="진정성 가난 정당한대가 지속가능성 공포마케팅금지 상위과정결제유도금지 자립 가치창출 상담료윤리 가치교환 재능기부한계 비즈니스마인드 돈그릇 재물운 사업실패 빚 부자마인드 경제적자유 재테크 돈복" data-title="“사람을 도우면서 돈을 받는 게 나쁜 건가요?”">
           <button onclick="toggleItem(129)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8249,7 +8298,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="지역사회 스트레스 갈등 은퇴 상실 중년 고립 돌봄노동 방치된생활문제 조기개입 건강습관" data-title="“명심코칭이 지역사회에도 도움이 될 수 있나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="지역사회 스트레스 갈등 은퇴 상실 중년 고립 돌봄노동 방치된생활문제 조기개입 건강습관 지역사회복지 노인복지 고립은둔청년 건강한공동체 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계" data-title="“명심코칭이 지역사회에도 도움이 될 수 있나요?”">
           <button onclick="toggleItem(130)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8305,7 +8354,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="기업 조직문화 회의방어 리더마이크로매니징 완벽주의마감 갈등회피 사주인사배치금지 행동선택지" data-title="“명심코칭이 기업에서는 어디에 도움이 될 수 있나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="기업 조직문화 회의방어 리더마이크로매니징 완벽주의마감 갈등회피 사주인사배치금지 행동선택지 조직문화혁신 번아웃방지 사내소통 갈등중재 생산성향상 기업코칭 가스라이팅 손절 호구탈출 나르시시스트 인간관계스트레스 대인관계 번아웃 퇴사 이직 직장생활 성과압박 워커홀릭" data-title="“명심코칭이 기업에서는 어디에 도움이 될 수 있나요?”">
           <button onclick="toggleItem(131)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8363,7 +8412,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="학교 청소년 낙인금지 의지약함 사주정체성 감정조절 실수재시도 도움요청 수면선택지경험" data-title="“명심코칭을 학교나 청소년에게도 가르칠 수 있나요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="학교 청소년 낙인금지 의지약함 사주정체성 감정조절 실수재시도 도움요청 수면선택지경험 학교인성교육 청소년멘탈 학폭예방 회복탄력성 청소년진로" data-title="“명심코칭을 학교나 청소년에게도 가르칠 수 있나요?”">
           <button onclick="toggleItem(132)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8419,7 +8468,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="퇴직 50대 60대 신중년 경력전환 30년경험 조직경험 멘토링 코칭교육 디지털도구 사용처" data-title="“퇴직한 50대·60대도 명심코칭을 배워 새로운 일을 할 수 있을까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="퇴직 50대 60대 신중년 경력전환 30년경험 조직경험 멘토링 코칭교육 디지털도구 사용처 50대재취업 60대일자리 인생2막 퇴직후직업 시니어코치 지혜나눔 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“퇴직한 50대·60대도 명심코칭을 배워 새로운 일을 할 수 있을까요?”">
           <button onclick="toggleItem(133)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8482,7 +8531,7 @@
           </div>
         </div>
         
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="경력단절 돌봄 빈칸 뒤처짐 인간경험 갈등중재 문제조정 전문성 무가치한공백아님" data-title="“경력단절 여성이나 돌봄 때문에 일을 놓았던 사람에게도 도움이 될까요?”">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#007A55] transition overflow-hidden" data-category="social" data-keywords="경력단절 돌봄 빈칸 뒤처짐 인간경험 갈등중재 문제조정 전문성 무가치한공백아님 경단녀취업 돌봄노동 가치인정 여성재취업 자아실현 당당한사회복귀 번아웃 퇴사 이직 직장생활 조직문화 성과압박 워커홀릭" data-title="“경력단절 여성이나 돌봄 때문에 일을 놓았던 사람에게도 도움이 될까요?”">
           <button onclick="toggleItem(134)" class="w-full p-6 text-left flex items-start justify-between gap-4 group cursor-pointer">
             <div class="flex items-start gap-3.5">
               <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#007A55] font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
@@ -8713,6 +8762,62 @@
         body.classList.add('hidden');
         icon.classList.remove('rotate-180');
       }
+    }
+
+    
+    function handleSearchInput() {
+      const q = (document.getElementById('faq-search').value || '').trim();
+      const clearBtn = document.getElementById('clear-search-btn');
+      const inputClearBtn = document.getElementById('input-clear-btn');
+      if (q) {
+        if (clearBtn) clearBtn.classList.remove('hidden');
+        if (inputClearBtn) inputClearBtn.classList.remove('hidden');
+      } else {
+        if (clearBtn) clearBtn.classList.add('hidden');
+        if (inputClearBtn) inputClearBtn.classList.add('hidden');
+        updateChipActiveState('전체');
+      }
+      filterFaq();
+    }
+
+    function updateChipActiveState(selectedKw) {
+      const chips = document.querySelectorAll('.kw-chip');
+      chips.forEach(chip => {
+        const text = chip.innerText;
+        const isSelected = (selectedKw === '전체' && text.includes('전체')) || 
+                           (selectedKw !== '전체' && text.includes(selectedKw));
+        if (isSelected) {
+          chip.className = 'kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#007A55] text-white border border-[#007A55] transition shadow-xs cursor-pointer';
+        } else {
+          chip.className = 'kw-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-[#007A55] hover:text-[#007A55] hover:bg-emerald-50/60 transition shadow-2xs cursor-pointer';
+        }
+      });
+    }
+
+    function searchByKeyword(kw) {
+      const searchInput = document.getElementById('faq-search');
+      if (kw === '전체') {
+        searchInput.value = '';
+      } else {
+        searchInput.value = kw;
+      }
+      updateChipActiveState(kw);
+      handleSearchInput();
+      setCategory('all');
+
+      // Subtle feedback scroll to results if user is on mobile
+      const listEl = document.getElementById('faq-list');
+      if (listEl && window.innerWidth < 768) {
+        listEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function clearSearch() {
+      const searchInput = document.getElementById('faq-search');
+      searchInput.value = '';
+      updateChipActiveState('전체');
+      handleSearchInput();
+      filterFaq();
     }
 
     function filterFaq() {
