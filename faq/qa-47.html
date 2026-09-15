@@ -222,12 +222,23 @@
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
-      <a class="brand" href="/" aria-label="명심코칭 홈">
-        <span class="brand-mark" aria-hidden="true">
-          <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <a class="brand flex items-center gap-3 text-decoration-none group" href="/" aria-label="마인드플로우랩 홈">
+        <span class="brand-mark w-8 h-8 rounded-xl bg-gradient-to-br from-[#007A55] to-[#10B981] flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0" aria-hidden="true">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
         </span>
-        <span>명심코칭</span>
-        <small>MYEONGSIM</small>
+        <div class="flex flex-col text-left leading-tight">
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg font-black text-slate-900 tracking-tight">마인드플로우랩</span>
+            <span class="px-1.5 py-0.2 rounded text-[9px] font-black bg-emerald-100 text-[#006042] tracking-wider uppercase">LAB</span>
+          </div>
+          <div class="text-[10px] sm:text-[11px] font-semibold text-slate-500 tracking-tight flex items-center gap-1.5">
+            <span class="text-[#007A55] font-bold">명심코칭™</span>
+            <span class="text-slate-300">·</span>
+            <span class="text-slate-600">도서출판 청류</span>
+          </div>
+        </div>
       </a>
       <nav class="nav" aria-label="주요 메뉴">
         <a href="/#why" class="">왜 반복할까</a>
@@ -390,20 +401,27 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-200">
-        <div class="md:col-span-4 space-y-3">
-          <div class="flex items-center gap-2">
-            <span class="brand-mark" aria-hidden="true">
+                <div class="md:col-span-4 space-y-3">
+          <div class="flex items-center gap-2.5">
+            <span class="brand-mark w-7 h-7 rounded-lg bg-gradient-to-br from-[#007A55] to-[#10B981] flex items-center justify-center shrink-0" aria-hidden="true">
               <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             </span>
-            <span class="text-lg font-black tracking-tight text-slate-900">
-              명심코칭 <small class="text-xs text-slate-500 font-bold ml-1">MYEONGSIM · MINDFLOW</small>
-            </span>
+            <div>
+              <span class="text-lg font-black tracking-tight text-slate-900">마인드플로우랩</span>
+              <span class="text-xs text-[#007A55] font-bold ml-1.5 uppercase tracking-wider">MINDFLOW LAB</span>
+            </div>
+          </div>
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-[11px] font-bold text-slate-700">
+            <span>소속 브랜드:</span>
+            <span class="text-[#007A55]">명심코칭™</span>
+            <span class="text-slate-300">|</span>
+            <span class="text-slate-800">도서출판 청류</span>
           </div>
           <p class="text-slate-600 leading-relaxed text-xs pr-4">
-            마인드플로우랩은 심리학, 인지과학, 데이터 기술을 융합하여 일상의 멘탈 케어와 잠재력 성장을 돕는 디지털 솔루션을 연구·설계합니다.
+            (주)마인드플로우랩은 심리학·인지신경과학·AI 데이터를 융합한 글로벌 코칭 전문 연구기업입니다. 고유의 인지과학 모델을 바탕으로 실전 코칭 솔루션(명심코칭™)과 지식출판(도서출판 청류)을 총괄 운영합니다.
           </p>
           <p class="text-slate-500 text-[11px]">
-            &copy; 2026 MindflowLab. All rights reserved.
+            &copy; 2026 Mindflow Lab Inc. All rights reserved.
           </p>
         </div>
 
@@ -432,7 +450,7 @@
       </div>
       
       <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-        <div>&copy; Mindflow Lab · 명심코칭</div>
+        <div>&copy; 마인드플로우랩 (MINDFLOW LAB) · 명심코칭™ · 도서출판 청류</div>
         <div>비의료적 자기이해·행동변화 코칭/교육 · 의료 진단·치료를 대체하지 않습니다.</div>
       </div>
     </div>
