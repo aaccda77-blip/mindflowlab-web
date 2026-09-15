@@ -458,5 +458,68 @@
       });
     }
   </script>
+
+  <script id="like-script">
+    function likeQa(index) {
+      const el = document.getElementById('qa-like-' + index);
+      if (!el) return;
+
+      const storageKey = 'mindflow_like_qa_' + index;
+      const isLiked = localStorage.getItem(storageKey) === 'true';
+      let count = parseInt(el.innerText, 10) || 0;
+      const btn = el.closest('button') || el.parentElement;
+
+      if (isLiked) {
+        // 이미 공감한 경우 취소
+        count = Math.max(0, count - 1);
+        localStorage.removeItem(storageKey);
+        el.innerText = count;
+        if (btn) {
+          btn.classList.remove('bg-emerald-100', 'border-emerald-400', 'text-[#005238]', 'font-bold');
+          btn.classList.add('bg-slate-100', 'text-[#007A55]');
+        }
+      } else {
+        // 새로 공감 시 +1 및 햅틱 바운스 효과
+        count += 1;
+        localStorage.setItem(storageKey, 'true');
+        el.innerText = count;
+        if (btn) {
+          btn.classList.remove('bg-slate-100');
+          btn.classList.add('bg-emerald-100', 'border-emerald-400', 'text-[#005238]', 'font-bold', 'scale-105');
+          setTimeout(() => {
+            btn.classList.remove('scale-105');
+          }, 200);
+        }
+      }
+    }
+
+    function restoreLikes() {
+      try {
+        const likeElements = document.querySelectorAll('[id^="qa-like-"]');
+        likeElements.forEach(el => {
+          const id = el.id.replace('qa-like-', '');
+          const storageKey = 'mindflow_like_qa_' + id;
+          if (localStorage.getItem(storageKey) === 'true') {
+            let count = parseInt(el.innerText, 10) || 0;
+            el.innerText = count + 1;
+            const btn = el.closest('button') || el.parentElement;
+            if (btn) {
+              btn.classList.remove('bg-slate-100');
+              btn.classList.add('bg-emerald-100', 'border-emerald-400', 'text-[#005238]', 'font-bold');
+            }
+          }
+        });
+      } catch (e) {
+        console.debug('localStorage not available', e);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', restoreLikes);
+    } else {
+      restoreLikes();
+    }
+
+  </script>
 </body>
 </html>
