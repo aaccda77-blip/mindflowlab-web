@@ -441,10 +441,8 @@
       });
     });
     function trackEvent(name, params = {}) {
-      if (window.gtag) {
-        window.gtag('event', name, params);
-      }
-      console.log('[Analytics Event]', name, params);
+      // Privacy Protection: No external analytics tracker, zero psychological data transmission
+      console.debug("[Local UI Action]", name);
     }
   </script>
   

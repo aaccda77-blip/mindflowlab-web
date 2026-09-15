@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>페이지를 찾을 수 없습니다 (404) | 마인드플로우랩</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/assets/start48-cover.jpg" />
+  
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    :root {
+      --primary-green: #007A55;
+      --primary-hover: #006244;
+      --bg-main: #F4F6F8;
+    }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background-color: var(--bg-main);
+      color: #0F172A;
+      letter-spacing: -0.02em;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 44px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--primary-green);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 122, 85, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #FFFFFF;
+      color: #334155;
+      border: 1px solid #E2E8F0;
+    }
+    .btn-secondary:hover {
+      background: #F8FAFC;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-slate-900 font-black text-lg">
+        <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-[#007A55] to-emerald-400 flex items-center justify-center text-white text-xs">M</span>
+        마인드플로우랩
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600">
+        <a href="/" class="hover:text-[#007A55]">홈</a>
+        <a href="/faq" class="hover:text-[#007A55]">사이다 Q&A</a>
+        <a href="/self-check" class="hover:text-[#007A55]">Self Check</a>
+        <a href="/ai" class="hover:text-[#007A55]">명심AI</a>
+        <a href="/library" class="hover:text-[#007A55]">31권 서재</a>
+        <a href="/trust" class="hover:text-[#007A55]">특허·신뢰</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Error Content -->
+  <main class="flex-1 flex items-center justify-center px-6 py-20">
+    <div class="max-w-md w-full text-center space-y-6">
+      <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-3xl shadow-inner">
+        🧭
+      </div>
+      <div>
+        <span class="text-xs font-bold text-[#007A55] uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+          404 Not Found
+        </span>
+        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 mt-4 tracking-tight">
+          길을 잠시 잃으셨나요?
+        </h1>
+        <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+          요청하신 페이지가 삭제되었거나, 주소가 잘못 입력되었을 수 있습니다.<br />
+          아래 버튼을 눌러 마음의 중심과 일상의 방향을 다시 찾아보세요.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a href="/" class="btn btn-primary w-full sm:w-auto">
+          마인드플로우랩 홈으로 가기 &rarr;
+        </a>
+        <a href="/faq" class="btn btn-secondary w-full sm:w-auto">
+          사이다 Q&A (134문항)
+        </a>
+      </div>
+
+      <div class="pt-6 border-t border-slate-200 text-xs text-slate-400">
+        문제가 지속되면 <a href="mailto:admin@mindflowlab.co.kr" class="text-[#007A55] underline font-medium">admin@mindflowlab.co.kr</a>로 알려주세요.
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>&copy; 2026 MindflowLab. All rights reserved.</div>
+      <div>비의료적 웰니스 솔루션 · 자기성찰과 행동실험 코칭 도구</div>
+    </div>
+  </footer>
+</body>
+</html>

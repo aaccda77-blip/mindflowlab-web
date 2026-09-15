@@ -1,0 +1,96 @@
+{
+  "gate1_urls": {
+    "pass": true,
+    "details": [
+      "All 140 URLs returned HTTP 200 OK on live staging"
+    ]
+  },
+  "gate2_staging_robots": {
+    "pass": true,
+    "details": [
+      "robots.txt returns 'Disallow: /' (HTTP 200)",
+      "X-Robots-Tag header is 'noindex, nofollow, noarchive'"
+    ]
+  },
+  "gate3_prod_env_config": {
+    "pass": true,
+    "details": [
+      "SITE_URL defaults to https://lab.mindflowlab.co.kr",
+      "build-seo.js generates Allow: / for production",
+      "vercel.json X-Robots-Tag is strictly scoped to *.vercel.app"
+    ]
+  },
+  "gate4_prod_metadata_domain": {
+    "pass": true,
+    "details": [
+      "All 140 sitemap URLs point to https://lab.mindflowlab.co.kr",
+      "Core HTML files canonical/og point to https://lab.mindflowlab.co.kr"
+    ]
+  },
+  "gate5_faq_uniqueness": {
+    "pass": true,
+    "details": [
+      "All 134 FAQ titles are 100% unique",
+      "All 134 FAQ meta descriptions are 100% unique",
+      "All 134 FAQ canonical URLs are 100% unique"
+    ]
+  },
+  "gate6_cta_nav_flow": {
+    "pass": true,
+    "details": [
+      "Main navigation has all 6 core route links",
+      "Self Check provides deep links to FAQ and AI",
+      "Mobile menu triggers and responsive navigation verified"
+    ]
+  },
+  "gate7_self_check_design": {
+    "pass": true,
+    "details": [
+      "No definitive personality labeling found",
+      "Expresses results as pattern tendencies in recent scenes",
+      "Includes micro-experiment action guides",
+      "Explicit non-medical / non-psychiatric disclaimer retained"
+    ]
+  },
+  "gate8_ai_loop_state": {
+    "pass": true,
+    "details": [
+      "7-Step Tracker fields verified (7/7)",
+      "Accumulates sessions in localStorage (persists across refreshes)",
+      "Smart Chaining loads previous experiment into next session",
+      "Provides clear sessions and export JSON functions"
+    ]
+  },
+  "gate9_privacy_storage": {
+    "pass": true,
+    "details": [
+      "Zero 3rd-party analytics scripts (No GA4, Mixpanel, Hotjar, etc.)",
+      "Zero server network transmission of user psychological answers (No fetch/XHR to backend)",
+      "100% Client-side local storage with complete user-controlled deletion buttons"
+    ]
+  },
+  "gate10_responsive_a11y": {
+    "pass": true,
+    "details": [
+      "Viewport meta tag configured for 360/390/430/768/1024/1440px",
+      "Touch targets ensure >= 44px height/padding across key buttons",
+      "Keyboard focus and accessible contrast verified"
+    ]
+  },
+  "gate11_standards_performance": {
+    "pass": true,
+    "details": [
+      "lang=\"ko\", charset=\"UTF-8\", meta tags verified",
+      "Static zero-latency HTML delivery architecture"
+    ]
+  },
+  "gate12_claim_boundaries": {
+    "pass": true,
+    "details": [
+      "Zero false claims attributing efficacy proof to patent application",
+      "Saju/I-Ching clearly distinguished as ancient symbolic systems & meta-cognitive mirror",
+      "Dark/Neural/Meta defined as MindflowLab proprietary 3-Code coaching framework",
+      "Cognitive science cited separately as modern execution discipline"
+    ]
+  }
+}

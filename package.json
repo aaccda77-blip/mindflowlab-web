@@ -5,6 +5,7 @@
   "description": "MindflowLab & Myeongsim Coaching Official Web Service",
   "scripts": {
     "build": "node scripts/build-seo.js",
-    "qa:seo": "node scripts/verify-qa.js"
+    "qa:seo": "node scripts/verify-qa.js",
+    "qa:launch": "node scripts/launch-gate-qa.js"
   }
 }

@@ -197,6 +197,24 @@
       max-width: 1240px;
       margin: 0 auto;
     }
+  
+    /* Accessibility Enhancements: prefers-reduced-motion, focus-visible, touch targets */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid #007A55 !important;
+      outline-offset: 2px !important;
+    }
+    .btn, button, input[type="text"], select {
+      min-height: 44px;
+    }
+
   </style>
 
 </head>
@@ -8611,10 +8629,8 @@
       });
     });
     function trackEvent(name, params = {}) {
-      if (window.gtag) {
-        window.gtag('event', name, params);
-      }
-      console.log('[Analytics Event]', name, params);
+      // Privacy Protection: No external analytics tracker, zero psychological data transmission
+      console.debug("[Local UI Action]", name);
     }
   </script>
   
