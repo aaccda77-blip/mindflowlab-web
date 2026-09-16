@@ -167,8 +167,12 @@
     trackMindEvent('relationship_pack_view', { packId: 'relationship-anxiety-01', source: 'home_load' });
     trackMindEvent('money_pack_view', { packId: 'money-business-01', source: 'home_load' });
     await Promise.all([ensureServiceConfig(), ensureCardsData()]);
+    trackMindEvent('career_pack_view', { packId: 'career-burnout-01', source: 'home_load' });
+    trackMindEvent('perfection_pack_view', { packId: 'perfection-approval-comparison-01', source: 'home_load' });
     renderPopularQuestions();
     renderMoneyQuestions();
+    renderCareerQuestions();
+    renderPerfectionQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
     // 기본 검색 제안 렌더링
@@ -312,6 +316,16 @@
       trackMindEvent('money_card_open', { cardId: currentCard.id, category: currentCard.category });
       trackMindEvent('money_card_reveal', { cardId: currentCard.id, category: currentCard.category });
     }
+    // 직장·성과·번아웃 명심카드 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('career_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
+    // 완벽주의·인정·비교 명심카드 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('perfection_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
 
     // 화면 전환
     const homeView = document.getElementById('mind-home-view');
@@ -442,6 +456,10 @@
       bridgeBookBtn.href = resolveBookUrl(card, config);
     }
 
+    // PACK 04 전용 Curiosity Bridge 및 특수 인터랙션 분기
+    updatePackCuriosityBridge(card);
+    renderPack04SpecialInteraction(card);
+
     // CTA 영역 초기화
     isDeepDiveUnlocked = false;
     const ctaContainer = document.getElementById('deep-dive-cta-container');
@@ -468,6 +486,12 @@
     if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
       trackMindEvent('money_app_click', { source: source || 'app_cta', cardId: currentCard.id });
     }
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+    }
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+    }
   };
 
   window.handleMindBookClick = function (source) {
@@ -477,6 +501,12 @@
     }
     if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
       trackMindEvent('money_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
     }
   };
 
@@ -489,6 +519,12 @@
     }
     if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
       trackMindEvent('money_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
+    }
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
+    }
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
     }
     setElText('curiosity-bridge-question', `“${qText}”`);
     
@@ -520,6 +556,12 @@
     if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
       trackMindEvent('money_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
     }
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
+    }
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
+    }
     const mapping = {
       chest: '가슴 조임/답답함',
       neck: '목·어깨 굳음',
@@ -547,6 +589,12 @@
     }
     if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
       trackMindEvent('money_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
+    }
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
+    }
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
     }
     const mapping = {
       check: '거듭 확인하고 통제하기',
@@ -608,6 +656,12 @@
     if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
       trackMindEvent('money_scan_complete', { cardId: currentCard.id, category: currentCard.category });
     }
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_scan_complete', { cardId: currentCard.id, category: currentCard.category });
+    }
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_scan_complete', { cardId: currentCard.id, category: currentCard.category });
+    }
     showToastNotification("🧭 오늘의 작동지도가 생성되었습니다! 진단이 아닌 오늘의 기록입니다.");
   };
 
@@ -645,6 +699,12 @@
     }
     if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
       trackMindEvent('money_action_select', { cardId: currentCard.id, category: currentCard.category });
+    }
+    if (currentCard && (currentCard.packId === 'career-burnout-01' || (currentCard.id && currentCard.id.startsWith('career-')))) {
+      trackMindEvent('career_action_select', { cardId: currentCard.id, category: currentCard.category });
+    }
+    if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
+      trackMindEvent('perfection_action_select', { cardId: currentCard.id, category: currentCard.category });
     }
   };
 
@@ -816,6 +876,262 @@
   }
 
   // =================================================================
+
+  // =================================================================
+  // 11-1. PACK 04 전용 Curiosity Bridge & 미니 인터랙션 렌더러
+  // =================================================================
+  function updatePackCuriosityBridge(card) {
+    const isPack04 = card && (card.packId === 'perfection-approval-comparison-01' || (card.id && card.id.startsWith('perf-')));
+    const bridgeQ = document.getElementById('curiosity-bridge-question');
+    const bridgeSub = document.getElementById('curiosity-bridge-sub');
+    const bridgeChipsContainer = document.querySelector('.curiosity-preset-chip')?.parentElement;
+
+    if (!bridgeChipsContainer) return;
+
+    if (isPack04) {
+      if (bridgeQ) bridgeQ.innerText = '“그런데 나는 무엇을 지키려고 이렇게까지 잘하려고 했을까?”';
+      if (bridgeSub) bridgeSub.innerText = '정답을 고르는 검사가 아닙니다. 지금 가장 가까운 표현을 골라도 되고, 직접 써도 됩니다.';
+      bridgeChipsContainer.innerHTML = `
+        <button type="button" onclick="selectCuriosityQuestion('품질을 지키려고 한 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#7C3AED] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">🛡️</span><span>품질</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('존중을 지키려고 한 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#7C3AED] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">🤝</span><span>존중</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('유능함을 지키려고 한 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#7C3AED] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">⚡</span><span>유능함</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('안전감을 지키려고 한 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#7C3AED] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">⚓</span><span>안전감</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('소속감을 지키려고 한 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#7C3AED] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">👥</span><span>소속감</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('가치감을 지키려고 한 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#7C3AED] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">💎</span><span>가치감</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('관계를 지키려고 한 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#7C3AED] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">🌱</span><span>관계</span>
+        </button>
+      `;
+    } else {
+      if (bridgeQ) bridgeQ.innerText = '“그런데 왜 나는 이 상황에서만 유독 흔들릴까?”';
+      if (bridgeSub) bridgeSub.innerText = '같은 행동처럼 보여도 사람마다 지키려는 것은 다를 수 있습니다. 관계일 수도, 존중일 수도, 안전감이나 가치감일 수도 있습니다. 내 경우에는 무엇을 지키려고 이 반응이 시작됐을까요?';
+      bridgeChipsContainer.innerHTML = `
+        <button type="button" onclick="selectCuriosityQuestion('그런데 내 경우에는 무엇이 가장 먼저 켜질까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-amber-500">❓</span><span>“내 경우에는 무엇이 먼저 켜질까?”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('나는 왜 이 상황에서만 유독 흔들릴까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-amber-500">❓</span><span>“나는 왜 이 상황에서 유독 흔들릴까?”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('이 행동은 무엇을 지키려고 시작됐을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-amber-500">❓</span><span>“이 행동은 무엇을 지키려 시작됐을까?”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('이 반응이 올라와도 다른 행동을 할 수 있을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-amber-500">❓</span><span>“이 반응에도 다른 행동이 가능할까?”</span>
+        </button>
+      `;
+    }
+  }
+
+  function renderPack04SpecialInteraction(card) {
+    const container = document.getElementById('pack04-special-interaction-container');
+    if (!container) return;
+
+    if (!card || (card.packId !== 'perfection-approval-comparison-01' && !card.id.startsWith('perf-'))) {
+      container.classList.add('hidden');
+      container.innerHTML = '';
+      return;
+    }
+
+    container.classList.remove('hidden');
+
+    if (card.interactionType === 'compare') {
+      // 순위에서 방향으로 (비교 전환 인터랙션)
+      container.innerHTML = `
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-indigo-50/90 via-purple-50/70 to-slate-50 border-2 border-indigo-200/90 shadow-xs space-y-3.5">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <div class="flex items-center gap-1.5 text-indigo-700 font-black text-xs">
+              <span>🧭</span>
+              <span>순위에서 방향으로 · 비교 전환 인터랙션</span>
+            </div>
+            <span class="text-[9px] font-bold text-indigo-700 bg-white px-2 py-0.5 rounded-full border border-indigo-200">방향성 탐색</span>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            남과의 순위 비교를 내가 진짜 원하는 삶의 방향으로 바꿉니다.
+          </p>
+
+          <div class="space-y-2.5">
+            <!-- 1단계: 순위 집착 -->
+            <div class="p-2.5 rounded-xl bg-white/90 border border-rose-100 text-xs text-rose-950 flex items-center gap-2">
+              <span class="px-1.5 py-0.5 rounded bg-rose-100 text-rose-700 font-bold text-[10px] shrink-0">1단계</span>
+              <span class="font-medium line-through text-slate-400">“저 사람보다 내가 앞서 있는가?” (보이지 않는 순위표)</span>
+            </div>
+
+            <div class="text-center text-xs text-slate-400 font-black">&darr;</div>
+
+            <!-- 2단계: 내 욕구 찾기 -->
+            <div class="p-3 rounded-xl bg-white border border-indigo-200 text-xs shadow-2xs space-y-2">
+              <div class="flex items-center gap-1.5">
+                <span class="px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700 font-bold text-[10px] shrink-0">2단계</span>
+                <span class="font-bold text-slate-800">“저 사람에게 있는 것 중 나는 무엇을 원하는가?”</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 pt-1">
+                <button type="button" onclick="selectDirectionGoal(this, '자유로운 시간')" class="dir-goal-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition">⏰ 자유로운 시간</button>
+                <button type="button" onclick="selectDirectionGoal(this, '안정된 경제력')" class="dir-goal-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition">💰 안정된 경제력</button>
+                <button type="button" onclick="selectDirectionGoal(this, '전문성 인정')" class="dir-goal-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition">🏆 전문성 인정</button>
+                <button type="button" onclick="selectDirectionGoal(this, '내면의 여유')" class="dir-goal-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition">🌿 내면의 여유</button>
+              </div>
+              <div id="dir-selected-feedback" class="hidden text-[11px] text-indigo-800 font-bold bg-indigo-50/80 p-2 rounded-lg border border-indigo-100">
+                💡 <span id="dir-selected-name"></span>을(를) 바라는 마음은 부끄러운 감정이 아니라 내 다음 성장의 훌륭한 나침반입니다.
+              </div>
+            </div>
+
+            <div class="text-center text-xs text-slate-400 font-black">&darr;</div>
+
+            <!-- 3단계: 오늘의 10% 행동 -->
+            <div class="p-3 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-300 text-xs">
+              <div class="flex items-center gap-1.5 mb-1 text-emerald-800 font-bold">
+                <span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-700 font-bold text-[10px] shrink-0">3단계</span>
+                <span>“그렇다면 내 방향으로 오늘 할 수 있는 10% 행동은?”</span>
+              </div>
+              <p class="text-slate-800 font-bold text-xs pl-2 border-l-2 border-emerald-500">
+                ${card.tenPercentAction}
+              </p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      // OTHER'S SCORE vs MY STANDARD 미니 인터랙션
+      container.innerHTML = `
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-purple-50/90 via-slate-50 to-indigo-50/70 border-2 border-purple-200/90 shadow-xs space-y-3.5">
+          <div class="flex items-center justify-between border-b border-purple-100 pb-2">
+            <div class="flex items-center gap-1.5 text-purple-900 font-black text-xs">
+              <span>⚖️</span>
+              <span>OTHER'S SCORE vs MY STANDARD (평가 분리)</span>
+            </div>
+            <span class="text-[9px] font-bold text-purple-800 bg-white px-2 py-0.5 rounded-full border border-purple-200">점수화 금지 · 영역 분리</span>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            타인의 점수표와 내 기준을 분리해봅니다. 타인의 시선은 통제할 수 없지만, 나의 기준은 내가 선택할 수 있습니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <!-- 왼쪽: OTHER'S SCORE -->
+            <div class="p-3.5 rounded-xl bg-white/90 border border-slate-200 space-y-2.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-black text-slate-500">① OTHER'S SCORE (타인의 평가표)</span>
+                <span class="text-[9px] text-slate-400 font-bold">통제 불가</span>
+              </div>
+              <div class="space-y-1.5">
+                <button type="button" onclick="toggleScoreChip(this, 'others')" class="others-score-chip w-full text-left p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-rose-50 text-[11px] text-slate-700 transition flex items-center justify-between">
+                  <span>👥 사람들이 좋아할까?</span>
+                  <span class="text-slate-300">○</span>
+                </button>
+                <button type="button" onclick="toggleScoreChip(this, 'others')" class="others-score-chip w-full text-left p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-rose-50 text-[11px] text-slate-700 transition flex items-center justify-between">
+                  <span>👏 칭찬받을 수 있을까?</span>
+                  <span class="text-slate-300">○</span>
+                </button>
+                <button type="button" onclick="toggleScoreChip(this, 'others')" class="others-score-chip w-full text-left p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-rose-50 text-[11px] text-slate-700 transition flex items-center justify-between">
+                  <span>✨ 나를 선택해줄까?</span>
+                  <span class="text-slate-300">○</span>
+                </button>
+                <button type="button" onclick="toggleScoreChip(this, 'others')" class="others-score-chip w-full text-left p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-rose-50 text-[11px] text-slate-700 transition flex items-center justify-between">
+                  <span>🏆 높게 평가받을까?</span>
+                  <span class="text-slate-300">○</span>
+                </button>
+              </div>
+              <p class="text-[10px] text-slate-400 leading-snug">
+                * 타인의 반응은 참고할 외부 데이터일 뿐, 내 존재 전체의 점수표가 아닙니다.
+              </p>
+            </div>
+
+            <!-- 오른쪽: MY STANDARD -->
+            <div class="p-3.5 rounded-xl bg-white/90 border-2 border-emerald-300/80 space-y-2.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-black text-emerald-800">② MY STANDARD (나의 내적 기준)</span>
+                <span class="text-[9px] text-emerald-700 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">통제 가능</span>
+              </div>
+              <div class="space-y-1.5">
+                <button type="button" onclick="toggleScoreChip(this, 'my')" class="my-standard-chip w-full text-left p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-100 text-[11px] text-emerald-950 font-bold transition flex items-center justify-between">
+                  <span>🎯 나는 충분히 준비했나?</span>
+                  <span class="text-emerald-500 font-bold">✓</span>
+                </button>
+                <button type="button" onclick="toggleScoreChip(this, 'my')" class="my-standard-chip w-full text-left p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-100 text-[11px] text-emerald-950 font-bold transition flex items-center justify-between">
+                  <span>🛡️ 중요하게 여기는 원칙을 지켰나?</span>
+                  <span class="text-emerald-500 font-bold">✓</span>
+                </button>
+                <button type="button" onclick="toggleScoreChip(this, 'my')" class="my-standard-chip w-full text-left p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-100 text-[11px] text-emerald-950 font-bold transition flex items-center justify-between">
+                  <span>💼 필요한 책임을 다했나?</span>
+                  <span class="text-emerald-500 font-bold">✓</span>
+                </button>
+                <button type="button" onclick="toggleScoreChip(this, 'my')" class="my-standard-chip w-full text-left p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-100 text-[11px] text-emerald-950 font-bold transition flex items-center justify-between">
+                  <span>🌱 배울 것을 확인했나?</span>
+                  <span class="text-emerald-500 font-bold">✓</span>
+                </button>
+              </div>
+              <p class="text-[10px] text-emerald-700 leading-snug">
+                * 내가 스스로 확인 가능한 기준에 집중할 때 비로소 자존감이 저장됩니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-purple-100/60 border border-purple-200 text-center text-[11px] text-purple-900 font-bold">
+            💡 “타인의 점수표(OTHER'S SCORE)에 휘둘리지 않고, 내 기준(MY STANDARD)을 확인할 때 성장은 지치지 않습니다.”
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  window.selectDirectionGoal = function (btn, goalName) {
+    document.querySelectorAll('.dir-goal-chip').forEach(b => {
+      b.classList.remove('border-indigo-500', 'bg-indigo-100', 'text-indigo-900', 'font-bold');
+      b.classList.add('border-slate-200', 'bg-slate-50', 'text-slate-700');
+    });
+    btn.classList.remove('border-slate-200', 'bg-slate-50', 'text-slate-700');
+    btn.classList.add('border-indigo-500', 'bg-indigo-100', 'text-indigo-900', 'font-bold');
+
+    const fb = document.getElementById('dir-selected-feedback');
+    const nameEl = document.getElementById('dir-selected-name');
+    if (fb && nameEl) {
+      nameEl.innerText = goalName;
+      fb.classList.remove('hidden');
+    }
+    trackMindEvent('perfection_action_select', { type: 'direction_goal', goal: goalName });
+  };
+
+  window.toggleScoreChip = function (btn, type) {
+    const checkEl = btn.querySelector('span:last-child');
+    if (type === 'others') {
+      const isSelected = btn.classList.contains('border-rose-400');
+      if (isSelected) {
+        btn.classList.remove('border-rose-400', 'bg-rose-50', 'font-bold');
+        btn.classList.add('border-slate-200', 'bg-slate-50');
+        if (checkEl) { checkEl.innerText = '○'; checkEl.classList.remove('text-rose-500', 'font-bold'); checkEl.classList.add('text-slate-300'); }
+      } else {
+        btn.classList.remove('border-slate-200', 'bg-slate-50');
+        btn.classList.add('border-rose-400', 'bg-rose-50', 'font-bold');
+        if (checkEl) { checkEl.innerText = '●'; checkEl.classList.remove('text-slate-300'); checkEl.classList.add('text-rose-500', 'font-bold'); }
+      }
+    } else {
+      const isSelected = btn.classList.contains('border-emerald-500');
+      if (isSelected) {
+        btn.classList.remove('border-emerald-500', 'bg-emerald-100', 'font-bold');
+        btn.classList.add('border-emerald-200', 'bg-emerald-50/50');
+        if (checkEl) { checkEl.innerText = '○'; checkEl.classList.remove('text-emerald-700'); checkEl.classList.add('text-emerald-400'); }
+      } else {
+        btn.classList.remove('border-emerald-200', 'bg-emerald-50/50');
+        btn.classList.add('border-emerald-500', 'bg-emerald-100', 'font-bold');
+        if (checkEl) { checkEl.innerText = '✓'; checkEl.classList.remove('text-emerald-400'); checkEl.classList.add('text-emerald-700', 'font-bold'); }
+      }
+    }
+    trackMindEvent('perfection_action_select', { type: 'score_toggle', domain: type });
+  };
+
   // 12. 요즘 사람들이 많이 마주하는 질문 (관계·불안 PACK 01 대표 6선 캐러셀)
   // =================================================================
   const FEATURED_RELATIONSHIP_IDS = [
@@ -923,6 +1239,112 @@
         </div>
         <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
           <span class="text-[#C7A86B]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+
+  // =================================================================
+  // 12-2. 직장·성과·번아웃 PACK 03 캐러셀
+  // =================================================================
+  const FEATURED_CAREER_IDS = [
+    'career-001', // 출근 전 방전 모드
+    'career-002', // 퇴사 충동 모드
+    'career-006', // 실수 재판 모드
+    'career-014', // 퇴근 후 업무 모드
+    'career-018', // 바로 YES 모드
+    'career-016'  // 번아웃 자기비난 모드
+  ];
+
+  function renderCareerQuestions() {
+    const carousel = document.getElementById('career-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const careerFeatured = [];
+    FEATURED_CAREER_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) careerFeatured.push(card);
+    });
+
+    const otherCareer = cardsData.filter(c => 
+      c.packId === 'career-burnout-01' && !FEATURED_CAREER_IDS.includes(c.id)
+    );
+
+    const list = [...careerFeatured, ...otherCareer].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0284C7] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#0284C7]/10 text-[#0284C7] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#0284C7] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#0284C7]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+
+  // =================================================================
+  // 12-3. 완벽주의·인정·비교 PACK 04 캐러셀
+  // =================================================================
+  const FEATURED_PERFECTION_IDS = [
+    'perf-001', // 끝없는 수정 모드
+    'perf-005', // 칭찬 충전 모드
+    'perf-008', // 보이지 않는 순위표
+    'perf-010', // 친구가 경쟁자 모드
+    'perf-011', // 목표선 이동 모드
+    'perf-018'  // 자기검사 모드
+  ];
+
+  function renderPerfectionQuestions() {
+    const carousel = document.getElementById('perfection-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const perfectionFeatured = [];
+    FEATURED_PERFECTION_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) perfectionFeatured.push(card);
+    });
+
+    const otherPerfection = cardsData.filter(c => 
+      c.packId === 'perfection-approval-comparison-01' && !FEATURED_PERFECTION_IDS.includes(c.id)
+    );
+
+    const list = [...perfectionFeatured, ...otherPerfection].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#7C3AED] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#7C3AED]/10 text-[#7C3AED] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#7C3AED] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#7C3AED]">사이다 답변 확인 &rarr;</span>
           <span>${card.cardTitle}</span>
         </div>
       </div>
