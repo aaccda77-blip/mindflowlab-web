@@ -292,10 +292,12 @@
     if (resultView) {
       resultView.classList.remove('hidden');
       if (card3D) {
+        card3D.style.transform = 'translateY(16px) scale(0.96) rotateY(0deg)';
         card3D.classList.remove('is-revealed');
         void card3D.offsetWidth;
         setTimeout(() => {
           card3D.classList.add('is-revealed');
+          card3D.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
         }, 30);
       }
     }
