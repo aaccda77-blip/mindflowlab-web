@@ -172,11 +172,13 @@
     trackMindEvent('career_pack_view', { packId: 'career-burnout-01', source: 'home_load' });
     trackMindEvent('perfection_pack_view', { packId: 'perfection-approval-comparison-01', source: 'home_load' });
     trackMindEvent('family_pack_view', { packId: 'family-boundary-01', source: 'home_load' });
+    trackMindEvent('decision_pack_view', { packId: 'decision-action-01', source: 'home_load' });
     renderPopularQuestions();
     renderMoneyQuestions();
     renderCareerQuestions();
     renderPerfectionQuestions();
     renderFamilyQuestions();
+    renderDecisionQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
     // 기본 검색 제안 렌더링
@@ -335,6 +337,11 @@
       trackMindEvent('family_card_open', { cardId: currentCard.id, category: currentCard.category });
       trackMindEvent('family_card_reveal', { cardId: currentCard.id, category: currentCard.category });
     }
+    // 결정·미루기·습관·행동 PACK 07 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'decision-action-01' || (currentCard.id && currentCard.id.startsWith('dec-')))) {
+      trackMindEvent('decision_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('decision_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
 
     // 화면 전환
     const homeView = document.getElementById('mind-home-view');
@@ -465,10 +472,11 @@
       bridgeBookBtn.href = resolveBookUrl(card, config);
     }
 
-    // PACK 04 & PACK 05 전용 Curiosity Bridge 및 특수 인터랙션 분기
+    // PACK 04, 05, 07 전용 Curiosity Bridge 및 특수 인터랙션 분기
     updatePackCuriosityBridge(card);
     renderPack04SpecialInteraction(card);
     renderPack05SpecialInteraction(card);
+    renderPack07SpecialInteraction(card);
 
     // CTA 영역 초기화
     isDeepDiveUnlocked = false;
@@ -505,6 +513,10 @@
     if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
       trackMindEvent('family_app_click', { source: source || 'app_cta', cardId: currentCard.id });
     }
+    if (currentCard && (currentCard.packId === 'decision-action-01' || (currentCard.id && currentCard.id.startsWith('dec-')))) {
+      trackMindEvent('decision_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+      trackMindEvent('app_cta_clicked', { source: source || 'app_cta', cardId: currentCard.id });
+    }
   };
 
   window.handleMindBookClick = function (source) {
@@ -523,6 +535,10 @@
     }
     if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
       trackMindEvent('family_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'decision-action-01' || (currentCard.id && currentCard.id.startsWith('dec-')))) {
+      trackMindEvent('decision_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+      trackMindEvent('book_cta_clicked', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
     }
   };
 
@@ -914,13 +930,31 @@
   function updatePackCuriosityBridge(card) {
     const isPack04 = card && (card.packId === 'perfection-approval-comparison-01' || (card.id && card.id.startsWith('perf-')));
     const isPack05 = card && (card.packId === 'family-boundary-01' || (card.id && card.id.startsWith('fam-')));
+    const isPack07 = card && (card.packId === 'decision-action-01' || (card.id && card.id.startsWith('dec-')));
     const bridgeQ = document.getElementById('curiosity-bridge-question');
     const bridgeSub = document.getElementById('curiosity-bridge-sub');
     const bridgeChipsContainer = document.querySelector('.curiosity-preset-chip')?.parentElement;
 
     if (!bridgeChipsContainer) return;
 
-    if (isPack05) {
+    if (isPack07) {
+      if (bridgeQ) bridgeQ.innerText = '“확신은 없지만, 시험해볼 만큼은 준비되었을까?”';
+      if (bridgeSub) bridgeSub.innerText = '완벽한 확신을 기다리기보다, 다음 장면에서 작게 실험해볼 10% 지점을 찾아봅니다.';
+      bridgeChipsContainer.innerHTML = `
+        <button type="button" onclick="selectCuriosityQuestion('새 정보가 없다면 결정을 다시 재판하지 않는다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-indigo-200 hover:border-[#4F46E5] hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-indigo-600">⚖️</span><span>“새 정보 없으면 재판 멈추기”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('완벽한 확신 대신 5분짜리 작은 테스트를 해본다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-indigo-200 hover:border-[#4F46E5] hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-indigo-600">⏱️</span><span>“5분짜리 마이크로 테스트”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('시작이 평가받는 순간이 아니라 착수만 목표로 한다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-indigo-200 hover:border-[#4F46E5] hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-indigo-600">🚀</span><span>“완료 아닌 착수만 목표로”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('‘의지 부족’이 아니라 ‘이 조건에서 중단됐다’로 본다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-indigo-200 hover:border-[#4F46E5] hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-indigo-600">🔄</span><span>“시스템 데이터로 보기”</span>
+        </button>
+      `;
+    } else if (isPack05) {
       if (bridgeQ) bridgeQ.innerText = '“가족 안에서 나는 무엇을 지키려다 내 경계를 잃어버렸을까?”';
       if (bridgeSub) bridgeSub.innerText = '정답을 고르는 검사가 아닙니다. 가족 관계에서 가장 먼저 켜지는 내 마음의 브레이크를 살펴봅니다.';
       bridgeChipsContainer.innerHTML = `
@@ -1472,6 +1506,599 @@
     trackMindEvent('family_action_select', { type: 'affirmation_select', text: affirmText });
   };
 
+
+  // =================================================================
+  // 11-3. PACK 07 전용 5대 행동실험 인터랙션 렌더러
+  // ① 10-SECOND DIRECTION CHECK
+  // ② 10% EXPERIMENT
+  // ③ EXPECTED → ACTUAL
+  // ④ RESTART, NOT RESET
+  // ⑤ REWARD / COST
+  // + SAFETY ROUTE (현실적 위험 방지)
+  // =================================================================
+  let holdTimerInterval = null;
+  let holdTimerSeconds = 10;
+  window.currentPack07Tool = null;
+
+  function renderPack07SpecialInteraction(card, activeToolOverride) {
+    const container = document.getElementById('pack07-special-interaction-container');
+    if (!container) return;
+
+    if (!card || (card.packId !== 'decision-action-01' && !card.id.startsWith('dec-'))) {
+      container.classList.add('hidden');
+      container.innerHTML = '';
+      if (holdTimerInterval) { clearInterval(holdTimerInterval); holdTimerInterval = null; }
+      return;
+    }
+
+    container.classList.remove('hidden');
+
+    // Determine active tool
+    const defaultTool = card.interactionType || 'direction_check';
+    const activeTool = activeToolOverride || window.currentPack07Tool || defaultTool;
+    window.currentPack07Tool = activeTool;
+
+    // Safety check for extreme risks
+    const isSafetyAlert = card.safetyLevel === 'CAUTION' || card.id === 'dec-015_safety';
+    let safetyHtml = '';
+    if (isSafetyAlert) {
+      safetyHtml = `
+        <div class="p-3.5 rounded-xl bg-gradient-to-r from-red-50 via-amber-50 to-orange-50 border-2 border-red-300 text-slate-800 space-y-2 mb-3 shadow-2xs">
+          <div class="flex items-center gap-2 text-red-700 font-black text-xs">
+            <span class="text-sm">🚨</span>
+            <span>긴급 안내 · 심리 실험으로 다룰 수 없는 현실적 안전 영역입니다</span>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed">
+            폭력, 신체적 위협, 중대한 금전적 손실 가능성, 회복하기 어려운 법적·건강 문제는 '10% 작게 시도하기'의 대상이 아닙니다. 현실적인 보호와 전문 기관의 상담을 최우선으로 진행해야 합니다.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-bold">
+            <a href="tel:112" class="px-2.5 py-1 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition">👮 경찰청 112</a>
+            <a href="tel:1332" class="px-2.5 py-1 rounded-lg bg-amber-700 text-white hover:bg-amber-800 transition">💰 금융감독원 1332</a>
+            <a href="tel:15770199" class="px-2.5 py-1 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">🧠 정신건강 1577-0199</a>
+            <a href="tel:132" class="px-2.5 py-1 rounded-lg bg-indigo-700 text-white hover:bg-indigo-800 transition">⚖️ 법률구조공단 132</a>
+          </div>
+        </div>
+      `;
+    }
+
+    // 5 Tool navigation tabs
+    const toolTabsHtml = `
+      <div class="flex items-center gap-1 overflow-x-auto pb-1 mb-3 text-[11px] font-bold border-b border-indigo-100 scrollbar-none">
+        <button type="button" onclick="switchPack07Tool('direction_check')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'direction_check' ? 'bg-[#4F46E5] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          ⏱️ 10초 방향확인
+        </button>
+        <button type="button" onclick="switchPack07Tool('ten_percent_experiment')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'ten_percent_experiment' ? 'bg-[#4F46E5] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🧪 10% 행동실험
+        </button>
+        <button type="button" onclick="switchPack07Tool('expected_vs_actual')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'expected_vs_actual' ? 'bg-[#4F46E5] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          📊 예상 vs 실제
+        </button>
+        <button type="button" onclick="switchPack07Tool('restart_not_reset')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'restart_not_reset' ? 'bg-[#4F46E5] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🔄 리셋 없는 재시작
+        </button>
+        <button type="button" onclick="switchPack07Tool('reward_and_cost')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'reward_and_cost' ? 'bg-[#4F46E5] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          ⚖️ 보상과 비용
+        </button>
+      </div>
+    `;
+
+    let toolBodyHtml = '';
+
+    if (activeTool === 'direction_check') {
+      // TOOL 1: 10-SECOND DIRECTION CHECK
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#4F46E5] font-black text-xs sm:text-sm">
+              <span>⏱️</span>
+              <span>10-SECOND DIRECTION CHECK (10초 방향 확인)</span>
+            </div>
+            <span class="text-[9px] font-bold text-indigo-700 bg-white px-2 py-0.5 rounded-full border border-indigo-200">충동 멈춤 회로</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-indigo-50/70 border border-indigo-100 text-xs text-slate-700 leading-relaxed">
+            <strong class="text-indigo-900 block mb-1">💡 핵심 원리:</strong>
+            10초는 감정을 억누르거나 참는 시간이 아닙니다. 뇌가 자동으로 켜버린 충동적 행동 앞에서 <strong>“내가 지금 가려는 방향이 진짜 맞나?”</strong>를 확인하는 공간입니다.
+          </div>
+
+          <!-- 10초 인터랙티브 카운트다운 타이머 -->
+          <div class="p-4 rounded-xl bg-white border-2 border-indigo-200 shadow-2xs text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+              <span id="hold-timer-display" class="text-3xl sm:text-4xl font-black text-[#4F46E5] font-mono tracking-tight">10.0</span>
+              <span class="text-xs text-slate-400 font-bold">초 HOLD</span>
+            </div>
+            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+              <div id="hold-timer-bar" class="bg-[#4F46E5] h-full transition-all duration-200" style="width: 100%;"></div>
+            </div>
+            <div class="pt-1 flex items-center justify-center gap-2">
+              <button id="hold-timer-btn" type="button" onclick="start10SecHoldTimer()" class="py-2 px-4 rounded-xl bg-[#4F46E5] hover:bg-indigo-700 text-white text-xs font-black transition shadow-2xs flex items-center gap-1.5">
+                <span>▶️ 10초 HOLD 시작</span>
+              </button>
+              <button type="button" onclick="reset10SecHoldTimer()" class="py-2 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold transition">
+                초기화
+              </button>
+            </div>
+            <p id="hold-timer-status" class="text-[11px] text-slate-500">버튼을 누르고 깊은 숨을 들이마시며 10초간 잠시 멈춰보세요.</p>
+          </div>
+
+          <!-- 질문 1: 지금 내가 원하는 결과는 무엇이지? -->
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2 shadow-2xs">
+            <div class="text-xs font-black text-slate-800 flex items-center justify-between">
+              <span>질문: “지금 내가 진짜 원하는 결과는 무엇이지?”</span>
+              <span class="text-[10px] text-slate-400">하나 선택</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+              <button type="button" onclick="selectDirectionResult(this, '정보를 얻고 싶다')" class="dir-opt-btn p-2 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 text-[11px] text-slate-700 font-medium text-left transition">
+                • 정보를 얻고 싶다
+              </button>
+              <button type="button" onclick="selectDirectionResult(this, '문제를 해결하고 싶다')" class="dir-opt-btn p-2 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 text-[11px] text-slate-700 font-medium text-left transition">
+                • 문제를 해결하고 싶다
+              </button>
+              <button type="button" onclick="selectDirectionResult(this, '경계를 말하고 싶다')" class="dir-opt-btn p-2 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 text-[11px] text-slate-700 font-medium text-left transition">
+                • 경계를 말하고 싶다
+              </button>
+              <button type="button" onclick="selectDirectionResult(this, '마음을 표현하고 싶다')" class="dir-opt-btn p-2 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 text-[11px] text-slate-700 font-medium text-left transition">
+                • 마음을 표현하고 싶다
+              </button>
+              <button type="button" onclick="selectDirectionResult(this, '불안을 빨리 끝내고 싶다')" class="dir-opt-btn p-2 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 text-[11px] text-slate-700 font-medium text-left transition">
+                • 불안을 빨리 끝내고 싶다
+              </button>
+              <button type="button" onclick="selectDirectionResult(this, '내가 틀리지 않았음을 증명')" class="dir-opt-btn p-2 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/50 text-[11px] text-slate-700 font-medium text-left transition">
+                • 내 옳음을 증명하고 싶다
+              </button>
+            </div>
+            <div class="flex items-center gap-2 pt-1">
+              <input id="dir-custom-input" type="text" placeholder="직접 입력: 내가 원하는 결과" class="flex-1 px-3 py-1.5 rounded-lg border border-slate-200 text-xs focus:outline-none focus:border-indigo-500 bg-slate-50" />
+              <button type="button" onclick="selectDirectionCustom()" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">확인</button>
+            </div>
+            <div id="dir-feedback-box" class="hidden p-3 rounded-lg bg-indigo-50/80 border border-indigo-200 text-xs space-y-1">
+              <strong class="text-indigo-950 block">🎯 방향 확인 피드백:</strong>
+              <p id="dir-feedback-text" class="text-slate-700 leading-relaxed"></p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'ten_percent_experiment') {
+      // TOOL 2: 10% EXPERIMENT
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#4F46E5] font-black text-xs sm:text-sm">
+              <span>🧪</span>
+              <span>10% EXPERIMENT (다음 장면 10% 행동실험)</span>
+            </div>
+            <span class="text-[9px] font-bold text-indigo-700 bg-white px-2 py-0.5 rounded-full border border-indigo-200">마이크로 루프</span>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            인생을 완전히 바꾸는 100점짜리 거대한 행동 말고, <strong>다음 장면에서 10%만 다르게 해볼 실험</strong>을 선택합니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+            <button type="button" onclick="selectTenPercentExperiment(this, '5번 확인 → 4번 확인', '불확실성을 견디는 10% 실험')" class="exp-card-btn p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 text-left transition shadow-2xs space-y-1">
+              <div class="text-[10px] text-indigo-700 font-bold">확인 줄이기</div>
+              <div class="text-xs font-black text-slate-900">5번 확인 → 4번 확인</div>
+              <div class="text-[10px] text-slate-500">한 번 덜 확인하고 불안이 스스로 가라앉는지 관찰합니다.</div>
+            </button>
+
+            <button type="button" onclick="selectTenPercentExperiment(this, '바로 YES → “확인하고 답할게요”', '시간 벌기 10% 실험')" class="exp-card-btn p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 text-left transition shadow-2xs space-y-1">
+              <div class="text-[10px] text-indigo-700 font-bold">시간 벌기</div>
+              <div class="text-xs font-black text-slate-900">바로 YES → “확인하고 답할게요”</div>
+              <div class="text-[10px] text-slate-500">즉각 승낙 대신 1분의 시간을 벌어 내 경계를 지킵니다.</div>
+            </button>
+
+            <button type="button" onclick="selectTenPercentExperiment(this, '완벽하게 시작 → 5분 시작', '착수 저항 낮추기')" class="exp-card-btn p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 text-left transition shadow-2xs space-y-1">
+              <div class="text-[10px] text-indigo-700 font-bold">저항 낮추기</div>
+              <div class="text-xs font-black text-slate-900">완벽하게 시작 → 5분 시작</div>
+              <div class="text-[10px] text-slate-500">결과물 완성 대신 타이머 5분만 켜두고 착수합니다.</div>
+            </button>
+
+            <button type="button" onclick="selectTenPercentExperiment(this, '하루 포기 → 저녁에 10분 재시작', '부분 복구 실험')" class="exp-card-btn p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 text-left transition shadow-2xs space-y-1">
+              <div class="text-[10px] text-indigo-700 font-bold">부분 복구</div>
+              <div class="text-xs font-black text-slate-900">하루 포기 → 저녁에 10분 재시작</div>
+              <div class="text-[10px] text-slate-500">아침이 깨졌어도 저녁에 가장 작은 1개를 복구합니다.</div>
+            </button>
+
+            <button type="button" onclick="selectTenPercentExperiment(this, '바로 반박 → 질문 하나 먼저', '자동반응 늦추기')" class="exp-card-btn p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 text-left transition shadow-2xs space-y-1">
+              <div class="text-[10px] text-indigo-700 font-bold">질문 먼저</div>
+              <div class="text-xs font-black text-slate-900">바로 반박 → 질문 하나 먼저</div>
+              <div class="text-[10px] text-slate-500">공격이나 방어 대신 “어떤 의미로 말씀하셨나요?”라고 묻습니다.</div>
+            </button>
+
+            <button type="button" onclick="selectTenPercentExperiment(this, '연락 끊기 → 필요한 시간을 말하기', '안전한 경계')" class="exp-card-btn p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 text-left transition shadow-2xs space-y-1">
+              <div class="text-[10px] text-indigo-700 font-bold">명확한 경계</div>
+              <div class="text-xs font-black text-slate-900">연락 끊기 → 필요한 시간을 말하기</div>
+              <div class="text-[10px] text-slate-500">잠수 대신 “생각할 시간이 1시간 필요해요”라고 알립니다.</div>
+            </button>
+          </div>
+
+          <!-- 직접 입력 -->
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
+            <div class="text-[11px] font-bold text-slate-700">✍️ 나만의 10% 행동 직접 입력:</div>
+            <div class="flex gap-2">
+              <input id="custom-exp-input" type="text" placeholder="예: 첫 줄만 쓰기, 파일 열고 2분 보기" class="flex-1 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs focus:outline-none focus:border-indigo-500" />
+              <button type="button" onclick="submitCustomExperiment()" class="px-3.5 py-1.5 rounded-lg bg-[#4F46E5] hover:bg-indigo-700 text-white font-bold text-xs transition">선택</button>
+            </div>
+          </div>
+
+          <div id="exp-selected-feedback" class="hidden p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-xs space-y-1">
+            <strong class="text-indigo-900 block">✨ 선택된 10% 실험:</strong>
+            <p id="exp-selected-text" class="text-indigo-950 font-bold"></p>
+            <span class="text-[10px] text-slate-500 block">오늘 이 행동을 시험해보고, 아래 '예상 vs 실제'에 경험 데이터를 기록해보세요.</span>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'expected_vs_actual') {
+      // TOOL 3: EXPECTED → ACTUAL
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#4F46E5] font-black text-xs sm:text-sm">
+              <span>📊</span>
+              <span>EXPECTED → ACTUAL (예상과 실제 비교)</span>
+            </div>
+            <span class="text-[9px] font-bold text-indigo-700 bg-white px-2 py-0.5 rounded-full border border-indigo-200">신경망 재학습</span>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            점수를 매기지 않습니다. AI가 “틀렸다”고 판정하지 않습니다. <strong>내 머릿속의 최악 예상(EXPECTED)과 실제 경험(ACTUAL)이 어떻게 달랐는지</strong>를 데이터로 봅니다.
+          </p>
+
+          <!-- 1단계: 내 예상은? -->
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2">
+            <span class="text-xs font-bold text-indigo-900 block">1. 행동실험 전, 내 머릿속 EXPECTED(예상)는?</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px]">
+              <button type="button" onclick="selectExpectedOption(this, '거절하면 상대가 크게 화낼 것이다.')" class="expected-chip p-2 rounded-lg border border-slate-200 text-left hover:border-indigo-400 hover:bg-indigo-50/50 text-slate-700 transition">
+                • 거절하면 상대가 크게 화낼 것이다.
+              </button>
+              <button type="button" onclick="selectExpectedOption(this, '질문하면 무능해 보일 것이다.')" class="expected-chip p-2 rounded-lg border border-slate-200 text-left hover:border-indigo-400 hover:bg-indigo-50/50 text-slate-700 transition">
+                • 질문하면 무능해 보일 것이다.
+              </button>
+              <button type="button" onclick="selectExpectedOption(this, '완벽하지 않으면 전부 실패할 것이다.')" class="expected-chip p-2 rounded-lg border border-slate-200 text-left hover:border-indigo-400 hover:bg-indigo-50/50 text-slate-700 transition">
+                • 완벽하지 않으면 전부 실패할 것이다.
+              </button>
+              <button type="button" onclick="selectExpectedOption(this, '하루 쉬면 모든 루틴이 무너질 것이다.')" class="expected-chip p-2 rounded-lg border border-slate-200 text-left hover:border-indigo-400 hover:bg-indigo-50/50 text-slate-700 transition">
+                • 하루 쉬면 모든 루틴이 무너질 것이다.
+              </button>
+            </div>
+            <input id="expected-custom-input" type="text" placeholder="직접 입력: 내 머릿속 예상 파국 시나리오" class="w-full px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:border-indigo-500" />
+          </div>
+
+          <!-- 2단계: 실제로는? -->
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2">
+            <span class="text-xs font-bold text-emerald-900 block">2. 행동 후, ACTUAL(실제 결과)은 어땠나요?</span>
+            <textarea id="actual-result-input" rows="2" placeholder="예: 실제로 거절했더니 상대가 '알겠다'며 다른 방법을 찾았다. 생각보다 아무 일도 없었다." class="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs focus:outline-none focus:border-emerald-500 leading-relaxed"></textarea>
+          </div>
+
+          <!-- 3단계: 비교 -->
+          <div class="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-200 space-y-2">
+            <span class="text-xs font-bold text-indigo-950 block">3. 예상과 실제는 어땠나요?</span>
+            <div class="grid grid-cols-3 gap-2">
+              <button type="button" onclick="compareActualResult('different')" class="actual-compare-btn p-2 rounded-lg border border-slate-200 bg-white hover:bg-emerald-50 hover:border-emerald-400 text-center text-xs font-bold text-slate-700 transition">
+                🟢 완전히 달랐다
+              </button>
+              <button type="button" onclick="compareActualResult('partial')" class="actual-compare-btn p-2 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-400 text-center text-xs font-bold text-slate-700 transition">
+                🟡 일부만 맞았다
+              </button>
+              <button type="button" onclick="compareActualResult('same_recoverable')" class="actual-compare-btn p-2 rounded-lg border border-slate-200 bg-white hover:bg-indigo-50 hover:border-indigo-400 text-center text-xs font-bold text-slate-700 transition">
+                🔵 감당할 수 있었다
+              </button>
+            </div>
+            <div id="actual-feedback-box" class="hidden p-3 rounded-lg bg-white border border-indigo-200 text-xs space-y-1 mt-2">
+              <strong class="text-indigo-950 block">💡 신경망 재학습 인사이트:</strong>
+              <p id="actual-feedback-text" class="text-slate-700 leading-relaxed"></p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'restart_not_reset') {
+      // TOOL 4: RESTART, NOT RESET
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#4F46E5] font-black text-xs sm:text-sm">
+              <span>🔄</span>
+              <span>RESTART, NOT RESET (리셋 없는 재시작)</span>
+            </div>
+            <span class="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">연속성 보존</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-900 text-white text-xs space-y-1 leading-relaxed">
+            <p class="text-emerald-400 font-black">“다시 예전 길을 걸었다고 해서, 배운 길이 사라진 것은 아닙니다.”</p>
+            <p class="text-slate-300 text-[11px]">명심코칭에는 '연속 기록 실패'나 '0일로 리셋' 같은 패배자 UI가 없습니다. 핸들을 다시 돌리면 됩니다.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2.5">
+            <span class="text-xs font-bold text-slate-900 block">질문: “어디에서 다시 선택할 수 있을까?” (5대 관찰)</span>
+            
+            <div class="space-y-1.5 text-[11px]">
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-700">1. 이번 Trigger는?</span>
+                <span class="text-indigo-600 font-medium">피로 / 눈치 / 막막함 / 충동</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-700">2. 언제 알아차렸나?</span>
+                <span class="text-indigo-600 font-medium">시작 30분 후 / 다음 날 아침</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-700">3. 즉각적 보상은?</span>
+                <span class="text-indigo-600 font-medium">순간의 안도감 / 회피 편안함</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-700">4. 나중 장기비용은?</span>
+                <span class="text-rose-600 font-medium">자책감 / 만성 피로 / 시간</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-emerald-50/70 border border-emerald-200">
+                <span class="font-bold text-emerald-900">5. 다음 10% 다르게 할 지점은?</span>
+                <span class="text-emerald-800 font-bold">10초 멈추기 / 2분 착수</span>
+              </div>
+            </div>
+
+            <div class="pt-2 text-center">
+              <button type="button" onclick="confirmRestart()" class="w-full py-2.5 rounded-xl bg-[#4F46E5] hover:bg-indigo-700 text-white font-black text-xs transition shadow-2xs">
+                🔄 오늘 이 지점에서 다시 10% 시작하기
+              </button>
+            </div>
+            <div id="restart-feedback-box" class="hidden p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 font-bold">
+              🌱 축하합니다. 재발을 자책으로 끝내지 않고 '새로운 데이터'로 다루어 재출발했습니다.
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'reward_and_cost') {
+      // TOOL 5: REWARD / COST
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#4F46E5] font-black text-xs sm:text-sm">
+              <span>⚖️</span>
+              <span>REWARD vs COST (반복행동의 보상과 비용)</span>
+            </div>
+            <span class="text-[9px] font-bold text-indigo-700 bg-white px-2 py-0.5 rounded-full border border-indigo-200">뇌의 타당성</span>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            “왜 못 끊지?”라며 자책하지 않습니다. <strong>“이 행동이 주는 당장의 보상이 무엇이길래 뇌가 반복했는지”</strong>를 이해합니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <!-- 보상 -->
+            <div class="p-3 rounded-xl bg-indigo-50/60 border border-indigo-200 text-xs space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-black text-indigo-900 text-xs">🎁 이 행동이 당장 주는 것 (보상)</span>
+                <span class="text-[9px] text-indigo-700 font-bold">즉각적</span>
+              </div>
+              <div class="grid grid-cols-2 gap-1 text-[11px]">
+                <button type="button" onclick="toggleRewardChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-indigo-100 text-left transition">• 순간적 안심</button>
+                <button type="button" onclick="toggleRewardChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-indigo-100 text-left transition">• 불편함 회피</button>
+                <button type="button" onclick="toggleRewardChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-indigo-100 text-left transition">• 가짜 통제감</button>
+                <button type="button" onclick="toggleRewardChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-indigo-100 text-left transition">• 시간 벌기</button>
+                <button type="button" onclick="toggleRewardChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-indigo-100 text-left transition">• 갈등 감소</button>
+                <button type="button" onclick="toggleRewardChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-indigo-100 text-left transition">• 실패 노출 방지</button>
+              </div>
+            </div>
+
+            <!-- 비용 -->
+            <div class="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-xs space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-black text-rose-900 text-xs">💸 나중에 치르는 대가 (비용)</span>
+                <span class="text-[9px] text-rose-700 font-bold">장기적</span>
+              </div>
+              <div class="grid grid-cols-2 gap-1 text-[11px]">
+                <button type="button" onclick="toggleCostChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-left transition">• 시간 낭비</button>
+                <button type="button" onclick="toggleCostChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-left transition">• 만성 피로</button>
+                <button type="button" onclick="toggleCostChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-left transition">• 기회 상실</button>
+                <button type="button" onclick="toggleCostChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-left transition">• 신뢰 저하</button>
+                <button type="button" onclick="toggleCostChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-left transition">• 집중력 분산</button>
+                <button type="button" onclick="toggleCostChip(this)" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-left transition">• 자기효능감 하락</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-white border border-indigo-200 text-xs space-y-1">
+            <strong class="text-indigo-900 block">💡 전환 결론:</strong>
+            <p class="text-slate-700 leading-relaxed">
+              반복 행동은 내가 게을러서가 아니라, 뇌가 <strong>'즉각적 보상'</strong>을 위해 선택한 생존 알고리즘이었습니다. 이제 그 보상을 채워줄 수 있는 <strong>더 안전하고 비용이 적은 '오늘의 10% 행동'</strong>으로 교체합니다.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    container.innerHTML = `
+      <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/50 border-2 border-indigo-200 shadow-xs space-y-3">
+        ${safetyHtml}
+        ${toolTabsHtml}
+        ${toolBodyHtml}
+      </div>
+    `;
+  }
+
+  window.switchPack07Tool = function (toolName) {
+    if (currentCard) {
+      renderPack07SpecialInteraction(currentCard, toolName);
+    }
+  };
+
+  // Tool 1: 10초 카운트다운 타이머
+  window.start10SecHoldTimer = function () {
+    const btn = document.getElementById('hold-timer-btn');
+    const disp = document.getElementById('hold-timer-display');
+    const bar = document.getElementById('hold-timer-bar');
+    const status = document.getElementById('hold-timer-status');
+    if (!disp || !bar || !btn) return;
+
+    if (holdTimerInterval) {
+      clearInterval(holdTimerInterval);
+      holdTimerInterval = null;
+    }
+
+    holdTimerSeconds = 10.0;
+    trackMindEvent('hold_started', { cardId: currentCard ? currentCard.id : null });
+
+    btn.disabled = true;
+    btn.classList.add('opacity-50', 'cursor-not-allowed');
+    if (status) status.innerText = '숨을 천천히 내쉬며 10초간 잠시 머물러 봅니다...';
+
+    const startTime = Date.now();
+    const duration = 10000;
+
+    holdTimerInterval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const remaining = Math.max(0, (duration - elapsed) / 1000);
+      disp.innerText = remaining.toFixed(1);
+      bar.style.width = `${(remaining / 10) * 100}%`;
+
+      if (remaining <= 0) {
+        clearInterval(holdTimerInterval);
+        holdTimerInterval = null;
+        disp.innerText = '0.0';
+        bar.style.width = '0%';
+        btn.disabled = false;
+        btn.classList.remove('opacity-50', 'cursor-not-allowed');
+        if (status) status.innerHTML = '✨ <strong>10초 HOLD 완료!</strong> 충동의 파도가 조금 가라앉았습니다. 이제 아래에서 원하는 결과를 확인해보세요.';
+        trackMindEvent('hold_completed', { cardId: currentCard ? currentCard.id : null });
+      }
+    }, 100);
+  };
+
+  window.reset10SecHoldTimer = function () {
+    if (holdTimerInterval) {
+      clearInterval(holdTimerInterval);
+      holdTimerInterval = null;
+    }
+    const btn = document.getElementById('hold-timer-btn');
+    const disp = document.getElementById('hold-timer-display');
+    const bar = document.getElementById('hold-timer-bar');
+    const status = document.getElementById('hold-timer-status');
+    if (disp) disp.innerText = '10.0';
+    if (bar) bar.style.width = '100%';
+    if (btn) {
+      btn.disabled = false;
+      btn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
+    if (status) status.innerText = '버튼을 누르고 깊은 숨을 들이마시며 10초간 잠시 멈춰보세요.';
+  };
+
+  window.selectDirectionResult = function (btn, resultName) {
+    document.querySelectorAll('.dir-opt-btn').forEach(b => {
+      b.classList.remove('border-indigo-600', 'bg-indigo-100', 'text-indigo-900', 'font-bold');
+      b.classList.add('border-slate-200', 'text-slate-700');
+    });
+    btn.classList.remove('border-slate-200', 'text-slate-700');
+    btn.classList.add('border-indigo-600', 'bg-indigo-100', 'text-indigo-900', 'font-bold');
+
+    const fbBox = document.getElementById('dir-feedback-box');
+    const fbText = document.getElementById('dir-feedback-text');
+    if (fbBox && fbText) {
+      if (resultName.includes('불안') || resultName.includes('증명')) {
+        fbText.innerText = `‘${resultName}’이(가) 목적이라면, 지금 하려던 충동적 행동(재검색·폭식·포기 등)은 불안을 잠시 가릴 뿐 결과를 주지 못합니다. 5분만 결정을 보류해보세요.`;
+      } else {
+        fbText.innerText = `‘${resultName}’이(가) 목적이라면, 반복 검색이나 고민 대신 그 목적에 직접 닿는 가장 작은 1단계(자료 첫 줄 쓰기, 확인 질문하기)를 실행하는 것이 훨씬 빠릅니다.`;
+      }
+      fbBox.classList.remove('hidden');
+    }
+    trackMindEvent('ten_percent_action_selected', { type: 'direction_choice' });
+  };
+
+  window.selectDirectionCustom = function () {
+    const input = document.getElementById('dir-custom-input');
+    if (!input || !input.value.trim()) return;
+    const fbBox = document.getElementById('dir-feedback-box');
+    const fbText = document.getElementById('dir-feedback-text');
+    if (fbBox && fbText) {
+      fbText.innerText = `원하는 결과가 명확해졌습니다. 지금 자동 시작하려던 행동이 이 결과에 도움을 주는지 3초만 확인하고 다음 행동으로 나아가세요.`;
+      fbBox.classList.remove('hidden');
+    }
+    trackMindEvent('ten_percent_action_selected', { type: 'direction_custom' });
+  };
+
+  // Tool 2: 10% 실험 선택
+  window.selectTenPercentExperiment = function (btn, expTitle, note) {
+    document.querySelectorAll('.exp-card-btn').forEach(b => {
+      b.classList.remove('border-indigo-500', 'bg-indigo-50/80', 'ring-2', 'ring-indigo-300');
+      b.classList.add('border-slate-200', 'bg-white');
+    });
+    btn.classList.remove('border-slate-200', 'bg-white');
+    btn.classList.add('border-indigo-500', 'bg-indigo-50/80', 'ring-2', 'ring-indigo-300');
+
+    const fbBox = document.getElementById('exp-selected-feedback');
+    const fbText = document.getElementById('exp-selected-text');
+    if (fbBox && fbText) {
+      fbText.innerText = `“${expTitle}” (${note})`;
+      fbBox.classList.remove('hidden');
+    }
+    trackMindEvent('experiment_created', { cardId: currentCard ? currentCard.id : null });
+    trackMindEvent('ten_percent_action_selected', { cardId: currentCard ? currentCard.id : null });
+  };
+
+  window.submitCustomExperiment = function () {
+    const input = document.getElementById('custom-exp-input');
+    if (!input || !input.value.trim()) return;
+    const fbBox = document.getElementById('exp-selected-feedback');
+    const fbText = document.getElementById('exp-selected-text');
+    if (fbBox && fbText) {
+      fbText.innerText = `“${input.value.trim()}” (나만의 10% 실험)`;
+      fbBox.classList.remove('hidden');
+    }
+    trackMindEvent('experiment_created', { cardId: currentCard ? currentCard.id : null, custom: true });
+    trackMindEvent('ten_percent_action_selected', { cardId: currentCard ? currentCard.id : null, custom: true });
+  };
+
+  // Tool 3: 예상 vs 실제
+  window.selectExpectedOption = function (btn, expText) {
+    document.querySelectorAll('.expected-chip').forEach(b => {
+      b.classList.remove('border-indigo-500', 'bg-indigo-100', 'text-indigo-950', 'font-bold');
+      b.classList.add('border-slate-200', 'text-slate-700');
+    });
+    btn.classList.remove('border-slate-200', 'text-slate-700');
+    btn.classList.add('border-indigo-500', 'bg-indigo-100', 'text-indigo-950', 'font-bold');
+    trackMindEvent('expected_recorded', { cardId: currentCard ? currentCard.id : null });
+  };
+
+  window.compareActualResult = function (type) {
+    document.querySelectorAll('.actual-compare-btn').forEach(b => {
+      b.classList.remove('ring-2', 'ring-indigo-500', 'bg-indigo-100');
+    });
+    const fbBox = document.getElementById('actual-feedback-box');
+    const fbText = document.getElementById('actual-feedback-text');
+    if (!fbBox || !fbText) return;
+
+    if (type === 'different') {
+      fbText.innerText = '뇌의 편도체는 최악의 시나리오를 그려 행동을 막으려 했지만, 실제 현실 데이터는 훨씬 안전했습니다. 이 경험이 뇌에 새로운 안전 신경망을 새깁니다.';
+    } else if (type === 'partial') {
+      fbText.innerText = '불편함은 있었지만, 머릿속에서 상상했던 파국은 일어나지 않았습니다. 뇌는 이제 "불편해도 버틸 수 있다"는 회복 탄력성을 배웠습니다.';
+    } else {
+      fbText.innerText = '예상했던 일이 일어났더라도 감당하고 해결할 수 있었습니다. 이제 이 상황은 더 이상 알 수 없는 공포가 아니라 다룰 수 있는 현실 데이터가 되었습니다.';
+    }
+    fbBox.classList.remove('hidden');
+    trackMindEvent('actual_recorded', { cardId: currentCard ? currentCard.id : null, type });
+    trackMindEvent('experiment_completed', { cardId: currentCard ? currentCard.id : null });
+  };
+
+  // Tool 4: 리셋 없는 재시작
+  window.confirmRestart = function () {
+    const fb = document.getElementById('restart-feedback-box');
+    if (fb) fb.classList.remove('hidden');
+    trackMindEvent('restart_used', { cardId: currentCard ? currentCard.id : null });
+  };
+
+  // Tool 5: 보상과 비용
+  window.toggleRewardChip = function (btn) {
+    btn.classList.toggle('bg-indigo-100');
+    btn.classList.toggle('border-indigo-500');
+    btn.classList.toggle('font-bold');
+    trackMindEvent('ten_percent_action_selected', { type: 'reward_select' });
+  };
+
+  window.toggleCostChip = function (btn) {
+    btn.classList.toggle('bg-rose-100');
+    btn.classList.toggle('border-rose-500');
+    btn.classList.toggle('font-bold');
+    trackMindEvent('ten_percent_action_selected', { type: 'cost_select' });
+  };
+
+
   // 12. 요즘 사람들이 많이 마주하는 질문 (관계·불안 PACK 01 대표 6선 캐러셀)
   // =================================================================
   const FEATURED_RELATIONSHIP_IDS = [
@@ -1743,6 +2370,58 @@
     `).join('');
   }
 
+  // =================================================================
+  // 12-5. 결정·미루기·습관 PACK 07 캐러셀
+  // =================================================================
+  const FEATURED_DECISION_IDS = [
+    'dec-001', // 결정 후 재검색 모드
+    'dec-002', // 확신 대기 모드
+    'dec-004', // 완벽한 계획 모드
+    'dec-011', // 0 아니면 100 모드
+    'dec-018', // 재발 판결 모드
+    'dec-020'  // 다시 선택 모드
+  ];
+
+  function renderDecisionQuestions() {
+    const carousel = document.getElementById('decision-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const decisionFeatured = [];
+    FEATURED_DECISION_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) decisionFeatured.push(card);
+    });
+
+    const otherDecision = cardsData.filter(c => 
+      c.packId === 'decision-action-01' && !FEATURED_DECISION_IDS.includes(c.id)
+    );
+
+    const list = [...decisionFeatured, ...otherDecision].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#4F46E5] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#4F46E5]/10 text-[#4F46E5] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#4F46E5] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#4F46E5]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
 
   // =================================================================
   // 13. 자연어 일상 고민 검색 (입구 B)
@@ -1783,6 +2462,31 @@
         if (qText.includes(query)) score += 80;
         if (titleText.includes(query)) score += 60;
         if (kwText.includes(query)) score += 40;
+
+        // PACK 07: 13대 자연어 쿼리 부스팅
+        const PACK07_BOOSTS = {
+          '결정을 못하겠어요': ['dec-007', 'dec-014', 'dec-001'],
+          '결정하고 다시 검색해요': ['dec-001', 'dec-008'],
+          '자꾸 미뤄요': ['dec-005', 'dec-003', 'dec-006'],
+          '계획만 세워요': ['dec-004', 'dec-003'],
+          '작심삼일이에요': ['dec-010', 'dec-009', 'dec-018'],
+          '의지가 약한 것 같아요': ['dec-010', 'dec-012', 'dec-005'],
+          '시작하기가 너무 어려워요': ['dec-006', 'dec-002', 'dec-003'],
+          '확신이 없어요': ['dec-002', 'dec-001', 'dec-019'],
+          '또 실패했어요': ['dec-018', 'dec-010', 'dec-015'],
+          '한 번 놓치면 다 포기해요': ['dec-011', 'dec-017'],
+          '습관을 못 만들어요': ['dec-009', 'dec-017', 'dec-010'],
+          '생각만 많고 행동을 못해요': ['dec-014', 'dec-003', 'dec-006'],
+          '완벽하게 준비하고 싶어요': ['dec-003', 'dec-004', 'dec-002']
+        };
+
+        for (const [natQuery, boostedIds] of Object.entries(PACK07_BOOSTS)) {
+          if (query.includes(natQuery) || natQuery.includes(query)) {
+            if (boostedIds.includes(c.id)) {
+              score += 250;
+            }
+          }
+        }
 
         // 부분 단어(2글자 이상) 매칭
         if (terms.length > 0) {
