@@ -698,14 +698,14 @@
     const carousel = document.getElementById('popular-questions-carousel');
     if (!carousel || !cardsData || cardsData.length === 0) return;
 
-    // 1. isFeatured 플래그가 있는 카드 우선 (9개)
+    // 1. isFeatured 플래그가 있는 카드 우선 (최대 12개)
     let curated = cardsData.filter(c => c.isFeatured);
-    if (curated.length < 9) {
-      // 9개가 안 되면 인기순 카드로 채움
+    if (curated.length < 12) {
       const remaining = cardsData.filter(c => !c.isFeatured)
         .sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-      curated = curated.concat(remaining).slice(0, 9);
+      curated = curated.concat(remaining);
     }
+    curated = curated.slice(0, 12);
 
     carousel.innerHTML = curated.map((card, idx) => `
       <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
