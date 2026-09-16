@@ -164,6 +164,7 @@
   // 초기화 (DOM 준비 시 데이터 로드 및 렌더링)
   document.addEventListener('DOMContentLoaded', async () => {
     trackMindEvent('daily_card_opened');
+    trackMindEvent('relationship_pack_view', { packId: 'relationship-anxiety-01', source: 'home_load' });
     await Promise.all([ensureServiceConfig(), ensureCardsData()]);
     renderPopularQuestions();
     renderWeeklyDiscovery();
@@ -204,6 +205,7 @@
       if (searchPanel) searchPanel.classList.remove('hidden');
       if (deckPanel) deckPanel.classList.add('hidden');
 
+      trackMindEvent('relationship_pack_view', { packId: 'relationship-anxiety-01', source: 'search_tab' });
       const searchInput = document.getElementById('mind-search-input');
       if (searchInput) {
         searchInput.focus();
@@ -297,6 +299,12 @@
     trackMindEvent('card_revealed', { cardId: currentCard.id, category: currentCard.category });
     trackMindEvent('soda_answer_viewed', { cardId: currentCard.id });
     trackMindEvent('curiosity_bridge_viewed', { cardId: currentCard.id });
+
+    // 관계·불안 명심카드 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('relationship_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
 
     // 화면 전환
     const homeView = document.getElementById('mind-home-view');
@@ -417,6 +425,16 @@
       bookBtn.href = bookUrl;
     }
 
+    // Curiosity Bridge 즉시 연결 버튼 URL 동적 바인딩
+    const bridgeAppBtn = document.getElementById('mind-bridge-app-btn');
+    if (bridgeAppBtn) {
+      bridgeAppBtn.href = resolveAppUrl(card, config, 'scan');
+    }
+    const bridgeBookBtn = document.getElementById('mind-bridge-book-btn');
+    if (bridgeBookBtn) {
+      bridgeBookBtn.href = resolveBookUrl(card, config);
+    }
+
     // CTA 영역 초기화
     isDeepDiveUnlocked = false;
     const ctaContainer = document.getElementById('deep-dive-cta-container');
@@ -431,10 +449,31 @@
   }
 
   // =================================================================
+
+  // =================================================================
+  // 4-0. 앱 / 책 CTA 통합 트래킹 핸들러
+  // =================================================================
+  window.handleMindAppClick = function (source) {
+    trackMindEvent('app_click', { source: source || 'app_cta', cardId: currentCard ? currentCard.id : null });
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+    }
+  };
+
+  window.handleMindBookClick = function (source) {
+    trackMindEvent('book_click', { source: source || 'book_cta', cardId: currentCard ? currentCard.id : null });
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+  };
+
   // 4-1. [9] 호기심 4대 질문 인터랙션 (이탈 방지 회로)
   // =================================================================
   window.selectCuriosityQuestion = function (qText) {
     trackMindEvent('curiosity_click', { question: qText });
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
+    }
     setElText('curiosity-bridge-question', `“${qText}”`);
     
     // 버튼 하이라이트 효과
@@ -459,6 +498,9 @@
   // =================================================================
   window.selectScanBody = function (partKey) {
     trackMindEvent('scan_started', { type: 'body' });
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
+    }
     const mapping = {
       chest: '가슴 조임/답답함',
       neck: '목·어깨 굳음',
@@ -481,6 +523,9 @@
 
   window.selectScanImpulse = function (impulseKey) {
     trackMindEvent('scan_started', { type: 'impulse' });
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
+    }
     const mapping = {
       check: '거듭 확인하고 통제하기',
       avoid: '회피하고 잠수타기',
@@ -535,6 +580,9 @@
     unlockDeepDiveCTA();
 
     trackMindEvent('scan_completed', { cardId: currentCard.id });
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_scan_complete', { cardId: currentCard.id, category: currentCard.category });
+    }
     showToastNotification("🧭 오늘의 작동지도가 생성되었습니다! 진단이 아닌 오늘의 기록입니다.");
   };
 
@@ -567,6 +615,9 @@
 
     showToastNotification("✨ 오늘 10% 다른 행동을 선택하셨습니다! 작은 실천이 뇌 회로를 바꿉니다.");
     trackMindEvent('ten_percent_action_selected', { cardId: currentCard ? currentCard.id : null, action: actionName });
+    if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
+      trackMindEvent('relationship_action_select', { cardId: currentCard.id, category: currentCard.category });
+    }
   };
 
   // =================================================================
@@ -737,20 +788,39 @@
   }
 
   // =================================================================
-  // 12. 요즘 사람들이 많이 마주하는 질문 (9대 큐레이션 캐러셀)
+  // 12. 요즘 사람들이 많이 마주하는 질문 (관계·불안 PACK 01 대표 6선 캐러셀)
   // =================================================================
+  const FEATURED_RELATIONSHIP_IDS = [
+    'rel-001', // 1) 답장이 조금만 늦어져도 내가 뭘 잘못했나 불안해진다
+    'rel-002', // 2) 상대 표정이 조금만 굳어도 내 탓 같아서 눈치를 보게 된다
+    'rel-004', // 3) 부탁을 거절하면 나를 싫어할까 봐 거절하지 못한다
+    'rel-013', // 4) 관계가 가까워지면 언젠가 실망하고 떠날까 봐 두렵다
+    'rel-005', // 5) 상대가 나를 오해할까 봐 장문의 메시지로 구구절절 해명한다
+    'rel-010'  // 6) 갈등이 생기면 내 의견을 숨기고 일단 상대에게 맞춰버린다
+  ];
+
   function renderPopularQuestions() {
     const carousel = document.getElementById('popular-questions-carousel');
     if (!carousel || !cardsData || cardsData.length === 0) return;
 
-    // 1. isFeatured 플래그가 있는 카드 우선 (최대 12개)
-    let curated = cardsData.filter(c => c.isFeatured);
-    if (curated.length < 12) {
-      const remaining = cardsData.filter(c => !c.isFeatured)
-        .sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-      curated = curated.concat(remaining);
-    }
-    curated = curated.slice(0, 12);
+    // 1. 관계·불안 명심카드 대표 6개 최우선 배치 (지정된 순서 엄수)
+    const relFeatured = [];
+    FEATURED_RELATIONSHIP_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) relFeatured.push(card);
+    });
+
+    // 2. 추가 추천 카드 (그 외 featured)
+    const otherFeatured = cardsData.filter(c => 
+      (c.isFeatured || c.featured) && !FEATURED_RELATIONSHIP_IDS.includes(c.id)
+    );
+
+    // 3. 인기순 정렬된 추가 카드
+    const remaining = cardsData.filter(c => 
+      !c.isFeatured && !c.featured && !FEATURED_RELATIONSHIP_IDS.includes(c.id)
+    ).sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+
+    const curated = [...relFeatured, ...otherFeatured, ...remaining].slice(0, 12);
 
     carousel.innerHTML = curated.map((card, idx) => `
       <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">

@@ -983,42 +983,58 @@
                     <!-- ===================================================== -->
                     <!-- STEP 2. “내 경우에는?” Curiosity Bridge                 -->
                     <!-- ===================================================== -->
-                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7]/60 border border-[#C7A86B]/40 shadow-2xs">
-                      <div class="flex items-center justify-between mb-1.5">
+                    <div class="mb-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#FFFBEB] via-[#FEF3C7]/70 to-[#FFF7ED] border-2 border-[#C7A86B]/50 shadow-sm space-y-3">
+                      <div class="flex items-center justify-between border-b border-[#C7A86B]/30 pb-2">
                         <div class="flex items-center gap-1.5 text-[#C7A86B] font-black text-xs">
                           <span>🌉</span>
                           <span>STEP 2 · 내 경우에는?</span>
                         </div>
-                        <span class="text-[9px] text-amber-700 font-bold bg-amber-100/80 px-2 py-0.5 rounded">자기 발견</span>
+                        <span class="text-[9px] text-amber-800 font-bold bg-amber-100/90 px-2.5 py-0.5 rounded-full border border-amber-200">개인화 호기심</span>
                       </div>
-                      <p id="curiosity-bridge-question" class="text-xs sm:text-sm font-black text-slate-900 leading-snug mb-1">
-                        “그렇다면 내 경우에는 무엇이 가장 먼저 켜지는 걸까?”
-                      </p>
-                      <p id="curiosity-bridge-sub" class="text-[11px] text-slate-600 mb-3">
-                        나는 모르는 시간을 어떤 이야기(STORY)로 가장 빨리 채우는 편일까요?
-                      </p>
 
-                      <!-- [9] 사용자가 바로 이탈하지 않도록 던지는 4대 호기심 질문 칩 -->
-                      <div class="pt-2.5 border-t border-amber-200/60">
-                        <div class="text-[10px] font-bold text-amber-800 mb-1.5">스스로에게 던져보는 호기심 질문:</div>
+                      <!-- [6] 공통 Curiosity Bridge 질문 & 본문 -->
+                      <div>
+                        <h5 id="curiosity-bridge-question" class="text-sm sm:text-base font-black text-slate-900 leading-snug mb-2">
+                          “그런데 왜 나는 이 상황에서만 유독 흔들릴까?”
+                        </h5>
+                        <p id="curiosity-bridge-sub" class="text-[11px] sm:text-xs text-slate-700 leading-relaxed">
+                          같은 행동처럼 보여도 사람마다 지키려는 것은 다를 수 있습니다. 관계일 수도, 존중일 수도, 안전감이나 가치감일 수도 있습니다. 내 경우에는 무엇을 지키려고 이 반응이 시작됐을까요?
+                        </p>
+                      </div>
+
+                      <!-- 4대 호기심 칩 -->
+                      <div class="pt-2 border-t border-amber-200/50">
+                        <div class="text-[10px] font-bold text-amber-800 mb-1.5">내 마음에 질문 하나 던져보기:</div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-                          <button onclick="selectCuriosityQuestion('그런데 내 경우에는 무엇이 가장 먼저 켜질까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                          <button onclick="selectCuriosityQuestion('그런데 내 경우에는 무엇이 가장 먼저 켜질까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
                             <span class="text-amber-500">❓</span>
-                            <span>“내 경우에는 무엇이 가장 먼저 켜질까?”</span>
+                            <span>“내 경우에는 무엇이 먼저 켜질까?”</span>
                           </button>
-                          <button onclick="selectCuriosityQuestion('나는 왜 이 상황에서만 유독 흔들릴까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                          <button onclick="selectCuriosityQuestion('나는 왜 이 상황에서만 유독 흔들릴까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
                             <span class="text-amber-500">❓</span>
                             <span>“나는 왜 이 상황에서 유독 흔들릴까?”</span>
                           </button>
-                          <button onclick="selectCuriosityQuestion('이 행동은 무엇을 지키려고 시작됐을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                          <button onclick="selectCuriosityQuestion('이 행동은 무엇을 지키려고 시작됐을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
                             <span class="text-amber-500">❓</span>
-                            <span>“이 행동은 무엇을 지키려고 시작됐을까?”</span>
+                            <span>“이 행동은 무엇을 지키려 시작됐을까?”</span>
                           </button>
-                          <button onclick="selectCuriosityQuestion('이 반응이 올라와도 다른 행동을 할 수 있을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                          <button onclick="selectCuriosityQuestion('이 반응이 올라와도 다른 행동을 할 수 있을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-amber-200 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
                             <span class="text-amber-500">❓</span>
-                            <span>“이 반응이 올라와도 다른 행동이 가능할까?”</span>
+                            <span>“이 반응에도 다른 행동이 가능할까?”</span>
                           </button>
                         </div>
+                      </div>
+
+                      <!-- [6] Curiosity Bridge 즉시 연결 버튼 2종 -->
+                      <div class="pt-2 border-t border-amber-200/50 flex flex-col sm:flex-row gap-2">
+                        <a id="mind-bridge-app-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="handleMindAppClick('curiosity_bridge')" class="flex-1 py-2 px-3 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white text-[11px] font-black text-center transition shadow-2xs flex items-center justify-center gap-1">
+                          <span>📱 내 경우를 1분 SCAN</span>
+                          <span>&rarr;</span>
+                        </a>
+                        <a id="mind-bridge-book-btn" href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="handleMindBookClick('curiosity_bridge')" class="flex-1 py-2 px-3 rounded-xl bg-[#14233B] hover:bg-slate-800 text-white text-[11px] font-black text-center transition shadow-2xs border border-slate-700 flex items-center justify-center gap-1">
+                          <span>📖 이 반응의 뿌리 더 읽기</span>
+                          <span>&rarr;</span>
+                        </a>
                       </div>
                     </div>
 
@@ -1274,10 +1290,10 @@
                               </p>
                             </div>
                             <div class="space-y-1.5">
-                              <a id="mind-app-cta-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_click', { action: 'scan' })" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block shadow-2xs">
+                              <a id="mind-app-cta-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="handleMindAppClick('bottom_app_scan')" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block shadow-2xs">
                                 <span id="app-cta-label">내 패턴 직접 확인하기</span> &rarr;
                               </a>
-                              <a id="mind-app-secondary-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_click', { action: 'compare' })" class="w-full py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-[#0F6B5B] font-bold text-[10px] text-center transition block">
+                              <a id="mind-app-secondary-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="handleMindAppClick('bottom_app_compare')" class="w-full py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-[#0F6B5B] font-bold text-[10px] text-center transition block">
                                 <span>지난 기록과 비교하기 · 전체 보기</span>
                               </a>
                             </div>
@@ -1298,7 +1314,7 @@
                               </p>
                             </div>
                             <div class="space-y-1.5">
-                              <a id="mind-book-cta-btn" href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click')" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-white font-black text-xs text-center transition block border border-slate-700 shadow-2xs">
+                              <a id="mind-book-cta-btn" href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="handleMindBookClick('bottom_book')" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-white font-black text-xs text-center transition block border border-slate-700 shadow-2xs">
                                 <span id="book-cta-label">이 질문의 뿌리 더 읽기</span> &rarr;
                               </a>
                               <div class="text-center">
@@ -1376,16 +1392,17 @@
         <!-- 요즘 사람들이 많이 묻는 질문 (가로 스크롤 캐러셀)             -->
         <!-- ============================================================= -->
         <div id="popular-questions-section" class="mb-14 text-left">
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
             <div>
-              <span class="text-[11px] font-black text-[#0F6B5B] uppercase tracking-wider block">FREQUENT REFLECTIONS</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">요즘 사람들이 가장 많이 마주하는 질문</h4>
+              <span class="text-[11px] font-black text-[#0F6B5B] uppercase tracking-wider block">RELATIONSHIP & ANXIETY PACK 01</span>
+              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">요즘 관계에서 이런 생각 해본 적 있나요?</h4>
+              <p class="text-xs text-slate-500 mt-0.5">당신을 유형으로 규정하지 않습니다. 지금 반복되는 한 장면부터 봅니다.</p>
             </div>
             <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
           </div>
 
           <div id="popular-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 8 popular questions -->
+            <!-- Javascript will render 6 featured relationship cards + more -->
           </div>
         </div>
 
