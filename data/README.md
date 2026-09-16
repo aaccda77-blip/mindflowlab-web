@@ -1,19 +1,48 @@
-# 📚 명심코칭 카드 콘텐츠 데이터베이스 (CMS Guide)
+# 📚 명심코칭 카드 콘텐츠 & 서비스 링크 설정 가이드 (CMS Manual)
 
-본 폴더(`data/`)는 명심코칭 웹사이트의 **오늘의 명심 카드** 및 **사이다 Q&A** 콘텐츠의 단일 진실 공급원(Single Source of Truth)입니다.
+본 폴더(`data/`)는 명심코칭 웹사이트의 **오늘의 명심 카드**, **사이다 Q&A**, 그리고 **실제 서비스 연결 주소(URL Config)**의 단일 진실 공급원(Single Source of Truth)입니다.
 
-UI나 자바스크립트 코드를 전혀 수정하지 않고, **`data/mind-cards.json` 파일에 JSON 객체만 추가하면 웹사이트 전체에 300개 이상의 카드가 자동으로 즉시 반영**됩니다.
-
----
-
-## 📁 파일 구조
-* **`data/mind-cards.json`**: 모든 카드 콘텐츠가 담긴 메인 JSON 데이터 파일.
-* **`data/schema.json`**: 300개 확장 시 누락 필드가 없도록 검증하는 JSON Schema 규격.
-* **`scripts/validate-cards.py`**: 데이터 무결성 검증 스크립트 (`python scripts/validate-cards.py`).
+UI나 자바스크립트 소스코드를 전혀 건드리지 않고, **JSON 파일만 수정하면 웹사이트 전체의 콘텐츠와 연결 링크가 즉시 업데이트**됩니다.
 
 ---
 
-## 📝 필수 필드 규격 (13개 핵심 필드)
+## 📁 폴더 내 파일 구조
+* **`data/service-config.json`**: 명심코칭 앱 및 청류출판사 3대 도서 실제 서비스 링크 설정 파일.
+* **`data/mind-cards.json`**: 모든 카드 콘텐츠가 담긴 메인 JSON 데이터 파일 (300개 무제한 확장).
+* **`data/schema.json`**: 13개 필수 필드 누락 방지를 위한 Draft 2020-12 표준 규격.
+* **`scripts/validate-cards.py`**: 서비스 링크 및 카드 데이터 무결성을 검증하고 오프라인 캐시를 싱크하는 원클릭 도구.
+
+---
+
+## 🔗 서비스 링크 설정 (`data/service-config.json`)
+
+실제 배포된 앱 주소나 네이버 스마트스토어/온라인 서점의 책별 상세페이지 링크를 아래 5대 변수에 설정합니다.
+
+```json
+{
+  "APP_URL": "https://myeongsimcoaching.com",
+  "PUBLISHER_URL": "https://smartstore.naver.com/crbooks",
+  "DARK_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
+  "NEURAL_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
+  "ZERO_POINT_BOOK_URL": "https://smartstore.naver.com/crbooks"
+}
+```
+
+### 🎯 도서별 자동 라우팅 규칙
+사용자가 카드를 보고 **[이 질문의 뿌리 더 읽기 →]** 버튼을 누르면, 해당 카드의 **`relatedBook`** 값에 따라 자동으로 해당 책의 상세 페이지로 연결됩니다:
+
+| `relatedBook` 값 | 연결되는 링크 변수 | 기본 연결 주소 |
+| :--- | :--- | :--- |
+| **`다크 코드`** | `DARK_CODE_BOOK_URL` | 《다크 코드》 상품 상세 페이지 |
+| **`뉴럴 코드`** | `NEURAL_CODE_BOOK_URL` | 《뉴럴 코드》 상품 상세 페이지 |
+| **`제로 포인트`** | `ZERO_POINT_BOOK_URL` | 《제로 포인트》 상품 상세 페이지 |
+| 기타 / 미정 | `PUBLISHER_URL` | 도서출판 청류 메인 스토어 |
+
+* **개별 카드 링크 오버라이드 지원**: 특정 카드에만 특별 프로모션 링크나 개별 URL을 부여하고 싶다면, 카드 JSON 객체 안에 `"bookUrl": "https://..."` 또는 `"appUrl": "https://..."`를 직접 추가하시면 해당 카드는 지정된 링크로 우선 이동합니다.
+
+---
+
+## 📝 카드 필수 필드 규격 (13개 핵심 필드)
 
 | 필드명 | 타입 | 설명 | 예시 |
 | :--- | :--- | :--- | :--- |
@@ -39,10 +68,10 @@ UI나 자바스크립트 코드를 전혀 수정하지 않고, **`data/mind-card
 
 ---
 
-## 🚀 300개 확장 방법
-1. `data/mind-cards.json` 파일의 배열(`[...]`) 끝에 위 형식의 JSON 객체를 추가합니다.
+## 🚀 운영 및 검증 방법
+1. `data/service-config.json`의 링크를 수정하거나, `data/mind-cards.json`에 카드를 추가합니다.
 2. 터미널에서 검증 명령어를 실행합니다:
    ```bash
    python scripts/validate-cards.py
    ```
-3. 검증 통과(`SUCCESS`) 시 끝! 브라우저 새로고침만으로 카드 덱, 자연어 검색, 가로 스크롤 캐러셀에 즉각 반영됩니다.
+3. 검증 통과(`SUCCESS`) 시 끝! 브라우저 새로고침만으로 카드와 링크가 즉각 안전하게 동작합니다.

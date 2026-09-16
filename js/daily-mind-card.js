@@ -30,7 +30,73 @@
     }
   }
 
-  // 0. 비동기 JSON 데이터 로더 (CMS 연동 및 300개 확장 지원)
+  // 0. 서비스 설정 비동기 로더 (data/service-config.json)
+  let serviceConfigPromise = null;
+  async function ensureServiceConfig() {
+    if (window.MIND_CONFIG && window.MIND_CONFIG.APP_URL) return window.MIND_CONFIG;
+    if (serviceConfigPromise) return serviceConfigPromise;
+
+    serviceConfigPromise = (async () => {
+      try {
+        const response = await fetch('data/service-config.json', { cache: 'no-cache' });
+        if (response.ok) {
+          const json = await response.json();
+          if (json && typeof json === 'object') {
+            window.MIND_CONFIG = Object.assign({}, window.MIND_CONFIG || {}, json);
+            console.log('[Mindflow Config] Loaded service config from data/service-config.json');
+            return window.MIND_CONFIG;
+          }
+        }
+      } catch (e) {
+        console.warn('[Mindflow Config] fetch data/service-config.json failed, falling back:', e);
+      }
+
+      if (!window.MIND_CONFIG) {
+        window.MIND_CONFIG = {
+          APP_URL: 'https://myeongsimcoaching.com',
+          PUBLISHER_URL: 'https://smartstore.naver.com/crbooks',
+          DARK_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
+          NEURAL_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
+          ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
+        };
+      }
+      return window.MIND_CONFIG;
+    })();
+
+    return serviceConfigPromise;
+  }
+
+  // relatedBook에 따른 자동 도서 상세 링크 라우팅
+  function resolveBookUrl(card, config) {
+    if (card && card.bookUrl && typeof card.bookUrl === 'string' && card.bookUrl.trim()) {
+      return card.bookUrl.trim();
+    }
+    const cfg = config || window.MIND_CONFIG || {};
+    const bookTitle = ((card && card.relatedBook) || '').trim().replace(/\s+/g, '');
+
+    if (bookTitle.includes('다크')) {
+      return cfg.DARK_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+    } else if (bookTitle.includes('뉴럴')) {
+      return cfg.NEURAL_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+    } else if (bookTitle.includes('제로')) {
+      return cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+    }
+    return cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+  }
+
+  // 앱 주소 라우팅 (카드 파라미터 연동 지원)
+  function resolveAppUrl(card, config) {
+    if (card && card.appUrl && typeof card.appUrl === 'string' && card.appUrl.trim()) {
+      return card.appUrl.trim();
+    }
+    const cfg = config || window.MIND_CONFIG || {};
+    const baseUrl = cfg.APP_URL || 'https://myeongsimcoaching.com';
+    const cardId = card && card.id ? card.id : '';
+    const separator = baseUrl.includes('?') ? '&' : '?';
+    return `${baseUrl}${separator}card=${encodeURIComponent(cardId)}&focus=1`;
+  }
+
+  // 0-1. 비동기 JSON 데이터 로더 (CMS 연동 및 300개 확장 지원)
   async function ensureCardsData() {
     if (isDataLoaded && cardsData.length > 0) return cardsData;
     if (dataLoadPromise) return dataLoadPromise;
@@ -69,7 +135,7 @@
 
   // 초기화
   document.addEventListener('DOMContentLoaded', async () => {
-    await ensureCardsData();
+    await Promise.all([ensureServiceConfig(), ensureCardsData()]);
     renderPopularQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
@@ -194,12 +260,24 @@
     if (actionCheckbox) actionCheckbox.checked = false;
 
     // 4. 앱/책 CTA (답변을 본 뒤 노출될 영역 데이터)
+    const config = window.MIND_CONFIG || {
+      APP_URL: 'https://myeongsimcoaching.com',
+      PUBLISHER_URL: 'https://smartstore.naver.com/crbooks',
+      DARK_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
+      NEURAL_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
+      ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
+    };
+
     setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");
     setElText('app-subtext-label', card.appSubtext || "오늘 겪은 한 장면에서 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
     const appBtn = document.getElementById('mind-app-cta-btn');
     if (appBtn) {
-      const config = window.MIND_CONFIG || { APP_URL: '/self-check' };
-      appBtn.href = `${config.APP_URL}?card=${encodeURIComponent(card.id)}&focus=1`;
+      const appUrl = resolveAppUrl(card, config);
+      appBtn.href = appUrl;
+      if (appUrl.startsWith('http')) {
+        appBtn.target = "_blank";
+        appBtn.rel = "noopener noreferrer";
+      }
     }
 
     setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
@@ -209,18 +287,10 @@
 
     const bookBtn = document.getElementById('mind-book-cta-btn');
     if (bookBtn) {
-      const config = window.MIND_CONFIG || {
-        DARK_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-        NEURAL_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-        ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
-      };
-      if (card.relatedBook === "다크 코드") {
-        bookBtn.href = config.DARK_CODE_BOOK_URL;
-      } else if (card.relatedBook === "뉴럴 코드") {
-        bookBtn.href = config.NEURAL_CODE_BOOK_URL;
-      } else {
-        bookBtn.href = config.ZERO_POINT_BOOK_URL;
-      }
+      const bookUrl = resolveBookUrl(card, config);
+      bookBtn.href = bookUrl;
+      bookBtn.target = "_blank";
+      bookBtn.rel = "noopener noreferrer";
     }
   }
 
