@@ -165,8 +165,10 @@
   document.addEventListener('DOMContentLoaded', async () => {
     trackMindEvent('daily_card_opened');
     trackMindEvent('relationship_pack_view', { packId: 'relationship-anxiety-01', source: 'home_load' });
+    trackMindEvent('money_pack_view', { packId: 'money-business-01', source: 'home_load' });
     await Promise.all([ensureServiceConfig(), ensureCardsData()]);
     renderPopularQuestions();
+    renderMoneyQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
     // 기본 검색 제안 렌더링
@@ -304,6 +306,11 @@
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_card_open', { cardId: currentCard.id, category: currentCard.category });
       trackMindEvent('relationship_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
+    // 돈·사업 명심카드 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('money_card_reveal', { cardId: currentCard.id, category: currentCard.category });
     }
 
     // 화면 전환
@@ -458,12 +465,18 @@
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_app_click', { source: source || 'app_cta', cardId: currentCard.id });
     }
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+    }
   };
 
   window.handleMindBookClick = function (source) {
     trackMindEvent('book_click', { source: source || 'book_cta', cardId: currentCard ? currentCard.id : null });
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
     }
   };
 
@@ -473,6 +486,9 @@
     trackMindEvent('curiosity_click', { question: qText });
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
+    }
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
     }
     setElText('curiosity-bridge-question', `“${qText}”`);
     
@@ -501,6 +517,9 @@
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
     }
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
+    }
     const mapping = {
       chest: '가슴 조임/답답함',
       neck: '목·어깨 굳음',
@@ -525,6 +544,9 @@
     trackMindEvent('scan_started', { type: 'impulse' });
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
+    }
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
     }
     const mapping = {
       check: '거듭 확인하고 통제하기',
@@ -583,6 +605,9 @@
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_scan_complete', { cardId: currentCard.id, category: currentCard.category });
     }
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_scan_complete', { cardId: currentCard.id, category: currentCard.category });
+    }
     showToastNotification("🧭 오늘의 작동지도가 생성되었습니다! 진단이 아닌 오늘의 기록입니다.");
   };
 
@@ -617,6 +642,9 @@
     trackMindEvent('ten_percent_action_selected', { cardId: currentCard ? currentCard.id : null, action: actionName });
     if (currentCard && (currentCard.packId === 'relationship-anxiety-01' || (currentCard.id && currentCard.id.startsWith('rel-')))) {
       trackMindEvent('relationship_action_select', { cardId: currentCard.id, category: currentCard.category });
+    }
+    if (currentCard && (currentCard.packId === 'money-business-01' || (currentCard.id && currentCard.id.startsWith('money-')))) {
+      trackMindEvent('money_action_select', { cardId: currentCard.id, category: currentCard.category });
     }
   };
 
@@ -846,6 +874,61 @@
     `).join('');
   }
 
+
+  // =================================================================
+  // 12-1. 돈 문제 앞에서 나는 어떤 모드가 켜질까? (돈·사업 PACK 02 캐러셀)
+  // =================================================================
+  const FEATURED_MONEY_IDS = [
+    'money-002', // 손실 만회 모드
+    'money-003', // 사업실패 정체성
+    'money-005', // 가격 낮추기 모드
+    'money-008', // 빚 수치심
+    'money-014', // 매출과 자기 가치
+    'money-020'  // 다시 시작 공포
+  ];
+
+  function renderMoneyQuestions() {
+    const carousel = document.getElementById('money-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    // 1. 돈·사업 명심카드 대표 6개 최우선 배치 (지정된 순서 엄수)
+    const moneyFeatured = [];
+    FEATURED_MONEY_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) moneyFeatured.push(card);
+    });
+
+    // 2. 추가 돈·사업 카드
+    const otherMoney = cardsData.filter(c => 
+      c.packId === 'money-business-01' && !FEATURED_MONEY_IDS.includes(c.id)
+    );
+
+    const list = [...moneyFeatured, ...otherMoney].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#C7A86B] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#C7A86B]/15 text-[#9E7B3B] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#9E7B3B] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#C7A86B]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
   // =================================================================
   // 13. 자연어 일상 고민 검색 (입구 B)
   // =================================================================
@@ -868,24 +951,42 @@
       if (matched.length === 0) matched = cardsData.slice(0, 4);
     } else {
       const terms = query.split(/\s+/).filter(t => t.length >= 2);
-      matched = cardsData.filter(c => {
-        const fullCorpus = [
-          c.question || '',
-          c.keyword || '',
-          c.cardTitle || '',
-          c.category || '',
-          c.sodaAnswer || '',
-          Array.isArray(c.searchKeywords) ? c.searchKeywords.join(' ') : ''
-        ].join(' ').toLowerCase();
+      const scored = [];
 
-        // 1. 전체 구문 일치
-        if (fullCorpus.includes(query)) return true;
+      cardsData.forEach(c => {
+        const kws = Array.isArray(c.searchKeywords) ? c.searchKeywords.map(k => (k || '').toLowerCase()) : [];
+        const qText = (c.question || '').toLowerCase();
+        const titleText = (c.cardTitle || '').toLowerCase();
+        const kwText = (c.keyword || '').toLowerCase();
+        const answerText = (c.sodaAnswer || '').toLowerCase();
+        const catText = (c.category || '').toLowerCase();
 
-        // 2. 단어 단위(2글자 이상) 매칭
-        if (terms.length > 0 && terms.some(t => fullCorpus.includes(t))) return true;
+        let score = 0;
 
-        return false;
-      }).slice(0, 5);
+        // 정확도 가중치 부여
+        if (kws.some(k => k === query || k.includes(query) || query.includes(k))) score += 100;
+        if (qText.includes(query)) score += 80;
+        if (titleText.includes(query)) score += 60;
+        if (kwText.includes(query)) score += 40;
+
+        // 부분 단어(2글자 이상) 매칭
+        if (terms.length > 0) {
+          terms.forEach(t => {
+            if (kws.some(k => k.includes(t))) score += 30;
+            if (qText.includes(t)) score += 20;
+            if (titleText.includes(t)) score += 15;
+            if (answerText.includes(t)) score += 10;
+            if (catText.includes(t)) score += 5;
+          });
+        }
+
+        if (score > 0) {
+          scored.push({ card: c, score });
+        }
+      });
+
+      scored.sort((a, b) => b.score - a.score);
+      matched = scored.map(item => item.card).slice(0, 4);
     }
 
     // 헤더: “당신을 규정하는 결과가 아닙니다. 지금 상황과 가까운 질문부터 골라보세요.”
