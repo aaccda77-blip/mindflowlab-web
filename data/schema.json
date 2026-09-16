@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "MyeongsimCoachingCardDataset",
-  "description": "Schema for Myeongsim Coaching Daily Insight Cards (scalable up to 300+ cards)",
+  "description": "Schema for Myeongsim Coaching Daily Insight Cards MVP (scalable up to 300~500+ cards)",
   "type": "array",
   "items": {
     "type": "object",
@@ -12,40 +12,49 @@
       "cardTitle",
       "question",
       "sodaAnswer",
+      "description",
       "curiosityQuestion",
       "scanQuestion",
+      "factQuestion",
+      "storyQuestion",
+      "unknownQuestion",
+      "bodyQuestion",
       "syncSentence",
       "shiftQuestion",
       "tenPercentAction",
       "relatedBook",
+      "relatedBookChapter",
       "appCTA",
       "bookCTA",
-      "searchKeywords"
+      "searchKeywords",
+      "safetyLevel",
+      "isFeatured",
+      "popularity"
     ],
     "properties": {
       "id": {
         "type": "string",
-        "description": "Unique slug identifier (e.g. overchecking-01, boundary-03)"
+        "description": "Unique slug identifier (e.g. relationship-reply-001, overchecking-01)"
       },
       "category": {
         "type": "string",
-        "description": "Core mental domain (e.g. 불확실성, 경계와 관계, 완벽주의와 통제, 에너지와 번아웃, 생각 과열, 감정 민감성, 정체성과 관찰, 변화와 시도)"
+        "description": "Core mental domain (e.g. 불확실성, 경계·관계, 성과·완벽, 에너지·휴식, 감정·조절, 정체성·관찰, 변화·시도)"
       },
       "keyword": {
         "type": "string",
-        "description": "Sub-theme keyword (e.g. 과잉확인, 좋은 사람 강박, 눈치, 반추)"
+        "description": "Sub-theme keyword (e.g. 답장불안, 착한아이강박, 과잉확인)"
       },
       "cardTitle": {
         "type": "string",
-        "description": "Descriptive mode name (e.g. 확인 모드, 착한 아이 모드, 안테나 과출력 모드)"
+        "description": "Descriptive mode name (e.g. 마음읽기 모드, 확인 모드, 착한 사람 모드)"
       },
       "question": {
         "type": "string",
-        "description": "Relatable user dilemma in quotes (e.g. “왜 나는 확인하고 또 확인할까?”)"
+        "description": "Relatable user dilemma question (e.g. “답장이 늦으면 왜 최악부터 생각할까요?”)"
       },
       "sodaAnswer": {
         "type": "string",
-        "description": "Crisp, punchy 1-line paradigm shift (e.g. 확인은 정보를 얻지만, 반복확인은 불안을 달랩니다.)"
+        "description": "Crisp, punchy 1-line paradigm shift (e.g. 답장이 늦었다는 사실과 마음이 식었다는 해석은 같은 것이 아닙니다.)"
       },
       "description": {
         "type": "string",
@@ -53,11 +62,27 @@
       },
       "curiosityQuestion": {
         "type": "string",
-        "description": "Resonating 'What about in my case?' bridge question"
+        "description": "Curiosity Bridge question (e.g. 나는 상대의 침묵을 어떤 이야기로 가장 먼저 채우는 편일까?)"
       },
       "scanQuestion": {
         "type": "string",
-        "description": "1-minute SCAN self-observation question (thought/body signal/impulse)"
+        "description": "1-minute SCAN self-observation question"
+      },
+      "factQuestion": {
+        "type": "string",
+        "description": "FACT question: 실제로 확인된 것은 무엇인가요?"
+      },
+      "storyQuestion": {
+        "type": "string",
+        "description": "STORY question: 그 사실에 나는 어떤 의미를 붙였나요?"
+      },
+      "unknownQuestion": {
+        "type": "string",
+        "description": "UNKNOWN question: 아직 확인되지 않은 것은 무엇인가요?"
+      },
+      "bodyQuestion": {
+        "type": "string",
+        "description": "BODY question: 몸에서는 어디가 가장 먼저 긴장했나요?"
       },
       "syncSentence": {
         "type": "string",
@@ -78,27 +103,19 @@
           "뉴럴 코드",
           "제로 포인트"
         ],
-        "description": "Related Cheongnyu Publishing book"
+        "description": "Related Cheongryu Publishing book"
       },
-      "bookChapter": {
+      "relatedBookChapter": {
         "type": "string",
         "description": "Specific chapter title or principle topic"
       },
       "appCTA": {
         "type": "string",
-        "description": "Experience-first self-application action verb for the App (e.g. 내 확인 패턴 직접 확인하기)"
-      },
-      "appSubtext": {
-        "type": "string",
-        "description": "Contextual guide for 1-minute real-life observation in the App"
+        "description": "Experience-first self-application action verb for the App"
       },
       "bookCTA": {
         "type": "string",
-        "description": "Experience-first deep-reading verb for Cheongnyu Books (e.g. 확인 모드의 뇌과학 원리 읽기)"
-      },
-      "bookSubtext": {
-        "type": "string",
-        "description": "Contextual guide for understanding root principles in the Book"
+        "description": "Experience-first deep-reading verb for Cheongryu Books"
       },
       "searchKeywords": {
         "type": "array",
@@ -107,9 +124,17 @@
         },
         "description": "Natural language search phrases & conversational keywords"
       },
-      "isPopular": {
+      "safetyLevel": {
+        "type": "string",
+        "description": "Non-diagnostic safety rating (e.g. 일상관찰, 안전)"
+      },
+      "isFeatured": {
         "type": "boolean",
-        "description": "Optional flag to highlight in popular questions carousel"
+        "description": "Flag for featured curated questions"
+      },
+      "popularity": {
+        "type": "number",
+        "description": "Popularity ranking score (0~100)"
       }
     },
     "additionalProperties": true

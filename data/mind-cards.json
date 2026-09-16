@@ -1,10 +1,44 @@
 [
   {
+    "id": "relationship-reply-001",
+    "category": "관계·심리",
+    "keyword": "답장불안",
+    "cardTitle": "마음읽기 모드",
+    "question": "답장이 늦으면 왜 최악부터 생각할까요?",
+    "sodaAnswer": "답장이 늦었다는 사실과 마음이 식었다는 해석은 같은 것이 아닙니다.",
+    "description": "마음은 UNKNOWN 상태를 불편해하기 때문에 아직 확인되지 않은 부분을 STORY로 빠르게 채울 수 있습니다.",
+    "curiosityQuestion": "나는 모르는 시간을 어떤 이야기로 가장 빨리 채우는 편일까?",
+    "scanQuestion": "답장을 기다리는 동안 가장 먼저 무엇이 올라왔나요?",
+    "factQuestion": "실제로 확인된 것은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 것은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요?",
+    "syncSentence": "불확실해서 확인하고 싶은 마음이 올라오는구나.",
+    "shiftQuestion": "지금 바로 결론내리지 않는다면 어떤 선택이 가능할까요?",
+    "tenPercentAction": "30분 동안 추가 메시지를 보내지 않고 기다려본다.",
+    "relatedBook": "다크 코드",
+    "relatedBookChapter": "제2장 · 무의식적 마음읽기와 투사의 해체",
+    "appCTA": "내 관계 패턴 SCAN하기",
+    "bookCTA": "마음읽기 패턴의 뿌리 읽기",
+    "searchKeywords": [
+      "답장이 안 와요",
+      "답장",
+      "읽씹",
+      "카톡",
+      "연락",
+      "마음 식음",
+      "연락불안"
+    ],
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98
+  },
+  {
     "id": "overchecking-01",
     "category": "불확실성",
     "keyword": "과잉확인",
     "cardTitle": "확인 모드",
-    "question": "“왜 나는 확인하고 또 확인할까?”",
+    "question": "왜 결정만 하면 다시 확인하고 싶을까요?",
     "sodaAnswer": "확인은 정보를 얻지만, 반복확인은 불안을 달랩니다.",
     "description": "새로운 정보가 생기는 확인과 같은 정보를 반복해서 보는 행동은 기능이 완전히 다릅니다. 안도감은 잠시일 뿐 확인할수록 뇌는 더 의심합니다.",
     "curiosityQuestion": "“내 경우에는 무엇을 확인해야 안심할 수 있다고 느끼는 걸까? 왜 그 안도감은 5분을 넘기지 못할까?”",
@@ -19,21 +53,32 @@
     "bookCTA": "확인 모드의 뇌과학 원리 읽기",
     "bookSubtext": "왜 뇌는 불확실성을 생존의 위협으로 착각하고 확인 쳇바퀴를 돌리는지 책에서 확인하세요.",
     "searchKeywords": [
-      "계속 확인해요",
+      "불안",
       "가스밸브",
       "도어락",
+      "자꾸 확인해요",
+      "결정",
       "이메일 확인",
-      "불안",
       "의심",
-      "강박"
-    ]
+      "확인 강박",
+      "강박",
+      "계속 확인해요"
+    ],
+    "relatedBookChapter": "제2장 · 의심의 쳇바퀴와 Body Signature",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "peoplepleaser-02",
     "category": "경계와 관계",
     "keyword": "좋은 사람 강박",
     "cardTitle": "착한 아이 모드",
-    "question": "“왜 거절하면 마음이 불편하고 죄책감이 들까요?”",
+    "question": "좋은 사람이고 싶은데 왜 점점 지칠까요?",
     "sodaAnswer": "거절이 미안한 게 아니라, 상대의 실망을 감당하기 두려운 것입니다.",
     "description": "남의 부탁을 거절했을 때 밀려오는 죄책감은 도덕적 잘못이 아니라, '착하지 않으면 버림받는다'는 어린 시절의 생존 방어막입니다.",
     "curiosityQuestion": "“내 경우에는 누구의 실망이 가장 두려워서 나를 깎아내리며 부탁을 들어주고 있을까?”",
@@ -48,21 +93,32 @@
     "bookCTA": "거절 죄책감의 무의식 뿌리 더 읽기",
     "bookSubtext": "어린 시절 형성된 관계 생존 방어막이 성인의 삶을 지배하는 메커니즘을 탐구합니다.",
     "searchKeywords": [
-      "거절을 못해요",
       "착한 사람",
+      "착한아이",
       "거절",
-      "부탁",
+      "거절을 못해요",
       "죄책감",
       "호구",
-      "미안해요"
-    ]
+      "거절 못함",
+      "부탁",
+      "미안해요",
+      "거절을 못하겠어요"
+    ],
+    "relatedBookChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "boundary-03",
     "category": "경계와 관계",
     "keyword": "거절",
     "cardTitle": "경계 모드",
-    "question": "“싫은 소리 하면 관계가 완전히 끝날까 봐 무서워요.”",
+    "question": "왜 저는 싫다는 말을 못할까요?",
     "sodaAnswer": "거절해서 깨질 관계라면 참아봤자 언젠가 더 비참하게 터집니다.",
     "description": "건강한 경계는 상대를 향한 공격이 아니라, 나를 온전히 지키며 오래 함께하기 위한 울타리입니다. 솔직한 선 긋기가 진정한 신뢰를 만듭니다.",
     "curiosityQuestion": "“내 경우에는 솔직하게 선을 그었을 때 어떤 최악의 결말을 상상하고 있을까?”",
@@ -77,13 +133,24 @@
     "bookCTA": "안전한 경계 설정의 신경학적 원리 읽기",
     "bookSubtext": "타인과의 경계를 세우면서도 연결감을 유지하는 신경계 안정화 원리를 책에서 배웁니다.",
     "searchKeywords": [
-      "싫은 소리",
+      "싫다는 말",
+      "거절",
       "손절",
       "경계",
+      "갈등 회피",
       "관계 단절",
       "싸움",
-      "갈등 회피"
-    ]
+      "싫은 소리",
+      "거절을 못하겠어요"
+    ],
+    "relatedBookChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "nunchi-04",
@@ -105,13 +172,23 @@
     "bookCTA": "타인의 감정과 나를 분리하는 원리 읽기",
     "bookSubtext": "타인의 표정을 내 생존 위기로 착각하는 뇌 편도체의 과잉 반응을 가라앉히는 법을 배웁니다.",
     "searchKeywords": [
-      "눈치",
-      "남의 시선",
-      "표정",
+      "상사 눈치",
       "기분 눈치",
+      "표정",
+      "회사 가기 싫어요",
       "피곤해요",
-      "예민해요"
-    ]
+      "눈치",
+      "예민해요",
+      "남의 시선"
+    ],
+    "relatedBookChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "overexplaining-05",
@@ -139,7 +216,15 @@
       "오해",
       "변명",
       "두려움"
-    ]
+    ],
+    "relatedBookChapter": "제5장 · 투사와 자기변호의 늪",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "apology-06",
@@ -167,14 +252,22 @@
       "사과 강박",
       "위축",
       "눈치"
-    ]
+    ],
+    "relatedBookChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "attachment-07",
     "category": "경계와 관계",
     "keyword": "불안형 애착",
     "cardTitle": "연락 확인 모드",
-    "question": "“연락이 늦어지면 왜 버림받을 것 같을까요?”",
+    "question": "왜 가까워지면 갑자기 거리를 두고 싶을까요?",
     "sodaAnswer": "연락이 늦은 게 사건인데, 뇌는 이별이라는 소설을 씁니다.",
     "description": "답장이 조금만 지연되어도 심장이 뛰고 식은땀이 나는 것은 성인의 문제가 아니라, 애착 대상과의 단절을 생존 위기로 느꼈던 신경계의 조기경보입니다.",
     "curiosityQuestion": "“내 경우에는 상대의 침묵을 마주할 때 어떤 버림받음의 시나리오가 켜질까?”",
@@ -196,35 +289,15 @@
       "불안형",
       "연애 불안",
       "버림받을까봐"
-    ]
-  },
-  {
-    "id": "textanxiety-08",
-    "category": "불안과 방어",
-    "keyword": "답장 불안",
-    "cardTitle": "해석 과열 모드",
-    "question": "“왜 1시간 동안 답장이 안 와도 온갖 최악을 상상할까요?”",
-    "sodaAnswer": "침묵은 공백인데, 불안은 그 공백을 공격으로 채웁니다.",
-    "description": "불확실성을 견디지 못하는 뇌는 '모른다'는 상태를 가장 끔찍한 위협으로 해석하여 스스로 최악의 각본을 완성해 고통을 자초합니다.",
-    "curiosityQuestion": "“내 경우에는 사실(답장이 안 옴)과 소설(나를 무시함) 중 어디에 에너지를 쓰고 있을까?”",
-    "scanQuestion": "상상 속에서 상대와 싸우고 있는 내 턱과 어깨의 힘을 빼보셨나요?",
-    "syncSentence": "“불확실함이 무서워서 최악을 먼저 예측하려는 내 뇌의 방어 노력을 본다.”",
-    "shiftQuestion": "‘아직 모른다(Unknown)’는 자리에 그대로 머물러 본다면?",
-    "tenPercentAction": "“답장이 없는 것은 팩트, 나를 싫어한다는 건 나의 소설” 종이에 적어보기.",
-    "relatedBook": "다크 코드",
-    "bookChapter": "제7장 · FACT와 STORY의 엄밀한 분리",
-    "appCTA": "내 상상 소설과 팩트 분리해보기",
-    "appSubtext": "상대방의 침묵에 덧붙여진 내 머릿속 가설을 1분 만에 객관적 사실과 분리합니다.",
-    "bookCTA": "침묵의 공백을 공포로 채우는 원리 읽기",
-    "bookSubtext": "뇌가 왜 모호함을 견디지 못하고 최악을 시뮬레이션하는지 인지적 원리를 파헤칩니다.",
-    "searchKeywords": [
-      "카톡 안 봐요",
-      "답장 지연",
-      "읽씹 안읽씹",
-      "오해",
-      "상상",
-      "불안"
-    ]
+    ],
+    "relatedBookChapter": "제6장 · 애착 상처와 파국화 회로",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "mindreading-09",
@@ -252,14 +325,22 @@
       "피해의식",
       "오해",
       "인간관계"
-    ]
+    ],
+    "relatedBookChapter": "제8장 · 투사의 거울과 현실 검증",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "perfectionism-10",
     "category": "완벽주의와 통제",
     "keyword": "완벽주의",
     "cardTitle": "100점 아니면 0점 모드",
-    "question": "“제대로 못 할 바엔 아예 시작도 하기 싫어요.”",
+    "question": "왜 일을 끝냈는데도 끝난 것 같지 않을까요?",
     "sodaAnswer": "완벽주의는 높은 기준이 아니라, 수치심을 피하려는 공포입니다.",
     "description": "실패했을 때 쏟아질 비난과 스스로에게 느낄 실망이 너무나 두려운 나머지, 시작 자체를 틀어막아 '미완성의 안전' 뒤로 숨는 전략입니다.",
     "curiosityQuestion": "“내 경우에는 100점이 되지 못했을 때 어떤 수치심과 마주하는 것이 두려운 걸까?”",
@@ -281,7 +362,15 @@
       "100점",
       "부담감",
       "실패 두려움"
-    ]
+    ],
+    "relatedBookChapter": "제3장 · 완벽주의 해체와 점진적 노출",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "procrastination-11",
@@ -309,7 +398,15 @@
       "무기력",
       "누워만 있어요",
       "의지박약"
-    ]
+    ],
+    "relatedBookChapter": "제1장 · 동결(Freeze) 반응 해제와 5초 법칙",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "overthinking-12",
@@ -338,7 +435,15 @@
       "후회",
       "생각이 많아요",
       "반추"
-    ]
+    ],
+    "relatedBookChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "regret-13",
@@ -365,7 +470,15 @@
       "인생 망함",
       "과거 미련",
       "되돌리고 싶다"
-    ]
+    ],
+    "relatedBookChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "control-14",
@@ -393,14 +506,22 @@
       "독박",
       "책임감",
       "완벽주의"
-    ]
+    ],
+    "relatedBookChapter": "제10장 · 통제의 착각과 불확실성의 수용",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "burnout-15",
     "category": "에너지와 번아웃",
     "keyword": "번아웃",
     "cardTitle": "엔진 과열 모드",
-    "question": "“쉬는데도 왜 쉰 것 같지 않고 죄책감이 들까요?”",
+    "question": "왜 쉬면서도 죄책감이 들까요?",
     "sodaAnswer": "몸은 누워있지만, 뇌는 여전히 자기비난이라는 야근을 하고 있습니다.",
     "description": "진정한 쉼은 육체적 정지가 아니라 '아무것도 증명하지 않아도 된다'는 심리적 안전에서 옵니다. 쉬는 순간에도 내면의 채찍질이 멈추지 않으면 방전됩니다.",
     "curiosityQuestion": "“내 경우에는 멈추었을 때 내면의 어떤 목소리가 나를 게으르다고 다그칠까?”",
@@ -415,14 +536,24 @@
     "bookCTA": "쉼을 허락하지 못하는 뇌의 기아 상태 읽기",
     "bookSubtext": "생산성 중독에서 벗어나 몸과 뇌의 진정한 부교감 신경 이완을 이끌어내는 법을 배웁니다.",
     "searchKeywords": [
-      "번아웃",
-      "쉬어도 피곤",
+      "휴식 죄책감",
       "죄책감",
+      "쉬는데도 불안해요",
       "피로",
-      "휴식",
+      "기력 없음",
       "방전",
-      "기력 없음"
-    ]
+      "쉬어도 피곤",
+      "휴식",
+      "번아웃"
+    ],
+    "relatedBookChapter": "제2장 · 완전한 이완과 무조건적 허용",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "restguilt-16",
@@ -444,20 +575,30 @@
     "bookCTA": "휴식을 사치로 여기는 신경학적 왜곡 읽기",
     "bookSubtext": "뇌의 회복 탄력성이 가동되는 메커니즘과 죄책감 없는 온전한 쉼의 기술을 읽어보세요.",
     "searchKeywords": [
-      "휴식 공포",
-      "쉬면 불안",
-      "낙오자",
-      "생산성 강박",
       "불안",
-      "조급함"
-    ]
+      "아무것도 안 함",
+      "휴식 공포",
+      "조급함",
+      "쉬는데도 불안해요",
+      "생산성 강박",
+      "낙오자",
+      "쉬면 불안"
+    ],
+    "relatedBookChapter": "제4장 · 휴식과 뇌의 회복 탄력성",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "achievement-17",
     "category": "에너지와 번아웃",
     "keyword": "성취중독",
     "cardTitle": "골대 이동 모드",
-    "question": "“목표를 달성해도 왜 행복은 5분밖에 안 갈까요?”",
+    "question": "잘했는데도 왜 만족이 안 될까요?",
     "sodaAnswer": "목마른 사람이 바닷물을 마신 격입니다. 성취로는 결핍을 채울 수 없습니다.",
     "description": "원하던 것을 이루는 순간 곧바로 '다음은 뭐지?'라며 골대를 저 멀리 밀어버리는 것은, 성취가 주는 일시적 도파민에 중독된 마음의 도돌이표입니다.",
     "curiosityQuestion": "“내 경우에는 어떤 인정과 칭찬을 갈망하며 끝없는 성취의 쳇바퀴를 달리고 있을까?”",
@@ -478,7 +619,15 @@
       "허무해요",
       "불만족",
       "끝없는 욕심"
-    ]
+    ],
+    "relatedBookChapter": "제11장 · 골대 이동 증후군과 도파민의 함정",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "comparison-18",
@@ -506,7 +655,15 @@
       "박탈감",
       "열등감",
       "부러워요"
-    ]
+    ],
+    "relatedBookChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "selfcriticism-19",
@@ -535,7 +692,15 @@
       "실수",
       "욕심",
       "스스로 채찍질"
-    ]
+    ],
+    "relatedBookChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "repression-20",
@@ -563,14 +728,22 @@
       "감정 억압",
       "답답해요",
       "갈등 회피"
-    ]
+    ],
+    "relatedBookChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "anger-21",
     "category": "감정 민감성",
     "keyword": "분노폭발",
     "cardTitle": "용암 분출 모드",
-    "question": "“참다 참다 사소한 일에 폭발해버려요.”",
+    "question": "화낸 뒤에는 왜 제가 더 싫어질까요?",
     "sodaAnswer": "사소한 일에 터진 게 아니라, 오랫동안 무시당한 감정의 역습입니다.",
     "description": "평소에 경계를 세우지 못하고 억누르다가 한계선(RED)을 넘는 순간 이성을 잃는 것입니다. 분노는 나쁜 것이 아니라 내 경계선이 짓밟혔다는 신호입니다.",
     "curiosityQuestion": "“내 경우에는 폭발하기 직전에 어떤 노란 불(YELLOW) 신호가 먼저 켜지고 있을까?”",
@@ -585,13 +758,24 @@
     "bookCTA": "분노 폭발 회로를 차단하는 뇌과학 읽기",
     "bookSubtext": "편도체 납치(Amygdala Hijack) 상황에서 전두엽의 이성을 5초 만에 복구하는 원리를 배웁니다.",
     "searchKeywords": [
-      "분노조절",
-      "욱해요",
       "폭발",
-      "사소한 일에 화",
+      "욱해요",
+      "욱함",
+      "분노",
+      "분노조절",
+      "짜증",
+      "화를 내고 후회해요",
       "후회",
-      "짜증"
-    ]
+      "사소한 일에 화"
+    ],
+    "relatedBookChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "conflict-22",
@@ -619,7 +803,15 @@
       "언성",
       "싸움 못함",
       "도망치고 싶다"
-    ]
+    ],
+    "relatedBookChapter": "제14장 · 신경계 셧다운과 트라우마의 해리",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "identity-23",
@@ -647,7 +839,15 @@
       "낙인",
       "정체성",
       "변화 불가능"
-    ]
+    ],
+    "relatedBookChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "dejavu-24",
@@ -675,7 +875,15 @@
       "도돌이표",
       "왜 이럴까",
       "자괴감"
-    ]
+    ],
+    "relatedBookChapter": "제7장 · 신경 고속도로 우회와 샛길 내기",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "relapse-25",
@@ -703,7 +911,15 @@
       "도루묵",
       "포기하고 싶다",
       "무너짐"
-    ]
+    ],
+    "relatedBookChapter": "제8장 · 나선형 성장 모델과 재발 방지",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "experiment-26",
@@ -731,7 +947,15 @@
       "변화",
       "10% 행동",
       "작은 습관"
-    ]
+    ],
+    "relatedBookChapter": "제9장 · 10% 마이크로 시프트의 기적",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "helpseeking-27",
@@ -759,7 +983,15 @@
       "거절 공포",
       "고립",
       "외로움"
-    ]
+    ],
+    "relatedBookChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "observationtrap-28",
@@ -786,7 +1018,15 @@
       "생각 중독",
       "지적 방어",
       "지식 집착"
-    ]
+    ],
+    "relatedBookChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "identification-29",
@@ -814,7 +1054,15 @@
       "우울",
       "구름과 하늘",
       "본질"
-    ]
+    ],
+    "relatedBookChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   },
   {
     "id": "zeropoint-30",
@@ -843,6 +1091,14 @@
       "호흡",
       "선택의 자유",
       "마음의 평화"
-    ]
+    ],
+    "relatedBookChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
   }
 ]

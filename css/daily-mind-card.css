@@ -146,3 +146,36 @@
 #deep-dive-cta-container:not(.hidden) {
   animation: deepDiveSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Operation Map Slide & Fade Animation */
+@keyframes operationMapReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#mind-operation-map-box:not(.hidden) {
+  animation: operationMapReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mobile 390px Responsive Optimization */
+@media (max-width: 420px) {
+  #daily-mind-card-section {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  .mind-card-stage {
+    min-height: 220px;
+  }
+  .curiosity-chip, .scan-body-chip, .scan-impulse-chip {
+    font-size: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+

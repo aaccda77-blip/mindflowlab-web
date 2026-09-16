@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Automated Dataset & Service Config Validator & Fallback Synchronizer for Mind Cards (up to 300+ items)
+Automated Dataset & Service Config Validator & Fallback Synchronizer for Mind Cards MVP
+Scalable up to 300~500+ items with complete 24 schema fields
 """
 import os
 import sys
@@ -19,15 +20,24 @@ REQUIRED_CARD_FIELDS = [
     'cardTitle',
     'question',
     'sodaAnswer',
+    'description',
     'curiosityQuestion',
     'scanQuestion',
+    'factQuestion',
+    'storyQuestion',
+    'unknownQuestion',
+    'bodyQuestion',
     'syncSentence',
     'shiftQuestion',
     'tenPercentAction',
     'relatedBook',
+    'relatedBookChapter',
     'appCTA',
     'bookCTA',
-    'searchKeywords'
+    'searchKeywords',
+    'safetyLevel',
+    'isFeatured',
+    'popularity'
 ]
 
 REQUIRED_CONFIG_KEYS = [
@@ -95,6 +105,10 @@ def main():
                     errors.append(f"Card #{i+1} ({cid}): Missing or empty required field '{req}'")
                 elif req == 'searchKeywords' and not isinstance(val, list):
                     errors.append(f"Card #{i+1} ({cid}): 'searchKeywords' must be an array")
+                elif req == 'isFeatured' and not isinstance(val, bool):
+                    errors.append(f"Card #{i+1} ({cid}): 'isFeatured' must be a boolean")
+                elif req == 'popularity' and not isinstance(val, (int, float)):
+                    errors.append(f"Card #{i+1} ({cid}): 'popularity' must be a number")
                 elif req == 'relatedBook' and val not in ["다크 코드", "뉴럴 코드", "제로 포인트"]:
                     errors.append(f"Card #{i+1} ({cid}): 'relatedBook' must be one of ['다크 코드', '뉴럴 코드', '제로 포인트'] (got '{val}')")
 
@@ -107,9 +121,10 @@ def main():
         sys.exit(1)
 
     print(f"\n✅ SUCCESS: All {len(cards)} cards & service config passed validation!")
-    print(f" - Service Links: {list(service_config.keys())}")
+    print(f" - 24 Schema Fields: Verified 100% complete")
     print(f" - Unique Cards: {len(ids)}")
     print(f" - Categories: {len(set(c.get('category') for c in cards))}")
+    print(f" - Featured Curated Cards: {sum(1 for c in cards if c.get('isFeatured'))}")
 
     # Synchronize fallback bundle for file:// protocol & offline reliability
     sync_fallback(cards, service_config)

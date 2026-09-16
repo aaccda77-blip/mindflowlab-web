@@ -767,106 +767,159 @@
             </div>
 
             <!-- Main Interactive Container -->
-            <div class="relative z-10 min-h-[420px] flex flex-col items-center justify-center">
+            <div class="relative z-10 min-h-[440px] flex flex-col items-center justify-center">
 
               <!-- ========================================================= -->
-              <!-- 01. HOME & 02. SHUFFLE & 03. PICK (대기 / 선택 모드)        -->
+              <!-- 01. HOME VIEW (두 가지 입구: A. 오늘의 카드 / B. 고민 검색)  -->
               <!-- ========================================================= -->
               <div id="mind-home-view" class="w-full transition-all duration-500">
                 
-                <p id="mind-deck-status-text" class="text-xs sm:text-sm text-slate-300 font-bold mb-5 tracking-wide">
-                  “오늘의 마음은 어떤 카드를 꺼낼까?”
-                </p>
-
-                <!-- Fanned 3-Card Deck with Zero Point Orbit Art -->
-                <div id="mind-fanned-deck" class="flex items-center justify-center gap-3 sm:gap-6 py-4 mind-card-stage select-none">
-                  
-                  <!-- Card 1: SCAN (Left) -->
-                  <div onclick="pickMindCard(0)" class="mind-floating-left cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
-                    <div class="w-[105px] h-[175px] sm:w-[170px] sm:h-[280px] md:w-[190px] md:h-[310px] rounded-2xl bg-gradient-to-br from-[#14233B] via-[#0E2F2B] to-[#0A1B29] border-2 border-[#C7A86B]/60 shadow-[0_12px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_15px_40px_rgba(15,107,91,0.4)] group-hover:border-emerald-300 relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden">
-                      <div class="absolute inset-1.5 border border-[#C7A86B]/20 rounded-xl pointer-events-none"></div>
-                      <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SCAN · 발견</div>
-                      
-                      <!-- Zero Point Orbit Artwork -->
-                      <div class="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full border border-[#C7A86B]/40 flex items-center justify-center bg-[#C7A86B]/5">
-                        <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.4)" stroke-dasharray="4 4" stroke-width="1.5" fill="none"/>
-                          <circle cx="50" cy="8" r="3" fill="#C7A86B"/>
-                        </svg>
-                        <span class="text-lg sm:text-2xl font-black text-[#E2CF9F] font-serif">0</span>
-                      </div>
-
-                      <div class="text-center space-y-0.5">
-                        <div class="text-[10px] sm:text-xs font-bold text-slate-200">생각과 몸의 신호</div>
-                        <div class="text-[8px] sm:text-[10px] text-emerald-300/80 font-medium">터치하여 발견하기</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Card 2: SYNC (Center) -->
-                  <div onclick="pickMindCard(1)" class="mind-floating-center cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
-                    <div class="w-[110px] h-[185px] sm:w-[180px] sm:h-[295px] md:w-[200px] md:h-[325px] rounded-2xl bg-gradient-to-br from-[#182C49] via-[#0F3832] to-[#0D2436] border-2 border-[#C7A86B] shadow-[0_15px_40px_rgba(0,0,0,0.7)] group-hover:shadow-[0_20px_50px_rgba(199,168,107,0.45)] group-hover:border-[#E2CF9F] relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden ring-2 ring-[#C7A86B]/30">
-                      <div class="absolute inset-1.5 border border-[#C7A86B]/40 rounded-xl pointer-events-none"></div>
-                      <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SYNC · 머무름</div>
-                      
-                      <!-- Zero Point Orbit Artwork -->
-                      <div class="relative w-16 h-16 sm:w-22 sm:h-22 rounded-full border-2 border-[#C7A86B]/60 flex items-center justify-center bg-[#C7A86B]/10">
-                        <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.6)" stroke-dasharray="6 4" stroke-width="2" fill="none"/>
-                          <circle cx="50" cy="8" r="4" fill="#E2CF9F"/>
-                          <circle cx="92" cy="50" r="3" fill="#C7A86B"/>
-                        </svg>
-                        <span class="text-xl sm:text-3xl font-black text-[#E2CF9F] font-serif">0</span>
-                      </div>
-
-                      <div class="text-center space-y-0.5">
-                        <div class="text-[11px] sm:text-sm font-black text-[#E2CF9F]">오늘의 자동반응</div>
-                        <div class="text-[8px] sm:text-[10px] text-[#C7A86B] font-bold">터치하여 발견하기</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Card 3: SHIFT (Right) -->
-                  <div onclick="pickMindCard(2)" class="mind-floating-right cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
-                    <div class="w-[105px] h-[175px] sm:w-[170px] sm:h-[280px] md:w-[190px] md:h-[310px] rounded-2xl bg-gradient-to-br from-[#14233B] via-[#0E2F2B] to-[#0A1B29] border-2 border-[#C7A86B]/60 shadow-[0_12px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_15px_40px_rgba(15,107,91,0.4)] group-hover:border-emerald-300 relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden">
-                      <div class="absolute inset-1.5 border border-[#C7A86B]/20 rounded-xl pointer-events-none"></div>
-                      <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SHIFT · 선택</div>
-                      
-                      <!-- Zero Point Orbit Artwork -->
-                      <div class="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full border border-[#C7A86B]/40 flex items-center justify-center bg-[#C7A86B]/5">
-                        <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.4)" stroke-dasharray="4 4" stroke-width="1.5" fill="none"/>
-                          <circle cx="50" cy="8" r="3" fill="#C7A86B"/>
-                        </svg>
-                        <span class="text-lg sm:text-2xl font-black text-[#E2CF9F] font-serif">0</span>
-                      </div>
-
-                      <div class="text-center space-y-0.5">
-                        <div class="text-[10px] sm:text-xs font-bold text-slate-200">10% 다른 선택</div>
-                        <div class="text-[8px] sm:text-[10px] text-emerald-300/80 font-medium">터치하여 발견하기</div>
-                      </div>
-                    </div>
-                  </div>
-
+                <!-- Entrance Mode Tabs (A vs B) -->
+                <div class="flex items-center justify-center gap-2 mb-6">
+                  <button id="mind-tab-deck-btn" onclick="switchMindHomeTab('deck')" class="px-5 py-2.5 rounded-full text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shadow-sm bg-[#C7A86B] text-slate-950">
+                    <span>🎴 오늘의 카드 한 장</span>
+                  </button>
+                  <button id="mind-tab-search-btn" onclick="switchMindHomeTab('search')" class="px-5 py-2.5 rounded-full text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15">
+                    <span>💬 지금 고민이 있어요</span>
+                  </button>
                 </div>
 
-                <!-- Action Controls -->
-                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-                  <button onclick="pickMindCard(1)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#C7A86B] via-[#E2CF9F] to-[#C7A86B] hover:from-[#E2CF9F] hover:to-[#C7A86B] text-slate-950 font-black text-xs sm:text-sm shadow-lg hover:shadow-[#C7A86B]/30 transition-all flex items-center gap-2 transform active:scale-95 cursor-pointer">
-                    <span>✨ 오늘의 카드 뽑기</span>
-                  </button>
-                  <button onclick="shuffleMindCards()" class="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-slate-200 font-bold text-xs sm:text-sm border border-white/20 transition flex items-center gap-1.5 cursor-pointer">
-                    <span>🔀 카드 섞기</span>
-                  </button>
-                  <a href="#mind-search-input" onclick="document.getElementById('mind-search-input').focus();" class="px-4 py-3 rounded-2xl bg-slate-900/60 hover:bg-slate-900 text-slate-300 font-medium text-xs sm:text-sm border border-slate-700 transition flex items-center gap-1.5 cursor-pointer">
-                    <span>🔍 지금 고민으로 카드 찾기</span>
-                  </a>
+                <!-- [입구 A] 오늘의 카드 한 장 덱 패널 -->
+                <div id="mind-deck-panel" class="w-full transition-all duration-300">
+                  <p id="mind-deck-status-text" class="text-xs sm:text-sm text-slate-300 font-bold mb-5 tracking-wide">
+                    “오늘의 마음은 어떤 카드를 꺼낼까?”
+                  </p>
+
+                  <!-- Fanned 3-Card Deck with Zero Point Orbit Art -->
+                  <div id="mind-fanned-deck" class="flex items-center justify-center gap-3 sm:gap-6 py-4 mind-card-stage select-none">
+                    
+                    <!-- Card 1: SCAN (Left) -->
+                    <div onclick="pickMindCard(0)" class="mind-floating-left cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
+                      <div class="w-[105px] h-[175px] sm:w-[170px] sm:h-[280px] md:w-[190px] md:h-[310px] rounded-2xl bg-gradient-to-br from-[#14233B] via-[#0E2F2B] to-[#0A1B29] border-2 border-[#C7A86B]/60 shadow-[0_12px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_15px_40px_rgba(15,107,91,0.4)] group-hover:border-emerald-300 relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden">
+                        <div class="absolute inset-1.5 border border-[#C7A86B]/20 rounded-xl pointer-events-none"></div>
+                        <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SCAN · 발견</div>
+                        
+                        <!-- Zero Point Orbit Artwork -->
+                        <div class="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full border border-[#C7A86B]/40 flex items-center justify-center bg-[#C7A86B]/5">
+                          <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.4)" stroke-dasharray="4 4" stroke-width="1.5" fill="none"/>
+                            <circle cx="50" cy="8" r="3" fill="#C7A86B"/>
+                          </svg>
+                          <span class="text-lg sm:text-2xl font-black text-[#E2CF9F] font-serif">0</span>
+                        </div>
+
+                        <div class="text-center space-y-0.5">
+                          <div class="text-[10px] sm:text-xs font-bold text-slate-200">생각과 몸의 신호</div>
+                          <div class="text-[8px] sm:text-[10px] text-emerald-300/80 font-medium">터치하여 발견하기</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card 2: SYNC (Center) -->
+                    <div onclick="pickMindCard(1)" class="mind-floating-center cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
+                      <div class="w-[110px] h-[185px] sm:w-[180px] sm:h-[295px] md:w-[200px] md:h-[325px] rounded-2xl bg-gradient-to-br from-[#182C49] via-[#0F3832] to-[#0D2436] border-2 border-[#C7A86B] shadow-[0_15px_40px_rgba(0,0,0,0.7)] group-hover:shadow-[0_20px_50px_rgba(199,168,107,0.45)] group-hover:border-[#E2CF9F] relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden ring-2 ring-[#C7A86B]/30">
+                        <div class="absolute inset-1.5 border border-[#C7A86B]/40 rounded-xl pointer-events-none"></div>
+                        <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SYNC · 머무름</div>
+                        
+                        <!-- Zero Point Orbit Artwork -->
+                        <div class="relative w-16 h-16 sm:w-22 sm:h-22 rounded-full border-2 border-[#C7A86B]/60 flex items-center justify-center bg-[#C7A86B]/10">
+                          <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.6)" stroke-dasharray="6 4" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="8" r="4" fill="#E2CF9F"/>
+                            <circle cx="92" cy="50" r="3" fill="#C7A86B"/>
+                          </svg>
+                          <span class="text-xl sm:text-3xl font-black text-[#E2CF9F] font-serif">0</span>
+                        </div>
+
+                        <div class="text-center space-y-0.5">
+                          <div class="text-[11px] sm:text-sm font-black text-[#E2CF9F]">오늘의 자동반응</div>
+                          <div class="text-[8px] sm:text-[10px] text-[#C7A86B] font-bold">터치하여 발견하기</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card 3: SHIFT (Right) -->
+                    <div onclick="pickMindCard(2)" class="mind-floating-right cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
+                      <div class="w-[105px] h-[175px] sm:w-[170px] sm:h-[280px] md:w-[190px] md:h-[310px] rounded-2xl bg-gradient-to-br from-[#14233B] via-[#0E2F2B] to-[#0A1B29] border-2 border-[#C7A86B]/60 shadow-[0_12px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_15px_40px_rgba(15,107,91,0.4)] group-hover:border-emerald-300 relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden">
+                        <div class="absolute inset-1.5 border border-[#C7A86B]/20 rounded-xl pointer-events-none"></div>
+                        <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SHIFT · 선택</div>
+                        
+                        <!-- Zero Point Orbit Artwork -->
+                        <div class="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full border border-[#C7A86B]/40 flex items-center justify-center bg-[#C7A86B]/5">
+                          <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.4)" stroke-dasharray="4 4" stroke-width="1.5" fill="none"/>
+                            <circle cx="50" cy="8" r="3" fill="#C7A86B"/>
+                          </svg>
+                          <span class="text-lg sm:text-2xl font-black text-[#E2CF9F] font-serif">0</span>
+                        </div>
+
+                        <div class="text-center space-y-0.5">
+                          <div class="text-[10px] sm:text-xs font-bold text-slate-200">10% 다른 선택</div>
+                          <div class="text-[8px] sm:text-[10px] text-emerald-300/80 font-medium">터치하여 발견하기</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Deck Action Controls -->
+                  <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <button onclick="pickMindCard(1)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#C7A86B] via-[#E2CF9F] to-[#C7A86B] hover:from-[#E2CF9F] hover:to-[#C7A86B] text-slate-950 font-black text-xs sm:text-sm shadow-lg hover:shadow-[#C7A86B]/30 transition-all flex items-center gap-2 transform active:scale-95 cursor-pointer">
+                      <span>✨ 오늘의 카드 뽑기</span>
+                    </button>
+                    <button onclick="shuffleMindCards()" class="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-slate-200 font-bold text-xs sm:text-sm border border-white/20 transition flex items-center gap-1.5 cursor-pointer">
+                      <span>🔀 카드 섞기</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- [입구 B] 지금 고민이 있어요 자연어 검색 패널 -->
+                <div id="mind-search-panel" class="hidden w-full max-w-xl mx-auto transition-all duration-300 text-left">
+                  
+                  <div class="p-5 rounded-3xl bg-slate-950/70 border border-[#C7A86B]/40 shadow-xl space-y-4">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-black text-[#E2CF9F] tracking-wide uppercase">💬 자연어 마음 고민 검색</span>
+                      <span class="text-[11px] text-slate-400">키워드 자동 매칭</span>
+                    </div>
+
+                    <!-- Search Input Bar -->
+                    <div class="relative flex items-center">
+                      <input 
+                        type="text" 
+                        id="mind-search-input"
+                        oninput="handleMindCardSearch(this.value)"
+                        placeholder="지금 머릿속 고민을 그대로 적어보세요 (예: 답장이 안 와요, 거절을 못하겠어요)..."
+                        class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C7A86B] shadow-inner"
+                      />
+                      <span class="absolute left-3.5 text-slate-400 text-sm">🔍</span>
+                      <button id="mind-search-clear-btn" onclick="clearMindSearch()" class="hidden absolute right-3.5 text-slate-400 hover:text-slate-700 text-xs font-bold cursor-pointer">✕</button>
+                    </div>
+
+                    <!-- Recommended Search Chips -->
+                    <div>
+                      <div class="text-[11px] font-bold text-slate-400 mb-2">자주 묻는 고민을 바로 선택해보세요:</div>
+                      <div class="flex flex-wrap gap-1.5">
+                        <button onclick="setMindSearchQuery('답장이 안 와요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“답장이 안 와요”</button>
+                        <button onclick="setMindSearchQuery('거절을 못하겠어요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“거절을 못하겠어요”</button>
+                        <button onclick="setMindSearchQuery('회사 가기 싫어요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“회사 가기 싫어요”</button>
+                        <button onclick="setMindSearchQuery('자꾸 확인해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“자꾸 확인해요”</button>
+                        <button onclick="setMindSearchQuery('화를 내고 후회해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“화를 내고 후회해요”</button>
+                        <button onclick="setMindSearchQuery('쉬는데도 불안해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“쉬는데도 불안해요”</button>
+                      </div>
+                    </div>
+
+                    <!-- Search Result Heading & Cards Box -->
+                    <div id="mind-search-results-box" class="pt-3 border-t border-slate-800 space-y-2.5">
+                      <!-- Results populated by Javascript -->
+                    </div>
+                  </div>
+
                 </div>
 
               </div>
 
               <!-- ========================================================= -->
-              <!-- 04. REVEAL ~ 09. DEEP DIVE (결과 카드 & 사이다 처방)        -->
+              <!-- 02. RESULT VIEW (사이다 답변 ➔ 내 경우에는? ➔ 1분 SCAN ➔ 작동지도 ➔ 10% 행동) -->
               <!-- ========================================================= -->
               <div id="mind-result-view" class="hidden w-full max-w-xl mx-auto py-2 mind-card-stage transition-all duration-500">
                 <div id="mind-active-card-3d" class="mind-card-3d w-full relative">
@@ -874,14 +927,17 @@
                   <!-- Main Coaching Card Container (Warm Ivory & Emerald Palette) -->
                   <div class="w-full rounded-3xl bg-[#FAF9F6] border-2 border-[#C7A86B]/70 shadow-[0_25px_60px_rgba(0,0,0,0.35)] p-5 sm:p-7 text-left text-slate-800 relative overflow-hidden">
                     
-                    <!-- Top Persistent Bar: Category & Mode + Reset -->
+                    <!-- Top Persistent Bar: Category, Mode, Safety Badge, Reset -->
                     <div class="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-slate-200/80">
-                      <div class="flex items-center gap-2">
+                      <div class="flex items-center gap-2 flex-wrap">
                         <span id="card-category-chip" class="px-3 py-1 rounded-full bg-[#0F6B5B] text-white font-black text-xs tracking-wider shadow-2xs">
-                          불확실성
+                          관계·심리
                         </span>
                         <span id="card-title-text" class="text-xs font-black text-[#14233B] tracking-tight">
-                          확인 모드
+                          마음읽기 모드
+                        </span>
+                        <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[10px] font-bold border border-slate-200">
+                          🛡️ 일상관찰 · 비진단
                         </span>
                       </div>
                       <button onclick="resetMindCardSelection()" class="text-xs font-bold text-slate-500 hover:text-[#0F6B5B] flex items-center gap-1 transition px-2.5 py-1 rounded-lg hover:bg-slate-100 cursor-pointer">
@@ -894,14 +950,17 @@
                     <div id="mind-step-anchor" class="scroll-mt-32"></div>
 
                     <!-- ===================================================== -->
-                    <!-- 1. 오늘의 사이다 질문 & 통찰 (~10초)                     -->
+                    <!-- STEP 1. 오늘의 사이다 질문 & 통찰                     -->
                     <!-- ===================================================== -->
                     <div class="space-y-3 mb-4">
                       <!-- Main Question -->
                       <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
-                        <div class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">오늘의 질문</div>
+                        <div class="flex items-center justify-between mb-1">
+                          <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider">STEP 1 · 오늘의 질문</span>
+                          <span class="text-[9px] px-2 py-0.5 rounded bg-emerald-100 text-[#0F6B5B] font-bold">10초 통찰</span>
+                        </div>
                         <h4 id="card-question-text" class="text-base sm:text-lg font-black text-slate-900 leading-snug">
-                          “왜 나는 확인하고 또 확인할까?”
+                          “답장이 늦으면 왜 최악부터 생각할까요?”
                         </h4>
                       </div>
 
@@ -912,83 +971,222 @@
                           <span>사이다 한 줄 통찰</span>
                         </div>
                         <p id="soda-answer-lead" class="text-sm sm:text-base font-black text-[#0F6B5B] leading-snug">
-                          확인은 정보를 얻지만, 반복확인은 불안을 달랩니다.
+                          답장이 늦었다는 사실과 마음이 식었다는 해석은 같은 것이 아닙니다.
                         </p>
                         <p id="soda-answer-desc" class="text-xs text-slate-700 leading-relaxed mt-2 pt-2 border-t border-[#0F6B5B]/20">
-                          새로운 정보가 생기는 확인과 같은 정보를 반복해서 보는 행동은 기능이 다릅니다. 문제를 뜯어고치려 애쓰기 전에 어떤 기능으로 작동하고 있는지 먼저 알아차려 보세요.
+                          마음은 UNKNOWN 상태를 불편해하기 때문에 아직 확인되지 않은 부분을 STORY로 빠르게 채울 수 있습니다.
                         </p>
                       </div>
                     </div>
 
                     <!-- ===================================================== -->
-                    <!-- 2. 1분 SCAN 질문 하나 (~10초)                           -->
+                    <!-- STEP 2. “내 경우에는?” Curiosity Bridge                 -->
                     <!-- ===================================================== -->
-                    <div class="mb-4 p-4 rounded-2xl bg-[#FFFBEB] border border-[#C7A86B]/50 shadow-2xs space-y-2.5">
-                      <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-1.5 text-[#C7A86B] font-black text-xs">
-                          <span>🔍</span>
-                          <span>1분 SCAN 질문 하나</span>
-                        </div>
-                        <span class="text-[10px] text-slate-400 font-bold">내 신호 관찰</span>
+                    <div class="mb-4 p-3.5 rounded-2xl bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7]/60 border border-[#C7A86B]/40 shadow-2xs">
+                      <div class="flex items-center gap-1.5 text-[#C7A86B] font-black text-xs mb-1">
+                        <span>🌉</span>
+                        <span>STEP 2 · 내 경우에는?</span>
                       </div>
-
-                      <p id="coach-scan-text" class="text-xs sm:text-sm font-black text-slate-900 leading-snug">
-                        확인 직전에 내 안에서 어떤 생각과 몸의 긴장 신호가 가장 먼저 켜졌나요?
+                      <p id="curiosity-bridge-question" class="text-xs sm:text-sm font-black text-slate-900 leading-snug">
+                        “그렇다면 내 경우에는 무엇이 가장 먼저 켜지는 걸까?”
                       </p>
-
-                      <!-- 4개 미니 트리거 선택 칩 (가벼운 1터치 참여) -->
-                      <div class="pt-1">
-                        <div class="text-[10px] font-bold text-slate-500 mb-1.5">어느 곳에서 먼저 켜졌나요? (터치)</div>
-                        <div class="grid grid-cols-4 gap-1.5 text-center">
-                          <button id="curiosity-chip-thought" onclick="selectCuriosityTrigger('thought')" class="curiosity-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
-                            🧠 생각
-                          </button>
-                          <button id="curiosity-chip-body" onclick="selectCuriosityTrigger('body')" class="curiosity-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
-                            💓 몸
-                          </button>
-                          <button id="curiosity-chip-impulse" onclick="selectCuriosityTrigger('impulse')" class="curiosity-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
-                            ⚡ 충동
-                          </button>
-                          <button id="curiosity-chip-action" onclick="selectCuriosityTrigger('action')" class="curiosity-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
-                            🔄 행동
-                          </button>
-                        </div>
-                      </div>
-
-                      <!-- Interactive Instant Feedback Box -->
-                      <div id="curiosity-feedback-box" class="hidden p-2.5 rounded-xl bg-emerald-50 border border-[#0F6B5B]/30 text-xs text-[#0F6B5B] leading-relaxed transition-all">
-                        <span class="font-bold mr-1">✓ 발견:</span>
-                        <span id="curiosity-feedback-text"></span>
-                      </div>
+                      <p id="curiosity-bridge-sub" class="text-[11px] text-slate-600 mt-1">
+                        나는 모르는 시간을 어떤 이야기(STORY)로 가장 빨리 채우는 편일까요?
+                      </p>
                     </div>
 
                     <!-- ===================================================== -->
-                    <!-- 3. 오늘의 10% 실천 행동 (~10초)                          -->
+                    <!-- STEP 3. 1분 SCAN (FACT · STORY · UNKNOWN · BODY · IMPULSE) -->
+                    <!-- ===================================================== -->
+                    <div class="mb-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-3">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1.5 text-[#0F6B5B] font-black text-xs">
+                          <span>🔍</span>
+                          <span>STEP 3 · 1분 SCAN (알아차림)</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 font-bold">30초 완성</span>
+                      </div>
+
+                      <!-- 1. FACT vs STORY vs UNKNOWN 분리 가이드 -->
+                      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                          <span class="text-[10px] font-black text-slate-500 block mb-0.5">① FACT (확인된 사실)</span>
+                          <span id="scan-fact-text" class="text-[11px] text-slate-800 leading-snug font-medium block">
+                            실제로 확인된 사실은 무엇인가요?
+                          </span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200/80">
+                          <span class="text-[10px] font-black text-amber-700 block mb-0.5">② STORY (내 해석)</span>
+                          <span id="scan-story-text" class="text-[11px] text-slate-800 leading-snug font-medium block">
+                            그 사실에 어떤 의미를 붙였나요?
+                          </span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200/80">
+                          <span class="text-[10px] font-black text-[#0F6B5B] block mb-0.5">③ UNKNOWN (모르는 것)</span>
+                          <span id="scan-unknown-text" class="text-[11px] text-slate-800 leading-snug font-medium block">
+                            아직 확인되지 않은 것은 무엇인가요?
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- 2. BODY 신호 1터치 칩 -->
+                      <div>
+                        <div class="text-[10px] font-bold text-slate-500 mb-1.5">몸에서는 어디가 먼저 긴장했나요? (1개 터치)</div>
+                        <div class="grid grid-cols-4 gap-1.5 text-center">
+                          <button id="scan-body-chest" onclick="selectScanBody('chest')" class="scan-body-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            💓 가슴 조임
+                          </button>
+                          <button id="scan-body-neck" onclick="selectScanBody('neck')" class="scan-body-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            🧣 목·어깨
+                          </button>
+                          <button id="scan-body-breath" onclick="selectScanBody('breath')" class="scan-body-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            💨 얕은 호흡
+                          </button>
+                          <button id="scan-body-head" onclick="selectScanBody('head')" class="scan-body-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            🧠 머리 열감
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 3. IMPULSE 충동 1터치 칩 -->
+                      <div>
+                        <div class="text-[10px] font-bold text-slate-500 mb-1.5">어떤 반사적 충동이 올라왔나요? (1개 터치)</div>
+                        <div class="grid grid-cols-4 gap-1.5 text-center">
+                          <button id="scan-impulse-check" onclick="selectScanImpulse('check')" class="scan-impulse-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            🔄 거듭 확인
+                          </button>
+                          <button id="scan-impulse-avoid" onclick="selectScanImpulse('avoid')" class="scan-impulse-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            🏃 회피·잠수
+                          </button>
+                          <button id="scan-impulse-explain" onclick="selectScanImpulse('explain')" class="scan-impulse-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            🗣️ 길게 변명
+                          </button>
+                          <button id="scan-impulse-criticize" onclick="selectScanImpulse('criticize')" class="scan-impulse-chip py-1.5 px-1 rounded-xl border border-slate-200 bg-white hover:border-[#0F6B5B]/50 text-[11px] font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                            ⚖️ 자책·검열
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Generate Operation Map Button -->
+                      <button onclick="generateOperationMap()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#0F6B5B] to-[#0A493E] hover:from-[#0A493E] hover:to-[#0F6B5B] text-white font-black text-xs shadow-sm transition flex items-center justify-center gap-1.5 cursor-pointer">
+                        <span>🗺️ 오늘의 작동지도 만들기</span>
+                      </button>
+                    </div>
+
+                    <!-- ===================================================== -->
+                    <!-- STEP 4. 오늘의 작동지도 (Operation Map)                  -->
+                    <!-- ===================================================== -->
+                    <div id="mind-operation-map-box" class="hidden mb-4 p-4 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0F2824] border-2 border-[#C7A86B]/60 text-white shadow-xl space-y-3">
+                      
+                      <!-- Non-diagnostic Safety Disclaimer -->
+                      <div class="p-2.5 rounded-xl bg-white/10 border border-white/15 text-[11px] text-[#E2CF9F] leading-relaxed">
+                        <div class="font-black flex items-center gap-1 mb-0.5">
+                          <span>🧭</span>
+                          <span>이것은 성격진단이 아니라 오늘의 작동기록입니다.</span>
+                        </div>
+                        <div class="text-slate-300 text-[10px]">
+                          “당신에게 문제가 있는 것이 아닙니다. 이 상황에서는 이런 패턴 흐름이 나타날 가능성이 있습니다.”
+                        </div>
+                      </div>
+
+                      <!-- Operation Chain Diagram -->
+                      <div class="space-y-2 pt-1">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">오늘의 인지과학 작동 흐름:</div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                          <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <span class="text-[10px] text-emerald-300 font-bold block mb-0.5">⚡ 오늘의 Trigger</span>
+                            <span id="map-trigger-text" class="text-white font-medium">상황의 자극</span>
+                          </div>
+                          <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <span class="text-[10px] text-amber-300 font-bold block mb-0.5">💭 내가 붙인 STORY</span>
+                            <span id="map-story-text" class="text-white font-medium">빠르게 쓴 소설</span>
+                          </div>
+                          <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <span class="text-[10px] text-rose-300 font-bold block mb-0.5">💓 몸의 신호</span>
+                            <span id="map-body-text" class="text-white font-medium">가슴 조임</span>
+                          </div>
+                          <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <span class="text-[10px] text-orange-300 font-bold block mb-0.5">🔥 올라온 충동</span>
+                            <span id="map-impulse-text" class="text-white font-medium">반복 확인</span>
+                          </div>
+                        </div>
+
+                        <!-- 10% Choice Box -->
+                        <div class="p-3 rounded-xl bg-[#0F6B5B]/30 border border-emerald-500/40 mt-2">
+                          <div class="flex items-center gap-1.5 text-emerald-300 font-black text-xs mb-1">
+                            <span>✨</span>
+                            <span>오늘의 10% 다른 선택:</span>
+                          </div>
+                          <p id="map-choice-text" class="text-xs text-white font-bold leading-relaxed">
+                            30분 동안 추가 메시지를 보내지 않고 기다려본다.
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- ===================================================== -->
+                    <!-- STEP 5. 오늘의 10% 실천 행동                            -->
                     <!-- ===================================================== -->
                     <div class="mb-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50/80 border-2 border-[#0F6B5B]/40 shadow-sm">
                       <div class="flex items-center justify-between gap-2 mb-2">
                         <div class="flex items-center gap-1.5 text-[#0F6B5B] font-black text-xs">
                           <span>⚡</span>
-                          <span>오늘의 10% 작은 실천</span>
+                          <span>STEP 5 · 오늘의 10% 작은 실천</span>
                         </div>
                         <span class="text-[10px] font-bold text-emerald-800 bg-white px-2 py-0.5 rounded-md border border-emerald-200">체크 실천</span>
                       </div>
 
-                      <div class="flex items-start gap-2.5 pt-1">
-                        <input type="checkbox" id="ten-percent-action-check" onchange="toggleTenPercentAction(this.checked)" class="w-5 h-5 rounded border-slate-300 text-[#0F6B5B] focus:ring-[#0F6B5B] cursor-pointer mt-0.5 shrink-0" />
-                        <label for="ten-percent-action-check" id="ten-percent-action-text" class="text-xs sm:text-sm font-black text-slate-900 leading-relaxed cursor-pointer select-none">
-                          오늘 세 번째 확인을 하지 않는다.
-                        </label>
+                      <div class="space-y-2 pt-1">
+                        <!-- Primary Recommended Micro-Action -->
+                        <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border border-emerald-200 shadow-2xs">
+                          <input type="checkbox" id="ten-percent-action-check" onchange="toggleTenPercentAction(this.checked)" class="w-5 h-5 rounded border-slate-300 text-[#0F6B5B] focus:ring-[#0F6B5B] cursor-pointer mt-0.5 shrink-0" />
+                          <label for="ten-percent-action-check" id="ten-percent-action-text" class="text-xs sm:text-sm font-black text-slate-900 leading-relaxed cursor-pointer select-none">
+                            30분 동안 추가 메시지를 보내지 않고 기다려본다.
+                          </label>
+                        </div>
+
+                        <!-- Alternative Checkable Actions Dropdown / Options -->
+                        <div class="pt-1">
+                          <div class="text-[10px] font-bold text-slate-500 mb-1.5">또 다른 10% 선택지 중 골라보기:</div>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
+                            <label class="flex items-center gap-2 p-2 rounded-lg bg-white/80 border border-slate-200 hover:border-emerald-300 cursor-pointer">
+                              <input type="radio" name="alt-action" onchange="selectAltAction('세 번째 확인을 하지 않는다.')" class="text-[#0F6B5B]" />
+                              <span class="text-[11px] text-slate-700">세 번째 확인을 하지 않는다.</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-lg bg-white/80 border border-slate-200 hover:border-emerald-300 cursor-pointer">
+                              <input type="radio" name="alt-action" onchange="selectAltAction('답장 전에 10초 기다린다.')" class="text-[#0F6B5B]" />
+                              <span class="text-[11px] text-slate-700">답장 전에 10초 기다린다.</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-lg bg-white/80 border border-slate-200 hover:border-emerald-300 cursor-pointer">
+                              <input type="radio" name="alt-action" onchange="selectAltAction('바로 YES 하지 않는다.')" class="text-[#0F6B5B]" />
+                              <span class="text-[11px] text-slate-700">바로 YES 하지 않는다.</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-lg bg-white/80 border border-slate-200 hover:border-emerald-300 cursor-pointer">
+                              <input type="radio" name="alt-action" onchange="selectAltAction('설명을 한 문장 줄인다.')" class="text-[#0F6B5B]" />
+                              <span class="text-[11px] text-slate-700">설명을 한 문장 줄인다.</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-lg bg-white/80 border border-slate-200 hover:border-emerald-300 cursor-pointer">
+                              <input type="radio" name="alt-action" onchange="selectAltAction('결정에 필요한 정보 3개만 적는다.')" class="text-[#0F6B5B]" />
+                              <span class="text-[11px] text-slate-700">결정에 필요한 정보 3개만 적는다.</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-lg bg-white/80 border border-slate-200 hover:border-emerald-300 cursor-pointer">
+                              <input type="radio" name="alt-action" onchange="selectAltAction('오늘 30분은 성과를 증명하지 않는다.')" class="text-[#0F6B5B]" />
+                              <span class="text-[11px] text-slate-700">오늘 30분은 성과를 증명하지 않는다.</span>
+                            </label>
+                          </div>
+                        </div>
                       </div>
 
                       <!-- Direct 1-Click Action Button -->
                       <button onclick="triggerTenPercentAction()" class="w-full mt-3 py-2.5 px-4 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs shadow-sm transition flex items-center justify-center gap-1.5 cursor-pointer transform active:scale-98">
-                        <span>⚡ 오늘 10% 행동 시작하기</span>
+                        <span>⚡ 오늘 이것만 해보기</span>
                       </button>
                     </div>
 
                     <!-- ===================================================== -->
-                    <!-- 4. 답변을 충분히 본 뒤에만 노출되는 앱/책 전환 영역        -->
+                    <!-- STEP 6. 답변을 충분히 본 뒤 앱 & 책 전환 영역              -->
                     <!-- ===================================================== -->
                     <div class="pt-2 border-t border-slate-200/80">
                       <!-- Unlock Toggle Button -->
@@ -1000,7 +1198,7 @@
                         <span id="deep-dive-arrow" class="text-slate-400 font-bold text-xs transition-transform duration-300">&darr;</span>
                       </button>
 
-                      <!-- Expandable Dual CTA Container (Initially Hidden until unlocked) -->
+                      <!-- Expandable Dual CTA Container -->
                       <div id="deep-dive-cta-container" class="hidden mt-3 pt-3 border-t border-slate-100 space-y-3 animate-in fade-in duration-300">
                         <div class="text-center">
                           <span class="text-[11px] font-bold text-[#0F6B5B]">내게 꼭 맞는 다음 단계 2가지:</span>
@@ -1014,16 +1212,21 @@
                                 <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-[#0F6B5B] text-[9px] font-black uppercase">
                                   자기적용과 실천
                                 </span>
-                                <span class="text-[9px] text-slate-400 font-bold">1-Min SCAN</span>
+                                <span class="text-[9px] text-slate-400 font-bold">App Connect</span>
                               </div>
-                              <h5 class="text-xs font-black text-slate-900 mb-1">내 일상 장면에서 직접 확인하기</h5>
+                              <h5 class="text-xs font-black text-slate-900 mb-1">앱에서 오늘 기록 저장 & 비교하기</h5>
                               <p id="app-subtext-label" class="text-[11px] text-slate-600 leading-relaxed mb-3">
                                 오늘 겪은 한 장면을 떠올려 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.
                               </p>
                             </div>
-                            <a id="mind-app-cta-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block shadow-2xs">
-                              <span id="app-cta-label">내 패턴 직접 확인하기</span> &rarr;
-                            </a>
+                            <div class="space-y-1.5">
+                              <a id="mind-app-cta-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_cta_clicked', { action: 'scan' })" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block shadow-2xs">
+                                <span id="app-cta-label">내 패턴 1분 SCAN</span> &rarr;
+                              </a>
+                              <a id="mind-app-secondary-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_cta_clicked', { action: 'compare' })" class="w-full py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-[#0F6B5B] font-bold text-[10px] text-center transition block">
+                                <span>지난 패턴과 비교하기 · 전체 보기</span>
+                              </a>
+                            </div>
                           </div>
 
                           <!-- 청류출판사 도서: 원리와 깊은 이해 -->
@@ -1040,9 +1243,14 @@
                                 왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책에서 원리를 탐구합니다.
                               </p>
                             </div>
-                            <a id="mind-book-cta-btn" href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-white font-black text-xs text-center transition block border border-slate-700 shadow-2xs">
-                              <span id="book-cta-label">이 질문의 뿌리 더 읽기</span> &rarr;
-                            </a>
+                            <div class="space-y-1.5">
+                              <a id="mind-book-cta-btn" href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_cta_clicked')" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-white font-black text-xs text-center transition block border border-slate-700 shadow-2xs">
+                                <span id="book-cta-label">이 질문의 뿌리 더 읽기</span> &rarr;
+                              </a>
+                              <div class="text-center">
+                                <span class="text-[10px] text-slate-400">책 상세페이지에서 구매 및 목차 확인 가능</span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1065,47 +1273,48 @@
               </div>
 
               <!-- ========================================================= -->
-            <!-- 이번 주의 발견 (WEEKLY DISCOVERY HISTORY)                   -->
-            <!-- ========================================================= -->
-            <div id="weekly-discovery-section" class="relative z-10 mt-10 pt-8 border-t border-white/10 max-w-2xl mx-auto text-left">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-2">
-                  <span class="text-sm">📅</span>
-                  <h4 class="text-xs sm:text-sm font-black text-white">이번 주의 발견 (Weekly Insights)</h4>
+              <!-- 이번 주의 발견 (WEEKLY DISCOVERY HISTORY)                   -->
+              <!-- ========================================================= -->
+              <div id="weekly-discovery-section" class="relative z-10 mt-10 pt-8 border-t border-white/10 max-w-2xl mx-auto text-left w-full">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm">📅</span>
+                    <h4 class="text-xs sm:text-sm font-black text-white">이번 주의 발견 (Weekly Discovery)</h4>
+                  </div>
+                  <span class="text-[11px] text-slate-400 font-medium">최근 7일간의 기록</span>
                 </div>
-                <span class="text-[11px] text-slate-400 font-medium">최근 7일간의 기록</span>
-              </div>
-              
-              <p id="weekly-frequent-pattern" class="text-xs text-[#E2CF9F] font-bold mb-3">
-                이번 주를 시작할 첫 카드를 발견해 보세요.
-              </p>
+                
+                <p id="weekly-frequent-pattern" class="text-xs text-[#E2CF9F] font-bold mb-3">
+                  이번 주를 시작할 첫 카드를 발견해 보세요.
+                </p>
 
-              <div id="weekly-discovery-list" class="flex flex-wrap gap-2">
-                <!-- Javascript will populate this -->
+                <!-- 7 Days Card Flow List -->
+                <div id="weekly-discovery-list" class="flex flex-wrap gap-2 mb-4">
+                  <!-- Javascript will populate this -->
+                </div>
+
+                <!-- Meta-Reflection Questions Box (Non-diagnostic) -->
+                <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 space-y-1.5 text-xs text-slate-300">
+                  <div class="text-[11px] font-black text-[#E2CF9F] mb-1">🔍 이번 주 스스로에게 던져보는 3가지 관찰 질문:</div>
+                  <div class="flex items-start gap-1.5 text-[11px]">
+                    <span class="text-[#E2CF9F]">•</span>
+                    <span><strong>이번 주 가장 자주 등장한 모드는?</strong> (어떤 방어기제가 익숙하게 켜졌나요?)</span>
+                  </div>
+                  <div class="flex items-start gap-1.5 text-[11px]">
+                    <span class="text-[#E2CF9F]">•</span>
+                    <span><strong>어떤 Trigger가 반복됐나요?</strong> (마음의 알람을 울린 계기는 무엇이었나요?)</span>
+                  </div>
+                  <div class="flex items-start gap-1.5 text-[11px]">
+                    <span class="text-[#E2CF9F]">•</span>
+                    <span><strong>이번 주 단 한 번이라도 다르게 행동한 순간은?</strong> (작은 10%의 용기)</span>
+                  </div>
+                  <div class="pt-1 text-[10px] text-slate-400 italic">
+                    ※ “당신은 확인형입니다” 같은 성격 판결을 내리지 않습니다. 오직 당신의 작동 기록을 관찰합니다.
+                  </div>
+                </div>
               </div>
+
             </div>
-
-            <!-- ========================================================= -->
-            <!-- 자연어 일상 고민 검색 바 (QUESTION SEARCH)                 -->
-            <!-- ========================================================= -->
-            <div class="relative z-10 mt-8 max-w-xl mx-auto">
-              <div class="relative flex items-center">
-                <input 
-                  type="text" 
-                  id="mind-search-input"
-                  oninput="handleMindCardSearch(this.value)"
-                  placeholder="지금 내 머릿속 고민을 입력해보세요 (예: 답장이 안 와요, 거절을 못해요, 계속 확인해요)..."
-                  class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white/95 text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C7A86B] shadow-md"
-                />
-                <span class="absolute left-3.5 text-slate-400 text-sm">🔍</span>
-              </div>
-
-              <!-- Search Autocomplete Dropdown -->
-              <div id="mind-search-dropdown" class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden z-50 divide-y divide-slate-100">
-                <!-- Javascript will populate results -->
-              </div>
-            </div>
-
           </div>
         </div>
 

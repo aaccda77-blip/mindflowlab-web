@@ -1,8 +1,8 @@
 /**
  * =================================================================
- * MYUNGSIM DAILY INSIGHT · STREAMLINED 30-SECOND COACHING ENGINE
- * 명심코칭 "오늘의 명심 카드" (data/mind-cards.json 비동기 CMS 연동)
- * 300개 카드 확장 대응 무결성 아키텍처
+ * MYUNGSIM DAILY INSIGHT · PRODUCTION MVP COACHING ENGINE
+ * 명심코칭 "오늘의 명심 카드" & "사이다 Q&A"
+ * 24개 스키마 필드 완전 지원 · 300~500개 무제한 확장 아키텍처
  * =================================================================
  */
 
@@ -12,25 +12,37 @@
   let currentCard = null;
   let isShuffling = false;
   let isDeepDiveUnlocked = false;
+  let selectedBodyPart = '가슴 조임';
+  let selectedImpulse = '거듭 확인';
 
   // 동적 CMS 데이터 저장소 (data/mind-cards.json 비동기 로드)
   let cardsData = [];
   let isDataLoaded = false;
   let dataLoadPromise = null;
 
-  // 이벤트 트래킹 (개인 심리 데이터 미포함)
+  // 11개 핵심 분석 이벤트 트래킹 (사적인 심리 문장/텍스트는 일체 전송하지 않음)
   function trackMindEvent(eventName, payload) {
     try {
-      if (window.dataLayer) {
-        window.dataLayer.push({ event: eventName, ...payload });
+      // 민감한 텍스트 필드 필터링 (프라이버시 철저 보호)
+      const safePayload = {};
+      if (payload && typeof payload === 'object') {
+        for (const [k, v] of Object.entries(payload)) {
+          if (!['text', 'story', 'input', 'query'].includes(k)) {
+            safePayload[k] = v;
+          }
+        }
       }
-      console.log(`[Mindflow Analytics] ${eventName}:`, payload || {});
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: eventName, ...safePayload });
+      }
+      console.log(`[Mindflow Analytics] ${eventName}:`, safePayload);
     } catch (e) {
       // ignore
     }
   }
+  window.trackMindEvent = trackMindEvent;
 
-  // 0. 서비스 설정 비동기 로더 (data/service-config.json)
+  // 0. 서비스 링크 설정 비동기 로더 (data/service-config.json)
   let serviceConfigPromise = null;
   async function ensureServiceConfig() {
     if (window.MIND_CONFIG && window.MIND_CONFIG.APP_URL) return window.MIND_CONFIG;
@@ -84,19 +96,20 @@
     return cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
   }
 
-  // 앱 주소 라우팅 (카드 파라미터 연동 지원)
-  function resolveAppUrl(card, config) {
+  // 앱 주소 라우팅 (카드 파라미터 및 액션 연동 지원)
+  function resolveAppUrl(card, config, actionType) {
     if (card && card.appUrl && typeof card.appUrl === 'string' && card.appUrl.trim()) {
       return card.appUrl.trim();
     }
     const cfg = config || window.MIND_CONFIG || {};
     const baseUrl = cfg.APP_URL || 'https://myeongsimcoaching.com';
     const cardId = card && card.id ? card.id : '';
+    const action = actionType || 'scan';
     const separator = baseUrl.includes('?') ? '&' : '?';
-    return `${baseUrl}${separator}card=${encodeURIComponent(cardId)}&focus=1`;
+    return `${baseUrl}${separator}card=${encodeURIComponent(cardId)}&action=${action}&focus=1`;
   }
 
-  // 0-1. 비동기 JSON 데이터 로더 (CMS 연동 및 300개 확장 지원)
+  // 0-1. 비동기 JSON 데이터 로더 (data/mind-cards.json)
   async function ensureCardsData() {
     if (isDataLoaded && cardsData.length > 0) return cardsData;
     if (dataLoadPromise) return dataLoadPromise;
@@ -133,15 +146,77 @@
     return dataLoadPromise;
   }
 
-  // 초기화
+  // 초기화 (DOM 준비 시 데이터 로드 및 렌더링)
   document.addEventListener('DOMContentLoaded', async () => {
+    trackMindEvent('daily_card_opened');
     await Promise.all([ensureServiceConfig(), ensureCardsData()]);
     renderPopularQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
+    // 기본 검색 제안 렌더링
+    handleMindCardSearch('');
   });
 
-  // 1. 카드 섞기 (SHUFFLE)
+  // =================================================================
+  // 1. 홈 화면 입구 분리 (A. 오늘의 카드 한 장 vs B. 지금 고민이 있어요)
+  // =================================================================
+  window.switchMindHomeTab = function (tab) {
+    const deckTabBtn = document.getElementById('mind-tab-deck-btn');
+    const searchTabBtn = document.getElementById('mind-tab-search-btn');
+    const deckPanel = document.getElementById('mind-deck-panel');
+    const searchPanel = document.getElementById('mind-search-panel');
+
+    if (tab === 'deck') {
+      if (deckTabBtn) {
+        deckTabBtn.classList.remove('bg-white/10', 'text-slate-200', 'border', 'border-white/15');
+        deckTabBtn.classList.add('bg-[#C7A86B]', 'text-slate-950', 'shadow-sm');
+      }
+      if (searchTabBtn) {
+        searchTabBtn.classList.remove('bg-[#C7A86B]', 'text-slate-950', 'shadow-sm');
+        searchTabBtn.classList.add('bg-white/10', 'text-slate-200', 'border', 'border-white/15');
+      }
+      if (deckPanel) deckPanel.classList.remove('hidden');
+      if (searchPanel) searchPanel.classList.add('hidden');
+    } else {
+      if (searchTabBtn) {
+        searchTabBtn.classList.remove('bg-white/10', 'text-slate-200', 'border', 'border-white/15');
+        searchTabBtn.classList.add('bg-[#C7A86B]', 'text-slate-950', 'shadow-sm');
+      }
+      if (deckTabBtn) {
+        deckTabBtn.classList.remove('bg-[#C7A86B]', 'text-slate-950', 'shadow-sm');
+        deckTabBtn.classList.add('bg-white/10', 'text-slate-200', 'border', 'border-white/15');
+      }
+      if (searchPanel) searchPanel.classList.remove('hidden');
+      if (deckPanel) deckPanel.classList.add('hidden');
+
+      const searchInput = document.getElementById('mind-search-input');
+      if (searchInput) {
+        searchInput.focus();
+        handleMindCardSearch(searchInput.value || '');
+      }
+    }
+  };
+
+  // 1-1. 추천 검색어 칩 클릭
+  window.setMindSearchQuery = function (query) {
+    const searchInput = document.getElementById('mind-search-input');
+    if (searchInput) {
+      searchInput.value = query;
+      handleMindCardSearch(query);
+    }
+  };
+
+  window.clearMindSearch = function () {
+    const searchInput = document.getElementById('mind-search-input');
+    if (searchInput) {
+      searchInput.value = '';
+      handleMindCardSearch('');
+    }
+  };
+
+  // =================================================================
+  // 2. 카드 섞기 (SHUFFLE)
+  // =================================================================
   window.shuffleMindCards = function () {
     if (isShuffling) return;
     isShuffling = true;
@@ -166,100 +241,129 @@
     } else {
       isShuffling = false;
     }
-
-    trackMindEvent('card_shuffle');
   };
 
-  // 2. 카드 선택 및 3D 플립 (PICK & REVEAL -> 30초 몰입 카드)
+  // =================================================================
+  // 3. 카드 선택 및 3D 플립 (PICK & REVEAL -> 3단계 코칭 흐름)
+  // =================================================================
   window.pickMindCard = async function (slotIndex, customCardId) {
     if (isShuffling) return;
 
-    await ensureCardsData();
-    if (!cardsData || cardsData.length === 0) {
-      console.error('[Mindflow CMS] No card data available.');
-      return;
-    }
+    await Promise.all([ensureServiceConfig(), ensureCardsData()]);
+    if (!cardsData || cardsData.length === 0) return;
 
-    let selectedCard = null;
+    // 특정 카드 ID 지정 또는 가중치/랜덤 선택
+    let targetCard = null;
     if (customCardId) {
-      selectedCard = cardsData.find(c => c.id === customCardId);
+      targetCard = cardsData.find(c => c.id === customCardId);
+      trackMindEvent('question_clicked', { cardId: customCardId });
     }
 
-    if (!selectedCard) {
-      const randomIndex = Math.floor(Math.random() * cardsData.length);
-      selectedCard = cardsData[randomIndex];
+    if (!targetCard) {
+      // 가중치(popularity) 기반 랜덤 선택
+      const totalWeight = cardsData.reduce((sum, c) => sum + (c.popularity || 90), 0);
+      let rand = Math.random() * totalWeight;
+      for (const card of cardsData) {
+        rand -= (card.popularity || 90);
+        if (rand <= 0) {
+          targetCard = card;
+          break;
+        }
+      }
+      if (!targetCard) {
+        targetCard = cardsData[Math.floor(Math.random() * cardsData.length)];
+      }
     }
 
-    currentCard = selectedCard;
-    isDeepDiveUnlocked = false;
-    trackMindEvent('card_selected', { card_id: selectedCard.id, slot: slotIndex });
+    currentCard = targetCard;
+    bindCardData(currentCard);
+    saveToWeeklyDiscovery(currentCard);
 
-    // 히스토리 저장
-    saveToWeeklyDiscovery(selectedCard);
+    trackMindEvent('card_revealed', { cardId: currentCard.id, category: currentCard.category });
+    trackMindEvent('soda_answer_viewed', { cardId: currentCard.id });
+    trackMindEvent('curiosity_bridge_viewed', { cardId: currentCard.id });
 
-    // 데이터 바인딩
-    bindCardData(selectedCard);
-
-    // 화면 전환 (1단 클릭으로 30초 내 즉시 도달)
+    // 화면 전환
     const homeView = document.getElementById('mind-home-view');
     const resultView = document.getElementById('mind-result-view');
-    const card3d = document.getElementById('mind-active-card-3d');
+    const card3D = document.getElementById('mind-active-card-3d');
 
-    // 딥다이브 접어두기 (답변을 충분히 본 뒤에만 노출)
-    const ctaContainer = document.getElementById('deep-dive-cta-container');
-    const arrowEl = document.getElementById('deep-dive-arrow');
-    const btnLabel = document.getElementById('deep-dive-btn-label');
-    if (ctaContainer) ctaContainer.classList.add('hidden');
-    if (arrowEl) arrowEl.innerHTML = '&darr;';
-    if (btnLabel) btnLabel.innerText = '답변을 충분히 보셨나요? 내 일상과 책으로 더 깊이 이어가기';
+    if (homeView) homeView.classList.add('hidden');
+    if (resultView) {
+      resultView.classList.remove('hidden');
+      if (card3D) {
+        card3D.classList.remove('is-revealed');
+        void card3D.offsetWidth;
+        setTimeout(() => {
+          card3D.classList.add('is-revealed');
+        }, 30);
+      }
+    }
 
-    if (homeView && resultView && card3d) {
-      homeView.style.opacity = '0';
-      homeView.style.transform = 'scale(0.96)';
-
-      setTimeout(() => {
-        homeView.classList.add('hidden');
-        resultView.classList.remove('hidden');
-
-        requestAnimationFrame(() => {
-          card3d.classList.add('is-revealed');
-          trackMindEvent('card_revealed', { card_id: selectedCard.id });
-        });
-
-        const stage = document.getElementById('daily-mind-card-section');
-        if (stage) {
-          stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 280);
+    // 부드러운 스크롤 이동
+    const anchor = document.getElementById('mind-step-anchor');
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
-  // 3. 데이터 바인딩
+  // =================================================================
+  // 4. 카드 데이터 UI 바인딩 (24개 스키마 필드 정밀 연동)
+  // =================================================================
   function bindCardData(card) {
-    // 카드 헤더
+    if (!card) return;
+
+    // 헤더: 카테고리, 모드 명칭
     setElText('card-category-chip', card.category);
     setElText('card-title-text', card.cardTitle);
-    setElText('card-question-text', card.question);
 
-    // 1. 사이다 답변
+    // STEP 1. 질문 & 사이다 답변
+    setElText('card-question-text', card.question);
     setElText('soda-answer-lead', card.sodaAnswer);
     setElText('soda-answer-desc', card.description);
 
-    // 2. 1분 SCAN 질문 하나
-    setElText('coach-scan-text', card.scanQuestion);
-    const feedbackBox = document.getElementById('curiosity-feedback-box');
-    if (feedbackBox) feedbackBox.classList.add('hidden');
-    document.querySelectorAll('.curiosity-chip').forEach(btn => {
+    // STEP 2. 내 경우에는? (Curiosity Bridge)
+    setElText('curiosity-bridge-question', card.curiosityQuestion || "“그렇다면 내 경우에는 무엇이 가장 먼저 켜지는 걸까?”");
+    setElText('curiosity-bridge-sub', `나는 모르는 시간을 어떤 이야기(STORY)로 가장 빨리 채우는 편일까요?`);
+
+    // STEP 3. 1분 SCAN 질문 (FACT / STORY / UNKNOWN)
+    setElText('scan-fact-text', card.factQuestion || "실제로 확인된 사실(FACT)은 무엇인가요?");
+    setElText('scan-story-text', card.storyQuestion || "그 사실에 나는 어떤 의미(STORY)를 붙였나요?");
+    setElText('scan-unknown-text', card.unknownQuestion || "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?");
+
+    // 칩 초기화
+    selectedBodyPart = '가슴 조임';
+    selectedImpulse = '거듭 확인';
+    document.querySelectorAll('.scan-body-chip').forEach(btn => {
       btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
       btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
     });
+    const defaultBodyBtn = document.getElementById('scan-body-chest');
+    if (defaultBodyBtn) {
+      defaultBodyBtn.classList.add('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      defaultBodyBtn.classList.remove('border-slate-200', 'bg-white');
+    }
 
-    // 3. 오늘의 10% 실천 행동
+    document.querySelectorAll('.scan-impulse-chip').forEach(btn => {
+      btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+    });
+    const defaultImpulseBtn = document.getElementById('scan-impulse-check');
+    if (defaultImpulseBtn) {
+      defaultImpulseBtn.classList.add('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      defaultImpulseBtn.classList.remove('border-slate-200', 'bg-white');
+    }
+
+    // STEP 4. 오늘의 작동지도 박스는 초기에는 접혀있거나 숨김
+    const mapBox = document.getElementById('mind-operation-map-box');
+    if (mapBox) mapBox.classList.add('hidden');
+
+    // STEP 5. 오늘의 10% 실천 행동
     setElText('ten-percent-action-text', card.tenPercentAction);
     const actionCheckbox = document.getElementById('ten-percent-action-check');
     if (actionCheckbox) actionCheckbox.checked = false;
 
-    // 4. 앱/책 CTA (답변을 본 뒤 노출될 영역 데이터)
+    // STEP 6. 앱/책 CTA
     const config = window.MIND_CONFIG || {
       APP_URL: 'https://myeongsimcoaching.com',
       PUBLISHER_URL: 'https://smartstore.naver.com/crbooks',
@@ -268,30 +372,36 @@
       ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
     };
 
-    setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");
-    setElText('app-subtext-label', card.appSubtext || "오늘 겪은 한 장면에서 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
+    setElText('app-cta-label', card.appCTA || "내 패턴 1분 SCAN");
+    setElText('app-subtext-label', "오늘 겪은 한 장면을 떠올려 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
     const appBtn = document.getElementById('mind-app-cta-btn');
     if (appBtn) {
-      const appUrl = resolveAppUrl(card, config);
+      const appUrl = resolveAppUrl(card, config, 'scan');
       appBtn.href = appUrl;
-      if (appUrl.startsWith('http')) {
-        appBtn.target = "_blank";
-        appBtn.rel = "noopener noreferrer";
-      }
+    }
+    const appSecBtn = document.getElementById('mind-app-secondary-btn');
+    if (appSecBtn) {
+      const compareUrl = resolveAppUrl(card, config, 'compare');
+      appSecBtn.href = compareUrl;
     }
 
     setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
-    setElText('book-chapter-label', card.bookChapter || "관련 챕터");
-    setElText('book-subtext-label', card.bookSubtext || "왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책에서 원리를 탐구합니다.");
+    setElText('book-chapter-label', card.relatedBookChapter || "원리 탐구");
+    setElText('book-subtext-label', "왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책에서 원리를 탐구합니다.");
     setElText('book-cta-label', card.bookCTA || "이 질문의 뿌리 더 읽기");
 
     const bookBtn = document.getElementById('mind-book-cta-btn');
     if (bookBtn) {
       const bookUrl = resolveBookUrl(card, config);
       bookBtn.href = bookUrl;
-      bookBtn.target = "_blank";
-      bookBtn.rel = "noopener noreferrer";
     }
+
+    // CTA 영역 초기화
+    isDeepDiveUnlocked = false;
+    const ctaContainer = document.getElementById('deep-dive-cta-container');
+    if (ctaContainer) ctaContainer.classList.add('hidden');
+    const arrow = document.getElementById('deep-dive-arrow');
+    if (arrow) arrow.style.transform = 'rotate(0deg)';
   }
 
   function setElText(id, text) {
@@ -299,333 +409,401 @@
     if (el) el.innerText = text;
   }
 
-  // 4. 1분 SCAN 트리거 칩 선택 (가벼운 1터치 참여)
-  window.selectCuriosityTrigger = function (triggerType) {
-    const feedbackBox = document.getElementById('curiosity-feedback-box');
-    const feedbackText = document.getElementById('curiosity-feedback-text');
-
-    const labels = {
-      thought: "생각 (머릿속 소설/해석)",
-      body: "몸의 신호 (가슴 답답함, 목 긴장)",
-      impulse: "충동 (안절부절, 조급함)",
-      action: "자동 행동 (반복확인, 회피)"
+  // =================================================================
+  // 5. 1분 SCAN 트리거 칩 선택 (가벼운 1터치 참여)
+  // =================================================================
+  window.selectScanBody = function (partKey) {
+    trackMindEvent('scan_started', { type: 'body' });
+    const mapping = {
+      chest: '가슴 조임/답답함',
+      neck: '목·어깨 굳음',
+      breath: '얕아진 호흡/명치 얹힘',
+      head: '머리 열감/지끈거림'
     };
+    selectedBodyPart = mapping[partKey] || '가슴 조임';
 
-    if (feedbackBox && feedbackText) {
-      feedbackText.innerHTML = `내 안에서 <strong>‘${labels[triggerType] || triggerType}’</strong>이(가) 가장 먼저 켜지는군요. 이 반응과 싸우지 않고 알아차려 봅니다.`;
-      feedbackBox.classList.remove('hidden');
-    }
-
-    // 버튼 스타일 강조
-    document.querySelectorAll('.curiosity-chip').forEach(btn => {
+    document.querySelectorAll('.scan-body-chip').forEach(btn => {
       btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
       btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
     });
 
-    const activeBtn = document.getElementById(`curiosity-chip-${triggerType}`);
+    const activeBtn = document.getElementById(`scan-body-${partKey}`);
     if (activeBtn) {
-      activeBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
       activeBtn.classList.add('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      activeBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
     }
-
-    trackMindEvent('trigger_type_selected', { trigger: triggerType });
   };
 
-  // 5. 10% 실천 체크 및 액션
+  window.selectScanImpulse = function (impulseKey) {
+    trackMindEvent('scan_started', { type: 'impulse' });
+    const mapping = {
+      check: '거듭 확인하고 통제하기',
+      avoid: '회피하고 잠수타기',
+      explain: '길게 변명하고 설명하기',
+      criticize: '자책하고 스스로 몰아세우기'
+    };
+    selectedImpulse = mapping[impulseKey] || '거듭 확인하기';
+
+    document.querySelectorAll('.scan-impulse-chip').forEach(btn => {
+      btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+    });
+
+    const activeBtn = document.getElementById(`scan-impulse-${impulseKey}`);
+    if (activeBtn) {
+      activeBtn.classList.add('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      activeBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
+    }
+  };
+
+  // =================================================================
+  // 6. 오늘의 작동지도 생성 (비진단성 작동기록 다이어그램)
+  // =================================================================
+  window.generateOperationMap = function () {
+    if (!currentCard) return;
+
+    // 트리거: 카드 질문을 바탕으로 정돈
+    const cleanTrigger = currentCard.question.replace(/[“”"']/g, '').trim();
+    setElText('map-trigger-text', cleanTrigger);
+
+    // 내가 붙인 스토리
+    const cleanStory = currentCard.storyQuestion || "상대나 상황에 나만의 빠른 의미를 부여함";
+    setElText('map-story-text', cleanStory);
+
+    // 몸의 신호
+    setElText('map-body-text', selectedBodyPart);
+
+    // 올라온 충동
+    setElText('map-impulse-text', selectedImpulse);
+
+    // 오늘의 10% 선택
+    setElText('map-choice-text', currentCard.tenPercentAction);
+
+    // 작동지도 표시
+    const mapBox = document.getElementById('mind-operation-map-box');
+    if (mapBox) {
+      mapBox.classList.remove('hidden');
+      mapBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // 전환 CTA 자동 열림
+    unlockDeepDiveCTA();
+
+    trackMindEvent('scan_completed', { cardId: currentCard.id });
+    showToastNotification("🧭 오늘의 작동지도가 생성되었습니다! 진단이 아닌 오늘의 기록입니다.");
+  };
+
+  // =================================================================
+  // 7. 오늘의 10% 행동 선택 & 실천
+  // =================================================================
+  window.selectAltAction = function (actionText) {
+    if (!currentCard) return;
+    const label = document.getElementById('ten-percent-action-text');
+    if (label) label.innerText = actionText;
+
+    const checkbox = document.getElementById('ten-percent-action-check');
+    if (checkbox) checkbox.checked = true;
+
+    triggerTenPercentAction(actionText);
+  };
+
   window.toggleTenPercentAction = function (isChecked) {
     if (isChecked) {
-      trackMindEvent('ten_percent_action_selected', { card_id: currentCard ? currentCard.id : null });
-      showToastNotification("✨ 오늘 10% 다른 행동을 선택하셨습니다! 작은 실천이 뇌 회로를 바꿉니다.");
-
-      // 답변과 10% 실천까지 마친 사용자에게 자동으로 앱/책 심층 섹션을 열어줌
-      unlockDeepDiveCTA();
+      triggerTenPercentAction();
     }
   };
 
-  window.triggerTenPercentAction = function () {
-    const actionCheckbox = document.getElementById('ten-percent-action-check');
-    if (actionCheckbox) {
-      actionCheckbox.checked = true;
-      toggleTenPercentAction(true);
-    }
+  window.triggerTenPercentAction = function (customAction) {
+    const checkbox = document.getElementById('ten-percent-action-check');
+    if (checkbox) checkbox.checked = true;
+
+    const actionName = customAction || (currentCard ? currentCard.tenPercentAction : "오늘의 10% 작은 실천");
+    unlockDeepDiveCTA();
+
+    showToastNotification("✨ 오늘 10% 다른 행동을 선택하셨습니다! 작은 실천이 뇌 회로를 바꿉니다.");
+    trackMindEvent('ten_percent_action_selected', { cardId: currentCard ? currentCard.id : null, action: actionName });
   };
 
-  // 6. 답변을 충분히 본 뒤에만 노출되는 앱/책 CTA 토글
+  // =================================================================
+  // 8. 앱/책 CTA 토글 (Progressive Unlock)
+  // =================================================================
   window.toggleDeepDiveCTA = function () {
-    const ctaContainer = document.getElementById('deep-dive-cta-container');
-    const arrowEl = document.getElementById('deep-dive-arrow');
-    const btnLabel = document.getElementById('deep-dive-btn-label');
-    if (!ctaContainer) return;
+    const container = document.getElementById('deep-dive-cta-container');
+    const arrow = document.getElementById('deep-dive-arrow');
+    if (!container) return;
 
-    if (ctaContainer.classList.contains('hidden')) {
-      unlockDeepDiveCTA();
+    if (container.classList.contains('hidden')) {
+      container.classList.remove('hidden');
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+      trackMindEvent('book_detail_viewed', { cardId: currentCard ? currentCard.id : null });
     } else {
-      ctaContainer.classList.add('hidden');
-      if (arrowEl) arrowEl.innerHTML = '&darr;';
-      if (btnLabel) btnLabel.innerText = '답변을 충분히 보셨나요? 내 일상과 책으로 더 깊이 이어가기';
+      container.classList.add('hidden');
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
     }
   };
 
   function unlockDeepDiveCTA() {
-    const ctaContainer = document.getElementById('deep-dive-cta-container');
-    const arrowEl = document.getElementById('deep-dive-arrow');
-    const btnLabel = document.getElementById('deep-dive-btn-label');
-    if (!ctaContainer) return;
-
-    ctaContainer.classList.remove('hidden');
-    if (arrowEl) arrowEl.innerHTML = '&uarr;';
-    if (btnLabel) btnLabel.innerText = '내 일상(앱)과 원리(책)로 이어가는 다음 단계:';
-
-    if (!isDeepDiveUnlocked) {
-      isDeepDiveUnlocked = true;
-      trackMindEvent('deep_dive_unlocked', { card_id: currentCard ? currentCard.id : null });
-
-      // 부드럽게 시선 안내
-      setTimeout(() => {
-        ctaContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 150);
+    isDeepDiveUnlocked = true;
+    const container = document.getElementById('deep-dive-cta-container');
+    const arrow = document.getElementById('deep-dive-arrow');
+    if (container) {
+      container.classList.remove('hidden');
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
     }
   }
 
-  // 7. 카드 다시 뽑기
+  // =================================================================
+  // 9. 다시 뽑기 (RESET)
+  // =================================================================
   window.resetMindCardSelection = function () {
+    currentCard = null;
     const homeView = document.getElementById('mind-home-view');
     const resultView = document.getElementById('mind-result-view');
-    const card3d = document.getElementById('mind-active-card-3d');
+    const card3D = document.getElementById('mind-active-card-3d');
 
-    if (card3d) card3d.classList.remove('is-revealed');
+    if (card3D) card3D.classList.remove('is-revealed');
+    if (resultView) resultView.classList.add('hidden');
+    if (homeView) homeView.classList.remove('hidden');
 
-    if (resultView && homeView) {
-      resultView.style.opacity = '0';
-      setTimeout(() => {
-        resultView.classList.add('hidden');
-        resultView.style.opacity = '1';
+    const statusText = document.getElementById('mind-deck-status-text');
+    if (statusText) statusText.innerText = "“오늘의 마음은 어떤 카드를 꺼낼까?”";
 
-        homeView.classList.remove('hidden');
-        homeView.style.opacity = '1';
-        homeView.style.transform = 'scale(1)';
-
-        const statusText = document.getElementById('mind-deck-status-text');
-        if (statusText) {
-          statusText.innerText = "오늘의 마음은 어떤 카드를 꺼낼까?";
-        }
-      }, 300);
-    }
+    const section = document.getElementById('daily-mind-card-section');
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  // 8. 모바일 스와이프 제스처
+  // =================================================================
+  // 10. 모바일 스와이프 제스처 지원 (390px 모바일 최적화)
+  // =================================================================
   function setupSwipeGesture() {
-    const deck = document.getElementById('mind-fanned-deck');
-    if (!deck) return;
+    const activeCard = document.getElementById('mind-active-card-3d');
+    if (!activeCard) return;
 
     let touchStartX = 0;
     let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
 
-    deck.addEventListener('touchstart', (e) => {
+    activeCard.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
 
-    deck.addEventListener('touchend', (e) => {
+    activeCard.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
       handleSwipe();
     }, { passive: true });
 
     function handleSwipe() {
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 40) {
-        window.shuffleMindCards();
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+      if (Math.abs(diffX) > 60 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+        if (diffX < 0) {
+          // Swipe Left -> 다른 카드 뽑기
+          pickMindCard(1);
+        } else {
+          // Swipe Right -> 섞기
+          shuffleMindCards();
+        }
       }
     }
   }
 
-  // 9. 이번 주의 발견 (로컬 스토리지 캐싱)
+  // =================================================================
+  // 11. 이번 주의 발견 (7일 히스토리 & 메타 성찰)
+  // =================================================================
   function saveToWeeklyDiscovery(card) {
+    if (!card) return;
     try {
-      const storageKey = 'mindflow_weekly_discovery';
-      let history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      const key = 'myeongsim_history_cards';
+      let history = [];
+      const raw = localStorage.getItem(key);
+      if (raw) history = JSON.parse(raw);
 
-      const today = new Date();
-      const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
-      const dayString = dayNames[today.getDay()];
+      const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+      const now = new Date();
+      const dayLabel = `${daysOfWeek[now.getDay()]}요일`;
 
+      // 중복 추가 방지 (동일 ID는 최신으로 이동)
       history = history.filter(item => item.id !== card.id);
       history.unshift({
         id: card.id,
         category: card.category,
         cardTitle: card.cardTitle,
-        day: dayString,
+        keyword: card.keyword,
+        day: dayLabel,
         timestamp: Date.now()
       });
 
-      if (history.length > 7) {
-        history = history.slice(0, 7);
-      }
-
-      localStorage.setItem(storageKey, JSON.stringify(history));
+      // 최대 7개 보관
+      history = history.slice(0, 7);
+      localStorage.setItem(key, JSON.stringify(history));
       renderWeeklyDiscovery();
     } catch (e) {
-      console.error(e);
+      // localStorage 불가 환경 대응
     }
   }
 
   function renderWeeklyDiscovery() {
+    const listEl = document.getElementById('weekly-discovery-list');
+    const freqEl = document.getElementById('weekly-frequent-pattern');
+    if (!listEl) return;
+
+    let history = [];
     try {
-      const container = document.getElementById('weekly-discovery-list');
-      const frequentInsight = document.getElementById('weekly-frequent-pattern');
-      if (!container) return;
+      const raw = localStorage.getItem('myeongsim_history_cards');
+      if (raw) history = JSON.parse(raw);
+    } catch (e) {}
 
-      const storageKey = 'mindflow_weekly_discovery';
-      const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    // 기록이 적은 경우 기본 4일 예시 스타터 팩 제공
+    if (!history || history.length === 0) {
+      history = [
+        { id: 'overchecking-01', cardTitle: '확인 모드', day: '월요일', category: '불확실성' },
+        { id: 'peoplepleaser-02', cardTitle: '착한 사람 모드', day: '화요일', category: '경계·관계' },
+        { id: 'perfectionism-10', cardTitle: '완벽 검열 모드', day: '목요일', category: '성과·완벽' },
+        { id: 'overchecking-01', cardTitle: '확인 모드', day: '토요일', category: '불확실성' }
+      ];
+    }
 
-      if (history.length === 0) {
-        container.innerHTML = `
-          <div class="py-3 text-center text-xs text-slate-400 font-medium">
-            아직 이번 주에 발견한 카드가 없습니다. 첫 카드를 뽑아보세요!
-          </div>
-        `;
-        if (frequentInsight) frequentInsight.innerText = "이번 주를 시작할 첫 카드를 발견해 보세요.";
-        return;
-      }
+    listEl.innerHTML = history.map(item => `
+      <button onclick="pickMindCard(0, '${item.id}')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
+        <span class="text-[10px] text-[#E2CF9F]">${item.day}</span>
+        <span>${item.cardTitle}</span>
+      </button>
+    `).join('');
 
-      let html = '';
-      const categoryCount = {};
-
+    // 가장 자주 등장한 모드 자동 계산
+    if (freqEl) {
+      const counts = {};
       history.forEach(item => {
-        categoryCount[item.category] = (categoryCount[item.category] || 0) + 1;
-        html += `
-          <div onclick="pickMindCard(0, '${item.id}')" class="px-3 py-1.5 rounded-xl bg-white/80 hover:bg-white border border-slate-200 hover:border-[#0F6B5B] transition shadow-2xs flex items-center justify-between gap-2.5 cursor-pointer group shrink-0">
-            <div class="flex items-center gap-1.5">
-              <span class="w-5 h-5 rounded-full bg-[#0F6B5B]/10 text-[#0F6B5B] text-[10px] font-black flex items-center justify-center">${item.day}</span>
-              <span class="text-xs font-bold text-slate-800 group-hover:text-[#0F6B5B]">${item.cardTitle}</span>
-            </div>
-            <span class="text-[10px] text-slate-400">[${item.category}]</span>
-          </div>
-        `;
+        counts[item.cardTitle] = (counts[item.cardTitle] || 0) + 1;
       });
-      container.innerHTML = html;
-
-      let maxCategory = "";
       let maxCount = 0;
-      for (const [cat, cnt] of Object.entries(categoryCount)) {
+      let frequentMode = '확인 모드';
+      for (const [mode, cnt] of Object.entries(counts)) {
         if (cnt > maxCount) {
           maxCount = cnt;
-          maxCategory = cat;
+          frequentMode = mode;
         }
       }
-
-      if (frequentInsight && maxCategory) {
-        frequentInsight.innerHTML = `이번 주 가장 자주 등장한 마음 영역: <strong class="text-[#0F6B5B] font-black">${maxCategory}</strong>`;
-      }
-    } catch (e) {
-      console.error(e);
+      freqEl.innerText = `💡 이번 주에는 '${frequentMode}'(${maxCount}회)가 가장 자주 관찰되었습니다.`;
     }
   }
 
-  // 10. 가로 스크롤 인기 질문 캐러셀 (300개 확장 지원: 카테고리별 분산 자동 선택)
+  // =================================================================
+  // 12. 요즘 사람들이 많이 마주하는 질문 (9대 큐레이션 캐러셀)
+  // =================================================================
   function renderPopularQuestions() {
-    const container = document.getElementById('popular-questions-carousel');
-    if (!container) return;
+    const carousel = document.getElementById('popular-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
 
-    if (!cardsData || cardsData.length === 0) return;
-
-    // 카테고리별 다양성을 보장하며 8개 대표 카드 자동 추출 (300개로 늘어나도 UI 자동 적응)
-    let popularCards = cardsData.filter(c => c.isPopular);
-    if (popularCards.length < 8) {
-      const categoriesSeen = new Set(popularCards.map(c => c.category));
-      for (const card of cardsData) {
-        if (!popularCards.some(p => p.id === card.id) && !categoriesSeen.has(card.category)) {
-          popularCards.push(card);
-          categoriesSeen.add(card.category);
-        }
-        if (popularCards.length >= 8) break;
-      }
-      if (popularCards.length < 8) {
-        for (const card of cardsData) {
-          if (!popularCards.some(p => p.id === card.id)) {
-            popularCards.push(card);
-          }
-          if (popularCards.length >= 8) break;
-        }
-      }
+    // 1. isFeatured 플래그가 있는 카드 우선 (9개)
+    let curated = cardsData.filter(c => c.isFeatured);
+    if (curated.length < 9) {
+      // 9개가 안 되면 인기순 카드로 채움
+      const remaining = cardsData.filter(c => !c.isFeatured)
+        .sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+      curated = curated.concat(remaining).slice(0, 9);
     }
 
-    let html = '';
-    popularCards.forEach(c => {
-      html += `
-        <div onclick="pickMindCard(0, '${c.id}')" class="min-w-[260px] max-w-[280px] p-5 rounded-2xl bg-[#F7F4EC] border border-[#0F6B5B]/20 hover:border-[#0F6B5B] transition shadow-2xs hover:shadow-sm cursor-pointer flex flex-col justify-between group shrink-0 select-none">
-          <div class="space-y-2">
-            <span class="inline-block px-2 py-0.5 rounded-full bg-white text-[#0F6B5B] text-[10px] font-bold border border-[#0F6B5B]/20">
-              ${c.category} · ${c.cardTitle}
+    carousel.innerHTML = curated.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#0F6B5B]/10 text-[#0F6B5B] font-black text-[10px]">
+              ${card.category}
             </span>
-            <p class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#0F6B5B] leading-snug">
-              ${c.question}
-            </p>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-[#0F6B5B] font-bold">
-            <span>내 패턴 확인하기</span>
-            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
-          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#0F6B5B] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
         </div>
-      `;
-    });
-
-    container.innerHTML = html;
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#0F6B5B]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
   }
 
-  // 11. 자연어 검색 (300개 이상의 카드도 V8 메모리에서 2ms 내 초고속 필터링)
-  window.handleMindCardSearch = function (query) {
-    const dropdown = document.getElementById('mind-search-dropdown');
-    if (!dropdown) return;
+  // =================================================================
+  // 13. 자연어 일상 고민 검색 (입구 B)
+  // =================================================================
+  window.handleMindCardSearch = function (rawQuery) {
+    const resultsBox = document.getElementById('mind-search-results-box');
+    const clearBtn = document.getElementById('mind-search-clear-btn');
+    if (!resultsBox) return;
 
-    const q = (query || "").trim().toLowerCase();
-    if (q.length < 1) {
-      dropdown.classList.add('hidden');
-      return;
+    const query = (rawQuery || '').trim().toLowerCase();
+
+    if (clearBtn) {
+      if (query.length > 0) clearBtn.classList.remove('hidden');
+      else clearBtn.classList.add('hidden');
     }
 
-    const matches = cardsData.filter(c => {
-      return (
-        (c.question && c.question.toLowerCase().includes(q)) ||
-        (c.cardTitle && c.cardTitle.toLowerCase().includes(q)) ||
-        (c.category && c.category.toLowerCase().includes(q)) ||
-        (c.keyword && c.keyword.toLowerCase().includes(q)) ||
-        (c.sodaAnswer && c.sodaAnswer.toLowerCase().includes(q)) ||
-        (c.searchKeywords && Array.isArray(c.searchKeywords) && c.searchKeywords.some(k => k.toLowerCase().includes(q)))
-      );
-    });
+    let matched = [];
+    if (!query) {
+      // 쿼리가 없을 때: 기본 추천 질문 4개 노출
+      matched = cardsData.filter(c => c.isFeatured).slice(0, 4);
+      if (matched.length === 0) matched = cardsData.slice(0, 4);
+    } else {
+      matched = cardsData.filter(c => {
+        const qText = (c.question || '').toLowerCase();
+        const kw = (c.keyword || '').toLowerCase();
+        const title = (c.cardTitle || '').toLowerCase();
+        const cat = (c.category || '').toLowerCase();
+        const answer = (c.sodaAnswer || '').toLowerCase();
+        const tags = Array.isArray(c.searchKeywords) ? c.searchKeywords.join(' ').toLowerCase() : '';
+        return qText.includes(query) || kw.includes(query) || title.includes(query) || cat.includes(query) || tags.includes(query) || answer.includes(query);
+      }).slice(0, 5);
+    }
 
-    if (matches.length === 0) {
-      dropdown.innerHTML = `
-        <div class="p-4 text-center text-xs text-slate-500 font-medium">
-          일치하는 명심 카드를 찾지 못했습니다.<br />
-          <span class="text-[#0F6B5B] font-bold">"거절", "확인", "답장", "불안"</span> 등으로 검색해 보세요.
+    // 헤더: “당신을 규정하는 결과가 아닙니다. 지금 상황과 가까운 질문부터 골라보세요.”
+    let html = `
+      <div class="mb-2">
+        <div class="text-xs sm:text-sm font-black text-[#E2CF9F] leading-snug">
+          “당신을 규정하는 결과가 아닙니다.<br class="sm:hidden" /> 지금 상황과 가까운 질문부터 골라보세요.”
+        </div>
+        <div class="text-[10px] text-slate-400 mt-0.5">상황에 맞는 사이다 질문과 1분 SCAN으로 이어집니다.</div>
+      </div>
+    `;
+
+    if (matched.length === 0) {
+      html += `
+        <div class="p-4 rounded-xl bg-white/5 text-center text-xs text-slate-400">
+          일치하는 카드가 없습니다. '답장', '거절', '확인', '불안' 등 다른 키워드로 검색해보세요.
         </div>
       `;
     } else {
-      let html = '';
-      matches.slice(0, 6).forEach(m => {
-        html += `
-          <div onclick="pickMindCard(0, '${m.id}'); closeMindSearchDropdown();" class="p-3.5 hover:bg-emerald-50/60 transition cursor-pointer border-b border-slate-100 last:border-0 text-left">
-            <div class="flex items-center gap-1.5 mb-1">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#0F6B5B]/10 text-[#0F6B5B]">${m.category}</span>
-              <span class="text-xs font-bold text-slate-800">${m.cardTitle}</span>
+      html += matched.map(card => `
+        <div onclick="pickMindCard(0, '${card.id}')" class="p-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#C7A86B] transition-all cursor-pointer flex items-center justify-between gap-3 group">
+          <div class="space-y-0.5">
+            <div class="flex items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded-md bg-[#0F6B5B] text-white text-[9px] font-bold">
+                ${card.category}
+              </span>
+              <span class="text-[10px] text-[#E2CF9F] font-bold">${card.cardTitle}</span>
             </div>
-            <div class="text-xs font-bold text-slate-900 leading-snug line-clamp-1">${m.question}</div>
+            <p class="text-xs font-black text-white group-hover:text-emerald-300 transition-colors leading-snug">
+              ${card.question}
+            </p>
           </div>
-        `;
-      });
-      dropdown.innerHTML = html;
+          <span class="text-[#E2CF9F] text-xs font-black shrink-0">&rarr;</span>
+        </div>
+      `).join('');
     }
 
-    dropdown.classList.remove('hidden');
+    resultsBox.innerHTML = html;
   };
 
-  window.closeMindSearchDropdown = function () {
-    const dropdown = document.getElementById('mind-search-dropdown');
-    if (dropdown) dropdown.classList.add('hidden');
-  };
-
-  // 12. 토스트
+  // =================================================================
+  // 14. 토스트 알림
+  // =================================================================
   function showToastNotification(msg) {
     const toast = document.getElementById('mind-toast');
     const toastText = document.getElementById('mind-toast-text');
@@ -641,7 +819,9 @@
     }, 3200);
   }
 
-  // 13. 복사
+  // =================================================================
+  // 15. 카드 복사
+  // =================================================================
   window.copyMindCardResult = function () {
     if (!currentCard) return;
     const shareText = `🌿 [마인드플로우 랩 · 오늘의 명심 카드]
@@ -651,13 +831,15 @@ Q. ${currentCard.question}
 💡 사이다 통찰:
 ${currentCard.sodaAnswer}
 
-🔍 1분 SCAN:
-${currentCard.scanQuestion}
+🔍 1분 SCAN 관찰:
+- FACT: ${currentCard.factQuestion}
+- STORY: ${currentCard.storyQuestion}
+- UNKNOWN: ${currentCard.unknownQuestion}
 
 ⚡ 오늘 10% 실천:
 ${currentCard.tenPercentAction}
 
-“지금 올라오는 반응은 존중하되, 다음 행동의 결재권까지 넘기지는 마세요.”
+“이것은 성격진단이 아니라 오늘의 작동기록입니다.”
 — 마인드플로우 랩 명심코칭`;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
