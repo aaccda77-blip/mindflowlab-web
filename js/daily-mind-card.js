@@ -1,7 +1,7 @@
 /**
  * =================================================================
- * MYUNGSIM DAILY INSIGHT · PROGRESSIVE COACHING CONTROLLER
- * 명심코칭 "오늘의 명심 카드" 단계별(Step-by-Step) 코칭 엔진
+ * MYUNGSIM DAILY INSIGHT · STREAMLINED 30-SECOND COACHING ENGINE
+ * 명심코칭 "오늘의 명심 카드" 초간결 30초 단일 몰입 코칭 컨트롤러
  * =================================================================
  */
 
@@ -9,8 +9,8 @@
   'use strict';
 
   let currentCard = null;
-  let currentStep = 1;
   let isShuffling = false;
+  let isDeepDiveUnlocked = false;
 
   // 이벤트 트래킹 (개인 심리 데이터 미포함)
   function trackMindEvent(eventName, payload) {
@@ -60,7 +60,7 @@
     trackMindEvent('card_shuffle');
   };
 
-  // 2. 카드 선택 및 3D 플립 (PICK & REVEAL)
+  // 2. 카드 선택 및 3D 플립 (PICK & REVEAL -> 30초 몰입 카드)
   window.pickMindCard = function (slotIndex, customCardId) {
     if (isShuffling) return;
 
@@ -75,6 +75,7 @@
     }
 
     currentCard = selectedCard;
+    isDeepDiveUnlocked = false;
     trackMindEvent('card_selected', { card_id: selectedCard.id, slot: slotIndex });
 
     // 히스토리 저장
@@ -83,13 +84,18 @@
     // 데이터 바인딩
     bindCardData(selectedCard);
 
-    // 1단계로 리셋
-    goToMindStep(1, false);
-
-    // 화면 전환
+    // 화면 전환 (1단 클릭으로 30초 내 즉시 도달)
     const homeView = document.getElementById('mind-home-view');
     const resultView = document.getElementById('mind-result-view');
     const card3d = document.getElementById('mind-active-card-3d');
+
+    // 딥다이브 접어두기 (답변을 충분히 본 뒤에만 노출)
+    const ctaContainer = document.getElementById('deep-dive-cta-container');
+    const arrowEl = document.getElementById('deep-dive-arrow');
+    const btnLabel = document.getElementById('deep-dive-btn-label');
+    if (ctaContainer) ctaContainer.classList.add('hidden');
+    if (arrowEl) arrowEl.innerHTML = '&darr;';
+    if (btnLabel) btnLabel.innerText = '답변을 충분히 보셨나요? 내 일상과 책으로 더 깊이 이어가기';
 
     if (homeView && resultView && card3d) {
       homeView.style.opacity = '0';
@@ -102,7 +108,6 @@
         requestAnimationFrame(() => {
           card3d.classList.add('is-revealed');
           trackMindEvent('card_revealed', { card_id: selectedCard.id });
-          trackMindEvent('soda_answer_viewed', { card_id: selectedCard.id });
         });
 
         const stage = document.getElementById('daily-mind-card-section');
@@ -113,72 +118,75 @@
     }
   };
 
-  // 3. 5단계 프로그레시브 스텝퍼 (Step 1 -> 5)
-  window.goToMindStep = function (stepNumber, smoothScroll = true) {
-    currentStep = stepNumber;
+  // 3. 데이터 바인딩
+  function bindCardData(card) {
+    // 카드 헤더
+    setElText('card-category-chip', card.category);
+    setElText('card-title-text', card.cardTitle);
+    setElText('card-question-text', card.question);
 
-    // 모든 스텝 숨기기
-    for (let i = 1; i <= 5; i++) {
-      const stepEl = document.getElementById(`mind-step-${i}`);
-      const indicator = document.getElementById(`step-indicator-${i}`);
-      if (stepEl) {
-        stepEl.classList.remove('is-active');
-      }
-      if (indicator) {
-        if (i === stepNumber) {
-          indicator.classList.remove('bg-slate-200', 'text-slate-500');
-          indicator.classList.add('bg-[#0F6B5B]', 'text-white', 'font-black', 'shadow-xs');
-        } else if (i < stepNumber) {
-          indicator.classList.remove('bg-slate-200', 'text-slate-500');
-          indicator.classList.add('bg-emerald-100', 'text-[#0F6B5B]', 'font-bold');
-        } else {
-          indicator.classList.remove('bg-[#0F6B5B]', 'text-white', 'bg-emerald-100', 'font-black');
-          indicator.classList.add('bg-slate-200', 'text-slate-500', 'font-medium');
-        }
-      }
+    // 1. 사이다 답변
+    setElText('soda-answer-lead', card.sodaAnswer);
+    setElText('soda-answer-desc', card.description);
+
+    // 2. 1분 SCAN 질문 하나
+    setElText('coach-scan-text', card.scanQuestion);
+    const feedbackBox = document.getElementById('curiosity-feedback-box');
+    if (feedbackBox) feedbackBox.classList.add('hidden');
+    document.querySelectorAll('.curiosity-chip').forEach(btn => {
+      btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+    });
+
+    // 3. 오늘의 10% 실천 행동
+    setElText('ten-percent-action-text', card.tenPercentAction);
+    const actionCheckbox = document.getElementById('ten-percent-action-check');
+    if (actionCheckbox) actionCheckbox.checked = false;
+
+    // 4. 앱/책 CTA (답변을 본 뒤 노출될 영역 데이터)
+    setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");
+    setElText('app-subtext-label', card.appSubtext || "오늘 겪은 한 장면에서 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
+    const appBtn = document.getElementById('mind-app-cta-btn');
+    if (appBtn) {
+      appBtn.href = `${MIND_CONFIG.APP_URL}?card=${encodeURIComponent(card.id)}&focus=1`;
     }
 
-    // 진행 바 게이지 업데이트
-    const progressBar = document.getElementById('mind-progress-bar');
-    if (progressBar) {
-      progressBar.style.width = `${(stepNumber / 5) * 100}%`;
-    }
+    setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
+    setElText('book-chapter-label', card.bookChapter || "관련 챕터");
+    setElText('book-subtext-label', card.bookSubtext || "왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책에서 원리를 탐구합니다.");
+    setElText('book-cta-label', card.bookCTA || "이 질문의 뿌리 더 읽기");
 
-    // 현재 스텝 표시
-    const activeStepEl = document.getElementById(`mind-step-${stepNumber}`);
-    if (activeStepEl) {
-      activeStepEl.classList.add('is-active');
-    }
-
-    // 단계별 트래킹
-    if (stepNumber === 2) trackMindEvent('curiosity_bridge_viewed');
-    if (stepNumber === 3) trackMindEvent('scan_started');
-    if (stepNumber === 4) trackMindEvent('action_step_viewed');
-    if (stepNumber === 5) trackMindEvent('deep_dive_viewed');
-
-    // 부드러운 스크롤
-    if (smoothScroll) {
-      const stepAnchor = document.getElementById('mind-step-anchor');
-      if (stepAnchor) {
-        stepAnchor.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const bookBtn = document.getElementById('mind-book-cta-btn');
+    if (bookBtn) {
+      if (card.relatedBook === "다크 코드") {
+        bookBtn.href = MIND_CONFIG.DARK_CODE_BOOK_URL;
+      } else if (card.relatedBook === "뉴럴 코드") {
+        bookBtn.href = MIND_CONFIG.NEURAL_CODE_BOOK_URL;
+      } else {
+        bookBtn.href = MIND_CONFIG.ZERO_POINT_BOOK_URL;
       }
     }
-  };
+  }
 
-  // 4. Step 2 개인화 궁금증 칩 선택 피드백
+  function setElText(id, text) {
+    const el = document.getElementById(id);
+    if (el) el.innerText = text;
+  }
+
+  // 4. 1분 SCAN 트리거 칩 선택 (가벼운 1터치 참여)
   window.selectCuriosityTrigger = function (triggerType) {
     const feedbackBox = document.getElementById('curiosity-feedback-box');
     const feedbackText = document.getElementById('curiosity-feedback-text');
 
     const labels = {
       thought: "생각 (머릿속 소설/해석)",
-      body: "몸의 신호 (가슴 답답함, 긴장)",
-      impulse: "충동 (안절부절, 버럭)",
+      body: "몸의 신호 (가슴 답답함, 목 긴장)",
+      impulse: "충동 (안절부절, 조급함)",
       action: "자동 행동 (반복확인, 회피)"
     };
 
     if (feedbackBox && feedbackText) {
-      feedbackText.innerHTML = `내 안에서 <strong>‘${labels[triggerType] || triggerType}’</strong>이(가) 가장 먼저 켜진다는 것을 발견하셨군요. 바로 다음 1분 SCAN에서 이 반응을 바라봅니다.`;
+      feedbackText.innerHTML = `내 안에서 <strong>‘${labels[triggerType] || triggerType}’</strong>이(가) 가장 먼저 켜지는군요. 이 반응과 싸우지 않고 알아차려 봅니다.`;
       feedbackBox.classList.remove('hidden');
     }
 
@@ -197,65 +205,17 @@
     trackMindEvent('trigger_type_selected', { trigger: triggerType });
   };
 
-  // 5. 데이터 바인딩 (경험 중심 전환 UX 정밀 매칭)
-  function bindCardData(card) {
-    // 카드 기본 헤더
-    setElText('card-category-chip', card.category);
-    setElText('card-title-text', card.cardTitle);
-    setElText('card-question-text', card.question);
+  // 5. 10% 실천 체크 및 액션
+  window.toggleTenPercentAction = function (isChecked) {
+    if (isChecked) {
+      trackMindEvent('ten_percent_action_selected', { card_id: currentCard ? currentCard.id : null });
+      showToastNotification("✨ 오늘 10% 다른 행동을 선택하셨습니다! 작은 실천이 뇌 회로를 바꿉니다.");
 
-    // Step 1: 사이다 답변 & "내 경우에는 어떨까?" 호기심 브릿지
-    setElText('soda-answer-lead', card.sodaAnswer);
-    setElText('soda-answer-desc', card.description);
-    setElText('soda-curiosity-text', card.curiosityQuestion || "내 일상에서는 어떤 순간에 이 신호가 가장 먼저 켜지고 있을까?");
-
-    // Step 2: 개인화 궁금증
-    setElText('curiosity-bridge-question', card.curiosityQuestion);
-    const feedbackBox = document.getElementById('curiosity-feedback-box');
-    if (feedbackBox) feedbackBox.classList.add('hidden');
-    document.querySelectorAll('.curiosity-chip').forEach(btn => {
-      btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
-      btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
-    });
-
-    // Step 3: 3S 코칭
-    setElText('coach-scan-text', card.scanQuestion);
-    setElText('coach-sync-text', card.syncSentence);
-    setElText('coach-shift-text', card.shiftQuestion);
-
-    // Step 4: 10% 실천 행동
-    setElText('ten-percent-action-text', card.tenPercentAction);
-    const actionCheckbox = document.getElementById('ten-percent-action-check');
-    if (actionCheckbox) actionCheckbox.checked = false;
-
-    // Step 5: 앱/책 맞춤 매칭 듀얼 전환 CTA
-    // 5-1. 앱 CTA (자기적용과 실천)
-    setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");
-    setElText('app-subtext-label', card.appSubtext || "오늘 내가 겪은 한 장면을 떠올려 1분 만에 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
-    const appBtn = document.getElementById('mind-app-cta-btn');
-    if (appBtn) {
-      appBtn.href = `${MIND_CONFIG.APP_URL}?card=${encodeURIComponent(card.id)}&focus=1`;
+      // 답변과 10% 실천까지 마친 사용자에게 자동으로 앱/책 심층 섹션을 열어줌
+      unlockDeepDiveCTA();
     }
+  };
 
-    // 5-2. 책 CTA (원리와 깊은 이해)
-    setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
-    setElText('book-chapter-label', card.bookChapter || "관련 챕터");
-    setElText('book-subtext-label', card.bookSubtext || "왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책의 해당 챕터에서 원리를 탐구합니다.");
-    setElText('book-cta-label', card.bookCTA || "이 질문의 뿌리 더 읽기");
-
-    const bookBtn = document.getElementById('mind-book-cta-btn');
-    if (bookBtn) {
-      if (card.relatedBook === "다크 코드") {
-        bookBtn.href = MIND_CONFIG.DARK_CODE_BOOK_URL;
-      } else if (card.relatedBook === "뉴럴 코드") {
-        bookBtn.href = MIND_CONFIG.NEURAL_CODE_BOOK_URL;
-      } else {
-        bookBtn.href = MIND_CONFIG.ZERO_POINT_BOOK_URL;
-      }
-    }
-  }
-
-  // Step 4에서 버튼 하나로 10% 행동을 즉시 시작할 수 있도록 돕는 인터랙션
   window.triggerTenPercentAction = function () {
     const actionCheckbox = document.getElementById('ten-percent-action-check');
     if (actionCheckbox) {
@@ -264,18 +224,42 @@
     }
   };
 
-  function setElText(id, text) {
-    const el = document.getElementById(id);
-    if (el) el.innerText = text;
-  }
+  // 6. 답변을 충분히 본 뒤에만 노출되는 앱/책 CTA 토글
+  window.toggleDeepDiveCTA = function () {
+    const ctaContainer = document.getElementById('deep-dive-cta-container');
+    const arrowEl = document.getElementById('deep-dive-arrow');
+    const btnLabel = document.getElementById('deep-dive-btn-label');
+    if (!ctaContainer) return;
 
-  // 6. 10% 실천 체크박스
-  window.toggleTenPercentAction = function (isChecked) {
-    if (isChecked) {
-      trackMindEvent('ten_percent_action_selected', { card_id: currentCard ? currentCard.id : null });
-      showToastNotification("✨ 오늘 10% 다른 행동을 선택하셨습니다! 작은 실천이 변화의 시작입니다.");
+    if (ctaContainer.classList.contains('hidden')) {
+      unlockDeepDiveCTA();
+    } else {
+      ctaContainer.classList.add('hidden');
+      if (arrowEl) arrowEl.innerHTML = '&darr;';
+      if (btnLabel) btnLabel.innerText = '답변을 충분히 보셨나요? 내 일상과 책으로 더 깊이 이어가기';
     }
   };
+
+  function unlockDeepDiveCTA() {
+    const ctaContainer = document.getElementById('deep-dive-cta-container');
+    const arrowEl = document.getElementById('deep-dive-arrow');
+    const btnLabel = document.getElementById('deep-dive-btn-label');
+    if (!ctaContainer) return;
+
+    ctaContainer.classList.remove('hidden');
+    if (arrowEl) arrowEl.innerHTML = '&uarr;';
+    if (btnLabel) btnLabel.innerText = '내 일상(앱)과 원리(책)로 이어가는 다음 단계:';
+
+    if (!isDeepDiveUnlocked) {
+      isDeepDiveUnlocked = true;
+      trackMindEvent('deep_dive_unlocked', { card_id: currentCard ? currentCard.id : null });
+
+      // 부드럽게 시선 안내
+      setTimeout(() => {
+        ctaContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 150);
+    }
+  }
 
   // 7. 카드 다시 뽑기
   window.resetMindCardSelection = function () {
@@ -317,32 +301,41 @@
 
     deck.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      if (Math.abs(touchEndX - touchStartX) > 40) {
-        shuffleMindCards();
-      }
+      handleSwipe();
     }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        window.shuffleMindCards();
+      }
+    }
   }
 
-  // 9. 히스토리: 이번 주의 발견
+  // 9. 이번 주의 발견 (로컬 스토리지 캐싱)
   function saveToWeeklyDiscovery(card) {
     try {
-      const now = new Date();
-      const days = ['일', '월', '화', '수', '목', '금', '토'];
-      const dayName = days[now.getDay()];
+      const storageKey = 'mindflow_weekly_discovery';
+      let history = JSON.parse(localStorage.getItem(storageKey) || '[]');
 
-      let history = JSON.parse(localStorage.getItem('myungsim_weekly_discovery') || '[]');
-      history = history.filter(item => item.day !== dayName);
+      const today = new Date();
+      const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
+      const dayString = dayNames[today.getDay()];
 
+      history = history.filter(item => item.id !== card.id);
       history.unshift({
         id: card.id,
-        day: dayName,
-        cardTitle: card.cardTitle,
         category: card.category,
-        dateStr: `${now.getMonth() + 1}/${now.getDate()}`
+        cardTitle: card.cardTitle,
+        day: dayString,
+        timestamp: Date.now()
       });
 
-      if (history.length > 7) history = history.slice(0, 7);
-      localStorage.setItem('myungsim_weekly_discovery', JSON.stringify(history));
+      if (history.length > 7) {
+        history = history.slice(0, 7);
+      }
+
+      localStorage.setItem(storageKey, JSON.stringify(history));
       renderWeeklyDiscovery();
     } catch (e) {
       console.error(e);
@@ -350,12 +343,14 @@
   }
 
   function renderWeeklyDiscovery() {
-    const container = document.getElementById('weekly-discovery-list');
-    const frequentInsight = document.getElementById('weekly-frequent-pattern');
-    if (!container) return;
-
     try {
-      const history = JSON.parse(localStorage.getItem('myungsim_weekly_discovery') || '[]');
+      const container = document.getElementById('weekly-discovery-list');
+      const frequentInsight = document.getElementById('weekly-frequent-pattern');
+      if (!container) return;
+
+      const storageKey = 'mindflow_weekly_discovery';
+      const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+
       if (history.length === 0) {
         container.innerHTML = `
           <div class="py-3 text-center text-xs text-slate-400 font-medium">
@@ -443,13 +438,13 @@
     container.innerHTML = html;
   }
 
-  // 11. 일상 검색
+  // 11. 자연어 검색
   window.handleMindCardSearch = function (query) {
-    const q = (query || '').toLowerCase().trim();
     const dropdown = document.getElementById('mind-search-dropdown');
     if (!dropdown) return;
 
-    if (!q) {
+    const q = (query || "").trim().toLowerCase();
+    if (q.length < 1) {
       dropdown.classList.add('hidden');
       return;
     }
@@ -520,6 +515,9 @@ Q. ${currentCard.question}
 
 💡 사이다 통찰:
 ${currentCard.sodaAnswer}
+
+🔍 1분 SCAN:
+${currentCard.scanQuestion}
 
 ⚡ 오늘 10% 실천:
 ${currentCard.tenPercentAction}
