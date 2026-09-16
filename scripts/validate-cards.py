@@ -109,8 +109,8 @@ def main():
                     errors.append(f"Card #{i+1} ({cid}): 'isFeatured' must be a boolean")
                 elif req == 'popularity' and not isinstance(val, (int, float)):
                     errors.append(f"Card #{i+1} ({cid}): 'popularity' must be a number")
-                elif req == 'relatedBook' and val not in ["다크 코드", "뉴럴 코드", "제로 포인트"]:
-                    errors.append(f"Card #{i+1} ({cid}): 'relatedBook' must be one of ['다크 코드', '뉴럴 코드', '제로 포인트'] (got '{val}')")
+                elif req == 'relatedBook' and val not in ["다크 코드", "뉴럴 코드", "제로 포인트", "나는 믿는다 그러나 갇히지 않는다"]:
+                    errors.append(f"Card #{i+1} ({cid}): 'relatedBook' must be one of ['다크 코드', '뉴럴 코드', '제로 포인트', '나는 믿는다 그러나 갇히지 않는다'] (got '{val}')")
 
     if errors:
         print(f"\n❌ FAILED: Found {len(errors)} validation errors:")

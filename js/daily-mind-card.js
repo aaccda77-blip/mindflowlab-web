@@ -107,6 +107,8 @@
       return cfg.NEURAL_CODE_URL || cfg.NEURAL_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
     } else if (bookTitle.includes('제로')) {
       return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+    } else if (bookTitle.includes('믿는다') || bookTitle.includes('갇히지')) {
+      return cfg.BELIEF_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
     }
     return cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
   }
@@ -169,10 +171,12 @@
     await Promise.all([ensureServiceConfig(), ensureCardsData()]);
     trackMindEvent('career_pack_view', { packId: 'career-burnout-01', source: 'home_load' });
     trackMindEvent('perfection_pack_view', { packId: 'perfection-approval-comparison-01', source: 'home_load' });
+    trackMindEvent('family_pack_view', { packId: 'family-boundary-01', source: 'home_load' });
     renderPopularQuestions();
     renderMoneyQuestions();
     renderCareerQuestions();
     renderPerfectionQuestions();
+    renderFamilyQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
     // 기본 검색 제안 렌더링
@@ -326,6 +330,11 @@
       trackMindEvent('perfection_card_open', { cardId: currentCard.id, category: currentCard.category });
       trackMindEvent('perfection_card_reveal', { cardId: currentCard.id, category: currentCard.category });
     }
+    // 부모·가족·독립 명심카드 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('family_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
 
     // 화면 전환
     const homeView = document.getElementById('mind-home-view');
@@ -456,9 +465,10 @@
       bridgeBookBtn.href = resolveBookUrl(card, config);
     }
 
-    // PACK 04 전용 Curiosity Bridge 및 특수 인터랙션 분기
+    // PACK 04 & PACK 05 전용 Curiosity Bridge 및 특수 인터랙션 분기
     updatePackCuriosityBridge(card);
     renderPack04SpecialInteraction(card);
+    renderPack05SpecialInteraction(card);
 
     // CTA 영역 초기화
     isDeepDiveUnlocked = false;
@@ -492,6 +502,9 @@
     if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
       trackMindEvent('perfection_app_click', { source: source || 'app_cta', cardId: currentCard.id });
     }
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+    }
   };
 
   window.handleMindBookClick = function (source) {
@@ -507,6 +520,9 @@
     }
     if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
       trackMindEvent('perfection_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
     }
   };
 
@@ -525,6 +541,9 @@
     }
     if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
       trackMindEvent('perfection_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
+    }
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
     }
     setElText('curiosity-bridge-question', `“${qText}”`);
     
@@ -562,6 +581,9 @@
     if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
       trackMindEvent('perfection_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
     }
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'body' });
+    }
     const mapping = {
       chest: '가슴 조임/답답함',
       neck: '목·어깨 굳음',
@@ -595,6 +617,9 @@
     }
     if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
       trackMindEvent('perfection_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
+    }
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_scan_start', { cardId: currentCard.id, category: currentCard.category, scanType: 'impulse' });
     }
     const mapping = {
       check: '거듭 확인하고 통제하기',
@@ -662,6 +687,9 @@
     if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
       trackMindEvent('perfection_scan_complete', { cardId: currentCard.id, category: currentCard.category });
     }
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_scan_complete', { cardId: currentCard.id, category: currentCard.category });
+    }
     showToastNotification("🧭 오늘의 작동지도가 생성되었습니다! 진단이 아닌 오늘의 기록입니다.");
   };
 
@@ -705,6 +733,9 @@
     }
     if (currentCard && (currentCard.packId === 'perfection-approval-comparison-01' || (currentCard.id && currentCard.id.startsWith('perf-')))) {
       trackMindEvent('perfection_action_select', { cardId: currentCard.id, category: currentCard.category });
+    }
+    if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
+      trackMindEvent('family_action_select', { cardId: currentCard.id, category: currentCard.category });
     }
   };
 
@@ -882,13 +913,31 @@
   // =================================================================
   function updatePackCuriosityBridge(card) {
     const isPack04 = card && (card.packId === 'perfection-approval-comparison-01' || (card.id && card.id.startsWith('perf-')));
+    const isPack05 = card && (card.packId === 'family-boundary-01' || (card.id && card.id.startsWith('fam-')));
     const bridgeQ = document.getElementById('curiosity-bridge-question');
     const bridgeSub = document.getElementById('curiosity-bridge-sub');
     const bridgeChipsContainer = document.querySelector('.curiosity-preset-chip')?.parentElement;
 
     if (!bridgeChipsContainer) return;
 
-    if (isPack04) {
+    if (isPack05) {
+      if (bridgeQ) bridgeQ.innerText = '“가족 안에서 나는 무엇을 지키려다 내 경계를 잃어버렸을까?”';
+      if (bridgeSub) bridgeSub.innerText = '정답을 고르는 검사가 아닙니다. 가족 관계에서 가장 먼저 켜지는 내 마음의 브레이크를 살펴봅니다.';
+      bridgeChipsContainer.innerHTML = `
+        <button type="button" onclick="selectCuriosityQuestion('거절하면 부모님이 상처받을까 봐 두려웠던 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#E11D48] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">💔</span><span>“거절하면 상처받을까 봐?”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('인정받지 못하면 내 존재가 부정당할 것 같았을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#E11D48] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">🏆</span><span>“인정받지 못하면 부정당할까 봐?”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('가족의 불행이 다 내 탓처럼 느껴졌던 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#E11D48] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">🌧️</span><span>“가족의 불행이 다 내 탓 같아서?”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('경계를 그으면 나쁜 자식이 될까 봐 무서웠던 걸까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#E11D48] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">🛡️</span><span>“경계를 그으면 나쁜 자식 될까 봐?”</span>
+        </button>
+      `;
+    } else if (isPack04) {
       if (bridgeQ) bridgeQ.innerText = '“그런데 나는 무엇을 지키려고 이렇게까지 잘하려고 했을까?”';
       if (bridgeSub) bridgeSub.innerText = '정답을 고르는 검사가 아닙니다. 지금 가장 가까운 표현을 골라도 되고, 직접 써도 됩니다.';
       bridgeChipsContainer.innerHTML = `
@@ -1132,6 +1181,297 @@
     trackMindEvent('perfection_action_select', { type: 'score_toggle', domain: type });
   };
 
+
+  // =================================================================
+  // 11-2. PACK 05 전용 미니 인터랙션 렌더러 (책임 장부 / 경계 vs 통제 / 사랑 AND 경계 / 위기 안전망)
+  // =================================================================
+  function renderPack05SpecialInteraction(card) {
+    const container = document.getElementById('pack05-special-interaction-container');
+    if (!container) return;
+
+    if (!card || (card.packId !== 'family-boundary-01' && !card.id.startsWith('fam-'))) {
+      container.classList.add('hidden');
+      container.innerHTML = '';
+      return;
+    }
+
+    container.classList.remove('hidden');
+
+    const isSafetyAlert = card.interactionType === 'safety_route' || card.id === 'fam-006' || card.id === 'fam-019';
+    let safetyHtml = '';
+    if (isSafetyAlert) {
+      trackMindEvent('safety_route_view', { cardId: card.id });
+      safetyHtml = `
+        <div class="p-3.5 rounded-xl bg-gradient-to-r from-rose-500/15 via-red-50 to-amber-50 border-2 border-rose-300 text-slate-800 space-y-2 mb-3 shadow-2xs">
+          <div class="flex items-center gap-2 text-rose-700 font-black text-xs">
+            <span class="text-sm">🚨</span>
+            <span>긴급 안내 · 심리적 조언보다 신체적·법적 안전이 최우선입니다</span>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed">
+            지속적인 폭력, 폭언, 심각한 통제나 착취는 마음가짐으로 인내할 문제가 아닙니다. 안전한 물리적 거리와 전문 기관의 보호가 가장 먼저 필요합니다.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-bold">
+            <a href="tel:1366" class="px-2.5 py-1 rounded-lg bg-rose-600 text-white hover:bg-rose-700 transition flex items-center gap-1">
+              <span>📞 여성긴급전화 1366</span>
+            </a>
+            <a href="tel:112" class="px-2.5 py-1 rounded-lg bg-slate-800 text-white hover:bg-slate-900 transition flex items-center gap-1">
+              <span>👮 경찰청 112</span>
+            </a>
+            <a href="tel:132" class="px-2.5 py-1 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition flex items-center gap-1">
+              <span>⚖️ 대한법률구조공단 132</span>
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    if (card.interactionType === 'boundary_vs_control') {
+      // INTERACTION 2: BOUNDARY vs CONTROL
+      container.innerHTML = `
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-rose-50/80 via-white to-amber-50/60 border-2 border-rose-200 shadow-xs space-y-3.5">
+          ${safetyHtml}
+          <div class="flex items-center justify-between border-b border-rose-100 pb-2">
+            <div class="flex items-center gap-1.5 text-rose-700 font-black text-xs">
+              <span>⚖️</span>
+              <span>경계인가, 통제인가? (BOUNDARY vs CONTROL)</span>
+            </div>
+            <span class="text-[9px] font-bold text-rose-700 bg-white px-2 py-0.5 rounded-full border border-rose-200">행동 한계선</span>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            통제는 상대를 바꾸려 하고, 경계는 내가 무엇을 할지 결정합니다. 상대의 반응 대신 나의 행동 선을 정해봅니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+            <!-- 통제 시도 -->
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1.5 opacity-80">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-black text-slate-500">❌ 통제 (상대에게 향함)</span>
+                <span class="text-[9px] text-slate-400 font-bold">통제 불가</span>
+              </div>
+              <p class="text-[11px] text-slate-600 line-through">“부모님이 간섭하지 않게 설득해야 해”</p>
+              <p class="text-[11px] text-slate-600 line-through">“부모님이 내 결정에 서운해하지 말아야 해”</p>
+              <span class="text-[9px] text-slate-400 block pt-1">* 상대의 감정과 반응은 내가 통제할 수 없어 만성 피로를 낳습니다.</span>
+            </div>
+
+            <!-- 건강한 경계 -->
+            <div class="p-3 rounded-xl bg-rose-50/60 border-2 border-rose-300 text-xs space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-black text-rose-800">⭕ 건강한 경계 (나에게 향함)</span>
+                <span class="text-[9px] text-rose-700 font-bold bg-white px-1.5 py-0.5 rounded">통제 가능</span>
+              </div>
+              <p class="text-[11px] text-slate-800 font-bold">“간섭이 길어지면 '제가 결정할게요' 하고 전화를 마친다”</p>
+              <p class="text-[11px] text-slate-800 font-bold">“서운해하셔도 내 한계를 넘는 부탁은 정중히 거절한다”</p>
+              <span class="text-[9px] text-rose-600 block pt-1">* 내가 할 수 있는 행동의 기준을 세울 때 비로소 평화가 찾아옵니다.</span>
+            </div>
+          </div>
+
+          <!-- 인터랙티브 경계 선택기 -->
+          <div class="p-3 rounded-xl bg-white border border-rose-200 text-xs space-y-2">
+            <span class="text-[11px] font-bold text-slate-800 block">🎯 내가 선택할 수 있는 경계 행동 하나 터치하기:</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+              <button type="button" onclick="selectBoundaryAction(this, '화를 내시거나 비난하시면 조용히 전화를 마무리하겠습니다.')" class="boundary-chip text-left p-2 rounded-lg border border-slate-200 hover:border-rose-400 hover:bg-rose-50 text-[11px] text-slate-700 transition">
+                🚪 “비난이 시작되면 조용히 전화를 마친다”
+              </button>
+              <button type="button" onclick="selectBoundaryAction(this, '사생활 질문에는 단답 후 다른 일상 화제로 전환합니다.')" class="boundary-chip text-left p-2 rounded-lg border border-slate-200 hover:border-rose-400 hover:bg-rose-50 text-[11px] text-slate-700 transition">
+                🧭 “사생활 질문에는 단답 후 화제를 돌린다”
+              </button>
+              <button type="button" onclick="selectBoundaryAction(this, '통화 시간은 10분 이내로 내가 먼저 알람을 맞춥니다.')" class="boundary-chip text-left p-2 rounded-lg border border-slate-200 hover:border-rose-400 hover:bg-rose-50 text-[11px] text-slate-700 transition">
+                ⏱️ “통화 시간은 10분으로 내가 먼저 제한한다”
+              </button>
+              <button type="button" onclick="selectBoundaryAction(this, '서운해하셔도 사과는 요구하지 않고 내 결정을 지킵니다.')" class="boundary-chip text-left p-2 rounded-lg border border-slate-200 hover:border-rose-400 hover:bg-rose-50 text-[11px] text-slate-700 transition">
+                🛡️ “상대의 사과를 기다리지 않고 내 삶에 집중한다”
+              </button>
+            </div>
+            <div id="boundary-selected-feedback" class="hidden text-[11px] text-rose-800 font-bold bg-rose-50 p-2.5 rounded-lg border border-rose-200">
+              💡 <span id="boundary-selected-text"></span>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (card.interactionType === 'love_and_boundary') {
+      // INTERACTION 3: LOVE AND BOUNDARY
+      container.innerHTML = `
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-emerald-50/70 via-white to-rose-50/70 border-2 border-emerald-200/90 shadow-xs space-y-3.5">
+          ${safetyHtml}
+          <div class="flex items-center justify-between border-b border-emerald-100 pb-2">
+            <div class="flex items-center gap-1.5 text-emerald-800 font-black text-xs">
+              <span>🌱</span>
+              <span>사랑 AND 경계 · 이분법 탈피 인터랙션</span>
+            </div>
+            <span class="text-[9px] font-bold text-emerald-800 bg-white px-2 py-0.5 rounded-full border border-emerald-200">균형 감각</span>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            가족을 사랑하는 것과 경계를 두는 것은 반대말이 아닙니다. 지치지 않고 오래 관계를 이어가기 위해 건강한 울타리를 둡니다.
+          </p>
+
+          <div class="p-3.5 rounded-xl bg-white border border-emerald-200 space-y-2 shadow-2xs">
+            <span class="text-[11px] font-bold text-slate-800 block">🌿 나의 마음에 맞는 균형 문장 완성하기:</span>
+            <div class="space-y-1.5">
+              <button type="button" onclick="selectAffirmationAction(this, '부모님을 사랑하지만, 내 삶의 선택권은 내가 책임집니다.')" class="affirm-chip w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-[11px] text-slate-700 transition flex items-center justify-between">
+                <span>“가족을 아끼지만, 내 삶의 선택권은 내가 지킵니다.”</span>
+                <span class="text-slate-300">○</span>
+              </button>
+              <button type="button" onclick="selectAffirmationAction(this, '부모님의 기대에 부응하지 않아도, 나는 충분히 가치 있는 존재입니다.')" class="affirm-chip w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-[11px] text-slate-700 transition flex items-center justify-between">
+                <span>“부모님의 기대를 채우지 못해도, 나는 존중받을 자격이 있습니다.”</span>
+                <span class="text-slate-300">○</span>
+              </button>
+              <button type="button" onclick="selectAffirmationAction(this, '가족을 돕되, 내 재정과 건강이 무너지지 않는 선까지만 돕습니다.')" class="affirm-chip w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-[11px] text-slate-700 transition flex items-center justify-between">
+                <span>“가족을 돕되, 내 재정과 건강을 해치지 않는 선까지만 합니다.”</span>
+                <span class="text-slate-300">○</span>
+              </button>
+            </div>
+            <div id="affirm-selected-feedback" class="hidden text-[11px] text-emerald-900 font-bold bg-emerald-50/80 p-2.5 rounded-lg border border-emerald-200">
+              💚 <span id="affirm-selected-text"></span>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      // INTERACTION 1 (DEFAULT): RESPONSIBILITY LEDGER (책임 장부)
+      container.innerHTML = `
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-rose-50/90 via-slate-50 to-indigo-50/60 border-2 border-rose-200/90 shadow-xs space-y-3.5">
+          ${safetyHtml}
+          <div class="flex items-center justify-between border-b border-rose-100 pb-2">
+            <div class="flex items-center gap-1.5 text-rose-800 font-black text-xs">
+              <span>📋</span>
+              <span>이 짐은 누구의 것인가? · 책임 장부 (Responsibility Ledger)</span>
+            </div>
+            <span class="text-[9px] font-bold text-rose-700 bg-white px-2 py-0.5 rounded-full border border-rose-200">4대 영역 분리</span>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            가족이라는 이유로 상대방의 감정과 인생까지 짊어질 필요는 없습니다. 짐의 주인을 나누어 봅니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+            <!-- 1. 내 책임 -->
+            <div class="p-3 rounded-xl bg-white border-2 border-emerald-300 space-y-1.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-black text-emerald-800">① 내 책임 (통제 가능 ⭕)</span>
+                <span class="text-[9px] text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-bold">내 몫</span>
+              </div>
+              <ul class="text-[10px] text-slate-600 space-y-1 pl-1">
+                <li>• 나의 솔직한 말과 공손한 태도</li>
+                <li>• 내 삶의 선택과 진로·결혼 결정</li>
+                <li>• 내 신체 건강과 마음 안정 돌보기</li>
+              </ul>
+            </div>
+
+            <!-- 2. 가족 공동 책임 -->
+            <div class="p-3 rounded-xl bg-white border border-indigo-200 space-y-1.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-black text-indigo-800">② 가족 공동 책임 (협의 🤝)</span>
+                <span class="text-[9px] text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded font-bold">합의 필요</span>
+              </div>
+              <ul class="text-[10px] text-slate-600 space-y-1 pl-1">
+                <li>• 명절·행사 방문 일정 조율</li>
+                <li>• 부모님 부양에 대한 현실적 대화</li>
+                <li>• 비상 연락망 및 안전 확인</li>
+              </ul>
+            </div>
+
+            <!-- 3. 상대방의 책임 -->
+            <div class="p-3 rounded-xl bg-white border-2 border-rose-300 space-y-1.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-black text-rose-800">③ 상대방의 책임 (통제 불가 ❌)</span>
+                <span class="text-[9px] text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded font-bold">부모님 몫</span>
+              </div>
+              <ul class="text-[10px] text-slate-600 space-y-1 pl-1">
+                <li>• 거절당했을 때 부모님의 서운함과 분노</li>
+                <li>• 부모님 본인의 인생 행복과 만족감</li>
+                <li>• 부모님의 선택과 생활 습관</li>
+              </ul>
+            </div>
+
+            <!-- 4. 통제할 수 없는 영역 -->
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-black text-slate-500">④ 통제 불가능한 영역 (거리두기 ⚓)</span>
+                <span class="text-[9px] text-slate-400 font-bold">수용/단절</span>
+              </div>
+              <ul class="text-[10px] text-slate-600 space-y-1 pl-1">
+                <li>• 부모님의 오랜 성격과 성향</li>
+                <li>• 어린 시절 지나간 양육 방식</li>
+                <li>• 내 경계를 상대가 이해해줄지 여부</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 터치 확인 칩 -->
+          <div class="p-3 rounded-xl bg-rose-50/70 border border-rose-200 text-xs space-y-2">
+            <span class="text-[10px] font-bold text-rose-900 block">💡 내가 대신 짊어지려 했던 상대방의 짐 터치해보기:</span>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+              <button type="button" onclick="selectLedgerItem(this, '부모님의 서운함')" class="ledger-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-[11px] font-medium text-slate-700 transition">부모님의 서운함</button>
+              <button type="button" onclick="selectLedgerItem(this, '가족의 경제적 문제')" class="ledger-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-[11px] font-medium text-slate-700 transition">가족의 빚/경제</button>
+              <button type="button" onclick="selectLedgerItem(this, '부모님의 노후 만족')" class="ledger-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-[11px] font-medium text-slate-700 transition">부모님의 노후만족</button>
+              <button type="button" onclick="selectLedgerItem(this, '가족 갈등 해결')" class="ledger-chip py-1.5 px-2 rounded-lg border border-slate-200 bg-white hover:bg-rose-100 text-[11px] font-medium text-slate-700 transition">가족 갈등 중재</button>
+            </div>
+            <div id="ledger-feedback-box" class="hidden text-[11px] text-rose-950 font-bold bg-white p-2.5 rounded-lg border border-rose-200 shadow-2xs">
+              ✨ <span id="ledger-feedback-text"></span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  window.selectLedgerItem = function (btn, itemName) {
+    document.querySelectorAll('.ledger-chip').forEach(b => {
+      b.classList.remove('border-rose-500', 'bg-rose-100', 'text-rose-900', 'font-bold');
+      b.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+    });
+    btn.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
+    btn.classList.add('border-rose-500', 'bg-rose-100', 'text-rose-900', 'font-bold');
+
+    const fbBox = document.getElementById('ledger-feedback-box');
+    const fbText = document.getElementById('ledger-feedback-text');
+    if (fbBox && fbText) {
+      fbText.innerText = `'${itemName}'은(는) 부모님 본인이 다루어야 할 고유한 삶의 몫입니다. 자식이 대신 해결해 줄 수 없음을 인정할 때, 진정한 성인 대 성인의 존중이 시작됩니다.`;
+      fbBox.classList.remove('hidden');
+    }
+    trackMindEvent('family_action_select', { type: 'ledger_select', item: itemName });
+  };
+
+  window.selectBoundaryAction = function (btn, actionText) {
+    document.querySelectorAll('.boundary-chip').forEach(b => {
+      b.classList.remove('border-rose-500', 'bg-rose-100', 'text-rose-900', 'font-bold');
+      b.classList.add('border-slate-200', 'text-slate-700');
+    });
+    btn.classList.remove('border-slate-200', 'text-slate-700');
+    btn.classList.add('border-rose-500', 'bg-rose-100', 'text-rose-900', 'font-bold');
+
+    const fbBox = document.getElementById('boundary-selected-feedback');
+    const fbText = document.getElementById('boundary-selected-text');
+    if (fbBox && fbText) {
+      fbText.innerText = `“${actionText}” — 상대를 비난하거나 바꾸려 하지 않고, 내가 지킬 수 있는 명확한 행동 선을 세웠습니다.`;
+      fbBox.classList.remove('hidden');
+    }
+    trackMindEvent('family_action_select', { type: 'boundary_select', action: actionText });
+  };
+
+  window.selectAffirmationAction = function (btn, affirmText) {
+    document.querySelectorAll('.affirm-chip').forEach(b => {
+      b.classList.remove('border-emerald-500', 'bg-emerald-50', 'font-bold');
+      b.classList.add('border-slate-200');
+      const dot = b.querySelector('span:last-child');
+      if (dot) { dot.innerText = '○'; dot.classList.remove('text-emerald-600', 'font-bold'); dot.classList.add('text-slate-300'); }
+    });
+    btn.classList.remove('border-slate-200');
+    btn.classList.add('border-emerald-500', 'bg-emerald-50', 'font-bold');
+    const dot = btn.querySelector('span:last-child');
+    if (dot) { dot.innerText = '✓'; dot.classList.remove('text-slate-300'); dot.classList.add('text-emerald-600', 'font-bold'); }
+
+    const fbBox = document.getElementById('affirm-selected-feedback');
+    const fbText = document.getElementById('affirm-selected-text');
+    if (fbBox && fbText) {
+      fbText.innerText = `${affirmText} — 거절은 배신이 아니라 건강한 독립의 시작입니다.`;
+      fbBox.classList.remove('hidden');
+    }
+    trackMindEvent('family_action_select', { type: 'affirmation_select', text: affirmText });
+  };
+
   // 12. 요즘 사람들이 많이 마주하는 질문 (관계·불안 PACK 01 대표 6선 캐러셀)
   // =================================================================
   const FEATURED_RELATIONSHIP_IDS = [
@@ -1350,6 +1690,59 @@
       </div>
     `).join('');
   }
+
+  // =================================================================
+  // 12-4. 부모·가족·독립 PACK 05 캐러셀
+  // =================================================================
+  const FEATURED_FAMILY_IDS = [
+    'fam-001', // 부탁 거절 죄책감
+    'fam-002', // 효도 기준 부채감
+    'fam-005', // 독립 배신감
+    'fam-014', // 사과 인정 대기
+    'fam-016', // 부모 구원자 모드
+    'fam-020'  // 사랑과 경계 공존
+  ];
+
+  function renderFamilyQuestions() {
+    const carousel = document.getElementById('family-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const familyFeatured = [];
+    FEATURED_FAMILY_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) familyFeatured.push(card);
+    });
+
+    const otherFamily = cardsData.filter(c => 
+      c.packId === 'family-boundary-01' && !FEATURED_FAMILY_IDS.includes(c.id)
+    );
+
+    const list = [...familyFeatured, ...otherFamily].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#E11D48] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#E11D48]/10 text-[#E11D48] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#E11D48] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#E11D48]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
 
   // =================================================================
   // 13. 자연어 일상 고민 검색 (입구 B)
