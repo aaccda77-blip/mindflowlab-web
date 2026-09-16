@@ -1,7 +1,7 @@
 /**
  * =================================================================
- * MYUNGSIM DAILY INSIGHT · CARD DESIGN SYSTEM & 3D ANIMATIONS
- * 명심코칭 "오늘의 명심 카드" 전용 스타일시트
+ * MYUNGSIM DAILY INSIGHT · MODERN MENTALCARE DESIGN SYSTEM
+ * 명심코칭 "오늘의 명심 카드" 정제된 미니멀 스타일시트
  * =================================================================
  */
 
@@ -9,123 +9,124 @@
   --color-warm-ivory: #F7F4EC;
   --color-emerald-primary: #0F6B5B;
   --color-emerald-dark: #0A493E;
+  --color-emerald-soft: #ECFDF5;
   --color-deep-navy: #14233B;
+  --color-navy-dark: #0B1524;
   --color-soft-gold: #C7A86B;
-  --color-soft-gold-light: #E2CF9F;
   --color-soft-sage: #DDE8E0;
   --color-text-charcoal: #252A2D;
+  --color-text-muted: #64748B;
 }
 
-/* Perspective Container */
+/* Perspective Container for 3D Flip */
 .mind-card-stage {
   perspective: 1400px;
 }
 
-/* 3D Transform Object */
+/* 3D Transform Card Entry & Reveal */
 .mind-card-3d {
+  opacity: 0;
+  transform: scale(0.92) rotateY(70deg);
+  transition: opacity 0.35s ease, transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, opacity;
   transform-style: preserve-3d;
-  transition: transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .mind-card-3d.is-revealed {
-  transform: rotateY(180deg);
+  opacity: 1;
+  transform: scale(1) rotateY(0deg);
 }
 
-.mind-face {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.mind-face-front {
-  transform: rotateY(180deg);
-}
-
-/* Zero Point Orbit Animation for Card Back */
-@keyframes zeroOrbitRotate {
+/* Zero Point Orbit Minimal Animation */
+@keyframes zeroOrbitSmooth {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
 .zero-orbit-ring {
-  animation: zeroOrbitRotate 25s linear infinite;
+  animation: zeroOrbitSmooth 30s linear infinite;
   transform-origin: center center;
 }
 
-/* Floating Animations for 3-Card Deck */
-@keyframes mindFloat1 {
-  0%, 100% { transform: translateY(0px) rotate(-4deg); }
-  50% { transform: translateY(-7px) rotate(-4deg); }
+/* Floating Animations for 3-Card Deck (Calm & Subtle) */
+@keyframes mindFloatLeft {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50% { transform: translateY(-6px) rotate(-3deg); }
 }
-@keyframes mindFloat2 {
-  0%, 100% { transform: translateY(-4px) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(0deg); }
+@keyframes mindFloatCenter {
+  0%, 100% { transform: translateY(-3px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0deg); }
 }
-@keyframes mindFloat3 {
-  0%, 100% { transform: translateY(0px) rotate(4deg); }
-  50% { transform: translateY(-7px) rotate(4deg); }
+@keyframes mindFloatRight {
+  0%, 100% { transform: translateY(0px) rotate(3deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
 }
 
 .mind-floating-left {
-  animation: mindFloat1 4.5s ease-in-out infinite;
+  animation: mindFloatLeft 5s ease-in-out infinite;
 }
 .mind-floating-center {
-  animation: mindFloat2 4.0s ease-in-out infinite 0.5s;
+  animation: mindFloatCenter 4.5s ease-in-out infinite 0.5s;
 }
 .mind-floating-right {
-  animation: mindFloat3 4.8s ease-in-out infinite 1.0s;
+  animation: mindFloatRight 5.2s ease-in-out infinite 1.0s;
 }
 
-/* Soft Gold Line Highlight */
-.soft-gold-border {
-  border: 1.5px solid var(--color-soft-gold);
-  box-shadow: 0 10px 30px -5px rgba(199, 168, 107, 0.25);
+/* Clean Step Transition Keyframe Animation */
+@keyframes stepEnterSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.soft-gold-glow:hover {
-  box-shadow: 0 15px 40px -5px rgba(199, 168, 107, 0.4), 0 0 0 2px rgba(199, 168, 107, 0.5);
+.step-container {
+  display: none;
 }
 
-/* Shuffle Shake Animation */
-@keyframes mindShuffle {
-  0% { transform: translateX(0) scale(1); }
-  25% { transform: translateX(-20px) rotate(-6deg) scale(0.96); }
-  50% { transform: translateX(20px) rotate(6deg) scale(0.96); }
-  75% { transform: translateX(-10px) rotate(-3deg) scale(0.98); }
-  100% { transform: translateX(0) scale(1); }
+.step-container.is-active {
+  display: block;
+  animation: stepEnterSmooth 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-shuffling {
-  animation: mindShuffle 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+/* Step Progress Indicator */
+.step-indicator-dot {
+  transition: all 0.3s ease;
 }
 
-/* Accessibility & Reduced Motion */
+.step-indicator-dot.active {
+  background-color: var(--color-emerald-primary);
+  width: 24px;
+}
+
+/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   .mind-card-3d,
   .zero-orbit-ring,
   .mind-floating-left,
   .mind-floating-center,
   .mind-floating-right,
-  .is-shuffling {
+  .step-container.is-active {
     animation: none !important;
     transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
-/* Focus outline for keyboard navigation */
-.mind-focusable:focus-visible {
-  outline: 3px solid var(--color-soft-gold);
-  outline-offset: 4px;
-}
-
-/* Custom horizontal scroll bar styling for popular questions */
+/* Horizontal Scroll Bar for Popular Questions */
 .horizontal-scroll-container::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
 }
 .horizontal-scroll-container::-webkit-scrollbar-track {
-  background: #EAE6DB;
+  background: #E8E5DD;
   border-radius: 999px;
 }
 .horizontal-scroll-container::-webkit-scrollbar-thumb {
-  background: #C7A86B;
+  background: #0F6B5B;
   border-radius: 999px;
 }

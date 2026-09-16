@@ -1,18 +1,18 @@
 /**
  * =================================================================
- * MYUNGSIM DAILY INSIGHT · INTERACTIVE CONTROLLER
- * 명심코칭 "오늘의 명심 카드" 전용 인터랙션 및 상태 관리 엔진
+ * MYUNGSIM DAILY INSIGHT · PROGRESSIVE COACHING CONTROLLER
+ * 명심코칭 "오늘의 명심 카드" 단계별(Step-by-Step) 코칭 엔진
  * =================================================================
  */
 
 (function () {
   'use strict';
 
-  // 상태 변수
   let currentCard = null;
+  let currentStep = 1;
   let isShuffling = false;
 
-  // 1. 이벤트 트래킹 헬퍼 (개인 심리 데이터는 미포함)
+  // 이벤트 트래킹 (개인 심리 데이터 미포함)
   function trackMindEvent(eventName, payload) {
     try {
       if (window.dataLayer) {
@@ -24,14 +24,14 @@
     }
   }
 
-  // 2. 초기화
+  // 초기화
   document.addEventListener('DOMContentLoaded', () => {
     renderPopularQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
   });
 
-  // 3. 01. HOME & 02. SHUFFLE: 카드 셔플 모션
+  // 1. 카드 섞기 (SHUFFLE)
   window.shuffleMindCards = function () {
     if (isShuffling) return;
     isShuffling = true;
@@ -39,13 +39,12 @@
     const deckEl = document.getElementById('mind-fanned-deck');
     const statusText = document.getElementById('mind-deck-status-text');
 
-    // 햅틱 진동 피드백 (모바일 지원 브라우저)
     if (navigator.vibrate) {
       navigator.vibrate([15, 30, 15]);
     }
 
     if (statusText) {
-      statusText.innerText = "정답을 고르지 마세요. 그냥 지금 끌리는 한 장.";
+      statusText.innerText = "정답을 고르지 마세요. 지금 마음에 와닿는 한 장.";
     }
 
     if (deckEl) {
@@ -53,7 +52,7 @@
       setTimeout(() => {
         deckEl.classList.remove('is-shuffling');
         isShuffling = false;
-      }, 600);
+      }, 550);
     } else {
       isShuffling = false;
     }
@@ -61,7 +60,7 @@
     trackMindEvent('card_shuffle');
   };
 
-  // 4. 03. PICK & 04. REVEAL: 카드 선택 및 3D 플립
+  // 2. 카드 선택 및 3D 플립 (PICK & REVEAL)
   window.pickMindCard = function (slotIndex, customCardId) {
     if (isShuffling) return;
 
@@ -71,7 +70,6 @@
     }
 
     if (!selectedCard) {
-      // 랜덤 카드 선택
       const randomIndex = Math.floor(Math.random() * MIND_CARDS_DATA.length);
       selectedCard = MIND_CARDS_DATA[randomIndex];
     }
@@ -79,77 +77,165 @@
     currentCard = selectedCard;
     trackMindEvent('card_selected', { card_id: selectedCard.id, slot: slotIndex });
 
-    // 히스토리에 저장
+    // 히스토리 저장
     saveToWeeklyDiscovery(selectedCard);
 
-    // 뷰 바인딩
-    bindCardView(selectedCard);
+    // 데이터 바인딩
+    bindCardData(selectedCard);
 
-    // 3D 플립 애니메이션 전개
+    // 1단계로 리셋
+    goToMindStep(1, false);
+
+    // 화면 전환
     const homeView = document.getElementById('mind-home-view');
     const resultView = document.getElementById('mind-result-view');
     const card3d = document.getElementById('mind-active-card-3d');
 
     if (homeView && resultView && card3d) {
       homeView.style.opacity = '0';
-      homeView.style.transform = 'scale(0.95)';
+      homeView.style.transform = 'scale(0.96)';
 
       setTimeout(() => {
         homeView.classList.add('hidden');
         resultView.classList.remove('hidden');
 
-        // 카드 뒤집기 애니메이션
         requestAnimationFrame(() => {
           card3d.classList.add('is-revealed');
           trackMindEvent('card_revealed', { card_id: selectedCard.id });
           trackMindEvent('soda_answer_viewed', { card_id: selectedCard.id });
         });
 
-        // 결과 영역으로 부드럽게 스크롤
         const stage = document.getElementById('daily-mind-card-section');
         if (stage) {
           stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 300);
+      }, 280);
     }
   };
 
-  // 5. 뷰 바인딩 (사이다 답변, 3S 코칭, 10% 액션, 앱/책 추천)
-  function bindCardView(card) {
-    // 앞면 기본 정보
+  // 3. 5단계 프로그레시브 스텝퍼 (Step 1 -> 5)
+  window.goToMindStep = function (stepNumber, smoothScroll = true) {
+    currentStep = stepNumber;
+
+    // 모든 스텝 숨기기
+    for (let i = 1; i <= 5; i++) {
+      const stepEl = document.getElementById(`mind-step-${i}`);
+      const indicator = document.getElementById(`step-indicator-${i}`);
+      if (stepEl) {
+        stepEl.classList.remove('is-active');
+      }
+      if (indicator) {
+        if (i === stepNumber) {
+          indicator.classList.remove('bg-slate-200', 'text-slate-500');
+          indicator.classList.add('bg-[#0F6B5B]', 'text-white', 'font-black', 'shadow-xs');
+        } else if (i < stepNumber) {
+          indicator.classList.remove('bg-slate-200', 'text-slate-500');
+          indicator.classList.add('bg-emerald-100', 'text-[#0F6B5B]', 'font-bold');
+        } else {
+          indicator.classList.remove('bg-[#0F6B5B]', 'text-white', 'bg-emerald-100', 'font-black');
+          indicator.classList.add('bg-slate-200', 'text-slate-500', 'font-medium');
+        }
+      }
+    }
+
+    // 진행 바 게이지 업데이트
+    const progressBar = document.getElementById('mind-progress-bar');
+    if (progressBar) {
+      progressBar.style.width = `${(stepNumber / 5) * 100}%`;
+    }
+
+    // 현재 스텝 표시
+    const activeStepEl = document.getElementById(`mind-step-${stepNumber}`);
+    if (activeStepEl) {
+      activeStepEl.classList.add('is-active');
+    }
+
+    // 단계별 트래킹
+    if (stepNumber === 2) trackMindEvent('curiosity_bridge_viewed');
+    if (stepNumber === 3) trackMindEvent('scan_started');
+    if (stepNumber === 4) trackMindEvent('action_step_viewed');
+    if (stepNumber === 5) trackMindEvent('deep_dive_viewed');
+
+    // 부드러운 스크롤
+    if (smoothScroll) {
+      const stepAnchor = document.getElementById('mind-step-anchor');
+      if (stepAnchor) {
+        stepAnchor.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  };
+
+  // 4. Step 2 개인화 궁금증 칩 선택 피드백
+  window.selectCuriosityTrigger = function (triggerType) {
+    const feedbackBox = document.getElementById('curiosity-feedback-box');
+    const feedbackText = document.getElementById('curiosity-feedback-text');
+
+    const labels = {
+      thought: "생각 (머릿속 소설/해석)",
+      body: "몸의 신호 (가슴 답답함, 긴장)",
+      impulse: "충동 (안절부절, 버럭)",
+      action: "자동 행동 (반복확인, 회피)"
+    };
+
+    if (feedbackBox && feedbackText) {
+      feedbackText.innerHTML = `내 안에서 <strong>‘${labels[triggerType] || triggerType}’</strong>이(가) 가장 먼저 켜진다는 것을 발견하셨군요. 바로 다음 1분 SCAN에서 이 반응을 바라봅니다.`;
+      feedbackBox.classList.remove('hidden');
+    }
+
+    // 버튼 스타일 강조
+    document.querySelectorAll('.curiosity-chip').forEach(btn => {
+      btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+    });
+
+    const activeBtn = document.getElementById(`curiosity-chip-${triggerType}`);
+    if (activeBtn) {
+      activeBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
+      activeBtn.classList.add('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+    }
+
+    trackMindEvent('trigger_type_selected', { trigger: triggerType });
+  };
+
+  // 5. 데이터 바인딩
+  function bindCardData(card) {
+    // 카드 기본 헤더
     setElText('card-category-chip', card.category);
     setElText('card-title-text', card.cardTitle);
     setElText('card-question-text', card.question);
 
-    // 사이다 답변
+    // Step 1: 사이다 답변
     setElText('soda-answer-lead', card.sodaAnswer);
     setElText('soda-answer-desc', card.description);
 
-    // 호기심 브릿지
+    // Step 2: 개인화 궁금증
     setElText('curiosity-bridge-question', card.curiosityQuestion);
+    const feedbackBox = document.getElementById('curiosity-feedback-box');
+    if (feedbackBox) feedbackBox.classList.add('hidden');
+    document.querySelectorAll('.curiosity-chip').forEach(btn => {
+      btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      btn.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+    });
 
-    // 3S 코칭
+    // Step 3: 3S 코칭
     setElText('coach-scan-text', card.scanQuestion);
     setElText('coach-sync-text', card.syncSentence);
     setElText('coach-shift-text', card.shiftQuestion);
 
-    // 10% 실천 액션
+    // Step 4: 10% 실천 행동
     setElText('ten-percent-action-text', card.tenPercentAction);
     const actionCheckbox = document.getElementById('ten-percent-action-check');
     if (actionCheckbox) actionCheckbox.checked = false;
 
-    // 앱 CTA
+    // Step 5: 앱/책 CTA
     setElText('app-cta-label', card.appCTA || "내 패턴 1분 SCAN");
     const appBtn = document.getElementById('mind-app-cta-btn');
-    if (appBtn) {
-      appBtn.href = MIND_CONFIG.APP_URL;
-    }
+    if (appBtn) appBtn.href = MIND_CONFIG.APP_URL;
 
-    // 책 추천 및 CTA
     setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
     setElText('book-chapter-label', card.bookChapter || "관련 챕터");
     setElText('book-cta-label', card.bookCTA || "책에서 더 깊이 읽기");
-    
+
     const bookBtn = document.getElementById('mind-book-cta-btn');
     if (bookBtn) {
       if (card.relatedBook === "다크 코드") {
@@ -167,15 +253,15 @@
     if (el) el.innerText = text;
   }
 
-  // 6. 10% 행동 체크박스 토글
+  // 6. 10% 실천 체크박스
   window.toggleTenPercentAction = function (isChecked) {
     if (isChecked) {
       trackMindEvent('ten_percent_action_selected', { card_id: currentCard ? currentCard.id : null });
-      showToastNotification("✨ 오늘 10% 다른 행동을 선택하셨습니다! 당신의 하루를 응원합니다.");
+      showToastNotification("✨ 오늘 10% 다른 행동을 선택하셨습니다! 작은 실천이 변화의 시작입니다.");
     }
   };
 
-  // 7. 카드 다시 뽑기 (Reset)
+  // 7. 카드 다시 뽑기
   window.resetMindCardSelection = function () {
     const homeView = document.getElementById('mind-home-view');
     const resultView = document.getElementById('mind-result-view');
@@ -197,11 +283,11 @@
         if (statusText) {
           statusText.innerText = "오늘의 마음은 어떤 카드를 꺼낼까?";
         }
-      }, 350);
+      }, 300);
     }
   };
 
-  // 8. 모바일 스와이프 제스처 지원 (02. SHUFFLE)
+  // 8. 모바일 스와이프 제스처
   function setupSwipeGesture() {
     const deck = document.getElementById('mind-fanned-deck');
     if (!deck) return;
@@ -215,13 +301,13 @@
 
     deck.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      if (Math.abs(touchEndX - touchStartX) > 45) {
+      if (Math.abs(touchEndX - touchStartX) > 40) {
         shuffleMindCards();
       }
     }, { passive: true });
   }
 
-  // 9. 히스토리: 이번 주의 발견 (Weekly Discovery)
+  // 9. 히스토리: 이번 주의 발견
   function saveToWeeklyDiscovery(card) {
     try {
       const now = new Date();
@@ -229,8 +315,6 @@
       const dayName = days[now.getDay()];
 
       let history = JSON.parse(localStorage.getItem('myungsim_weekly_discovery') || '[]');
-      
-      // 동일 요일 중복 방지 (최신 1건으로 덮어쓰기)
       history = history.filter(item => item.day !== dayName);
 
       history.unshift({
@@ -241,9 +325,7 @@
         dateStr: `${now.getMonth() + 1}/${now.getDate()}`
       });
 
-      // 최대 7개(최근 1주일)만 유지
       if (history.length > 7) history = history.slice(0, 7);
-
       localStorage.setItem('myungsim_weekly_discovery', JSON.stringify(history));
       renderWeeklyDiscovery();
     } catch (e) {
@@ -260,7 +342,7 @@
       const history = JSON.parse(localStorage.getItem('myungsim_weekly_discovery') || '[]');
       if (history.length === 0) {
         container.innerHTML = `
-          <div class="py-4 text-center text-xs text-slate-400 font-medium">
+          <div class="py-3 text-center text-xs text-slate-400 font-medium">
             아직 이번 주에 발견한 카드가 없습니다. 첫 카드를 뽑아보세요!
           </div>
         `;
@@ -268,25 +350,23 @@
         return;
       }
 
-      // 렌더링
       let html = '';
       const categoryCount = {};
 
       history.forEach(item => {
         categoryCount[item.category] = (categoryCount[item.category] || 0) + 1;
         html += `
-          <div onclick="pickMindCard(0, '${item.id}')" class="px-3.5 py-2 rounded-xl bg-white/70 hover:bg-white border border-slate-200/80 hover:border-[#0F6B5B] transition shadow-2xs flex items-center justify-between gap-3 cursor-pointer group shrink-0">
-            <div class="flex items-center gap-2">
-              <span class="w-6 h-6 rounded-full bg-[#0F6B5B]/10 text-[#0F6B5B] text-[11px] font-black flex items-center justify-center">${item.day}</span>
+          <div onclick="pickMindCard(0, '${item.id}')" class="px-3 py-1.5 rounded-xl bg-white/80 hover:bg-white border border-slate-200 hover:border-[#0F6B5B] transition shadow-2xs flex items-center justify-between gap-2.5 cursor-pointer group shrink-0">
+            <div class="flex items-center gap-1.5">
+              <span class="w-5 h-5 rounded-full bg-[#0F6B5B]/10 text-[#0F6B5B] text-[10px] font-black flex items-center justify-center">${item.day}</span>
               <span class="text-xs font-bold text-slate-800 group-hover:text-[#0F6B5B]">${item.cardTitle}</span>
             </div>
-            <span class="text-[10px] text-slate-400 font-medium">[${item.category}]</span>
+            <span class="text-[10px] text-slate-400">[${item.category}]</span>
           </div>
         `;
       });
       container.innerHTML = html;
 
-      // 가장 빈번한 카테고리 계산
       let maxCategory = "";
       let maxCount = 0;
       for (const [cat, cnt] of Object.entries(categoryCount)) {
@@ -297,28 +377,27 @@
       }
 
       if (frequentInsight && maxCategory) {
-        frequentInsight.innerHTML = `이번 주 나에게 가장 자주 등장한 마음 영역은? 👉 <strong class="text-[#0F6B5B] font-black underline underline-offset-2">${maxCategory}</strong>`;
+        frequentInsight.innerHTML = `이번 주 가장 자주 등장한 마음 영역: <strong class="text-[#0F6B5B] font-black">${maxCategory}</strong>`;
       }
     } catch (e) {
       console.error(e);
     }
   }
 
-  // 10. 요즘 사람들이 많이 묻는 질문 (가로 스크롤 캐러셀)
+  // 10. 가로 스크롤 인기 질문 캐러셀
   function renderPopularQuestions() {
     const container = document.getElementById('popular-questions-carousel');
     if (!container) return;
 
-    // 인기 카드 8개 엄선
     const popularIds = [
-      "peoplepleaser-02", // 좋은 사람 강박
-      "textanxiety-08",   // 답장불안
-      "perfectionism-10", // 완벽주의
-      "burnout-15",       // 번아웃
-      "overchecking-01",  // 과잉확인
-      "nunchi-04",        // 눈치
-      "selfcriticism-19", // 자기비난
-      "zeropoint-30"      // 제로포인트
+      "peoplepleaser-02",
+      "textanxiety-08",
+      "perfectionism-10",
+      "burnout-15",
+      "overchecking-01",
+      "nunchi-04",
+      "selfcriticism-19",
+      "zeropoint-30"
     ];
 
     const cards = popularIds
@@ -328,17 +407,17 @@
     let html = '';
     cards.forEach(c => {
       html += `
-        <div onclick="pickMindCard(0, '${c.id}')" class="min-w-[260px] max-w-[280px] p-5 rounded-2xl bg-[#F7F4EC] border border-[#C7A86B]/30 hover:border-[#0F6B5B] transition shadow-xs hover:shadow-md cursor-pointer flex flex-col justify-between group shrink-0 select-none">
+        <div onclick="pickMindCard(0, '${c.id}')" class="min-w-[260px] max-w-[280px] p-5 rounded-2xl bg-[#F7F4EC] border border-[#0F6B5B]/20 hover:border-[#0F6B5B] transition shadow-2xs hover:shadow-sm cursor-pointer flex flex-col justify-between group shrink-0 select-none">
           <div class="space-y-2">
-            <span class="inline-block px-2.5 py-0.5 rounded-full bg-white text-[#0F6B5B] text-[10px] font-black border border-[#0F6B5B]/20">
+            <span class="inline-block px-2 py-0.5 rounded-full bg-white text-[#0F6B5B] text-[10px] font-bold border border-[#0F6B5B]/20">
               ${c.category} · ${c.cardTitle}
             </span>
             <p class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#0F6B5B] leading-snug">
               ${c.question}
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-[#0F6B5B] font-bold">
-            <span>답변 카드 열기</span>
+          <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-[#0F6B5B] font-bold">
+            <span>처방 확인하기</span>
             <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -348,7 +427,7 @@
     container.innerHTML = html;
   }
 
-  // 11. 일상 고민 자연어 검색
+  // 11. 일상 검색
   window.handleMindCardSearch = function (query) {
     const q = (query || '').toLowerCase().trim();
     const dropdown = document.getElementById('mind-search-dropdown');
@@ -371,7 +450,7 @@
 
     if (matches.length === 0) {
       dropdown.innerHTML = `
-        <div class="p-5 text-center text-xs text-slate-500 font-medium">
+        <div class="p-4 text-center text-xs text-slate-500 font-medium">
           일치하는 명심 카드를 찾지 못했습니다.<br />
           <span class="text-[#0F6B5B] font-bold">"거절", "확인", "답장", "불안"</span> 등으로 검색해 보세요.
         </div>
@@ -382,8 +461,8 @@
         html += `
           <div onclick="pickMindCard(0, '${m.id}'); closeMindSearchDropdown();" class="p-3.5 hover:bg-emerald-50/60 transition cursor-pointer border-b border-slate-100 last:border-0 text-left">
             <div class="flex items-center gap-1.5 mb-1">
-              <span class="px-2 py-0.5 rounded text-[10px] font-black bg-[#0F6B5B]/10 text-[#0F6B5B]">${m.category}</span>
-              <span class="text-xs font-bold text-slate-700">${m.cardTitle}</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#0F6B5B]/10 text-[#0F6B5B]">${m.category}</span>
+              <span class="text-xs font-bold text-slate-800">${m.cardTitle}</span>
             </div>
             <div class="text-xs font-bold text-slate-900 leading-snug line-clamp-1">${m.question}</div>
           </div>
@@ -400,7 +479,7 @@
     if (dropdown) dropdown.classList.add('hidden');
   };
 
-  // 12. 알림 토스트 헬퍼
+  // 12. 토스트
   function showToastNotification(msg) {
     const toast = document.getElementById('mind-toast');
     const toastText = document.getElementById('mind-toast-text');
@@ -416,7 +495,7 @@
     }, 3200);
   }
 
-  // 13. 카드 결과 복사
+  // 13. 복사
   window.copyMindCardResult = function () {
     if (!currentCard) return;
     const shareText = `🌿 [마인드플로우 랩 · 오늘의 명심 카드]
