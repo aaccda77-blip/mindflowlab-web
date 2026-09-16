@@ -1,21 +1,4 @@
-/**
- * =================================================================
- * MYUNGSIM DAILY INSIGHT · MIND CARDS CONFIG & FALLBACK BUNDLE
- * AUTO-SYNCHRONIZED FROM data/mind-cards.json
- * =================================================================
- */
-
-// 1. 시스템 설정 (URL Config)
-const MIND_CONFIG = {
-  APP_URL: '/self-check',
-  PUBLISHER_URL: 'https://smartstore.naver.com/crbooks',
-  DARK_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-  NEURAL_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-  ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
-};
-
-// 2. 오프라인 / file:// 로컬 미리보기용 캐시 데이터 (data/mind-cards.json과 실시간 동기화)
-window.MIND_CARDS_DATA = [
+[
   {
     "id": "overchecking-01",
     "category": "불확실성",
@@ -862,4 +845,4 @@ window.MIND_CARDS_DATA = [
       "마음의 평화"
     ]
   }
-];
+]

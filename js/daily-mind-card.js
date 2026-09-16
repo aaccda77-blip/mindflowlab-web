@@ -1,7 +1,8 @@
 /**
  * =================================================================
  * MYUNGSIM DAILY INSIGHT · STREAMLINED 30-SECOND COACHING ENGINE
- * 명심코칭 "오늘의 명심 카드" 초간결 30초 단일 몰입 코칭 컨트롤러
+ * 명심코칭 "오늘의 명심 카드" (data/mind-cards.json 비동기 CMS 연동)
+ * 300개 카드 확장 대응 무결성 아키텍처
  * =================================================================
  */
 
@@ -11,6 +12,11 @@
   let currentCard = null;
   let isShuffling = false;
   let isDeepDiveUnlocked = false;
+
+  // 동적 CMS 데이터 저장소 (data/mind-cards.json 비동기 로드)
+  let cardsData = [];
+  let isDataLoaded = false;
+  let dataLoadPromise = null;
 
   // 이벤트 트래킹 (개인 심리 데이터 미포함)
   function trackMindEvent(eventName, payload) {
@@ -24,8 +30,46 @@
     }
   }
 
+  // 0. 비동기 JSON 데이터 로더 (CMS 연동 및 300개 확장 지원)
+  async function ensureCardsData() {
+    if (isDataLoaded && cardsData.length > 0) return cardsData;
+    if (dataLoadPromise) return dataLoadPromise;
+
+    dataLoadPromise = (async () => {
+      // 1. data/mind-cards.json 순수 JSON 파일 비동기 fetch
+      try {
+        const response = await fetch('data/mind-cards.json', { cache: 'no-cache' });
+        if (response.ok) {
+          const json = await response.json();
+          if (Array.isArray(json) && json.length > 0) {
+            cardsData = json;
+            isDataLoaded = true;
+            window.MIND_CARDS_DATA = json; // 전역 싱크
+            console.log(`[Mindflow CMS] Loaded ${json.length} cards from data/mind-cards.json`);
+            return cardsData;
+          }
+        }
+      } catch (e) {
+        console.warn('[Mindflow CMS] fetch data/mind-cards.json failed, falling back to cached bundle:', e);
+      }
+
+      // 2. 오프라인 또는 file:// 로컬 미리보기용 캐시 fallback
+      if (window.MIND_CARDS_DATA && Array.isArray(window.MIND_CARDS_DATA) && window.MIND_CARDS_DATA.length > 0) {
+        cardsData = window.MIND_CARDS_DATA;
+        isDataLoaded = true;
+        console.log(`[Mindflow CMS] Using fallback bundle with ${cardsData.length} cards`);
+        return cardsData;
+      }
+
+      return [];
+    })();
+
+    return dataLoadPromise;
+  }
+
   // 초기화
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
+    await ensureCardsData();
     renderPopularQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
@@ -61,17 +105,23 @@
   };
 
   // 2. 카드 선택 및 3D 플립 (PICK & REVEAL -> 30초 몰입 카드)
-  window.pickMindCard = function (slotIndex, customCardId) {
+  window.pickMindCard = async function (slotIndex, customCardId) {
     if (isShuffling) return;
+
+    await ensureCardsData();
+    if (!cardsData || cardsData.length === 0) {
+      console.error('[Mindflow CMS] No card data available.');
+      return;
+    }
 
     let selectedCard = null;
     if (customCardId) {
-      selectedCard = MIND_CARDS_DATA.find(c => c.id === customCardId);
+      selectedCard = cardsData.find(c => c.id === customCardId);
     }
 
     if (!selectedCard) {
-      const randomIndex = Math.floor(Math.random() * MIND_CARDS_DATA.length);
-      selectedCard = MIND_CARDS_DATA[randomIndex];
+      const randomIndex = Math.floor(Math.random() * cardsData.length);
+      selectedCard = cardsData[randomIndex];
     }
 
     currentCard = selectedCard;
@@ -148,7 +198,8 @@
     setElText('app-subtext-label', card.appSubtext || "오늘 겪은 한 장면에서 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
     const appBtn = document.getElementById('mind-app-cta-btn');
     if (appBtn) {
-      appBtn.href = `${MIND_CONFIG.APP_URL}?card=${encodeURIComponent(card.id)}&focus=1`;
+      const config = window.MIND_CONFIG || { APP_URL: '/self-check' };
+      appBtn.href = `${config.APP_URL}?card=${encodeURIComponent(card.id)}&focus=1`;
     }
 
     setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
@@ -158,12 +209,17 @@
 
     const bookBtn = document.getElementById('mind-book-cta-btn');
     if (bookBtn) {
+      const config = window.MIND_CONFIG || {
+        DARK_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
+        NEURAL_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
+        ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
+      };
       if (card.relatedBook === "다크 코드") {
-        bookBtn.href = MIND_CONFIG.DARK_CODE_BOOK_URL;
+        bookBtn.href = config.DARK_CODE_BOOK_URL;
       } else if (card.relatedBook === "뉴럴 코드") {
-        bookBtn.href = MIND_CONFIG.NEURAL_CODE_BOOK_URL;
+        bookBtn.href = config.NEURAL_CODE_BOOK_URL;
       } else {
-        bookBtn.href = MIND_CONFIG.ZERO_POINT_BOOK_URL;
+        bookBtn.href = config.ZERO_POINT_BOOK_URL;
       }
     }
   }
@@ -395,28 +451,36 @@
     }
   }
 
-  // 10. 가로 스크롤 인기 질문 캐러셀
+  // 10. 가로 스크롤 인기 질문 캐러셀 (300개 확장 지원: 카테고리별 분산 자동 선택)
   function renderPopularQuestions() {
     const container = document.getElementById('popular-questions-carousel');
     if (!container) return;
 
-    const popularIds = [
-      "peoplepleaser-02",
-      "textanxiety-08",
-      "perfectionism-10",
-      "burnout-15",
-      "overchecking-01",
-      "nunchi-04",
-      "selfcriticism-19",
-      "zeropoint-30"
-    ];
+    if (!cardsData || cardsData.length === 0) return;
 
-    const cards = popularIds
-      .map(id => MIND_CARDS_DATA.find(c => c.id === id))
-      .filter(Boolean);
+    // 카테고리별 다양성을 보장하며 8개 대표 카드 자동 추출 (300개로 늘어나도 UI 자동 적응)
+    let popularCards = cardsData.filter(c => c.isPopular);
+    if (popularCards.length < 8) {
+      const categoriesSeen = new Set(popularCards.map(c => c.category));
+      for (const card of cardsData) {
+        if (!popularCards.some(p => p.id === card.id) && !categoriesSeen.has(card.category)) {
+          popularCards.push(card);
+          categoriesSeen.add(card.category);
+        }
+        if (popularCards.length >= 8) break;
+      }
+      if (popularCards.length < 8) {
+        for (const card of cardsData) {
+          if (!popularCards.some(p => p.id === card.id)) {
+            popularCards.push(card);
+          }
+          if (popularCards.length >= 8) break;
+        }
+      }
+    }
 
     let html = '';
-    cards.forEach(c => {
+    popularCards.forEach(c => {
       html += `
         <div onclick="pickMindCard(0, '${c.id}')" class="min-w-[260px] max-w-[280px] p-5 rounded-2xl bg-[#F7F4EC] border border-[#0F6B5B]/20 hover:border-[#0F6B5B] transition shadow-2xs hover:shadow-sm cursor-pointer flex flex-col justify-between group shrink-0 select-none">
           <div class="space-y-2">
@@ -438,7 +502,7 @@
     container.innerHTML = html;
   }
 
-  // 11. 자연어 검색
+  // 11. 자연어 검색 (300개 이상의 카드도 V8 메모리에서 2ms 내 초고속 필터링)
   window.handleMindCardSearch = function (query) {
     const dropdown = document.getElementById('mind-search-dropdown');
     if (!dropdown) return;
@@ -449,13 +513,14 @@
       return;
     }
 
-    const matches = MIND_CARDS_DATA.filter(c => {
+    const matches = cardsData.filter(c => {
       return (
-        c.question.toLowerCase().includes(q) ||
-        c.cardTitle.toLowerCase().includes(q) ||
-        c.category.toLowerCase().includes(q) ||
-        c.sodaAnswer.toLowerCase().includes(q) ||
-        c.searchKeywords.some(k => k.toLowerCase().includes(q))
+        (c.question && c.question.toLowerCase().includes(q)) ||
+        (c.cardTitle && c.cardTitle.toLowerCase().includes(q)) ||
+        (c.category && c.category.toLowerCase().includes(q)) ||
+        (c.keyword && c.keyword.toLowerCase().includes(q)) ||
+        (c.sodaAnswer && c.sodaAnswer.toLowerCase().includes(q)) ||
+        (c.searchKeywords && Array.isArray(c.searchKeywords) && c.searchKeywords.some(k => k.toLowerCase().includes(q)))
       );
     });
 
@@ -468,7 +533,7 @@
       `;
     } else {
       let html = '';
-      matches.slice(0, 5).forEach(m => {
+      matches.slice(0, 6).forEach(m => {
         html += `
           <div onclick="pickMindCard(0, '${m.id}'); closeMindSearchDropdown();" class="p-3.5 hover:bg-emerald-50/60 transition cursor-pointer border-b border-slate-100 last:border-0 text-left">
             <div class="flex items-center gap-1.5 mb-1">

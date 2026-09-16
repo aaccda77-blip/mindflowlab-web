@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MyeongsimCoachingCardDataset",
+  "description": "Schema for Myeongsim Coaching Daily Insight Cards (scalable up to 300+ cards)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "category",
+      "keyword",
+      "cardTitle",
+      "question",
+      "sodaAnswer",
+      "curiosityQuestion",
+      "scanQuestion",
+      "syncSentence",
+      "shiftQuestion",
+      "tenPercentAction",
+      "relatedBook",
+      "appCTA",
+      "bookCTA",
+      "searchKeywords"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique slug identifier (e.g. overchecking-01, boundary-03)"
+      },
+      "category": {
+        "type": "string",
+        "description": "Core mental domain (e.g. 불확실성, 경계와 관계, 완벽주의와 통제, 에너지와 번아웃, 생각 과열, 감정 민감성, 정체성과 관찰, 변화와 시도)"
+      },
+      "keyword": {
+        "type": "string",
+        "description": "Sub-theme keyword (e.g. 과잉확인, 좋은 사람 강박, 눈치, 반추)"
+      },
+      "cardTitle": {
+        "type": "string",
+        "description": "Descriptive mode name (e.g. 확인 모드, 착한 아이 모드, 안테나 과출력 모드)"
+      },
+      "question": {
+        "type": "string",
+        "description": "Relatable user dilemma in quotes (e.g. “왜 나는 확인하고 또 확인할까?”)"
+      },
+      "sodaAnswer": {
+        "type": "string",
+        "description": "Crisp, punchy 1-line paradigm shift (e.g. 확인은 정보를 얻지만, 반복확인은 불안을 달랩니다.)"
+      },
+      "description": {
+        "type": "string",
+        "description": "2-3 sentence core psychological/neuroscience mechanism explanation"
+      },
+      "curiosityQuestion": {
+        "type": "string",
+        "description": "Resonating 'What about in my case?' bridge question"
+      },
+      "scanQuestion": {
+        "type": "string",
+        "description": "1-minute SCAN self-observation question (thought/body signal/impulse)"
+      },
+      "syncSentence": {
+        "type": "string",
+        "description": "Self-compassion acknowledgment sentence (SYNC)"
+      },
+      "shiftQuestion": {
+        "type": "string",
+        "description": "Cognitive pivot question for 10% alternative (SHIFT)"
+      },
+      "tenPercentAction": {
+        "type": "string",
+        "description": "Realistic, checkable micro-action for today"
+      },
+      "relatedBook": {
+        "type": "string",
+        "enum": [
+          "다크 코드",
+          "뉴럴 코드",
+          "제로 포인트"
+        ],
+        "description": "Related Cheongnyu Publishing book"
+      },
+      "bookChapter": {
+        "type": "string",
+        "description": "Specific chapter title or principle topic"
+      },
+      "appCTA": {
+        "type": "string",
+        "description": "Experience-first self-application action verb for the App (e.g. 내 확인 패턴 직접 확인하기)"
+      },
+      "appSubtext": {
+        "type": "string",
+        "description": "Contextual guide for 1-minute real-life observation in the App"
+      },
+      "bookCTA": {
+        "type": "string",
+        "description": "Experience-first deep-reading verb for Cheongnyu Books (e.g. 확인 모드의 뇌과학 원리 읽기)"
+      },
+      "bookSubtext": {
+        "type": "string",
+        "description": "Contextual guide for understanding root principles in the Book"
+      },
+      "searchKeywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Natural language search phrases & conversational keywords"
+      },
+      "isPopular": {
+        "type": "boolean",
+        "description": "Optional flag to highlight in popular questions carousel"
+      }
+    },
+    "additionalProperties": true
+  }
+}
