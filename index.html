@@ -583,7 +583,7 @@
 
   </style>
   <link rel="canonical" href="https://lab.mindflowlab.co.kr/" />
-  <link rel="stylesheet" href="css/daily-mind-card.css?v=20260916_v3" />
+  <link rel="stylesheet" href="css/daily-mind-card.css?v=20260916_v4" />
 </head>
 
 <body class="bg-[#FAF9F6] text-slate-900 antialiased selection:bg-[#007A55] selection:text-white relative overflow-x-hidden min-h-screen">
@@ -888,7 +888,7 @@
                         type="text" 
                         id="mind-search-input"
                         oninput="handleMindCardSearch(this.value)"
-                        placeholder="지금 머릿속 고민을 그대로 적어보세요 (예: 답장이 안 와요, 거절을 못하겠어요)..."
+                        placeholder="지금 머릿속 고민을 그대로 적어보세요 (예: 답장이 안 와요, 거절을 못해요, 부모님 때문에 힘들어요)..."
                         class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C7A86B] shadow-inner"
                       />
                       <span class="absolute left-3.5 text-slate-400 text-sm">🔍</span>
@@ -897,17 +897,15 @@
 
                     <!-- Recommended Search Chips -->
                     <div>
-                      <div class="text-[11px] font-bold text-slate-400 mb-2">자주 묻는 고민을 바로 선택해보세요:</div>
+                      <div class="text-[11px] font-bold text-slate-400 mb-2">자주 묻는 일상 고민을 바로 선택해보세요:</div>
                       <div class="flex flex-wrap gap-1.5">
                         <button onclick="setMindSearchQuery('답장이 안 와요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“답장이 안 와요”</button>
-                        <button onclick="setMindSearchQuery('거절을 못하겠어요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“거절을 못하겠어요”</button>
-                        <button onclick="setMindSearchQuery('차갑게')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“상대 말투가 차가워요”</button>
-                        <button onclick="setMindSearchQuery('돈')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“돈이 없어서 불안해요”</button>
-                        <button onclick="setMindSearchQuery('헤어짐')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“헤어져야 하는데 흔들려요”</button>
+                        <button onclick="setMindSearchQuery('거절을 못해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“거절을 못해요”</button>
+                        <button onclick="setMindSearchQuery('계속 확인해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“계속 확인해요”</button>
                         <button onclick="setMindSearchQuery('회사 가기 싫어요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“회사 가기 싫어요”</button>
-                        <button onclick="setMindSearchQuery('자꾸 확인해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“자꾸 확인해요”</button>
                         <button onclick="setMindSearchQuery('화를 내고 후회해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“화를 내고 후회해요”</button>
-                        <button onclick="setMindSearchQuery('쉬는데도 불안해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“쉬는데도 불안해요”</button>
+                        <button onclick="setMindSearchQuery('돈 때문에 불안해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“돈 때문에 불안해요”</button>
+                        <button onclick="setMindSearchQuery('부모님 때문에 힘들어요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“부모님 때문에 힘들어요”</button>
                       </div>
                     </div>
 
@@ -985,23 +983,49 @@
                     <!-- ===================================================== -->
                     <!-- STEP 2. “내 경우에는?” Curiosity Bridge                 -->
                     <!-- ===================================================== -->
-                    <div class="mb-4 p-3.5 rounded-2xl bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7]/60 border border-[#C7A86B]/40 shadow-2xs">
-                      <div class="flex items-center gap-1.5 text-[#C7A86B] font-black text-xs mb-1">
-                        <span>🌉</span>
-                        <span>STEP 2 · 내 경우에는?</span>
+                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7]/60 border border-[#C7A86B]/40 shadow-2xs">
+                      <div class="flex items-center justify-between mb-1.5">
+                        <div class="flex items-center gap-1.5 text-[#C7A86B] font-black text-xs">
+                          <span>🌉</span>
+                          <span>STEP 2 · 내 경우에는?</span>
+                        </div>
+                        <span class="text-[9px] text-amber-700 font-bold bg-amber-100/80 px-2 py-0.5 rounded">자기 발견</span>
                       </div>
-                      <p id="curiosity-bridge-question" class="text-xs sm:text-sm font-black text-slate-900 leading-snug">
+                      <p id="curiosity-bridge-question" class="text-xs sm:text-sm font-black text-slate-900 leading-snug mb-1">
                         “그렇다면 내 경우에는 무엇이 가장 먼저 켜지는 걸까?”
                       </p>
-                      <p id="curiosity-bridge-sub" class="text-[11px] text-slate-600 mt-1">
+                      <p id="curiosity-bridge-sub" class="text-[11px] text-slate-600 mb-3">
                         나는 모르는 시간을 어떤 이야기(STORY)로 가장 빨리 채우는 편일까요?
                       </p>
+
+                      <!-- [9] 사용자가 바로 이탈하지 않도록 던지는 4대 호기심 질문 칩 -->
+                      <div class="pt-2.5 border-t border-amber-200/60">
+                        <div class="text-[10px] font-bold text-amber-800 mb-1.5">스스로에게 던져보는 호기심 질문:</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
+                          <button onclick="selectCuriosityQuestion('그런데 내 경우에는 무엇이 가장 먼저 켜질까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                            <span class="text-amber-500">❓</span>
+                            <span>“내 경우에는 무엇이 가장 먼저 켜질까?”</span>
+                          </button>
+                          <button onclick="selectCuriosityQuestion('나는 왜 이 상황에서만 유독 흔들릴까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                            <span class="text-amber-500">❓</span>
+                            <span>“나는 왜 이 상황에서 유독 흔들릴까?”</span>
+                          </button>
+                          <button onclick="selectCuriosityQuestion('이 행동은 무엇을 지키려고 시작됐을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                            <span class="text-amber-500">❓</span>
+                            <span>“이 행동은 무엇을 지키려고 시작됐을까?”</span>
+                          </button>
+                          <button onclick="selectCuriosityQuestion('이 반응이 올라와도 다른 행동을 할 수 있을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white border border-amber-200/80 hover:border-[#0F6B5B] hover:bg-emerald-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+                            <span class="text-amber-500">❓</span>
+                            <span>“이 반응이 올라와도 다른 행동이 가능할까?”</span>
+                          </button>
+                        </div>
+                      </div>
                     </div>
 
                     <!-- ===================================================== -->
                     <!-- STEP 3. 1분 SCAN (FACT · STORY · UNKNOWN · BODY · IMPULSE) -->
                     <!-- ===================================================== -->
-                    <div class="mb-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-3">
+                    <div id="mind-scan-container" class="mb-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-3">
                       <div class="flex items-center justify-between">
                         <div class="flex items-center gap-1.5 text-[#0F6B5B] font-black text-xs">
                           <span>🔍</span>
@@ -1074,6 +1098,33 @@
                       <button onclick="generateOperationMap()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#0F6B5B] to-[#0A493E] hover:from-[#0A493E] hover:to-[#0F6B5B] text-white font-black text-xs shadow-sm transition flex items-center justify-center gap-1.5 cursor-pointer">
                         <span>🗺️ 오늘의 작동지도 만들기</span>
                       </button>
+                    </div>
+
+                    <!-- ===================================================== -->
+                    <!-- STEP 3-1. SYNC & SHIFT (공감 수용 및 관점 전환)         -->
+                    <!-- ===================================================== -->
+                    <div class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      <!-- SYNC -->
+                      <div class="p-3.5 rounded-2xl bg-[#ECFDF5] border border-emerald-300 shadow-2xs">
+                        <div class="flex items-center gap-1.5 text-[#0F6B5B] font-black text-xs mb-1">
+                          <span>💚</span>
+                          <span>SYNC · 마음 안아주기</span>
+                        </div>
+                        <p id="sync-sentence-text" class="text-xs font-bold text-emerald-950 leading-relaxed">
+                          불확실해서 확인하고 싶은 마음이 올라오는구나.
+                        </p>
+                      </div>
+
+                      <!-- SHIFT -->
+                      <div class="p-3.5 rounded-2xl bg-[#FFFBEB] border border-amber-300 shadow-2xs">
+                        <div class="flex items-center gap-1.5 text-amber-800 font-black text-xs mb-1">
+                          <span>🧭</span>
+                          <span>SHIFT · 새로운 관점 열기</span>
+                        </div>
+                        <p id="shift-question-text" class="text-xs font-bold text-amber-950 leading-relaxed">
+                          지금 바로 결론내리지 않는다면 어떤 선택이 가능할까요?
+                        </p>
+                      </div>
                     </div>
 
                     <!-- ===================================================== -->
@@ -1204,35 +1255,35 @@
                       <!-- Expandable Dual CTA Container -->
                       <div id="deep-dive-cta-container" class="hidden mt-3 pt-3 border-t border-slate-100 space-y-3 animate-in fade-in duration-300">
                         <div class="text-center">
-                          <span class="text-[11px] font-bold text-[#0F6B5B]">내게 꼭 맞는 다음 단계 2가지:</span>
+                          <span class="text-[11px] font-bold text-[#0F6B5B]">사이다 답변 다음, 내게 꼭 맞는 2가지 선택:</span>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                          <!-- 명심코칭 앱: 자기적용과 실천 -->
+                          <!-- A. “내 경우에는 어떻게 작동할까?” → 명심코칭 앱 (자기적용과 행동실천) -->
                           <div class="p-3.5 rounded-2xl bg-white border-2 border-emerald-500/30 shadow-2xs flex flex-col justify-between hover:border-[#0F6B5B] transition-all">
                             <div>
                               <div class="flex items-center justify-between mb-1">
                                 <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-[#0F6B5B] text-[9px] font-black uppercase">
-                                  자기적용과 실천
+                                  자기적용과 행동실천
                                 </span>
                                 <span class="text-[9px] text-slate-400 font-bold">App Connect</span>
                               </div>
-                              <h5 class="text-xs font-black text-slate-900 mb-1">앱에서 오늘 기록 저장 & 비교하기</h5>
+                              <h5 class="text-xs font-black text-slate-900 mb-1">“내 경우에는 어떻게 작동할까?”</h5>
                               <p id="app-subtext-label" class="text-[11px] text-slate-600 leading-relaxed mb-3">
                                 오늘 겪은 한 장면을 떠올려 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.
                               </p>
                             </div>
                             <div class="space-y-1.5">
-                              <a id="mind-app-cta-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_cta_clicked', { action: 'scan' })" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block shadow-2xs">
-                                <span id="app-cta-label">내 패턴 1분 SCAN</span> &rarr;
+                              <a id="mind-app-cta-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_click', { action: 'scan' })" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block shadow-2xs">
+                                <span id="app-cta-label">내 패턴 직접 확인하기</span> &rarr;
                               </a>
-                              <a id="mind-app-secondary-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_cta_clicked', { action: 'compare' })" class="w-full py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-[#0F6B5B] font-bold text-[10px] text-center transition block">
-                                <span>지난 패턴과 비교하기 · 전체 보기</span>
+                              <a id="mind-app-secondary-btn" href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_click', { action: 'compare' })" class="w-full py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-[#0F6B5B] font-bold text-[10px] text-center transition block">
+                                <span>지난 기록과 비교하기 · 전체 보기</span>
                               </a>
                             </div>
                           </div>
 
-                          <!-- 청류출판사 도서: 원리와 깊은 이해 -->
+                          <!-- B. “왜 이런 반응이 반복될까?” → 청류출판사 도서 (원리와 깊은 이해) -->
                           <div class="p-3.5 rounded-2xl bg-white border-2 border-[#C7A86B]/40 shadow-2xs flex flex-col justify-between hover:border-[#C7A86B] transition-all">
                             <div>
                               <div class="flex items-center justify-between mb-1">
@@ -1241,13 +1292,13 @@
                                 </span>
                                 <span id="book-chapter-label" class="text-[9px] text-slate-400 font-medium">원리 탐구</span>
                               </div>
-                              <h5 id="book-name-label" class="text-xs font-black text-slate-900 mb-1">청류출판사 《다크 코드》</h5>
+                              <h5 id="book-name-label" class="text-xs font-black text-slate-900 mb-1">“왜 이런 반응이 반복될까?”</h5>
                               <p id="book-subtext-label" class="text-[11px] text-slate-600 leading-relaxed mb-3">
-                                왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책에서 원리를 탐구합니다.
+                                왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책에서 원리를 깊이 탐구합니다.
                               </p>
                             </div>
                             <div class="space-y-1.5">
-                              <a id="mind-book-cta-btn" href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_cta_clicked')" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-white font-black text-xs text-center transition block border border-slate-700 shadow-2xs">
+                              <a id="mind-book-cta-btn" href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click')" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-white font-black text-xs text-center transition block border border-slate-700 shadow-2xs">
                                 <span id="book-cta-label">이 질문의 뿌리 더 읽기</span> &rarr;
                               </a>
                               <div class="text-center">
@@ -1282,9 +1333,9 @@
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
                     <span class="text-sm">📅</span>
-                    <h4 class="text-xs sm:text-sm font-black text-white">이번 주의 발견 (Weekly Discovery)</h4>
+                    <h4 class="text-xs sm:text-sm font-black text-white">내가 반복해서 뽑은 카드 (이번 주의 발견)</h4>
                   </div>
-                  <span class="text-[11px] text-slate-400 font-medium">최근 7일간의 기록</span>
+                  <span class="text-[11px] text-slate-400 font-medium">최근 7일간의 관찰 기록</span>
                 </div>
                 
                 <p id="weekly-frequent-pattern" class="text-xs text-[#E2CF9F] font-bold mb-3">
@@ -1335,6 +1386,115 @@
 
           <div id="popular-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
             <!-- Javascript will render 8 popular questions -->
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- 05. 책으로 더 깊이 (청류출판사 3대 명심 도서 브릿지)          -->
+        <!-- ============================================================= -->
+        <div id="cheongryu-books-section" class="mb-14 text-left">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <span class="text-[11px] font-black text-[#C7A86B] uppercase tracking-wider block">DEEP PRINCIPLES & ROOTS</span>
+              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">책으로 더 깊이 — 청류출판사 3대 도서</h4>
+            </div>
+            <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-[#0F6B5B] font-bold transition flex items-center gap-1">
+              <span>출판사 도서관</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            <!-- 1. 다크 코드 -->
+            <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-[#14233B] hover:shadow-lg transition-all flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-[#14233B] text-[10px] font-black">무의식 · 패턴 발견</span>
+                  <span class="text-[10px] text-slate-400 font-bold">Book 01</span>
+                </div>
+                <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-[#14233B] transition-colors mb-1.5">
+                  청류출판사 《다크 코드》
+                </h5>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                  STORY, 인정욕구, 통제, 완벽주의, 눈치. 뇌가 생존을 위해 만들어낸 무의식 방어기제의 뿌리를 파헤칩니다.
+                </p>
+              </div>
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'dark_code' })" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-black text-xs text-center transition block">
+                이 패턴의 뿌리 읽기 &rarr;
+              </a>
+            </div>
+
+            <!-- 2. 뉴럴 코드 -->
+            <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-lg transition-all flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-[#0F6B5B] text-[10px] font-black">신경망 · 10% 행동</span>
+                  <span class="text-[10px] text-slate-400 font-bold">Book 02</span>
+                </div>
+                <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-[#0F6B5B] transition-colors mb-1.5">
+                  청류출판사 《뉴럴 코드》
+                </h5>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                  DELAY, 10% 행동, IF-THEN. 무거운 결심 대신 신경계를 다시 훈련시키는 인지행동 재학습 가이드입니다.
+                </p>
+              </div>
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'neural_code' })" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block">
+                왜 반복되는지 책에서 보기 &rarr;
+              </a>
+            </div>
+
+            <!-- 3. 제로 포인트 -->
+            <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-[#C7A86B] hover:shadow-lg transition-all flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-[#C7A86B] text-[10px] font-black">순수 의식 · 알아차림</span>
+                  <span class="text-[10px] text-slate-400 font-bold">Book 03</span>
+                </div>
+                <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-amber-800 transition-colors mb-1.5">
+                  청류출판사 《제로 포인트》
+                </h5>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                  생각과 나와의 거리, 동일시 해제. 어떤 감정이 덮쳐와도 요동치지 않는 내면의 영점(Zero Point)을 회복합니다.
+                </p>
+              </div>
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'zero_point' })" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-[#E2CF9F] font-black text-xs text-center transition block border border-slate-700">
+                선택의 공간 알아차리기 &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- 06. 앱에서 직접 해보기 (명심코칭 앱 브릿지)                    -->
+        <!-- ============================================================= -->
+        <div id="myungsim-app-section" class="mb-14 text-left p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#14233B] via-[#0F2824] to-[#0A493E] text-white border-2 border-[#C7A86B]/50 shadow-2xl relative overflow-hidden">
+          <div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+          
+          <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div class="max-w-lg space-y-2">
+              <span class="px-3 py-1 rounded-full bg-white/10 text-[#E2CF9F] text-xs font-black uppercase tracking-wider border border-white/10">
+                📱 MYUNGSIM COACHING APP
+              </span>
+              <h4 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+                앱에서 직접 해보기 — 나의 작동지도 저장과 실천
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                오늘의 통찰을 휘발시키지 마세요. 명심코칭 앱에서 나의 1분 SCAN 기록을 저장하고, 지난 패턴과 비교하며 10% 행동 실험을 이어갈 수 있습니다.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1 text-[11px] text-[#E2CF9F] font-bold">
+                <span>✓ 1분 SCAN 빠른 기록</span>
+                <span>✓ 반복 Trigger 감지 알림</span>
+                <span>✓ 비진단 작동지도 아카이빙</span>
+              </div>
+            </div>
+
+            <div class="w-full sm:w-auto shrink-0 flex flex-col gap-2">
+              <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_click', { source: 'main_section' })" class="px-6 py-3.5 rounded-2xl bg-[#0F6B5B] hover:bg-emerald-600 text-white font-black text-xs sm:text-sm text-center shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
+                <span>⚡ 앱에서 오늘 기록 저장하기</span>
+                <span>&rarr;</span>
+              </a>
+              <span class="text-[10px] text-slate-400 text-center">웹 / 모바일 앱 즉시 연동 지원</span>
+            </div>
           </div>
         </div>
 
@@ -18630,7 +18790,7 @@
     }
   </script>
 
-  <script src="js/mind-cards-data.js?v=20260916_v3"></script>
-  <script src="js/daily-mind-card.js?v=20260916_v3"></script>
+  <script src="js/mind-cards-data.js?v=20260916_v4"></script>
+  <script src="js/daily-mind-card.js?v=20260916_v4"></script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 {
   "APP_URL": "https://myeongsimcoaching.com",
   "PUBLISHER_URL": "https://smartstore.naver.com/crbooks",
+  "DARK_CODE_URL": "https://smartstore.naver.com/crbooks",
+  "NEURAL_CODE_URL": "https://smartstore.naver.com/crbooks",
+  "ZERO_POINT_URL": "https://smartstore.naver.com/crbooks",
   "DARK_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
   "NEURAL_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
   "ZERO_POINT_BOOK_URL": "https://smartstore.naver.com/crbooks"

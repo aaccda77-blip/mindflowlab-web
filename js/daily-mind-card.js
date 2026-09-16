@@ -20,22 +20,37 @@
   let isDataLoaded = false;
   let dataLoadPromise = null;
 
-  // 11개 핵심 분석 이벤트 트래킹 (사적인 심리 문장/텍스트는 일체 전송하지 않음)
+  // 9대 핵심 전환 분석 이벤트 트래킹 (사적인 심리 문장/텍스트는 일체 전송하지 않음)
+  // [10] question_view, card_open, answer_view, curiosity_click, scan_start, scan_complete, action_select, app_click, book_click
+  const EVENT_ALIASES = {
+    'daily_card_opened': 'card_open',
+    'question_clicked': 'question_view',
+    'card_revealed': 'card_open',
+    'soda_answer_viewed': 'answer_view',
+    'curiosity_bridge_viewed': 'curiosity_click',
+    'scan_started': 'scan_start',
+    'scan_completed': 'scan_complete',
+    'ten_percent_action_selected': 'action_select',
+    'app_cta_clicked': 'app_click',
+    'book_cta_clicked': 'book_click'
+  };
+
   function trackMindEvent(eventName, payload) {
     try {
+      const canonicalEvent = EVENT_ALIASES[eventName] || eventName;
       // 민감한 텍스트 필드 필터링 (프라이버시 철저 보호)
       const safePayload = {};
       if (payload && typeof payload === 'object') {
         for (const [k, v] of Object.entries(payload)) {
-          if (!['text', 'story', 'input', 'query'].includes(k)) {
+          if (!['text', 'story', 'input', 'query', 'memo', 'answer'].includes(k.toLowerCase())) {
             safePayload[k] = v;
           }
         }
       }
       if (window.dataLayer) {
-        window.dataLayer.push({ event: eventName, ...safePayload });
+        window.dataLayer.push({ event: canonicalEvent, originalEvent: eventName, ...safePayload });
       }
-      console.log(`[Mindflow Analytics] ${eventName}:`, safePayload);
+      console.log(`[Mindflow Analytics] [${canonicalEvent}] (source: ${eventName}):`, safePayload);
     } catch (e) {
       // ignore
     }
@@ -87,11 +102,11 @@
     const bookTitle = ((card && card.relatedBook) || '').trim().replace(/\s+/g, '');
 
     if (bookTitle.includes('다크')) {
-      return cfg.DARK_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+      return cfg.DARK_CODE_URL || cfg.DARK_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
     } else if (bookTitle.includes('뉴럴')) {
-      return cfg.NEURAL_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+      return cfg.NEURAL_CODE_URL || cfg.NEURAL_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
     } else if (bookTitle.includes('제로')) {
-      return cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+      return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
     }
     return cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
   }
@@ -333,6 +348,10 @@
     setElText('scan-story-text', card.storyQuestion || "그 사실에 나는 어떤 의미(STORY)를 붙였나요?");
     setElText('scan-unknown-text', card.unknownQuestion || "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?");
 
+    // STEP 3-1. SYNC & SHIFT (자기자비와 새로운 관점)
+    setElText('sync-sentence-text', card.syncSentence || "불확실해서 확인하고 싶은 마음이 올라오는구나.");
+    setElText('shift-question-text', card.shiftQuestion || "지금 바로 결론내리지 않는다면 어떤 선택이 가능할까요?");
+
     // 칩 초기화
     selectedBodyPart = '가슴 조임';
     selectedImpulse = '거듭 확인';
@@ -369,12 +388,12 @@
     const config = window.MIND_CONFIG || {
       APP_URL: 'https://myeongsimcoaching.com',
       PUBLISHER_URL: 'https://smartstore.naver.com/crbooks',
-      DARK_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-      NEURAL_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-      ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
+      DARK_CODE_URL: 'https://smartstore.naver.com/crbooks',
+      NEURAL_CODE_URL: 'https://smartstore.naver.com/crbooks',
+      ZERO_POINT_URL: 'https://smartstore.naver.com/crbooks'
     };
 
-    setElText('app-cta-label', card.appCTA || "내 패턴 1분 SCAN");
+    setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");
     setElText('app-subtext-label', "오늘 겪은 한 장면을 떠올려 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
     const appBtn = document.getElementById('mind-app-cta-btn');
     if (appBtn) {
@@ -388,7 +407,7 @@
     }
 
     setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
-    setElText('book-chapter-label', card.relatedBookChapter || "원리 탐구");
+    setElText('book-chapter-label', card.relatedChapter || card.relatedBookChapter || "원리 탐구");
     setElText('book-subtext-label', "왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책에서 원리를 탐구합니다.");
     setElText('book-cta-label', card.bookCTA || "이 질문의 뿌리 더 읽기");
 
@@ -412,7 +431,31 @@
   }
 
   // =================================================================
-  // 5. 1분 SCAN 트리거 칩 선택 (가벼운 1터치 참여)
+  // 4-1. [9] 호기심 4대 질문 인터랙션 (이탈 방지 회로)
+  // =================================================================
+  window.selectCuriosityQuestion = function (qText) {
+    trackMindEvent('curiosity_click', { question: qText });
+    setElText('curiosity-bridge-question', `“${qText}”`);
+    
+    // 버튼 하이라이트 효과
+    document.querySelectorAll('.curiosity-preset-chip').forEach(btn => {
+      btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+      btn.classList.add('border-amber-200/80', 'bg-white', 'text-slate-700');
+    });
+    const clickedBtn = event ? event.currentTarget : null;
+    if (clickedBtn) {
+      clickedBtn.classList.remove('border-amber-200/80', 'bg-white', 'text-slate-700');
+      clickedBtn.classList.add('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
+    }
+
+    const scanEl = document.getElementById('mind-scan-container');
+    if (scanEl) {
+      scanEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  };
+
+  // =================================================================
+  // 5. 1분 SCAN 인터랙션 (BODY / IMPULSE)
   // =================================================================
   window.selectScanBody = function (partKey) {
     trackMindEvent('scan_started', { type: 'body' });
@@ -754,14 +797,24 @@
       matched = cardsData.filter(c => c.isFeatured).slice(0, 4);
       if (matched.length === 0) matched = cardsData.slice(0, 4);
     } else {
+      const terms = query.split(/\s+/).filter(t => t.length >= 2);
       matched = cardsData.filter(c => {
-        const qText = (c.question || '').toLowerCase();
-        const kw = (c.keyword || '').toLowerCase();
-        const title = (c.cardTitle || '').toLowerCase();
-        const cat = (c.category || '').toLowerCase();
-        const answer = (c.sodaAnswer || '').toLowerCase();
-        const tags = Array.isArray(c.searchKeywords) ? c.searchKeywords.join(' ').toLowerCase() : '';
-        return qText.includes(query) || kw.includes(query) || title.includes(query) || cat.includes(query) || tags.includes(query) || answer.includes(query);
+        const fullCorpus = [
+          c.question || '',
+          c.keyword || '',
+          c.cardTitle || '',
+          c.category || '',
+          c.sodaAnswer || '',
+          Array.isArray(c.searchKeywords) ? c.searchKeywords.join(' ') : ''
+        ].join(' ').toLowerCase();
+
+        // 1. 전체 구문 일치
+        if (fullCorpus.includes(query)) return true;
+
+        // 2. 단어 단위(2글자 이상) 매칭
+        if (terms.length > 0 && terms.some(t => fullCorpus.includes(t))) return true;
+
+        return false;
       }).slice(0, 5);
     }
 

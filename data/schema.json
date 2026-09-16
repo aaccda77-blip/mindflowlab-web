@@ -109,6 +109,14 @@
         "type": "string",
         "description": "Specific chapter title or principle topic"
       },
+      "relatedChapter": {
+        "type": "string",
+        "description": "Specific chapter title or principle topic (alias of relatedBookChapter)"
+      },
+      "featured": {
+        "type": "boolean",
+        "description": "Flag for featured curated questions (alias of isFeatured)"
+      },
       "appCTA": {
         "type": "string",
         "description": "Experience-first self-application action verb for the App"

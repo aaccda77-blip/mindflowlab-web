@@ -9,6 +9,9 @@
 window.MIND_CONFIG = {
   "APP_URL": "https://myeongsimcoaching.com",
   "PUBLISHER_URL": "https://smartstore.naver.com/crbooks",
+  "DARK_CODE_URL": "https://smartstore.naver.com/crbooks",
+  "NEURAL_CODE_URL": "https://smartstore.naver.com/crbooks",
+  "ZERO_POINT_URL": "https://smartstore.naver.com/crbooks",
   "DARK_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
   "NEURAL_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
   "ZERO_POINT_BOOK_URL": "https://smartstore.naver.com/crbooks"
@@ -44,11 +47,15 @@ window.MIND_CARDS_DATA = [
       "카톡",
       "연락",
       "마음 식음",
-      "연락불안"
+      "연락불안",
+      "연락이 안 와요",
+      "카톡 안 읽음"
     ],
     "safetyLevel": "일상관찰",
     "isFeatured": true,
-    "popularity": 98
+    "popularity": 98,
+    "relatedChapter": "제2장 · 무의식적 마음읽기와 투사의 해체",
+    "featured": true
   },
   {
     "id": "overchecking-01",
@@ -85,8 +92,7 @@ window.MIND_CARDS_DATA = [
       "가스밸브",
       "불안",
       "왜 결정만 하면 다시 확인하고 싶을까요",
-      "결정장애",
-      "확인"
+      "결정장애"
     ],
     "relatedBookChapter": "제2장 · 의심의 쳇바퀴와 Body Signature",
     "safetyLevel": "일상관찰",
@@ -95,7 +101,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제2장 · 의심의 쳇바퀴와 Body Signature",
+    "featured": true
   },
   {
     "id": "peoplepleaser-02",
@@ -133,7 +141,9 @@ window.MIND_CARDS_DATA = [
       "미안해요",
       "좋은 사람이고 싶은데 왜 점점 지칠까요",
       "착한사람",
-      "지침"
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족"
     ],
     "relatedBookChapter": "제3장 · 인정중독과 희생의 자동문장",
     "safetyLevel": "일상관찰",
@@ -142,7 +152,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "featured": true
   },
   {
     "id": "boundary-03",
@@ -172,7 +184,12 @@ window.MIND_CARDS_DATA = [
       "관계 단절",
       "싸움",
       "싫은 소리",
-      "거절을 못하겠어요"
+      "거절을 못하겠어요",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족",
+      "거절을 못해요",
+      "착한아이"
     ],
     "relatedBookChapter": "제4장 · 건강한 경계선과 무의식 방어",
     "safetyLevel": "일상관찰",
@@ -181,7 +198,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "featured": true
   },
   {
     "id": "nunchi-04",
@@ -214,7 +233,8 @@ window.MIND_CARDS_DATA = [
       "눈치",
       "차갑게",
       "기분 눈치",
-      "신경쓰임"
+      "신경쓰임",
+      "직장 스트레스"
     ],
     "relatedBookChapter": "제1장 · 과출력된 레이더와 분리 기술",
     "safetyLevel": "일상관찰",
@@ -223,7 +243,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "featured": true
   },
   {
     "id": "overexplaining-05",
@@ -259,7 +281,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 투사와 자기변호의 늪",
+    "featured": false
   },
   {
     "id": "apology-06",
@@ -290,7 +314,12 @@ window.MIND_CARDS_DATA = [
       "먼저 사과",
       "눈치",
       "저자세",
-      "잘못"
+      "잘못",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족",
+      "거절을 못해요",
+      "착한아이"
     ],
     "relatedBookChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
     "safetyLevel": "일상관찰",
@@ -299,7 +328,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "featured": true
   },
   {
     "id": "attachment-07",
@@ -336,7 +367,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 애착 상처와 파국화 회로",
+    "featured": true
   },
   {
     "id": "mindreading-09",
@@ -372,7 +405,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제8장 · 투사의 거울과 현실 검증",
+    "featured": false
   },
   {
     "id": "perfectionism-10",
@@ -409,7 +444,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 완벽주의 해체와 점진적 노출",
+    "featured": true
   },
   {
     "id": "procrastination-11",
@@ -445,7 +482,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 동결(Freeze) 반응 해제와 5초 법칙",
+    "featured": false
   },
   {
     "id": "overthinking-12",
@@ -482,7 +521,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "featured": false
   },
   {
     "id": "regret-13",
@@ -517,7 +558,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "featured": false
   },
   {
     "id": "control-14",
@@ -553,7 +596,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제10장 · 통제의 착각과 불확실성의 수용",
+    "featured": false
   },
   {
     "id": "burnout-15",
@@ -589,8 +634,7 @@ window.MIND_CARDS_DATA = [
       "일생각",
       "휴식불안",
       "왜 쉬면서도 죄책감이 들까요",
-      "죄책감",
-      "휴식"
+      "주말 불안"
     ],
     "relatedBookChapter": "제2장 · 완전한 이완과 무조건적 허용",
     "safetyLevel": "일상관찰",
@@ -599,7 +643,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제2장 · 완전한 이완과 무조건적 허용",
+    "featured": true
   },
   {
     "id": "restguilt-16",
@@ -628,7 +674,9 @@ window.MIND_CARDS_DATA = [
       "쉬는데도 불안해요",
       "생산성 강박",
       "낙오자",
-      "쉬면 불안"
+      "쉬면 불안",
+      "일생각",
+      "주말 불안"
     ],
     "relatedBookChapter": "제4장 · 휴식과 뇌의 회복 탄력성",
     "safetyLevel": "일상관찰",
@@ -637,7 +685,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 휴식과 뇌의 회복 탄력성",
+    "featured": false
   },
   {
     "id": "achievement-17",
@@ -673,7 +723,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제11장 · 골대 이동 증후군과 도파민의 함정",
+    "featured": true
   },
   {
     "id": "comparison-18",
@@ -709,7 +761,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "featured": false
   },
   {
     "id": "selfcriticism-19",
@@ -746,7 +800,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "featured": false
   },
   {
     "id": "repression-20",
@@ -782,7 +838,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "featured": false
   },
   {
     "id": "anger-21",
@@ -812,7 +870,8 @@ window.MIND_CARDS_DATA = [
       "짜증",
       "화를 내고 후회해요",
       "후회",
-      "사소한 일에 화"
+      "사소한 일에 화",
+      "욱하고 후회"
     ],
     "relatedBookChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
     "safetyLevel": "일상관찰",
@@ -821,7 +880,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "featured": true
   },
   {
     "id": "attachment-breakup-22",
@@ -859,7 +920,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "그 사람과의 관계에서 반복되었던 명백한 사실(Fact)은 무엇인가요?",
     "storyQuestion": "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?",
     "unknownQuestion": "다시 연락한다고 해서 근본적인 문제가 해결될 거라는 증거가 있나요?",
-    "bodyQuestion": "가슴이 답답하고 목구멍이 메여오나요?"
+    "bodyQuestion": "가슴이 답답하고 목구멍이 메여오나요?",
+    "relatedChapter": "5장. 집착과 무의식적 결핍 회로",
+    "featured": true
   },
   {
     "id": "identity-23",
@@ -895,7 +958,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "featured": false
   },
   {
     "id": "money-anxiety-24",
@@ -925,7 +990,11 @@ window.MIND_CARDS_DATA = [
       "불안",
       "돈이 없어서",
       "미래불안",
-      "경제"
+      "경제",
+      "돈 때문에 불안해요",
+      "돈이 없어서 불안해요",
+      "경제적 불안",
+      "통장잔고"
     ],
     "relatedBookChapter": "3장. 결핍과 통제 코드",
     "safetyLevel": "safe",
@@ -934,7 +1003,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 이번 주에 반드시 지출해야 할 객관적인 금액은 얼마인가요?",
     "storyQuestion": "‘나는 결국 파멸할 것이다, 감당 못한다’라는 옛날 이야기를 덧붙이고 있지 않나요?",
     "unknownQuestion": "아직 일어나지 않은 1년 뒤, 3년 뒤의 경제 상황을 지금 확정지을 수 있나요?",
-    "bodyQuestion": "명치 끝이 옥죄어오거나 호흡이 얕아지나요?"
+    "bodyQuestion": "명치 끝이 옥죄어오거나 호흡이 얕아지나요?",
+    "relatedChapter": "3장. 결핍과 통제 코드",
+    "featured": true
   },
   {
     "id": "relapse-25",
@@ -970,7 +1041,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제8장 · 나선형 성장 모델과 재발 방지",
+    "featured": false
   },
   {
     "id": "impostor-success-26",
@@ -1008,7 +1081,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "상대가 나에게 제안한 기회의 객관적 내용과 범위는 무엇인가요?",
     "storyQuestion": "‘나는 가짜야, 곧 들통날 거야’라는 이야기를 반복하고 있지 않나요?",
     "unknownQuestion": "내가 실수하더라도 그것이 내 존재 전체의 파멸을 의미하나요?",
-    "bodyQuestion": "어깨가 움츠러들고 손발이 차가워지나요?"
+    "bodyQuestion": "어깨가 움츠러들고 손발이 차가워지나요?",
+    "relatedChapter": "4장. 회피 신경망을 재설계하는 10% 행동",
+    "featured": true
   },
   {
     "id": "helpseeking-27",
@@ -1044,7 +1119,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "featured": false
   },
   {
     "id": "observationtrap-28",
@@ -1079,7 +1156,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "featured": false
   },
   {
     "id": "identification-29",
@@ -1115,7 +1194,9 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "featured": false
   },
   {
     "id": "zeropoint-30",
@@ -1152,6 +1233,8 @@ window.MIND_CARDS_DATA = [
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
     "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
-    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "featured": false
   }
 ];
