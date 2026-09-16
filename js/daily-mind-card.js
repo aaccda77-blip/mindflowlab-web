@@ -197,16 +197,17 @@
     trackMindEvent('trigger_type_selected', { trigger: triggerType });
   };
 
-  // 5. 데이터 바인딩
+  // 5. 데이터 바인딩 (경험 중심 전환 UX 정밀 매칭)
   function bindCardData(card) {
     // 카드 기본 헤더
     setElText('card-category-chip', card.category);
     setElText('card-title-text', card.cardTitle);
     setElText('card-question-text', card.question);
 
-    // Step 1: 사이다 답변
+    // Step 1: 사이다 답변 & "내 경우에는 어떨까?" 호기심 브릿지
     setElText('soda-answer-lead', card.sodaAnswer);
     setElText('soda-answer-desc', card.description);
+    setElText('soda-curiosity-text', card.curiosityQuestion || "내 일상에서는 어떤 순간에 이 신호가 가장 먼저 켜지고 있을까?");
 
     // Step 2: 개인화 궁금증
     setElText('curiosity-bridge-question', card.curiosityQuestion);
@@ -227,14 +228,20 @@
     const actionCheckbox = document.getElementById('ten-percent-action-check');
     if (actionCheckbox) actionCheckbox.checked = false;
 
-    // Step 5: 앱/책 CTA
-    setElText('app-cta-label', card.appCTA || "내 패턴 1분 SCAN");
+    // Step 5: 앱/책 맞춤 매칭 듀얼 전환 CTA
+    // 5-1. 앱 CTA (자기적용과 실천)
+    setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");
+    setElText('app-subtext-label', card.appSubtext || "오늘 내가 겪은 한 장면을 떠올려 1분 만에 내 진짜 Trigger와 자동반응을 관찰하고 기록합니다.");
     const appBtn = document.getElementById('mind-app-cta-btn');
-    if (appBtn) appBtn.href = MIND_CONFIG.APP_URL;
+    if (appBtn) {
+      appBtn.href = `${MIND_CONFIG.APP_URL}?card=${encodeURIComponent(card.id)}&focus=1`;
+    }
 
+    // 5-2. 책 CTA (원리와 깊은 이해)
     setElText('book-name-label', `청류출판사 《${card.relatedBook}》`);
     setElText('book-chapter-label', card.bookChapter || "관련 챕터");
-    setElText('book-cta-label', card.bookCTA || "책에서 더 깊이 읽기");
+    setElText('book-subtext-label', card.bookSubtext || "왜 뇌는 이 반응을 최선의 생존 전략으로 착각했을까요? 책의 해당 챕터에서 원리를 탐구합니다.");
+    setElText('book-cta-label', card.bookCTA || "이 질문의 뿌리 더 읽기");
 
     const bookBtn = document.getElementById('mind-book-cta-btn');
     if (bookBtn) {
@@ -247,6 +254,15 @@
       }
     }
   }
+
+  // Step 4에서 버튼 하나로 10% 행동을 즉시 시작할 수 있도록 돕는 인터랙션
+  window.triggerTenPercentAction = function () {
+    const actionCheckbox = document.getElementById('ten-percent-action-check');
+    if (actionCheckbox) {
+      actionCheckbox.checked = true;
+      toggleTenPercentAction(true);
+    }
+  };
 
   function setElText(id, text) {
     const el = document.getElementById(id);
@@ -417,7 +433,7 @@
             </p>
           </div>
           <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-[#0F6B5B] font-bold">
-            <span>처방 확인하기</span>
+            <span>내 패턴 확인하기</span>
             <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -502,7 +518,7 @@
 [${currentCard.category}] ${currentCard.cardTitle}
 Q. ${currentCard.question}
 
-💡 사이다 처방:
+💡 사이다 통찰:
 ${currentCard.sodaAnswer}
 
 ⚡ 오늘 10% 실천:
