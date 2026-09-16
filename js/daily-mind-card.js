@@ -1804,13 +1804,13 @@
       matched = scored.map(item => item.card).slice(0, 4);
     }
 
-    // 헤더: “당신을 규정하는 결과가 아닙니다. 지금 상황과 가까운 질문부터 골라보세요.”
+    // 헤더: “사람을 몇 개의 유형 상자에 가두지 않습니다. 지금 켜진 상태(동사)부터 가볍게 골라보세요.”
     let html = `
       <div class="mb-2">
         <div class="text-xs sm:text-sm font-black text-[#E2CF9F] leading-snug">
-          “당신을 규정하는 결과가 아닙니다.<br class="sm:hidden" /> 지금 상황과 가까운 질문부터 골라보세요.”
+          “사람을 몇 개의 유형 상자에 가두지 않습니다.<br class="sm:hidden" /> 지금 내 안에서 켜진 상태(동사)부터 가볍게 골라보세요.”
         </div>
-        <div class="text-[10px] text-slate-400 mt-0.5">상황에 맞는 사이다 질문과 1분 SCAN으로 이어집니다.</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">고정된 꼬리표 대신, 상황에 맞는 사이다 통찰과 1분 SCAN으로 조율합니다.</div>
       </div>
     `;
 
@@ -1880,7 +1880,7 @@ ${currentCard.sodaAnswer}
 ⚡ 오늘 10% 실천:
 ${currentCard.tenPercentAction}
 
-“이것은 성격진단이 아니라 오늘의 작동기록입니다.”
+“이것은 성격진단이 아니라 오늘의 작동기록입니다. (고정된 라벨 대신 지금 켜진 상태를 조율합니다)”
 — 마인드플로우 랩 명심코칭`;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
