@@ -173,12 +173,16 @@
     trackMindEvent('perfection_pack_view', { packId: 'perfection-approval-comparison-01', source: 'home_load' });
     trackMindEvent('family_pack_view', { packId: 'family-boundary-01', source: 'home_load' });
     trackMindEvent('decision_pack_view', { packId: 'decision-action-01', source: 'home_load' });
+    trackMindEvent('emotion_pack_view', { packId: 'emotion-recovery-01', source: 'home_load' });
+    trackMindEvent('belief_pack_view', { packId: 'belief-fate-uncertainty-01', source: 'home_load' });
     renderPopularQuestions();
     renderMoneyQuestions();
     renderCareerQuestions();
     renderPerfectionQuestions();
     renderFamilyQuestions();
     renderDecisionQuestions();
+    renderEmotionQuestions();
+    renderBeliefQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
     // 기본 검색 제안 렌더링
@@ -342,6 +346,16 @@
       trackMindEvent('decision_card_open', { cardId: currentCard.id, category: currentCard.category });
       trackMindEvent('decision_card_reveal', { cardId: currentCard.id, category: currentCard.category });
     }
+    // 자책·불안·감정회복 PACK 08 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'emotion-recovery-01' || (currentCard.id && currentCard.id.startsWith('emo-')))) {
+      trackMindEvent('emotion_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('emotion_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
+    // 사주·삼재·운명·선택 PACK 09 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'belief-fate-uncertainty-01' || (currentCard.id && currentCard.id.startsWith('fate-')))) {
+      trackMindEvent('belief_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('belief_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
 
     // 화면 전환
     const homeView = document.getElementById('mind-home-view');
@@ -472,11 +486,13 @@
       bridgeBookBtn.href = resolveBookUrl(card, config);
     }
 
-    // PACK 04, 05, 07 전용 Curiosity Bridge 및 특수 인터랙션 분기
+    // PACK 04, 05, 07, 08, 09 전용 Curiosity Bridge 및 특수 인터랙션 분기
     updatePackCuriosityBridge(card);
     renderPack04SpecialInteraction(card);
     renderPack05SpecialInteraction(card);
     renderPack07SpecialInteraction(card);
+    renderPack08SpecialInteraction(card);
+    renderPack09SpecialInteraction(card);
 
     // CTA 영역 초기화
     isDeepDiveUnlocked = false;
@@ -517,6 +533,14 @@
       trackMindEvent('decision_app_click', { source: source || 'app_cta', cardId: currentCard.id });
       trackMindEvent('app_cta_clicked', { source: source || 'app_cta', cardId: currentCard.id });
     }
+    if (currentCard && (currentCard.packId === 'emotion-recovery-01' || (currentCard.id && currentCard.id.startsWith('emo-')))) {
+      trackMindEvent('emotion_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+      trackMindEvent('app_cta_clicked', { source: source || 'app_cta', cardId: currentCard.id });
+    }
+    if (currentCard && (currentCard.packId === 'belief-fate-uncertainty-01' || (currentCard.id && currentCard.id.startsWith('fate-')))) {
+      trackMindEvent('belief_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+      trackMindEvent('app_cta_clicked', { source: source || 'app_cta', cardId: currentCard.id });
+    }
   };
 
   window.handleMindBookClick = function (source) {
@@ -538,6 +562,14 @@
     }
     if (currentCard && (currentCard.packId === 'decision-action-01' || (currentCard.id && currentCard.id.startsWith('dec-')))) {
       trackMindEvent('decision_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+      trackMindEvent('book_cta_clicked', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'emotion-recovery-01' || (currentCard.id && currentCard.id.startsWith('emo-')))) {
+      trackMindEvent('emotion_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+      trackMindEvent('book_cta_clicked', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'belief-fate-uncertainty-01' || (currentCard.id && currentCard.id.startsWith('fate-')))) {
+      trackMindEvent('belief_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
       trackMindEvent('book_cta_clicked', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
     }
   };
@@ -931,11 +963,53 @@
     const isPack04 = card && (card.packId === 'perfection-approval-comparison-01' || (card.id && card.id.startsWith('perf-')));
     const isPack05 = card && (card.packId === 'family-boundary-01' || (card.id && card.id.startsWith('fam-')));
     const isPack07 = card && (card.packId === 'decision-action-01' || (card.id && card.id.startsWith('dec-')));
+    const isPack08 = card && (card.packId === 'emotion-recovery-01' || (card.id && card.id.startsWith('emo-')));
+    const isPack09 = card && (card.packId === 'belief-fate-uncertainty-01' || (card.id && card.id.startsWith('fate-')));
     const bridgeQ = document.getElementById('curiosity-bridge-question');
     const bridgeSub = document.getElementById('curiosity-bridge-sub');
     const bridgeChipsContainer = document.querySelector('.curiosity-preset-chip')?.parentElement;
 
     if (!bridgeChipsContainer) return;
+
+    if (isPack08) {
+      if (bridgeQ) bridgeQ.innerText = '“감정을 없애려고 애쓰는 대신, 지금 몸의 신호와 충동을 알아차린다면?”';
+      if (bridgeSub) bridgeSub.innerText = '감정은 통제의 대상이 아닌 알아차림의 신호입니다. 두 번째 화살(자기비난)을 멈추고 안전한 회복 지점을 찾아봅니다.';
+      bridgeChipsContainer.innerHTML = `
+        <button type="button" onclick="selectCuriosityQuestion('실수는 아프지만 자책은 멈출 수 있다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-teal-200 hover:border-[#0D9488] hover:bg-teal-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-teal-600">🛡️</span><span>“실수는 아프지만 자책은 멈추기”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('지금 올라온 감정에 이름표를 붙여본다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-teal-200 hover:border-[#0D9488] hover:bg-teal-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-teal-600">🏷️</span><span>“감정에 진짜 이름표 붙이기”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('내 몸이 가장 먼저 보내는 신호는 무엇일까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-teal-200 hover:border-[#0D9488] hover:bg-teal-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-teal-600">💓</span><span>“몸이 먼저 보내는 신호 읽기”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('자책 대신 지금 할 수 있는 작은 복구는?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-teal-200 hover:border-[#0D9488] hover:bg-teal-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-teal-600">🌱</span><span>“자책 대신 작은 복구(REPAIR)”</span>
+        </button>
+      `;
+      return;
+    }
+
+    if (isPack09) {
+      if (bridgeQ) bridgeQ.innerText = '“믿음에는 발언권을 주되, 오늘 내 행동의 결재권은 누가 가지고 있는가?”';
+      if (bridgeSub) bridgeSub.innerText = '사주나 믿음을 조롱하지도, 맹신하지도 않습니다. 불확실성을 UNKNOWN으로 남겨두고 오늘 내 선택권을 확인합니다.';
+      bridgeChipsContainer.innerHTML = `
+        <button type="button" onclick="selectCuriosityQuestion('믿음과 실제로 확인된 FACT를 나눈다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-purple-200 hover:border-[#8B5CF6] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">⚖️</span><span>“믿음과 현실 FACT 분리하기”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('사주는 자문위원일 뿐 최종 결재권자는 나?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-purple-200 hover:border-[#8B5CF6] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">👑</span><span>“발언권은 주되 결재권은 내가”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('모르는 것이 남아 있어도 오늘 10% 선택은?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-purple-200 hover:border-[#8B5CF6] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">🧭</span><span>“UNKNOWN 남기고 오늘 10% 선택”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('운명이라는 정체성을 구체적 작동으로 본다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-purple-200 hover:border-[#8B5CF6] hover:bg-purple-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-purple-600">🔄</span><span>“정체성 문장 → 작동 문장”</span>
+        </button>
+      `;
+      return;
+    }
 
     if (isPack07) {
       if (bridgeQ) bridgeQ.innerText = '“확신은 없지만, 시험해볼 만큼은 준비되었을까?”';
@@ -2422,6 +2496,844 @@
     `).join('');
   }
 
+  // =================================================================
+  // 12-6. 자책·불안·감정회복 PACK 08 캐러셀
+  // =================================================================
+  const FEATURED_EMOTION_IDS = [
+    'emo-001', // 실수 후 자책 모드
+    'emo-002', // 신체 과각성 불안 모드
+    'emo-003', // 분노 폭발 후 자괴감 모드
+    'emo-004', // 수치심 은폐 모드
+    'emo-007', // 서운함 억압 모드
+    'emo-015'  // 멘탈 자책 정체성 모드
+  ];
+
+  function renderEmotionQuestions() {
+    const carousel = document.getElementById('emotion-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const emotionFeatured = [];
+    FEATURED_EMOTION_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) emotionFeatured.push(card);
+    });
+
+    const otherEmotion = cardsData.filter(c => 
+      c.packId === 'emotion-recovery-01' && !FEATURED_EMOTION_IDS.includes(c.id)
+    );
+
+    const list = [...emotionFeatured, ...otherEmotion].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0D9488] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#0D9488]/10 text-[#0D9488] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#0D9488] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#0D9488]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // =================================================================
+  // 12-7. 사주·삼재·운명·선택 PACK 09 캐러셀
+  // =================================================================
+  const FEATURED_BELIEF_IDS = [
+    'fate-001', // 삼재 결론 모드
+    'fate-002', // 돈복 판결 모드
+    'fate-004', // 궁합 결재 모드
+    'fate-009', // 운세 검색 모드
+    'fate-018', // 운명 vs 패턴 모드
+    'fate-020'  // 믿지만 갇히지 않는 모드
+  ];
+
+  function renderBeliefQuestions() {
+    const carousel = document.getElementById('belief-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const beliefFeatured = [];
+    FEATURED_BELIEF_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) beliefFeatured.push(card);
+    });
+
+    const otherBelief = cardsData.filter(c => 
+      c.packId === 'belief-fate-uncertainty-01' && !FEATURED_BELIEF_IDS.includes(c.id)
+    );
+
+    const list = [...beliefFeatured, ...otherBelief].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#8B5CF6] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#8B5CF6]/10 text-[#8B5CF6] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#8B5CF6] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#8B5CF6]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // =================================================================
+  // PACK 08 전용 5대 감정회복 인터랙션
+  // =================================================================
+  window.currentPack08Tool = null;
+
+  function renderPack08SpecialInteraction(card, activeToolOverride) {
+    const container = document.getElementById('pack08-special-interaction-container');
+    if (!container) return;
+
+    if (!card || (card.packId !== 'emotion-recovery-01' && !card.id.startsWith('emo-'))) {
+      container.classList.add('hidden');
+      container.innerHTML = '';
+      return;
+    }
+
+    container.classList.remove('hidden');
+
+    const defaultTool = card.interactionType || 'body_signal';
+    const activeTool = activeToolOverride || window.currentPack08Tool || defaultTool;
+    window.currentPack08Tool = activeTool;
+
+    // 위기 안전망 안내
+    const crisisSafetyHtml = `
+      <div class="p-3 rounded-xl bg-rose-50/80 border border-rose-200 text-slate-800 space-y-1.5 mb-3 text-xs shadow-2xs">
+        <div class="flex items-center justify-between text-rose-800 font-bold">
+          <span class="flex items-center gap-1.5"><span>🛡️</span> <span>마음 돌봄 긴급 안전망 안내</span></span>
+          <span class="text-[10px] text-rose-600 bg-white px-2 py-0.5 rounded-full border border-rose-200">24시간 무료</span>
+        </div>
+        <p class="text-[11px] text-slate-600 leading-relaxed">
+          극심한 자책, 자해 충동, 감당하기 어려운 불안이 이어질 때는 혼자 버티지 마세요. 전문 상담사와 지금 바로 통화할 수 있습니다.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-0.5 font-bold text-[10px]">
+          <a href="tel:109" class="px-2.5 py-1 rounded-lg bg-rose-700 text-white hover:bg-rose-800 transition">📞 자살예방 상담전화 109</a>
+          <a href="tel:15770199" class="px-2.5 py-1 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">🧠 정신건강 위기상담 1577-0199</a>
+          <a href="tel:129" class="px-2.5 py-1 rounded-lg bg-indigo-700 text-white hover:bg-indigo-800 transition">🤝 보건복지상담 129</a>
+        </div>
+      </div>
+    `;
+
+    // 5대 도구 탭
+    const tabsHtml = `
+      <div class="flex items-center gap-1 overflow-x-auto pb-1 mb-3 text-[11px] font-bold border-b border-teal-100 scrollbar-none">
+        <button type="button" onclick="switchPack08Tool('body_signal')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'body_signal' ? 'bg-[#0D9488] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          💓 몸의 신호 체크
+        </button>
+        <button type="button" onclick="switchPack08Tool('emotion_split')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'emotion_split' ? 'bg-[#0D9488] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🧩 감정·충동·행동 분리
+        </button>
+        <button type="button" onclick="switchPack08Tool('second_arrow')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'second_arrow' ? 'bg-[#0D9488] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🎯 두 번째 화살 멈추기
+        </button>
+        <button type="button" onclick="switchPack08Tool('body_signature')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'body_signature' ? 'bg-[#0D9488] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🗺️ 감정 몸 시그니처
+        </button>
+        <button type="button" onclick="switchPack08Tool('prevention_to_response')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'prevention_to_response' ? 'bg-[#0D9488] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🌱 회복 대응(REPAIR)
+        </button>
+      </div>
+    `;
+
+    let toolBodyHtml = '';
+
+    if (activeTool === 'body_signal') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-teal-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#0D9488] font-black text-xs sm:text-sm">
+              <span>💓</span>
+              <span>BODY SIGNAL CHECK · 몸의 신호 체크</span>
+            </div>
+            <span class="text-[9px] font-bold text-teal-800 bg-white px-2 py-0.5 rounded-full border border-teal-200">생리적 신호 관찰</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-teal-50/70 border border-teal-100 text-xs text-slate-700 leading-relaxed">
+            <strong class="text-teal-900 block mb-1">💡 핵심 통찰:</strong>
+            감정은 머릿속의 잘못된 생각이 아니라, <strong>몸이 먼저 켜낸 생리적 알람</strong>입니다. 지금 내 몸 어디에서 신호가 오고 있나요?
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <button type="button" onclick="selectBodySignal(this, '가슴 답답함', '가슴 안쪽에 4초 들이마시고 6초 내쉬며 숨길을 내어줍니다.')" class="body-signal-chip p-2.5 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-0.5">
+              <span class="font-bold text-slate-800 block">🧊 가슴 답답함 / 턱 막힘</span>
+              <span class="text-[10px] text-slate-500">호흡이 얕아짐</span>
+            </button>
+            <button type="button" onclick="selectBodySignal(this, '심장 두근거림', '손을 가슴 위에 얹고 심장의 박동을 판단 없이 느껴봅니다.')" class="body-signal-chip p-2.5 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-0.5">
+              <span class="font-bold text-slate-800 block">💓 심장 박동 빨라짐</span>
+              <span class="text-[10px] text-slate-500">쿵쾅거리는 긴장</span>
+            </button>
+            <button type="button" onclick="selectBodySignal(this, '목과 어깨 결림', '어깨를 귀까지 3초간 바짝 올렸다가 툭 떨어뜨려 이완합니다.')" class="body-signal-chip p-2.5 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-0.5">
+              <span class="font-bold text-slate-800 block">⚡ 목·어깨 경직</span>
+              <span class="text-[10px] text-slate-500">돌처럼 굳은 근육</span>
+            </button>
+            <button type="button" onclick="selectBodySignal(this, '명치와 위장 조임', '따뜻한 물 한 모금을 천천히 마시듯 위장의 긴장을 알아차립니다.')" class="body-signal-chip p-2.5 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-0.5">
+              <span class="font-bold text-slate-800 block">🌪️ 명치·위장 쥐어짜임</span>
+              <span class="text-[10px] text-slate-500">체한 듯한 답답함</span>
+            </button>
+            <button type="button" onclick="selectBodySignal(this, '손발 차가움', '양손을 비벼 따뜻한 온기를 손바닥에 모아봅니다.')" class="body-signal-chip p-2.5 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-0.5">
+              <span class="font-bold text-slate-800 block">❄️ 손발 차가움 / 식은땀</span>
+              <span class="text-[10px] text-slate-500">혈액이 중심으로 수축</span>
+            </button>
+            <button type="button" onclick="selectBodySignal(this, '머리 멍함 / 두통', '관자놀이를 가볍게 지그시 누르며 바깥 소리에 귀를 기울여봅니다.')" class="body-signal-chip p-2.5 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-0.5">
+              <span class="font-bold text-slate-800 block">🧠 머리 띵함 / 과부하</span>
+              <span class="text-[10px] text-slate-500">생각의 소용돌이</span>
+            </button>
+          </div>
+
+          <div id="body-signal-feedback" class="hidden p-3 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-900 font-bold leading-relaxed">
+            🌿 <span id="body-signal-desc"></span>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'emotion_split') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-teal-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#0D9488] font-black text-xs sm:text-sm">
+              <span>🧩</span>
+              <span>CIRCUIT SPLIT · 감정 회로 4단계 분리</span>
+            </div>
+            <span class="text-[9px] font-bold text-teal-800 bg-white px-2 py-0.5 rounded-full border border-teal-200">덩어리 해체</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2.5 shadow-2xs">
+            <p class="text-xs text-slate-600 leading-relaxed">
+              뇌는 <strong>몸의 신호 &rarr; 감정 &rarr; 충동 &rarr; 행동</strong>을 순식간에 하나로 묶어버립니다. 4개 층위로 분리해보세요.
+            </p>
+
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-lg bg-teal-50/60 border border-teal-200 flex items-start gap-2 text-xs">
+                <span class="px-1.5 py-0.5 rounded bg-teal-600 text-white font-black text-[10px] shrink-0">1. BODY</span>
+                <div>
+                  <strong class="text-teal-950">몸의 감각:</strong>
+                  <span class="text-slate-600">${card.bodyQuestion || "가슴이 조여오고 호흡이 얕아지는 신체 반응"}</span>
+                </div>
+              </div>
+
+              <div class="p-2.5 rounded-lg bg-indigo-50/60 border border-indigo-200 flex items-start gap-2 text-xs">
+                <span class="px-1.5 py-0.5 rounded bg-indigo-600 text-white font-black text-[10px] shrink-0">2. EMOTION</span>
+                <div>
+                  <strong class="text-indigo-950">감정의 진짜 이름:</strong>
+                  <span class="text-slate-600">${card.keyword} (불안, 수치심, 죄책감, 서운함, 두려움)</span>
+                </div>
+              </div>
+
+              <div class="p-2.5 rounded-lg bg-amber-50/60 border border-amber-200 flex items-start gap-2 text-xs">
+                <span class="px-1.5 py-0.5 rounded bg-amber-600 text-white font-black text-[10px] shrink-0">3. URGE</span>
+                <div>
+                  <strong class="text-amber-950">자동 충동:</strong>
+                  <span class="text-slate-600">빨리 확인하기 / 도망치기 / 숨어버리기 / 나를 공격(자책)하기</span>
+                </div>
+              </div>
+
+              <div class="p-2.5 rounded-lg bg-emerald-50/60 border border-emerald-300 flex items-start gap-2 text-xs">
+                <span class="px-1.5 py-0.5 rounded bg-emerald-600 text-white font-black text-[10px] shrink-0">4. ACTION</span>
+                <div>
+                  <strong class="text-emerald-950">오늘의 10% 선택:</strong>
+                  <span class="text-slate-800 font-bold">${card.tenPercentAction}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'second_arrow') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-teal-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#0D9488] font-black text-xs sm:text-sm">
+              <span>🎯</span>
+              <span>SECOND ARROW STOP · 두 번째 화살 내려놓기</span>
+            </div>
+            <span class="text-[9px] font-bold text-teal-800 bg-white px-2 py-0.5 rounded-full border border-teal-200">자기공격 정지</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed">
+            살면서 실수나 거절이라는 <strong>첫 번째 화살</strong>은 피할 수 없습니다. 하지만 그 뒤에 '난 왜 이 모양일까'라며 내 심장에 <strong>두 번째 화살을 꽂는 자기비난</strong>은 멈출 수 있습니다.
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div class="p-3 rounded-xl bg-white border border-rose-200 space-y-1.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black text-rose-700">🏹 첫 번째 화살 (일어난 아픔)</span>
+                <span class="text-[9px] bg-rose-50 text-rose-600 px-1.5 py-0.5 rounded font-bold">피할 수 없음</span>
+              </div>
+              <p class="text-[11px] text-slate-600">
+                실수, 약속 지연, 거절, 원치 않았던 결과. 아프고 속상한 것은 자연스러운 감정입니다.
+              </p>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white border-2 border-red-300 space-y-1.5 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black text-red-700">🎯 두 번째 화살 (자기비난)</span>
+                <span class="text-[9px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded font-bold">내가 멈출 수 있음</span>
+              </div>
+              <p class="text-[11px] text-slate-600">
+                “난 왜 이따위일까”, “평생 바보처럼 살 거야”, “다 내 탓이야”라는 가혹한 자기공격.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-1 text-center">
+            <button type="button" onclick="dropSecondArrow(this)" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#0D9488] to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white font-black text-xs transition shadow-2xs flex items-center justify-center gap-1.5">
+              <span>🛑 두 번째 화살(자책) 내려놓기</span>
+            </button>
+            <div id="second-arrow-feedback" class="hidden mt-2 p-2.5 rounded-lg bg-teal-50 border border-teal-200 text-xs text-teal-900 font-bold">
+              ✨ 두 번째 화살을 내려놓았습니다. 실수는 아프지만, 나를 더 이상 처벌하지 않고 수습 행동으로 나아갑니다.
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'body_signature') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-teal-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#0D9488] font-black text-xs sm:text-sm">
+              <span>🗺️</span>
+              <span>BODY SIGNATURE MAP · 감정 몸 시그니처</span>
+            </div>
+            <span class="text-[9px] font-bold text-teal-800 bg-white px-2 py-0.5 rounded-full border border-teal-200">조기경보 센서</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-teal-50/70 border border-teal-100 text-xs text-slate-700 leading-relaxed">
+            스트레스나 감정 폭발이 시작되기 직전, 내 몸에서 <strong>가장 먼저 1초 만에 알람을 울리는 부위</strong>를 알아두면 감정에 휩쓸리기 전에 멈출 수 있습니다.
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" onclick="selectBodySignature(this, '턱과 목', '이를 악물거나 목에 힘이 들어갈 때 바로 혀를 입천장에서 떼어보세요.')" class="sig-chip p-3 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-1">
+              <span class="font-black text-slate-800 block">🦷 턱 악물기 & 목 경직</span>
+              <span class="text-[10px] text-slate-500">참고 버티는 분노의 신호</span>
+            </button>
+            <button type="button" onclick="selectBodySignature(this, '가슴 중앙', '가슴 한가운데에 손을 얹고 깊은 날숨을 길게 내쉬어보세요.')" class="sig-chip p-3 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-1">
+              <span class="font-black text-slate-800 block">🫀 가슴 조임 & 답답함</span>
+              <span class="text-[10px] text-slate-500">불안과 거절 공포의 신호</span>
+            </button>
+            <button type="button" onclick="selectBodySignature(this, '명치와 복부', '배꼽 주변을 살살 시계 방향으로 쓸어주며 긴장을 풉니다.')" class="sig-chip p-3 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-1">
+              <span class="font-black text-slate-800 block">🌀 명치 찌름 & 뱃속 긴장</span>
+              <span class="text-[10px] text-slate-500">책임감과 죄책감의 신호</span>
+            </button>
+            <button type="button" onclick="selectBodySignature(this, '호흡 멈춤', '내쉬는 숨을 평소보다 2초 더 길게 유지해보세요.')" class="sig-chip p-3 rounded-xl bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 text-left text-xs transition space-y-1">
+              <span class="font-black text-slate-800 block">💨 숨 멈춤 & 얕은 호흡</span>
+              <span class="text-[10px] text-slate-500">동결(Freeze) 긴급 신호</span>
+            </button>
+          </div>
+
+          <div id="sig-feedback" class="hidden p-3 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-900 font-bold leading-relaxed">
+            📍 <span id="sig-desc"></span>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'prevention_to_response') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-teal-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#0D9488] font-black text-xs sm:text-sm">
+              <span>🌱</span>
+              <span>RESPONSE & REPAIR · 통제 대신 회복 프로토콜</span>
+            </div>
+            <span class="text-[9px] font-bold text-teal-800 bg-white px-2 py-0.5 rounded-full border border-teal-200">회복력 가동</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed">
+            감정을 미리 완벽하게 차단하려는 '예방'은 불가능합니다. 파도가 친 뒤 <strong>물기를 털고 빠르게 복구(REPAIR)하는 3단계</strong>를 실행합니다.
+          </div>
+
+          <div class="space-y-2">
+            <div class="p-3 rounded-xl bg-white border border-slate-200 text-xs flex items-center justify-between">
+              <div>
+                <span class="font-black text-slate-800 block">1단계: 5분 멈춤 (PAUSE)</span>
+                <span class="text-[10px] text-slate-500">즉각적인 반응(문자 폭탄, 회피, 충동 구매) 5분 지연</span>
+              </div>
+              <span class="px-2 py-1 rounded bg-slate-100 text-slate-700 font-mono font-bold text-[11px]">5min</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white border border-slate-200 text-xs flex items-center justify-between">
+              <div>
+                <span class="font-black text-slate-800 block">2단계: 자막 내리기 (DROP SUBTITLE)</span>
+                <span class="text-[10px] text-slate-500">‘인생 끝났다’는 뇌의 파국 자막을 FACT와 분리</span>
+              </div>
+              <span class="text-teal-600 font-bold text-xs">FACT 분리</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-teal-50/80 border border-teal-300 text-xs flex items-center justify-between">
+              <div>
+                <span class="font-black text-teal-950 block">3단계: 수습 행동 하나 (10% REPAIR)</span>
+                <span class="text-[10px] text-teal-800 font-medium">${card.tenPercentAction}</span>
+              </div>
+              <button type="button" onclick="runRepairAction(this)" class="px-2.5 py-1 rounded-lg bg-[#0D9488] hover:bg-teal-700 text-white font-bold text-[10px] transition">
+                실행완료
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    container.innerHTML = `
+      <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-teal-50/90 via-slate-50 to-emerald-50/70 border-2 border-teal-200/90 shadow-xs space-y-3.5">
+        ${crisisSafetyHtml}
+        ${tabsHtml}
+        ${toolBodyHtml}
+      </div>
+    `;
+  }
+
+  window.switchPack08Tool = function(toolName) {
+    window.currentPack08Tool = toolName;
+    trackMindEvent('emotion_tool_switch', { tool: toolName, cardId: currentCard ? currentCard.id : null });
+    renderPack08SpecialInteraction(currentCard, toolName);
+  };
+
+  window.selectBodySignal = function(btn, label, desc) {
+    document.querySelectorAll('.body-signal-chip').forEach(el => el.classList.remove('border-teal-500', 'bg-teal-50', 'ring-2', 'ring-teal-200'));
+    btn.classList.add('border-teal-500', 'bg-teal-50', 'ring-2', 'ring-teal-200');
+    const fb = document.getElementById('body-signal-feedback');
+    const d = document.getElementById('body-signal-desc');
+    if (fb && d) {
+      d.innerText = `[${label}] ${desc}`;
+      fb.classList.remove('hidden');
+    }
+    trackMindEvent('body_signal_selected', { signal: label, cardId: currentCard ? currentCard.id : null });
+  };
+
+  window.dropSecondArrow = function(btn) {
+    btn.disabled = true;
+    btn.classList.add('opacity-60', 'cursor-not-allowed');
+    const fb = document.getElementById('second-arrow-feedback');
+    if (fb) fb.classList.remove('hidden');
+    trackMindEvent('second_arrow_dropped', { cardId: currentCard ? currentCard.id : null });
+    showToastNotification("✨ 두 번째 화살(자기비난)을 내려놓았습니다.");
+  };
+
+  window.selectBodySignature = function(btn, zone, desc) {
+    document.querySelectorAll('.sig-chip').forEach(el => el.classList.remove('border-teal-500', 'bg-teal-50', 'ring-2', 'ring-teal-200'));
+    btn.classList.add('border-teal-500', 'bg-teal-50', 'ring-2', 'ring-teal-200');
+    const fb = document.getElementById('sig-feedback');
+    const d = document.getElementById('sig-desc');
+    if (fb && d) {
+      d.innerText = `내 조기경보 센서는 [${zone}]입니다. ${desc}`;
+      fb.classList.remove('hidden');
+    }
+    trackMindEvent('body_signature_selected', { zone, cardId: currentCard ? currentCard.id : null });
+  };
+
+  window.runRepairAction = function(btn) {
+    btn.innerText = '✓ 복구 완료';
+    btn.classList.remove('bg-[#0D9488]', 'hover:bg-teal-700');
+    btn.classList.add('bg-emerald-600');
+    trackMindEvent('repair_action_completed', { cardId: currentCard ? currentCard.id : null });
+    showToastNotification("🌱 10% 회복(REPAIR) 행동이 기록되었습니다!");
+  };
+
+  // =================================================================
+  // PACK 09 전용 5대 운명·믿음·선택 인터랙션
+  // =================================================================
+  window.currentPack09Tool = null;
+
+  function renderPack09SpecialInteraction(card, activeToolOverride) {
+    const container = document.getElementById('pack09-special-interaction-container');
+    if (!container) return;
+
+    if (!card || (card.packId !== 'belief-fate-uncertainty-01' && !card.id.startsWith('fate-'))) {
+      container.classList.add('hidden');
+      container.innerHTML = '';
+      return;
+    }
+
+    container.classList.remove('hidden');
+
+    const defaultTool = card.interactionType || 'belief_fact_split';
+    const activeTool = activeToolOverride || window.currentPack09Tool || defaultTool;
+    window.currentPack09Tool = activeTool;
+
+    // 1. 공통 고정 원칙 배너 (운세 예언 차단 선언)
+    const fixedBannerHtml = `
+      <div class="p-3.5 rounded-xl bg-purple-50/90 border border-purple-200 text-slate-800 space-y-1 mb-3 shadow-2xs">
+        <div class="flex items-center gap-1.5 text-purple-900 font-black text-xs">
+          <span>🔮</span>
+          <span>명심코칭 원칙 · 미래를 맞히지 않습니다</span>
+        </div>
+        <p class="text-xs text-purple-950 font-bold leading-relaxed">
+          “오늘의 카드는 당신의 미래를 맞히지 않습니다.<br />
+          그 이야기를 들은 지금, 당신 안에서 무엇이 작동하고 있는지 살펴봅니다.”
+        </p>
+      </div>
+    `;
+
+    // 2. 현실 위험 안전 안내 (의료, 법률, 투자 등)
+    const safetyHtml = `
+      <div class="p-3 rounded-xl bg-slate-100 border border-slate-300 text-slate-700 space-y-1 mb-3 text-[11px] leading-relaxed shadow-2xs">
+        <div class="flex items-center gap-1.5 font-bold text-slate-900 text-xs">
+          <span>⚖️</span>
+          <span>현실 정보와 전문적 판단 안내</span>
+        </div>
+        <p>
+          의료, 법률, 투자, 대출, 이혼, 폭력관계, 중대한 재정결정 등은 사주, 운세, 명심카드, 징크스만으로 결정하지 않습니다. 현실 데이터와 공인 전문 기관의 상담을 우선 진행하세요.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-1 font-bold text-[10px]">
+          <a href="tel:112" class="px-2 py-0.5 rounded bg-slate-800 text-white hover:bg-slate-900 transition">👮 경찰청 112</a>
+          <a href="tel:1332" class="px-2 py-0.5 rounded bg-amber-700 text-white hover:bg-amber-800 transition">💰 금융감독원 1332</a>
+          <a href="tel:132" class="px-2 py-0.5 rounded bg-indigo-700 text-white hover:bg-indigo-800 transition">⚖️ 법률구조공단 132</a>
+          <a href="tel:15770199" class="px-2 py-0.5 rounded bg-emerald-700 text-white hover:bg-emerald-800 transition">🧠 정신건강 1577-0199</a>
+        </div>
+      </div>
+    `;
+
+    // 3. 5대 도구 탭
+    const tabsHtml = `
+      <div class="flex items-center gap-1 overflow-x-auto pb-1 mb-3 text-[11px] font-bold border-b border-purple-100 scrollbar-none">
+        <button type="button" onclick="switchPack09Tool('belief_fact_split')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'belief_fact_split' ? 'bg-[#8B5CF6] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🎴 BELIEF · FACT · UNKNOWN · CHOICE
+        </button>
+        <button type="button" onclick="switchPack09Tool('authority_split')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'authority_split' ? 'bg-[#8B5CF6] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          👑 발언권 vs 결재권
+        </button>
+        <button type="button" onclick="switchPack09Tool('saju_life_bridge')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'saju_life_bridge' ? 'bg-[#8B5CF6] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🌉 사주 → 삶 BRIDGE
+        </button>
+        <button type="button" onclick="switchPack09Tool('certainty_to_participation')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'certainty_to_participation' ? 'bg-[#8B5CF6] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🧭 확실성 → 삶의 참여
+        </button>
+        <button type="button" onclick="switchPack09Tool('identity_to_operation')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'identity_to_operation' ? 'bg-[#8B5CF6] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🔄 정체성 문장 → 작동 문장
+        </button>
+      </div>
+    `;
+
+    let toolBodyHtml = '';
+
+    if (activeTool === 'belief_fact_split') {
+      // TOOL 1: BELIEF / FACT / UNKNOWN / CHOICE (4 Cards, No scoring)
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-purple-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#8B5CF6] font-black text-xs sm:text-sm">
+              <span>🎴</span>
+              <span>BELIEF / FACT / UNKNOWN / CHOICE (4분할 프레임)</span>
+            </div>
+            <span class="text-[9px] font-bold text-purple-800 bg-white px-2 py-0.5 rounded-full border border-purple-200">점수화 금지 · 영역 분리</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- 1. BELIEF -->
+            <div class="p-3 rounded-xl bg-white border border-purple-200 space-y-1 shadow-2xs">
+              <span class="px-2 py-0.5 rounded bg-purple-100 text-purple-800 font-black text-[10px]">1. BELIEF</span>
+              <h6 class="text-xs font-bold text-slate-800">내가 들었거나 믿고 있는 이야기는?</h6>
+              <p class="text-[11px] text-slate-500 leading-relaxed">${card.question}</p>
+            </div>
+
+            <!-- 2. FACT -->
+            <div class="p-3 rounded-xl bg-white border border-blue-200 space-y-1 shadow-2xs">
+              <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-black text-[10px]">2. FACT</span>
+              <h6 class="text-xs font-bold text-slate-800">현재 실제로 확인된 것은?</h6>
+              <p class="text-[11px] text-slate-500 leading-relaxed">${card.factQuestion || "객관적으로 기록 가능한 사실과 숫자"}</p>
+            </div>
+
+            <!-- 3. UNKNOWN -->
+            <div class="p-3 rounded-xl bg-white border border-amber-200 space-y-1 shadow-2xs">
+              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-black text-[10px]">3. UNKNOWN</span>
+              <h6 class="text-xs font-bold text-slate-800">미래에 대해 아직 모르는 것은?</h6>
+              <p class="text-[11px] text-slate-500 leading-relaxed">${card.unknownQuestion || "아직 일어나지 않은 모든 가능성과 결과"}</p>
+            </div>
+
+            <!-- 4. CHOICE -->
+            <div class="p-3 rounded-xl bg-white border-2 border-emerald-300 space-y-1 shadow-2xs">
+              <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-black text-[10px]">4. CHOICE</span>
+              <h6 class="text-xs font-bold text-slate-800">모르는 것이 남아 있어도 오늘 선택할 것은?</h6>
+              <p class="text-[11px] text-slate-700 font-bold leading-relaxed">${card.tenPercentAction}</p>
+            </div>
+          </div>
+
+          <div class="pt-1 text-center">
+            <button type="button" onclick="saveUnknownChoice(this)" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-black text-xs transition shadow-2xs flex items-center justify-center gap-1.5">
+              <span>🧭 UNKNOWN을 남겨두고 오늘 내 선택 확인하기</span>
+            </button>
+            <div id="belief-split-feedback" class="hidden mt-2 p-2.5 rounded-lg bg-purple-50 border border-purple-200 text-xs text-purple-900 font-bold">
+              ✨ 미래의 모든 것을 다 알지 못해도 괜찮습니다. 오늘 내가 영향 줄 수 있는 10%의 선택에 집중합니다.
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'authority_split') {
+      // TOOL 2: 발언권 vs 결재권
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-purple-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#8B5CF6] font-black text-xs sm:text-sm">
+              <span>👑</span>
+              <span>VOICE vs AUTHORITY · 발언권 vs 결재권</span>
+            </div>
+            <span class="text-[9px] font-bold text-purple-800 bg-white px-2 py-0.5 rounded-full border border-purple-200">주권 회복</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-white border border-slate-200 space-y-2 shadow-2xs">
+            <div class="text-xs font-black text-slate-800 flex items-center justify-between">
+              <span>아래의 모든 요소는 ‘발언권’을 가질 수 있습니다:</span>
+              <span class="text-[10px] text-purple-600 font-bold">참고자료</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-center text-xs">
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">🔮 사주·운세</div>
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">👨‍👩‍👧 부모 조언</div>
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">👥 친구 의견</div>
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">⚡ 내 안의 불안</div>
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">💡 내 직감</div>
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">📊 전문가 정보</div>
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">📋 실제 데이터</div>
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">⚖️ 현실 위험</div>
+            </div>
+            <p class="text-[10px] text-slate-400 text-center">
+              * 각 요소는 의견을 낼 자격(발언권)이 있습니다. 하지만 내 인생의 CEO 자리는 비워둘 수 없습니다.
+            </p>
+          </div>
+
+          <!-- 결재권 강조 박스 -->
+          <div class="p-4 rounded-xl bg-gradient-to-br from-purple-50 via-white to-amber-50 border-2 border-purple-300 text-center space-y-2.5 shadow-xs">
+            <h5 class="text-sm font-black text-purple-950">
+              “그렇다면, 이 결정의 최종 결재권은 누가 가지고 있나요?”
+            </h5>
+            <button type="button" onclick="claimDecisionAuthority(this)" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black text-xs sm:text-sm transition shadow-md flex items-center justify-center gap-2">
+              <span>👑 “최종 선택의 결재권은 내가 가진다”</span>
+            </button>
+            <div id="authority-feedback" class="hidden text-xs text-purple-900 font-bold bg-white p-3 rounded-lg border border-purple-200 leading-relaxed">
+              🎉 축하합니다! 모든 조언과 두려움에 발언권은 충분히 주되, 내 삶의 최종 결재 도장은 내가 쥐고 있음을 선언했습니다.
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'saju_life_bridge') {
+      // TOOL 3: 사주 → 삶 BRIDGE
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-purple-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#8B5CF6] font-black text-xs sm:text-sm">
+              <span>🌉</span>
+              <span>BRIDGE TO LIFE · 사주에서 삶으로 건너가는 브리지</span>
+            </div>
+            <span class="text-[9px] font-bold text-purple-800 bg-white px-2 py-0.5 rounded-full border border-purple-200">삶으로의 복귀</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2 shadow-2xs text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 font-black flex items-center justify-center text-[10px] shrink-0">1</span>
+              <div>
+                <strong class="text-slate-800">사주 / 믿음:</strong>
+                <span class="text-slate-600">“이 믿음이 어떤 내 반복 패턴을 보게 해줬나?”</span>
+              </div>
+            </div>
+            <div class="text-center text-slate-300 font-black text-[10px]">&darr;</div>
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 font-black flex items-center justify-center text-[10px] shrink-0">2</span>
+              <div>
+                <strong class="text-slate-800">알아차림 (AWARENESS):</strong>
+                <span class="text-slate-600">내 취약점과 자동 반응의 지도를 발견함</span>
+              </div>
+            </div>
+            <div class="text-center text-slate-300 font-black text-[10px]">&darr;</div>
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-teal-100 text-teal-700 font-black flex items-center justify-center text-[10px] shrink-0">3</span>
+              <div>
+                <strong class="text-slate-800">수용 (ACCEPTANCE):</strong>
+                <span class="text-slate-600">“이 반응을 나쁜 팔자가 아닌 자연스러운 내 한 조각으로 받아들임”</span>
+              </div>
+            </div>
+            <div class="text-center text-slate-300 font-black text-[10px]">&darr;</div>
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 font-black flex items-center justify-center text-[10px] shrink-0">4</span>
+              <div>
+                <strong class="text-slate-800">최적화 (OPTIMIZATION):</strong>
+                <span class="text-slate-600">“오늘 내 환경과 조건을 어떻게 조율해서 쓸 것인가?”</span>
+              </div>
+            </div>
+            <div class="text-center text-slate-300 font-black text-[10px]">&darr;</div>
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-emerald-50 border border-emerald-200">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-black flex items-center justify-center text-[10px] shrink-0">5</span>
+              <div>
+                <strong class="text-emerald-950">삶 (LIFE):</strong>
+                <span class="text-emerald-800 font-bold">실제 현실로 건너와 책임과 기쁨을 누리기</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-purple-50/80 border border-purple-200 text-center space-y-2">
+            <p class="text-xs text-purple-950 font-bold leading-relaxed">
+              “브리지의 목적은 브리지 위에서 평생 머무는 것이 아니라,<br />삶으로 건너가는 것입니다.”
+            </p>
+            <button type="button" onclick="completeBridge(this)" class="py-2 px-4 rounded-xl bg-[#8B5CF6] hover:bg-purple-700 text-white font-black text-xs transition shadow-2xs">
+              🚶 삶으로 건너가기 (브리지 완료)
+            </button>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'certainty_to_participation') {
+      // TOOL 4: CERTAINTY → PARTICIPATION
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-purple-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#8B5CF6] font-black text-xs sm:text-sm">
+              <span>🧭</span>
+              <span>CERTAINTY → PARTICIPATION · 확실성에서 참여로</span>
+            </div>
+            <span class="text-[9px] font-bold text-purple-800 bg-white px-2 py-0.5 rounded-full border border-purple-200">삶의 주도권</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- 왼쪽: 확실성 집착 -->
+            <div class="p-3 rounded-xl bg-white border border-rose-200 space-y-1.5 shadow-2xs text-xs">
+              <span class="text-[10px] font-black text-rose-700 block">🛑 확실성 집착 (정지 상태)</span>
+              <ul class="space-y-1 text-[11px] text-slate-600">
+                <li>• “확실히 알아야 움직일 수 있어.”</li>
+                <li>• “미래가 안전하다는 보장이 필요해.”</li>
+                <li>• “틀리지 않는 완벽한 선택을 찾아야 해.”</li>
+              </ul>
+              <div class="text-[10px] text-rose-500 pt-1 font-medium">&rarr; 결정 지연, 점집 순회, 삶의 동결</div>
+            </div>
+
+            <!-- 오른쪽: 삶의 참여 -->
+            <div class="p-3 rounded-xl bg-white border-2 border-emerald-300 space-y-1.5 shadow-2xs text-xs">
+              <span class="text-[10px] font-black text-emerald-800 block">🌱 삶의 참여 (진행 상태)</span>
+              <ul class="space-y-1 text-[11px] text-slate-700 font-medium">
+                <li>• “충분한 정보를 현실에서 확인한다.”</li>
+                <li>• “모르는 것은 UNKNOWN으로 남긴다.”</li>
+                <li>• “현재의 가치와 책임 안에서 선택한다.”</li>
+                <li>• “결과를 보고 다시 조정한다.”</li>
+              </ul>
+              <div class="text-[10px] text-emerald-600 pt-1 font-bold">&rarr; SCAN &rarr; SYNC &rarr; SHIFT &rarr; 다시 조정</div>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'identity_to_operation') {
+      // TOOL 5: 정체성 문장 → 작동 문장
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-purple-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#8B5CF6] font-black text-xs sm:text-sm">
+              <span>🔄</span>
+              <span>OPERATION SENTENCE · 정체성 문장 &rarr; 작동 문장</span>
+            </div>
+            <span class="text-[9px] font-bold text-purple-800 bg-white px-2 py-0.5 rounded-full border border-purple-200">장면으로의 전환</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-purple-50/70 border border-purple-100 text-xs text-slate-700 leading-relaxed">
+            AI가 새로운 사주 해석을 만들지 않습니다. '나는 원래 팔자가 세' 같은 운명적 낙인을 <strong>구체적으로 관찰 가능한 행동 장면의 문장</strong>으로 바꿉니다.
+          </div>
+
+          <div class="space-y-2">
+            <button type="button" onclick="selectIdentityExample('나는 원래 팔자가 세', '나는 갈등 상황에서 빠르게 방어막을 치는 반응이 나타날 때가 있다')" class="id-ex-btn w-full p-2.5 rounded-xl bg-white border border-slate-200 hover:border-purple-300 text-left text-xs transition space-y-1">
+              <div class="flex items-center justify-between text-slate-400 line-through text-[11px]">
+                <span>“나는 원래 팔자가 세.”</span>
+                <span class="text-[9px] text-rose-500 font-bold no-underline">정체성 라벨</span>
+              </div>
+              <div class="font-bold text-purple-950 text-xs">
+                &rarr; “나는 갈등 상황에서 빠르게 방어막을 치는 반응이 나타날 때가 있다.”
+              </div>
+            </button>
+
+            <button type="button" onclick="selectIdentityExample('나는 돈복이 없어', '돈과 관련된 불확실성에서 결정을 오래 미루는 장면이 있다')" class="id-ex-btn w-full p-2.5 rounded-xl bg-white border border-slate-200 hover:border-purple-300 text-left text-xs transition space-y-1">
+              <div class="flex items-center justify-between text-slate-400 line-through text-[11px]">
+                <span>“나는 돈복이 없어.”</span>
+                <span class="text-[9px] text-rose-500 font-bold no-underline">정체성 라벨</span>
+              </div>
+              <div class="font-bold text-purple-950 text-xs">
+                &rarr; “돈과 관련된 불확실성에서 결정을 오래 미루는 장면이 있다.”
+              </div>
+            </button>
+
+            <button type="button" onclick="selectIdentityExample('나는 사람복이 없어', '관계에서 반복해서 허용하고 있는 상대의 행동이 있는지 살펴본다')" class="id-ex-btn w-full p-2.5 rounded-xl bg-white border border-slate-200 hover:border-purple-300 text-left text-xs transition space-y-1">
+              <div class="flex items-center justify-between text-slate-400 line-through text-[11px]">
+                <span>“나는 사람복이 없어.”</span>
+                <span class="text-[9px] text-rose-500 font-bold no-underline">정체성 라벨</span>
+              </div>
+              <div class="font-bold text-purple-950 text-xs">
+                &rarr; “관계에서 반복해서 허용하고 있는 상대의 행동이 있는지 살펴본다.”
+              </div>
+            </button>
+          </div>
+
+          <div id="id-transform-output" class="hidden p-3 rounded-xl bg-purple-50 border border-purple-200 text-xs space-y-1">
+            <span class="text-[10px] text-purple-700 font-black block">💡 재정의된 내 삶의 작동 문장:</span>
+            <p id="id-transformed-text" class="text-purple-950 font-black leading-relaxed"></p>
+          </div>
+        </div>
+      `;
+    }
+
+    container.innerHTML = `
+      <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-purple-50/90 via-slate-50 to-indigo-50/70 border-2 border-purple-200/90 shadow-xs space-y-3.5">
+        ${fixedBannerHtml}
+        ${safetyHtml}
+        ${tabsHtml}
+        ${toolBodyHtml}
+      </div>
+    `;
+  }
+
+  window.switchPack09Tool = function(toolName) {
+    window.currentPack09Tool = toolName;
+    trackMindEvent('belief_tool_switch', { tool: toolName, cardId: currentCard ? currentCard.id : null });
+    renderPack09SpecialInteraction(currentCard, toolName);
+  };
+
+  window.saveUnknownChoice = function(btn) {
+    const fb = document.getElementById('belief-split-feedback');
+    if (fb) fb.classList.remove('hidden');
+    trackMindEvent('belief_fact_split', { cardId: currentCard ? currentCard.id : null });
+    trackMindEvent('unknown_saved', { cardId: currentCard ? currentCard.id : null });
+    trackMindEvent('choice_action_selected', { cardId: currentCard ? currentCard.id : null });
+    showToastNotification("🧭 UNKNOWN을 남겨두고 오늘의 선택을 확인했습니다.");
+  };
+
+  window.claimDecisionAuthority = function(btn) {
+    const fb = document.getElementById('authority-feedback');
+    if (fb) fb.classList.remove('hidden');
+    trackMindEvent('decision_authority_view', { cardId: currentCard ? currentCard.id : null });
+    trackMindEvent('decision_authority_selected', { cardId: currentCard ? currentCard.id : null });
+    showToastNotification("👑 최종 선택의 결재권을 확인했습니다!");
+  };
+
+  window.completeBridge = function(btn) {
+    btn.innerText = '✓ 삶으로 복귀 완료';
+    btn.classList.add('bg-emerald-600');
+    trackMindEvent('bridge_completed', { cardId: currentCard ? currentCard.id : null });
+    showToastNotification("🚶 브리지를 건너 오늘의 삶과 실천으로 돌아왔습니다.");
+  };
+
+  window.selectIdentityExample = function(orig, transformed) {
+    const out = document.getElementById('id-transform-output');
+    const txt = document.getElementById('id-transformed-text');
+    if (out && txt) {
+      txt.innerText = transformed;
+      out.classList.remove('hidden');
+    }
+    trackMindEvent('identity_to_operation_converted', { original: orig, cardId: currentCard ? currentCard.id : null });
+  };
+
+
 
   // =================================================================
   // 13. 자연어 일상 고민 검색 (입구 B)
@@ -2488,6 +3400,58 @@
           }
         }
 
+        // PACK 08: 14대 감정회복 자연어 쿼리 부스팅
+        const PACK08_BOOSTS = {
+          '자책을 멈추고 싶어요': ['emo-001', 'emo-008', 'emo-015'],
+          '제가 다 망친 것 같아요': ['emo-001', 'emo-003', 'emo-010'],
+          '왜 이렇게 멘탈이 약할까요': ['emo-015', 'emo-017', 'emo-002'],
+          '실수하고 너무 괴로워요': ['emo-001', 'emo-005', 'emo-008'],
+          '감정이 주체가 안 돼요': ['emo-003', 'emo-007', 'emo-009'],
+          '불안해서 심장이 뛰어요': ['emo-002', 'emo-012', 'emo-019'],
+          '사소한 말에 상처받아요': ['emo-004', 'emo-011', 'emo-014'],
+          '화를 참을 수가 없어요': ['emo-003', 'emo-007', 'emo-016'],
+          '자꾸 후회돼요': ['emo-008', 'emo-001', 'emo-010'],
+          '내가 너무 한심해요': ['emo-015', 'emo-001', 'emo-004'],
+          '죄책감이 들어요': ['emo-010', 'emo-001', 'emo-008'],
+          '수치스러워요': ['emo-004', 'emo-013', 'emo-014'],
+          '확인하고 싶어 미치겠어요': ['emo-009', 'emo-002', 'emo-018'],
+          '도망치고 싶어요': ['emo-006', 'emo-002', 'emo-017']
+        };
+
+        for (const [natQuery, boostedIds] of Object.entries(PACK08_BOOSTS)) {
+          if (query.includes(natQuery) || natQuery.includes(query)) {
+            if (boostedIds.includes(c.id)) {
+              score += 260;
+            }
+          }
+        }
+
+        // PACK 09: 14대 운명·믿음 자연어 쿼리 부스팅
+        const PACK09_BOOSTS = {
+          '삼재라는데 무서워요': ['fate-001', 'fate-008', 'fate-010'],
+          '사주가 안 좋아요': ['fate-001', 'fate-008', 'fate-016'],
+          '돈복이 없대요': ['fate-002', 'fate-010', 'fate-015'],
+          '결혼운이 안 좋대요': ['fate-003', 'fate-004', 'fate-015'],
+          '궁합이 안 좋아요': ['fate-004', 'fate-003', 'fate-017'],
+          '대운은 언제 오나요': ['fate-013', 'fate-005', 'fate-019'],
+          '올해 운이 안 좋대요': ['fate-001', 'fate-014', 'fate-008'],
+          '나쁜 꿈을 꿨어요': ['fate-006', 'fate-012', 'fate-008'],
+          '징크스가 있어요': ['fate-012', 'fate-011', 'fate-006'],
+          '점을 계속 보게 돼요': ['fate-007', 'fate-009', 'fate-019'],
+          '운세를 계속 확인해요': ['fate-009', 'fate-007', 'fate-019'],
+          '팔자가 센 것 같아요': ['fate-016', 'fate-018', 'fate-020'],
+          '사람복이 없어요': ['fate-016', 'fate-004', 'fate-018'],
+          '사주를 믿어도 되나요': ['fate-020', 'fate-017', 'fate-015']
+        };
+
+        for (const [natQuery, boostedIds] of Object.entries(PACK09_BOOSTS)) {
+          if (query.includes(natQuery) || natQuery.includes(query)) {
+            if (boostedIds.includes(c.id)) {
+              score += 270;
+            }
+          }
+        }
+
         // 부분 단어(2글자 이상) 매칭
         if (terms.length > 0) {
           terms.forEach(t => {
@@ -2508,8 +3472,51 @@
       matched = scored.map(item => item.card).slice(0, 4);
     }
 
+    // 1. 위기 신호 감지 (자살, 자해, 극심한 절망)
+    const isCrisisQuery = /자살|죽고\s*싶|자해|살기\s*싫|끝내고\s*싶|모든\s*걸\s*놓고/.test(query);
+    let crisisBannerHtml = '';
+    if (isCrisisQuery) {
+      crisisBannerHtml = `
+        <div class="p-3.5 rounded-xl bg-red-600/30 border-2 border-red-500 text-white mb-3 space-y-2 text-xs shadow-lg">
+          <div class="flex items-center gap-1.5 font-black text-red-200 text-sm">
+            <span>🚨</span>
+            <span>24시간 긴급 마음 돌봄 안전망</span>
+          </div>
+          <p class="leading-relaxed text-slate-100">
+            지금 겪고 계신 고통은 혼자 감당하지 않아도 됩니다. 24시간 언제든 무료로 이야기 나눌 수 있는 전문 상담사가 기다리고 있습니다.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1 font-bold text-[11px]">
+            <a href="tel:109" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white transition shadow-sm">📞 자살예방 상담전화 109</a>
+            <a href="tel:15770199" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition shadow-sm">🧠 정신건강 위기상담 1577-0199</a>
+          </div>
+        </div>
+      `;
+    }
+
+    // 2. 운세 예측 질문 감지 (대운, 재물운, 결혼운 등) & 운세 생성 차단 배너
+    const isFortuneQuery = /대운|운세|점괘|올해\s*운|재물운|결혼운|사주\s*봐|점\s*봐|운이\s*좋|운이\s*나/.test(query);
+    let fortuneBannerHtml = '';
+    if (isFortuneQuery) {
+      fortuneBannerHtml = `
+        <div class="p-3.5 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-200 mb-3 space-y-1.5 text-xs shadow-md">
+          <div class="flex items-center gap-1.5 font-black text-amber-300">
+            <span>🔮</span>
+            <span>명심코칭 운세 질문 안내 · 미래를 맞히지 않습니다</span>
+          </div>
+          <p class="leading-relaxed text-amber-100 font-bold">
+            “명심코칭은 미래 운세를 판정하지 않습니다.<br />대신 그 질문이 지금 왜 중요해졌는지 함께 볼 수 있습니다.”
+          </p>
+          <p class="text-[11px] text-amber-200/80 leading-relaxed">
+            “그 답을 알아야 지금 무엇을 할 수 있을 것 같나요?<br />미래를 맞히기보다 오늘 내 행동의 결재권을 되찾아주는 카드들을 추천합니다.”
+          </p>
+        </div>
+      `;
+    }
+
     // 헤더: “사람을 몇 개의 유형 상자에 가두지 않습니다. 지금 켜진 상태(동사)부터 가볍게 골라보세요.”
     let html = `
+      ${crisisBannerHtml}
+      ${fortuneBannerHtml}
       <div class="mb-2">
         <div class="text-xs sm:text-sm font-black text-[#E2CF9F] leading-snug">
           “사람을 몇 개의 유형 상자에 가두지 않습니다.<br class="sm:hidden" /> 지금 내 안에서 켜진 상태(동사)부터 가볍게 골라보세요.”
