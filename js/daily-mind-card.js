@@ -3430,14 +3430,19 @@
 
     // 1. 공통 고정 원칙 배너 (운세 예언 차단 선언)
     const fixedBannerHtml = `
-      <div class="p-3.5 rounded-xl bg-purple-50/90 border border-purple-200 text-slate-800 space-y-1 mb-3 shadow-2xs">
-        <div class="flex items-center gap-1.5 text-purple-900 font-black text-xs">
-          <span>🔮</span>
-          <span>명심코칭 원칙 · 미래를 맞히지 않습니다</span>
+      <div class="p-3.5 rounded-xl bg-purple-50/90 border border-purple-200 text-slate-800 space-y-1.5 mb-3 shadow-2xs">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1.5 text-purple-900 font-black text-xs">
+            <span>🔮</span>
+            <span>명심코칭 원칙 · 미래를 맞히지 않습니다</span>
+          </div>
+          <span class="text-[10px] text-purple-700 font-bold bg-white px-2 py-0.5 rounded-full border border-purple-200">발언권 vs 결재권</span>
         </div>
-        <p class="text-xs text-purple-950 font-bold leading-relaxed">
-          “오늘의 카드는 당신의 미래를 맞히지 않습니다.<br />
-          그 이야기를 들은 지금, 당신 안에서 무엇이 작동하고 있는지 살펴봅니다.”
+        <p class="text-xs text-purple-950 font-black leading-relaxed">
+          “믿음에는 발언권을 줄 수 있다. 그러나 행동의 결재권까지 자동으로 넘기지는 않는다.”
+        </p>
+        <p class="text-[11px] text-purple-900/85 leading-relaxed">
+          오늘의 카드는 당신의 미래를 맞히지 않습니다. 그 이야기를 들은 지금, 당신 안에서 무엇이 작동하고 있는지 살펴봅니다.
         </p>
       </div>
     `;
