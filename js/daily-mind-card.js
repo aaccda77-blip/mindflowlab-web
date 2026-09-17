@@ -172,6 +172,7 @@
     trackMindEvent('career_pack_view', { packId: 'career-burnout-01', source: 'home_load' });
     trackMindEvent('perfection_pack_view', { packId: 'perfection-approval-comparison-01', source: 'home_load' });
     trackMindEvent('family_pack_view', { packId: 'family-boundary-01', source: 'home_load' });
+    trackMindEvent('love_pack_view', { packId: 'love-relationship-01', source: 'home_load' });
     trackMindEvent('decision_pack_view', { packId: 'decision-action-01', source: 'home_load' });
     trackMindEvent('emotion_pack_view', { packId: 'emotion-recovery-01', source: 'home_load' });
     trackMindEvent('belief_pack_view', { packId: 'belief-fate-uncertainty-01', source: 'home_load' });
@@ -180,6 +181,7 @@
     renderCareerQuestions();
     renderPerfectionQuestions();
     renderFamilyQuestions();
+    renderLoveQuestions();
     renderDecisionQuestions();
     renderEmotionQuestions();
     renderBeliefQuestions();
@@ -490,6 +492,7 @@
     updatePackCuriosityBridge(card);
     renderPack04SpecialInteraction(card);
     renderPack05SpecialInteraction(card);
+    renderPack06SpecialInteraction(card);
     renderPack07SpecialInteraction(card);
     renderPack08SpecialInteraction(card);
     renderPack09SpecialInteraction(card);
@@ -529,6 +532,10 @@
     if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
       trackMindEvent('family_app_click', { source: source || 'app_cta', cardId: currentCard.id });
     }
+    if (currentCard && (currentCard.packId === 'love-relationship-01' || (currentCard.id && currentCard.id.startsWith('love-')))) {
+      trackMindEvent('love_app_click', { source: source || 'app_cta', cardId: currentCard.id });
+      trackMindEvent('app_cta_clicked', { source: source || 'app_cta', cardId: currentCard.id });
+    }
     if (currentCard && (currentCard.packId === 'decision-action-01' || (currentCard.id && currentCard.id.startsWith('dec-')))) {
       trackMindEvent('decision_app_click', { source: source || 'app_cta', cardId: currentCard.id });
       trackMindEvent('app_cta_clicked', { source: source || 'app_cta', cardId: currentCard.id });
@@ -559,6 +566,10 @@
     }
     if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
       trackMindEvent('family_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+    }
+    if (currentCard && (currentCard.packId === 'love-relationship-01' || (currentCard.id && currentCard.id.startsWith('love-')))) {
+      trackMindEvent('love_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
+      trackMindEvent('book_cta_clicked', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
     }
     if (currentCard && (currentCard.packId === 'decision-action-01' || (currentCard.id && currentCard.id.startsWith('dec-')))) {
       trackMindEvent('decision_book_click', { source: source || 'book_cta', cardId: currentCard.id, book: currentCard.relatedBook });
@@ -592,6 +603,9 @@
     }
     if (currentCard && (currentCard.packId === 'family-boundary-01' || (currentCard.id && currentCard.id.startsWith('fam-')))) {
       trackMindEvent('family_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
+    }
+    if (currentCard && (currentCard.packId === 'love-relationship-01' || (currentCard.id && currentCard.id.startsWith('love-')))) {
+      trackMindEvent('love_scan_start', { cardId: currentCard.id, category: currentCard.category, step: 'curiosity' });
     }
     setElText('curiosity-bridge-question', `“${qText}”`);
     
@@ -962,6 +976,7 @@
   function updatePackCuriosityBridge(card) {
     const isPack04 = card && (card.packId === 'perfection-approval-comparison-01' || (card.id && card.id.startsWith('perf-')));
     const isPack05 = card && (card.packId === 'family-boundary-01' || (card.id && card.id.startsWith('fam-')));
+    const isPack06 = card && (card.packId === 'love-relationship-01' || (card.id && card.id.startsWith('love-')));
     const isPack07 = card && (card.packId === 'decision-action-01' || (card.id && card.id.startsWith('dec-')));
     const isPack08 = card && (card.packId === 'emotion-recovery-01' || (card.id && card.id.startsWith('emo-')));
     const isPack09 = card && (card.packId === 'belief-fate-uncertainty-01' || (card.id && card.id.startsWith('fate-')));
@@ -1026,6 +1041,23 @@
         </button>
         <button type="button" onclick="selectCuriosityQuestion('‘의지 부족’이 아니라 ‘이 조건에서 중단됐다’로 본다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-indigo-200 hover:border-[#4F46E5] hover:bg-indigo-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
           <span class="text-indigo-600">🔄</span><span>“시스템 데이터로 보기”</span>
+        </button>
+      `;
+    } else if (isPack06) {
+      if (bridgeQ) bridgeQ.innerText = '“사랑의 미래를 맞히기보다, 지금 이 관계에서 확인된 사실과 내 반응을 나눈다면?”';
+      if (bridgeSub) bridgeSub.innerText = '상대나 당신을 ‘불안형’, ‘회피형’으로 규정하지 않습니다. 지금 어떤 장면에서 어떤 STORY와 확인 충동이 켜졌는지 살펴봅니다.';
+      bridgeChipsContainer.innerHTML = `
+        <button type="button" onclick="selectCuriosityQuestion('답장이 늦는 사실과 내가 쓴 소설을 분리한다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#F43F5E] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">🔍</span><span>“사실(FACT)과 내 상상(STORY) 분리”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('떠보기 대신 직접 맑게 물어볼 수 있을까?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#F43F5E] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">💬</span><span>“떠보기 대신 맑게 한 문장 질문”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('불안할 때 휴대폰 확인을 30분 늦춘다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#F43F5E] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">⏱️</span><span>“확인 충동 30분 미루기”</span>
+        </button>
+        <button type="button" onclick="selectCuriosityQuestion('상대의 반응과 내 온전함을 별개로 본다면?')" class="curiosity-preset-chip text-left p-2 rounded-xl bg-white/90 border border-rose-200 hover:border-[#F43F5E] hover:bg-rose-50 text-[11px] font-medium text-slate-700 transition cursor-pointer flex items-center gap-1">
+          <span class="text-rose-500">🛡️</span><span>“상대 감정과 내 존엄 분리하기”</span>
         </button>
       `;
     } else if (isPack05) {
@@ -1580,6 +1612,379 @@
     trackMindEvent('family_action_select', { type: 'affirmation_select', text: affirmText });
   };
 
+
+  // =================================================================
+  // 11-2B. PACK 06 전용 3대 연애·친밀감 인터랙션 렌더러
+  // ① 30-SECOND LOVE FACT CHECK (사실 vs 소설 vs 모르는 것)
+  // ② FUTURE PREDICTION → CURRENT DATA (미래예측 → 현재데이터, 점수/확률 없음)
+  // ③ INTIMACY AUTO → MANUAL (친밀감 자동반응 → 수동조율)
+  // + DATING SAFETY ROUTE (데이트 폭력·스토킹 긴급 안전망)
+  // =================================================================
+  window.currentPack06Tool = null;
+
+  window.switchPack06Tool = function (toolName) {
+    window.currentPack06Tool = toolName;
+    trackMindEvent('love_tool_tab_switch', { tool: toolName });
+    if (currentCard) {
+      renderPack06SpecialInteraction(currentCard, toolName);
+    }
+  };
+
+  const LOVE_FACT_PRESETS = {
+    'msg_delay': {
+      fact: '답장이 3시간 동안 도착하지 않았다.',
+      story: '마음이 식었거나 나를 귀찮아하고 있다. 날 만만하게 본다.',
+      unknown: '지금 회의 중인지, 아픈지, 휴대폰을 못 보는 상황인지 모른다.'
+    },
+    'meet_postpone': {
+      fact: '상대가 오늘 일정을 다음 주로 미루자고 메시지를 보냈다.',
+      story: '나를 만나는 게 귀찮아졌거나 우선순위에서 밀려났다.',
+      unknown: '상대의 실제 체력, 업무 강도, 가족 사정이 어떤지 모른다.'
+    },
+    'short_reply': {
+      fact: '상대의 답장이 "응", "ㅇㅇ"으로 짧게 왔다.',
+      story: '나한테 삐쳤거나 서운한 게 있다. 정이 떨어졌다.',
+      unknown: '상대가 지금 이동 중인지, 단순히 바쁜 상황인지 모른다.'
+    },
+    'sns_active': {
+      fact: 'SNS에는 10분 전 게시물이 올라왔는데 내 카톡은 1시간째 읽지 않았다.',
+      story: '의도적으로 내 연락을 피하고 무시하고 있다.',
+      unknown: '어떤 상황에서 SNS를 봤는지, 메시지에 정성껏 답하려고 아껴둔 건지 모른다.'
+    }
+  };
+
+  window.selectLoveFactPreset = function (presetKey) {
+    const data = LOVE_FACT_PRESETS[presetKey];
+    if (!data) return;
+    trackMindEvent('love_fact_preset_select', { preset: presetKey });
+
+    const fEl = document.getElementById('love-fact-display');
+    const sEl = document.getElementById('love-story-display');
+    const uEl = document.getElementById('love-unknown-display');
+    if (fEl) fEl.innerText = data.fact;
+    if (sEl) sEl.innerText = data.story;
+    if (uEl) uEl.innerText = data.unknown;
+
+    document.querySelectorAll('.love-fact-chip').forEach(btn => {
+      btn.classList.remove('border-[#F43F5E]', 'bg-rose-50', 'text-[#F43F5E]', 'font-bold');
+      btn.classList.add('border-rose-200', 'bg-white', 'text-slate-700');
+    });
+    if (event && event.currentTarget) {
+      event.currentTarget.classList.remove('border-rose-200', 'bg-white', 'text-slate-700');
+      event.currentTarget.classList.add('border-[#F43F5E]', 'bg-rose-50', 'text-[#F43F5E]', 'font-bold');
+    }
+  };
+
+  window.triggerLoveFactComplete = function () {
+    const fb = document.getElementById('love-fact-feedback');
+    if (fb) fb.classList.remove('hidden');
+    trackMindEvent('love_fact_complete', { cardId: currentCard ? currentCard.id : null });
+  };
+
+  window.toggleLoveDataCheck = function (checkbox) {
+    trackMindEvent('love_data_check', { checked: checkbox.checked, cardId: currentCard ? currentCard.id : null });
+    const fb = document.getElementById('love-data-feedback');
+    if (fb) {
+      fb.innerHTML = '✨ <strong>관찰 완료:</strong> 미래를 점치지 않고 사실에 집중할 때, 불안한 상상 대신 건강한 소통이 가능해집니다.';
+    }
+  };
+
+  const LOVE_MANUAL_ACTIONS = {
+    'distance': '🏃 잠수나 회피 대신: "지금은 혼자 생각할 시간이 필요해, 내일 저녁 7시에 다시 이야기하자"라고 기한을 남겨봅니다.',
+    'cling': '🧲 거듭확인 대신: 핸드폰 화면을 엎어두고, 따뜻한 물 한 컵 마시며 30분간 산책이나 방 정리를 해봅니다.',
+    'test': '🎯 떠보기 대신: 비꼬거나 떠보지 않고, "어제 답장이 늦어서 조금 서운했어"라고 내 감정을 맑고 짧게 전해봅니다.',
+    'sns_stalk': '🕵️ SNS 탐색 대신: 전 연인의 계정을 닫고, 오늘 하루 나를 위해 따뜻하고 맛있는 한 끼를 선물해봅니다.'
+  };
+
+  window.selectLoveManualMode = function (modeKey) {
+    trackMindEvent('love_manual_mode_select', { mode: modeKey });
+    const actionText = LOVE_MANUAL_ACTIONS[modeKey] || '선택한 수동 조율 행동을 실천합니다.';
+    const textEl = document.getElementById('love-manual-action-text');
+    if (textEl) textEl.innerText = actionText;
+
+    document.querySelectorAll('.love-manual-card').forEach(card => {
+      card.classList.remove('border-[#F43F5E]', 'bg-rose-50/70');
+      card.classList.add('border-slate-200', 'bg-white');
+    });
+    if (event && event.currentTarget) {
+      event.currentTarget.classList.remove('border-slate-200', 'bg-white');
+      event.currentTarget.currentTarget = event.currentTarget;
+      event.currentTarget.classList.add('border-[#F43F5E]', 'bg-rose-50/70');
+    }
+  };
+
+  window.applyLoveManualToStep5 = function () {
+    const textEl = document.getElementById('love-manual-action-text');
+    if (!textEl) return;
+    const action = textEl.innerText.replace(/^.*?:\s*/, '');
+    const mainActionText = document.getElementById('ten-percent-action-text');
+    if (mainActionText) {
+      mainActionText.innerText = action;
+      showToastNotification('⚡ 친밀감 수동 조율 행동이 STEP 5 실천으로 반영되었습니다!');
+      const step5El = document.querySelector('#ten-percent-action-check')?.closest('.rounded-2xl');
+      if (step5El) {
+        step5El.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+    trackMindEvent('love_manual_applied_to_action', { action });
+  };
+
+  function renderPack06SpecialInteraction(card, activeToolOverride) {
+    const container = document.getElementById('pack06-special-interaction-container');
+    if (!container) return;
+
+    if (!card || (card.packId !== 'love-relationship-01' && !card.id.startsWith('love-'))) {
+      container.classList.add('hidden');
+      container.innerHTML = '';
+      return;
+    }
+
+    container.classList.remove('hidden');
+
+    const defaultTool = card.interactionType || 'love_fact_check';
+    const activeTool = activeToolOverride || window.currentPack06Tool || defaultTool;
+    window.currentPack06Tool = activeTool;
+
+    // Safety Alert (데이트 폭력, 스토킹, 심각한 위협)
+    const isSafetyAlert = card.id === 'love-011' || card.safetyRoute === true;
+    let safetyHtml = '';
+    if (isSafetyAlert) {
+      trackMindEvent('dating_safety_route_view', { cardId: card.id });
+      safetyHtml = `
+        <div class="p-3.5 rounded-xl bg-gradient-to-r from-rose-500/15 via-red-50 to-amber-50 border-2 border-rose-300 text-slate-800 space-y-2 mb-3 shadow-2xs">
+          <div class="flex items-center gap-2 text-rose-700 font-black text-xs">
+            <span class="text-sm">🚨</span>
+            <span>긴급 안전 안내 · 데이트 폭력·협박·스토킹은 소통이 아닌 안전 보호 대상입니다</span>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed">
+            신체적 폭력, 지속적인 폭언, 협박, 위치 추적 및 감금 등은 대화나 심리 조율로 참아낼 일이 아닙니다. 당신의 물리적·신체적 안전 확보가 가장 먼저입니다.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-bold">
+            <a href="tel:1366" class="px-2.5 py-1 rounded-lg bg-rose-600 text-white hover:bg-rose-700 transition flex items-center gap-1">
+              <span>📞 여성긴급전화 1366</span>
+            </a>
+            <a href="tel:112" class="px-2.5 py-1 rounded-lg bg-slate-800 text-white hover:bg-slate-900 transition flex items-center gap-1">
+              <span>👮 경찰청 112</span>
+            </a>
+            <a href="tel:132" class="px-2.5 py-1 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition flex items-center gap-1">
+              <span>⚖️ 대한법률구조공단 132</span>
+            </a>
+            <a href="tel:15770199" class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition flex items-center gap-1">
+              <span>🧠 정신건강 1577-0199</span>
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    // 3 Navigation Tabs
+    const toolTabsHtml = `
+      <div class="flex items-center gap-1 overflow-x-auto pb-1 mb-3 text-[11px] font-bold border-b border-rose-100 scrollbar-none">
+        <button type="button" onclick="switchPack06Tool('love_fact_check')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'love_fact_check' ? 'bg-[#F43F5E] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🔍 30초 사실점검
+        </button>
+        <button type="button" onclick="switchPack06Tool('prediction_to_data')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'prediction_to_data' ? 'bg-[#F43F5E] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          📊 미래예측 → 현재데이터
+        </button>
+        <button type="button" onclick="switchPack06Tool('auto_to_manual')" class="px-2.5 py-1 rounded-lg whitespace-nowrap transition cursor-pointer ${activeTool === 'auto_to_manual' ? 'bg-[#F43F5E] text-white shadow-2xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+          🎛️ 친밀감 AUTO → MANUAL
+        </button>
+      </div>
+    `;
+
+    let toolBodyHtml = '';
+
+    if (activeTool === 'love_fact_check') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-rose-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#F43F5E] font-black text-xs sm:text-sm">
+              <span>🔍</span>
+              <span>30-SECOND LOVE FACT CHECK (연애 사실점검)</span>
+            </div>
+            <span class="text-[9px] font-bold text-rose-600 bg-white px-2 py-0.5 rounded-full border border-rose-200">해석 분리</span>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            불안이 올라올 때 뇌는 초고속으로 소설을 씁니다. 실제로 확인된 <strong>FACT</strong>와 내 머릿속의 <strong>STORY</strong>, 그리고 아직 모르는 <strong>UNKNOWN</strong>을 분명히 나눕니다.
+          </p>
+
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="text-[10px] font-bold text-slate-500 mb-1">지금 가장 비슷한 장면을 선택해 보세요:</div>
+            <div class="grid grid-cols-2 gap-1.5 text-xs">
+              <button type="button" onclick="selectLoveFactPreset('msg_delay')" class="love-fact-chip p-2 rounded-lg bg-white border border-rose-200 hover:border-rose-400 text-slate-700 text-[11px] text-left transition cursor-pointer">
+                📱 답장이 3시간째 없음
+              </button>
+              <button type="button" onclick="selectLoveFactPreset('meet_postpone')" class="love-fact-chip p-2 rounded-lg bg-white border border-rose-200 hover:border-rose-400 text-slate-700 text-[11px] text-left transition cursor-pointer">
+                📅 데이트 약속 연기 요청
+              </button>
+              <button type="button" onclick="selectLoveFactPreset('short_reply')" class="love-fact-chip p-2 rounded-lg bg-white border border-rose-200 hover:border-rose-400 text-slate-700 text-[11px] text-left transition cursor-pointer">
+                💬 '응', 'ㅇㅇ' 단답형 답장
+              </button>
+              <button type="button" onclick="selectLoveFactPreset('sns_active')" class="love-fact-chip p-2 rounded-lg bg-white border border-rose-200 hover:border-rose-400 text-slate-700 text-[11px] text-left transition cursor-pointer">
+                👀 SNS 접속 중인데 안 읽음
+              </button>
+            </div>
+          </div>
+
+          <div id="love-fact-breakdown-box" class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200">
+              <span class="text-[10px] font-black text-emerald-800 block mb-0.5">① FACT (확인된 사실)</span>
+              <p id="love-fact-display" class="text-[11px] text-slate-800 font-bold leading-snug">
+                ${card.factQuestion || '답장이 3시간 동안 도착하지 않았다.'}
+              </p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-rose-50/70 border border-rose-200">
+              <span class="text-[10px] font-black text-rose-800 block mb-0.5">② STORY (내 뇌의 소설)</span>
+              <p id="love-story-display" class="text-[11px] text-slate-800 font-bold leading-snug">
+                ${card.storyQuestion || '마음이 식었거나 나를 귀찮아하고 있다.'}
+              </p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200">
+              <span class="text-[10px] font-black text-amber-800 block mb-0.5">③ UNKNOWN (모르는 것)</span>
+              <p id="love-unknown-display" class="text-[11px] text-slate-800 font-bold leading-snug">
+                ${card.unknownQuestion || '지금 회의 중인지, 이동 중인지, 피곤한지 모른다.'}
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-white border border-rose-200 flex items-center justify-between">
+            <span class="text-[11px] text-slate-600 font-medium">💡 사실과 소설을 분리하셨나요?</span>
+            <button type="button" onclick="triggerLoveFactComplete()" class="px-3 py-1.5 rounded-lg bg-[#F43F5E] hover:bg-rose-600 text-white font-bold text-xs transition cursor-pointer">
+              소설 멈추고 10초 숨고르기
+            </button>
+          </div>
+          <div id="love-fact-feedback" class="hidden p-2.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-bold text-center">
+            🌿 "모르는 것을 억지로 확신하려 하지 않을 때, 마음의 과열이 가라앉습니다."
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'prediction_to_data') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-rose-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#F43F5E] font-black text-xs sm:text-sm">
+              <span>📊</span>
+              <span>FUTURE PREDICTION → CURRENT DATA (미래예측 → 현재데이터)</span>
+            </div>
+            <span class="text-[9px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">점수·확률 없음</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 text-xs text-amber-950 leading-relaxed">
+            <strong>⚠️ Zero Divination (미래 점술 금지 원칙):</strong><br />
+            이 관계가 잘될지, 헤어질지, 재회할 수 있을지의 미래 확률을 점치지 않습니다. 미래를 점칠수록 현재 대화는 왜곡됩니다. 대신 <strong>지금 관찰 가능한 실제 데이터</strong>를 확인합니다.
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 opacity-80">
+              <span class="text-[10px] font-black text-slate-500 block">❌ 머릿속 미래 점치기 (추측 데이터)</span>
+              <p class="text-[11px] text-slate-600 line-through">“결국 얜 나를 버리고 떠날 거야”</p>
+              <p class="text-[11px] text-slate-600 line-through">“지금 당장 따지지 않으면 만만하게 볼 거야”</p>
+              <p class="text-[11px] text-slate-600 line-through">“다시 연락하면 내가 지는 게임이야”</p>
+            </div>
+            <div class="p-3 rounded-xl bg-rose-50/70 border-2 border-rose-300 space-y-1.5">
+              <span class="text-[10px] font-black text-rose-800 block">⭕ 지금 관찰 가능한 현재 데이터 (검증 데이터)</span>
+              <div class="space-y-1 text-[11px] text-slate-800 font-bold">
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input type="checkbox" onchange="toggleLoveDataCheck(this)" class="rounded text-rose-600" />
+                  <span>최근 1주일간 우리가 직접 마주보고 대화한 시간</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input type="checkbox" onchange="toggleLoveDataCheck(this)" class="rounded text-rose-600" />
+                  <span>갈등 시 비난 없이 내 바람을 한 문장으로 전한 적이 있는가</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input type="checkbox" onchange="toggleLoveDataCheck(this)" class="rounded text-rose-600" />
+                  <span>상대의 감정 변화와 별개로 지킨 내 수면/일상 리듬</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div id="love-data-feedback" class="p-3 rounded-xl bg-white border border-rose-200 text-xs text-slate-700 leading-relaxed">
+            💡 <strong>핵심 안내:</strong> 관계의 다음 걸음은 미래 점괘가 아니라, 오늘 두 사람이 실제로 나누는 <strong>'맑고 짧은 한 번의 솔직한 대화'</strong> 데이터에서 시작됩니다.
+          </div>
+        </div>
+      `;
+    } else if (activeTool === 'auto_to_manual') {
+      toolBodyHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between border-b border-rose-100 pb-2">
+            <div class="flex items-center gap-1.5 text-[#F43F5E] font-black text-xs sm:text-sm">
+              <span>🎛️</span>
+              <span>INTIMACY AUTO → MANUAL (친밀감 자동반응 → 수동조율)</span>
+            </div>
+            <span class="text-[9px] font-bold text-rose-600 bg-white px-2 py-0.5 rounded-full border border-rose-200">기어 전환</span>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            가까워질수록 혹은 멀어질수록 뇌가 자동으로 밟는 브레이크나 가속 페달이 있습니다. 자동 반응을 멈추고 <strong>수동 기어(MANUAL)</strong>로 전환해 보세요.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div onclick="selectLoveManualMode('distance')" class="love-manual-card p-3 rounded-xl bg-white border-2 border-slate-200 hover:border-rose-400 transition cursor-pointer">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[10px] font-black text-rose-700">🏃 거리두기·도망 모드</span>
+                <span class="text-[9px] text-slate-400">가까워지면 불안</span>
+              </div>
+              <p class="text-[11px] text-slate-600 mb-1.5">갑자기 답장을 늦추거나 약속을 취소하고 싶을 때</p>
+              <div class="p-2 rounded-lg bg-rose-50 text-[10px] font-bold text-rose-900">
+                🔧 수동 전환: "잠수 타지 않고 '오늘 혼자 충전할 시간이 필요해'라고 전하기"
+              </div>
+            </div>
+
+            <div onclick="selectLoveManualMode('cling')" class="love-manual-card p-3 rounded-xl bg-white border-2 border-slate-200 hover:border-rose-400 transition cursor-pointer">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[10px] font-black text-rose-700">🧲 거듭확인·매달림 모드</span>
+                <span class="text-[9px] text-slate-400">멀어지면 불안</span>
+              </div>
+              <p class="text-[11px] text-slate-600 mb-1.5">답장이 늦으면 바로 전화를 걸거나 메시지를 연타할 때</p>
+              <div class="p-2 rounded-lg bg-rose-50 text-[10px] font-bold text-rose-900">
+                🔧 수동 전환: "휴대폰을 내려두고 30분간 내 산책이나 물 한 컵 마시기"
+              </div>
+            </div>
+
+            <div onclick="selectLoveManualMode('test')" class="love-manual-card p-3 rounded-xl bg-white border-2 border-slate-200 hover:border-rose-400 transition cursor-pointer">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[10px] font-black text-rose-700">🎯 떠보기·비꼬기 모드</span>
+                <span class="text-[9px] text-slate-400">서운함 간접표현</span>
+              </div>
+              <p class="text-[11px] text-slate-600 mb-1.5">"너 나한테 관심 없지?", "바쁘신 분이 웬일이야?"</p>
+              <div class="p-2 rounded-lg bg-rose-50 text-[10px] font-bold text-rose-900">
+                🔧 수동 전환: "비꼬는 대신 '오늘 보고 싶었는데 서운했어' 맑게 말하기"
+              </div>
+            </div>
+
+            <div onclick="selectLoveManualMode('sns_stalk')" class="love-manual-card p-3 rounded-xl bg-white border-2 border-slate-200 hover:border-rose-400 transition cursor-pointer">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[10px] font-black text-rose-700">🕵️ 전 연인 SNS 탐색 모드</span>
+                <span class="text-[9px] text-slate-400">이별 후 불안</span>
+              </div>
+              <p class="text-[11px] text-slate-600 mb-1.5">이별 후 상대의 계정을 검색하며 하루 종일 얽매일 때</p>
+              <div class="p-2 rounded-lg bg-rose-50 text-[10px] font-bold text-rose-900">
+                🔧 수동 전환: "SNS 검색창을 닫고 오늘 나를 위한 따뜻한 식사 챙기기"
+              </div>
+            </div>
+          </div>
+
+          <div id="love-manual-action-box" class="p-3 rounded-xl bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 text-xs flex items-center justify-between">
+            <span id="love-manual-action-text" class="text-rose-900 font-bold">🎯 원하는 수동 전환 카드를 터치해 보세요.</span>
+            <button type="button" onclick="applyLoveManualToStep5()" class="px-3 py-1.5 rounded-lg bg-[#F43F5E] hover:bg-rose-600 text-white font-bold text-xs transition cursor-pointer shrink-0">
+              오늘의 10% 실천으로 담기
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    container.innerHTML = `
+      <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-rose-50/60 via-white to-pink-50/50 border-2 border-rose-200/90 shadow-xs space-y-3">
+        ${safetyHtml}
+        ${toolTabsHtml}
+        ${toolBodyHtml}
+      </div>
+    `;
+  }
 
   // =================================================================
   // 11-3. PACK 07 전용 5대 행동실험 인터랙션 렌더러
@@ -2438,6 +2843,58 @@
         </div>
         <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
           <span class="text-[#E11D48]">사이다 답변 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // =================================================================
+  // 12-4B. 연애·친밀감·이별 PACK 06 캐러셀
+  // =================================================================
+  const FEATURED_LOVE_IDS = [
+    'love-001', // 답장 늦어짐 불안 모드
+    'love-009', // 전 연인 SNS 염탐 모드
+    'love-010', // 재회 충동 모드
+    'love-012', // 마음읽기 판정 모드
+    'love-017', // 애착유형 라벨링 모드
+    'love-020'  // 성숙한 친밀감 모드
+  ];
+
+  function renderLoveQuestions() {
+    const carousel = document.getElementById('love-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const loveFeatured = [];
+    FEATURED_LOVE_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) loveFeatured.push(card);
+    });
+
+    const otherLove = cardsData.filter(c => 
+      c.packId === 'love-relationship-01' && !FEATURED_LOVE_IDS.includes(c.id)
+    );
+
+    const list = [...loveFeatured, ...otherLove].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#F43F5E] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#F43F5E]/10 text-[#F43F5E] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#F43F5E] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#F43F5E]">사이다 답변 확인 &rarr;</span>
           <span>${card.cardTitle}</span>
         </div>
       </div>
@@ -3375,6 +3832,32 @@
         if (titleText.includes(query)) score += 60;
         if (kwText.includes(query)) score += 40;
 
+        // PACK 06: 14대 연애·친밀감 자연어 쿼리 부스팅
+        const PACK06_BOOSTS = {
+          '답장 불안': ['love-001', 'love-004', 'love-012'],
+          '읽씹': ['love-001', 'love-004', 'love-012'],
+          '안읽씹': ['love-001', 'love-004'],
+          '연락 텀': ['love-001', 'love-004', 'love-016'],
+          '잠수': ['love-008', 'love-007', 'love-014'],
+          '회피': ['love-007', 'love-008', 'love-017'],
+          '매달림': ['love-005', 'love-010', 'love-017'],
+          '질투': ['love-006', 'love-009', 'love-003'],
+          '전애인': ['love-009', 'love-010', 'love-018'],
+          '재회': ['love-010', 'love-009', 'love-018'],
+          '이별': ['love-008', 'love-018', 'love-010'],
+          '권태기': ['love-015', 'love-014', 'love-020'],
+          '집착': ['love-004', 'love-005', 'love-009'],
+          '애착유형': ['love-017', 'love-005', 'love-007']
+        };
+
+        for (const [natQuery, boostedIds] of Object.entries(PACK06_BOOSTS)) {
+          if (query.includes(natQuery) || natQuery.includes(query)) {
+            if (boostedIds.includes(c.id)) {
+              score += 260;
+            }
+          }
+        }
+
         // PACK 07: 13대 자연어 쿼리 부스팅
         const PACK07_BOOSTS = {
           '결정을 못하겠어요': ['dec-007', 'dec-014', 'dec-001'],
@@ -3513,10 +3996,75 @@
       `;
     }
 
+    // 3. 데이트 폭력 / 스토킹 / 협박 신호 감지
+    const isDatingViolenceQuery = /데이트\s*폭력|폭력|폭언|스토킹|감금|신체적\s*위협|협박|위치\s*추적/.test(query);
+    let datingViolenceBannerHtml = '';
+    if (isDatingViolenceQuery) {
+      datingViolenceBannerHtml = `
+        <div class="p-3.5 rounded-xl bg-rose-600/30 border-2 border-rose-500 text-white mb-3 space-y-2 text-xs shadow-lg">
+          <div class="flex items-center gap-1.5 font-black text-rose-200 text-sm">
+            <span>🚨</span>
+            <span>데이트 폭력·위협 긴급 안전망 · 심리 조언보다 안전이 최우선입니다</span>
+          </div>
+          <p class="leading-relaxed text-slate-100">
+            지속적인 폭력, 폭언, 협박, 스토킹, 강제 통제는 심리적 소통이나 마음가짐으로 해결할 문제가 아닙니다. 신체적·법적 안전 확보가 가장 먼저입니다.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1 font-bold text-[11px]">
+            <a href="tel:1366" class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white transition shadow-sm">📞 여성긴급전화 1366</a>
+            <a href="tel:112" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition shadow-sm">👮 경찰청 112</a>
+            <a href="tel:132" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm">⚖️ 대한법률구조공단 132</a>
+          </div>
+        </div>
+      `;
+    }
+
+    // 4. 애착유형 라벨링 질문 감지 (불안형, 회피형 등) & 비진단 안내 배너
+    const isAttachmentLabelQuery = /애착|불안형|회피형|공포회피|나르시|가스라이팅/.test(query);
+    let attachmentBannerHtml = '';
+    if (isAttachmentLabelQuery) {
+      attachmentBannerHtml = `
+        <div class="p-3.5 rounded-xl bg-rose-500/20 border border-rose-400/40 text-rose-200 mb-3 space-y-1 text-xs shadow-md">
+          <div class="flex items-center gap-1.5 font-black text-rose-300">
+            <span>🏷️</span>
+            <span>애착유형 라벨링 안내 · 당신이나 상대를 유형 상자에 가두지 않습니다</span>
+          </div>
+          <p class="leading-relaxed text-rose-100 font-bold">
+            “상대를 '회피형', 나를 '불안형'이라 규정하는 것은 이해의 시작일 수 있지만 고정된 꼬리표가 되어서는 안 됩니다.”
+          </p>
+          <p class="text-[11px] text-rose-200/80 leading-relaxed">
+            성격 유형 대신, 지금 이 순간 두 사람 사이에서 어떤 자극(Trigger)과 STORY, 방어행동이 반복되는지 작동 과정으로 살펴봅니다.
+          </p>
+        </div>
+      `;
+    }
+
+    // 5. 관계 결정 질문 감지 (재회할까, 헤어질까 등) & 미래예측 차단 배너
+    const isRelationshipDecisionQuery = /재회할까|헤어질까|다시\s*만날|끝낼까|헤어져야|이별해야|다시\s*연락할까|잡아야\s*할까/.test(query);
+    let relationshipDecisionBannerHtml = '';
+    if (isRelationshipDecisionQuery) {
+      relationshipDecisionBannerHtml = `
+        <div class="p-3.5 rounded-xl bg-pink-500/20 border border-pink-400/40 text-pink-200 mb-3 space-y-1 text-xs shadow-md">
+          <div class="flex items-center gap-1.5 font-black text-pink-300">
+            <span>🧭</span>
+            <span>관계 결정 안내 · 재회나 이별 결정을 대신 내려주지 않습니다</span>
+          </div>
+          <p class="leading-relaxed text-pink-100 font-bold">
+            “헤어질지, 다시 만날지의 미래를 점치거나 대신 결정하지 않습니다.”
+          </p>
+          <p class="text-[11px] text-pink-200/80 leading-relaxed">
+            불확실한 상대의 속마음을 추측하기보다, 지금까지 확인된 FACT와 오늘 내 삶의 10% 선택권을 스스로 세울 수 있도록 돕습니다.
+          </p>
+        </div>
+      `;
+    }
+
     // 헤더: “사람을 몇 개의 유형 상자에 가두지 않습니다. 지금 켜진 상태(동사)부터 가볍게 골라보세요.”
     let html = `
       ${crisisBannerHtml}
+      ${datingViolenceBannerHtml}
       ${fortuneBannerHtml}
+      ${attachmentBannerHtml}
+      ${relationshipDecisionBannerHtml}
       <div class="mb-2">
         <div class="text-xs sm:text-sm font-black text-[#E2CF9F] leading-snug">
           “사람을 몇 개의 유형 상자에 가두지 않습니다.<br class="sm:hidden" /> 지금 내 안에서 켜진 상태(동사)부터 가볍게 골라보세요.”

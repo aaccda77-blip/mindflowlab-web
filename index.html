@@ -1053,6 +1053,13 @@
                     </div>
 
                     <!-- ===================================================== -->
+                    <!-- PACK 06 전용 3대 연애·친밀감 인터랙션 (30초 LOVE FACT CHECK / 미래예측→현재데이터 / 친밀감 AUTO→MANUAL / 안전망) -->
+                    <!-- ===================================================== -->
+                    <div id="pack06-special-interaction-container" class="hidden mb-4">
+                      <!-- Populated dynamically by daily-mind-card.js -->
+                    </div>
+
+                    <!-- ===================================================== -->
                     <!-- PACK 07 전용 5대 행동실험 인터랙션 (10초 방향 / 10% 실험 / EXPECTED vs ACTUAL / RESTART / REWARD & COST / SAFETY) -->
                     <!-- ===================================================== -->
                     <div id="pack07-special-interaction-container" class="hidden mb-4">
@@ -1514,6 +1521,24 @@
         </div>
 
         <!-- ============================================================= -->
+        <!-- 연애·친밀감·이별 PACK 06 (가로 스크롤 캐러셀)                 -->
+        <!-- ============================================================= -->
+        <div id="love-questions-section" class="mb-14 text-left">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
+            <div>
+              <span class="text-[11px] font-black text-[#F43F5E] uppercase tracking-wider block">LOVE & INTIMACY PACK 06</span>
+              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">사랑의 미래를 맞히기보다 지금 이 관계에서 확인된 것을 봅니다.</h4>
+              <p class="text-xs text-slate-500 mt-0.5">당신이나 상대를 ‘불안형’, ‘회피형’으로 판정하지 않습니다. 지금 어떤 장면에서 어떤 STORY와 행동이 반복되는지 살펴봅니다.</p>
+            </div>
+            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
+          </div>
+
+          <div id="love-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
+            <!-- Javascript will render 6 featured love cards -->
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
         <!-- 결정·미루기·습관 PACK 07 (가로 스크롤 캐러셀)                 -->
         <!-- ============================================================= -->
         <div id="decision-questions-section" class="mb-14 text-left">
@@ -1583,22 +1608,30 @@
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-            <!-- 1. 다크 코드 -->
-            <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-[#14233B] hover:shadow-lg transition-all flex flex-col justify-between group">
+            <!-- 1. 다크 코드 (신간 발간) -->
+            <div class="p-5 rounded-3xl bg-white border-2 border-rose-200 hover:border-rose-500 hover:shadow-xl transition-all flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-[#14233B] text-[10px] font-black">무의식 · 패턴 발견</span>
-                  <span class="text-[10px] text-slate-400 font-bold">Book 01</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 text-[10px] font-black">🔥 2026 신간 발간 · 패턴 발견</span>
+                  <span class="text-[10px] text-rose-500 font-bold">Book 01</span>
                 </div>
-                <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-[#14233B] transition-colors mb-1.5">
-                  청류출판사 《다크 코드》
-                </h5>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  STORY, 인정욕구, 통제, 완벽주의, 눈치. 뇌가 생존을 위해 만들어낸 무의식 방어기제의 뿌리를 파헤칩니다.
-                </p>
+                <div class="flex items-start gap-3.5 mb-3">
+                  <img src="/assets/book-cover-darkcode.jpg" alt="다크 코드 표지" class="w-16 sm:w-20 rounded-xl shadow-md border border-slate-200 shrink-0 object-cover" />
+                  <div>
+                    <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-rose-700 transition-colors mb-0.5">
+                      청류 《다크 코드》
+                    </h5>
+                    <p class="text-[11px] text-rose-600 font-bold mb-1">
+                      “나는 왜 알면서도 같은 패턴을 반복하는가”
+                    </p>
+                    <p class="text-[11px] text-slate-600 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                      심리학, 행동과학, 뇌과학이 만난 자기이해의 결정판. 무의식 방어기제와 자동패턴을 해체합니다.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'dark_code' })" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-black text-xs text-center transition block">
-                이 패턴의 뿌리 읽기 &rarr;
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'dark_code' })" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-slate-900 hover:from-rose-700 hover:to-slate-800 text-white font-black text-xs text-center transition block shadow-sm">
+                📚 신간 도서 구매하기 &rarr;
               </a>
             </div>
 
@@ -2280,109 +2313,160 @@
       </div>
 
       
-      <!-- [FEATURED BOOKS] 현재 정식 출간 도서 2종 컬렉션 -->
+      <!-- [FEATURED BOOKS] 현재 정식 출간 도서 3종 컬렉션 -->
       <div class="mb-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-[#0B1528] to-slate-950 border-2 border-amber-500/40 shadow-2xl relative overflow-hidden">
-        <div class="absolute -right-20 -top-20 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-12 relative z-10">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-xs font-bold text-amber-300 mb-3 shadow-sm">
-            <span>👑 AUTHOR'S PUBLISHED WORKS · 이경윤 대표 정식 출간작 2종</span>
+        <div class="text-center max-w-3xl mx-auto mb-12 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500/20 to-amber-500/20 border border-amber-500/40 text-xs font-bold text-amber-300 mb-3 shadow-sm">
+            <span>👑 AUTHOR'S PUBLISHED WORKS · 이경윤 대표 정식 출간작 3종</span>
           </div>
           <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-            현재 정식 출간된 <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-emerald-200 to-teal-300">대표 도서 컬렉션</span>
+            현재 정식 출간된 <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-300 via-amber-200 to-teal-300">대표 도서 컬렉션</span>
           </h2>
           <p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-            일상의 자유를 찾는 공존의 사용설명서부터 생각과 감정 너머의 순수 자각 《ZERO POINT》까지,<br class="hidden sm:inline" />
+            2026 최신간 《다크 코드》부터 일상의 자유를 찾는 《나는 믿는다, 그러나 갇히지 않는다》, 순수 자각 《ZERO POINT》까지,<br class="hidden sm:inline" />
             전국 온·오프라인 서점에서 지금 바로 실물 도서로 만나보실 수 있습니다.
           </p>
         </div>
 
-        <!-- 2 Books Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+        <!-- 3 Books Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10">
           
-          <!-- Book 1: 나는 믿는다, 그러나 갇히지 않는다 -->
-          <div class="p-6 sm:p-8 rounded-3xl bg-slate-950/80 border border-emerald-500/30 flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:border-emerald-400 transition group shadow-xl">
-            <div class="shrink-0 text-center">
-              <div class="relative group-hover:scale-[1.03] transition duration-300">
-                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur opacity-30 group-hover:opacity-70 transition"></div>
-                <img 
-                  src="/assets/book-cover-freedom.jpg" 
-                  alt="나는 믿는다, 그러나 갇히지 않는다" 
-                  class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20"
-                />
+          <!-- Book 1: 다크 코드 (THE DARK CODE) - 최신간 -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-slate-950/90 border-2 border-rose-500/50 flex flex-col justify-between hover:border-rose-400 transition group shadow-2xl relative">
+            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-gradient-to-r from-rose-600 to-amber-600 text-white text-[11px] font-black shadow-lg animate-pulse">
+              🔥 2026 최신간 발간!
+            </div>
+            <div>
+              <div class="text-center mb-5">
+                <div class="relative group-hover:scale-[1.03] transition duration-300 inline-block">
+                  <div class="absolute -inset-1 bg-gradient-to-r from-rose-600 to-amber-600 rounded-xl blur opacity-40 group-hover:opacity-80 transition"></div>
+                  <img 
+                    src="/assets/book-cover-darkcode.jpg" 
+                    alt="다크 코드 - THE DARK CODE" 
+                    class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20 object-cover mx-auto"
+                  />
+                </div>
+                <div class="mt-3">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-500 text-white shadow">
+                    ✓ 정식 출간 도서 (BEST)
+                  </span>
+                </div>
               </div>
-              <div class="mt-3">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500 text-slate-950 shadow">
-                  ✓ 정식 출간 도서
-                </span>
+              <div class="space-y-2.5 text-left">
+                <span class="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-wider">마인드풀니스 코드 시리즈 01 · 인지행동과학</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
+                  다크 코드<br />
+                  <span class="text-rose-300 font-serif">THE DARK CODE</span>
+                </h3>
+                <p class="text-xs text-rose-200/90 font-bold">
+                  “나는 왜 알면서도 같은 패턴을 반복하는가”
+                </p>
+                <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
+                  <span>저자 이경윤</span>
+                  <span>|</span>
+                  <span>도서출판 청류</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  “무의식을 읽는 새로운 통찰” 심리학, 행동과학, 뇌과학이 만난 자기이해의 결정판. 반복되는 나의 패턴 속에 숨겨진 진짜 나를 만나고, 무의식 방어기제와 자동패턴의 알고리즘을 해체하여 삶의 주도권을 되찾습니다.
+                </p>
               </div>
             </div>
-            <div class="space-y-3 text-left">
-              <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider">인문 · 심리 · 영성</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
-                나는 믿는다,<br />
-                <span class="text-emerald-300">그러나 갇히지 않는다</span>
-              </h3>
-              <p class="text-xs text-emerald-200/80 font-medium">
-                다른 믿음과 함께 살아가는 자유인의 사용 설명서
-              </p>
-              <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
-                <span>저자 이경윤</span>
-                <span>|</span>
-                <span>도서출판 청류</span>
-              </div>
-              <p class="text-xs text-slate-300 leading-relaxed">
-                신앙과 신념이 왜 사랑 대신 갈등과 배척을 낳는가? 믿음과 결합한 무의식적 자동반응(Dark Code)을 자각하고, 내 믿음을 지키며 타인을 끌어안는 ‘성숙한 자유인의 공존법’을 전합니다.
-              </p>
-              <div class="pt-2">
-                <span class="inline-block px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-[11px] font-bold text-emerald-300">
-                  📚 전국 온·오프라인 서점 절찬 판매 중
-                </span>
-              </div>
+            <div class="pt-5 mt-4 border-t border-slate-800/80">
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-black text-xs text-center transition block shadow-md">
+                📚 네이버 스마트스토어 & 서점 구매 &rarr;
+              </a>
             </div>
           </div>
 
-          <!-- Book 2: ZERO POINT -->
-          <div class="p-6 sm:p-8 rounded-3xl bg-slate-950/80 border border-amber-500/40 flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:border-amber-400 transition group shadow-xl">
-            <div class="shrink-0 text-center">
-              <div class="relative group-hover:scale-[1.03] transition duration-300">
-                <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl blur opacity-30 group-hover:opacity-70 transition"></div>
-                <img 
-                  src="/assets/book-cover-zeropoint.jpg" 
-                  alt="ZERO POINT: Awareness of Awareness" 
-                  class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20"
-                />
+          <!-- Book 2: 나는 믿는다, 그러나 갇히지 않는다 -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-slate-950/80 border border-emerald-500/30 flex flex-col justify-between hover:border-emerald-400 transition group shadow-xl">
+            <div>
+              <div class="text-center mb-5">
+                <div class="relative group-hover:scale-[1.03] transition duration-300 inline-block">
+                  <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur opacity-30 group-hover:opacity-70 transition"></div>
+                  <img 
+                    src="/assets/book-cover-freedom.jpg" 
+                    alt="나는 믿는다, 그러나 갇히지 않는다" 
+                    class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20 mx-auto"
+                  />
+                </div>
+                <div class="mt-3">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500 text-slate-950 shadow">
+                    ✓ 정식 출간 도서
+                  </span>
+                </div>
               </div>
-              <div class="mt-3">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 shadow">
-                  ✓ 정식 출간 도서
-                </span>
+              <div class="space-y-2.5 text-left">
+                <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider">인문 · 심리 · 영성</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
+                  나는 믿는다,<br />
+                  <span class="text-emerald-300">그러나 갇히지 않는다</span>
+                </h3>
+                <p class="text-xs text-emerald-200/80 font-medium">
+                  다른 믿음과 함께 살아가는 자유인의 사용 설명서
+                </p>
+                <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
+                  <span>저자 이경윤</span>
+                  <span>|</span>
+                  <span>도서출판 청류</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  신앙과 신념이 왜 사랑 대신 갈등과 배척을 낳는가? 믿음과 결합한 무의식적 자동반응(Dark Code)을 자각하고, 내 믿음을 지키며 타인을 끌어안는 ‘성숙한 자유인의 공존법’을 전합니다.
+                </p>
               </div>
             </div>
-            <div class="space-y-3 text-left">
-              <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider">31권 대통합 완결작 · 인지과학</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
-                ZERO POINT<br />
-                <span class="text-amber-300">AWARENESS OF AWARENESS</span>
-              </h3>
-              <p class="text-xs text-amber-200/80 font-medium">
-                알아차림의 알아차림 · 아무것도 바꾸지 않아도 자유로운 자리
-              </p>
-              <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
-                <span>저자 이경윤</span>
-                <span>|</span>
-                <span>도서출판 청류</span>
+            <div class="pt-5 mt-4 border-t border-slate-800/80">
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-emerald-500/40 text-emerald-300 font-bold text-xs text-center transition block">
+                📚 스마트스토어 도서 구매 &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Book 3: ZERO POINT -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-slate-950/80 border border-amber-500/40 flex flex-col justify-between hover:border-amber-400 transition group shadow-xl">
+            <div>
+              <div class="text-center mb-5">
+                <div class="relative group-hover:scale-[1.03] transition duration-300 inline-block">
+                  <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl blur opacity-30 group-hover:opacity-70 transition"></div>
+                  <img 
+                    src="/assets/book-cover-zeropoint.jpg" 
+                    alt="ZERO POINT: Awareness of Awareness" 
+                    class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20 mx-auto"
+                  />
+                </div>
+                <div class="mt-3">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 shadow">
+                    ✓ 정식 출간 도서
+                  </span>
+                </div>
               </div>
-              <p class="text-xs text-slate-300 leading-relaxed">
-                생각과 감정, 관찰자의 착각마저 멈추는 곳. 31권 마스터 시리즈의 최종 대통합 완결권으로서, 조건을 바꾸지 않고도 현실을 있는 그대로 안고 살아가는 ‘영점(Zero Point)의 절대 자유’를 밝힙니다.
-              </p>
-              <div class="pt-2">
-                <span class="inline-block px-3 py-1.5 rounded-lg bg-amber-950/80 border border-amber-500/40 text-[11px] font-bold text-amber-300">
-                  📚 전국 온·오프라인 서점 절찬 판매 중
-                </span>
+              <div class="space-y-2.5 text-left">
+                <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider">31권 대통합 완결작 · 인지과학</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
+                  ZERO POINT<br />
+                  <span class="text-amber-300">AWARENESS OF AWARENESS</span>
+                </h3>
+                <p class="text-xs text-amber-200/80 font-medium">
+                  알아차림의 알아차림 · 아무것도 바꾸지 않아도 자유로운 자리
+                </p>
+                <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
+                  <span>저자 이경윤</span>
+                  <span>|</span>
+                  <span>도서출판 청류</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  생각과 감정, 관찰자의 착각마저 멈추는 곳. 31권 마스터 시리즈의 최종 대통합 완결권으로서, 조건을 바꾸지 않고도 현실을 있는 그대로 안고 살아가는 ‘영점(Zero Point)의 절대 자유’를 밝힙니다.
+                </p>
               </div>
+            </div>
+            <div class="pt-5 mt-4 border-t border-slate-800/80">
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-amber-500/40 text-amber-300 font-bold text-xs text-center transition block">
+                📚 스마트스토어 도서 구매 &rarr;
+              </a>
             </div>
           </div>
 
@@ -2390,7 +2474,7 @@
 
         <!-- 31 Series Notice Footer -->
         <div class="mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-400 relative z-10">
-          ※ 상기 2종 도서는 현재 정식 출간되어 전국 서점에서 바로 구매하실 수 있으며, 아래의 <strong>명심코칭 31권 마스터 시리즈는 순차적으로 출간예정</strong>입니다.
+          ※ 상기 3종 도서(《다크 코드》, 《나는 믿는다, 그러나 갇히지 않는다》, 《ZERO POINT》)는 현재 정식 출간되어 전국 서점에서 바로 구매하실 수 있으며, 아래의 <strong>명심코칭 31권 마스터 시리즈는 순차적으로 출간예정</strong>입니다.
         </div>
       </div>
       </div>
@@ -2501,27 +2585,31 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-          <!-- Canon 1: 01 다크 코드 -->
-          <div class="p-6 rounded-3xl bg-slate-900/90 border border-indigo-500/40 shadow-xl flex flex-col justify-between hover:border-indigo-400 transition group">
+          <!-- Canon 1: 01 다크 코드 (정식 출간작) -->
+          <div class="p-6 rounded-3xl bg-slate-900/90 border-2 border-rose-500/50 shadow-xl flex flex-col justify-between hover:border-rose-400 transition group relative">
+            <div class="absolute -top-3 right-5 px-3 py-1 rounded-full bg-gradient-to-r from-rose-600 to-amber-600 text-white text-[10px] font-black shadow-md animate-pulse">
+              HOT • 2026 최신간 발간!
+            </div>
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-mono font-black text-indigo-400">VOL.01</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">출간예정 (Master Plan)</span>
+                <span class="text-xs font-mono font-black text-rose-400">VOL.01</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-500 text-white shadow-sm">✓ 정식 출간 완료 (발간작)</span>
               </div>
-              <div class="w-full h-44 rounded-2xl bg-gradient-to-b from-indigo-950 to-slate-950 border border-indigo-500/30 flex flex-col items-center justify-center p-4 text-center mb-5 group-hover:scale-[1.02] transition">
-                <span class="text-xs text-indigo-400 font-semibold">인간 변화의 첫 문</span>
-                <h4 class="text-xl font-black text-white mt-1">다크 코드</h4>
-                <span class="text-[11px] text-indigo-300 mt-1">340~380p</span>
+              <div class="w-full h-48 rounded-2xl bg-gradient-to-b from-slate-950 to-slate-900 border border-rose-500/30 flex items-center justify-center p-2 mb-5 group-hover:scale-[1.02] transition">
+                <img src="/assets/book-cover-darkcode.jpg" alt="다크 코드" class="h-44 w-auto rounded-xl shadow-2xl border border-white/20 object-contain mx-auto" />
               </div>
-              <h5 class="text-lg font-black text-white group-hover:text-indigo-300 transition">《다크 코드》</h5>
-              <p class="text-xs font-bold text-indigo-400 mt-1">“왜 나는 알면서도 같은 삶을 반복하는가”</p>
+              <h5 class="text-lg font-black text-white group-hover:text-rose-300 transition">《다크 코드 (THE DARK CODE)》</h5>
+              <p class="text-xs font-bold text-rose-400 mt-1">“나는 왜 알면서도 같은 패턴을 반복하는가”</p>
               <div class="mt-3 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-300 leading-relaxed">
-                <strong>🎯 추천 독자:</strong> 같은 문제를 반복하며 스스로를 자책하는 사람, 내 무의식의 5대 보호행동을 해체하고 싶은 분.
+                <strong>🎯 추천 독자:</strong> 같은 문제를 반복하며 스스로를 자책하는 사람, 내 무의식의 5대 보호행동과 패턴을 해체하고 싶은 분.
               </div>
             </div>
             <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
-              <span class="text-slate-400 font-mono">PART 1~6</span>
-              <a href="#canon-01-detail" onclick="openCanonDetail(1)" class="font-bold text-indigo-400 hover:underline">상세 목차 &rarr;</a>
+              <span class="text-slate-400 font-mono">이경윤 지음 · 도서출판 청류</span>
+              <a href="https://smartstore.naver.com/crbooks" target="_blank" rel="noopener noreferrer" class="font-bold text-rose-400 hover:underline flex items-center gap-1">
+                <span>구매하기</span>
+                <span>&rarr;</span>
+              </a>
             </div>
           </div>
 
@@ -17762,7 +17850,7 @@
                   <span class="text-amber-600 font-bold">✓</span> 교보문고·알라딘·예스24 전국 유통
                 </li>
                 <li class="flex items-center gap-2">
-                  <span class="text-amber-600 font-bold">✓</span> 《나는 믿는다...》, 《ZERO POINT》 정식 출간
+                  <span class="text-amber-600 font-bold">✓</span> 《다크 코드》, 《나는 믿는다...》, 《ZERO POINT》 정식 출간 3종
                 </li>
                 <li class="flex items-center gap-2">
                   <span class="text-amber-600 font-bold">✓</span> 총 31권 규모 명심코칭 마스터 라이브러리 독점 출간
