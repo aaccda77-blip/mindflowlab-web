@@ -81,10 +81,10 @@
       if (!window.MIND_CONFIG) {
         window.MIND_CONFIG = {
           APP_URL: 'https://myeongsimcoaching.com',
-          PUBLISHER_URL: 'https://smartstore.naver.com/crbooks',
-          DARK_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-          NEURAL_CODE_BOOK_URL: 'https://smartstore.naver.com/crbooks',
-          ZERO_POINT_BOOK_URL: 'https://smartstore.naver.com/crbooks'
+          PUBLISHER_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
+          DARK_CODE_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
+          NEURAL_CODE_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
+          ZERO_POINT_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4'
         };
       }
       return window.MIND_CONFIG;
@@ -102,15 +102,15 @@
     const bookTitle = ((card && card.relatedBook) || '').trim().replace(/\s+/g, '');
 
     if (bookTitle.includes('다크')) {
-      return cfg.DARK_CODE_URL || cfg.DARK_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+      return cfg.DARK_CODE_URL || cfg.DARK_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
     } else if (bookTitle.includes('뉴럴')) {
-      return cfg.NEURAL_CODE_URL || cfg.NEURAL_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+      return cfg.NEURAL_CODE_URL || cfg.NEURAL_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
     } else if (bookTitle.includes('제로')) {
-      return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+      return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
     } else if (bookTitle.includes('믿는다') || bookTitle.includes('갇히지')) {
-      return cfg.BELIEF_BOOK_URL || cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+      return cfg.BELIEF_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
     }
-    return cfg.PUBLISHER_URL || 'https://smartstore.naver.com/crbooks';
+    return cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
   }
 
   // 앱 주소 라우팅 (카드 파라미터 및 액션 연동 지원)
@@ -448,10 +448,10 @@
     // STEP 6. 앱/책 CTA
     const config = window.MIND_CONFIG || {
       APP_URL: 'https://myeongsimcoaching.com',
-      PUBLISHER_URL: 'https://smartstore.naver.com/crbooks',
-      DARK_CODE_URL: 'https://smartstore.naver.com/crbooks',
-      NEURAL_CODE_URL: 'https://smartstore.naver.com/crbooks',
-      ZERO_POINT_URL: 'https://smartstore.naver.com/crbooks'
+      PUBLISHER_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
+      DARK_CODE_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
+      NEURAL_CODE_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
+      ZERO_POINT_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4'
     };
 
     setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");

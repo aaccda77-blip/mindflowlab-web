@@ -17,15 +17,15 @@
 
 ## ⚙️ 1. 실제 서비스 링크 변경 방법 (`data/service-config.json`)
 
-실제 출시된 앱 주소나 네이버 스마트스토어의 개별 도서 상세 페이지 URL을 변경할 때는 이 파일만 수정하시면 됩니다:
+실제 출시된 앱 주소나 YES24의 개별 도서 상세 페이지 URL을 변경할 때는 이 파일만 수정하시면 됩니다:
 
 ```json
 {
   "APP_URL": "https://myeongsimcoaching.com",
-  "PUBLISHER_URL": "https://smartstore.naver.com/crbooks",
-  "DARK_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
-  "NEURAL_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
-  "ZERO_POINT_BOOK_URL": "https://smartstore.naver.com/crbooks"
+  "PUBLISHER_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "DARK_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "NEURAL_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "ZERO_POINT_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4"
 }
 ```
 * 카드의 **`relatedBook`**에 `"다크 코드"`가 적혀있으면 사용자가 책 버튼 클릭 시 자동으로 `DARK_CODE_BOOK_URL`로 이동합니다.

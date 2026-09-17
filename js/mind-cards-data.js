@@ -8,14 +8,15 @@
 // 1. 시스템 설정 (URL Config)
 window.MIND_CONFIG = {
   "APP_URL": "https://myeongsimcoaching.com",
-  "PUBLISHER_URL": "https://smartstore.naver.com/crbooks",
-  "DARK_CODE_URL": "https://smartstore.naver.com/crbooks",
-  "NEURAL_CODE_URL": "https://smartstore.naver.com/crbooks",
-  "ZERO_POINT_URL": "https://smartstore.naver.com/crbooks",
-  "DARK_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
-  "NEURAL_CODE_BOOK_URL": "https://smartstore.naver.com/crbooks",
-  "ZERO_POINT_BOOK_URL": "https://smartstore.naver.com/crbooks",
-  "BELIEF_BOOK_URL": "https://smartstore.naver.com/crbooks"
+  "PUBLISHER_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "DARK_CODE_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%8B%A4%ED%81%AC%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "NEURAL_CODE_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "ZERO_POINT_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=ZERO+POINT+%EC%9D%B4%EA%B2%BD%EC%9C%A4+%EC%B2%AD%EB%A5%98",
+  "DARK_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%8B%A4%ED%81%AC%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "NEURAL_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "ZERO_POINT_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=ZERO+POINT+%EC%9D%B4%EA%B2%BD%EC%9C%A4+%EC%B2%AD%EB%A5%98",
+  "BELIEF_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%82%98%EB%8A%94+%EB%AF%BF%EB%8A%94%EB%8B%A4+%EA%B7%B8%EB%9F%AC%EB%82%98+%EA%B0%87%ED%9E%88%EC%A7%80+%EC%95%8A%EB%8A%94%EB%8B%A4+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "YES24_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4"
 };
 
 // 2. 오프라인 / file:// 로컬 미리보기용 캐시 데이터 (data/mind-cards.json과 실시간 동기화)
