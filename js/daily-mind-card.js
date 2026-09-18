@@ -177,6 +177,7 @@
     trackMindEvent('decision_pack_view', { packId: 'decision-action-01', source: 'home_load' });
     trackMindEvent('emotion_pack_view', { packId: 'emotion-recovery-01', source: 'home_load' });
     trackMindEvent('belief_pack_view', { packId: 'belief-fate-uncertainty-01', source: 'home_load' });
+    trackMindEvent('three_code_pack_view', { packId: 'three-code-integration-01', source: 'home_load' });
     renderPopularQuestions();
     renderMoneyQuestions();
     renderCareerQuestions();
@@ -186,6 +187,7 @@
     renderDecisionQuestions();
     renderEmotionQuestions();
     renderBeliefQuestions();
+    renderThreeCodeQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
     // 기본 검색 제안 렌더링
@@ -358,6 +360,11 @@
     if (currentCard && (currentCard.packId === 'belief-fate-uncertainty-01' || (currentCard.id && currentCard.id.startsWith('fate-')))) {
       trackMindEvent('belief_card_open', { cardId: currentCard.id, category: currentCard.category });
       trackMindEvent('belief_card_reveal', { cardId: currentCard.id, category: currentCard.category });
+    }
+    // 3대 코드 통합 PACK 10 전용 분석 이벤트
+    if (currentCard && (currentCard.packId === 'three-code-integration-01' || (currentCard.id && currentCard.id.startsWith('code-')))) {
+      trackMindEvent('three_code_card_open', { cardId: currentCard.id, category: currentCard.category });
+      trackMindEvent('three_code_card_reveal', { cardId: currentCard.id, category: currentCard.category });
     }
 
     // 화면 전환
@@ -3060,6 +3067,145 @@
   }
 
   // =================================================================
+  // 12-8. 3대 코드 통합 (Dark Code · Neural Code · Zero Point) PACK 10 
+  // =================================================================
+  const FEATURED_THREE_CODE_IDS = [
+    'code-001', // 알면서 또 반복 모드
+    'code-002', // 나는 원래 이래 모드
+    'code-003', // 코드 찾기 중독 모드
+    'code-009', // 확신 없는 행동 모드
+    'code-011', // Zero Point 상태 모드
+    'code-016'  // 새로운 나 만들기 모드
+  ];
+
+  function renderThreeCodeQuestions() {
+    const carousel = document.getElementById('three-code-questions-carousel');
+    if (!carousel || !cardsData || cardsData.length === 0) return;
+
+    const threeCodeFeatured = [];
+    FEATURED_THREE_CODE_IDS.forEach(id => {
+      const card = cardsData.find(c => c.id === id);
+      if (card) threeCodeFeatured.push(card);
+    });
+
+    const otherThreeCode = cardsData.filter(c => 
+      c.packId === 'three-code-integration-01' && !FEATURED_THREE_CODE_IDS.includes(c.id)
+    );
+
+    const list = [...threeCodeFeatured, ...otherThreeCode].slice(0, 12);
+
+    carousel.innerHTML = list.map((card, idx) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0F766E] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-[#0F766E]/10 text-[#0F766E] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">#0${idx + 1}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#0F766E] transition-colors leading-snug line-clamp-2 mb-2">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#0F766E]">사이다 즉답 확인 &rarr;</span>
+          <span>${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // =================================================================
+  // PACK 10 전용 4대 상호작용 (3-CODE ROUTER, ONE SCENE THREE LENSES, AND LANGUAGE, MY WORKING MAP)
+  // =================================================================
+
+  // 1) ONE SCENE — THREE LENSES 렌즈 전환
+  window.switchThreeCodeLens = function (lensKey) {
+    const tabs = document.querySelectorAll('.lens-tab-btn');
+    tabs.forEach(btn => {
+      btn.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+      btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+    });
+
+    const activeBtn = document.getElementById(`lens-btn-${lensKey}`);
+    if (activeBtn) {
+      activeBtn.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+      activeBtn.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+    }
+
+    const darkCard = document.getElementById('lens-content-dark');
+    const neuralCard = document.getElementById('lens-content-neural');
+    const zeroCard = document.getElementById('lens-content-zero');
+
+    if (darkCard) darkCard.classList.toggle('hidden', lensKey !== 'dark');
+    if (neuralCard) neuralCard.classList.toggle('hidden', lensKey !== 'neural');
+    if (zeroCard) zeroCard.classList.toggle('hidden', lensKey !== 'zero');
+
+    trackMindEvent('three_lens_switched', { lens: lensKey });
+  };
+
+  // 2) 3-CODE ROUTER 도구 선택 (절대 등급 판정이 아닌 도구 제공)
+  window.selectThreeCodeRouter = function (codeKey) {
+    trackMindEvent('three_code_router_selected', { code: codeKey });
+    const targetMap = {
+      'dark': 'code-001',
+      'neural': 'code-009',
+      'zero': 'code-011'
+    };
+    const cardId = targetMap[codeKey] || 'code-001';
+    if (window.pickMindCard) {
+      window.pickMindCard(0, cardId);
+    }
+  };
+
+  // 3) AND LANGUAGE 문장 선택 인터랙션
+  const AND_SENTENCES = [
+    { first: "불안하다", second: "행동을 선택할 수 있다." },
+    { first: "부모님을 사랑한다", second: "거절할 수 있다." },
+    { first: "실수했다", second: "나 전체가 실패한 것은 아니다." },
+    { first: "화를 느낀다", second: "공격하지 않을 수 있다." },
+    { first: "사주를 참고한다", second: "내 선택권을 가진다." },
+    { first: "과거 패턴이 있다", second: "다음 행동은 다시 선택할 수 있다." }
+  ];
+
+  window.selectAndSentence = function (idx) {
+    const item = AND_SENTENCES[idx];
+    if (!item) return;
+
+    document.querySelectorAll('.and-chip-btn').forEach((btn, i) => {
+      btn.classList.toggle('bg-emerald-600', i === idx);
+      btn.classList.toggle('text-white', i === idx);
+      btn.classList.toggle('border-emerald-600', i === idx);
+      btn.classList.toggle('bg-slate-100', i !== idx);
+      btn.classList.toggle('text-slate-700', i !== idx);
+    });
+
+    const display = document.getElementById('and-display-text');
+    if (display) {
+      display.innerHTML = `
+        <span class="text-slate-900 font-bold">“${item.first}</span>
+        <span class="mx-2 px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-black text-xs uppercase tracking-wider">AND</span>
+        <span class="text-emerald-700 font-bold">${item.second}”</span>
+      `;
+    }
+    trackMindEvent('and_language_used', { index: idx, sentence: `${item.first} AND ${item.second}` });
+  };
+
+  // 4) MY WORKING MAP ("최근 발견한 나의 작동지도") 생성/표시
+  window.renderMyWorkingMap = function () {
+    const mapBox = document.getElementById('my-working-map-box');
+    if (!mapBox) return;
+
+    mapBox.classList.remove('hidden');
+    mapBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    trackMindEvent('working_map_viewed');
+  };
+
+
+  // =================================================================
   // PACK 08 전용 5대 감정회복 인터랙션
   // =================================================================
   window.currentPack08Tool = null;
@@ -3916,6 +4062,30 @@
           }
         }
 
+        // PACK 10: 12대 3대 코드 통합 자연어 쿼리 부스팅
+        const PACK10_BOOSTS = {
+          '다크 코드가 뭐예요': ['code-001', 'code-002', 'code-004'],
+          '뉴럴 코드가 뭐예요': ['code-009', 'code-010', 'code-016'],
+          '제로포인트가 뭐예요': ['code-011', 'code-012', 'code-019'],
+          '3대 코드 차이가 뭐예요': ['code-019', 'code-001', 'code-020'],
+          '패턴을 알아도 안 바뀌어요': ['code-001', 'code-009', 'code-018'],
+          '왜 또 반복하죠': ['code-001', 'code-002', 'code-018'],
+          '마음이 안 바뀌어요': ['code-009', 'code-007', 'code-014'],
+          '제로포인트에 못 들어가요': ['code-011', 'code-012', 'code-019'],
+          '저는 무슨 코드인가요': ['code-019', 'code-002', 'code-016'],
+          '다크 코드가 강한가요': ['code-004', 'code-002', 'code-015'],
+          '어디부터 해야 하나요': ['code-019', 'code-001', 'code-020'],
+          '내 선택은 내가 해': ['code-020', 'code-014', 'code-011']
+        };
+
+        for (const [natQuery, boostedIds] of Object.entries(PACK10_BOOSTS)) {
+          if (query.includes(natQuery) || natQuery.includes(query)) {
+            if (boostedIds.includes(c.id)) {
+              score += 280;
+            }
+          }
+        }
+
         // PACK 09: 14대 운명·믿음 자연어 쿼리 부스팅
         const PACK09_BOOSTS = {
           '삼재라는데 무서워요': ['fate-001', 'fate-008', 'fate-010'],
@@ -3978,6 +4148,33 @@
           <div class="flex flex-wrap gap-2 pt-1 font-bold text-[11px]">
             <a href="tel:109" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white transition shadow-sm">📞 자살예방 상담전화 109</a>
             <a href="tel:15770199" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition shadow-sm">🧠 정신건강 위기상담 1577-0199</a>
+          </div>
+        </div>
+      `;
+    }
+
+    // 1-1. 3대 코드 유형 진단 질문 감지 ("저는 무슨 코드인가요?", "어떤 코드인가요?" 등) & 비진단 라우터 배너
+    const isCodeTypeQuery = /무슨\s*코드|어떤\s*코드|내\s*코드|코드\s*진단|코드\s*유형|다크\s*코드가\s*강한|코드\s*테스트/.test(query);
+    let codeTypeBannerHtml = '';
+    if (isCodeTypeQuery) {
+      codeTypeBannerHtml = `
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-slate-900 to-indigo-950 border border-emerald-400/40 text-emerald-200 mb-3.5 space-y-2 text-xs shadow-lg">
+          <div class="flex items-center gap-2 font-black text-emerald-300 text-sm">
+            <span>🧭</span>
+            <span>3대 코드는 사람의 유형을 나누는 이름이 아닙니다</span>
+          </div>
+          <p class="leading-relaxed text-slate-100 font-bold text-xs sm:text-sm">
+            “세 코드는 사람의 높낮이나 유형을 나누는 진단어가 아닙니다.<br class="hidden sm:inline"/>
+            지금 당신의 장면에서 어떤 도구가 도움이 되는지 살펴볼 수 있습니다.”
+          </p>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            반복을 발견할 땐 <strong>Dark Code</strong>(반복되는 자동길), 새로운 행동을 연습할 땐 <strong>Neural Code</strong>(새로운 경험을 만드는 연습), 생각과 나 사이에 선택 공간을 둘 땐 <strong>Zero Point</strong>(반응과 나 사이의 선택공간)를 도구로 사용합니다.
+          </p>
+          <div class="pt-1 flex flex-wrap gap-2">
+            <button type="button" onclick="document.getElementById('three-code-router-section')?.scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition cursor-pointer flex items-center gap-1">
+              <span>🧭 3-CODE 라우터 열기</span>
+              <span>&rarr;</span>
+            </button>
           </div>
         </div>
       `;
@@ -4069,6 +4266,7 @@
     let html = `
       ${crisisBannerHtml}
       ${datingViolenceBannerHtml}
+      ${codeTypeBannerHtml}
       ${fortuneBannerHtml}
       ${attachmentBannerHtml}
       ${relationshipDecisionBannerHtml}
