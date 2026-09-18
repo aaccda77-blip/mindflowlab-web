@@ -1,7 +1,7 @@
 /**
  * =================================================================
- * MYUNGSIM COACHING OFFICIAL THEME SONG PLAYER
- * 명심코칭 메인 테마곡: "내 선택은 내가 해 (SCAN · SYNC · SHIFT)"
+ * MYUNGSIM COACHING OFFICIAL LOGO SONG PLAYER
+ * 명심코칭 공식 로고송: "시프트 (SHIFT)" (내 선택은 내가 해 · SCAN · SYNC · SHIFT)
  * 자동 재생(브라우저 정책 준수) · 음소거(Mute) · 플로팅 컨트롤러 · 헤더 위젯
  * =================================================================
  */
@@ -34,7 +34,7 @@
       isPlaying = true;
       updateUI();
       if (window.trackMindEvent) {
-        window.trackMindEvent('theme_song_played', { title: '내 선택은 내가 해' });
+        window.trackMindEvent('logo_song_played', { title: '시프트' });
       }
     });
 
@@ -174,7 +174,7 @@
     const headerText = document.getElementById('header-bgm-text');
 
     if (headerPlayBtn) {
-      headerPlayBtn.setAttribute('aria-label', isPlaying ? '테마곡 일시정지' : '테마곡 재생');
+      headerPlayBtn.setAttribute('aria-label', isPlaying ? '로고송 일시정지' : '로고송 재생');
       headerPlayBtn.innerHTML = isPlaying
         ? `<svg class="w-3.5 h-3.5 text-emerald-700" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`
         : `<svg class="w-3.5 h-3.5 text-emerald-700 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
@@ -203,9 +203,9 @@
 
     if (headerText) {
       if (isPlaying) {
-        headerText.textContent = isMuted ? '음소거' : '테마곡 재생 중';
+        headerText.textContent = isMuted ? '음소거' : '로고송 재생 중';
       } else {
-        headerText.textContent = '메인 테마곡';
+        headerText.textContent = '공식 로고송';
       }
     }
 
@@ -259,7 +259,7 @@
     if (heroPlayBtn) {
       heroPlayBtn.innerHTML = isPlaying
         ? `<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg><span>일시정지</span>`
-        : `<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>테마곡 듣기</span>`;
+        : `<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>로고송 듣기</span>`;
       heroPlayBtn.classList.toggle('bg-emerald-600', isPlaying);
       heroPlayBtn.classList.toggle('bg-slate-900', !isPlaying);
     }
@@ -272,8 +272,8 @@
 
     if (heroStatus) {
       heroStatus.textContent = isPlaying
-        ? (isMuted ? '🔇 음소거 상태입니다. 우측 [소리 켜기] 버튼을 누르면 신나는 노래가 나옵니다!' : '🎶 명심코칭 메인 테마곡이 재생되고 있습니다. 즐겁게 사이트를 둘러보세요!')
-        : '🎧 "내 선택은 내가 해 (SCAN·SYNC·SHIFT)" · 1분 20초 에너지 트랙';
+        ? (isMuted ? '🔇 음소거 상태입니다. 우측 [소리 켜기] 버튼을 누르면 신나는 노래가 나옵니다!' : '🎶 명심코칭 공식 로고송 “시프트 (SHIFT)”가 재생되고 있습니다. 즐겁게 사이트를 둘러보세요!')
+        : '🎧 공식 로고송 “시프트 (SHIFT)” · 1분 20초 에너지 트랙';
     }
   }
 
