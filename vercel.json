@@ -40,5 +40,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/ai",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/ai.html",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }

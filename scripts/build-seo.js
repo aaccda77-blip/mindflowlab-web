@@ -28,7 +28,6 @@ const coreRoutes = [
   { path: '', priority: '1.0', freq: 'weekly' },
   { path: '/faq', priority: '0.9', freq: 'daily' },
   { path: '/self-check', priority: '0.9', freq: 'weekly' },
-  { path: '/ai', priority: '0.9', freq: 'weekly' },
   { path: '/library', priority: '0.8', freq: 'monthly' },
   { path: '/trust', priority: '0.7', freq: 'monthly' },
 ];
@@ -67,7 +66,7 @@ fs.writeFileSync(path.join(rootDir, 'robots.txt'), robotsContent, 'utf8');
 console.log('✓ robots.txt generated (Staging Disallow: ' + IS_STAGING + ')');
 
 // 4. Update Core Root Pages
-const rootPages = ['index.html', 'faq.html', 'self-check.html', 'ai.html', 'library.html', 'trust.html'];
+const rootPages = ['index.html', 'faq.html', 'self-check.html', 'library.html', 'trust.html'];
 for (const p of rootPages) {
   const filePath = path.join(rootDir, p);
   if (!fs.existsSync(filePath)) continue;
