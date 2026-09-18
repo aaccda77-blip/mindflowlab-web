@@ -23,9 +23,9 @@
 {
   "APP_URL": "https://myeongsimcoaching.com",
   "PUBLISHER_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
-  "DARK_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
-  "NEURAL_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
-  "ZERO_POINT_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4"
+  "DARK_CODE_BOOK_URL": "https://www.yes24.com/product/goods/196721492",
+  "NEURAL_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
+  "ZERO_POINT_BOOK_URL": "https://www.yes24.com/product/goods/195946431"
 }
 ```
 * 카드의 **`relatedBook`**에 `"다크 코드"`가 적혀있으면 사용자가 책 버튼 클릭 시 자동으로 `DARK_CODE_BOOK_URL`로 이동합니다.

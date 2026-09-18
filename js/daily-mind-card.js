@@ -84,7 +84,7 @@
           PUBLISHER_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
           DARK_CODE_BOOK_URL: 'https://www.yes24.com/product/goods/196721492',
           NEURAL_CODE_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
-          ZERO_POINT_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=ZERO+POINT+%EC%9D%B4%EA%B2%BD%EC%9C%A4+%EC%B2%AD%EB%A5%98',
+          ZERO_POINT_BOOK_URL: 'https://www.yes24.com/product/goods/195946431',
           BELIEF_BOOK_URL: 'https://www.yes24.com/product/goods/196550353'
         };
       }
@@ -107,7 +107,7 @@
     } else if (bookTitle.includes('뉴럴')) {
       return cfg.NEURAL_CODE_URL || cfg.NEURAL_CODE_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
     } else if (bookTitle.includes('제로')) {
-      return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
+      return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/product/goods/195946431';
     } else if (bookTitle.includes('믿는다') || bookTitle.includes('갇히지')) {
       return cfg.BELIEF_BOOK_URL || 'https://www.yes24.com/product/goods/196550353';
     }
@@ -459,7 +459,7 @@
       PUBLISHER_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
       DARK_CODE_URL: 'https://www.yes24.com/product/goods/196721492',
       NEURAL_CODE_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
-      ZERO_POINT_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=ZERO+POINT+%EC%9D%B4%EA%B2%BD%EC%9C%A4+%EC%B2%AD%EB%A5%98',
+      ZERO_POINT_URL: 'https://www.yes24.com/product/goods/195946431',
       BELIEF_BOOK_URL: 'https://www.yes24.com/product/goods/196550353'
     };
 
