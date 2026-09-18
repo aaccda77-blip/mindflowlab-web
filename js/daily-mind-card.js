@@ -85,7 +85,7 @@
           DARK_CODE_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%8B%A4%ED%81%AC%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
           NEURAL_CODE_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
           ZERO_POINT_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=ZERO+POINT+%EC%9D%B4%EA%B2%BD%EC%9C%A4+%EC%B2%AD%EB%A5%98',
-          BELIEF_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%82%98%EB%8A%94+%EB%AF%BF%EB%8A%94%EB%8B%A4+%EA%B7%B8%EB%9F%AC%EB%82%98+%EA%B0%87%ED%9E%88%EC%A7%80+%EC%95%8A%EB%8A%94%EB%8B%A4+%EC%9D%B4%EA%B2%BD%EC%9C%A4'
+          BELIEF_BOOK_URL: 'https://www.yes24.com/product/goods/196550353'
         };
       }
       return window.MIND_CONFIG;
@@ -109,7 +109,7 @@
     } else if (bookTitle.includes('제로')) {
       return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
     } else if (bookTitle.includes('믿는다') || bookTitle.includes('갇히지')) {
-      return cfg.BELIEF_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
+      return cfg.BELIEF_BOOK_URL || 'https://www.yes24.com/product/goods/196550353';
     }
     return cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
   }
@@ -453,7 +453,7 @@
       DARK_CODE_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%8B%A4%ED%81%AC%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
       NEURAL_CODE_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
       ZERO_POINT_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=ZERO+POINT+%EC%9D%B4%EA%B2%BD%EC%9C%A4+%EC%B2%AD%EB%A5%98',
-      BELIEF_BOOK_URL: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%82%98%EB%8A%94+%EB%AF%BF%EB%8A%94%EB%8B%A4+%EA%B7%B8%EB%9F%AC%EB%82%98+%EA%B0%87%ED%9E%88%EC%A7%80+%EC%95%8A%EB%8A%94%EB%8B%A4+%EC%9D%B4%EA%B2%BD%EC%9C%A4'
+      BELIEF_BOOK_URL: 'https://www.yes24.com/product/goods/196550353'
     };
 
     setElText('app-cta-label', card.appCTA || "내 패턴 직접 확인하기");
