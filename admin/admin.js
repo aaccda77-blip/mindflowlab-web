@@ -141,11 +141,26 @@
 
   // 4. Initialization
   async function init() {
-    checkAuth();
-    await loadInitialData();
-    setupRouting();
-    renderApp();
+    try {
+      checkAuth();
+      await loadInitialData();
+      setupRouting();
+      renderApp();
+    } catch (err) {
+      console.error('Admin init fatal error, rendering fallback:', err);
+      try {
+        renderApp();
+      } catch (e2) {
+        const root = document.getElementById('admin-app-root');
+        if (root) {
+          root.innerHTML = renderLoginScreen();
+        }
+      }
+    }
   }
+
+  // Expose renderApp globally for fail-safe recovery
+  window.renderApp = renderApp;
 
   // Auth Handling
   function checkAuth() {
@@ -190,7 +205,7 @@
   async function loadInitialData() {
     // 1. Service Config
     try {
-      const cfgRes = await fetch('../data/service-config.json');
+      const cfgRes = await fetch('/data/service-config.json');
       if (cfgRes.ok) {
         state.serviceConfig = await cfgRes.json();
       }
@@ -201,7 +216,7 @@
     // 2. Canonical Cards
     let baseCards = [];
     try {
-      const res = await fetch('../data/mind-cards.json');
+      const res = await fetch('/data/mind-cards.json');
       if (res.ok) {
         baseCards = await res.json();
       }

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MYUNGSIM ADMIN CMS | 명심코칭 카드 운영 시스템</title>
 
+  <!-- Base URL for Assets -->
+  <base href="/admin/" />
+
   <!-- Search Engine Security: Absolute Noindex -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <meta name="googlebot" content="noindex, nofollow" />
@@ -34,22 +37,54 @@
   <!-- Pretendard Official Web Font -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 
-  <!-- Admin Custom Styles -->
-  <link rel="stylesheet" href="admin.css" />
+  <!-- Admin Custom Styles (Absolute Path) -->
+  <link rel="stylesheet" href="/admin/admin.css" />
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
   <!-- Admin Application Root -->
   <div id="admin-app-root">
     <!-- Initial Loading Spinner -->
-    <div class="min-h-screen flex items-center justify-center">
-      <div class="flex flex-col items-center gap-3">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="flex flex-col items-center gap-3 text-center">
         <div class="w-10 h-10 border-4 border-[#0F6B5B]/20 border-t-[#0F6B5B] rounded-full animate-spin"></div>
         <span class="text-xs font-bold text-slate-400">MYUNGSIM ADMIN CMS 불러오는 중...</span>
       </div>
     </div>
   </div>
 
-  <!-- Admin Application Script -->
-  <script src="admin.js"></script>
+  <!-- Admin Application Script (Absolute Path) -->
+  <script src="/admin/admin.js"></script>
+
+  <!-- Fail-Safe Auto Recovery Script -->
+  <script>
+    // 3초 이상 스피너가 유지될 경우 안전 로그인 화면 자동 트리거
+    setTimeout(function() {
+      var root = document.getElementById('admin-app-root');
+      if (root && root.querySelector('.animate-spin')) {
+        console.warn('Admin CMS loading fallback triggered');
+        if (typeof window.renderApp === 'function') {
+          window.renderApp();
+        } else if (typeof window.adminLogin === 'function') {
+          // If admin.js loaded partially
+          location.reload();
+        } else {
+          // Absolute fallback UI
+          root.innerHTML = `
+            <div class="min-h-screen flex items-center justify-center p-4 bg-slate-900 text-white">
+              <div class="max-w-md w-full p-6 bg-slate-800 rounded-2xl border border-slate-700 text-center space-y-4">
+                <div class="text-2xl">⚡</div>
+                <h2 class="text-lg font-bold">MYUNGSIM CMS 로딩 안내</h2>
+                <p class="text-xs text-slate-400">새 버전 파일이 배포되어 브라우저 캐시를 갱신해야 할 수 있습니다.</p>
+                <div class="flex gap-2 justify-center pt-2">
+                  <button onclick="location.reload(true)" class="px-4 py-2 rounded-xl bg-[#0F6B5B] text-white text-xs font-bold hover:bg-[#0A493E]">새로고침 (캐시 갱신)</button>
+                  <a href="/admin/intelligence.html" class="px-4 py-2 rounded-xl bg-slate-700 text-slate-300 text-xs font-bold hover:bg-slate-600">지능 센터 열기</a>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      }
+    }, 4000);
+  </script>
 </body>
 </html>
