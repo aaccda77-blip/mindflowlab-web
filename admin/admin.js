@@ -368,6 +368,10 @@
                 <span>📥</span> <span class="font-bold">Content Inbox & Gap</span>
                 <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold">${state.inbox.length}</span>
               </button>
+              <button type="button" onclick="navigateAdmin('intelligence')" class="admin-nav-item w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl transition ${state.currentView === 'intelligence' ? 'active' : 'text-slate-600 hover:bg-slate-50'}">
+                <span>🧠</span> <span class="font-bold">경험 지능 센터 (Intelligence)</span>
+                <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-100 text-[#0F6B5B] font-black">배움</span>
+              </button>
               <button type="button" onclick="navigateAdmin('bulk-tools')" class="admin-nav-item w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl transition ${state.currentView === 'bulk-tools' ? 'active' : 'text-slate-600 hover:bg-slate-50'}">
                 <span>💾</span> <span class="font-bold">가져오기 / 내보내기 (Bulk)</span>
               </button>
@@ -466,6 +470,8 @@
         return renderSafetyRulesView();
       case 'inbox':
         return renderInboxView();
+      case 'intelligence':
+        return renderIntelligenceView();
       case 'bulk-tools':
         return renderBulkToolsView();
       case 'settings':
@@ -1930,6 +1936,102 @@
             <button onclick="showToast('설정이 안전하게 보존되어 있습니다.')" class="px-5 py-2.5 rounded-xl bg-[#0F6B5B] text-white font-black text-xs">
               설정 저장 완료
             </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderIntelligenceView() {
+    return `
+      <div class="space-y-6 text-left">
+        <!-- Header & Core Charter Banner -->
+        <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-2xs space-y-3">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-black text-[#0F6B5B] tracking-wider uppercase">PRODUCT LEARNING BRAIN</span>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-100 text-[#0F6B5B]">단독 화면: /admin/intelligence</span>
+              </div>
+              <h2 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">Experience Intelligence Center</h2>
+              <p class="text-xs text-slate-500 mt-1">명심코칭이 최근 사용자 경험에서 배운 지혜 &middot; 개인정보 원문 노출 0건 원칙</p>
+            </div>
+            <a href="intelligence.html" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition flex items-center gap-1.5 shrink-0">
+              <span>↗️</span> <span>전체화면 센터 열기</span>
+            </a>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950 text-xs flex items-center gap-2.5">
+            <span class="text-base">🛡️</span>
+            <div class="leading-relaxed">
+              <strong>“명심코칭의 Experience Intelligence는 사람을 더 많이 알아내는 시스템이 아니라, 사람을 덜 침해하면서 제품을 더 잘 만드는 시스템입니다.”</strong>
+              <span class="text-emerald-700 block text-[11px] mt-0.5">누가 무슨 고민을 했는가가 아니라, 어떤 질문과 10% 행동이 삶으로 돌아가게 도왔는가를 학습합니다.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1. Experience Health Status -->
+        <div class="space-y-2.5">
+          <h3 class="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+            <span>🚦</span> <span>영역별 건전성 상태 (Experience Health) &middot; 인위적 총점 없음</span>
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 text-xs">
+            <div class="p-3 rounded-2xl bg-white border border-slate-200"><div class="text-[10px] text-slate-400 font-bold">Product Core</div><div class="font-black text-emerald-700">HEALTHY</div><div class="text-[9px] text-slate-500">플로우 완주 안정</div></div>
+            <div class="p-3 rounded-2xl bg-white border border-slate-200"><div class="text-[10px] text-slate-400 font-bold">Search</div><div class="font-black text-emerald-700">HEALTHY</div><div class="text-[9px] text-slate-500">Zero Result 1.2%</div></div>
+            <div class="p-3 rounded-2xl bg-white border border-slate-200"><div class="text-[10px] text-slate-400 font-bold">AI Routing</div><div class="font-black text-emerald-700">HEALTHY</div><div class="text-[9px] text-slate-500">Top3 적합도 94.2%</div></div>
+            <div class="p-3 rounded-2xl bg-amber-50/50 border border-amber-300"><div class="text-[10px] text-amber-700 font-bold">SCAN Friction</div><div class="font-black text-amber-700">WATCH</div><div class="text-[9px] text-amber-900">완벽주의 Step 2 이탈</div></div>
+            <div class="p-3 rounded-2xl bg-white border border-slate-200"><div class="text-[10px] text-slate-400 font-bold">10% Action</div><div class="font-black text-emerald-700">HEALTHY</div><div class="text-[9px] text-slate-500">실행가능도 88.5%</div></div>
+            <div class="p-3 rounded-2xl bg-amber-50/50 border border-amber-300"><div class="text-[10px] text-amber-700 font-bold">Content Coverage</div><div class="font-black text-amber-700">WATCH</div><div class="text-[9px] text-amber-900">친구 손절 Gap 반복</div></div>
+            <div class="p-3 rounded-2xl bg-white border border-slate-200"><div class="text-[10px] text-slate-400 font-bold">Safety</div><div class="font-black text-emerald-700">HEALTHY</div><div class="text-[9px] text-slate-500">위기차단 100% 직결</div></div>
+            <div class="p-3 rounded-2xl bg-white border border-slate-200"><div class="text-[10px] text-slate-400 font-bold">Privacy</div><div class="font-black text-emerald-700">HEALTHY</div><div class="text-[9px] text-slate-500">원문 누출 0건</div></div>
+          </div>
+        </div>
+
+        <!-- 2. What We Learned Feed -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+              <span>💡</span> <span>최근 검증된 제품 지혜 피드 (FACT &middot; INTERPRETATION &middot; NEXT QUESTION)</span>
+            </h3>
+            <span class="text-[11px] text-[#0F6B5B] font-bold">개인 원문 미수집 원칙</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-2xs space-y-2.5">
+              <span class="text-[10px] font-black px-2 py-0.5 rounded bg-blue-50 text-blue-700">Routing &middot; 부모가족</span>
+              <div class="text-xs font-bold text-slate-800">📌 FACT: 가족 카테고리 AI 결과에서 '가족 책임·죄책감' 특화 카드 선택률이 2.4배 높았습니다.</div>
+              <div class="text-xs text-slate-600 border-t border-slate-100 pt-1.5">💭 INTERPRETATION: 단순 거절보다 효도 죄책감 맥락을 보존하는 라우팅이 훨씬 높은 공감을 형성합니다.</div>
+              <div class="text-xs text-[#0F6B5B] font-bold border-t border-slate-100 pt-1.5">❓ NEXT QUESTION: 가족 trigger 가중치를 유지할 것인가?</div>
+            </div>
+
+            <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-2xs space-y-2.5">
+              <span class="text-[10px] font-black px-2 py-0.5 rounded bg-amber-50 text-amber-700">SCAN Friction &middot; 완벽주의</span>
+              <div class="text-xs font-bold text-slate-800">📌 FACT: 완벽주의 카드군에서 조회수는 높으나 SCAN Step 2 진입률이 41%로 낮았습니다.</div>
+              <div class="text-xs text-slate-600 border-t border-slate-100 pt-1.5">💭 INTERPRETATION: 생각 오류 분석이라는 질문 문구 자체에서 또 다른 평가 불안을 느낄 가능성이 있습니다.</div>
+              <div class="text-xs text-[#0F6B5B] font-bold border-t border-slate-100 pt-1.5">❓ NEXT QUESTION: Step 2 가이드를 1문장으로 단축할 것인가?</div>
+            </div>
+
+            <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-2xs space-y-2.5">
+              <span class="text-[10px] font-black px-2 py-0.5 rounded bg-rose-50 text-rose-700">Content Gap &middot; 관계종료</span>
+              <div class="text-xs font-bold text-slate-800">📌 FACT: '친구 관계 손절' 관련 검색에서 Weak Match가 18회 반복되었습니다.</div>
+              <div class="text-xs text-slate-600 border-t border-slate-100 pt-1.5">💭 INTERPRETATION: 일시적 거리두기가 아닌 인연 종료 판단을 직접 다루는 카드가 부족한 실질적 공백입니다.</div>
+              <div class="text-xs text-[#0F6B5B] font-bold border-t border-slate-100 pt-1.5">❓ NEXT QUESTION: 신규 카드 2장(손절 판단/죄책감)을 Draft할 것인가?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Return With Purpose & Reassurance Loop Watch -->
+        <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-2xs space-y-3">
+          <h3 class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+            <span>🔄</span> <span>재방문 품질 모니터링 (Return With Purpose: 92.4% vs Reassurance Loop: 2.1%)</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3.5 rounded-2xl bg-emerald-50/50 border border-emerald-200 text-emerald-950">
+              <strong>✅ 건강한 재방문:</strong> 이전 10% 행동을 돌아보고 새 질문으로 이동하거나 3분 이내 일상으로 복귀하는 바람직한 흐름.
+            </div>
+            <div class="p-3.5 rounded-2xl bg-amber-50/50 border border-amber-200 text-amber-950">
+              <strong>⚠️ 안심형 반복 루프 감시:</strong> 동일 카드를 세션 내 4회 이상 반복 열람 시 "질문을 더 찾기보다 오늘 하나를 적용해볼까요?" UX 자동 제어 작동 중.
+            </div>
           </div>
         </div>
       </div>

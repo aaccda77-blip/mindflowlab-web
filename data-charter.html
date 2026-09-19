@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>명심코칭 데이터 헌장 (Data Charter) | 마인드플로우 랩</title>
+  <meta name="description" content="명심코칭은 무엇을 기억하고, 무엇을 기억하지 않을까요? 사람의 비밀을 축적하지 않고, 사람들의 사용에서 배운 지혜를 축적합니다." />
+  <link rel="canonical" href="https://lab.mindflowlab.co.kr/data-charter" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <style>
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+        <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs shadow-xs">M</span>
+        <span>마인드플로우 랩 명심코칭</span>
+      </a>
+      <a href="/" class="text-xs font-bold text-[#0F6B5B] hover:underline flex items-center gap-1">
+        <span>&larr; 서비스 홈으로</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 py-12 flex-1 w-full text-left space-y-8">
+    <div class="border-b border-slate-200 pb-6">
+      <span class="text-[11px] font-black text-[#0F6B5B] tracking-wider uppercase">DATA CHARTER</span>
+      <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-1">명심코칭은 무엇을 기억하고, 무엇을 기억하지 않을까요?</h1>
+      <p class="text-xs text-slate-500 mt-1">최종 선언일: 2026년 9월 19일</p>
+    </div>
+
+    <!-- Core Philosophy Callout -->
+    <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 space-y-3">
+      <div class="font-black text-base flex items-center gap-2 text-[#0F6B5B]">
+        <span class="text-xl">🛡️</span>
+        <span>“명심코칭의 Experience Intelligence는 사람을 더 많이 알아내는 시스템이 아니라, 사람을 덜 침해하면서 제품을 더 잘 만드는 시스템입니다.”</span>
+      </div>
+      <p class="text-xs leading-relaxed text-emerald-900">
+        명심코칭은 사용자의 개인적인 고백과 비밀을 저장해서 똑똑해지는 인공지능이 아닙니다.<br />
+        우리가 학습하는 것은 <strong>‘누가 무엇을 털어놓았는가’가 아니라, ‘어떤 질문과 인지적 관점이 사람들에게 실제 행동의 변화를 주었는가’</strong>입니다.<br />
+        고민 원문은 1바이트도 서버로 전송되지 않는 <strong>Zero Raw Text</strong> 원칙을 철저히 고수합니다.
+      </p>
+      <div class="pt-2 text-[11px] font-mono text-emerald-800 uppercase tracking-wide">
+        &bull; LEARN FROM EXPERIENCE SIGNALS, NOT FROM PRIVATE STORIES
+      </div>
+    </div>
+
+    <!-- 6 Core Principles -->
+    <section class="space-y-4">
+      <h2 class="text-lg font-black text-slate-900">명심코칭의 6대 데이터 원칙</h2>
+
+      <div class="grid grid-cols-1 gap-3">
+        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1.5">
+          <div class="font-bold text-sm text-slate-900 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[#0F6B5B] flex items-center justify-center text-xs font-black">1</span>
+            <span>개인의 고민 원문을 공개 콘텐츠나 마케팅에 사용하지 않습니다</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed pl-7">
+            명심AI 검색창에 적으신 고민 문장, 1분 SCAN 중 작성하신 생각 메모는 서버 데이터베이스로 수집되지 않으며, 사용자 기기(로컬 브라우저)에만 머뭅니다.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1.5">
+          <div class="font-bold text-sm text-slate-900 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[#0F6B5B] flex items-center justify-center text-xs font-black">2</span>
+            <span>개인 기록(Layer B)과 제품 분석(Layer C)을 완전히 분리합니다</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed pl-7">
+            서비스 개선을 위해 집계되는 것은 ‘카드 열람’, ‘10% 행동 선택 여부’ 같은 비민감 익명 이벤트뿐입니다. 고민 텍스트와 통계 로그 사이에는 어떠한 연결 파이프도 없습니다.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1.5">
+          <div class="font-bold text-sm text-slate-900 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[#0F6B5B] flex items-center justify-center text-xs font-black">3</span>
+            <span>심리적 유형이나 낙인 프로필을 생성하지 않습니다</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed pl-7">
+            “불안형 사용자”, “회피형 인간”처럼 사람의 본질을 하나의 프레임으로 가두는 자동 프로파일링을 일체 거부합니다. 우리는 오직 반복되는 순간의 행동 구조를 관찰할 뿐입니다.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1.5">
+          <div class="font-bold text-sm text-slate-900 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[#0F6B5B] flex items-center justify-center text-xs font-black">4</span>
+            <span>사용자 경험의 집계 신호(Layer D)로 제품을 진화시킵니다</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed pl-7">
+            “가족 거절 질문에서 더 많은 죄책감 카드가 선택된다”는 식의 비민감 집계 지혜만을 학습하여, 더 적절한 질문과 더 명쾌한 사이다 답변으로 서비스를 개선합니다.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1.5">
+          <div class="font-bold text-sm text-slate-900 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[#0F6B5B] flex items-center justify-center text-xs font-black">5</span>
+            <span>인간 승인 루프 (Human-in-the-Loop) 원칙을 준수합니다</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed pl-7">
+            인공지능이 임의로 카드를 수정하거나 배포하지 않습니다. 개선점 발견과 후보 제안은 자동화되지만, 실제 카드의 문장 수정, 새로운 카드 추가, 안전 규칙 변경은 반드시 연구진(사람)의 심도 있는 검토와 승인을 거치는 인간 승인 루프를 통해 적용됩니다.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1.5">
+          <div class="font-bold text-sm text-slate-900 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[#0F6B5B] flex items-center justify-center text-xs font-black">6</span>
+            <span>체류시간을 늘리기 위한 중독적 루프를 설계하지 않습니다</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed pl-7">
+            카드를 끝없이 다시 뽑거나 끝없이 불안을 검색하게 유도하지 않습니다. 질문 하나를 발견하고 10%의 실천을 선택했다면, 사용자를 일상과 삶의 현장으로 돌려보내는 것이 명심코칭의 성공입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Flow Comparison Table -->
+    <section class="space-y-3">
+      <h2 class="text-base font-black text-slate-900">데이터 4계층 분리 체계 (4-Layer Privacy Model)</h2>
+      <div class="overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+              <th class="p-3">계층 구분</th>
+              <th class="p-3">포함 데이터</th>
+              <th class="p-3">저장 위치</th>
+              <th class="p-3">학습 및 활용 방식</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-600">
+            <tr>
+              <td class="p-3 font-bold text-slate-900">Layer A: Public Knowledge</td>
+              <td class="p-3">명심카드, 사이다 질문, SODA 답변, 도서 안내</td>
+              <td class="p-3">공개 웹 서버 / CDN</td>
+              <td class="p-3">누구나 열람 가능한 지식 자산</td>
+            </tr>
+            <tr class="bg-emerald-50/50">
+              <td class="p-3 font-bold text-emerald-950">Layer B: Personal Space</td>
+              <td class="p-3">고민 문장 원문, 1분 SCAN 메모, 감정 기록</td>
+              <td class="p-3 font-bold text-emerald-800">사용자 개인 기기 (LocalStorage)</td>
+              <td class="p-3 font-bold text-rose-600">서버 전송 절대 금지 (Zero Raw Text) / 본인만 열람</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-900">Layer C: Anonymous Signals</td>
+              <td class="p-3">카드 조회수, SCAN 완료 여부, 10% 행동 선택</td>
+              <td class="p-3">익명 분석 시스템</td>
+              <td class="p-3">어떤 질문이 도움이 되었는지 통계 파악</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-[#0F6B5B]">Layer D: Aggregated Learning</td>
+              <td class="p-3">반복되는 질문 공백(Content Gap), 카피 개선점</td>
+              <td class="p-3">경험 지능 센터 (Product Memory)</td>
+              <td class="p-3 font-bold text-[#0F6B5B]">연구진 인간 승인 루프를 거쳐 서비스 품질 고도화</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Trust Contact Box -->
+    <div class="p-5 rounded-2xl bg-slate-100 text-xs text-slate-600 space-y-1.5">
+      <div class="font-bold text-slate-900">데이터 관리 및 윤리 문의</div>
+      <p>명심코칭의 데이터 보호 정책이나 개인정보 관련 궁금하신 사항은 연구소 공식 채널로 언제든 문의주실 수 있습니다.</p>
+      <div class="pt-1 font-mono text-[#0F6B5B]">이메일: admin@mindflowlab.co.kr &nbsp;|&nbsp; support@mindflowlab.co.kr</div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <span>© 2026 MindflowLab. All rights reserved.</span>
+      <div class="flex items-center gap-3 font-bold text-slate-600">
+        <a href="/data-charter" class="text-[#0F6B5B] hover:underline">데이터 헌장</a>
+        <span>·</span>
+        <a href="/privacy" class="hover:underline">개인정보 처리방침</a>
+        <span>·</span>
+        <a href="/ethics" class="hover:underline">윤리·신뢰 원칙</a>
+        <span>·</span>
+        <a href="/safety" class="text-rose-600 hover:underline">위기지원 안내(109)</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
