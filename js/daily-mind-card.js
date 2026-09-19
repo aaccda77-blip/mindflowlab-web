@@ -506,6 +506,9 @@
     renderPack08SpecialInteraction(card);
     renderPack09SpecialInteraction(card);
 
+    // 카드 간 연결 Graph (이 질문과 함께 많이 이어지는 관점 최대 3개)
+    renderRelatedCards(card);
+
     // CTA 영역 초기화
     isDeepDiveUnlocked = false;
     const ctaContainer = document.getElementById('deep-dive-cta-container');
@@ -513,6 +516,86 @@
     const arrow = document.getElementById('deep-dive-arrow');
     if (arrow) arrow.style.transform = 'rotate(0deg)';
   }
+
+  // =================================================================
+  // 4-0. 카드 간 연결 Graph 렌더링 & 무한 루프 방지 로직
+  // =================================================================
+  function renderRelatedCards(card) {
+    const container = document.getElementById('mind-related-cards-container');
+    if (!container) return;
+
+    if (!window.MyeongsimAIRouter) {
+      container.classList.add('hidden');
+      return;
+    }
+
+    const related = window.MyeongsimAIRouter.getRelatedCards(card.id);
+    if (!related || related.length === 0) {
+      container.classList.add('hidden');
+      return;
+    }
+
+    container.classList.remove('hidden');
+    const isLimitReached = window.MyeongsimAIRouter.sessionBrowseCount >= 2;
+
+    let loopLimitBanner = '';
+    if (isLimitReached) {
+      loopLimitBanner = `
+        <div class="p-3.5 rounded-2xl bg-emerald-50 border-2 border-emerald-500/50 text-slate-800 space-y-1.5 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black text-[#0F6B5B] flex items-center gap-1">
+              <span>🌱</span>
+              <span>이제 분석보다 오늘의 행동을 골라볼까요?</span>
+            </span>
+            <button onclick="document.getElementById('mind-action-container')?.scrollIntoView({behavior:'smooth'})" class="px-3 py-1 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-[11px] shadow-xs cursor-pointer">
+              오늘 10% 행동 정하기 &uarr;
+            </button>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed">
+            질문을 끝없이 분석하는 것보다, 아주 작은 10%의 다른 행동을 하나 해보는 것이 뇌에 가장 강력한 새로운 데이터를 만듭니다.
+          </p>
+        </div>
+      `;
+    }
+
+    container.innerHTML = `
+      ${loopLimitBanner}
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black text-slate-800 flex items-center gap-1.5">
+            <span>🔗</span>
+            <span>이 질문과 함께 많이 이어지는 관점</span>
+          </span>
+          <span class="text-[10px] text-slate-400">최대 3개 연결</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          ${related.map(rc => `
+            <div onclick="navigateToRelatedCard('${rc.id}')" class="p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer flex flex-col justify-between group text-left">
+              <div>
+                <div class="text-[9px] text-[#0F6B5B] font-bold mb-0.5">${rc.category} · ${rc.cardTitle}</div>
+                <div class="text-xs font-bold text-slate-800 group-hover:text-[#0F6B5B] leading-snug line-clamp-2">
+                  ${rc.question}
+                </div>
+              </div>
+              <div class="mt-2 text-[10px] text-slate-400 group-hover:text-[#0F6B5B] font-bold flex items-center justify-end gap-0.5">
+                <span>관점 보기</span>
+                <span>&rarr;</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  window.navigateToRelatedCard = function(cardId) {
+    if (window.MyeongsimAIRouter) {
+      window.MyeongsimAIRouter.incrementSessionBrowse();
+    }
+    trackMindEvent('related_card_clicked', { fromCardId: currentCard ? currentCard.id : null, toCardId: cardId });
+    pickMindCard(0, cardId);
+  };
 
   function setElText(id, text) {
     const el = document.getElementById(id);
@@ -3948,364 +4031,200 @@
   // =================================================================
   // 13. 자연어 일상 고민 검색 (입구 B)
   // =================================================================
+  // 13. 명심AI 고민 라우터 핸들러 & 검색 렌더링
+  // =================================================================
+  window.handleMyeongsimAISearch = function () {
+    const searchInput = document.getElementById('mind-search-input');
+    const query = searchInput ? (searchInput.value || '').trim() : '';
+    window.handleMindCardSearch(query);
+  };
+
   window.handleMindCardSearch = function (rawQuery) {
     const resultsBox = document.getElementById('mind-search-results-box');
     const clearBtn = document.getElementById('mind-search-clear-btn');
     if (!resultsBox) return;
 
-    const query = (rawQuery || '').trim().toLowerCase();
+    const query = (rawQuery || '').trim();
 
     if (clearBtn) {
       if (query.length > 0) clearBtn.classList.remove('hidden');
       else clearBtn.classList.add('hidden');
     }
 
-    let matched = [];
-    if (!query) {
-      // 쿼리가 없을 때: 기본 추천 질문 4개 노출
-      matched = cardsData.filter(c => c.isFeatured).slice(0, 4);
-      if (matched.length === 0) matched = cardsData.slice(0, 4);
-    } else {
-      const terms = query.split(/\s+/).filter(t => t.length >= 2);
-      const scored = [];
+    // 1. 라우터 엔진 호출 (Safety + Intent + Non-diagnostic Matching)
+    let routeResult = null;
+    if (window.MyeongsimAIRouter) {
+      routeResult = window.MyeongsimAIRouter.route(query);
+    }
 
-      cardsData.forEach(c => {
-        const kws = Array.isArray(c.searchKeywords) ? c.searchKeywords.map(k => (k || '').toLowerCase()) : [];
-        const qText = (c.question || '').toLowerCase();
-        const titleText = (c.cardTitle || '').toLowerCase();
-        const kwText = (c.keyword || '').toLowerCase();
-        const answerText = (c.sodaAnswer || '').toLowerCase();
-        const catText = (c.category || '').toLowerCase();
-
-        let score = 0;
-
-        // 정확도 가중치 부여
-        if (kws.some(k => k === query || k.includes(query) || query.includes(k))) score += 100;
-        if (qText.includes(query)) score += 80;
-        if (titleText.includes(query)) score += 60;
-        if (kwText.includes(query)) score += 40;
-
-        // PACK 06: 14대 연애·친밀감 자연어 쿼리 부스팅
-        const PACK06_BOOSTS = {
-          '답장 불안': ['love-001', 'love-004', 'love-012'],
-          '읽씹': ['love-001', 'love-004', 'love-012'],
-          '안읽씹': ['love-001', 'love-004'],
-          '연락 텀': ['love-001', 'love-004', 'love-016'],
-          '잠수': ['love-008', 'love-007', 'love-014'],
-          '회피': ['love-007', 'love-008', 'love-017'],
-          '매달림': ['love-005', 'love-010', 'love-017'],
-          '질투': ['love-006', 'love-009', 'love-003'],
-          '전애인': ['love-009', 'love-010', 'love-018'],
-          '재회': ['love-010', 'love-009', 'love-018'],
-          '이별': ['love-008', 'love-018', 'love-010'],
-          '권태기': ['love-015', 'love-014', 'love-020'],
-          '집착': ['love-004', 'love-005', 'love-009'],
-          '애착유형': ['love-017', 'love-005', 'love-007']
-        };
-
-        for (const [natQuery, boostedIds] of Object.entries(PACK06_BOOSTS)) {
-          if (query.includes(natQuery) || natQuery.includes(query)) {
-            if (boostedIds.includes(c.id)) {
-              score += 260;
-            }
-          }
-        }
-
-        // PACK 07: 13대 자연어 쿼리 부스팅
-        const PACK07_BOOSTS = {
-          '결정을 못하겠어요': ['dec-007', 'dec-014', 'dec-001'],
-          '결정하고 다시 검색해요': ['dec-001', 'dec-008'],
-          '자꾸 미뤄요': ['dec-005', 'dec-003', 'dec-006'],
-          '계획만 세워요': ['dec-004', 'dec-003'],
-          '작심삼일이에요': ['dec-010', 'dec-009', 'dec-018'],
-          '의지가 약한 것 같아요': ['dec-010', 'dec-012', 'dec-005'],
-          '시작하기가 너무 어려워요': ['dec-006', 'dec-002', 'dec-003'],
-          '확신이 없어요': ['dec-002', 'dec-001', 'dec-019'],
-          '또 실패했어요': ['dec-018', 'dec-010', 'dec-015'],
-          '한 번 놓치면 다 포기해요': ['dec-011', 'dec-017'],
-          '습관을 못 만들어요': ['dec-009', 'dec-017', 'dec-010'],
-          '생각만 많고 행동을 못해요': ['dec-014', 'dec-003', 'dec-006'],
-          '완벽하게 준비하고 싶어요': ['dec-003', 'dec-004', 'dec-002']
-        };
-
-        for (const [natQuery, boostedIds] of Object.entries(PACK07_BOOSTS)) {
-          if (query.includes(natQuery) || natQuery.includes(query)) {
-            if (boostedIds.includes(c.id)) {
-              score += 250;
-            }
-          }
-        }
-
-        // PACK 08: 14대 감정회복 자연어 쿼리 부스팅
-        const PACK08_BOOSTS = {
-          '자책을 멈추고 싶어요': ['emo-001', 'emo-008', 'emo-015'],
-          '제가 다 망친 것 같아요': ['emo-001', 'emo-003', 'emo-010'],
-          '왜 이렇게 멘탈이 약할까요': ['emo-015', 'emo-017', 'emo-002'],
-          '실수하고 너무 괴로워요': ['emo-001', 'emo-005', 'emo-008'],
-          '감정이 주체가 안 돼요': ['emo-003', 'emo-007', 'emo-009'],
-          '불안해서 심장이 뛰어요': ['emo-002', 'emo-012', 'emo-019'],
-          '사소한 말에 상처받아요': ['emo-004', 'emo-011', 'emo-014'],
-          '화를 참을 수가 없어요': ['emo-003', 'emo-007', 'emo-016'],
-          '자꾸 후회돼요': ['emo-008', 'emo-001', 'emo-010'],
-          '내가 너무 한심해요': ['emo-015', 'emo-001', 'emo-004'],
-          '죄책감이 들어요': ['emo-010', 'emo-001', 'emo-008'],
-          '수치스러워요': ['emo-004', 'emo-013', 'emo-014'],
-          '확인하고 싶어 미치겠어요': ['emo-009', 'emo-002', 'emo-018'],
-          '도망치고 싶어요': ['emo-006', 'emo-002', 'emo-017']
-        };
-
-        for (const [natQuery, boostedIds] of Object.entries(PACK08_BOOSTS)) {
-          if (query.includes(natQuery) || natQuery.includes(query)) {
-            if (boostedIds.includes(c.id)) {
-              score += 260;
-            }
-          }
-        }
-
-        // PACK 10: 12대 3대 코드 통합 자연어 쿼리 부스팅
-        const PACK10_BOOSTS = {
-          '다크 코드가 뭐예요': ['code-001', 'code-002', 'code-004'],
-          '뉴럴 코드가 뭐예요': ['code-009', 'code-010', 'code-016'],
-          '제로포인트가 뭐예요': ['code-011', 'code-012', 'code-019'],
-          '3대 코드 차이가 뭐예요': ['code-019', 'code-001', 'code-020'],
-          '패턴을 알아도 안 바뀌어요': ['code-001', 'code-009', 'code-018'],
-          '왜 또 반복하죠': ['code-001', 'code-002', 'code-018'],
-          '마음이 안 바뀌어요': ['code-009', 'code-007', 'code-014'],
-          '제로포인트에 못 들어가요': ['code-011', 'code-012', 'code-019'],
-          '저는 무슨 코드인가요': ['code-019', 'code-002', 'code-016'],
-          '다크 코드가 강한가요': ['code-004', 'code-002', 'code-015'],
-          '어디부터 해야 하나요': ['code-019', 'code-001', 'code-020'],
-          '시프트': ['code-020', 'code-014', 'code-011'],
-          '로고송': ['code-020', 'code-014', 'code-011'],
-          '내 선택은 내가 해': ['code-020', 'code-014', 'code-011']
-        };
-
-        for (const [natQuery, boostedIds] of Object.entries(PACK10_BOOSTS)) {
-          if (query.includes(natQuery) || natQuery.includes(query)) {
-            if (boostedIds.includes(c.id)) {
-              score += 280;
-            }
-          }
-        }
-
-        // PACK 09: 14대 운명·믿음 자연어 쿼리 부스팅
-        const PACK09_BOOSTS = {
-          '삼재라는데 무서워요': ['fate-001', 'fate-008', 'fate-010'],
-          '사주가 안 좋아요': ['fate-001', 'fate-008', 'fate-016'],
-          '돈복이 없대요': ['fate-002', 'fate-010', 'fate-015'],
-          '결혼운이 안 좋대요': ['fate-003', 'fate-004', 'fate-015'],
-          '궁합이 안 좋아요': ['fate-004', 'fate-003', 'fate-017'],
-          '대운은 언제 오나요': ['fate-013', 'fate-005', 'fate-019'],
-          '올해 운이 안 좋대요': ['fate-001', 'fate-014', 'fate-008'],
-          '나쁜 꿈을 꿨어요': ['fate-006', 'fate-012', 'fate-008'],
-          '징크스가 있어요': ['fate-012', 'fate-011', 'fate-006'],
-          '점을 계속 보게 돼요': ['fate-007', 'fate-009', 'fate-019'],
-          '운세를 계속 확인해요': ['fate-009', 'fate-007', 'fate-019'],
-          '팔자가 센 것 같아요': ['fate-016', 'fate-018', 'fate-020'],
-          '사람복이 없어요': ['fate-016', 'fate-004', 'fate-018'],
-          '사주를 믿어도 되나요': ['fate-020', 'fate-017', 'fate-015']
-        };
-
-        for (const [natQuery, boostedIds] of Object.entries(PACK09_BOOSTS)) {
-          if (query.includes(natQuery) || natQuery.includes(query)) {
-            if (boostedIds.includes(c.id)) {
-              score += 270;
-            }
-          }
-        }
-
-        // 부분 단어(2글자 이상) 매칭
-        if (terms.length > 0) {
-          terms.forEach(t => {
-            if (kws.some(k => k.includes(t))) score += 30;
-            if (qText.includes(t)) score += 20;
-            if (titleText.includes(t)) score += 15;
-            if (answerText.includes(t)) score += 10;
-            if (catText.includes(t)) score += 5;
-          });
-        }
-
-        if (score > 0) {
-          scored.push({ card: c, score });
-        }
+    // 개인정보 보호: 사용자 고민 원문(rawUserProblem)은 절대 Analytics에 전송하지 않음
+    if (query.length > 0) {
+      trackMindEvent('ai_router_submit', {
+        queryLength: query.length,
+        resultCount: (routeResult && routeResult.recommendations) ? routeResult.recommendations.length : 0,
+        isHighRisk: (routeResult && routeResult.status === 'high_risk_blocked') || false,
+        isFallback: (routeResult && routeResult.isFallback) || false
       });
-
-      scored.sort((a, b) => b.score - a.score);
-      matched = scored.map(item => item.card).slice(0, 4);
     }
 
-    // 1. 위기 신호 감지 (자살, 자해, 극심한 절망)
-    const isCrisisQuery = /자살|죽고\s*싶|자해|살기\s*싫|끝내고\s*싶|모든\s*걸\s*놓고/.test(query);
-    let crisisBannerHtml = '';
-    if (isCrisisQuery) {
-      crisisBannerHtml = `
-        <div class="p-3.5 rounded-xl bg-red-600/30 border-2 border-red-500 text-white mb-3 space-y-2 text-xs shadow-lg">
-          <div class="flex items-center gap-1.5 font-black text-red-200 text-sm">
+    // A. 고위험 상황 안전 차단 (Safety Router Triggered)
+    if (routeResult && routeResult.status === 'high_risk_blocked') {
+      const safety = routeResult.safety;
+      resultsBox.innerHTML = `
+        <div class="p-5 rounded-2xl bg-red-600/30 border-2 border-red-500 text-white space-y-3 shadow-xl">
+          <div class="flex items-center gap-2 font-black text-red-200 text-sm sm:text-base">
             <span>🚨</span>
-            <span>24시간 긴급 마음 돌봄 안전망</span>
+            <span>${safety.title || "긴급 마음 돌봄 안전망 안내"}</span>
           </div>
-          <p class="leading-relaxed text-slate-100">
-            지금 겪고 계신 고통은 혼자 감당하지 않아도 됩니다. 24시간 언제든 무료로 이야기 나눌 수 있는 전문 상담사가 기다리고 있습니다.
+          <p class="text-xs sm:text-sm text-slate-100 leading-relaxed font-medium">
+            ${safety.message}
           </p>
-          <div class="flex flex-wrap gap-2 pt-1 font-bold text-[11px]">
-            <a href="tel:109" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white transition shadow-sm">📞 자살예방 상담전화 109</a>
-            <a href="tel:15770199" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition shadow-sm">🧠 정신건강 위기상담 1577-0199</a>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+            ${safety.contacts.map(c => `
+              <a href="tel:${c.tel}" class="p-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs transition flex items-center justify-between shadow-sm">
+                <span>📞 ${c.name} (${c.tel})</span>
+                <span class="text-[10px] text-red-200">${c.note}</span>
+              </a>
+            `).join('')}
           </div>
+          <p class="text-[11px] text-red-200/90 pt-1">
+            * 명심코칭은 자해·위기 상황 시 카드 추천이나 상업적 서비스를 우선하지 않고 안전 전문기관과의 연결을 최우선합니다.
+          </p>
         </div>
       `;
+      return;
     }
 
-    // 1-1. 3대 코드 유형 진단 질문 감지 ("저는 무슨 코드인가요?", "어떤 코드인가요?" 등) & 비진단 라우터 배너
-    const isCodeTypeQuery = /무슨\s*코드|어떤\s*코드|내\s*코드|코드\s*진단|코드\s*유형|다크\s*코드가\s*강한|코드\s*테스트/.test(query);
-    let codeTypeBannerHtml = '';
-    if (isCodeTypeQuery) {
-      codeTypeBannerHtml = `
-        <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-slate-900 to-indigo-950 border border-emerald-400/40 text-emerald-200 mb-3.5 space-y-2 text-xs shadow-lg">
-          <div class="flex items-center gap-2 font-black text-emerald-300 text-sm">
-            <span>🧭</span>
-            <span>3대 코드는 사람의 유형을 나누는 이름이 아닙니다</span>
-          </div>
-          <p class="leading-relaxed text-slate-100 font-bold text-xs sm:text-sm">
-            “세 코드는 사람의 높낮이나 유형을 나누는 진단어가 아닙니다.<br class="hidden sm:inline"/>
-            지금 당신의 장면에서 어떤 도구가 도움이 되는지 살펴볼 수 있습니다.”
-          </p>
-          <p class="text-[11px] text-slate-300 leading-relaxed">
-            반복을 발견할 땐 <strong>Dark Code</strong>(반복되는 자동길), 새로운 행동을 연습할 땐 <strong>Neural Code</strong>(새로운 경험을 만드는 연습), 생각과 나 사이에 선택 공간을 둘 땐 <strong>Zero Point</strong>(반응과 나 사이의 선택공간)를 도구로 사용합니다.
-          </p>
-          <div class="pt-1 flex flex-wrap gap-2">
-            <button type="button" onclick="document.getElementById('three-code-router-section')?.scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition cursor-pointer flex items-center gap-1">
-              <span>🧭 3-CODE 라우터 열기</span>
-              <span>&rarr;</span>
-            </button>
-          </div>
-        </div>
-      `;
-    }
-
-    // 2. 운세 예측 질문 감지 (대운, 재물운, 결혼운 등) & 운세 생성 차단 배너
-    const isFortuneQuery = /대운|운세|점괘|올해\s*운|재물운|결혼운|사주\s*봐|점\s*봐|운이\s*좋|운이\s*나/.test(query);
+    // B. 운세/예언 생성 차단 배너
     let fortuneBannerHtml = '';
-    if (isFortuneQuery) {
+    if (routeResult && routeResult.safety && routeResult.safety.isFortuneQuery) {
       fortuneBannerHtml = `
-        <div class="p-3.5 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-200 mb-3 space-y-1.5 text-xs shadow-md">
-          <div class="flex items-center gap-1.5 font-black text-amber-300">
+        <div class="p-4 rounded-2xl bg-amber-500/20 border border-amber-400/50 text-amber-200 space-y-2 text-xs shadow-md">
+          <div class="flex items-center gap-1.5 font-black text-amber-300 text-xs sm:text-sm">
             <span>🔮</span>
-            <span>명심코칭 운세 질문 안내 · 미래를 맞히지 않습니다</span>
+            <span>명심코칭 운세 안내 · 미래를 맞히지 않습니다</span>
           </div>
           <p class="leading-relaxed text-amber-100 font-bold">
-            “명심코칭은 미래 운세를 판정하지 않습니다.<br />대신 그 질문이 지금 왜 중요해졌는지 함께 볼 수 있습니다.”
+            ${routeResult.safety.fortuneNotice}
           </p>
-          <p class="text-[11px] text-amber-200/80 leading-relaxed">
-            “그 답을 알아야 지금 무엇을 할 수 있을 것 같나요?<br />미래를 맞히기보다 오늘 내 행동의 결재권을 되찾아주는 카드들을 추천합니다.”
-          </p>
-        </div>
-      `;
-    }
-
-    // 3. 데이트 폭력 / 스토킹 / 협박 신호 감지
-    const isDatingViolenceQuery = /데이트\s*폭력|폭력|폭언|스토킹|감금|신체적\s*위협|협박|위치\s*추적/.test(query);
-    let datingViolenceBannerHtml = '';
-    if (isDatingViolenceQuery) {
-      datingViolenceBannerHtml = `
-        <div class="p-3.5 rounded-xl bg-rose-600/30 border-2 border-rose-500 text-white mb-3 space-y-2 text-xs shadow-lg">
-          <div class="flex items-center gap-1.5 font-black text-rose-200 text-sm">
-            <span>🚨</span>
-            <span>데이트 폭력·위협 긴급 안전망 · 심리 조언보다 안전이 최우선입니다</span>
-          </div>
-          <p class="leading-relaxed text-slate-100">
-            지속적인 폭력, 폭언, 협박, 스토킹, 강제 통제는 심리적 소통이나 마음가짐으로 해결할 문제가 아닙니다. 신체적·법적 안전 확보가 가장 먼저입니다.
-          </p>
-          <div class="flex flex-wrap gap-2 pt-1 font-bold text-[11px]">
-            <a href="tel:1366" class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white transition shadow-sm">📞 여성긴급전화 1366</a>
-            <a href="tel:112" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition shadow-sm">👮 경찰청 112</a>
-            <a href="tel:132" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm">⚖️ 대한법률구조공단 132</a>
-          </div>
-        </div>
-      `;
-    }
-
-    // 4. 애착유형 라벨링 질문 감지 (불안형, 회피형 등) & 비진단 안내 배너
-    const isAttachmentLabelQuery = /애착|불안형|회피형|공포회피|나르시|가스라이팅/.test(query);
-    let attachmentBannerHtml = '';
-    if (isAttachmentLabelQuery) {
-      attachmentBannerHtml = `
-        <div class="p-3.5 rounded-xl bg-rose-500/20 border border-rose-400/40 text-rose-200 mb-3 space-y-1 text-xs shadow-md">
-          <div class="flex items-center gap-1.5 font-black text-rose-300">
-            <span>🏷️</span>
-            <span>애착유형 라벨링 안내 · 당신이나 상대를 유형 상자에 가두지 않습니다</span>
-          </div>
-          <p class="leading-relaxed text-rose-100 font-bold">
-            “상대를 '회피형', 나를 '불안형'이라 규정하는 것은 이해의 시작일 수 있지만 고정된 꼬리표가 되어서는 안 됩니다.”
-          </p>
-          <p class="text-[11px] text-rose-200/80 leading-relaxed">
-            성격 유형 대신, 지금 이 순간 두 사람 사이에서 어떤 자극(Trigger)과 STORY, 방어행동이 반복되는지 작동 과정으로 살펴봅니다.
+          <p class="text-[11px] text-amber-200/90 leading-relaxed">
+            “그 답을 알아야 지금 무엇을 할 수 있을 것 같나요? 미래를 맞히기보다 오늘 내 행동의 결재권을 되찾아주는 질문을 제안합니다.”
           </p>
         </div>
       `;
     }
 
-    // 5. 관계 결정 질문 감지 (재회할까, 헤어질까 등) & 미래예측 차단 배너
-    const isRelationshipDecisionQuery = /재회할까|헤어질까|다시\s*만날|끝낼까|헤어져야|이별해야|다시\s*연락할까|잡아야\s*할까/.test(query);
-    let relationshipDecisionBannerHtml = '';
-    if (isRelationshipDecisionQuery) {
-      relationshipDecisionBannerHtml = `
-        <div class="p-3.5 rounded-xl bg-pink-500/20 border border-pink-400/40 text-pink-200 mb-3 space-y-1 text-xs shadow-md">
-          <div class="flex items-center gap-1.5 font-black text-pink-300">
-            <span>🧭</span>
-            <span>관계 결정 안내 · 재회나 이별 결정을 대신 내려주지 않습니다</span>
-          </div>
-          <p class="leading-relaxed text-pink-100 font-bold">
-            “헤어질지, 다시 만날지의 미래를 점치거나 대신 결정하지 않습니다.”
-          </p>
-          <p class="text-[11px] text-pink-200/80 leading-relaxed">
-            불확실한 상대의 속마음을 추측하기보다, 지금까지 확인된 FACT와 오늘 내 삶의 10% 선택권을 스스로 세울 수 있도록 돕습니다.
+    // C. 전문 상담 권고 안내
+    let professionalNoticeHtml = '';
+    if (routeResult && routeResult.safety && routeResult.safety.needsProfessional) {
+      professionalNoticeHtml = `
+        <div class="p-3.5 rounded-xl bg-indigo-950/60 border border-indigo-400/40 text-indigo-200 space-y-1 text-xs">
+          <span class="font-bold text-indigo-300">⚖️ 현실적 전문 판단 권고</span>
+          <p class="text-[11px] text-slate-200 leading-relaxed">
+            의료, 법률, 중대 재정 결정은 심리 관찰 카드 외에 전문 의료진·변호사·공인 전문가의 객관적 자문과 현실 정보를 함께 확인해야 합니다.
           </p>
         </div>
       `;
     }
 
-    // 헤더: “사람을 몇 개의 유형 상자에 가두지 않습니다. 지금 켜진 상태(동사)부터 가볍게 골라보세요.”
-    let html = `
-      ${crisisBannerHtml}
-      ${datingViolenceBannerHtml}
-      ${codeTypeBannerHtml}
-      ${fortuneBannerHtml}
-      ${attachmentBannerHtml}
-      ${relationshipDecisionBannerHtml}
-      <div class="mb-2">
-        <div class="text-xs sm:text-sm font-black text-[#E2CF9F] leading-snug">
-          “사람을 몇 개의 유형 상자에 가두지 않습니다.<br class="sm:hidden" /> 지금 내 안에서 켜진 상태(동사)부터 가볍게 골라보세요.”
-        </div>
-        <div class="text-[10px] text-slate-400 mt-0.5">고정된 꼬리표 대신, 상황에 맞는 사이다 통찰과 1분 SCAN으로 조율합니다.</div>
-      </div>
-    `;
+    // D. 추천 카드 목록 구성
+    let cardsHtml = '';
+    const recs = (routeResult && routeResult.recommendations) ? routeResult.recommendations : [];
 
-    if (matched.length === 0) {
-      html += `
-        <div class="p-4 rounded-xl bg-white/5 text-center text-xs text-slate-400">
-          일치하는 카드가 없습니다. '답장', '거절', '확인', '불안' 등 다른 키워드로 검색해보세요.
+    if (recs.length === 0) {
+      cardsHtml = `
+        <div class="p-5 rounded-2xl bg-white/5 text-center text-xs text-slate-300 space-y-2">
+          <p>마음에 걸리는 고민을 조금 더 구체적으로 적어보세요.</p>
+          <p class="text-[11px] text-slate-400">예: "친구가 잘되면 축하하면서도 질투나요", "실수하면 하루 종일 자책해요"</p>
         </div>
       `;
     } else {
-      html += matched.map(card => `
-        <div onclick="pickMindCard(0, '${card.id}')" class="p-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#C7A86B] transition-all cursor-pointer flex items-center justify-between gap-3 group">
-          <div class="space-y-0.5">
-            <div class="flex items-center gap-1.5">
-              <span class="px-2 py-0.5 rounded-md bg-[#0F6B5B] text-white text-[9px] font-bold">
-                ${card.category}
-              </span>
-              <span class="text-[10px] text-[#E2CF9F] font-bold">${card.cardTitle}</span>
-            </div>
-            <p class="text-xs font-black text-white group-hover:text-emerald-300 transition-colors leading-snug">
-              ${card.question}
-            </p>
+      const headingText = routeResult.isFallback 
+        ? "정확히 같은 질문은 아직 없습니다. 가까운 관점에서 볼 수 있는 질문을 골라봤습니다." 
+        : `지금 고민과 가장 가까운 질문 ${recs.length}개`;
+
+      cardsHtml = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <h5 class="text-xs sm:text-sm font-black text-[#E2CF9F] flex items-center gap-1.5">
+              <span>🎯</span>
+              <span>${headingText}</span>
+            </h5>
+            <span class="text-[10px] text-slate-400">비진단 관점 매칭</span>
           </div>
-          <span class="text-[#E2CF9F] text-xs font-black shrink-0">&rarr;</span>
+
+          <div class="space-y-3">
+            ${recs.map((item, idx) => {
+              const c = item.card;
+              const why = item.why;
+              return `
+                <div class="p-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-[#C7A86B]/30 hover:border-[#C7A86B] transition-all space-y-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="px-2 py-0.5 rounded-md bg-[#0F6B5B] text-white text-[9px] font-bold">
+                        ${c.category}
+                      </span>
+                      <span class="text-[11px] text-[#E2CF9F] font-bold">${c.cardTitle}</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-mono">Q${idx+1}</span>
+                  </div>
+
+                  <h6 class="text-xs sm:text-sm font-black text-white leading-snug">
+                    ${c.question}
+                  </h6>
+
+                  <!-- WHY 추천 이유 (최대 2문장, 비진단) -->
+                  <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-300 leading-relaxed">
+                    <span class="text-emerald-400 font-bold">WHY: </span>
+                    <span>${why}</span>
+                  </div>
+
+                  <div class="pt-1 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400">📖 《${c.relatedBook || '명심코칭'}》</span>
+                    <button type="button" onclick="selectMindCardFromRouter('${c.id}')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#C7A86B] to-[#E2CF9F] text-slate-950 text-xs font-black hover:shadow-md transition cursor-pointer flex items-center gap-1">
+                      <span>이 질문으로 SCAN 시작</span>
+                      <span>&rarr;</span>
+                    </button>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- 3대 Code Routing 힌트 배지 -->
+          ${routeResult.codeHint ? `
+            <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-[11px] text-emerald-200 flex items-start gap-2">
+              <span class="text-base leading-none">🧭</span>
+              <div>
+                <span class="font-bold text-emerald-300">${routeResult.codeHint.tag}: </span>
+                <span class="text-slate-200">${routeResult.codeHint.hint}</span>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- 비진단 면책 문구 -->
+          <p class="text-[10px] sm:text-[11px] text-slate-400 text-center pt-1 italic">
+            “이 결과는 심리진단이나 성격판정이 아닙니다. 지금 상황과 가까운 관점의 질문을 찾은 것입니다.”
+          </p>
         </div>
-      `).join('');
+      `;
     }
 
-    resultsBox.innerHTML = html;
+    resultsBox.innerHTML = `
+      ${fortuneBannerHtml}
+      ${professionalNoticeHtml}
+      ${cardsHtml}
+    `;
+  };
+
+  // 라우터 추천 카드 선택 시 모달 오픈 및 이벤트 기록
+  window.selectMindCardFromRouter = function (cardId) {
+    if (!cardId) return;
+    trackMindEvent('ai_router_card_selected', { selectedCardId: cardId });
+    if (window.MyeongsimAIRouter) {
+      window.MyeongsimAIRouter.resetSessionBrowse();
+    }
+    pickMindCard(0, cardId);
   };
 
   // =================================================================

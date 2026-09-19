@@ -867,18 +867,18 @@
                 
                 <!-- Entrance Mode Tabs (A vs B) -->
                 <div class="flex items-center justify-center gap-2 mb-6">
-                  <button id="mind-tab-deck-btn" onclick="switchMindHomeTab('deck')" class="px-5 py-2.5 rounded-full text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shadow-sm bg-[#C7A86B] text-slate-950">
-                    <span>🎴 오늘의 카드 한 장</span>
+                  <button id="mind-tab-deck-btn" onclick="switchMindHomeTab('deck')" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-black transition-all cursor-pointer flex items-center gap-1.5 shadow-sm bg-[#C7A86B] text-slate-950">
+                    <span>🎴 오늘의 카드</span>
                   </button>
-                  <button id="mind-tab-search-btn" onclick="switchMindHomeTab('search')" class="px-5 py-2.5 rounded-full text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15">
-                    <span>💬 지금 고민이 있어요</span>
+                  <button id="mind-tab-search-btn" onclick="switchMindHomeTab('search')" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-black transition-all cursor-pointer flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15">
+                    <span>💬 내 고민으로 찾기 (명심AI)</span>
                   </button>
                 </div>
 
                 <!-- [입구 A] 오늘의 카드 한 장 덱 패널 -->
                 <div id="mind-deck-panel" class="w-full transition-all duration-300">
                   <p id="mind-deck-status-text" class="text-xs sm:text-sm text-slate-300 font-bold mb-5 tracking-wide">
-                    “오늘의 마음은 어떤 카드를 꺼낼까?”
+                    “생각하지 말고 지금 끌리는 질문 한 장.”
                   </p>
 
                   <!-- Fanned 3-Card Deck with Zero Point Orbit Art -->
@@ -964,45 +964,69 @@
                   </div>
                 </div>
 
-                <!-- [입구 B] 지금 고민이 있어요 자연어 검색 패널 -->
+                <!-- [입구 B] 내 고민으로 찾기 (명심AI 고민 라우터) -->
                 <div id="mind-search-panel" class="hidden w-full max-w-xl mx-auto transition-all duration-300 text-left">
                   
-                  <div class="p-5 rounded-3xl bg-slate-950/70 border border-[#C7A86B]/40 shadow-xl space-y-4">
-                    <div class="flex items-center justify-between">
-                      <span class="text-xs font-black text-[#E2CF9F] tracking-wide uppercase">💬 자연어 마음 고민 검색</span>
-                      <span class="text-[11px] text-slate-400">키워드 자동 매칭</span>
+                  <div class="p-5 sm:p-6 rounded-3xl bg-slate-950/80 border border-[#C7A86B]/40 shadow-2xl space-y-4">
+                    <div class="space-y-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-[#E2CF9F] tracking-wide uppercase flex items-center gap-1.5">
+                          <span>✨</span>
+                          <span>명심AI · 내 고민과 가까운 질문 찾기</span>
+                        </span>
+                        <span class="text-[10px] sm:text-[11px] text-emerald-400 font-bold bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-500/30">
+                          200장 맞춤 라우팅
+                        </span>
+                      </div>
+                      <h4 class="text-base sm:text-lg font-black text-white">
+                        지금 무엇이 가장 마음에 걸리나요?
+                      </h4>
+                      <p class="text-xs text-slate-300 leading-relaxed">
+                        정리해서 쓰지 않아도 됩니다. 평소 생각하는 말 그대로 적어보세요.
+                      </p>
                     </div>
 
-                    <!-- Search Input Bar -->
-                    <div class="relative flex items-center">
-                      <input 
-                        type="text" 
-                        id="mind-search-input"
-                        oninput="handleMindCardSearch(this.value)"
-                        placeholder="지금 머릿속 고민을 그대로 적어보세요 (예: 답장이 안 와요, 거절을 못해요, 부모님 때문에 힘들어요)..."
-                        class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C7A86B] shadow-inner"
-                      />
-                      <span class="absolute left-3.5 text-slate-400 text-sm">🔍</span>
-                      <button id="mind-search-clear-btn" onclick="clearMindSearch()" class="hidden absolute right-3.5 text-slate-400 hover:text-slate-700 text-xs font-bold cursor-pointer">✕</button>
+                    <!-- Search Input Bar with Action Button -->
+                    <div class="space-y-2">
+                      <div class="relative flex items-center">
+                        <input 
+                          type="text" 
+                          id="mind-search-input"
+                          onkeydown="if(event.key === 'Enter') handleMyeongsimAISearch();"
+                          placeholder="예: 답장이 늦으면 자꾸 버림받을 것 같아요."
+                          class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C7A86B] shadow-inner"
+                        />
+                        <span class="absolute left-3.5 text-slate-400 text-sm">💬</span>
+                        <button id="mind-search-clear-btn" onclick="clearMindSearch()" class="hidden absolute right-3.5 text-slate-400 hover:text-slate-700 text-xs font-bold cursor-pointer">✕</button>
+                      </div>
+
+                      <div class="flex gap-2">
+                        <button onclick="handleMyeongsimAISearch()" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#C7A86B] via-[#E2CF9F] to-[#C7A86B] hover:from-[#E2CF9F] hover:to-[#C7A86B] text-slate-950 font-black text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]">
+                          <span>🔍 내 고민과 가까운 질문 찾기</span>
+                        </button>
+                      </div>
                     </div>
 
                     <!-- Recommended Search Chips -->
-                    <div>
-                      <div class="text-[11px] font-bold text-slate-400 mb-2">자주 묻는 일상 고민을 바로 선택해보세요:</div>
+                    <div class="pt-1">
+                      <div class="text-[11px] font-bold text-slate-400 mb-2">자주 마주치는 일상 고민을 바로 눌러보세요:</div>
                       <div class="flex flex-wrap gap-1.5">
-                        <button onclick="setMindSearchQuery('답장이 안 와요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“답장이 안 와요”</button>
-                        <button onclick="setMindSearchQuery('거절을 못해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“거절을 못해요”</button>
-                        <button onclick="setMindSearchQuery('계속 확인해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“계속 확인해요”</button>
-                        <button onclick="setMindSearchQuery('회사 가기 싫어요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“회사 가기 싫어요”</button>
-                        <button onclick="setMindSearchQuery('화를 내고 후회해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“화를 내고 후회해요”</button>
-                        <button onclick="setMindSearchQuery('돈 때문에 불안해요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“돈 때문에 불안해요”</button>
-                        <button onclick="setMindSearchQuery('부모님 때문에 힘들어요')" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“부모님 때문에 힘들어요”</button>
+                        <button onclick="setMindSearchQuery('답장이 늦으면 버림받은 것 같아요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“답장 늦으면 버림받을 것 같아”</button>
+                        <button onclick="setMindSearchQuery('사업 망하고 제가 실패자가 된 것 같아요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“사업 실패하면 나도 실패자인가”</button>
+                        <button onclick="setMindSearchQuery('회사 가기만 하면 숨이 막혀요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“회사 가기만 하면 숨 막혀”</button>
+                        <button onclick="setMindSearchQuery('친구가 잘되면 축하하면서도 질투나요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“친구 축하하면서도 질투나”</button>
+                        <button onclick="setMindSearchQuery('엄마한테 거절하면 죄짓는 기분이에요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“부모 거절에 죄책감 들어”</button>
+                        <button onclick="setMindSearchQuery('좋아할수록 연락을 끊고 싶어요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“좋아할수록 도망치고 싶어”</button>
+                        <button onclick="setMindSearchQuery('계획은 세우는데 계속 미뤄요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“계획 세우고 계속 미뤄”</button>
+                        <button onclick="setMindSearchQuery('실수하면 하루 종일 제가 싫어요.')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“실수 하나에 하루종일 자책”</button>
+                        <button onclick="setMindSearchQuery('삼재라는데 아무것도 하면 안 될까요?')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“삼재·사주에 묶여 불안해”</button>
+                        <button onclick="setMindSearchQuery('다크 코드는 알겠는데 왜 안 바뀌죠?')" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-[11px] font-medium border border-white/10 transition cursor-pointer">“패턴은 아는데 왜 안 바뀔까”</button>
                       </div>
                     </div>
 
                     <!-- Search Result Heading & Cards Box -->
-                    <div id="mind-search-results-box" class="pt-3 border-t border-slate-800 space-y-2.5">
-                      <!-- Results populated by Javascript -->
+                    <div id="mind-search-results-box" class="pt-3 border-t border-slate-800 space-y-3">
+                      <!-- Results populated by Javascript handleMyeongsimAISearch() -->
                     </div>
                   </div>
 
@@ -1459,6 +1483,13 @@
                       </div>
                     </div>
 
+                    <!-- ===================================================== -->
+                    <!-- CARD GRAPH: 이 질문과 함께 많이 이어지는 관점 (최대 3개)   -->
+                    <!-- ===================================================== -->
+                    <div id="mind-related-cards-container" class="mt-4 pt-4 border-t border-slate-200/80 space-y-2.5">
+                      <!-- Dynamically rendered by daily-mind-card.js -->
+                    </div>
+
                     <!-- Bottom Utilities -->
                     <div class="pt-3 mt-3 border-t border-slate-200/80 flex items-center justify-between gap-2 text-xs">
                       <button onclick="copyMindCardResult()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition flex items-center gap-1 cursor-pointer">
@@ -1487,8 +1518,11 @@
                   <span class="text-[11px] text-slate-400 font-medium">최근 7일간의 관찰 기록</span>
                 </div>
                 
-                <p id="weekly-frequent-pattern" class="text-xs text-[#E2CF9F] font-bold mb-3">
+                <p id="weekly-frequent-pattern" class="text-xs text-[#E2CF9F] font-bold mb-1">
                   이번 주를 시작할 첫 카드를 발견해 보세요.
+                </p>
+                <p class="text-[11px] text-slate-400 mb-3 italic">
+                  “최근 기록에서는 이 질문들을 자주 선택했습니다. 이것은 성격판정이 아니라 최근 기록의 패턴입니다.”
                 </p>
 
                 <!-- 7 Days Card Flow List -->
@@ -19666,6 +19700,7 @@
   </div>
 
   <script src="js/mind-cards-data.js?v=20260919_v1"></script>
+  <script src="js/myeongsim-ai-router.js?v=20260919_v1"></script>
   <script src="js/daily-mind-card.js?v=20260919_v1"></script>
   <script src="js/theme-music-player.js?v=20260919_v1"></script>
 </body>

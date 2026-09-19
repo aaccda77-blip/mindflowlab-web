@@ -59,7 +59,38 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 100,
-    "relatedBookChapter": "1장. 무의식의 Trigger와 자동해석 코드"
+    "relatedBookChapter": "1장. 무의식의 Trigger와 자동해석 코드",
+    "routeTags": [
+      "관계",
+      "답장",
+      "답장 늦음",
+      "답장불안",
+      "답장이 안 와요",
+      "마음이 식음",
+      "심리",
+      "연락",
+      "연락불안",
+      "연락에 집착해요"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "그 사실에 내가 붙인 해석(STORY)은 무엇인가요? (예: 내게 마음이"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“추가 메시지를 보내기 전 30분 기다려본다"
+    ],
+    "relatedCards": [
+      "relationship-reply-001",
+      "rel-006",
+      "rel-015"
+    ]
   },
   {
     "id": "rel-002",
@@ -97,7 +128,36 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 97,
-    "relatedBookChapter": "2장. 마음읽기 모드와 투사 회로"
+    "relatedBookChapter": "2장. 마음읽기 모드와 투사 회로",
+    "routeTags": [
+      "관계",
+      "나를 싫어함",
+      "눈치",
+      "눈치를 너무 봐요",
+      "마음읽기",
+      "분위기",
+      "상대기분",
+      "심리",
+      "차가움",
+      "표정"
+    ],
+    "triggerTags": [
+      "마음읽기"
+    ],
+    "storyTags": [
+      "그 표정을 보며 내가 단정한 결론은 무엇인가요? (예: 날 싫어한다)"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“필요하면 ‘무슨 일 있어?’라고 직접 한 번 묻는다"
+    ],
+    "relatedCards": [
+      "rel-012",
+      "rel-013",
+      "rel-001"
+    ]
   },
   {
     "id": "rel-003",
@@ -134,7 +194,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 90,
-    "relatedBookChapter": "3장. 반사적 자동행동을 늦추는 10초 HOLD"
+    "relatedBookChapter": "3장. 반사적 자동행동을 늦추는 10초 HOLD",
+    "routeTags": [
+      "갈등",
+      "관계",
+      "미안해",
+      "부탁하면 미안해요",
+      "사과",
+      "사과중독",
+      "습관적 사과",
+      "심리",
+      "자꾸 미안하다고 해요",
+      "잘못없는데 사과"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "사과하지 않으면 나쁜 사람이 되거나 버려질 것이라는 두려움이 있나요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“자동으로 ‘미안해’라고 말하기 전에 10초 멈춘다"
+    ],
+    "relatedCards": [
+      "rel-012",
+      "rel-019",
+      "rel-008"
+    ]
   },
   {
     "id": "rel-004",
@@ -172,7 +263,36 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 99,
-    "relatedBookChapter": "4장. 착한 아이 가면과 인정욕구의 덫"
+    "relatedBookChapter": "4장. 착한 아이 가면과 인정욕구의 덫",
+    "routeTags": [
+      "거절",
+      "거절을 못해요",
+      "관계",
+      "부탁",
+      "싫다고 못함",
+      "심리",
+      "좋은 사람이어야 할 것 같아요",
+      "좋은사람",
+      "좋은사람강박",
+      "착한사람"
+    ],
+    "triggerTags": [
+      "좋은사람강박"
+    ],
+    "storyTags": [
+      "거절하면 '이기적이고 냉정한 사람'이라는 낙인이 찍힐 거라 믿고 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“‘이번에는 어렵습니다"
+    ],
+    "relatedCards": [
+      "rel-009",
+      "rel-001",
+      "rel-002"
+    ]
   },
   {
     "id": "rel-005",
@@ -209,7 +329,35 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 98,
-    "relatedBookChapter": "3장. 결백 증명과 통제 회로"
+    "relatedBookChapter": "3장. 결백 증명과 통제 회로",
+    "routeTags": [
+      "과잉설명",
+      "관계",
+      "말길어짐",
+      "말이 너무 길어져요",
+      "변명",
+      "심리",
+      "오해",
+      "오해받기 싫어요",
+      "증명"
+    ],
+    "triggerTags": [
+      "과잉설명"
+    ],
+    "storyTags": [
+      "구구절절 변명하지 않으면 나를 악의적인 사람으로 볼 것이라는 생각인가요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 한 번만 설명을 평소보다 한 문장 줄인다"
+    ],
+    "relatedCards": [
+      "rel-007",
+      "rel-001",
+      "rel-002"
+    ]
   },
   {
     "id": "rel-006",
@@ -247,7 +395,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 89,
-    "relatedBookChapter": "5장. 관계 중독과 애착 불안의 트리거"
+    "relatedBookChapter": "5장. 관계 중독과 애착 불안의 트리거",
+    "routeTags": [
+      "관계",
+      "관계테스트",
+      "관계확인",
+      "떠보기",
+      "밀당",
+      "사랑확인",
+      "심리",
+      "싸우면 잠수타요",
+      "연락끊기",
+      "연락에 집착해요"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "상대가 먼저 연락하지 않으면 나를 버릴 것이라는 시나리오인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“떠보기 대신 궁금한 것을 한 문장으로 직접 말한다"
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-015",
+      "relationship-reply-001"
+    ]
   },
   {
     "id": "rel-007",
@@ -285,7 +464,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 91,
-    "relatedBookChapter": "2장. FACT·STORY·UNKNOWN 3분법"
+    "relatedBookChapter": "2장. FACT·STORY·UNKNOWN 3분법",
+    "routeTags": [
+      "공격",
+      "관계",
+      "기분나쁨",
+      "말투",
+      "무시",
+      "무시당함",
+      "상대가 화난 것 같아요",
+      "심리",
+      "오해받기 싫어요",
+      "자존심"
+    ],
+    "triggerTags": [
+      "무시당함"
+    ],
+    "storyTags": [
+      "그 행동을 보며 '나는 함부로 대해도 되는 사람인가'라는 옛날 통증이 켜"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“‘그 말의 뜻을 조금 더 설명해줄래요?’라고 묻는다"
+    ],
+    "relatedCards": [
+      "rel-005",
+      "rel-012",
+      "rel-001"
+    ]
   },
   {
     "id": "rel-008",
@@ -321,7 +529,34 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 88,
-    "relatedBookChapter": "4장. 인지 왜곡과 흑백논리 회로"
+    "relatedBookChapter": "4장. 인지 왜곡과 흑백논리 회로",
+    "routeTags": [
+      "갈등",
+      "관계",
+      "다툼",
+      "맨날",
+      "심리",
+      "싸움",
+      "일반화",
+      "항상"
+    ],
+    "triggerTags": [
+      "일반화"
+    ],
+    "storyTags": [
+      "'상대는 영원히 바뀌지 않을 것이다'라는 무력감 스토리인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“‘방금 있었던 일에서는…’으로 문장을 시작한다"
+    ],
+    "relatedCards": [
+      "rel-003",
+      "rel-010",
+      "rel-001"
+    ]
   },
   {
     "id": "rel-009",
@@ -358,7 +593,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 92,
-    "relatedBookChapter": "2장. 작은 행동실험으로 불안 회로 재학습하기"
+    "relatedBookChapter": "2장. 작은 행동실험으로 불안 회로 재학습하기",
+    "routeTags": [
+      "NO",
+      "거절공포",
+      "거절못함",
+      "거절을 못해요",
+      "관계",
+      "관계끝",
+      "버림",
+      "부탁",
+      "부탁하면 미안해요",
+      "심리"
+    ],
+    "triggerTags": [
+      "거절공포"
+    ],
+    "storyTags": [
+      "거절하면 '모든 사람이 나를 떠날 것'이라는 비극적 시나리오인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“사소한 부탁 하나를 정중하게 거절해본다"
+    ],
+    "relatedCards": [
+      "rel-004",
+      "rel-003",
+      "rel-013"
+    ]
   },
   {
     "id": "rel-010",
@@ -394,7 +658,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 91,
-    "relatedBookChapter": "3장. 억압과 분노의 보호기제"
+    "relatedBookChapter": "3장. 억압과 분노의 보호기제",
+    "routeTags": [
+      "갈등",
+      "갈등이 너무 싫어요",
+      "갈등회피",
+      "관계",
+      "심리",
+      "싸우기싫음",
+      "싸우면 잠수타요",
+      "참음",
+      "화참기"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "표현하면 관계가 회복 불가능하게 깨질 것이라는 두려움 때문인가요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동",
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 필요한 요청 한 문장만 말한다"
+    ],
+    "relatedCards": [
+      "rel-011",
+      "rel-017",
+      "rel-003"
+    ]
   },
   {
     "id": "rel-011",
@@ -430,7 +725,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 93,
-    "relatedBookChapter": "4장. 자동반응을 멈추는 10초 HOLD 기법"
+    "relatedBookChapter": "4장. 자동반응을 멈추는 10초 HOLD 기법",
+    "routeTags": [
+      "관계",
+      "분노",
+      "심리",
+      "욱함",
+      "카톡",
+      "화",
+      "화를 내고 후회해요",
+      "후회"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "지금 당장 독설을 날려야 내 자존심이 지켜진다는 충동인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“메시지를 작성한 뒤 바로 보내지 않고 10분 기다린다"
+    ],
+    "relatedCards": [
+      "rel-010",
+      "rel-017",
+      "rel-013"
+    ]
   },
   {
     "id": "rel-012",
@@ -466,7 +790,37 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 92,
-    "relatedBookChapter": "5장. 감정적 경계선과 과잉 책임감"
+    "relatedBookChapter": "5장. 감정적 경계선과 과잉 책임감",
+    "routeTags": [
+      "관계",
+      "기분관리",
+      "눈치",
+      "눈치를 너무 봐요",
+      "상대가 화난 것 같아요",
+      "상대기분",
+      "상대기분관리",
+      "심리",
+      "책임"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "주변 사람이 기분 나쁘면 '내가 분위기를 망친 사람'이라는 죄책감인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“상대 기분을 고치기 전에 내 책임만 한 줄 적는다"
+    ],
+    "relatedCards": [
+      "rel-002",
+      "rel-003",
+      "rel-019"
+    ]
   },
   {
     "id": "rel-013",
@@ -502,7 +856,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 94,
-    "relatedBookChapter": "6장. 유기 불안과 파국화 회로"
+    "relatedBookChapter": "6장. 유기 불안과 파국화 회로",
+    "routeTags": [
+      "관계",
+      "버림",
+      "버림불안",
+      "손절하고 싶어요",
+      "심리",
+      "연애불안",
+      "이별불안",
+      "차가움",
+      "차가워진 것 같아요"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스",
+      "감정고조"
+    ],
+    "storyTags": [
+      "이 신호가 '결국 나를 버릴 것이다'라는 오래된 두려움의 재상영인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 확인 가능한 관계의 사실 3개를 적는다"
+    ],
+    "relatedCards": [
+      "rel-002",
+      "rel-009",
+      "rel-010"
+    ]
   },
   {
     "id": "rel-014",
@@ -538,7 +923,35 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 89,
-    "relatedBookChapter": "5장. 불안형 애착과 재확인 강박"
+    "relatedBookChapter": "5장. 불안형 애착과 재확인 강박",
+    "routeTags": [
+      "관계",
+      "불안",
+      "사랑확인",
+      "심리",
+      "자꾸 시험해보게 돼요",
+      "칭찬",
+      "칭찬을 못 믿겠어요",
+      "확인",
+      "확인욕구"
+    ],
+    "triggerTags": [
+      "확인욕구"
+    ],
+    "storyTags": [
+      "다시 확인받지 않으면 그 마음이 사라졌을 거라는 의심인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“같은 질문을 오늘 한 번 덜 한다"
+    ],
+    "relatedCards": [
+      "rel-006",
+      "rel-019",
+      "rel-001"
+    ]
   },
   {
     "id": "rel-015",
@@ -573,7 +986,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 90,
-    "relatedBookChapter": "3장. 충동적 행동을 지연시키는 DELAY 전략"
+    "relatedBookChapter": "3장. 충동적 행동을 지연시키는 DELAY 전략",
+    "routeTags": [
+      "관계",
+      "관계수습",
+      "사과",
+      "수습",
+      "심리",
+      "싸운후연락",
+      "연락에 집착해요",
+      "연락폭탄"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "지금 당장 답을 듣지 못하면 관계가 영원히 파탄 날 것이라는 공포인가요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“사과나 요청 1회 후 추가 메시지를 잠시 멈춘다"
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-006",
+      "relationship-reply-001"
+    ]
   },
   {
     "id": "rel-016",
@@ -608,7 +1050,34 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 96,
-    "relatedBookChapter": "4장. 죄책감 없는 건강한 경계 세우기"
+    "relatedBookChapter": "4장. 죄책감 없는 건강한 경계 세우기",
+    "routeTags": [
+      "거절후죄책감",
+      "경계",
+      "경계죄책감",
+      "관계",
+      "선긋기",
+      "손절하고 싶어요",
+      "심리",
+      "죄책감"
+    ],
+    "triggerTags": [
+      "경계죄책감"
+    ],
+    "storyTags": [
+      "선을 그으면 상대가 나를 비정하고 이기적이라 여길 것이라는 자책인가요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“방금 세운 경계를 24시간 취소하지 않는다"
+    ],
+    "relatedCards": [
+      "rel-013",
+      "rel-017",
+      "rel-018"
+    ]
   },
   {
     "id": "rel-017",
@@ -644,7 +1113,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 87,
-    "relatedBookChapter": "1장. 통제의 환상과 무력감 탈출"
+    "relatedBookChapter": "1장. 통제의 환상과 무력감 탈출",
+    "routeTags": [
+      "경계",
+      "관계",
+      "관계문제",
+      "남탓",
+      "상대변화",
+      "심리",
+      "원망",
+      "통제"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "상대가 바뀌지 않으면 내 삶은 절대 행복해질 수 없다는 체념인가요?"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“내가 통제 가능한 행동 하나만 결정한다"
+    ],
+    "relatedCards": [
+      "rel-010",
+      "rel-011",
+      "rel-013"
+    ]
   },
   {
     "id": "rel-018",
@@ -681,7 +1179,35 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 93,
-    "relatedBookChapter": "5장. 회피형 방어기제와 취약성의 용기"
+    "relatedBookChapter": "5장. 회피형 방어기제와 취약성의 용기",
+    "routeTags": [
+      "거리두기",
+      "관계",
+      "무심한척",
+      "상처",
+      "손절하고 싶어요",
+      "심리",
+      "싸우면 잠수타요",
+      "좋아할수록거리",
+      "취약성"
+    ],
+    "triggerTags": [
+      "취약성"
+    ],
+    "storyTags": [
+      "마음을 들키면 약자가 되고 휘둘릴 것이라는 과거의 학습인가요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 진심 한 문장만 말한다"
+    ],
+    "relatedCards": [
+      "rel-006",
+      "rel-010",
+      "rel-013"
+    ]
   },
   {
     "id": "rel-019",
@@ -718,7 +1244,38 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 95,
-    "relatedBookChapter": "6장. 내면의 비판자와 자기자비 코드"
+    "relatedBookChapter": "6장. 내면의 비판자와 자기자비 코드",
+    "routeTags": [
+      "관계",
+      "내 잘못 같아요",
+      "심리",
+      "싸운후후회",
+      "자기비난",
+      "자기혐오",
+      "자책",
+      "칭찬을 못 믿겠어요",
+      "화를 내고 후회해요"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 행동 하나 때문에 '나는 사랑받을 자격이 없는 사람'이라는 낙인인가요"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“사과 / 수정 / 재시도 중 하나만 실행한다"
+    ],
+    "relatedCards": [
+      "rel-003",
+      "rel-012",
+      "rel-011"
+    ]
   },
   {
     "id": "rel-020",
@@ -754,7 +1311,34 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 86,
-    "relatedBookChapter": "7장. 관찰자 자아와 생각 내려놓기"
+    "relatedBookChapter": "7장. 관찰자 자아와 생각 내려놓기",
+    "routeTags": [
+      "관계",
+      "내 마음을 나도 모르겠어요",
+      "두뇌피로",
+      "생각과잉",
+      "심리",
+      "심리분석",
+      "자기관찰",
+      "자기분석"
+    ],
+    "triggerTags": [
+      "자기관찰"
+    ],
+    "storyTags": [
+      "내 마음의 모든 원인을 다 파헤쳐야만 편안해질 수 있다는 강박인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“기록을 닫고 현실 행동 하나를 한다"
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-002",
+      "rel-003"
+    ]
   },
   {
     "id": "relationship-reply-001",
@@ -792,7 +1376,38 @@ window.MIND_CARDS_DATA = [
     "isFeatured": true,
     "popularity": 98,
     "relatedChapter": "제2장 · 무의식적 마음읽기와 투사의 해체",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "관계",
+      "답장",
+      "답장불안",
+      "답장이 안 와요",
+      "마음 식음",
+      "심리",
+      "연락",
+      "연락불안",
+      "연락이 안 와요",
+      "읽씹"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "30분 동안 추가 메시지를 보내지 않고 기다려본다"
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-006",
+      "rel-015"
+    ]
   },
   {
     "id": "overchecking-01",
@@ -840,7 +1455,38 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제2장 · 의심의 쳇바퀴와 Body Signature",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "가스밸브",
+      "강박",
+      "검색",
+      "결정",
+      "결정장애",
+      "계속 확인해요",
+      "과잉확인",
+      "도어락",
+      "되돌리기",
+      "불안"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "오늘 마지막 확인 후 “확인 완료”를 소리 내어 말하고"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-014",
+      "money-019"
+    ]
   },
   {
     "id": "peoplepleaser-02",
@@ -891,7 +1537,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제3장 · 인정중독과 희생의 자동문장",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "거절",
+      "거절 못함",
+      "거절을 못하겠어요",
+      "거절을 못해요",
+      "경계와 관계",
+      "당연하게",
+      "미안해요",
+      "배려",
+      "부모님"
+    ],
+    "triggerTags": [
+      "좋은 사람 강박"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "부탁을 받았을 때 3초간 멈추고 “일정 확인 후 10분"
+    ],
+    "relatedCards": [
+      "boundary-03",
+      "apology-06",
+      "attachment-07"
+    ]
   },
   {
     "id": "boundary-03",
@@ -937,7 +1612,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제4장 · 건강한 경계선과 무의식 방어",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "갈등 회피",
+      "거절",
+      "거절을 못하겠어요",
+      "거절을 못해요",
+      "경계",
+      "경계와 관계",
+      "관계 단절",
+      "부모님",
+      "부모님 때문에 힘들어요"
+    ],
+    "triggerTags": [
+      "거절"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "무리한 제안에 “지금 제 상황에서는 어렵습니다"
+    ],
+    "relatedCards": [
+      "peoplepleaser-02",
+      "apology-06",
+      "fam-001"
+    ]
   },
   {
     "id": "nunchi-04",
@@ -982,7 +1686,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제1장 · 과출력된 레이더와 분리 기술",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "감정 민감성",
+      "기분 눈치",
+      "남의 시선",
+      "눈치",
+      "말투",
+      "상사 눈치",
+      "신경쓰임",
+      "예민해요",
+      "직장 스트레스",
+      "차갑게"
+    ],
+    "triggerTags": [
+      "눈치"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "상대 안색이 안 좋을 때 속으로 “저건 저 사람의 이슈"
+    ],
+    "relatedCards": [
+      "mindreading-09",
+      "comparison-18",
+      "repression-20"
+    ]
   },
   {
     "id": "overexplaining-05",
@@ -1020,7 +1753,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제5장 · 투사와 자기변호의 늪",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "과잉설명",
+      "두려움",
+      "말이 길어져요",
+      "변명",
+      "불안과 방어",
+      "오해",
+      "카톡 장문"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "장문 카톡을 보내기 전 마지막 문단 3줄을 과감히 지우"
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-005",
+      "rel-006"
+    ]
   },
   {
     "id": "apology-06",
@@ -1067,7 +1829,38 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "갈등 회피",
+      "거절을 못해요",
+      "눈치",
+      "먼저 사과",
+      "부모님",
+      "부모님 때문에 힘들어요",
+      "불안과 방어",
+      "사과",
+      "사과 강박"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "길을 비켜줄 때 “죄송합니다” 대신 “감사합니다”라고 "
+    ],
+    "relatedCards": [
+      "rel-003",
+      "boundary-03",
+      "rel-012"
+    ]
   },
   {
     "id": "attachment-07",
@@ -1106,7 +1899,38 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제6장 · 애착 상처와 파국화 회로",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "경계와 관계",
+      "답장",
+      "버림받을까봐",
+      "불안형",
+      "불안형 애착",
+      "애착",
+      "연락 불안",
+      "연애 불안",
+      "읽씹"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "스마트폰을 엎어두고 10분간 따뜻한 차 한 잔을 끝까지"
+    ],
+    "relatedCards": [
+      "love-001",
+      "relationship-reply-001",
+      "love-006"
+    ]
   },
   {
     "id": "mindreading-09",
@@ -1144,7 +1968,33 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제8장 · 투사의 거울과 현실 검증",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "감정 민감성",
+      "기분 짐작",
+      "날 싫어해",
+      "독심술",
+      "오해",
+      "인간관계",
+      "피해의식"
+    ],
+    "triggerTags": [
+      "독심술"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "상대에게 속단 대신 “오늘 많이 피곤해 보이시네요, 괜"
+    ],
+    "relatedCards": [
+      "nunchi-04",
+      "comparison-18",
+      "repression-20"
+    ]
   },
   {
     "id": "perfectionism-10",
@@ -1183,7 +2033,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제3장 · 완벽주의 해체와 점진적 노출",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "100점",
+      "미루기",
+      "부담감",
+      "시작이 어려워요",
+      "실패 두려움",
+      "완벽주의",
+      "완벽주의와 통제",
+      "회피"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "타이머를 15분 맞추고 아무렇게나 낙서하듯 초안의 첫 "
+    ],
+    "relatedCards": [
+      "dec-004",
+      "dec-011",
+      "money-019"
+    ]
   },
   {
     "id": "procrastination-11",
@@ -1221,7 +2100,33 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제1장 · 동결(Freeze) 반응 해제와 5초 법칙",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "게으름",
+      "누워만 있어요",
+      "무기력",
+      "미루기",
+      "완벽주의와 통제",
+      "의지박약",
+      "침대"
+    ],
+    "triggerTags": [
+      "미루기"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "침대에서 일어나 컴퓨터 전원만 켜고 의자에 1분 앉아보"
+    ],
+    "relatedCards": [
+      "perfectionism-10",
+      "control-14",
+      "career-008"
+    ]
   },
   {
     "id": "overthinking-12",
@@ -1260,7 +2165,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제9장 · 반추 루프의 차단과 수면 위생",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "말실수",
+      "반추",
+      "밤에 생각",
+      "불면증",
+      "생각 과열",
+      "생각이 많아요",
+      "이불킥",
+      "후회"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "스탠드를 켜고 그 기억을 종이에 적은 뒤 서랍 속에 쏙"
+    ],
+    "relatedCards": [
+      "regret-13",
+      "selfcriticism-19",
+      "rel-003"
+    ]
   },
   {
     "id": "regret-13",
@@ -1297,7 +2231,35 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "과거 미련",
+      "그때 그랬더라면",
+      "되돌리고 싶다",
+      "생각 과열",
+      "인생 망함",
+      "후회"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“그때는 그게 최선이었다” 거울을 보며 내 눈을 보고 "
+    ],
+    "relatedCards": [
+      "zeropoint-30",
+      "perf-005",
+      "overthinking-12"
+    ]
   },
   {
     "id": "control-14",
@@ -1335,7 +2297,34 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제10장 · 통제의 착각과 불확실성의 수용",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "내가 다 해야",
+      "독박",
+      "불신",
+      "완벽주의",
+      "완벽주의와 통제",
+      "책임감",
+      "통제",
+      "통제 강박"
+    ],
+    "triggerTags": [
+      "통제"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "오늘 작은 업무 1가지를 동료나 가족에게 온전히 위임하"
+    ],
+    "relatedCards": [
+      "perfectionism-10",
+      "procrastination-11",
+      "career-013"
+    ]
   },
   {
     "id": "burnout-15",
@@ -1382,7 +2371,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제2장 · 완전한 이완과 무조건적 허용",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "기력 없음",
+      "머릿속 일",
+      "방전",
+      "번아웃",
+      "쉬는데",
+      "쉬는데도 불안해요",
+      "쉬어도 피곤",
+      "에너지와 번아웃",
+      "왜 쉬면서도 죄책감이 들까요",
+      "일생각"
+    ],
+    "triggerTags": [
+      "번아웃"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "스마트폰을 다른 방에 두고 10분간 눈을 감고 배의 오"
+    ],
+    "relatedCards": [
+      "restguilt-16",
+      "achievement-17",
+      "career-001"
+    ]
   },
   {
     "id": "restguilt-16",
@@ -1424,7 +2442,38 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제4장 · 휴식과 뇌의 회복 탄력성",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "낙오자",
+      "불안",
+      "생산성 강박",
+      "쉬는데도 불안해요",
+      "쉬면 불안",
+      "아무것도 안 함",
+      "에너지와 번아웃",
+      "일생각",
+      "조급함",
+      "주말 불안"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "달력에 “공식 휴식 시간”이라고 쓰고 그 30분간은 아"
+    ],
+    "relatedCards": [
+      "perf-015",
+      "burnout-15",
+      "emo-006"
+    ]
   },
   {
     "id": "achievement-17",
@@ -1462,7 +2511,33 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제11장 · 골대 이동 증후군과 도파민의 함정",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "공허함",
+      "끝없는 욕심",
+      "목표 달성",
+      "불만족",
+      "성취중독",
+      "에너지와 번아웃",
+      "허무해요"
+    ],
+    "triggerTags": [
+      "성취중독"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "오늘 달성한 작은 결과 1가지에 대해 나 자신에게 “참"
+    ],
+    "relatedCards": [
+      "burnout-15",
+      "restguilt-16",
+      "rel-001"
+    ]
   },
   {
     "id": "comparison-18",
@@ -1500,7 +2575,35 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "SNS 우울증",
+      "감정 민감성",
+      "박탈감",
+      "부러워요",
+      "비교",
+      "열등감",
+      "자격지심"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "SNS 앱을 24시간 동안 숨김 폴더로 이동시키고 내 "
+    ],
+    "relatedCards": [
+      "career-010",
+      "perf-009",
+      "perf-010"
+    ]
   },
   {
     "id": "selfcriticism-19",
@@ -1539,7 +2642,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "생각 과열",
+      "스스로 채찍질",
+      "실수",
+      "엄격함",
+      "욕심",
+      "자기비난",
+      "자존감",
+      "자책"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "실수했을 때 가슴에 손을 얹고 “괜찮아, 그럴 수 있어"
+    ],
+    "relatedCards": [
+      "dec-010",
+      "emo-006",
+      "emo-012"
+    ]
   },
   {
     "id": "repression-20",
@@ -1577,7 +2709,36 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "갈등 회피",
+      "감정 민감성",
+      "감정 억압",
+      "감정억압",
+      "답답해요",
+      "속병",
+      "참기만 해요",
+      "화병"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "화가 날 때 화장실로 가서 찬물로 손을 씻으며 속으로 "
+    ],
+    "relatedCards": [
+      "anger-21",
+      "rel-010",
+      "rel-011"
+    ]
   },
   {
     "id": "anger-21",
@@ -1619,7 +2780,38 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "감정 민감성",
+      "분노",
+      "분노조절",
+      "분노폭발",
+      "사소한 일에 화",
+      "욱하고 후회",
+      "욱함",
+      "욱해요",
+      "짜증",
+      "폭발"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "목소리가 커지려 할 때 “잠시 5분만 바람 쐬고 다시 "
+    ],
+    "relatedCards": [
+      "repression-20",
+      "rel-011",
+      "emo-006"
+    ]
   },
   {
     "id": "attachment-breakup-22",
@@ -1659,7 +2851,39 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "다시 연락한다고 해서 근본적인 문제가 해결될 거라는 증거가 있나요?",
     "bodyQuestion": "가슴이 답답하고 목구멍이 메여오나요?",
     "relatedChapter": "5장. 집착과 무의식적 결핍 회로",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "관계",
+      "미련",
+      "심리",
+      "연락",
+      "이별",
+      "이별흔들림",
+      "재회",
+      "전남친",
+      "전여친",
+      "헤어짐"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "연락이 왔을 때 즉시 열어보지 않고 최소 30분 뒤에 "
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-006",
+      "rel-015"
+    ]
   },
   {
     "id": "identity-23",
@@ -1697,7 +2921,33 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "낙인",
+      "변화 불가능",
+      "성격",
+      "소심해요",
+      "원래 이래요",
+      "정체성",
+      "정체성과 관찰"
+    ],
+    "triggerTags": [
+      "정체성"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“나는 소심한 사람이다” 대신 “내게 지금 소심한 반응"
+    ],
+    "relatedCards": [
+      "observationtrap-28",
+      "identification-29",
+      "zeropoint-30"
+    ]
   },
   {
     "id": "money-anxiety-24",
@@ -1742,7 +2992,39 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 일어나지 않은 1년 뒤, 3년 뒤의 경제 상황을 지금 확정지을 수 있나요?",
     "bodyQuestion": "명치 끝이 옥죄어오거나 호흡이 얕아지나요?",
     "relatedChapter": "3장. 결핍과 통제 코드",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "가난",
+      "경제",
+      "경제적 불안",
+      "돈",
+      "돈 때문에 불안해요",
+      "돈불안",
+      "돈이 없어서",
+      "돈이 없어서 불안해요",
+      "미래불안",
+      "불안"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘나는 결국 파멸할 것이다, 감당 못한다’라는 옛날 이야기를 덧붙이고 있"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "오늘 하루는 가계부 앱이나 계좌 잔고 조회를 딱 멈춘다"
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-010",
+      "money-017"
+    ]
   },
   {
     "id": "relapse-25",
@@ -1780,7 +3062,33 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제8장 · 나선형 성장 모델과 재발 방지",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "다 망했어",
+      "도루묵",
+      "무너짐",
+      "변화와 시도",
+      "재발",
+      "좌절",
+      "포기하고 싶다"
+    ],
+    "triggerTags": [
+      "재발"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "“경로를 재탐색합니다” 소리 내어 말하고 원래 하려던 "
+    ],
+    "relatedCards": [
+      "dec-018",
+      "code-018",
+      "rel-001"
+    ]
   },
   {
     "id": "impostor-success-26",
@@ -1820,7 +3128,38 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "내가 실수하더라도 그것이 내 존재 전체의 파멸을 의미하나요?",
     "bodyQuestion": "어깨가 움츠러들고 손발이 차가워지나요?",
     "relatedChapter": "4장. 회피 신경망을 재설계하는 10% 행동",
-    "featured": true
+    "featured": true,
+    "routeTags": [
+      "가면증후군",
+      "기회",
+      "도망",
+      "도전",
+      "발표",
+      "성공",
+      "성공공포",
+      "성취",
+      "승진",
+      "실패두려움"
+    ],
+    "triggerTags": [
+      "상사",
+      "직장회의",
+      "평가"
+    ],
+    "storyTags": [
+      "‘나는 가짜야, 곧 들통날 거야’라는 이야기를 반복하고 있지 않나요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "제안받은 일의 첫 줄이나 개요만 10분 동안 가볍게 끄"
+    ],
+    "relatedCards": [
+      "career-004",
+      "career-007",
+      "emo-004"
+    ]
   },
   {
     "id": "helpseeking-27",
@@ -1858,7 +3197,34 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "거절 공포",
+      "경계와 관계",
+      "고립",
+      "도움 요청 못해요",
+      "도움요청",
+      "부탁",
+      "외로움",
+      "혼자 다 해요"
+    ],
+    "triggerTags": [
+      "도움요청"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "지인에게 “혹시 시간 될 때 이 링크 한 번만 봐줄 수"
+    ],
+    "relatedCards": [
+      "peoplepleaser-02",
+      "boundary-03",
+      "attachment-07"
+    ]
   },
   {
     "id": "observationtrap-28",
@@ -1895,7 +3261,33 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "관찰함정",
+      "마음공부 부작용",
+      "분석 강박",
+      "생각 중독",
+      "정체성과 관찰",
+      "지식 집착",
+      "지적 방어"
+    ],
+    "triggerTags": [
+      "관찰함정"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "모든 심리 분석을 중단하고 밖으로 나가 동네 한 바퀴 "
+    ],
+    "relatedCards": [
+      "identity-23",
+      "identification-29",
+      "zeropoint-30"
+    ]
   },
   {
     "id": "identification-29",
@@ -1933,7 +3325,33 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "구름과 하늘",
+      "나는 원래 이래",
+      "동일시",
+      "본질",
+      "우울",
+      "자괴감",
+      "정체성과 관찰"
+    ],
+    "triggerTags": [
+      "동일시"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "가슴에 손을 대고 “이건 날씨일 뿐, 내 본질은 하늘이"
+    ],
+    "relatedCards": [
+      "identity-23",
+      "observationtrap-28",
+      "zeropoint-30"
+    ]
   },
   {
     "id": "zeropoint-30",
@@ -1972,7 +3390,37 @@ window.MIND_CARDS_DATA = [
     "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
     "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
     "relatedChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
-    "featured": false
+    "featured": false,
+    "routeTags": [
+      "마음의 평화",
+      "명상",
+      "선택의 자유",
+      "정체성과 관찰",
+      "제로포인트",
+      "중심",
+      "평온",
+      "호흡"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "하던 일을 멈추고 눈을 감은 채 10초간 완전히 정적 "
+    ],
+    "relatedCards": [
+      "regret-13",
+      "perf-005",
+      "code-003"
+    ]
   },
   {
     "id": "money-001",
@@ -2011,7 +3459,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "계좌를 계속 봐요",
+      "계좌조회",
+      "계좌확인",
+      "돈",
+      "돈불안",
+      "돈확인",
+      "불안",
+      "빚",
+      "사업실패",
+      "잔고"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘지금 통장을 안 보면 큰일이 날 것 같다’는 통제 강박인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 추가 확인 대신, 다음 잔고 확인 시간을 내일 "
+    ],
+    "relatedCards": [
+      "money-017",
+      "money-002",
+      "money-004"
+    ]
   },
   {
     "id": "money-002",
@@ -2050,7 +3529,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 100
+    "popularity": 100,
+    "routeTags": [
+      "도박",
+      "돈",
+      "돈을 잃음",
+      "물타기",
+      "본전",
+      "빚",
+      "사업실패",
+      "손실",
+      "손실만회",
+      "원금회복"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘오늘 안에 복구하지 못하면 영원히 패배자다’라는 파국적 스토리인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“추가 투자나 무리한 결정을 내리기 전 24시간 동안 "
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-004",
+      "money-005"
+    ]
   },
   {
     "id": "money-003",
@@ -2090,7 +3600,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 99
+    "popularity": 99,
+    "routeTags": [
+      "돈",
+      "망함",
+      "빚",
+      "사업 망했어요",
+      "사업망함",
+      "사업실패",
+      "스타트업",
+      "실패자",
+      "자괴감",
+      "자영업"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "‘사업을 접었으니 나는 쓸모없는 사람이다’라는 정체성 낙인인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“사업에서 배운 점 3가지를 '실패 이유'가 아닌 '다"
+    ],
+    "relatedCards": [
+      "money-009",
+      "money-020",
+      "money-014"
+    ]
   },
   {
     "id": "money-004",
@@ -2128,7 +3669,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 91
+    "popularity": 91,
+    "routeTags": [
+      "돈",
+      "매출",
+      "매출감소",
+      "매출이 떨어졌어요",
+      "매출확인",
+      "불경기",
+      "빚",
+      "사업실패",
+      "장사",
+      "장사안됨"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘오늘 안 팔렸으니 우리 제품은 끝났다’는 과잉일반화인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“매출 새로고침을 멈추고, 고객 1명에게 줄 서비스 품"
+    ],
+    "relatedCards": [
+      "money-014",
+      "money-001",
+      "money-002"
+    ]
   },
   {
     "id": "money-005",
@@ -2169,7 +3741,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 98
+    "popularity": 98,
+    "routeTags": [
+      "가격",
+      "가격을 못 올리겠어요",
+      "가격책정",
+      "견적",
+      "단가",
+      "돈",
+      "돈 받기 미안",
+      "돈 받을 때 미안해요",
+      "빚",
+      "사업실패"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘이 가격을 부르면 상대가 나를 사기꾼으로 볼 것이다’라는 두려움인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“견적을 보낼 때 먼저 깎아주지 않고, 원래 정한 금액"
+    ],
+    "relatedCards": [
+      "money-006",
+      "money-001",
+      "money-002"
+    ]
   },
   {
     "id": "money-006",
@@ -2209,7 +3812,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 93
+    "popularity": 93,
+    "routeTags": [
+      "가격 올리기",
+      "가격을 못 올리겠어요",
+      "대금청구",
+      "돈",
+      "돈 받을 때 미안해요",
+      "돈받기",
+      "돈얘기",
+      "미안함",
+      "보수청구",
+      "빚"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘돈을 청구하면 상대가 나를 돈만 밝히는 사람으로 볼 것’이라는 착각인가"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“미안하다는 사족을 빼고, '정산 내역 안내드립니다' "
+    ],
+    "relatedCards": [
+      "money-005",
+      "money-001",
+      "money-002"
+    ]
   },
   {
     "id": "money-007",
@@ -2247,7 +3881,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 94
+    "popularity": 94,
+    "routeTags": [
+      "남과 비교",
+      "돈",
+      "돈비교",
+      "뒤처짐",
+      "벼락거지",
+      "비교불안",
+      "빚",
+      "사업실패",
+      "상대적박탈감",
+      "수입비교"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "돈"
+    ],
+    "storyTags": [
+      "‘남들이 앞서갈 때 나는 영원히 낙오될 것이다’라는 비교 스토리인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“남의 성과를 보는 SNS 앱을 닫고, 내 지출 장부 "
+    ],
+    "relatedCards": [
+      "money-020",
+      "money-001",
+      "money-002"
+    ]
   },
   {
     "id": "money-008",
@@ -2287,7 +3953,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 97
+    "popularity": 97,
+    "routeTags": [
+      "개인회생",
+      "대출",
+      "돈",
+      "부채수치심",
+      "빚",
+      "빚 때문에 무서워요",
+      "빚수치심",
+      "빚이 너무 많아요",
+      "사업실패",
+      "신용회복"
+    ],
+    "triggerTags": [
+      "부채수치심"
+    ],
+    "storyTags": [
+      "‘빚이 있으니 나는 인생의 패배자다’라는 자기단죄인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“감정을 뺀 채 채무 액수와 이자율만 노트 한 페이지에"
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-002",
+      "money-003"
+    ]
   },
   {
     "id": "money-009",
@@ -2325,7 +4020,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 89
+    "popularity": 89,
+    "routeTags": [
+      "가면",
+      "괜찮은척",
+      "돈",
+      "망해감",
+      "빚",
+      "사업실패",
+      "사업위기",
+      "실패은폐",
+      "위기숨김",
+      "자존심"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "돈"
+    ],
+    "storyTags": [
+      "‘힘들다고 말하면 사람들이 나를 동정하거나 무시할 것’이라는 공포인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“가장 믿을 수 있는 1명에게 '사업 상황이 녹록지 않"
+    ],
+    "relatedCards": [
+      "money-003",
+      "money-020",
+      "money-015"
+    ]
   },
   {
     "id": "money-010",
@@ -2362,7 +4089,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 93
+    "popularity": 93,
+    "routeTags": [
+      "돈",
+      "빚",
+      "사업실패",
+      "사후검색",
+      "종목토론",
+      "주식검색",
+      "코인불안",
+      "토론방",
+      "투자불안",
+      "투자하고 계속 검색해요"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘누군가 오른다고 확답을 줘야만 밤에 잠을 잘 수 있다’는 의존 스토리인"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“투자 관련 커뮤니티와 유튜브 탭을 닫고, 미리 정한 "
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-002",
+      "money-004"
+    ]
   },
   {
     "id": "money-011",
@@ -2400,7 +4159,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "FOMO",
+      "그때 살걸",
+      "기회비용",
+      "기회후회",
+      "놓친기회",
+      "돈",
+      "비트코인살걸",
+      "빚",
+      "사업실패",
+      "집살걸"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘그 기회를 놓쳤으니 내 인생의 대박은 끝났다’는 과잉 비관인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“‘그때는 그게 최선이었다’고 한마디 해주고, 오늘 가"
+    ],
+    "relatedCards": [
+      "money-015",
+      "money-019",
+      "money-010"
+    ]
   },
   {
     "id": "money-012",
@@ -2438,7 +4228,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 90
+    "popularity": 90,
+    "routeTags": [
+      "가계부",
+      "구두쇠",
+      "돈",
+      "돈쓰기무서움",
+      "돈아까움",
+      "빚",
+      "사업실패",
+      "영수증",
+      "절약강박",
+      "지출통제"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘단 1원이라도 새어나가면 결국 파산할 것이다’라는 공포 회로인가요?"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 나를 위해 5천 원 이하의 작은 간식이나 음료를"
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-002",
+      "money-004"
+    ]
   },
   {
     "id": "money-013",
@@ -2476,7 +4297,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 95
+    "popularity": 95,
+    "routeTags": [
+      "돈",
+      "돈없음",
+      "망할것같아요",
+      "빚",
+      "사업실패",
+      "신용불량",
+      "인생망함",
+      "카드값",
+      "통장바닥",
+      "파산"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "‘이번 달을 못 넘기면 내 인생은 길거리에서 끝난다’는 파국화인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“이번 주 안에 막아야 할 지출 1순위를 적고, 기일 "
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-002",
+      "money-004"
+    ]
   },
   {
     "id": "money-014",
@@ -2514,7 +4367,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 99
+    "popularity": 99,
+    "routeTags": [
+      "능력부족",
+      "돈",
+      "돈못벌면무가치",
+      "매출감소",
+      "매출이 떨어졌어요",
+      "빚",
+      "사업실패",
+      "자괴감",
+      "자기가치",
+      "자기값"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘돈을 못 벌었으니 나는 무능하고 가치 없는 인간이다’라는 낙인인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“내 제품이나 서비스의 핵심 혜택을 알기 쉽게 1문장으"
+    ],
+    "relatedCards": [
+      "money-004",
+      "money-001",
+      "money-002"
+    ]
   },
   {
     "id": "money-015",
@@ -2552,7 +4437,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 90
+    "popularity": 90,
+    "routeTags": [
+      "고립",
+      "도움거부",
+      "도움요청",
+      "돈",
+      "부탁못함",
+      "빚",
+      "사업실패",
+      "사업조언",
+      "자존심",
+      "조언구하기"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘도움을 요청하면 무능하다고 손가락질받을 것이다’라는 공포인가요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“신뢰할 수 있는 선배나 전문가 1명에게 질문 1개를 "
+    ],
+    "relatedCards": [
+      "money-011",
+      "money-019",
+      "money-009"
+    ]
   },
   {
     "id": "money-016",
@@ -2590,7 +4506,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 91
+    "popularity": 91,
+    "routeTags": [
+      "가족경제",
+      "가족빚",
+      "가족책임",
+      "돈",
+      "부모님빚",
+      "부모님용돈",
+      "빚",
+      "사업실패",
+      "생활비부담",
+      "장남"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계"
+    ],
+    "storyTags": [
+      "‘내가 다 해결해주지 않으면 가족이 풍비박산 날 것이다’라는 과잉책임인가"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“가족에게 지원할 수 있는 현실적인 금액의 상한선을 스"
+    ],
+    "relatedCards": [
+      "money-018",
+      "money-001",
+      "money-002"
+    ]
   },
   {
     "id": "money-017",
@@ -2628,7 +4575,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 93
+    "popularity": 93,
+    "routeTags": [
+      "과로",
+      "돈",
+      "번아웃",
+      "불안",
+      "빚",
+      "사업실패",
+      "쉬는게죄",
+      "쉬면불안",
+      "일중독",
+      "주말출근"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘쉬는 1분 동안에도 경쟁자들은 앞서가고 있다’는 불안 강박인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 30분 동안은 경제적 성과를 증명하지 않고 온전"
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-002",
+      "money-004"
+    ]
   },
   {
     "id": "money-018",
@@ -2666,7 +4644,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "결핍",
+      "끝없는갈증",
+      "돈",
+      "돈욕심",
+      "만족이안됨",
+      "목표갈증",
+      "목표강박",
+      "불안",
+      "빚",
+      "사업실패"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘100억은 있어야 절대 안전하다’는 끝없는 공포 스토리인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 내 삶을 지탱해준 의식주 중 '충분한 것' 3가"
+    ],
+    "relatedCards": [
+      "money-016",
+      "money-001",
+      "money-014"
+    ]
   },
   {
     "id": "money-019",
@@ -2703,7 +4713,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 94
+    "popularity": 94,
+    "routeTags": [
+      "결정못함",
+      "결정장애",
+      "돈",
+      "미루기",
+      "빚",
+      "사업실패",
+      "손실회피",
+      "손해볼까봐",
+      "손해회피",
+      "우유부단"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘조금이라도 손해 보면 절대 회복할 수 없다’는 0 아니면 100의 사고"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“결정에 필요한 FACT 3가지만 적고, 오늘 안에 작"
+    ],
+    "relatedCards": [
+      "money-011",
+      "money-015",
+      "money-010"
+    ]
   },
   {
     "id": "money-020",
@@ -2740,7 +4781,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 98
+    "popularity": 98,
+    "routeTags": [
+      "다시 사업하기 무서워요",
+      "다시시작",
+      "돈",
+      "또망할까봐",
+      "빚",
+      "사업실패",
+      "사업트라우마",
+      "실패두려움",
+      "재도전",
+      "재도전공포"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "타인비교"
+    ],
+    "storyTags": [
+      "‘나는 또다시 실패해서 완전히 파멸할 것이다’라는 트라우마의 재연인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“돈을 크게 쓰지 않고 내 아이디어를 테스트할 수 있는"
+    ],
+    "relatedCards": [
+      "money-003",
+      "money-009",
+      "money-007"
+    ]
   },
   {
     "id": "career-001",
@@ -2778,7 +4851,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 98
+    "popularity": 98,
+    "routeTags": [
+      "방전",
+      "번아웃",
+      "성과",
+      "월요병",
+      "이직퇴사",
+      "지침",
+      "출근",
+      "출근길",
+      "출근스트레스",
+      "출근전방전"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘오늘 하루도 감당하기 힘들 것이다’라는 머릿속 사전 시뮬레이션인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 오전 첫 번째 업무 하나만 정하고, 출근길에는 "
+    ],
+    "relatedCards": [
+      "career-008",
+      "career-009",
+      "career-013"
+    ]
   },
   {
     "id": "career-002",
@@ -2815,7 +4919,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 97
+    "popularity": 97,
+    "routeTags": [
+      "그만두고싶다",
+      "번아웃",
+      "사표",
+      "성과",
+      "이직",
+      "이직퇴사",
+      "퇴사",
+      "퇴사충동",
+      "퇴사하고 싶어요",
+      "회사탈출"
+    ],
+    "triggerTags": [
+      "퇴사충동"
+    ],
+    "storyTags": [
+      "‘여기서 벗어나지 않으면 내 인생이 무너진다’는 즉각적 탈출 충동인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“퇴사 결정을 오늘 감정으로 확정하지 않고, 결정에 필"
+    ],
+    "relatedCards": [
+      "career-019",
+      "career-001",
+      "career-003"
+    ]
   },
   {
     "id": "career-003",
@@ -2852,7 +4985,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "눈치",
+      "번아웃",
+      "상사",
+      "상사 눈치를 너무 봐요",
+      "상사눈치",
+      "성과",
+      "이직퇴사",
+      "질책",
+      "팀장",
+      "표정"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "상사"
+    ],
+    "storyTags": [
+      "‘저 표정은 나에 대한 실망이다’라는 마음읽기 해석인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“평가가 필요한 문제라면 혼자 추측하지 않고 '이 부분"
+    ],
+    "relatedCards": [
+      "career-006",
+      "career-004",
+      "career-007"
+    ]
   },
   {
     "id": "career-004",
@@ -2889,7 +5054,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 89
+    "popularity": 89,
+    "routeTags": [
+      "말싸움",
+      "반박",
+      "방어기제",
+      "번아웃",
+      "성과",
+      "의견충돌",
+      "이직퇴사",
+      "직장갈등",
+      "회의",
+      "회의방어"
+    ],
+    "triggerTags": [
+      "상사",
+      "직장회의",
+      "평가"
+    ],
+    "storyTags": [
+      "‘내 의견을 깠으니 나를 무시하는 것이다’라는 정체성 위협 해석인가요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "“반박하기 전에 '그렇게 보시는 구체적인 이유를 조금 "
+    ],
+    "relatedCards": [
+      "career-007",
+      "career-003",
+      "career-017"
+    ]
   },
   {
     "id": "career-005",
@@ -2926,7 +5122,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 90
+    "popularity": 90,
+    "routeTags": [
+      "과잉설명",
+      "무능",
+      "번아웃",
+      "변명",
+      "보고",
+      "성과",
+      "이직퇴사",
+      "인정욕구",
+      "증명",
+      "증명모드"
+    ],
+    "triggerTags": [
+      "증명모드"
+    ],
+    "storyTags": [
+      "‘모른다고 답하면 내 평가가 깎일 것이다’라는 두려움인가요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“변명이나 미사여구를 붙이지 않고 질문에 필요한 사실만"
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-002",
+      "career-003"
+    ]
   },
   {
     "id": "career-006",
@@ -2963,7 +5188,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 96
+    "popularity": 96,
+    "routeTags": [
+      "번아웃",
+      "성과",
+      "실수",
+      "실수불안",
+      "실수재판",
+      "실수할까 무서워요",
+      "오류",
+      "이직퇴사",
+      "인사고과",
+      "자책"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "‘이번 실수로 내 모든 신뢰가 사라졌다’는 파국화 상상인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“자책하는 대신 담당자에게 정중히 정정 메일을 보내거나"
+    ],
+    "relatedCards": [
+      "career-003",
+      "career-016",
+      "career-001"
+    ]
   },
   {
     "id": "career-007",
@@ -3000,7 +5256,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 91
+    "popularity": 91,
+    "routeTags": [
+      "검토",
+      "마감",
+      "번아웃",
+      "보고서",
+      "성과",
+      "완벽제출",
+      "완벽주의",
+      "이직퇴사",
+      "제출",
+      "초안"
+    ],
+    "triggerTags": [
+      "상사",
+      "직장회의",
+      "평가",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘완벽하지 않으면 인정받지 못할 것이다’라는 무결점 강박인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“요청된 핵심 항목 3개가 들어갔는지 확인 후 10분 "
+    ],
+    "relatedCards": [
+      "career-004",
+      "career-003",
+      "career-008"
+    ]
   },
   {
     "id": "career-008",
@@ -3036,7 +5324,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 93
+    "popularity": 93,
+    "routeTags": [
+      "게으름",
+      "마감",
+      "마감직전",
+      "미루기",
+      "번아웃",
+      "벼락치기",
+      "성과",
+      "시작이안돼요",
+      "이직퇴사",
+      "일을 자꾸 미뤄요"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘충분한 영감이 떠오르거나 완벽히 준비되어야 시작할 수 있다’는 착각인가"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“타이머를 5분에 맞추고, 결과의 질을 생각하지 않고 "
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-009",
+      "career-013"
+    ]
   },
   {
     "id": "career-009",
@@ -3073,7 +5392,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 88
+    "popularity": 88,
+    "routeTags": [
+      "공허",
+      "만족이안돼요",
+      "목표달성",
+      "번아웃",
+      "성과",
+      "성과삭제",
+      "성취",
+      "이직퇴사",
+      "채찍질"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘쉬면 나태해지고 도태된다’는 무의식적 불안인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“새 업무를 계획하기 전, 이번 프로젝트에서 끝낸 구체"
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-008",
+      "career-013"
+    ]
   },
   {
     "id": "career-010",
@@ -3110,7 +5459,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 89
+    "popularity": 89,
+    "routeTags": [
+      "경쟁",
+      "동료",
+      "박탈감",
+      "번아웃",
+      "비교",
+      "비교성과",
+      "성과",
+      "승진",
+      "이직퇴사",
+      "인정"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과"
+    ],
+    "storyTags": [
+      "‘저 사람이 앞서갔으니 나는 뒤처졌다’는 제로섬 게임 상상인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“시기심을 자책하지 말고, '내가 진정으로 탐나는 역량"
+    ],
+    "relatedCards": [
+      "career-011",
+      "comparison-18",
+      "career-001"
+    ]
   },
   {
     "id": "career-011",
@@ -3146,7 +5526,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "가면증후군",
+      "기대부담",
+      "번아웃",
+      "불안",
+      "성과",
+      "이직퇴사",
+      "인정",
+      "칭찬",
+      "칭찬갱신",
+      "칭찬받아도 불안해요"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘다음번에 못하면 가짜임이 들통날 것이다’라는 가면 증후군 스토리인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 외부 피드백과 상관없이 내 양심과 원칙에 맞게 "
+    ],
+    "relatedCards": [
+      "career-010",
+      "career-007",
+      "career-012"
+    ]
   },
   {
     "id": "career-012",
@@ -3183,7 +5595,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 90
+    "popularity": 90,
+    "routeTags": [
+      "과로",
+      "과중업무",
+      "도움",
+      "도움요청",
+      "도움요청회피",
+      "번아웃",
+      "성과",
+      "야근",
+      "이직퇴사",
+      "협업"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "‘도와달라고 하면 나를 능력 없는 직원으로 볼 것이다’라는 지레짐작인가요"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“동료나 상사에게 'A 항목 데이터 확인 부분만 15분"
+    ],
+    "relatedCards": [
+      "career-007",
+      "career-011",
+      "career-013"
+    ]
   },
   {
     "id": "career-013",
@@ -3220,7 +5664,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 87
+    "popularity": 87,
+    "routeTags": [
+      "과로",
+      "내가해야돼",
+      "독점",
+      "마이크로매니징",
+      "번아웃",
+      "성과",
+      "위임",
+      "이직퇴사",
+      "책임감",
+      "통제"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘남에게 맡기면 엉망이 되어 결국 내가 두 번 일하게 될 것이다’라는 불"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 업무 중 하나를 동료에게 명확한 완료 기준과 함"
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-008",
+      "career-009"
+    ]
   },
   {
     "id": "career-014",
@@ -3257,7 +5732,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 97
+    "popularity": 97,
+    "routeTags": [
+      "번아웃",
+      "불면",
+      "성과",
+      "스위치오프",
+      "야간걱정",
+      "워라밸",
+      "이직퇴사",
+      "퇴근",
+      "퇴근해도 일이 생각나요",
+      "퇴근후"
+    ],
+    "triggerTags": [
+      "퇴근후업무"
+    ],
+    "storyTags": [
+      "‘지금 계속 걱정하고 있어야 내일 실수를 안 한다’는 통제 착각인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“내일 출근 후 볼 메모 3줄을 적어 책상에 두고, 업"
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-002",
+      "career-003"
+    ]
   },
   {
     "id": "career-015",
@@ -3294,7 +5798,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 91
+    "popularity": 91,
+    "routeTags": [
+      "멍때리기",
+      "번아웃",
+      "생산성강박",
+      "성과",
+      "쉬는게불안해요",
+      "이직퇴사",
+      "자기계발",
+      "죄책감",
+      "주말",
+      "휴식"
+    ],
+    "triggerTags": [
+      "휴식죄책감"
+    ],
+    "storyTags": [
+      "‘쉬는 나는 가치가 없고 뒤처질 것이다’라는 자기비하인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“어떠한 배움이나 성과 평가도 없는 순수한 휴식(산책,"
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-002",
+      "career-003"
+    ]
   },
   {
     "id": "career-016",
@@ -3331,7 +5864,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 99
+    "popularity": 99,
+    "routeTags": [
+      "무기력",
+      "번아웃",
+      "번아웃인 것 같아요",
+      "번아웃자책",
+      "성과",
+      "예전같지않다",
+      "의지박약",
+      "이직퇴사",
+      "자책",
+      "피로"
+    ],
+    "triggerTags": [
+      "번아웃자책"
+    ],
+    "storyTags": [
+      "‘예전의 기량을 잃었으니 나는 이제 끝났다’는 가혹한 자기 낙인인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“자책을 멈추고, 현재 나를 짓누르는 업무량과 환경 요"
+    ],
+    "relatedCards": [
+      "career-006",
+      "career-012",
+      "career-001"
+    ]
   },
   {
     "id": "career-017",
@@ -3369,7 +5931,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 93
+    "popularity": 93,
+    "routeTags": [
+      "가슴철렁",
+      "공포",
+      "긴장",
+      "메신저",
+      "메신저긴장",
+      "번아웃",
+      "성과",
+      "슬랙",
+      "알림",
+      "이직퇴사"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "상사"
+    ],
+    "storyTags": [
+      "‘저 알림은 나에 대한 비난이나 나쁜 소식일 것이다’라는 예견 불안인가요"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“메시지를 열기 전 길게 숨을 내쉬고, 감정 해석 없이"
+    ],
+    "relatedCards": [
+      "career-003",
+      "career-004",
+      "career-007"
+    ]
   },
   {
     "id": "career-018",
@@ -3406,7 +6000,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 95
+    "popularity": 95,
+    "routeTags": [
+      "거절",
+      "과잉업무",
+      "바로YES",
+      "번아웃",
+      "부탁",
+      "성과",
+      "수락",
+      "이직퇴사",
+      "착한아이",
+      "호구"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘거절하면 관계가 틀어지고 무책임한 사람으로 찍힐 것이다’라는 두려움인가"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“부탁을 받으면 즉시 대답하지 않고 '제 기존 일정 확"
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-008",
+      "career-009"
+    ]
   },
   {
     "id": "career-019",
@@ -3443,7 +6068,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "번아웃",
+      "성과",
+      "이직",
+      "이직퇴사",
+      "이직할지 모르겠어요",
+      "이직확신",
+      "진로",
+      "진로상담",
+      "커리어",
+      "퇴사고민"
+    ],
+    "triggerTags": [
+      "이직확신"
+    ],
+    "storyTags": [
+      "‘옮겼다가 거기도 망하면 내 인생은 끝장이다’라는 파국화 불안인가요?"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“이직 결정 대신, 관심 분야의 현직자 인터뷰나 채용공"
+    ],
+    "relatedCards": [
+      "career-002",
+      "career-001",
+      "career-003"
+    ]
   },
   {
     "id": "career-020",
@@ -3480,7 +6134,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 94
+    "popularity": 94,
+    "routeTags": [
+      "다시시작",
+      "도전",
+      "두려움",
+      "번아웃",
+      "번아웃극복",
+      "번아웃재발",
+      "성과",
+      "열정",
+      "이직퇴사",
+      "회복"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘열심히 하면 무조건 다시 무너질 것이다’라는 비관적 운명론인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“예전 방식의 무리한 질주 대신, 하루 30분 정시 퇴"
+    ],
+    "relatedCards": [
+      "career-001",
+      "career-008",
+      "career-009"
+    ]
   },
   {
     "id": "perf-001",
@@ -3518,7 +6203,36 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "고치기",
+      "과잉수정",
+      "끝없는수정",
+      "비교",
+      "수정",
+      "완벽",
+      "완벽주의",
+      "완벽하게 해야 마음이 놓여요",
+      "인정욕구",
+      "퇴고"
+    ],
+    "triggerTags": [
+      "끝없는수정"
+    ],
+    "storyTags": [
+      "‘더 고치지 않으면 부족한 사람으로 보일 것이다’라는 불안 스토리인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“수정 종료 기준을 먼저 정하고 그 기준에서 멈춘다"
+    ],
+    "relatedCards": [
+      "perf-002",
+      "perf-003",
+      "perf-004"
+    ]
   },
   {
     "id": "perf-002",
@@ -3556,7 +6270,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "공포",
+      "마감",
+      "버튼",
+      "비교",
+      "완벽주의",
+      "인정욕구",
+      "전송",
+      "제출",
+      "제출불안",
+      "제출을 못하겠어요"
+    ],
+    "triggerTags": [
+      "제출직전"
+    ],
+    "storyTags": [
+      "‘제출하는 순간 내 밑천이 드러나 비난받을 것이다’라는 상상인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“제출 가능한 기준을 충족했다면 한 번 추가검토 후 제"
+    ],
+    "relatedCards": [
+      "perf-016",
+      "perf-001",
+      "perf-003"
+    ]
   },
   {
     "id": "perf-003",
@@ -3593,7 +6336,37 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "100점",
+      "100점아니면실패",
+      "부족함",
+      "비교",
+      "실패",
+      "완벽주의",
+      "인정욕구",
+      "자책",
+      "흑백논리"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "‘완벽하지 못했으니 이번 일은 다 망쳤다’는 전부 아니면 전무의 스토리인"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“개선할 점 1개와 이미 잘된 점 2개를 분리해서 기록"
+    ],
+    "relatedCards": [
+      "perf-013",
+      "perf-004",
+      "perf-018"
+    ]
   },
   {
     "id": "perf-004",
@@ -3630,7 +6403,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "비교",
+      "실수",
+      "실수하면 제가 한심해요",
+      "실수확대",
+      "완벽주의",
+      "인정욕구",
+      "자괴감",
+      "자기비난",
+      "자책",
+      "한심"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "‘나는 왜 항상 이 모양일까’라는 과잉 일반화 판결인가요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“사과 / 수정 / 재시도 중 하나를 바로 실행한다"
+    ],
+    "relatedCards": [
+      "perf-018",
+      "perf-003",
+      "perf-013"
+    ]
   },
   {
     "id": "perf-005",
@@ -3667,7 +6472,39 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 97,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "불안",
+      "비교",
+      "완벽주의",
+      "외부평가",
+      "인정받고 싶어요",
+      "인정욕구",
+      "칭찬",
+      "칭찬받아도 불안해요",
+      "칭찬충전"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘남들의 찬사가 끊기면 나는 가치 없는 사람이 된다’는 결핍 공포인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 내가 직접 확인 가능한 기준 하나를 정한다"
+    ],
+    "relatedCards": [
+      "perf-014",
+      "perf-007",
+      "perf-019"
+    ]
   },
   {
     "id": "perf-006",
@@ -3704,7 +6541,37 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 90,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "댓글",
+      "반응",
+      "반응확인",
+      "비교",
+      "시선",
+      "완벽주의",
+      "인정욕구",
+      "평가집착",
+      "피드백"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "‘열광적인 반응이 없으면 내 노력은 실패한 것이다’라는 관객 의존 스토리"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“타인의 반응을 보기 전에 내 기준으로 결과를 한 줄 "
+    ],
+    "relatedCards": [
+      "perf-015",
+      "perf-005",
+      "perf-009"
+    ]
   },
   {
     "id": "perf-007",
@@ -3741,7 +6608,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 89,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "낙오",
+      "불합격",
+      "비교",
+      "선택",
+      "선택받아야괜찮은",
+      "실격",
+      "완벽주의",
+      "인정욕구",
+      "자괴감",
+      "탈락"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘선택받지 못했으니 나는 평생 무대 뒤편에 남을 것이다’라는 낙인인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“다음에 수정할 요소 하나만 찾는다"
+    ],
+    "relatedCards": [
+      "perf-005",
+      "perf-014",
+      "perf-019"
+    ]
   },
   {
     "id": "perf-008",
@@ -3778,7 +6676,37 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "compare"
+    "interactionType": "compare",
+    "routeTags": [
+      "남과 비교하게 돼요",
+      "남들보다 뒤처진 것 같아요",
+      "뒤처짐",
+      "보이지않는순위표",
+      "비교",
+      "순위",
+      "완벽주의",
+      "인정욕구",
+      "초조"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성"
+    ],
+    "storyTags": [
+      "‘세상은 하나의 결승선을 향해 달리는 달리기 시합이다’라는 환상인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“부러운 요소를 하나만 골라 내 욕구의 언어로 바꾼다"
+    ],
+    "relatedCards": [
+      "perf-012",
+      "perf-015",
+      "perf-001"
+    ]
   },
   {
     "id": "perf-009",
@@ -3816,7 +6744,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 96,
-    "interactionType": "compare"
+    "interactionType": "compare",
+    "routeTags": [
+      "SNS",
+      "SNS 보면 우울해요",
+      "SNS비교",
+      "박탈감",
+      "비교",
+      "완벽주의",
+      "우울",
+      "인스타",
+      "인정욕구",
+      "하이라이트"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘나만 빼고 모두 행복하고 앞서가고 있다’는 왜곡된 착시인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“부러운 대상이 아니라 내가 원하는 요소를 한 단어로 "
+    ],
+    "relatedCards": [
+      "perf-010",
+      "perf-012",
+      "perf-005"
+    ]
   },
   {
     "id": "perf-010",
@@ -3854,7 +6814,38 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 97,
-    "interactionType": "compare"
+    "interactionType": "compare",
+    "routeTags": [
+      "불편",
+      "비교",
+      "시기심",
+      "열등감",
+      "완벽주의",
+      "인정욕구",
+      "질투",
+      "축하",
+      "친구",
+      "친구가 잘되면 질투나요"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과"
+    ],
+    "storyTags": [
+      "‘친구가 앞서갔으니 우리의 격차는 영원히 벌어질 것이다’라는 두려움인가요"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“‘나도 원하는 것은 ○○다’라고 적는다"
+    ],
+    "relatedCards": [
+      "perf-009",
+      "perf-012",
+      "perf-018"
+    ]
   },
   {
     "id": "perf-011",
@@ -3891,7 +6882,36 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 95,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "도착감",
+      "만족",
+      "목표",
+      "목표를 이뤄도 만족이 안 돼요",
+      "목표선이동",
+      "비교",
+      "성취",
+      "완벽주의",
+      "인정욕구",
+      "허무"
+    ],
+    "triggerTags": [
+      "목표선이동"
+    ],
+    "storyTags": [
+      "‘여기서 만족하면 도태되고 패배자가 된다’는 강박적 채찍질인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“다음 목표를 정하기 전에 이미 이룬 것 3개를 기록한"
+    ],
+    "relatedCards": [
+      "perf-001",
+      "perf-002",
+      "perf-003"
+    ]
   },
   {
     "id": "perf-012",
@@ -3929,7 +6949,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "compare"
+    "interactionType": "compare",
+    "routeTags": [
+      "돈비교",
+      "비교",
+      "수입",
+      "순위",
+      "연봉",
+      "연봉순위",
+      "완벽주의",
+      "월급",
+      "인정욕구",
+      "자괴감"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘저 사람보다 적게 버니 내 노력은 헛된 것이었다’는 숫자 등치화인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“내 삶에서 중요한 재정 기준을 내 언어로 한 줄 적는"
+    ],
+    "relatedCards": [
+      "perf-009",
+      "perf-010",
+      "perf-007"
+    ]
   },
   {
     "id": "perf-013",
@@ -3966,7 +7018,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 89,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "결점",
+      "기억삭제",
+      "부족함",
+      "비교",
+      "성과삭제",
+      "완벽주의",
+      "인정욕구",
+      "자책"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "‘단 하나의 흠결이 전체의 가치를 무효화한다’는 삭제 편향인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“수정할 것 1개, 유지할 것 2개를 기록한다"
+    ],
+    "relatedCards": [
+      "perf-003",
+      "perf-004",
+      "perf-018"
+    ]
   },
   {
     "id": "perf-014",
@@ -4004,7 +7085,37 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "과로",
+      "과잉노력",
+      "불안",
+      "비교",
+      "소진",
+      "야근",
+      "열심히",
+      "완벽주의",
+      "인정욕구"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘죽을힘을 다하지 않으면 게으르고 쓸모없는 인간이다’라는 가혹한 규칙인가"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 하나의 업무에서 추가 작업 1회를 생략한다"
+    ],
+    "relatedCards": [
+      "perf-005",
+      "perf-007",
+      "perf-019"
+    ]
   },
   {
     "id": "perf-015",
@@ -4041,7 +7152,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "compare"
+    "interactionType": "compare",
+    "routeTags": [
+      "경쟁",
+      "뒤처짐",
+      "불안",
+      "비교",
+      "쉬면 불안해요",
+      "쉬면뒤처짐",
+      "완벽주의",
+      "인정욕구",
+      "조급함",
+      "휴식"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "‘쉬는 순간 나는 뒤처지고 영원히 따라잡지 못한다’는 공포인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“정한 휴식시간 동안 비교할 정보를 보지 않는다"
+    ],
+    "relatedCards": [
+      "perf-006",
+      "perf-005",
+      "perf-008"
+    ]
   },
   {
     "id": "perf-016",
@@ -4078,7 +7220,36 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "공포",
+      "무능",
+      "비교",
+      "완벽주의",
+      "인정욕구",
+      "존재가치",
+      "특별",
+      "평균공포",
+      "평범",
+      "평범한 사람이 될까 무서워요"
+    ],
+    "triggerTags": [
+      "평균공포"
+    ],
+    "storyTags": [
+      "‘비범하지 못하면 살아갈 자격이 없다’는 가혹한 엘리트주의 스토리인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“성과와 상관없이 지키고 싶은 원칙 하나를 적는다"
+    ],
+    "relatedCards": [
+      "perf-002",
+      "perf-001",
+      "perf-003"
+    ]
   },
   {
     "id": "perf-017",
@@ -4115,7 +7286,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 90,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "두려움",
+      "미리걱정",
+      "불안",
+      "비교",
+      "실망",
+      "예측",
+      "완벽주의",
+      "인정욕구",
+      "평가",
+      "평가예측"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "‘사람들이 나를 보고 실망하여 비웃을 것이다’라는 예단인가요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“예상평가 대신 내가 확인할 수 있는 기준만 점검한다"
+    ],
+    "relatedCards": [
+      "perf-005",
+      "perf-014",
+      "perf-015"
+    ]
   },
   {
     "id": "perf-018",
@@ -4152,7 +7354,38 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "독하다",
+      "비교",
+      "완벽주의",
+      "이중잣대",
+      "인정욕구",
+      "자기검사",
+      "자기비난",
+      "자책",
+      "친구"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "타인비교"
+    ],
+    "storyTags": [
+      "‘나에게는 엄벌을 내려야만 나태해지지 않는다’는 가혹한 처벌 신념인가요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“‘왜 이 모양이야?’를 ‘다음엔 무엇을 수정하지?’로"
+    ],
+    "relatedCards": [
+      "perf-004",
+      "perf-003",
+      "perf-013"
+    ]
   },
   {
     "id": "perf-019",
@@ -4189,7 +7422,37 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "기준",
+      "기준결재권",
+      "끌려다님",
+      "비교",
+      "완벽주의",
+      "원칙",
+      "인정욕구",
+      "통제",
+      "피로"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘한번 정한 기준을 낮추는 것은 타협이자 패배다’라는 경직된 규칙인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“이번 일의 실제 완료조건을 3개로 한정한다"
+    ],
+    "relatedCards": [
+      "perf-020",
+      "perf-005",
+      "perf-007"
+    ]
   },
   {
     "id": "perf-020",
@@ -4226,7 +7489,37 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 96,
-    "interactionType": "standard"
+    "interactionType": "standard",
+    "routeTags": [
+      "MY STANDARD",
+      "기준",
+      "내기준",
+      "내기준찾기",
+      "비교",
+      "완벽주의",
+      "인정욕구",
+      "자존감",
+      "주체성"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "‘남들의 승인이 없으면 내 가치는 존재하지 않는다’는 의존성 스토리인가요"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 선택 하나를 MY STANDARD 3개로 평가한"
+    ],
+    "relatedCards": [
+      "perf-019",
+      "perf-005",
+      "perf-007"
+    ]
   },
   {
     "id": "fam-001",
@@ -4265,7 +7558,38 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 98,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족",
+      "가족독립",
+      "거절",
+      "네",
+      "부모",
+      "부모눈치",
+      "부모님 거절을 못하겠어요",
+      "부모앞자동YES",
+      "부모원망",
+      "순종"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계"
+    ],
+    "storyTags": [
+      "‘거절하면 불효자이고 가족의 평화를 깨는 주범이 된다’는 오래된 두려움인"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“‘일정 확인하고 말씀드릴게요"
+    ],
+    "relatedCards": [
+      "fam-002",
+      "fam-003",
+      "fam-004"
+    ]
   },
   {
     "id": "fam-002",
@@ -4303,7 +7627,39 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 97,
-    "familyInteraction": "love_and_boundary"
+    "familyInteraction": "love_and_boundary",
+    "routeTags": [
+      "가족독립",
+      "독립",
+      "미안함",
+      "부모님",
+      "부모원망",
+      "불효",
+      "죄책감",
+      "효도",
+      "효도 못하는 것 같아 죄책감 들어요",
+      "효도죄책감"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘부모님의 뜻과 다른 길을 가면 나는 배은망덕한 사람이다’라는 죄책감 낙"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“결정을 취소하기 전에 24시간 유지해본다"
+    ],
+    "relatedCards": [
+      "fam-005",
+      "fam-004",
+      "fam-006"
+    ]
   },
   {
     "id": "fam-003",
@@ -4340,7 +7696,37 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 91,
-    "familyInteraction": "responsibility_ledger"
+    "familyInteraction": "responsibility_ledger",
+    "routeTags": [
+      "가족독립",
+      "기분관리",
+      "눈치",
+      "부모님 때문에 힘들어요",
+      "부모실망관리",
+      "부모원망",
+      "서운함",
+      "실망",
+      "한숨"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계"
+    ],
+    "storyTags": [
+      "‘부모님이 서운해하시면 내 모든 선택은 틀린 것이다’라는 등치 스토리인가"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“설명은 한 번 하고 같은 결정을 반복 변호하지 않는다"
+    ],
+    "relatedCards": [
+      "fam-017",
+      "fam-001",
+      "fam-002"
+    ]
   },
   {
     "id": "fam-004",
@@ -4377,7 +7763,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 92,
-    "familyInteraction": "love_and_boundary"
+    "familyInteraction": "love_and_boundary",
+    "routeTags": [
+      "가족독립",
+      "배은망덕",
+      "부모원망",
+      "이기적",
+      "좋은자식",
+      "좋은자식모드",
+      "착한아이",
+      "효도",
+      "희생"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘내 뜻대로 살면 부모의 희생을 배신하는 이기주의자다’라는 가혹한 규칙인"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“내 선택의 이유를 한 문장으로 정리한다"
+    ],
+    "relatedCards": [
+      "fam-002",
+      "fam-014",
+      "fam-005"
+    ]
   },
   {
     "id": "fam-005",
@@ -4415,7 +7832,39 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 96,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족독립",
+      "간섭",
+      "결재권",
+      "독립",
+      "독립하고 싶은데 미안해요",
+      "독립허락",
+      "부모님",
+      "부모원망",
+      "성인",
+      "허락"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘부모님이 반대하는 결정은 실패할 저주에 걸린다’는 무의식적 미신인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“작은 결정 하나는 보고가 아니라 결정 후 공유한다"
+    ],
+    "relatedCards": [
+      "fam-002",
+      "fam-004",
+      "fam-006"
+    ]
   },
   {
     "id": "fam-006",
@@ -4453,7 +7902,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 95,
-    "familyInteraction": "love_and_boundary"
+    "familyInteraction": "love_and_boundary",
+    "routeTags": [
+      "가족독립",
+      "부모님이 너무 원망스러워요",
+      "부모원망",
+      "부모원망반복",
+      "분노",
+      "상처",
+      "용서강요",
+      "원망",
+      "트라우마",
+      "학대"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘부모가 진심으로 사과하지 않으면 내 인생은 영원히 구원받지 못한다’는 "
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“부모를 바꾸는 행동 대신 오늘 내 경계 하나를 정한다"
+    ],
+    "relatedCards": [
+      "fam-002",
+      "fam-004",
+      "fam-005"
+    ]
   },
   {
     "id": "fam-007",
@@ -4491,7 +7972,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 90,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족독립",
+      "논쟁",
+      "동의",
+      "부모원망",
+      "설득",
+      "설명",
+      "설명증명",
+      "엄마가 너무 간섭해요",
+      "이해",
+      "잔소리"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘부모님이 이해해주지 않는 선택은 불안해서 밀고 나갈 수 없다’는 의존인"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“핵심 이유를 한 번 설명하고 논쟁을 종료한다"
+    ],
+    "relatedCards": [
+      "fam-002",
+      "fam-004",
+      "fam-005"
+    ]
   },
   {
     "id": "fam-008",
@@ -4530,7 +8043,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 94,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족독립",
+      "가족모임",
+      "명절",
+      "명절 가기 싫어요",
+      "명절자동복종",
+      "부모원망",
+      "설날",
+      "시댁",
+      "처가",
+      "추석"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘하루라도 일찍 가거나 늦게 오면 가족의 정을 깨뜨리는 죄인이다’라는 관"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“방문 시간 또는 머무는 시간을 구체적으로 제안한다"
+    ],
+    "relatedCards": [
+      "fam-012",
+      "fam-002",
+      "fam-004"
+    ]
   },
   {
     "id": "fam-009",
@@ -4568,7 +8113,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 96,
-    "familyInteraction": "responsibility_ledger"
+    "familyInteraction": "responsibility_ledger",
+    "routeTags": [
+      "K장녀",
+      "가정불화",
+      "가족 문제를 제가 다 해결해요",
+      "가족독립",
+      "가족해결사",
+      "과잉책임",
+      "맏이",
+      "부모원망",
+      "장남",
+      "해결사"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계"
+    ],
+    "storyTags": [
+      "‘내가 손을 놓으면 가족 전체가 파탄 날 것이다’라는 과잉책임 망상인가요"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“해결하기 전에 담당자를 먼저 확인한다"
+    ],
+    "relatedCards": [
+      "fam-001",
+      "fam-002",
+      "fam-003"
+    ]
   },
   {
     "id": "fam-010",
@@ -4606,7 +8182,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 95,
-    "familyInteraction": "responsibility_ledger"
+    "familyInteraction": "responsibility_ledger",
+    "routeTags": [
+      "가족독립",
+      "가족빚",
+      "돈",
+      "돈까지내책임",
+      "부모님 돈을 계속 드려야 하나요",
+      "부모원망",
+      "빚",
+      "생활비",
+      "용돈",
+      "착취"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "가족"
+    ],
+    "storyTags": [
+      "‘거절하면 가족을 버린 천하의 냉혈한이다’라는 죄책감 낙인인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“금액·기간·역할 중 최소 하나의 경계를 정한다"
+    ],
+    "relatedCards": [
+      "fam-001",
+      "fam-002",
+      "fam-003"
+    ]
   },
   {
     "id": "fam-011",
@@ -4644,7 +8252,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 93,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족독립",
+      "감정상담사",
+      "감정쓰레기통",
+      "부모님과 연락을 줄이고 싶어요",
+      "부모원망",
+      "신세한탄",
+      "통화",
+      "푸념",
+      "피로",
+      "하소연"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘내가 들어주지 않으면 부모님이 무너져버릴 것이다’라는 과도한 불안인가요"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘은 ‘지금은 20분 정도 이야기 들을 수 있어요’"
+    ],
+    "relatedCards": [
+      "fam-015",
+      "fam-017",
+      "fam-001"
+    ]
   },
   {
     "id": "fam-012",
@@ -4682,7 +8322,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 92,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족독립",
+      "결혼",
+      "고부갈등",
+      "배우자와 부모 사이에서 힘들어요",
+      "부모원망",
+      "부부vs부모",
+      "시댁",
+      "장서갈등",
+      "중간자",
+      "처가"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "연인"
+    ],
+    "storyTags": [
+      "‘한쪽 편을 들면 다른 쪽을 배신하는 패륜아가 된다’는 극단적 이분법인가"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“이번 갈등에서 지킬 원칙 하나를 정한다"
+    ],
+    "relatedCards": [
+      "fam-008",
+      "fam-001",
+      "fam-002"
+    ]
   },
   {
     "id": "fam-013",
@@ -4721,7 +8393,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 91,
-    "familyInteraction": "love_and_boundary"
+    "familyInteraction": "love_and_boundary",
+    "routeTags": [
+      "가족독립",
+      "남매",
+      "부모원망",
+      "비교",
+      "열등감",
+      "자매",
+      "차별",
+      "편애",
+      "형제",
+      "형제랑 비교당해요"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "가족"
+    ],
+    "storyTags": [
+      "‘부모님께 인정받지 못하면 나는 영원히 부족한 둘째/첫째다’라는 낙인인가"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“비교에 반박하기보다 ‘저는 제 기준으로 결정하겠습니다"
+    ],
+    "relatedCards": [
+      "comparison-18",
+      "perf-010",
+      "fam-001"
+    ]
   },
   {
     "id": "fam-014",
@@ -4759,7 +8463,39 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 97,
-    "familyInteraction": "love_and_boundary"
+    "familyInteraction": "love_and_boundary",
+    "routeTags": [
+      "가족독립",
+      "가족이니까 제가 조금 더 참으면 되는 것 아닌가요",
+      "나만참으면",
+      "부모원망",
+      "양보",
+      "인내",
+      "참기",
+      "화목",
+      "화병",
+      "희생"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘내가 목소리를 내면 우리 가족은 풍비박산이 날 것이다’라는 공포 스토리"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "“참기 전에 필요한 요청 하나를 말한다"
+    ],
+    "relatedCards": [
+      "fam-004",
+      "fam-002",
+      "fam-005"
+    ]
   },
   {
     "id": "fam-015",
@@ -4797,7 +8533,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 93,
-    "familyInteraction": "love_and_boundary"
+    "familyInteraction": "love_and_boundary",
+    "routeTags": [
+      "가족독립",
+      "거리두기",
+      "거리두기죄책감",
+      "냉정",
+      "부모님과 연락을 줄이고 싶어요",
+      "부모원망",
+      "손절",
+      "연락줄이기",
+      "죄책감",
+      "천륜"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계"
+    ],
+    "storyTags": [
+      "‘가족이라면 무조건 자주 만나고 속을 다 터놓아야 정상이다’라는 가족 신"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“연락 빈도나 방문 범위를 구체적으로 정한다"
+    ],
+    "relatedCards": [
+      "fam-002",
+      "fam-011",
+      "fam-001"
+    ]
   },
   {
     "id": "fam-016",
@@ -4834,7 +8601,38 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 96,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족독립",
+      "경계",
+      "경계후취소",
+      "번복",
+      "부모원망",
+      "서운함",
+      "선긋기",
+      "선을 그어놓고 부모님이 서운해하면 왜 바로 취소하게 될까요",
+      "취소"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "가족"
+    ],
+    "storyTags": [
+      "‘부모님이 서운해하시면 즉시 내 결정을 취소해야 효도다’라는 반사반응인가"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“같은 날 경계를 번복하지 않는다"
+    ],
+    "relatedCards": [
+      "fam-018",
+      "fam-003",
+      "fam-001"
+    ]
   },
   {
     "id": "fam-017",
@@ -4872,7 +8670,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 92,
-    "familyInteraction": "boundary_vs_control"
+    "familyInteraction": "boundary_vs_control",
+    "routeTags": [
+      "가족독립",
+      "변화",
+      "부모님 때문에 힘들어요",
+      "부모바꾸기",
+      "부모원망",
+      "사과",
+      "설득",
+      "원망",
+      "인정",
+      "통제"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "감정고조"
+    ],
+    "storyTags": [
+      "‘부모가 인정해주지 않는 내 고통은 진짜 고통이 아니다’라는 승인 갈망인"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“상대를 설득하는 행동 하나 대신 내 삶의 행동 하나를"
+    ],
+    "relatedCards": [
+      "fam-003",
+      "fam-006",
+      "fam-007"
+    ]
   },
   {
     "id": "fam-018",
@@ -4910,7 +8740,39 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 90,
-    "familyInteraction": "responsibility_ledger"
+    "familyInteraction": "responsibility_ledger",
+    "routeTags": [
+      "가족독립",
+      "교육",
+      "부모역할",
+      "부모역할동일시",
+      "부모원망",
+      "실패",
+      "아이",
+      "양육",
+      "자녀",
+      "죄책감"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "가족"
+    ],
+    "storyTags": [
+      "‘아이의 실패는 곧 내 인생의 총체적 파산이다’라는 동일시 착각인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“조언 하나를 한 뒤 선택할 공간을 남긴다"
+    ],
+    "relatedCards": [
+      "fam-016",
+      "fam-002",
+      "fam-015"
+    ]
   },
   {
     "id": "fam-019",
@@ -4948,7 +8810,38 @@ window.MIND_CARDS_DATA = [
     "featured": false,
     "isFeatured": false,
     "popularity": 91,
-    "familyInteraction": "responsibility_ledger"
+    "familyInteraction": "responsibility_ledger",
+    "routeTags": [
+      "가정문제",
+      "가족독립",
+      "가족비밀유지",
+      "고백",
+      "배신",
+      "부모원망",
+      "비밀",
+      "상담",
+      "수치심",
+      "집안망신"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계"
+    ],
+    "storyTags": [
+      "‘밖에 말하는 순간 나는 가족을 파괴한 배신자가 된다’는 두려움인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“도움이 필요하다면 신뢰할 수 있는 사람이나 전문적 지"
+    ],
+    "relatedCards": [
+      "fam-001",
+      "fam-002",
+      "fam-003"
+    ]
   },
   {
     "id": "fam-020",
@@ -4985,7 +8878,37 @@ window.MIND_CARDS_DATA = [
     "featured": true,
     "isFeatured": true,
     "popularity": 99,
-    "familyInteraction": "love_and_boundary"
+    "familyInteraction": "love_and_boundary",
+    "routeTags": [
+      "가족 문제를 해결하고 나서야 제 삶을 살아도 되는 걸까요",
+      "가족독립",
+      "내삶",
+      "내삶으로돌아오기",
+      "독립",
+      "미래",
+      "부모원망",
+      "인생보류",
+      "희생"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계"
+    ],
+    "storyTags": [
+      "‘가족이 불행한데 나 혼자 행복하면 죄악이다’라는 생존자 죄책감인가요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“가족 문제와 무관한 내 삶의 행동 하나를 오늘 실행한"
+    ],
+    "relatedCards": [
+      "fam-002",
+      "fam-004",
+      "fam-005"
+    ]
   },
   {
     "id": "love-001",
@@ -5021,7 +8944,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "답장대기",
+      "답장이안와요",
+      "불안형",
+      "연락불안",
+      "연애애착",
+      "이별",
+      "이별공포",
+      "읽씹",
+      "친밀감",
+      "카톡답장"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "마음이 빈칸에 쓴 자막은 무엇인가요? (예: '마음이 식었어. 날 귀찮아"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“추가 연락 전 30분 기다린다"
+    ],
+    "relatedCards": [
+      "love-002",
+      "love-005",
+      "love-006"
+    ]
   },
   {
     "id": "love-002",
@@ -5056,7 +9010,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "prediction_to_data"
+    "interactionType": "prediction_to_data",
+    "routeTags": [
+      "마음식음",
+      "마음이식은것같아요",
+      "변심",
+      "애정식음",
+      "연락이줄었어요",
+      "연락패턴",
+      "연애권태기",
+      "연애애착",
+      "이별",
+      "친밀감"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "연락이 줄어든 것에 내 마음이 내린 판결은 무엇인가요? (예: '날 더 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“‘요즘 연락 패턴이 달라진 것 같은데 무슨 변화가 있"
+    ],
+    "relatedCards": [
+      "love-001",
+      "love-005",
+      "love-006"
+    ]
   },
   {
     "id": "love-003",
@@ -5091,7 +9077,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "나사랑해",
+      "불안형연애",
+      "사랑하는지계속확인해요",
+      "애정결핍",
+      "연애애착",
+      "이별",
+      "재확인",
+      "친밀감",
+      "확인강박",
+      "확인질문"
+    ],
+    "triggerTags": [
+      "확인질문"
+    ],
+    "storyTags": [
+      "확인하지 않으면 상대의 마음이 증발해버릴 것 같은 자막이 있나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“같은 질문을 오늘 한 번 덜 한다"
+    ],
+    "relatedCards": [
+      "love-013",
+      "love-001",
+      "love-002"
+    ]
   },
   {
     "id": "love-004",
@@ -5126,7 +9141,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 97,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "답장무시",
+      "메시지읽씹",
+      "안읽씹",
+      "연애애착",
+      "이별",
+      "읽씹",
+      "읽씹해석",
+      "읽씹했어요",
+      "친밀감",
+      "카톡무시"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "내 머릿속이 덧붙인 악의적 해석은 무엇인가요? (예: '날 만만하게 보고"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“의도를 확정하지 않고 필요한 시간이 지난 뒤 직접 묻"
+    ],
+    "relatedCards": [
+      "love-013",
+      "love-015",
+      "love-001"
+    ]
   },
   {
     "id": "love-005",
@@ -5161,7 +9207,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 96,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "감시",
+      "답장안함",
+      "연애애착",
+      "온라인확인",
+      "이별",
+      "인스타접속",
+      "질투",
+      "친밀감",
+      "카톡온라인"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "타인비교"
+    ],
+    "storyTags": [
+      "그 사실에 붙인 내 배신감 시나리오는 무엇인가요? (예: '나한테는 연락"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“한 시간 동안 접속상태를 다시 확인하지 않는다"
+    ],
+    "relatedCards": [
+      "love-001",
+      "love-002",
+      "love-006"
+    ]
   },
   {
     "id": "love-006",
@@ -5197,7 +9275,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "auto_to_manual"
+    "interactionType": "auto_to_manual",
+    "routeTags": [
+      "떠보기",
+      "밀당",
+      "사랑확인",
+      "시험하기",
+      "연애애착",
+      "이별",
+      "질투유발",
+      "차가운척",
+      "친밀감"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "감정고조"
+    ],
+    "storyTags": [
+      "직접 말하면 자존심 상하거나 거절당할 것 같다는 공포가 있나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“시험 행동 대신 요청 한 문장을 말한다"
+    ],
+    "relatedCards": [
+      "love-018",
+      "love-001",
+      "love-002"
+    ]
   },
   {
     "id": "love-007",
@@ -5232,7 +9341,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "불안형질투",
+      "연애애착",
+      "의부증",
+      "의처증",
+      "이별",
+      "이성친구",
+      "질투",
+      "질투가심해요",
+      "질투확대",
+      "친밀감"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "연인"
+    ],
+    "storyTags": [
+      "내 마음이 상상한 거대한 위협 시나리오는 무엇인가요? (예: '저 사람에"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“비난 대신 내가 불편했던 구체적 행동 하나를 말한다"
+    ],
+    "relatedCards": [
+      "love-017",
+      "love-005",
+      "love-008"
+    ]
   },
   {
     "id": "love-008",
@@ -5267,7 +9408,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "과거검색",
+      "비교",
+      "연애애착",
+      "이별",
+      "인스타염탐",
+      "전애인",
+      "전연인검색",
+      "친밀감",
+      "회고적질투"
+    ],
+    "triggerTags": [
+      "연인",
+      "친밀감",
+      "관계거리"
+    ],
+    "storyTags": [
+      "과거를 파헤치며 내린 열등감의 결론은 무엇인가요? (예: '그 사람을 나"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘은 추가 검색을 한 번 멈춘다"
+    ],
+    "relatedCards": [
+      "love-016",
+      "love-007",
+      "love-017"
+    ]
   },
   {
     "id": "love-009",
@@ -5302,7 +9473,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "auto_to_manual"
+    "interactionType": "auto_to_manual",
+    "routeTags": [
+      "가까워지면거리두기",
+      "가까워지면도망가고싶어요",
+      "거리두기",
+      "동굴",
+      "연애애착",
+      "이별",
+      "잠수",
+      "친밀감",
+      "친밀감공포",
+      "회피형"
+    ],
+    "triggerTags": [
+      "가까워지면거리두기"
+    ],
+    "storyTags": [
+      "그 깊은 친밀감 뒤에 엄습한 무의식적 공포는 무엇인가요? (예: '이러다"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“연락을 끊는 대신 ‘조금 생각할 시간이 필요해’라고 "
+    ],
+    "relatedCards": [
+      "love-012",
+      "love-001",
+      "love-002"
+    ]
   },
   {
     "id": "love-010",
@@ -5337,7 +9537,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 97,
-    "interactionType": "prediction_to_data"
+    "interactionType": "prediction_to_data",
+    "routeTags": [
+      "관계가너무좋으면",
+      "불안형",
+      "상처공포",
+      "연애애착",
+      "이별",
+      "좋을때불안",
+      "좋을때의심",
+      "친밀감",
+      "폭풍전야",
+      "행복불안"
+    ],
+    "triggerTags": [
+      "좋을때의심"
+    ],
+    "storyTags": [
+      "뇌가 켜버린 경고 사이렌은 무엇인가요? (예: '폭풍전야야. 너무 잘해주"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 확인된 존중·약속·책임 중 하나를 기록한다"
+    ],
+    "relatedCards": [
+      "love-001",
+      "love-019",
+      "love-002"
+    ]
   },
   {
     "id": "love-011",
@@ -5372,7 +9601,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "prediction_to_data"
+    "interactionType": "prediction_to_data",
+    "routeTags": [
+      "결국떠나요",
+      "결국떠난다",
+      "결국변해요",
+      "배신공포",
+      "사람은변해",
+      "신뢰철회",
+      "연애애착",
+      "이별",
+      "친밀감",
+      "허무주의"
+    ],
+    "triggerTags": [
+      "결국떠난다"
+    ],
+    "storyTags": [
+      "마음이 내린 숙명론적 결론은 무엇인가요? (예: '어차피 1년 뒤엔 다 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“미래예측 대신 현재 데이터 3개를 본다"
+    ],
+    "relatedCards": [
+      "love-001",
+      "love-002",
+      "love-003"
+    ]
   },
   {
     "id": "love-012",
@@ -5407,7 +9665,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "auto_to_manual"
+    "interactionType": "auto_to_manual",
+    "routeTags": [
+      "갈등회피",
+      "갈등후잠수",
+      "동굴",
+      "싸우면연락끊어요",
+      "연애애착",
+      "이별",
+      "잠수",
+      "차단",
+      "친밀감",
+      "회피형잠수"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "상대와 대화하면 어떤 파국이 일어날 것 같나요? (예: '내 바닥을 다 "
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“‘지금은 감정이 커서 내일 다시 이야기할게’라고 알린"
+    ],
+    "relatedCards": [
+      "love-001",
+      "love-002",
+      "love-005"
+    ]
   },
   {
     "id": "love-013",
@@ -5442,7 +9732,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "그날풀어야",
+      "밤샘대화",
+      "불안형연애",
+      "숨막힘",
+      "연애애착",
+      "이별",
+      "즉시해결",
+      "집착",
+      "친밀감"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "오늘 밤 풀지 않고 자면 어떤 재앙이 닥칠 것 같나요? (예: '자고 일"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“한 번 대화를 제안한 뒤 추가 압박은 잠시 멈춘다"
+    ],
+    "relatedCards": [
+      "love-004",
+      "love-015",
+      "love-003"
+    ]
   },
   {
     "id": "love-014",
@@ -5477,7 +9797,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "기대",
+      "눈치",
+      "사랑증명",
+      "사랑하면알아서",
+      "서운함",
+      "시험",
+      "연애애착",
+      "이별",
+      "친밀감"
+    ],
+    "triggerTags": [
+      "사랑증명"
+    ],
+    "storyTags": [
+      "상대가 안 해줬을 때 내린 자막은 무엇인가요? (예: '날 소중하게 생각"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“‘사랑하면 알아서’ 대신 구체적 요청 한 가지를 말한"
+    ],
+    "relatedCards": [
+      "love-001",
+      "love-002",
+      "love-003"
+    ]
   },
   {
     "id": "love-015",
@@ -5512,7 +9860,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "auto_to_manual"
+    "interactionType": "auto_to_manual",
+    "routeTags": [
+      "가스라이팅",
+      "경계설정",
+      "바뀌겠지",
+      "상대변화",
+      "상대변화대기",
+      "성격차이",
+      "연애애착",
+      "이별",
+      "친밀감",
+      "희망고문"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "내가 상대를 바꿀 수 있다는 전능 환상을 쥐고 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“상대를 설득하는 문장 하나 대신 내 경계 하나를 정한"
+    ],
+    "relatedCards": [
+      "love-004",
+      "love-013",
+      "love-006"
+    ]
   },
   {
     "id": "love-016",
@@ -5547,7 +9926,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "prediction_to_data"
+    "interactionType": "prediction_to_data",
+    "routeTags": [
+      "내탓",
+      "미련",
+      "연애애착",
+      "이별",
+      "이별재판",
+      "이별후회",
+      "자책",
+      "친밀감",
+      "헤어진이유"
+    ],
+    "triggerTags": [
+      "연인",
+      "친밀감",
+      "관계거리",
+      "마감임박"
+    ],
+    "storyTags": [
+      "내 머릿속 판사가 때리는 가혹한 자책은 무엇인가요? (예: '내가 그때 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“다음에 바꿀 행동 하나만 적는다"
+    ],
+    "relatedCards": [
+      "love-008",
+      "love-007",
+      "love-017"
+    ]
   },
   {
     "id": "love-017",
@@ -5582,7 +9992,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "love_fact_check"
+    "interactionType": "love_fact_check",
+    "routeTags": [
+      "연애애착",
+      "염탐",
+      "이별",
+      "이별후확인",
+      "전남친SNS",
+      "전여친염탐",
+      "전연인확인",
+      "친밀감",
+      "프로필확인",
+      "헤어진사람SNS"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "연인"
+    ],
+    "storyTags": [
+      "상대의 새 게시물을 보며 내 머릿속이 쓴 비극 시나리오는 무엇인가요? ("
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 한 번의 확인을 건너뛴다"
+    ],
+    "relatedCards": [
+      "love-007",
+      "love-005",
+      "love-008"
+    ]
   },
   {
     "id": "love-018",
@@ -5617,7 +10059,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 96,
-    "interactionType": "auto_to_manual"
+    "interactionType": "auto_to_manual",
+    "routeTags": [
+      "연애애착",
+      "외로움",
+      "이별",
+      "이별후연락",
+      "재회충동",
+      "재회해야할까요",
+      "전남친연락",
+      "전여친연락",
+      "친밀감"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "감정고조"
+    ],
+    "storyTags": [
+      "연락하면 이번엔 동화처럼 완벽해질 거라는 착각이 있나요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“메시지를 작성하되 오늘은 보내지 않고 내일 다시 읽는"
+    ],
+    "relatedCards": [
+      "love-006",
+      "love-001",
+      "love-002"
+    ]
   },
   {
     "id": "love-019",
@@ -5652,7 +10125,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "prediction_to_data"
+    "interactionType": "prediction_to_data",
+    "routeTags": [
+      "모태솔로",
+      "불안형",
+      "연애못하는사람",
+      "연애실패",
+      "연애애착",
+      "연애자책",
+      "연애정체성",
+      "이별",
+      "자존감",
+      "친밀감"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "내 정체성에 붙인 낙인은 무엇인가요? (예: '난 평생 혼자 비참하게 살"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“‘나는 ○○한 상황에서 ○○하게 반응할 때가 있다’로"
+    ],
+    "relatedCards": [
+      "love-001",
+      "love-010",
+      "love-002"
+    ]
   },
   {
     "id": "love-020",
@@ -5687,7 +10191,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "prediction_to_data"
+    "interactionType": "prediction_to_data",
+    "routeTags": [
+      "가스라이팅",
+      "관계유지",
+      "데이트폭력",
+      "사랑과현실",
+      "사랑과현실분리",
+      "사랑하지만헤어짐",
+      "연애애착",
+      "이별",
+      "친밀감",
+      "헤어져야할까요"
+    ],
+    "triggerTags": [
+      "사랑과현실분리"
+    ],
+    "storyTags": [
+      "사랑하니까 모든 폭언이나 무책임도 다 견뎌야 한다는 신념이 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“관계를 판단하는 현실 데이터 3개를 적는다"
+    ],
+    "relatedCards": [
+      "love-015",
+      "love-001",
+      "love-002"
+    ]
   },
   {
     "id": "dec-001",
@@ -5723,7 +10256,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "direction_check"
+    "interactionType": "direction_check",
+    "routeTags": [
+      "결정",
+      "결정장애",
+      "결정후검색",
+      "미루기",
+      "불확실성",
+      "습관",
+      "재검색",
+      "후회불안"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "그 행동 뒤에 내 마음이 속삭인 생각은 무엇인가요? (예: '혹시 내가 "
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“다음 재검토 시간을 정하고 그 전까지 검색을 멈춘다"
+    ],
+    "relatedCards": [
+      "dec-014",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-002",
@@ -5759,7 +10322,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "ten_percent_experiment"
+    "interactionType": "ten_percent_experiment",
+    "routeTags": [
+      "결정",
+      "망설임",
+      "미루기",
+      "습관",
+      "시작",
+      "실행력",
+      "의심",
+      "준비",
+      "확신",
+      "확신대기"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "내 마음의 자동 생각은 무엇인가요? (예: '확신 없는 상태로 쓰면 형편"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“5분짜리 첫 행동을 실행한다"
+    ],
+    "relatedCards": [
+      "dec-003",
+      "dec-001",
+      "dec-004"
+    ]
   },
   {
     "id": "dec-003",
@@ -5794,7 +10388,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "expected_vs_actual"
+    "interactionType": "expected_vs_actual",
+    "routeTags": [
+      "결정",
+      "공부만",
+      "미루기",
+      "습관",
+      "실행지연",
+      "인풋과잉",
+      "자료수집",
+      "준비",
+      "준비지연"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "마음이 붙인 스토리는 무엇인가요? (예: '아직 A 개념을 완벽히 소화하"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“자료를 더 찾기 전에 결과물의 첫 줄을 만든다"
+    ],
+    "relatedCards": [
+      "dec-002",
+      "dec-001",
+      "dec-004"
+    ]
   },
   {
     "id": "dec-004",
@@ -5830,7 +10454,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 97,
-    "interactionType": "ten_percent_experiment"
+    "interactionType": "ten_percent_experiment",
+    "routeTags": [
+      "결정",
+      "계획",
+      "계획만",
+      "미루기",
+      "습관",
+      "실천",
+      "실행부족",
+      "완벽계획",
+      "완벽주의",
+      "의지"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "내 마음의 속삭임은 무엇인가요? (예: '계획이 빈틈없어야 실행할 때 한"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“계획 수정 대신 첫 행동 하나를 실행한다"
+    ],
+    "relatedCards": [
+      "dec-011",
+      "dec-001",
+      "dec-002"
+    ]
   },
   {
     "id": "dec-005",
@@ -5865,7 +10520,34 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "reward_and_cost"
+    "interactionType": "reward_and_cost",
+    "routeTags": [
+      "결정",
+      "귀찮음",
+      "내일부터",
+      "동기부여",
+      "미루기",
+      "습관",
+      "작심삼일",
+      "현재편향"
+    ],
+    "triggerTags": [
+      "내일부터"
+    ],
+    "storyTags": [
+      "내 마음의 합리화 스토리는 무엇인가요? (예: '내일은 컨디션도 완벽하고"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“지금 2분만 시작한다"
+    ],
+    "relatedCards": [
+      "dec-009",
+      "dec-010",
+      "dec-012"
+    ]
   },
   {
     "id": "dec-006",
@@ -5900,7 +10582,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "ten_percent_experiment"
+    "interactionType": "ten_percent_experiment",
+    "routeTags": [
+      "결정",
+      "과제부담",
+      "딴짓",
+      "미루기",
+      "습관",
+      "시작압박",
+      "저항",
+      "하기싫음"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "그 생각이 내게 주는 스토리는 무엇인가요? (예: '이거 시작하면 밤새도"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“파일 열기, 운동복 입기, 첫 문장 쓰기 중 하나만 "
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-007",
@@ -5935,7 +10646,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "reward_and_cost"
+    "interactionType": "reward_and_cost",
+    "routeTags": [
+      "결정",
+      "결정마비",
+      "결정장애",
+      "미루기",
+      "비교피로",
+      "선택과부하",
+      "선택지",
+      "습관",
+      "우유부단"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "마감임박"
+    ],
+    "storyTags": [
+      "내 마음의 두려움은 무엇인가요? (예: '다른 걸 골랐다가 최선이 아니면"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“핵심 기준 3개만 남기고 선택한다"
+    ],
+    "relatedCards": [
+      "dec-018",
+      "dec-001",
+      "dec-014"
+    ]
   },
   {
     "id": "dec-008",
@@ -5970,7 +10712,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "direction_check"
+    "interactionType": "direction_check",
+    "routeTags": [
+      "결정",
+      "결정번복",
+      "결정후회",
+      "기회비용",
+      "미루기",
+      "선택후회",
+      "손실회피",
+      "습관",
+      "아쉬움"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "마감임박"
+    ],
+    "storyTags": [
+      "내 마음의 스토리텔링은 무엇인가요? (예: '역시 B를 샀어야 해. 난 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“새 정보가 없으면 24시간 결정 재심사를 보류한다"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-009",
@@ -6005,7 +10778,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 90,
-    "interactionType": "ten_percent_experiment"
+    "interactionType": "ten_percent_experiment",
+    "routeTags": [
+      "결정",
+      "과욕",
+      "미루기",
+      "습관",
+      "오버페이스",
+      "작심삼일",
+      "지속가능성",
+      "첫날과출력"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "내 마음의 조급함은 무엇인가요? (예: '이왕 시작했으니 단기간에 살을 "
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 계획량을 절반 이하로 줄여 실행한다"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-010",
@@ -6040,7 +10842,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 96,
-    "interactionType": "restart_not_reset"
+    "interactionType": "restart_not_reset",
+    "routeTags": [
+      "결정",
+      "미루기",
+      "습관",
+      "습관중단",
+      "의지부족",
+      "자기비난",
+      "자책",
+      "작심삼일",
+      "포기"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 덧붙인 정체성 낙인은 무엇인가요? (예: '난 역시 끈기 없는"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“처음부터 다시 하지 말고 오늘 한 번 재시작한다"
+    ],
+    "relatedCards": [
+      "dec-005",
+      "dec-009",
+      "dec-018"
+    ]
   },
   {
     "id": "dec-011",
@@ -6075,7 +10907,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "reward_and_cost"
+    "interactionType": "reward_and_cost",
+    "routeTags": [
+      "0아니면100",
+      "결정",
+      "루틴",
+      "미루기",
+      "습관",
+      "완벽주의",
+      "자포자기",
+      "폭망효과",
+      "흑백논리",
+      "흑백사고"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "마음이 내린 극단적 선고는 무엇인가요? (예: '오늘 루틴 망했네. 오늘"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 할 수 있는 가장 작은 행동 하나를 다시 한다"
+    ],
+    "relatedCards": [
+      "dec-004",
+      "dec-001",
+      "dec-002"
+    ]
   },
   {
     "id": "dec-012",
@@ -6110,7 +10974,34 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "ten_percent_experiment"
+    "interactionType": "ten_percent_experiment",
+    "routeTags": [
+      "결정",
+      "귀차니즘",
+      "기분대기",
+      "동기부여",
+      "미루기",
+      "습관",
+      "의욕",
+      "하기싫음"
+    ],
+    "triggerTags": [
+      "기분대기"
+    ],
+    "storyTags": [
+      "내 마음의 논리는 무엇인가요? (예: '지금 억지로 해봤자 집중도 안 되"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“5분만 실행하고 계속할지는 그 뒤에 정한다"
+    ],
+    "relatedCards": [
+      "dec-005",
+      "dec-006",
+      "dec-001"
+    ]
   },
   {
     "id": "dec-013",
@@ -6145,7 +11036,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "direction_check"
+    "interactionType": "direction_check",
+    "routeTags": [
+      "결정",
+      "미루기",
+      "브레이크",
+      "습관",
+      "자제력",
+      "즉각실행",
+      "충동",
+      "충동구매",
+      "충동실행",
+      "폭식"
+    ],
+    "triggerTags": [
+      "충동실행"
+    ],
+    "storyTags": [
+      "내 머릿속 스토리텔링은 무엇인가요? (예: '지금 안 먹으면 스트레스 받"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“실행 전 ‘내가 원하는 결과는 무엇이지?’라고 묻는다"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-014",
@@ -6180,7 +11100,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "direction_check"
+    "interactionType": "direction_check",
+    "routeTags": [
+      "걱정",
+      "결정",
+      "결정장애",
+      "과잉분석",
+      "미루기",
+      "반추",
+      "분석마비",
+      "생각이많아요",
+      "습관"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "마음이 붙잡고 있는 생각은 무엇인가요? (예: '모든 리스크를 100% "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“결정에 필요한 정보 3개만 남긴다"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-015",
@@ -6215,7 +11165,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "expected_vs_actual"
+    "interactionType": "expected_vs_actual",
+    "routeTags": [
+      "거절공포",
+      "결정",
+      "도전회피",
+      "무기력",
+      "미루기",
+      "습관",
+      "실패예방",
+      "안전제일",
+      "자존감보호"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "마감임박"
+    ],
+    "storyTags": [
+      "내 마음의 방어 스토리는 무엇인가요? (예: '도전했다 떨어지면 바보 같"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“안전한 범위의 작은 테스트 하나를 실행한다"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-016",
@@ -6250,7 +11231,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "ten_percent_experiment"
+    "interactionType": "ten_percent_experiment",
+    "routeTags": [
+      "결정",
+      "미루기",
+      "변화강박",
+      "새해결심",
+      "습관",
+      "전면변화",
+      "조급함",
+      "한번에바꾸기",
+      "환골탈태"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "내 마음의 조급함은 무엇인가요? (예: '이렇게 통째로 뜯어고치지 않으면"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 바꿀 행동 하나만 선택한다"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-017",
@@ -6285,7 +11296,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "restart_not_reset"
+    "interactionType": "restart_not_reset",
+    "routeTags": [
+      "결정",
+      "기록완벽",
+      "다이어리포기",
+      "미루기",
+      "스트릭",
+      "습관",
+      "습관기록",
+      "연속달성",
+      "완벽주의"
+    ],
+    "triggerTags": [
+      "기록완벽"
+    ],
+    "storyTags": [
+      "내 마음의 완벽주의 스토리텔링은 무엇인가요? (예: '연속 기록 깨졌으니"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“빠진 날을 채우지 말고 오늘부터 다시 기록한다"
+    ],
+    "relatedCards": [
+      "dec-004",
+      "dec-011",
+      "dec-001"
+    ]
   },
   {
     "id": "dec-018",
@@ -6321,7 +11361,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "restart_not_reset"
+    "interactionType": "restart_not_reset",
+    "routeTags": [
+      "결정",
+      "도루묵",
+      "미루기",
+      "습관",
+      "습관실패",
+      "원점",
+      "자기판결",
+      "자책",
+      "재발",
+      "재발판결"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과"
+    ],
+    "storyTags": [
+      "내 마음이 내린 최종 판결문은 무엇인가요? (예: '역시 난 구제불능이야"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“이번에는 어디에서 다시 선택할 수 있었는지 한 줄 적"
+    ],
+    "relatedCards": [
+      "dec-007",
+      "dec-010",
+      "dec-001"
+    ]
   },
   {
     "id": "dec-019",
@@ -6356,7 +11427,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "expected_vs_actual"
+    "interactionType": "expected_vs_actual",
+    "routeTags": [
+      "결과예측",
+      "결정",
+      "두려움",
+      "망설임",
+      "미루기",
+      "습관",
+      "예상공포",
+      "최악상상",
+      "행동실험"
+    ],
+    "triggerTags": [
+      "예상공포"
+    ],
+    "storyTags": [
+      "그 상상에 마음이 부여한 의미는 무엇인가요? (예: '망신당하느니 그냥 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“예상 결과를 먼저 기록하고 작은 행동을 해본다"
+    ],
+    "relatedCards": [
+      "dec-002",
+      "dec-001",
+      "dec-003"
+    ]
   },
   {
     "id": "dec-020",
@@ -6391,7 +11490,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "restart_not_reset"
+    "interactionType": "restart_not_reset",
+    "routeTags": [
+      "결정",
+      "다시선택",
+      "미루기",
+      "방향전환",
+      "성장",
+      "습관",
+      "알면서도",
+      "언제바뀌죠",
+      "자각"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "내 마음의 비난 목소리는 무엇인가요? (예: '알면서도 또 이러니 난 영"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“다음 행동 하나만 이전과 다르게 선택한다"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-002",
+      "dec-003"
+    ]
   },
   {
     "id": "emo-001",
@@ -6427,7 +11556,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "body_signal"
+    "interactionType": "body_signal",
+    "routeTags": [
+      "눈치",
+      "말한마디",
+      "반추",
+      "불안",
+      "사소한말",
+      "상처",
+      "유리멘탈",
+      "자책",
+      "하루종일",
+      "한마디"
+    ],
+    "triggerTags": [
+      "한마디반추"
+    ],
+    "storyTags": [
+      "그 말 위에 내 마음이 붙인 자막은 무엇인가요? (예: '나를 일 못하고"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“FACT 한 줄과 STORY 한 줄만 적고 다시 일상"
+    ],
+    "relatedCards": [
+      "emo-007",
+      "emo-015",
+      "emo-002"
+    ]
   },
   {
     "id": "emo-002",
@@ -6463,7 +11621,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "body_signal"
+    "interactionType": "body_signal",
+    "routeTags": [
+      "가슴답답",
+      "가슴철렁",
+      "공황",
+      "불길한느낌",
+      "불안",
+      "심장뜀",
+      "유리멘탈",
+      "자책",
+      "직감오류"
+    ],
+    "triggerTags": [
+      "가슴철렁"
+    ],
+    "storyTags": [
+      "그 감각에 마음이 붙인 번역은 무엇인가요? (예: '분명 큰 사고가 터졌"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“외부 FACT 하나를 확인하기 전까지 결론을 보류한다"
+    ],
+    "relatedCards": [
+      "emo-001",
+      "emo-003",
+      "emo-004"
+    ]
   },
   {
     "id": "emo-003",
@@ -6498,7 +11684,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "강박",
+      "반복확인",
+      "불안",
+      "불안증",
+      "불안확인",
+      "유리멘탈",
+      "자책",
+      "재확인",
+      "확인충동"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "감정고조"
+    ],
+    "storyTags": [
+      "확인하지 않으면 뇌가 속삭이는 최악의 결말은 무엇인가요? (예: '확인 "
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“다음 확인 시간을 정하고 그 전에는 다시 보지 않는다"
+    ],
+    "relatedCards": [
+      "emo-019",
+      "emo-004",
+      "emo-006"
+    ]
   },
   {
     "id": "emo-004",
@@ -6533,7 +11751,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "body_signal"
+    "interactionType": "body_signal",
+    "routeTags": [
+      "과잉걱정",
+      "미래불안",
+      "불안",
+      "불안증",
+      "예고편",
+      "유리멘탈",
+      "자책",
+      "최악상상",
+      "최악예고편",
+      "파국화"
+    ],
+    "triggerTags": [
+      "상사",
+      "직장회의",
+      "평가"
+    ],
+    "storyTags": [
+      "그 위에 마음이 상영 중인 파국적 스토리는 무엇인가요? (예: '회의에서"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“지금 준비 가능한 것 하나만 하고 나머지는 UNKNO"
+    ],
+    "relatedCards": [
+      "emo-003",
+      "emo-001",
+      "emo-002"
+    ]
   },
   {
     "id": "emo-005",
@@ -6568,7 +11817,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "body_signal"
+    "interactionType": "body_signal",
+    "routeTags": [
+      "감정억압",
+      "나약함",
+      "눈물",
+      "눈물수치심",
+      "불안",
+      "수치심",
+      "울음",
+      "유리멘탈",
+      "유약함",
+      "자책"
+    ],
+    "triggerTags": [
+      "눈물수치심"
+    ],
+    "storyTags": [
+      "그 사실에 덧붙인 가혹한 평가는 무엇인가요? (예: '이 나이 먹고 울다"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“감정을 평가하는 말 없이 ‘지금 ○○하다’라고 한 문"
+    ],
+    "relatedCards": [
+      "emo-008",
+      "emo-001",
+      "emo-002"
+    ]
   },
   {
     "id": "emo-006",
@@ -6603,7 +11881,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "second_arrow"
+    "interactionType": "second_arrow",
+    "routeTags": [
+      "두번째화살",
+      "분노폭발",
+      "불안",
+      "유리멘탈",
+      "자기혐오",
+      "자책",
+      "화내고후회",
+      "후회"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 뒤에 스스로에게 쏜 두 번째 화살은 무엇인가요? (예: '성격 파탄자"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“사과·수정·다음 행동 중 하나를 실행한다"
+    ],
+    "relatedCards": [
+      "emo-012",
+      "emo-014",
+      "emo-003"
+    ]
   },
   {
     "id": "emo-007",
@@ -6638,7 +11946,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "갈등회피",
+      "눈치",
+      "미안해",
+      "불안",
+      "유리멘탈",
+      "자동사과",
+      "자책",
+      "죄책감",
+      "즉시사과"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "내 마음의 무의식 스토리는 무엇인가요? (예: '나 때문에 기분 나쁜 게"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“‘미안해’ 전에 ‘내가 실제로 잘못한 게 무엇이지?’"
+    ],
+    "relatedCards": [
+      "emo-015",
+      "emo-010",
+      "emo-009"
+    ]
   },
   {
     "id": "emo-008",
@@ -6673,7 +12011,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "불안",
+      "수치심",
+      "수치심숨기",
+      "숨고싶음",
+      "실수",
+      "유리멘탈",
+      "이불킥",
+      "자책",
+      "잠수",
+      "창피함"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "실수"
+    ],
+    "storyTags": [
+      "수치심이 만든 극단적 결론은 무엇인가요? (예: '모두가 날 비웃고 있을"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“필요한 수정이나 연락 하나만 먼저 한다"
+    ],
+    "relatedCards": [
+      "emo-005",
+      "emo-007",
+      "emo-009"
+    ]
   },
   {
     "id": "emo-009",
@@ -6708,7 +12078,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 96,
-    "interactionType": "second_arrow"
+    "interactionType": "second_arrow",
+    "routeTags": [
+      "과대일반화",
+      "불안",
+      "비약",
+      "실수확대",
+      "실수후회",
+      "유리멘탈",
+      "인생망했다",
+      "자책"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "마음이 내린 거대한 판결문은 무엇인가요? (예: '내 커리어는 끝장났고 "
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“수정해야 할 범위를 3줄 이내로 적는다"
+    ],
+    "relatedCards": [
+      "emo-007",
+      "emo-010",
+      "emo-015"
+    ]
   },
   {
     "id": "emo-010",
@@ -6743,7 +12142,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "second_arrow"
+    "interactionType": "second_arrow",
+    "routeTags": [
+      "무한루프",
+      "반성",
+      "반성무한루프",
+      "불안",
+      "유리멘탈",
+      "자기처벌",
+      "자책",
+      "죄책감",
+      "후회반복"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 자책이 나에게 주는 가짜 도덕적 위안은 무엇인가요? (예: '충분히 "
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“자책 문장을 멈추고 다음 수정 행동 하나를 적는다"
+    ],
+    "relatedCards": [
+      "emo-007",
+      "emo-015",
+      "emo-009"
+    ]
   },
   {
     "id": "emo-011",
@@ -6778,7 +12207,33 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "body_signal"
+    "interactionType": "body_signal",
+    "routeTags": [
+      "멘탈약함",
+      "불안",
+      "상처잘받음",
+      "예민함",
+      "유리멘탈",
+      "자책",
+      "쿠쿠다스"
+    ],
+    "triggerTags": [
+      "유리멘탈"
+    ],
+    "storyTags": [
+      "그 사실에 붙인 내 정체성 낙인은 무엇인가요? (예: '난 멘탈이 두부 "
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“‘나는 ○○ 상황에서 ○○ 반응이 빨리 올라온다’라고"
+    ],
+    "relatedCards": [
+      "emo-001",
+      "emo-002",
+      "emo-003"
+    ]
   },
   {
     "id": "emo-012",
@@ -6813,7 +12268,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "감정없애기",
+      "감정조절",
+      "감정통제",
+      "불안",
+      "불안극복",
+      "유리멘탈",
+      "자책",
+      "평정심",
+      "화다스리기"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "감정에 대해 내 마음이 내린 요구는 무엇인가요? (예: '이 떨림을 당장"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“감정은 그대로 두고 행동 하나만 다르게 선택한다"
+    ],
+    "relatedCards": [
+      "emo-006",
+      "emo-014",
+      "emo-003"
+    ]
   },
   {
     "id": "emo-013",
@@ -6848,7 +12333,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "도망충동",
+      "도피",
+      "불안",
+      "불편함",
+      "유리멘탈",
+      "자리피하기",
+      "자책",
+      "잠수",
+      "회피"
+    ],
+    "triggerTags": [
+      "도망충동"
+    ],
+    "storyTags": [
+      "도망치고 싶은 충동이 만드는 생각은 무엇인가요? (예: '여기 더 있으면"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“가능한 안전한 상황에서는 즉시 사라지지 않고 필요한 "
+    ],
+    "relatedCards": [
+      "emo-008",
+      "emo-001",
+      "emo-002"
+    ]
   },
   {
     "id": "emo-014",
@@ -6883,7 +12396,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "분노",
+      "분노즉시전송",
+      "불안",
+      "언쟁",
+      "유리멘탈",
+      "자책",
+      "즉시전송",
+      "충동전송",
+      "카톡폭발",
+      "화남"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "내 마음의 분노 자막은 무엇인가요? (예: '나를 철저히 무시하고 있네."
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“메시지는 작성해도 전송은 잠시 보류한다"
+    ],
+    "relatedCards": [
+      "emo-006",
+      "emo-012",
+      "emo-003"
+    ]
   },
   {
     "id": "emo-015",
@@ -6918,7 +12462,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "second_arrow"
+    "interactionType": "second_arrow",
+    "routeTags": [
+      "눈치",
+      "미안함",
+      "불안",
+      "유리멘탈",
+      "유죄선고",
+      "자기비난",
+      "자책",
+      "죄책감",
+      "죄책감결재",
+      "착한아이증후군"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "죄책감이 씌운 혐의는 무엇인가요? (예: '동료를 돕지 않는 이기적이고 "
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“책임이 있으면 구체적으로 복구하고, 없다면 자동사과는"
+    ],
+    "relatedCards": [
+      "emo-007",
+      "emo-010",
+      "emo-009"
+    ]
   },
   {
     "id": "emo-016",
@@ -6953,7 +12528,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 90,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "감정예측",
+      "기분파",
+      "무기력",
+      "불안",
+      "우울한아침",
+      "유리멘탈",
+      "의욕저하",
+      "자책",
+      "하루망침"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "현재 기분이 내리는 종말 예보는 무엇인가요? (예: '오늘 시작부터 기분"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“다음 10분에 할 현실 행동 하나를 선택한다"
+    ],
+    "relatedCards": [
+      "emo-001",
+      "emo-002",
+      "emo-003"
+    ]
   },
   {
     "id": "emo-017",
@@ -6988,7 +12593,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "body_signature"
+    "interactionType": "body_signature",
+    "routeTags": [
+      "감정폭발예방",
+      "다시는안그래",
+      "바디시그니처",
+      "불안",
+      "유리멘탈",
+      "자각",
+      "자책",
+      "전조증상",
+      "조기신호"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "그 신호와 함께 머릿속을 스쳐 지나간 생각은 무엇이었나요? (예: '또 "
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“다음번 조기신호 하나를 정한다"
+    ],
+    "relatedCards": [
+      "emo-001",
+      "emo-002",
+      "emo-003"
+    ]
   },
   {
     "id": "emo-018",
@@ -7023,7 +12658,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "emotion_urge_action"
+    "interactionType": "emotion_urge_action",
+    "routeTags": [
+      "감정정체",
+      "기분회복",
+      "불안",
+      "비교",
+      "왜안낫지",
+      "유리멘탈",
+      "자책",
+      "조급증",
+      "회복조급함"
+    ],
+    "triggerTags": [
+      "회복조급함"
+    ],
+    "storyTags": [
+      "내 마음의 가혹한 압박은 무엇인가요? (예: '남들은 쿨하게 털어내는데 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“기분 회복을 기다리지 않고 일상 행동 하나를 한다"
+    ],
+    "relatedCards": [
+      "emo-001",
+      "emo-002",
+      "emo-003"
+    ]
   },
   {
     "id": "emo-019",
@@ -7058,7 +12721,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "body_signal"
+    "interactionType": "body_signal",
+    "routeTags": [
+      "또불안",
+      "또흔들림",
+      "말짱도루묵",
+      "변화없음",
+      "불안",
+      "유리멘탈",
+      "자책",
+      "재발판결",
+      "제자리",
+      "흔들림"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "감정고조"
+    ],
+    "storyTags": [
+      "내 마음의 흑백논리 판결은 무엇인가요? (예: '또 불안해하다니, 난 평"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“이번에 달랐던 점 하나를 기록한다"
+    ],
+    "relatedCards": [
+      "emo-003",
+      "emo-006",
+      "emo-012"
+    ]
   },
   {
     "id": "emo-020",
@@ -7093,7 +12788,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "prevention_to_response"
+    "interactionType": "prevention_to_response",
+    "routeTags": [
+      "대응가능성",
+      "불안",
+      "불안대응",
+      "안전감",
+      "완벽예방",
+      "유리멘탈",
+      "자책",
+      "통제환상",
+      "회복탄력성"
+    ],
+    "triggerTags": [
+      "대응가능성"
+    ],
+    "storyTags": [
+      "통제할 수 없는 영역에 대해 마음이 요구하는 것은 무엇인가요? (예: '"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“예방 행동 하나와 대응 계획 하나만 정한다"
+    ],
+    "relatedCards": [
+      "emo-001",
+      "emo-002",
+      "emo-003"
+    ]
   },
   {
     "id": "fate-001",
@@ -7129,7 +12852,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "belief_fact_split"
+    "interactionType": "belief_fact_split",
+    "routeTags": [
+      "불운",
+      "사주미신",
+      "삼재",
+      "삼재결론",
+      "삼재인가요",
+      "악재",
+      "운명역전",
+      "운세",
+      "일이꼬여요",
+      "팔자"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "그 사건들을 하나로 묶어 내린 마음의 자막은 무엇인가요? (예: '삼재라"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“현재 해결 가능한 문제 하나만 구체적으로 처리한다"
+    ],
+    "relatedCards": [
+      "fate-006",
+      "fate-008",
+      "fate-010"
+    ]
   },
   {
     "id": "fate-002",
@@ -7165,7 +12919,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "authority_split"
+    "interactionType": "authority_split",
+    "routeTags": [
+      "가난",
+      "경제불안",
+      "돈복",
+      "돈복판결",
+      "부자사주",
+      "사주돈복",
+      "사주미신",
+      "사주팔자",
+      "삼재",
+      "운명역전"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "사주풀이를 듣고 마음이 내린 판결은 무엇인가요? (예: '어차피 난 평생"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“오늘 통제 가능한 경제 행동 하나를 정한다"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-003",
+      "fate-006"
+    ]
   },
   {
     "id": "fate-003",
@@ -7200,7 +12986,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "belief_fact_split"
+    "interactionType": "belief_fact_split",
+    "routeTags": [
+      "불안형연애",
+      "사주궁합",
+      "사주미신",
+      "삼재",
+      "연애운",
+      "운명역전",
+      "의심",
+      "이별수",
+      "이별운"
+    ],
+    "triggerTags": [
+      "연인",
+      "친밀감",
+      "관계거리",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "그 행동에 이별수를 덧씌워 만든 스토리텔링은 무엇인가요? (예: '마음이"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“존중·약속·대화 중 실제 데이터 하나를 확인한다"
+    ],
+    "relatedCards": [
+      "fate-013",
+      "fate-001",
+      "fate-002"
+    ]
   },
   {
     "id": "fate-004",
@@ -7235,7 +13052,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "authority_split"
+    "interactionType": "authority_split",
+    "routeTags": [
+      "결혼궁합",
+      "궁합",
+      "궁합결재",
+      "궁합안좋음",
+      "사주궁합",
+      "사주미신",
+      "삼재",
+      "안맞는궁합",
+      "연애궁합",
+      "운명역전"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "궁합이 안 좋다는 말에 내 마음이 내린 유죄 판결은 무엇인가요? (예: "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“현재 관계의 존중·신뢰·책임 데이터를 3개 적는다"
+    ],
+    "relatedCards": [
+      "fate-003",
+      "fate-018",
+      "fate-001"
+    ]
   },
   {
     "id": "fate-005",
@@ -7270,7 +13118,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "certainty_to_participation"
+    "interactionType": "certainty_to_participation",
+    "routeTags": [
+      "개업날짜",
+      "길일",
+      "날짜택일",
+      "사주미신",
+      "삼재",
+      "손없는날",
+      "운명역전",
+      "이사날짜",
+      "좋은날",
+      "좋은날대기"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "불길한 날짜에 시작하면 뇌가 상상하는 파국은 무엇인가요? (예: '이날 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“결정 기준을 최소 3개 적는다"
+    ],
+    "relatedCards": [
+      "fate-014",
+      "fate-015",
+      "fate-019"
+    ]
   },
   {
     "id": "fate-006",
@@ -7305,7 +13184,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "belief_fact_split"
+    "interactionType": "belief_fact_split",
+    "routeTags": [
+      "나쁜꿈",
+      "불길한예감",
+      "사주미신",
+      "삼재",
+      "악몽",
+      "운명역전",
+      "징조",
+      "징조해석",
+      "징크스",
+      "흉몽"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "그 꿈에 붙인 징조 해석은 무엇인가요? (예: '가족 중에 누가 크게 다"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“현실에서 필요한 준비만 하고 미래 판결은 UNKNOW"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-008",
+      "fate-010"
+    ]
   },
   {
     "id": "fate-007",
@@ -7340,7 +13250,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "certainty_to_participation"
+    "interactionType": "certainty_to_participation",
+    "routeTags": [
+      "사주미신",
+      "사주어플",
+      "사주중독",
+      "삼재",
+      "운명역전",
+      "점보기",
+      "점집",
+      "점집재확인",
+      "타로순회"
+    ],
+    "triggerTags": [
+      "가족",
+      "부모요구",
+      "경계",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "계속 찾아다니는 내 마음의 결핍은 무엇인가요? (예: '100% 안전하다"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“같은 질문에 대한 추가 확인을 오늘 한 번 보류한다"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-002",
+      "fate-003"
+    ]
   },
   {
     "id": "fate-008",
@@ -7375,7 +13316,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "belief_fact_split"
+    "interactionType": "belief_fact_split",
+    "routeTags": [
+      "관재구설",
+      "나쁜말",
+      "나쁜말확대",
+      "사주미신",
+      "사주불안",
+      "사주풀이",
+      "살",
+      "삼재",
+      "액운",
+      "운명역전"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "그 한 문장을 바탕으로 내가 지어낸 거대한 재난 시나리오는 무엇인가요? "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“들은 문장을 그대로 한 줄만 적고 추가 해석을 구분한"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-006",
+      "fate-010"
+    ]
   },
   {
     "id": "fate-009",
@@ -7410,7 +13382,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 97,
-    "interactionType": "certainty_to_participation"
+    "interactionType": "certainty_to_participation",
+    "routeTags": [
+      "띠별운세",
+      "무료운세",
+      "별자리운세",
+      "사주미신",
+      "삼재",
+      "오늘의운세",
+      "운명역전",
+      "운세검색",
+      "일진"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "운세를 보기 전 내 마음에 도사린 불안은 무엇이었나요? (예: '오늘 중"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“추가 검색 전에 현실 행동 하나를 먼저 한다"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-002",
+      "fate-003"
+    ]
   },
   {
     "id": "fate-010",
@@ -7445,7 +13448,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "belief_fact_split"
+    "interactionType": "belief_fact_split",
+    "routeTags": [
+      "거봐사주대로",
+      "사주미신",
+      "사후확신",
+      "삼재",
+      "예언필터",
+      "운명역전",
+      "체념",
+      "팔자소관",
+      "확증편향"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "마음이 무의식적으로 덮어씌운 운명 공식은 무엇인가요? (예: '사주에서 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“이번 사건의 원인을 사주 하나로 확정하지 않고 현실요"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-006",
+      "fate-008"
+    ]
   },
   {
     "id": "fate-011",
@@ -7480,7 +13513,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 90,
-    "interactionType": "authority_split"
+    "interactionType": "authority_split",
+    "routeTags": [
+      "마법적사고",
+      "부적",
+      "사주미신",
+      "삼재",
+      "운명역전",
+      "의존",
+      "징크스",
+      "행운물건",
+      "행운물의존",
+      "행운아이템"
+    ],
+    "triggerTags": [
+      "행운물의존"
+    ],
+    "storyTags": [
+      "물건이 없을 때 머릿속을 스치는 공포는 무엇인가요? (예: '부적이 없으"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“안전한 작은 일 하나를 그 물건 없이 해본다"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-006",
+      "fate-008"
+    ]
   },
   {
     "id": "fate-012",
@@ -7515,7 +13577,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 91,
-    "interactionType": "certainty_to_participation"
+    "interactionType": "certainty_to_participation",
+    "routeTags": [
+      "금기",
+      "미신",
+      "불길한행동",
+      "사주미신",
+      "삼재",
+      "운명역전",
+      "조건화",
+      "징크스",
+      "징크스깨기",
+      "징크스회피"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "징크스 행동을 했을 때 뇌가 켜는 비상경보는 무엇인가요? (예: '빨간 "
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "“다음부터 사건과 결과를 간단히 기록한다"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-006",
+      "fate-008"
+    ]
   },
   {
     "id": "fate-013",
@@ -7550,7 +13643,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 95,
-    "interactionType": "certainty_to_participation"
+    "interactionType": "certainty_to_participation",
+    "routeTags": [
+      "대운",
+      "대운대기",
+      "대운시기",
+      "미루기",
+      "사주미신",
+      "삼재",
+      "용신",
+      "운때",
+      "운명역전",
+      "인생역전"
+    ],
+    "triggerTags": [
+      "연인",
+      "친밀감",
+      "관계거리",
+      "마감임박"
+    ],
+    "storyTags": [
+      "대운을 핑계로 미루는 내 마음의 게으름은 무엇인가요? (예: '어차피 지"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“지금 가능한 작은 행동 하나를 시작한다"
+    ],
+    "relatedCards": [
+      "fate-003",
+      "fate-005",
+      "fate-014"
+    ]
   },
   {
     "id": "fate-014",
@@ -7585,7 +13710,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "certainty_to_participation"
+    "interactionType": "certainty_to_participation",
+    "routeTags": [
+      "나쁜시기",
+      "나쁜시기동결",
+      "도전회피",
+      "동결",
+      "몸사리기",
+      "사주미신",
+      "사주조심",
+      "삼재",
+      "운명역전",
+      "운안좋음"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "삶을 동결시켰을 때 마음이 주는 가짜 안전감은 무엇인가요? (예: '가만"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“회복 가능한 작은 행동 하나만 한다"
+    ],
+    "relatedCards": [
+      "fate-005",
+      "fate-015",
+      "fate-019"
+    ]
   },
   {
     "id": "fate-015",
@@ -7620,7 +13776,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 96,
-    "interactionType": "authority_split"
+    "interactionType": "authority_split",
+    "routeTags": [
+      "결재권",
+      "결재권양도",
+      "사주미신",
+      "사주선택",
+      "삼재",
+      "선택권",
+      "운명역전",
+      "인생결정",
+      "주체성",
+      "책임전가"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "술사의 말에 따랐을 때 실패하면 탓할 핑계가 생긴다는 무의식적 계산이 있"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“결정 기준을 ‘믿음 / 현실정보 / 가치 / 책임’ "
+    ],
+    "relatedCards": [
+      "fate-020",
+      "fate-005",
+      "fate-014"
+    ]
   },
   {
     "id": "fate-016",
@@ -7655,7 +13843,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 94,
-    "interactionType": "identity_to_operation"
+    "interactionType": "identity_to_operation",
+    "routeTags": [
+      "도화살",
+      "사주미신",
+      "사주팔자",
+      "삼재",
+      "역마살",
+      "운명역전",
+      "정체성라벨",
+      "체념",
+      "팔자가세다",
+      "팔자정체성"
+    ],
+    "triggerTags": [
+      "팔자정체성"
+    ],
+    "storyTags": [
+      "그 정체성이 내게 주는 체념은 무엇인가요? (예: '어차피 난 평탄하게 "
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“‘나는 원래 ○○다’를 ‘나는 ○○ 상황에서 ○○ 반"
+    ],
+    "relatedCards": [
+      "fate-002",
+      "fate-010",
+      "fate-001"
+    ]
   },
   {
     "id": "fate-017",
@@ -7690,7 +13907,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 93,
-    "interactionType": "belief_fact_split"
+    "interactionType": "belief_fact_split",
+    "routeTags": [
+      "사주동일시",
+      "사주미신",
+      "사주유형",
+      "삼재",
+      "성격사주",
+      "십성",
+      "오행",
+      "운명역전",
+      "자아이해"
+    ],
+    "triggerTags": [
+      "불확실한미래",
+      "운세해석",
+      "징크스"
+    ],
+    "storyTags": [
+      "사주를 나와 동일시할 때 생기는 한계는 무엇인가요? (예: '난 불(火)"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "“사주 설명과 다르게 행동했던 실제 장면 하나를 찾는다"
+    ],
+    "relatedCards": [
+      "fate-001",
+      "fate-006",
+      "fate-008"
+    ]
   },
   {
     "id": "fate-018",
@@ -7725,7 +13972,39 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 98,
-    "interactionType": "identity_to_operation"
+    "interactionType": "identity_to_operation",
+    "routeTags": [
+      "굴레",
+      "반복되는일",
+      "반복패턴",
+      "사주미신",
+      "삼재",
+      "악순환",
+      "운명vs패턴",
+      "운명대패턴",
+      "운명역전",
+      "운명인가요"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 반복에 내가 붙인 숙명론적 자막은 무엇인가요? (예: '내 운명은 항"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“Trigger → STORY → URGE → ACTI"
+    ],
+    "relatedCards": [
+      "fate-004",
+      "fate-001",
+      "fate-002"
+    ]
   },
   {
     "id": "fate-019",
@@ -7760,7 +14039,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": false,
     "popularity": 92,
-    "interactionType": "certainty_to_participation"
+    "interactionType": "certainty_to_participation",
+    "routeTags": [
+      "결정장애",
+      "미래불안",
+      "미래확실성",
+      "불확실성",
+      "사주미신",
+      "삼재",
+      "안전보장",
+      "완벽주의",
+      "운명역전"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "미래를 모른 채 결정하면 뇌가 상상하는 공포는 무엇인가요? (예: '단 "
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“추가로 필요한 정보 3개까지만 정한다"
+    ],
+    "relatedCards": [
+      "fate-005",
+      "fate-014",
+      "fate-015"
+    ]
   },
   {
     "id": "fate-020",
@@ -7795,7 +14104,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "NORMAL",
     "isFeatured": true,
     "popularity": 99,
-    "interactionType": "authority_split"
+    "interactionType": "authority_split",
+    "routeTags": [
+      "믿지만갇히지않는다",
+      "믿지만자유로움",
+      "사주미신",
+      "사주선택권",
+      "사주활용",
+      "삼재",
+      "운명역전",
+      "자유",
+      "주체적삶"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "불확실한미래"
+    ],
+    "storyTags": [
+      "그 믿음이 내 결재권까지 빼앗으려 할 때 생기는 부작용은 무엇인가요? ("
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 선택 하나를 현재의 가치와 책임 기준으로 직접 "
+    ],
+    "relatedCards": [
+      "fate-015",
+      "fate-005",
+      "fate-014"
+    ]
   },
   {
     "id": "code-001",
@@ -7831,7 +14171,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 99
+    "popularity": 99,
+    "routeTags": [
+      "3대코드",
+      "뉴럴코드",
+      "다크코드",
+      "알면서반복",
+      "왜또반복하죠",
+      "작동패턴",
+      "제로포인트",
+      "패턴반복",
+      "패턴을 알아도 안 바뀌어요"
+    ],
+    "triggerTags": [
+      "패턴반복"
+    ],
+    "storyTags": [
+      "그 순간 머릿속에서 자동으로 떠오른 STORY(해석)는?"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“가장 바꾸기 쉬운 화살표 하나만 고른다"
+    ],
+    "relatedCards": [
+      "code-002",
+      "code-009",
+      "code-010"
+    ]
   },
   {
     "id": "code-002",
@@ -7867,7 +14235,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 98
+    "popularity": 98,
+    "routeTags": [
+      "3대코드",
+      "기질",
+      "나는원래이래",
+      "다크코드",
+      "성격",
+      "성향",
+      "작동지도",
+      "정체성",
+      "정체성분리",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "정체성분리"
+    ],
+    "storyTags": [
+      "그것이 과거의 생존 방식이었을 가능성은?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“‘나는 원래…’ 대신 ‘나는 ○○ 상황에서 ○○할 때"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-015",
+      "code-016"
+    ]
   },
   {
     "id": "code-003",
@@ -7902,7 +14299,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 97
+    "popularity": 97,
+    "routeTags": [
+      "3대코드",
+      "과잉분석",
+      "다크코드가뭐예요",
+      "다크코드찾기",
+      "분석중독",
+      "자기분석",
+      "제로포인트",
+      "코드중독"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "모든 것을 파헤치지 않으면 큰일 난다는 두려움이 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“SCAN을 닫고 현실 행동 하나를 한다"
+    ],
+    "relatedCards": [
+      "code-014",
+      "code-019",
+      "zeropoint-30"
+    ]
   },
   {
     "id": "code-004",
@@ -7937,7 +14363,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 91
+    "popularity": 91,
+    "routeTags": [
+      "3대코드",
+      "나쁜습관",
+      "다크코드가강한가요",
+      "다크코드나쁜것",
+      "보호기제",
+      "자기방어",
+      "제로포인트",
+      "패턴없애기",
+      "패턴의유용성"
+    ],
+    "triggerTags": [
+      "패턴의유용성"
+    ],
+    "storyTags": [
+      "이 패턴을 '나쁜 죄'로 규정하며 자책하고 있지는 않나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“남길 능력 1개 / 줄일 과출력 1개를 적는다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-003"
+    ]
   },
   {
     "id": "code-005",
@@ -7972,7 +14426,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 90
+    "popularity": 90,
+    "routeTags": [
+      "3대코드",
+      "과거상처",
+      "과거원인집착",
+      "다크코드원인",
+      "왜이럴까",
+      "원인규명",
+      "원인찾기",
+      "제로포인트",
+      "트라우마"
+    ],
+    "triggerTags": [
+      "과거원인집착"
+    ],
+    "storyTags": [
+      "‘원인을 모르면 절대 못 고친다’는 또 다른 규칙을 쥐고 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“오늘 Trigger 하나만 기록한다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-003"
+    ]
   },
   {
     "id": "code-006",
@@ -8007,7 +14489,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 89
+    "popularity": 89,
+    "routeTags": [
+      "3대코드",
+      "SCAN",
+      "SCAN완벽주의",
+      "스캔",
+      "신호체크",
+      "알아차림",
+      "완벽주의",
+      "자기관찰",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "SCAN완벽주의"
+    ],
+    "storyTags": [
+      "모든 감정을 미세하게 다 포착해야 한다는 강박이 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“생각·몸·충동 중 가장 선명한 하나만 기록한다"
+    ],
+    "relatedCards": [
+      "code-017",
+      "code-001",
+      "code-002"
+    ]
   },
   {
     "id": "code-007",
@@ -8042,7 +14552,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "3대코드",
+      "SYNC",
+      "SYNC오해",
+      "감정바꾸기",
+      "감정수용",
+      "긍정확언오해",
+      "싱크",
+      "있는그대로",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "SYNC오해"
+    ],
+    "storyTags": [
+      "이 감정을 느끼면 안 된다는 두려움이나 수치심이 있나요?"
+    ],
+    "urgeTags": [
+      "상대를 내 뜻대로 바꾸려는 충동"
+    ],
+    "actionTags": [
+      "“감정은 그대로 두고 현실 행동 하나를 선택한다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-003"
+    ]
   },
   {
     "id": "code-008",
@@ -8077,7 +14615,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 91
+    "popularity": 91,
+    "routeTags": [
+      "3대코드",
+      "SHIFT",
+      "SHIFT정답강박",
+      "결과관찰",
+      "불확실성",
+      "선택강박",
+      "시프트",
+      "정답찾기",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "SHIFT정답강박"
+    ],
+    "storyTags": [
+      "‘실패하면 끝장’이라는 극단적 파국화가 작동하고 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“다음 선택 하나를 하고 결과를 관찰한다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-003"
+    ]
   },
   {
     "id": "code-009",
@@ -8112,7 +14678,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 98
+    "popularity": 98,
+    "routeTags": [
+      "3대코드",
+      "뉴럴코드",
+      "마음이안바뀌어요",
+      "신경가소성",
+      "작은행동",
+      "제로포인트",
+      "행동실험",
+      "행동학습"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "마음이 편해져야만 움직일 수 있다는 믿음은 사실일까요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“예상 결과를 적고 작은 행동 하나를 시험한다"
+    ],
+    "relatedCards": [
+      "code-011",
+      "code-020",
+      "code-017"
+    ]
   },
   {
     "id": "code-010",
@@ -8147,7 +14742,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 88
+    "popularity": 88,
+    "routeTags": [
+      "3대코드",
+      "뉴럴코드",
+      "데이터관찰",
+      "시행착오",
+      "실패피드백",
+      "실험과피드백",
+      "예상과실제",
+      "재학습",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "실험과피드백"
+    ],
+    "storyTags": [
+      "이 한 번의 일로 '역시 난 안 돼'라고 파국적 결론을 내렸나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“다음 실험에서 조정할 점 하나를 적는다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-009",
+      "code-016"
+    ]
   },
   {
     "id": "code-011",
@@ -8182,7 +14805,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 99
+    "popularity": 99,
+    "routeTags": [
+      "3대코드",
+      "무념무상",
+      "선택공간",
+      "제로포인트",
+      "제로포인트가뭐예요",
+      "제로포인트상태오해",
+      "제로포인트에못들어가요",
+      "탈동일시"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "Zero Point에 도달하지 못했다고 스스로를 책망하고 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“생각을 없애려 하지 말고 다음 행동 하나를 직접 선택"
+    ],
+    "relatedCards": [
+      "code-009",
+      "code-020",
+      "code-017"
+    ]
   },
   {
     "id": "code-012",
@@ -8217,7 +14869,34 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 87
+    "popularity": 87,
+    "routeTags": [
+      "3대코드",
+      "관찰자",
+      "관찰자함정",
+      "영적우월감",
+      "제로포인트",
+      "진짜나",
+      "탈동일시함정",
+      "현실복귀"
+    ],
+    "triggerTags": [
+      "관찰자함정"
+    ],
+    "storyTags": [
+      "감정을 느끼면 영적으로 미성숙하다는 식의 잣대가 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“개념을 잠시 내려놓고 지금 하고 있던 삶의 행동으로 "
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-003"
+    ]
   },
   {
     "id": "code-013",
@@ -8253,7 +14932,37 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 93
+    "popularity": 93,
+    "routeTags": [
+      "3대코드",
+      "다크코드오해",
+      "면책",
+      "복구",
+      "사과",
+      "어쩔수없었어",
+      "제로포인트",
+      "책임",
+      "책임과이해",
+      "핑계"
+    ],
+    "triggerTags": [
+      "책임과이해"
+    ],
+    "storyTags": [
+      "‘어쩔 수 없었다’며 상황 탓으로 돌리고 싶은 충동이 있나요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“필요한 사과·수정·복구 중 하나를 한다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-003"
+    ]
   },
   {
     "id": "code-014",
@@ -8288,7 +14997,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 94
+    "popularity": 94,
+    "routeTags": [
+      "3대코드",
+      "감정결재권",
+      "선택권",
+      "제로포인트",
+      "충동조절",
+      "행동통제",
+      "화가나요"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "이 감정을 느끼면 반드시 그 행동을 해야만 직성이 풀린다는 착각은?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“충동과 다른 행동 하나를 선택한다"
+    ],
+    "relatedCards": [
+      "code-003",
+      "code-019",
+      "zeropoint-30"
+    ]
   },
   {
     "id": "code-015",
@@ -8323,7 +15060,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 91
+    "popularity": 91,
+    "routeTags": [
+      "3대코드",
+      "경계세우기",
+      "다크코드",
+      "외부탓내탓",
+      "자책금지",
+      "제로포인트",
+      "패턴과현실분리",
+      "팩트체크",
+      "현실과패턴"
+    ],
+    "triggerTags": [
+      "패턴과현실분리"
+    ],
+    "storyTags": [
+      "그 상황을 보고 내 안에서 자동으로 작동한 반응은?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“현실 문제 하나와 내 행동 하나를 별도로 적는다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-018"
+    ]
   },
   {
     "id": "code-016",
@@ -8359,7 +15124,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": true,
     "isFeatured": true,
-    "popularity": 97
+    "popularity": 97,
+    "routeTags": [
+      "3대코드",
+      "강점",
+      "과출력",
+      "기질",
+      "기질과조율",
+      "뉴럴코드",
+      "볼륨조절",
+      "새로운나",
+      "성격개조",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "기질과조율"
+    ],
+    "storyTags": [
+      "이 기질을 완전히 뜯어고쳐야만 행복해질 수 있다는 착각은?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“남길 능력 1개와 조절할 과출력 1개를 정한다"
+    ],
+    "relatedCards": [
+      "code-001",
+      "code-002",
+      "code-009"
+    ]
   },
   {
     "id": "code-017",
@@ -8394,7 +15188,38 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 92
+    "popularity": 92,
+    "routeTags": [
+      "3대코드",
+      "뉴럴코드",
+      "변화의지표",
+      "변화확인",
+      "성장지표",
+      "알아차림",
+      "작은변화",
+      "제로포인트",
+      "회복탄력성"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과",
+      "감정고조"
+    ],
+    "storyTags": [
+      "조금이라도 흔들리면 '말짱 도루묵'이라는 흑백논리에 빠져있나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "“이번 주 달랐던 장면 하나를 저장한다"
+    ],
+    "relatedCards": [
+      "code-009",
+      "code-001",
+      "code-006"
+    ]
   },
   {
     "id": "code-018",
@@ -8429,7 +15254,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 95
+    "popularity": 95,
+    "routeTags": [
+      "3대코드",
+      "다시돌아감",
+      "신속복구",
+      "요요현상",
+      "원점복귀",
+      "자책금지",
+      "재발",
+      "재발과복구",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "재발과복구"
+    ],
+    "storyTags": [
+      "‘역시 난 안 변해’라는 자책의 두 번째 화살을 쏘고 있나요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“다음 행동 하나만 이전과 다르게 한다"
+    ],
+    "relatedCards": [
+      "code-015",
+      "code-001",
+      "code-002"
+    ]
   },
   {
     "id": "code-019",
@@ -8463,7 +15316,36 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 96
+    "popularity": 96,
+    "routeTags": [
+      "3대코드",
+      "3대코드차이가뭐예요",
+      "다크코드뉴럴코드차이",
+      "도구선택",
+      "도구활용",
+      "세코드어디부터",
+      "어디부터해야하나요",
+      "제로포인트"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "반드시 단계별로 마스터해야 한다는 완벽주의가 있나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“아래 세 가지 중 하나만 선택한다: 패턴 보기 / 작"
+    ],
+    "relatedCards": [
+      "code-003",
+      "code-014",
+      "zeropoint-30"
+    ]
   },
   {
     "id": "code-020",
@@ -8498,6 +15380,35 @@ window.MIND_CARDS_DATA = [
     "safetyLevel": "safe",
     "featured": false,
     "isFeatured": false,
-    "popularity": 100
+    "popularity": 100,
+    "routeTags": [
+      "3대코드",
+      "내선택은내가해",
+      "다시삶으로",
+      "명심코칭목적",
+      "삶으로복귀",
+      "자기분석끝",
+      "제로포인트",
+      "현실행동"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "더 완벽히 깨달아야만 진짜 인생이 시작된다는 미신이 있나요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "“앱을 닫은 뒤 실행할 현실 행동 하나를 선택한다"
+    ],
+    "relatedCards": [
+      "code-009",
+      "code-011",
+      "code-017"
+    ]
   }
 ];

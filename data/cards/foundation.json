@@ -1,0 +1,2084 @@
+[
+  {
+    "id": "relationship-reply-001",
+    "category": "관계·심리",
+    "keyword": "답장불안",
+    "cardTitle": "마음읽기 모드",
+    "question": "답장이 늦으면 왜 최악부터 생각할까요?",
+    "sodaAnswer": "답장이 늦었다는 사실과 마음이 식었다는 해석은 같은 것이 아닙니다.",
+    "description": "마음은 UNKNOWN 상태를 불편해하기 때문에 아직 확인되지 않은 부분을 STORY로 빠르게 채울 수 있습니다.",
+    "curiosityQuestion": "나는 모르는 시간을 어떤 이야기로 가장 빨리 채우는 편일까?",
+    "scanQuestion": "답장을 기다리는 동안 가장 먼저 무엇이 올라왔나요?",
+    "factQuestion": "실제로 확인된 것은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 것은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요?",
+    "syncSentence": "불확실해서 확인하고 싶은 마음이 올라오는구나.",
+    "shiftQuestion": "지금 바로 결론내리지 않는다면 어떤 선택이 가능할까요?",
+    "tenPercentAction": "30분 동안 추가 메시지를 보내지 않고 기다려본다.",
+    "relatedBook": "다크 코드",
+    "relatedBookChapter": "제2장 · 무의식적 마음읽기와 투사의 해체",
+    "appCTA": "내 관계 패턴 SCAN하기",
+    "bookCTA": "마음읽기 패턴의 뿌리 읽기",
+    "searchKeywords": [
+      "답장이 안 와요",
+      "답장",
+      "읽씹",
+      "카톡",
+      "연락",
+      "마음 식음",
+      "연락불안",
+      "연락이 안 와요",
+      "카톡 안 읽음"
+    ],
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "relatedChapter": "제2장 · 무의식적 마음읽기와 투사의 해체",
+    "featured": true,
+    "routeTags": [
+      "관계",
+      "답장",
+      "답장불안",
+      "답장이 안 와요",
+      "마음 식음",
+      "심리",
+      "연락",
+      "연락불안",
+      "연락이 안 와요",
+      "읽씹"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "30분 동안 추가 메시지를 보내지 않고 기다려본다"
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-006",
+      "rel-015"
+    ]
+  },
+  {
+    "id": "overchecking-01",
+    "category": "불확실성",
+    "keyword": "과잉확인",
+    "cardTitle": "확인 모드",
+    "question": "왜 저는 결정한 뒤부터 오히려 검색을 더 많이 할까요?",
+    "sodaAnswer": "결정이 틀려서가 아니라, '100% 완벽한 정답'이어야 한다는 불안이 확인 충동을 부추기기 때문입니다.",
+    "description": "새로운 정보가 생기는 확인과 같은 정보를 반복해서 보는 행동은 기능이 완전히 다릅니다. 안도감은 잠시일 뿐 확인할수록 뇌는 더 의심합니다.",
+    "curiosityQuestion": "“내 경우에는 무엇을 확인해야 안심할 수 있다고 느끼는 걸까? 왜 그 안도감은 5분을 넘기지 못할까?”",
+    "scanQuestion": "확인 직전에 어떤 생각과 몸의 긴장(가슴 조임, 어깨 굳음)이 있었나요?",
+    "syncSentence": "“불안해서 거듭 확인하고 싶은 마음이 올라오는구나. 그 불안을 인정한다.”",
+    "shiftQuestion": "이번에는 한 번 덜 확인한다면 내 삶에 어떤 공간이 생길까?",
+    "tenPercentAction": "오늘 마지막 확인 후 “확인 완료”를 소리 내어 말하고 즉시 다른 방으로 이동하기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제2장 · 의심의 쳇바퀴와 Body Signature",
+    "appCTA": "내 확인 패턴 직접 확인하기",
+    "appSubtext": "확인 버튼을 누르기 직전 켜지는 내 머릿속 소설과 몸의 신호를 1분 만에 기록해봅니다.",
+    "bookCTA": "확인 모드의 뇌과학 원리 읽기",
+    "bookSubtext": "왜 뇌는 불확실성을 생존의 위협으로 착각하고 확인 쳇바퀴를 돌리는지 책에서 확인하세요.",
+    "searchKeywords": [
+      "계속 확인해요",
+      "자꾸 확인해요",
+      "이메일 확인",
+      "확인",
+      "결정",
+      "도어락",
+      "강박",
+      "확인 강박",
+      "검색",
+      "후회",
+      "의심",
+      "되돌리기",
+      "가스밸브",
+      "불안",
+      "왜 결정만 하면 다시 확인하고 싶을까요",
+      "결정장애"
+    ],
+    "relatedBookChapter": "제2장 · 의심의 쳇바퀴와 Body Signature",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제2장 · 의심의 쳇바퀴와 Body Signature",
+    "featured": true,
+    "routeTags": [
+      "가스밸브",
+      "강박",
+      "검색",
+      "결정",
+      "결정장애",
+      "계속 확인해요",
+      "과잉확인",
+      "도어락",
+      "되돌리기",
+      "불안"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "오늘 마지막 확인 후 “확인 완료”를 소리 내어 말하고"
+    ],
+    "relatedCards": [
+      "dec-001",
+      "dec-014",
+      "money-019"
+    ]
+  },
+  {
+    "id": "peoplepleaser-02",
+    "category": "경계와 관계",
+    "keyword": "좋은 사람 강박",
+    "cardTitle": "착한 아이 모드",
+    "question": "좋은 사람으로 살았는데 왜 주변에는 당연하게 여기는 사람만 남았을까요?",
+    "sodaAnswer": "경계가 없는 친절은 배려가 아니라 상대에게 '나를 함부로 대해도 된다'는 허가증이 되기 때문입니다.",
+    "description": "남의 부탁을 거절했을 때 밀려오는 죄책감은 도덕적 잘못이 아니라, '착하지 않으면 버림받는다'는 어린 시절의 생존 방어막입니다.",
+    "curiosityQuestion": "“내 경우에는 누구의 실망이 가장 두려워서 나를 깎아내리며 부탁을 들어주고 있을까?”",
+    "scanQuestion": "부탁을 들었을 때 입은 '네'라고 하면서 속에서는 어떤 답답함이 올라왔나요?",
+    "syncSentence": "“좋은 사람으로 남고 싶어 거절하기 힘든 내 두려움을 존중한다.”",
+    "shiftQuestion": "상대를 실망시키지 않으려 나를 실망시키는 일을 멈춘다면?",
+    "tenPercentAction": "부탁을 받았을 때 3초간 멈추고 “일정 확인 후 10분 뒤에 말씀드릴게요”라고 말하기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "appCTA": "내 착한 아이 모드 직접 확인하기",
+    "appSubtext": "부탁을 받았을 때 입과 속마음이 엇갈리는 바로 그 순간의 자동반응을 관찰합니다.",
+    "bookCTA": "거절 죄책감의 무의식 뿌리 더 읽기",
+    "bookSubtext": "어린 시절 형성된 관계 생존 방어막이 성인의 삶을 지배하는 메커니즘을 탐구합니다.",
+    "searchKeywords": [
+      "거절 못함",
+      "착한아이",
+      "거절을 못해요",
+      "거절",
+      "부탁",
+      "지침",
+      "착한 사람",
+      "거절을 못하겠어요",
+      "좋은 사람",
+      "죄책감",
+      "배려",
+      "당연하게",
+      "호구",
+      "미안해요",
+      "좋은 사람이고 싶은데 왜 점점 지칠까요",
+      "착한사람",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족"
+    ],
+    "relatedBookChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "거절",
+      "거절 못함",
+      "거절을 못하겠어요",
+      "거절을 못해요",
+      "경계와 관계",
+      "당연하게",
+      "미안해요",
+      "배려",
+      "부모님"
+    ],
+    "triggerTags": [
+      "좋은 사람 강박"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "부탁을 받았을 때 3초간 멈추고 “일정 확인 후 10분"
+    ],
+    "relatedCards": [
+      "boundary-03",
+      "apology-06",
+      "attachment-07"
+    ]
+  },
+  {
+    "id": "boundary-03",
+    "category": "경계와 관계",
+    "keyword": "거절",
+    "cardTitle": "경계 모드",
+    "question": "왜 저는 싫다는 말을 못할까요?",
+    "sodaAnswer": "거절해서 깨질 관계라면 참아봤자 언젠가 더 비참하게 터집니다.",
+    "description": "건강한 경계는 상대를 향한 공격이 아니라, 나를 온전히 지키며 오래 함께하기 위한 울타리입니다. 솔직한 선 긋기가 진정한 신뢰를 만듭니다.",
+    "curiosityQuestion": "“내 경우에는 솔직하게 선을 그었을 때 어떤 최악의 결말을 상상하고 있을까?”",
+    "scanQuestion": "싫다고 말하지 못할 때 목구멍이 턱 막히는 감각을 느껴보셨나요?",
+    "syncSentence": "“관계를 잃을까 봐 두려워하는 내 연약한 마음을 다정하게 안아준다.”",
+    "shiftQuestion": "관계를 깨뜨리지 않는 10%의 단호한 표현은 무엇일까?",
+    "tenPercentAction": "무리한 제안에 “지금 제 상황에서는 어렵습니다. 제안 감사합니다” 담백하게 끊기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "appCTA": "내 관계 경계선 반응 직접 확인하기",
+    "appSubtext": "싫은 소리를 삼킬 때 내 몸이 보내는 위기 경보를 1분 SCAN으로 안전하게 분리합니다.",
+    "bookCTA": "안전한 경계 설정의 신경학적 원리 읽기",
+    "bookSubtext": "타인과의 경계를 세우면서도 연결감을 유지하는 신경계 안정화 원리를 책에서 배웁니다.",
+    "searchKeywords": [
+      "싫다는 말",
+      "거절",
+      "손절",
+      "경계",
+      "갈등 회피",
+      "관계 단절",
+      "싸움",
+      "싫은 소리",
+      "거절을 못하겠어요",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족",
+      "거절을 못해요",
+      "착한아이"
+    ],
+    "relatedBookChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "갈등 회피",
+      "거절",
+      "거절을 못하겠어요",
+      "거절을 못해요",
+      "경계",
+      "경계와 관계",
+      "관계 단절",
+      "부모님",
+      "부모님 때문에 힘들어요"
+    ],
+    "triggerTags": [
+      "거절"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "무리한 제안에 “지금 제 상황에서는 어렵습니다"
+    ],
+    "relatedCards": [
+      "peoplepleaser-02",
+      "apology-06",
+      "fam-001"
+    ]
+  },
+  {
+    "id": "nunchi-04",
+    "category": "감정 민감성",
+    "keyword": "눈치",
+    "cardTitle": "안테나 과출력 모드",
+    "question": "왜 상대가 한마디만 차갑게 해도 하루 종일 신경 쓰일까요?",
+    "sodaAnswer": "상대의 차가운 말투는 상대의 피로일 수 있지만, 내 안테나는 그것을 '나를 향한 공격'으로 해석합니다.",
+    "description": "사람의 기류를 민감하게 감지하는 감각은 귀한 안테나입니다. 문제는 감지하는 즉시 '저 사람 기분을 내가 풀어줘야 해'라며 나를 구부리는 데 있습니다.",
+    "curiosityQuestion": "“내 경우에는 상대의 굳은 얼굴을 볼 때 어떤 위험 경보가 가장 먼저 울릴까?”",
+    "scanQuestion": "상대 표정이 안 좋을 때 내 가슴이 쿵 내려앉는 신체 신호(Body Signature)를 보셨나요?",
+    "syncSentence": "“상대 기분을 빠르게 읽는 내 민감성을 존중한다. 하지만 저 기분은 저 사람의 날씨다.”",
+    "shiftQuestion": "상대의 기분과 나의 존재 사이에 투명한 유리창을 하나 놓아둔다면?",
+    "tenPercentAction": "상대 안색이 안 좋을 때 속으로 “저건 저 사람의 이슈다”라고 3번 되뇌이기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "appCTA": "내 안테나 반응 직접 확인하기",
+    "appSubtext": "남의 눈치를 볼 때 가슴이 내려앉는 내 신체 신호(Body Signature)를 기록해봅니다.",
+    "bookCTA": "타인의 감정과 나를 분리하는 원리 읽기",
+    "bookSubtext": "타인의 표정을 내 생존 위기로 착각하는 뇌 편도체의 과잉 반응을 가라앉히는 법을 배웁니다.",
+    "searchKeywords": [
+      "회사 가기 싫어요",
+      "남의 시선",
+      "예민해요",
+      "상사 눈치",
+      "피곤해요",
+      "표정",
+      "말투",
+      "하루종일",
+      "눈치",
+      "차갑게",
+      "기분 눈치",
+      "신경쓰임",
+      "직장 스트레스"
+    ],
+    "relatedBookChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "featured": true,
+    "routeTags": [
+      "감정 민감성",
+      "기분 눈치",
+      "남의 시선",
+      "눈치",
+      "말투",
+      "상사 눈치",
+      "신경쓰임",
+      "예민해요",
+      "직장 스트레스",
+      "차갑게"
+    ],
+    "triggerTags": [
+      "눈치"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "상대 안색이 안 좋을 때 속으로 “저건 저 사람의 이슈"
+    ],
+    "relatedCards": [
+      "mindreading-09",
+      "comparison-18",
+      "repression-20"
+    ]
+  },
+  {
+    "id": "overexplaining-05",
+    "category": "불안과 방어",
+    "keyword": "과잉설명",
+    "cardTitle": "설명 강박 모드",
+    "question": "“왜 오해받을 것 같으면 말이 턱없이 길어질까요?”",
+    "sodaAnswer": "말이 길어지는 건 친절이 아니라, 버림받을까 두려운 무의식의 변론입니다.",
+    "description": "충분히 전달되었는데도 카톡을 장문으로 덧붙이거나 변명을 거듭하는 것은 상대가 나를 오해하고 비난할 것이라는 깊은 불신에서 출발합니다.",
+    "curiosityQuestion": "“내 경우에는 어떤 사람 앞에서 오해받을까 봐 말이 걷잡을 수 없이 길어질까?”",
+    "scanQuestion": "카톡을 길게 쓰면서 호흡이 가빠지고 심장이 빨리 뛰는 것을 관찰해보셨나요?",
+    "syncSentence": "“오해받아 공격당할까 봐 나를 필사적으로 변호하려는 마음을 알아차린다.”",
+    "shiftQuestion": "상대가 나를 어떻게 생각하든 내 진심은 이미 충분하다면?",
+    "tenPercentAction": "장문 카톡을 보내기 전 마지막 문단 3줄을 과감히 지우고 전송 버튼 누르기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제5장 · 투사와 자기변호의 늪",
+    "appCTA": "내 설명 강박 패턴 직접 확인하기",
+    "appSubtext": "말이 길어지려는 충동이 일어날 때, 1분 SCAN으로 그 밑의 두려움을 먼저 읽어줍니다.",
+    "bookCTA": "과잉설명의 무의식 메커니즘 읽기",
+    "bookSubtext": "인정받지 못할 것이라는 불안이 어떻게 장황한 변호 언어로 전환되는지 구조를 밝힙니다.",
+    "searchKeywords": [
+      "과잉설명",
+      "말이 길어져요",
+      "카톡 장문",
+      "오해",
+      "변명",
+      "두려움"
+    ],
+    "relatedBookChapter": "제5장 · 투사와 자기변호의 늪",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 투사와 자기변호의 늪",
+    "featured": false,
+    "routeTags": [
+      "과잉설명",
+      "두려움",
+      "말이 길어져요",
+      "변명",
+      "불안과 방어",
+      "오해",
+      "카톡 장문"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "장문 카톡을 보내기 전 마지막 문단 3줄을 과감히 지우"
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-005",
+      "rel-006"
+    ]
+  },
+  {
+    "id": "apology-06",
+    "category": "불안과 방어",
+    "keyword": "습관적 사과",
+    "cardTitle": "반사적 항복 모드",
+    "question": "잘못한 것도 없는데 왜 먼저 사과하고 싶을까요?",
+    "sodaAnswer": "내 잘못을 인정해서가 아니라, 어색한 침묵과 갈등의 공기를 1초라도 빨리 없애고 싶기 때문입니다.",
+    "description": "어색한 공기를 깨거나 갈등을 예방하기 위해 습관적으로 고개를 숙이는 행동은 안전을 사기 위해 나의 존엄을 바겐세일하는 자동반응입니다.",
+    "curiosityQuestion": "“내 경우에는 무엇이 불편해서 죄송하다는 말로 그 자리를 모면하려 할까?”",
+    "scanQuestion": "사과하기 직전 목을 움츠리거나 눈을 피하는 신체 반응이 있었나요?",
+    "syncSentence": "“비난받지 않고 안전하고 싶어서 먼저 엎드렸던 내 방어기제를 위로한다.”",
+    "shiftQuestion": "죄송합니다 대신 ‘감사합니다’로 문장의 주도권을 바꾼다면?",
+    "tenPercentAction": "길을 비켜줄 때 “죄송합니다” 대신 “감사합니다”라고 한마디로 바꿔보기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "appCTA": "내 반사적 사과 습관 직접 확인하기",
+    "appSubtext": "죄송하다는 말이 튀어나오려는 순간의 충동을 1분 만에 멈추고 새 반응을 연습합니다.",
+    "bookCTA": "복종 언어를 바꾸는 뇌신경 재설계 읽기",
+    "bookSubtext": "언어 패턴이 뇌의 자존감 회로에 미치는 신경학적 영향과 대안 언어 훈련법을 읽어보세요.",
+    "searchKeywords": [
+      "위축",
+      "습관적 사과",
+      "사과",
+      "사과 강박",
+      "갈등 회피",
+      "죄송합니다",
+      "먼저 사과",
+      "눈치",
+      "저자세",
+      "잘못",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족",
+      "거절을 못해요",
+      "착한아이"
+    ],
+    "relatedBookChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "갈등 회피",
+      "거절을 못해요",
+      "눈치",
+      "먼저 사과",
+      "부모님",
+      "부모님 때문에 힘들어요",
+      "불안과 방어",
+      "사과",
+      "사과 강박"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "길을 비켜줄 때 “죄송합니다” 대신 “감사합니다”라고 "
+    ],
+    "relatedCards": [
+      "rel-003",
+      "boundary-03",
+      "rel-012"
+    ]
+  },
+  {
+    "id": "attachment-07",
+    "category": "경계와 관계",
+    "keyword": "불안형 애착",
+    "cardTitle": "연락 확인 모드",
+    "question": "왜 가까워지면 갑자기 거리를 두고 싶을까요?",
+    "sodaAnswer": "연락이 늦은 게 사건인데, 뇌는 이별이라는 소설을 씁니다.",
+    "description": "답장이 조금만 지연되어도 심장이 뛰고 식은땀이 나는 것은 성인의 문제가 아니라, 애착 대상과의 단절을 생존 위기로 느꼈던 신경계의 조기경보입니다.",
+    "curiosityQuestion": "“내 경우에는 상대의 침묵을 마주할 때 어떤 버림받음의 시나리오가 켜질까?”",
+    "scanQuestion": "화면을 새로고침할 때 가슴이 쿵쾅거리는 촉각 신호를 느껴보셨나요?",
+    "syncSentence": "“연락이 안 되면 세상에 혼자 남겨진 것 같은 외로움과 공포를 온전히 알아준다.”",
+    "shiftQuestion": "상대의 답장 속도와 내 존재 가치가 아무 상관이 없다면?",
+    "tenPercentAction": "스마트폰을 엎어두고 10분간 따뜻한 차 한 잔을 끝까지 마시기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제6장 · 애착 상처와 파국화 회로",
+    "appCTA": "내 애착 불안 반응 직접 확인하기",
+    "appSubtext": "답장을 기다리며 스마트폰을 쥐고 있는 바로 그 순간의 불안 파도를 1분 SCAN합니다.",
+    "bookCTA": "침묵을 파국으로 해석하는 뇌의 기원 읽기",
+    "bookSubtext": "불안형 애착이 어떻게 신경계에 각인되었는지, 그 인지적 덫에서 벗어나는 법을 확인하세요.",
+    "searchKeywords": [
+      "연락 불안",
+      "답장",
+      "애착",
+      "읽씹",
+      "불안형",
+      "연애 불안",
+      "버림받을까봐"
+    ],
+    "relatedBookChapter": "제6장 · 애착 상처와 파국화 회로",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 애착 상처와 파국화 회로",
+    "featured": true,
+    "routeTags": [
+      "경계와 관계",
+      "답장",
+      "버림받을까봐",
+      "불안형",
+      "불안형 애착",
+      "애착",
+      "연락 불안",
+      "연애 불안",
+      "읽씹"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "스마트폰을 엎어두고 10분간 따뜻한 차 한 잔을 끝까지"
+    ],
+    "relatedCards": [
+      "love-001",
+      "relationship-reply-001",
+      "love-006"
+    ]
+  },
+  {
+    "id": "mindreading-09",
+    "category": "감정 민감성",
+    "keyword": "독심술",
+    "cardTitle": "궁예 모드",
+    "question": "“상대 표정만 봐도 날 싫어하는 게 100% 보여요.”",
+    "sodaAnswer": "상대의 마음을 읽은 게 아니라, 내 안의 불신을 투사한 것입니다.",
+    "description": "우리는 남의 마음을 투시하는 초능력자가 아닙니다. 상대의 피곤한 얼굴에 '나를 향한 적의'라는 라벨을 붙이는 건 내 내면의 투사입니다.",
+    "curiosityQuestion": "“내 경우에는 상대의 표정을 볼 때 내 안의 어떤 결핍이 먼저 덧씌워질까?”",
+    "scanQuestion": "확신이 들 때, 그게 ‘관찰된 사실’인지 ‘내 추측’인지 검증해보셨나요?",
+    "syncSentence": "“미움받고 싶지 않아 미리 짐작하려 애쓰는 내 연약함을 알아차린다.”",
+    "shiftQuestion": "상대의 표정은 상대의 소화불량이나 피로 때문일 수 있다면?",
+    "tenPercentAction": "상대에게 속단 대신 “오늘 많이 피곤해 보이시네요, 괜찮으세요?” 물어보기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제8장 · 투사의 거울과 현실 검증",
+    "appCTA": "내 독심술 착각 직접 확인하기",
+    "appSubtext": "상대의 의도를 단정 짓고 싶어질 때, 1분 SCAN으로 사실과 해석의 경계를 점검합니다.",
+    "bookCTA": "내면의 불안을 타인에게 투사하는 원리 읽기",
+    "bookSubtext": "독심술 오류가 어떻게 관계를 고립시키는지, 투사를 거두고 현실을 만나는 법을 배웁니다.",
+    "searchKeywords": [
+      "독심술",
+      "기분 짐작",
+      "날 싫어해",
+      "피해의식",
+      "오해",
+      "인간관계"
+    ],
+    "relatedBookChapter": "제8장 · 투사의 거울과 현실 검증",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제8장 · 투사의 거울과 현실 검증",
+    "featured": false,
+    "routeTags": [
+      "감정 민감성",
+      "기분 짐작",
+      "날 싫어해",
+      "독심술",
+      "오해",
+      "인간관계",
+      "피해의식"
+    ],
+    "triggerTags": [
+      "독심술"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "상대에게 속단 대신 “오늘 많이 피곤해 보이시네요, 괜"
+    ],
+    "relatedCards": [
+      "nunchi-04",
+      "comparison-18",
+      "repression-20"
+    ]
+  },
+  {
+    "id": "perfectionism-10",
+    "category": "완벽주의와 통제",
+    "keyword": "완벽주의",
+    "cardTitle": "100점 아니면 0점 모드",
+    "question": "왜 일을 끝냈는데도 끝난 것 같지 않을까요?",
+    "sodaAnswer": "완벽주의는 높은 기준이 아니라, 수치심을 피하려는 공포입니다.",
+    "description": "실패했을 때 쏟아질 비난과 스스로에게 느낄 실망이 너무나 두려운 나머지, 시작 자체를 틀어막아 '미완성의 안전' 뒤로 숨는 전략입니다.",
+    "curiosityQuestion": "“내 경우에는 100점이 되지 못했을 때 어떤 수치심과 마주하는 것이 두려운 걸까?”",
+    "scanQuestion": "시작하기 전 가슴을 짓누르는 '잘해야만 한다'는 압박감을 느껴보셨나요?",
+    "syncSentence": "“흠잡힐까 봐 두려워 완벽이라는 갑옷을 입으려는 내 마음을 이해한다.”",
+    "shiftQuestion": "완벽한 결과 대신 60점짜리 거친 초안으로 세상과 만난다면?",
+    "tenPercentAction": "타이머를 15분 맞추고 아무렇게나 낙서하듯 초안의 첫 줄 쓰기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제3장 · 완벽주의 해체와 점진적 노출",
+    "appCTA": "내 완벽주의 스위치 직접 확인하기",
+    "appSubtext": "시작을 가로막는 ‘100점 강박’의 신체 압박감을 1분 SCAN으로 안전하게 낮춰봅니다.",
+    "bookCTA": "완벽주의가 수치심 방어기제인 이유 읽기",
+    "bookSubtext": "뇌의 올오어나씽(All-or-Nothing) 오류를 깨고 10%의 실행을 만드는 신경가소성 원리를 읽어보세요.",
+    "searchKeywords": [
+      "완벽주의",
+      "시작이 어려워요",
+      "회피",
+      "미루기",
+      "100점",
+      "부담감",
+      "실패 두려움"
+    ],
+    "relatedBookChapter": "제3장 · 완벽주의 해체와 점진적 노출",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 완벽주의 해체와 점진적 노출",
+    "featured": true,
+    "routeTags": [
+      "100점",
+      "미루기",
+      "부담감",
+      "시작이 어려워요",
+      "실패 두려움",
+      "완벽주의",
+      "완벽주의와 통제",
+      "회피"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "타이머를 15분 맞추고 아무렇게나 낙서하듯 초안의 첫 "
+    ],
+    "relatedCards": [
+      "dec-004",
+      "dec-011",
+      "money-019"
+    ]
+  },
+  {
+    "id": "procrastination-11",
+    "category": "완벽주의와 통제",
+    "keyword": "미루기",
+    "cardTitle": "회피성 동면 모드",
+    "question": "“해야 하는 걸 아는데 왜 침대에만 누워 있을까요?”",
+    "sodaAnswer": "게으른 게 아니라, 실패의 공포에 뇌가 일시정지 버튼을 누른 겁니다.",
+    "description": "당신의 의지력이 약해서가 아닙니다. 그 과제가 가져올 평가와 스트레스가 감당하기 어렵다고 판단한 뇌가 '가짜 휴식'으로 마취를 시도하는 상태입니다.",
+    "curiosityQuestion": "“내 경우에는 침대에 누워있을 때 몸은 편하지만 마음은 얼마나 초조하게 타고 있을까?”",
+    "scanQuestion": "할 일을 떠올릴 때 명치 부근이 답답해지며 에너지가 뚝 떨어지는 걸 보셨나요?",
+    "syncSentence": "“너무 잘 해내고 싶어서 뇌가 얼어붙었구나. 내 뇌의 동결 반응을 받아들인다.”",
+    "shiftQuestion": "전체를 다 끝내는 대신 딱 1분만 몸을 움직여본다면?",
+    "tenPercentAction": "침대에서 일어나 컴퓨터 전원만 켜고 의자에 1분 앉아보기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제1장 · 동결(Freeze) 반응 해제와 5초 법칙",
+    "appCTA": "내 무기력 동결 반응 직접 확인하기",
+    "appSubtext": "몸이 굳어 움직이지 않을 때, 자책 대신 내 신경계의 동결 신호를 1분 만에 체크합니다.",
+    "bookCTA": "게으름이 아닌 신경계 동결의 비밀 읽기",
+    "bookSubtext": "의지력 박약이 아닌 도파민과 편도체의 방어 기제를 이해하고 안전하게 시동 거는 법을 배웁니다.",
+    "searchKeywords": [
+      "미루기",
+      "게으름",
+      "침대",
+      "무기력",
+      "누워만 있어요",
+      "의지박약"
+    ],
+    "relatedBookChapter": "제1장 · 동결(Freeze) 반응 해제와 5초 법칙",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 동결(Freeze) 반응 해제와 5초 법칙",
+    "featured": false,
+    "routeTags": [
+      "게으름",
+      "누워만 있어요",
+      "무기력",
+      "미루기",
+      "완벽주의와 통제",
+      "의지박약",
+      "침대"
+    ],
+    "triggerTags": [
+      "미루기"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "침대에서 일어나 컴퓨터 전원만 켜고 의자에 1분 앉아보"
+    ],
+    "relatedCards": [
+      "perfectionism-10",
+      "control-14",
+      "career-008"
+    ]
+  },
+  {
+    "id": "overthinking-12",
+    "category": "생각 과열",
+    "keyword": "반추",
+    "cardTitle": "두뇌 폭주 모드",
+    "question": "“자려고 누우면 왜 낮에 했던 말실수가 계속 떠오를까요?”",
+    "sodaAnswer": "해결하려는 생각이 아니라, 뇌가 틀어놓은 편집증 리플레이입니다.",
+    "description": "이미 지나간 과거의 한 장면을 수백 번 되감는 것은 반성이 아닙니다. 통제력을 잃었다는 불안을 상상 속의 재구성으로 만회하려는 두뇌의 헛바퀴질입니다.",
+    "curiosityQuestion": "“내 경우에는 과거의 어떤 장면에 유독 닻을 내리고 밤마다 자책을 반복하고 있을까?”",
+    "scanQuestion": "그 생각이 돌 때 머리에 열이 오르고 눈 주변이 뻐근해지는 신체 반응을 보셨나요?",
+    "syncSentence": "“완벽하게 통제하고 싶었던 내 아쉬움과 자책을 조용히 지켜본다.”",
+    "shiftQuestion": "이불 속에서 후회하는 것을 멈추고 ‘내일 아침 9시의 나’에게 결재를 넘긴다면?",
+    "tenPercentAction": "스탠드를 켜고 그 기억을 종이에 적은 뒤 서랍 속에 쏙 넣어두기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "appCTA": "내 밤마다 도는 생각 루프 직접 확인하기",
+    "appSubtext": "잠들기 전 폭주하는 머릿속 재생 목록을 1분 SCAN으로 객관화하여 서랍에 넣습니다.",
+    "bookCTA": "밤마다 켜지는 반추 루프의 원리 읽기",
+    "bookSubtext": "뇌의 디폴트 모드 네트워크(DMN)가 왜 부정적 기억을 반복 재생하는지 원리를 밝힙니다.",
+    "searchKeywords": [
+      "이불킥",
+      "밤에 생각",
+      "불면증",
+      "말실수",
+      "후회",
+      "생각이 많아요",
+      "반추"
+    ],
+    "relatedBookChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "featured": false,
+    "routeTags": [
+      "말실수",
+      "반추",
+      "밤에 생각",
+      "불면증",
+      "생각 과열",
+      "생각이 많아요",
+      "이불킥",
+      "후회"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "스탠드를 켜고 그 기억을 종이에 적은 뒤 서랍 속에 쏙"
+    ],
+    "relatedCards": [
+      "regret-13",
+      "selfcriticism-19",
+      "rel-003"
+    ]
+  },
+  {
+    "id": "regret-13",
+    "category": "생각 과열",
+    "keyword": "후회",
+    "cardTitle": "타임머신 망령 모드",
+    "question": "“그때 다른 선택을 했다면 지금 인생이 달라졌을 텐데…”",
+    "sodaAnswer": "과거를 후회하는 게 아니라, 지금 현실의 고통을 외면하는 것입니다.",
+    "description": "선택하지 않은 길은 언제나 장밋빛으로 미화됩니다. '만약 그때'라는 환상에 매달리는 것은 지금 내가 책임져야 할 현실의 불안을 마주하기 싫은 회피입니다.",
+    "curiosityQuestion": "“내 경우에는 지금 현실의 어떤 막막함 때문에 자꾸 과거의 갈림길로 도망칠까?”",
+    "scanQuestion": "후회할 때 명치가 답답해지며 한숨이 깊게 터져 나오는 감각을 관찰해보셨나요?",
+    "syncSentence": "“지금 상황이 고통스러워 과거의 환상으로 숨고 싶어 하는 나를 이해한다.”",
+    "shiftQuestion": "그때의 나는 그 시점의 정보와 자원 안에서 최선을 다했음을 인정한다면?",
+    "tenPercentAction": "“그때는 그게 최선이었다” 거울을 보며 내 눈을 보고 따뜻하게 말해주기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "appCTA": "내 후회 패턴과 지금 현실 직접 확인하기",
+    "appSubtext": "과거로 도망치는 순간을 포착하고, 지금 내 앞에 있는 10%의 선택으로 돌아옵니다.",
+    "bookCTA": "선택하지 않은 길을 미화하는 심리 읽기",
+    "bookSubtext": "과거의 망령에서 벗어나 현재의 중심(Zero Point)에 단단히 발을 딛는 원리를 탐구합니다.",
+    "searchKeywords": [
+      "그때 그랬더라면",
+      "후회",
+      "인생 망함",
+      "과거 미련",
+      "되돌리고 싶다"
+    ],
+    "relatedBookChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "featured": false,
+    "routeTags": [
+      "과거 미련",
+      "그때 그랬더라면",
+      "되돌리고 싶다",
+      "생각 과열",
+      "인생 망함",
+      "후회"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“그때는 그게 최선이었다” 거울을 보며 내 눈을 보고 "
+    ],
+    "relatedCards": [
+      "zeropoint-30",
+      "perf-005",
+      "overthinking-12"
+    ]
+  },
+  {
+    "id": "control-14",
+    "category": "완벽주의와 통제",
+    "keyword": "통제",
+    "cardTitle": "조종간 사수 모드",
+    "question": "“내 손으로 다 챙겨야 마음이 편해요.”",
+    "sodaAnswer": "책임감이 강한 게 아니라, 남을 믿지 못해 모든 짐을 짊어진 고립입니다.",
+    "description": "남에게 맡겼을 때 생길 오차를 견디지 못해 모든 걸 틀어쥐는 행동은 통제력을 통한 가짜 안정감입니다. 결국 번아웃과 관계의 단절만 남깁니다.",
+    "curiosityQuestion": "“내 경우에는 남에게 넘겼을 때 어떤 일이 터질 것 같아서 조종간을 놓지 못할까?”",
+    "scanQuestion": "일을 남에게 맡길 때 속이 부글거리고 안절부절못하는 긴장을 보셨나요?",
+    "syncSentence": "“상황이 틀어질까 봐 온 세상을 짊어지려 했던 내 두려운 마음을 토닥인다.”",
+    "shiftQuestion": "결과가 80%만 나와도 세상이 무너지지 않는다는 것을 실험해본다면?",
+    "tenPercentAction": "오늘 작은 업무 1가지를 동료나 가족에게 온전히 위임하고 결과 묻지 않기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제10장 · 통제의 착각과 불확실성의 수용",
+    "appCTA": "내 조종간 집착 패턴 직접 확인하기",
+    "appSubtext": "혼자서 다 짊어지려 할 때의 조급함과 불신을 1분 SCAN으로 내려놓는 연습을 합니다.",
+    "bookCTA": "통제 강박이 만들어내는 고립의 메커니즘 읽기",
+    "bookSubtext": "왜 통제하려 할수록 불안이 증폭되는지, 인지적 유연성을 회복하는 과학적 원리를 확인하세요.",
+    "searchKeywords": [
+      "통제 강박",
+      "내가 다 해야",
+      "불신",
+      "독박",
+      "책임감",
+      "완벽주의"
+    ],
+    "relatedBookChapter": "제10장 · 통제의 착각과 불확실성의 수용",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제10장 · 통제의 착각과 불확실성의 수용",
+    "featured": false,
+    "routeTags": [
+      "내가 다 해야",
+      "독박",
+      "불신",
+      "완벽주의",
+      "완벽주의와 통제",
+      "책임감",
+      "통제",
+      "통제 강박"
+    ],
+    "triggerTags": [
+      "통제"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "오늘 작은 업무 1가지를 동료나 가족에게 온전히 위임하"
+    ],
+    "relatedCards": [
+      "perfectionism-10",
+      "procrastination-11",
+      "career-013"
+    ]
+  },
+  {
+    "id": "burnout-15",
+    "category": "에너지와 번아웃",
+    "keyword": "번아웃",
+    "cardTitle": "엔진 과열 모드",
+    "question": "쉬고 있는데도 왜 머릿속에서는 계속 일을 하고 있을까요?",
+    "sodaAnswer": "몸은 누워있지만 뇌는 '아무것도 안 하면 낙오된다'는 생존 알람을 끄지 못했기 때문입니다.",
+    "description": "진정한 쉼은 육체적 정지가 아니라 '아무것도 증명하지 않아도 된다'는 심리적 안전에서 옵니다. 쉬는 순간에도 내면의 채찍질이 멈추지 않으면 방전됩니다.",
+    "curiosityQuestion": "“내 경우에는 멈추었을 때 내면의 어떤 목소리가 나를 게으르다고 다그칠까?”",
+    "scanQuestion": "소파에 누워 휴대폰을 보면서도 등이 굳어있고 미간이 찌푸려져 있진 않나요?",
+    "syncSentence": "“쉬면 뒤처질까 봐 몸을 혹사시켰던 내 처절한 노력을 애도한다.”",
+    "shiftQuestion": "쓸모 있는 존재가 아니어도 오늘 하루 살아 숨 쉰 것만으로 충분하다면?",
+    "tenPercentAction": "스마트폰을 다른 방에 두고 10분간 눈을 감고 배의 오르내림만 느끼기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제2장 · 완전한 이완과 무조건적 허용",
+    "appCTA": "내 번아웃 신호 직접 확인하기",
+    "appSubtext": "쉬면서도 죄책감이 들 때, 1분 SCAN으로 내면의 가혹한 채찍질을 멈춰 세웁니다.",
+    "bookCTA": "쉼을 허락하지 못하는 뇌의 기아 상태 읽기",
+    "bookSubtext": "생산성 중독에서 벗어나 몸과 뇌의 진정한 부교감 신경 이완을 이끌어내는 법을 배웁니다.",
+    "searchKeywords": [
+      "휴식 죄책감",
+      "휴식",
+      "기력 없음",
+      "머릿속 일",
+      "쉬는데도 불안해요",
+      "피로",
+      "죄책감",
+      "쉬어도 피곤",
+      "방전",
+      "번아웃",
+      "쉬는데",
+      "일생각",
+      "휴식불안",
+      "왜 쉬면서도 죄책감이 들까요",
+      "주말 불안"
+    ],
+    "relatedBookChapter": "제2장 · 완전한 이완과 무조건적 허용",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 97,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제2장 · 완전한 이완과 무조건적 허용",
+    "featured": true,
+    "routeTags": [
+      "기력 없음",
+      "머릿속 일",
+      "방전",
+      "번아웃",
+      "쉬는데",
+      "쉬는데도 불안해요",
+      "쉬어도 피곤",
+      "에너지와 번아웃",
+      "왜 쉬면서도 죄책감이 들까요",
+      "일생각"
+    ],
+    "triggerTags": [
+      "번아웃"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "스마트폰을 다른 방에 두고 10분간 눈을 감고 배의 오"
+    ],
+    "relatedCards": [
+      "restguilt-16",
+      "achievement-17",
+      "career-001"
+    ]
+  },
+  {
+    "id": "restguilt-16",
+    "category": "에너지와 번아웃",
+    "keyword": "휴식죄책감",
+    "cardTitle": "죄인 모드",
+    "question": "“아무것도 안 하고 쉬면 낙오자가 되는 것 같아요.”",
+    "sodaAnswer": "휴식은 보상이 아니라, 생명체가 작동하기 위한 필수 연료입니다.",
+    "description": "스마트폰 배터리가 5% 남으면 충전기에 꽂듯, 인간도 충전이 필요합니다. 쉬는 것을 '자격이 있어야 누리는 사치'로 착각할 때 영혼은 바짝 마릅니다.",
+    "curiosityQuestion": "“내 경우에는 누구에게 어떤 성과를 증명해야 쉴 자격이 생긴다고 믿고 있을까?”",
+    "scanQuestion": "가만히 있을 때 심장이 불안하게 쿵쾅거리며 무언가 해야 할 것 같은 조급함을 보셨나요?",
+    "syncSentence": "“낙오될까 봐 불안해서 쉼조차 허락하지 못했던 내 두려움을 인정한다.”",
+    "shiftQuestion": "휴식이야말로 최고의 창의성과 통찰을 낳는 인큐베이팅 시간이라면?",
+    "tenPercentAction": "달력에 “공식 휴식 시간”이라고 쓰고 그 30분간은 아무런 생산적 활동도 안 하기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제4장 · 휴식과 뇌의 회복 탄력성",
+    "appCTA": "내 휴식 죄책감 신호 직접 확인하기",
+    "appSubtext": "쉴 때 엄습하는 조급함의 정체를 1분 SCAN으로 밝히고 뇌에 안전 신호를 보냅니다.",
+    "bookCTA": "휴식을 사치로 여기는 신경학적 왜곡 읽기",
+    "bookSubtext": "뇌의 회복 탄력성이 가동되는 메커니즘과 죄책감 없는 온전한 쉼의 기술을 읽어보세요.",
+    "searchKeywords": [
+      "불안",
+      "아무것도 안 함",
+      "휴식 공포",
+      "조급함",
+      "쉬는데도 불안해요",
+      "생산성 강박",
+      "낙오자",
+      "쉬면 불안",
+      "일생각",
+      "주말 불안"
+    ],
+    "relatedBookChapter": "제4장 · 휴식과 뇌의 회복 탄력성",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 휴식과 뇌의 회복 탄력성",
+    "featured": false,
+    "routeTags": [
+      "낙오자",
+      "불안",
+      "생산성 강박",
+      "쉬는데도 불안해요",
+      "쉬면 불안",
+      "아무것도 안 함",
+      "에너지와 번아웃",
+      "일생각",
+      "조급함",
+      "주말 불안"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "달력에 “공식 휴식 시간”이라고 쓰고 그 30분간은 아"
+    ],
+    "relatedCards": [
+      "perf-015",
+      "burnout-15",
+      "emo-006"
+    ]
+  },
+  {
+    "id": "achievement-17",
+    "category": "에너지와 번아웃",
+    "keyword": "성취중독",
+    "cardTitle": "골대 이동 모드",
+    "question": "잘했는데도 왜 만족이 안 될까요?",
+    "sodaAnswer": "목마른 사람이 바닷물을 마신 격입니다. 성취로는 결핍을 채울 수 없습니다.",
+    "description": "원하던 것을 이루는 순간 곧바로 '다음은 뭐지?'라며 골대를 저 멀리 밀어버리는 것은, 성취가 주는 일시적 도파민에 중독된 마음의 도돌이표입니다.",
+    "curiosityQuestion": "“내 경우에는 어떤 인정과 칭찬을 갈망하며 끝없는 성취의 쳇바퀴를 달리고 있을까?”",
+    "scanQuestion": "성취한 직후 찾아오는 공허함과 다시 조여오는 압박감을 관찰해보셨나요?",
+    "syncSentence": "“끊임없이 증명해야만 사랑받을 수 있다고 믿었던 내 고단함을 꼭 안아준다.”",
+    "shiftQuestion": "더 이상 무언가를 이루지 않아도 내 존재의 무게는 변함없다면?",
+    "tenPercentAction": "오늘 달성한 작은 결과 1가지에 대해 나 자신에게 “참 애썼다” 박수 쳐주기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제11장 · 골대 이동 증후군과 도파민의 함정",
+    "appCTA": "내 성취 중독 쳇바퀴 직접 확인하기",
+    "appSubtext": "이루어도 채워지지 않는 공허함의 순간, 1분 SCAN으로 내 진짜 갈증을 마주합니다.",
+    "bookCTA": "달성해도 행복하지 않은 도파민 회로 읽기",
+    "bookSubtext": "조건부 자존감의 덫에서 벗어나 내재적 만족감으로 신경망을 재설계하는 법을 배웁니다.",
+    "searchKeywords": [
+      "성취중독",
+      "공허함",
+      "목표 달성",
+      "허무해요",
+      "불만족",
+      "끝없는 욕심"
+    ],
+    "relatedBookChapter": "제11장 · 골대 이동 증후군과 도파민의 함정",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제11장 · 골대 이동 증후군과 도파민의 함정",
+    "featured": true,
+    "routeTags": [
+      "공허함",
+      "끝없는 욕심",
+      "목표 달성",
+      "불만족",
+      "성취중독",
+      "에너지와 번아웃",
+      "허무해요"
+    ],
+    "triggerTags": [
+      "성취중독"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "오늘 달성한 작은 결과 1가지에 대해 나 자신에게 “참"
+    ],
+    "relatedCards": [
+      "burnout-15",
+      "restguilt-16",
+      "rel-001"
+    ]
+  },
+  {
+    "id": "comparison-18",
+    "category": "감정 민감성",
+    "keyword": "비교",
+    "cardTitle": "SNS 돋보기 모드",
+    "question": "“남들은 다 잘 사는 것 같은데 왜 나만 제자리일까요?”",
+    "sodaAnswer": "남의 하이라이트 무대 뒤편과 나의 리허설 대기실을 비교하지 마세요.",
+    "description": "타인의 편집된 최고 순간과 나의 날것 그대로인 일상을 비교하는 것은 공정하지 못한 자해입니다. 비교는 언제나 나의 결핍만을 정밀 조준합니다.",
+    "curiosityQuestion": "“내 경우에는 누구의 어떤 모습을 볼 때 가장 배가 아프고 초라해질까?”",
+    "scanQuestion": "SNS 피드를 내릴 때 위장이 싸해지고 침이 마르는 신체 반응을 느껴보셨나요?",
+    "syncSentence": "“나도 빛나고 싶고 인정받고 싶은 내 솔직한 부러움을 숨기지 않고 인정한다.”",
+    "shiftQuestion": "타인의 성공이 나의 실패를 의미하지 않는다는 진실을 받아들인다면?",
+    "tenPercentAction": "SNS 앱을 24시간 동안 숨김 폴더로 이동시키고 내 방 책상 정리하기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "appCTA": "내 비교 자해 반응 직접 확인하기",
+    "appSubtext": "남과 비교하며 초라해지는 순간의 감정 파동을 1분 SCAN으로 즉시 차단합니다.",
+    "bookCTA": "비교가 뇌의 고통 중추를 자극하는 원리 읽기",
+    "bookSubtext": "SNS 시대에 타인 중심의 참조점을 내면의 고유한 중심축으로 되돌리는 원리를 탐구합니다.",
+    "searchKeywords": [
+      "비교",
+      "자격지심",
+      "SNS 우울증",
+      "박탈감",
+      "열등감",
+      "부러워요"
+    ],
+    "relatedBookChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "featured": false,
+    "routeTags": [
+      "SNS 우울증",
+      "감정 민감성",
+      "박탈감",
+      "부러워요",
+      "비교",
+      "열등감",
+      "자격지심"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "SNS 앱을 24시간 동안 숨김 폴더로 이동시키고 내 "
+    ],
+    "relatedCards": [
+      "career-010",
+      "perf-009",
+      "perf-010"
+    ]
+  },
+  {
+    "id": "selfcriticism-19",
+    "category": "생각 과열",
+    "keyword": "자기비난",
+    "cardTitle": "셀프 법정 모드",
+    "question": "“나 자신에게 엄격해야 발전할 수 있는 것 아닌가요?”",
+    "sodaAnswer": "채찍질로 달리는 말은 언젠가 지쳐 쓰러집니다. 비난은 성장이 아닌 위축을 낳습니다.",
+    "description": "나를 호되게 몰아세워야 나태해지지 않는다는 생각은 지독한 오해입니다. 뇌는 지속적인 자기비난을 신체적 공격으로 인식해 방어 모드로 굳어버립니다.",
+    "curiosityQuestion": "“내 경우에는 실수를 저질렀을 때 내면에서 어떤 거친 폭언이 쏟아져 나올까?”",
+    "scanQuestion": "스스로를 욕할 때 가슴이 오그라들고 숨이 턱 막히는 감각을 보셨나요?",
+    "syncSentence": "“나를 채찍질해서라도 잘 살게 만들고 싶었던 내면 검사의 안타까운 진심을 본다.”",
+    "shiftQuestion": "가장 소중한 친구가 실수했을 때처럼 나에게도 친절한 코치가 되어준다면?",
+    "tenPercentAction": "실수했을 때 가슴에 손을 얹고 “괜찮아, 그럴 수 있어. 다음 걸 보자” 말해주기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "appCTA": "내 자기비난 스위치 직접 확인하기",
+    "appSubtext": "실수 직후 내면에서 판결을 내리려는 검사의 목소리를 1분 SCAN으로 멈춰 세웁니다.",
+    "bookCTA": "자기비난이 뇌를 마비시키는 신경학적 기원 읽기",
+    "bookSubtext": "가혹한 내면 비판자를 지혜로운 내면 코치로 전환하는 신경가소성 훈련법을 읽어보세요.",
+    "searchKeywords": [
+      "자기비난",
+      "자책",
+      "자존감",
+      "엄격함",
+      "실수",
+      "욕심",
+      "스스로 채찍질"
+    ],
+    "relatedBookChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "featured": false,
+    "routeTags": [
+      "생각 과열",
+      "스스로 채찍질",
+      "실수",
+      "엄격함",
+      "욕심",
+      "자기비난",
+      "자존감",
+      "자책"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "실수했을 때 가슴에 손을 얹고 “괜찮아, 그럴 수 있어"
+    ],
+    "relatedCards": [
+      "dec-010",
+      "emo-006",
+      "emo-012"
+    ]
+  },
+  {
+    "id": "repression-20",
+    "category": "감정 민감성",
+    "keyword": "감정억압",
+    "cardTitle": "압력밥솥 모드",
+    "question": "“화를 내면 관계가 깨질까 봐 꾹 참게 돼요.”",
+    "sodaAnswer": "참는 것은 평화가 아니라, 내 안에서 시한폭탄을 조립하는 일입니다.",
+    "description": "부정적 감정을 억누르면 사라지는 것이 아니라 몸속 지하수로 스며듭니다. 결국 만성 피로, 소화불량, 혹은 무고한 사람을 향한 폭발로 터져 나옵니다.",
+    "curiosityQuestion": "“내 경우에는 누구 앞에서 감정을 억누르고 속으로 피눈물을 삼키고 있을까?”",
+    "scanQuestion": "참을 때 턱관절이 뻐근하고 위장이 딱딱하게 굳어오는 걸 감지해보셨나요?",
+    "syncSentence": "“관계를 지키려 내 소중한 감정을 가두어버린 내 오랜 습관을 마주한다.”",
+    "shiftQuestion": "화를 공격적으로 폭발시키는 것과 안전하게 표현하는 것은 다르다면?",
+    "tenPercentAction": "화가 날 때 화장실로 가서 찬물로 손을 씻으며 속으로 “나 지금 화났어” 인정하기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "appCTA": "내 억압된 감정 신호 직접 확인하기",
+    "appSubtext": "꾹 눌러 삼키는 감정이 신체에 남긴 긴장 신호를 1분 SCAN으로 안전하게 녹여냅니다.",
+    "bookCTA": "억압된 감정이 병이 되는 신경신체학 읽기",
+    "bookSubtext": "감정을 폭발하지도 억압하지도 않으면서 건강하게 흘려보내는 SYNC의 기술을 탐구합니다.",
+    "searchKeywords": [
+      "참기만 해요",
+      "속병",
+      "화병",
+      "감정 억압",
+      "답답해요",
+      "갈등 회피"
+    ],
+    "relatedBookChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "featured": false,
+    "routeTags": [
+      "갈등 회피",
+      "감정 민감성",
+      "감정 억압",
+      "감정억압",
+      "답답해요",
+      "속병",
+      "참기만 해요",
+      "화병"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "화가 날 때 화장실로 가서 찬물로 손을 씻으며 속으로 "
+    ],
+    "relatedCards": [
+      "anger-21",
+      "rel-010",
+      "rel-011"
+    ]
+  },
+  {
+    "id": "anger-21",
+    "category": "감정 민감성",
+    "keyword": "분노폭발",
+    "cardTitle": "용암 분출 모드",
+    "question": "화낸 뒤에는 왜 제가 더 싫어질까요?",
+    "sodaAnswer": "사소한 일에 터진 게 아니라, 오랫동안 무시당한 감정의 역습입니다.",
+    "description": "평소에 경계를 세우지 못하고 억누르다가 한계선(RED)을 넘는 순간 이성을 잃는 것입니다. 분노는 나쁜 것이 아니라 내 경계선이 짓밟혔다는 신호입니다.",
+    "curiosityQuestion": "“내 경우에는 폭발하기 직전에 어떤 노란 불(YELLOW) 신호가 먼저 켜지고 있을까?”",
+    "scanQuestion": "욱하는 순간 피가 거꾸로 솟구치며 시야가 좁아지는 경험을 해보셨나요?",
+    "syncSentence": "“내 한계를 넘어서까지 참아내느라 고통받았던 내 내면의 비명을 경청한다.”",
+    "shiftQuestion": "빨간 불에서 터뜨리기 전에 노란 불 단계에서 타임아웃을 요청한다면?",
+    "tenPercentAction": "목소리가 커지려 할 때 “잠시 5분만 바람 쐬고 다시 이야기하자”고 선언하기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "appCTA": "내 분노 폭발 전조 신호 직접 확인하기",
+    "appSubtext": "폭발 직전의 아드레날린 급증을 1분 SCAN으로 포착하고 안전한 타임아웃을 만듭니다.",
+    "bookCTA": "분노 폭발 회로를 차단하는 뇌과학 읽기",
+    "bookSubtext": "편도체 납치(Amygdala Hijack) 상황에서 전두엽의 이성을 5초 만에 복구하는 원리를 배웁니다.",
+    "searchKeywords": [
+      "폭발",
+      "욱해요",
+      "욱함",
+      "분노",
+      "분노조절",
+      "짜증",
+      "화를 내고 후회해요",
+      "후회",
+      "사소한 일에 화",
+      "욱하고 후회"
+    ],
+    "relatedBookChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "featured": true,
+    "routeTags": [
+      "감정 민감성",
+      "분노",
+      "분노조절",
+      "분노폭발",
+      "사소한 일에 화",
+      "욱하고 후회",
+      "욱함",
+      "욱해요",
+      "짜증",
+      "폭발"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "목소리가 커지려 할 때 “잠시 5분만 바람 쐬고 다시 "
+    ],
+    "relatedCards": [
+      "repression-20",
+      "rel-011",
+      "emo-006"
+    ]
+  },
+  {
+    "id": "attachment-breakup-22",
+    "category": "관계·심리",
+    "keyword": "이별흔들림",
+    "cardTitle": "간헐적 도파민 모드",
+    "question": "헤어져야 한다는 걸 아는데 왜 연락 한 번이면 다시 흔들릴까요?",
+    "sodaAnswer": "그 사람을 아직 사랑해서가 아니라, 예측 불가능한 도파민 자극에 뇌가 중독되어 있기 때문입니다.",
+    "description": "불규칙하게 주어지는 관심과 연락은 뇌의 보상회로를 가장 강력하게 자극하여 이성적 결단을 마비시킵니다.",
+    "curiosityQuestion": "나는 그 사람과의 진짜 현실을 그리워하는 걸까, 결말을 내 손으로 고치고 싶은 걸까?",
+    "scanQuestion": "휴대폰 알림이 떴을 때 심장이 쿵 내려앉는 감각을 알아차렸나요?",
+    "syncSentence": "외롭고 흔들리는 내 마음에 먼저 따뜻하게 머물러주자.",
+    "shiftQuestion": "지금 바로 답장하는 대신, 내 감정에 1시간의 유예 시간을 준다면?",
+    "tenPercentAction": "연락이 왔을 때 즉시 열어보지 않고 최소 30분 뒤에 확인한다.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제14장 · 신경계 셧다운과 트라우마의 해리",
+    "appCTA": "내 관계 중독 패턴 SCAN하기",
+    "appSubtext": "머리가 하얘지는 동결 순간, 1분 SCAN으로 발바닥의 감각을 깨워 현실로 돌아옵니다.",
+    "bookCTA": "반복되는 관계 덫의 뿌리 읽기",
+    "bookSubtext": "트라우마성 동결 반응에서 벗어나 성인으로서의 주체성을 복원하는 원리를 탐구합니다.",
+    "searchKeywords": [
+      "이별",
+      "헤어짐",
+      "전남친",
+      "전여친",
+      "연락",
+      "흔들림",
+      "재회",
+      "미련"
+    ],
+    "relatedBookChapter": "5장. 집착과 무의식적 결핍 회로",
+    "safetyLevel": "safe",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "그 사람과의 관계에서 반복되었던 명백한 사실(Fact)은 무엇인가요?",
+    "storyQuestion": "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?",
+    "unknownQuestion": "다시 연락한다고 해서 근본적인 문제가 해결될 거라는 증거가 있나요?",
+    "bodyQuestion": "가슴이 답답하고 목구멍이 메여오나요?",
+    "relatedChapter": "5장. 집착과 무의식적 결핍 회로",
+    "featured": true,
+    "routeTags": [
+      "관계",
+      "미련",
+      "심리",
+      "연락",
+      "이별",
+      "이별흔들림",
+      "재회",
+      "전남친",
+      "전여친",
+      "헤어짐"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "연락이 왔을 때 즉시 열어보지 않고 최소 30분 뒤에 "
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-006",
+      "rel-015"
+    ]
+  },
+  {
+    "id": "identity-23",
+    "category": "정체성과 관찰",
+    "keyword": "정체성",
+    "cardTitle": "낙인 모드",
+    "question": "“원래 나는 태어날 때부터 소심하고 예민한 사람이에요.”",
+    "sodaAnswer": "당신이 그런 사람이 아니라, 그 방어 패턴을 오랫동안 입고 있었을 뿐입니다.",
+    "description": "‘나는 원래 이런 사람’이라는 낙인은 과거의 상처와 환경이 빚어낸 옷일 뿐, 당신의 본질이 아닙니다. 패턴과 나를 동일시하면 변화의 문은 닫힙니다.",
+    "curiosityQuestion": "“내 경우에는 어떤 한계 규정을 내 정체성이라 믿으며 새로운 시도를 막고 있을까?”",
+    "scanQuestion": "“난 원래 그래”라는 말이 나올 때 무의식적으로 안주하려는 안도감을 보셨나요?",
+    "syncSentence": "“상처받지 않기 위해 일찍이 나를 규정해버렸던 내 두려움을 따뜻하게 바라본다.”",
+    "shiftQuestion": "패턴은 내 성격이 아니라 단지 날씨처럼 지나가는 반응에 불과하다면?",
+    "tenPercentAction": "“나는 소심한 사람이다” 대신 “내게 지금 소심한 반응이 올라왔다”로 고쳐 말하기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "appCTA": "내 정체성 낙인 직접 확인하기",
+    "appSubtext": "나를 옭아매던 고정관념을 1분 SCAN으로 분리하고, 반응 뒤의 자유로운 나를 봅니다.",
+    "bookCTA": "성격이라는 가면에 갇힌 뇌의 착각 읽기",
+    "bookSubtext": "‘나’와 ‘내 패턴’을 엄밀하게 분리하여 본래의 잠재력을 깨우는 제로 포인트 철학을 만납니다.",
+    "searchKeywords": [
+      "성격",
+      "소심해요",
+      "원래 이래요",
+      "낙인",
+      "정체성",
+      "변화 불가능"
+    ],
+    "relatedBookChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "featured": false,
+    "routeTags": [
+      "낙인",
+      "변화 불가능",
+      "성격",
+      "소심해요",
+      "원래 이래요",
+      "정체성",
+      "정체성과 관찰"
+    ],
+    "triggerTags": [
+      "정체성"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "“나는 소심한 사람이다” 대신 “내게 지금 소심한 반응"
+    ],
+    "relatedCards": [
+      "observationtrap-28",
+      "identification-29",
+      "zeropoint-30"
+    ]
+  },
+  {
+    "id": "money-anxiety-24",
+    "category": "생존·불안",
+    "keyword": "돈불안",
+    "cardTitle": "계산기 과열 모드",
+    "question": "돈이 없어서 불안한 걸까요, 불안해서 돈 생각만 하는 걸까요?",
+    "sodaAnswer": "돈의 잔고가 0원이어서가 아니라, 내면의 심리적 안전감이 고갈되었을 때 뇌는 끊임없이 잔고를 확인합니다.",
+    "description": "불안은 언제나 가장 현실적이고 취약한 명분인 '돈과 생존'의 옷을 입고 스스로를 정당화합니다.",
+    "curiosityQuestion": "내 통장에 얼마가 들어오면 이 불안 스위치가 완전히 꺼질 것이라고 믿고 있을까?",
+    "scanQuestion": "돈 생각을 시작할 때 몸의 어느 부위가 가장 먼저 차갑게 굳어나요?",
+    "syncSentence": "안전하고 싶은 마음에 자꾸 숫자에 매달리게 되는구나.",
+    "shiftQuestion": "지금 이 순간, 내가 건강하게 통제할 수 있는 단 하나의 선택은 무엇인가요?",
+    "tenPercentAction": "오늘 하루는 가계부 앱이나 계좌 잔고 조회를 딱 멈춘다.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제7장 · 신경 고속도로 우회와 샛길 내기",
+    "appCTA": "내 결핍/불안 루프 SCAN하기",
+    "appSubtext": "익숙한 자극이 올 때 자동 질주하는 신경 경로를 1분 SCAN으로 잠시 정지시킵니다.",
+    "bookCTA": "돈 불안의 무의식 뿌리 읽기",
+    "bookSubtext": "반복되는 파괴적 패턴을 부수고 새로운 습관 회로를 강화하는 뉴럴 코드 원리를 배웁니다.",
+    "searchKeywords": [
+      "돈",
+      "돈불안",
+      "통장",
+      "잔고",
+      "가난",
+      "불안",
+      "돈이 없어서",
+      "미래불안",
+      "경제",
+      "돈 때문에 불안해요",
+      "돈이 없어서 불안해요",
+      "경제적 불안",
+      "통장잔고"
+    ],
+    "relatedBookChapter": "3장. 결핍과 통제 코드",
+    "safetyLevel": "safe",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "실제로 이번 주에 반드시 지출해야 할 객관적인 금액은 얼마인가요?",
+    "storyQuestion": "‘나는 결국 파멸할 것이다, 감당 못한다’라는 옛날 이야기를 덧붙이고 있지 않나요?",
+    "unknownQuestion": "아직 일어나지 않은 1년 뒤, 3년 뒤의 경제 상황을 지금 확정지을 수 있나요?",
+    "bodyQuestion": "명치 끝이 옥죄어오거나 호흡이 얕아지나요?",
+    "relatedChapter": "3장. 결핍과 통제 코드",
+    "featured": true,
+    "routeTags": [
+      "가난",
+      "경제",
+      "경제적 불안",
+      "돈",
+      "돈 때문에 불안해요",
+      "돈불안",
+      "돈이 없어서",
+      "돈이 없어서 불안해요",
+      "미래불안",
+      "불안"
+    ],
+    "triggerTags": [
+      "돈",
+      "지출",
+      "경제적불확실성",
+      "마감임박"
+    ],
+    "storyTags": [
+      "‘나는 결국 파멸할 것이다, 감당 못한다’라는 옛날 이야기를 덧붙이고 있"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "오늘 하루는 가계부 앱이나 계좌 잔고 조회를 딱 멈춘다"
+    ],
+    "relatedCards": [
+      "money-001",
+      "money-010",
+      "money-017"
+    ]
+  },
+  {
+    "id": "relapse-25",
+    "category": "변화와 시도",
+    "keyword": "재발",
+    "cardTitle": "원점 회귀 모드",
+    "question": "“한 달 잘 참다가 또 무너졌어요. 다 끝난 건가요?”",
+    "sodaAnswer": "원점으로 돌아간 게 아니라, 더 깊은 단계에서 패턴을 만난 것입니다.",
+    "description": "변화는 직선이 아니라 나선형으로 일어납니다. 이전에는 무의식중에 저질렀다면, 지금은 알고서 후회하고 있다는 것 자체가 엄청난 진전입니다.",
+    "curiosityQuestion": "“내 경우에는 무너졌을 때 ‘다 망했다’며 아예 포기해버리는 회피가 더 크지 않을까?”",
+    "scanQuestion": "무너진 직후 온몸의 힘이 빠지며 자포자기하고 싶은 충동을 보셨나요?",
+    "syncSentence": "“넘어질 수 있다. 중요한 건 넘어진 자리에서 다시 일어나는 법을 배우는 것이다.”",
+    "shiftQuestion": "내비게이션이 경로를 재탐색하듯 덤덤하게 다음 목적지를 입력한다면?",
+    "tenPercentAction": "“경로를 재탐색합니다” 소리 내어 말하고 원래 하려던 루틴의 10%만 실행하기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제8장 · 나선형 성장 모델과 재발 방지",
+    "appCTA": "내 재발 좌절감 1분 리셋하기",
+    "appSubtext": "무너진 순간의 자포자기 충동을 1분 SCAN으로 멈추고 경로 재탐색 버튼을 누릅니다.",
+    "bookCTA": "나선형 변화 모델과 재발의 신경학 읽기",
+    "bookSubtext": "실패가 학습의 필수 과정인 이유와 회복 탄력성을 영구화하는 뇌과학적 원리를 확인하세요.",
+    "searchKeywords": [
+      "재발",
+      "다 망했어",
+      "좌절",
+      "도루묵",
+      "포기하고 싶다",
+      "무너짐"
+    ],
+    "relatedBookChapter": "제8장 · 나선형 성장 모델과 재발 방지",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제8장 · 나선형 성장 모델과 재발 방지",
+    "featured": false,
+    "routeTags": [
+      "다 망했어",
+      "도루묵",
+      "무너짐",
+      "변화와 시도",
+      "재발",
+      "좌절",
+      "포기하고 싶다"
+    ],
+    "triggerTags": [
+      "재발"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "“경로를 재탐색합니다” 소리 내어 말하고 원래 하려던 "
+    ],
+    "relatedCards": [
+      "dec-018",
+      "code-018",
+      "rel-001"
+    ]
+  },
+  {
+    "id": "impostor-success-26",
+    "category": "성취·일",
+    "keyword": "성공공포",
+    "cardTitle": "가면 탄로 공포 모드",
+    "question": "왜 성공하고 싶은데 막상 기회가 오면 도망가고 싶을까요?",
+    "sodaAnswer": "실패가 두려운 것이 아니라, 성공해서 더 큰 기대와 평가를 짊어지는 것이 두렵기 때문입니다.",
+    "description": "기회가 커질수록 '내 실력이 들통날지 모른다'는 가면 증후군(Impostor syndrome) 회로가 방어적으로 작동합니다.",
+    "curiosityQuestion": "내가 완벽하게 해내지 못하면 사람들은 나를 어떻게 평가할 거라고 믿고 있을까?",
+    "scanQuestion": "기회가 주어졌을 때 설렘보다 먼저 덮쳐오는 감정은 무엇인가요?",
+    "syncSentence": "기대가 무거워서 도망치고 싶은 마음이 올라올 수 있어.",
+    "shiftQuestion": "100점을 증명하려 하지 않고, 60점짜리 초안을 먼저 던진다면 어떨까요?",
+    "tenPercentAction": "제안받은 일의 첫 줄이나 개요만 10분 동안 가볍게 끄적여본다.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제9장 · 10% 마이크로 시프트의 기적",
+    "appCTA": "내 회피 트리거 SCAN하기",
+    "appSubtext": "뇌의 저항 없이 가볍게 시도할 수 있는 나만의 10% 마이크로 액션을 설계하고 체크합니다.",
+    "bookCTA": "가면 증후군 신경망 재학습하기",
+    "bookSubtext": "편도체의 경보를 울리지 않고 기저핵의 습관 회로를 리프로그래밍하는 원리를 탐구합니다.",
+    "searchKeywords": [
+      "성공",
+      "기회",
+      "도망",
+      "가면증후군",
+      "도전",
+      "실패두려움",
+      "발표",
+      "승진"
+    ],
+    "relatedBookChapter": "4장. 회피 신경망을 재설계하는 10% 행동",
+    "safetyLevel": "safe",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "상대가 나에게 제안한 기회의 객관적 내용과 범위는 무엇인가요?",
+    "storyQuestion": "‘나는 가짜야, 곧 들통날 거야’라는 이야기를 반복하고 있지 않나요?",
+    "unknownQuestion": "내가 실수하더라도 그것이 내 존재 전체의 파멸을 의미하나요?",
+    "bodyQuestion": "어깨가 움츠러들고 손발이 차가워지나요?",
+    "relatedChapter": "4장. 회피 신경망을 재설계하는 10% 행동",
+    "featured": true,
+    "routeTags": [
+      "가면증후군",
+      "기회",
+      "도망",
+      "도전",
+      "발표",
+      "성공",
+      "성공공포",
+      "성취",
+      "승진",
+      "실패두려움"
+    ],
+    "triggerTags": [
+      "상사",
+      "직장회의",
+      "평가"
+    ],
+    "storyTags": [
+      "‘나는 가짜야, 곧 들통날 거야’라는 이야기를 반복하고 있지 않나요?"
+    ],
+    "urgeTags": [
+      "자리를 피하거나 중단하려는 충동"
+    ],
+    "actionTags": [
+      "제안받은 일의 첫 줄이나 개요만 10분 동안 가볍게 끄"
+    ],
+    "relatedCards": [
+      "career-004",
+      "career-007",
+      "emo-004"
+    ]
+  },
+  {
+    "id": "helpseeking-27",
+    "category": "경계와 관계",
+    "keyword": "도움요청",
+    "cardTitle": "고립 요새 모드",
+    "question": "“남에게 아쉬운 소리 하느니 혼자 끙끙 앓는 게 편해요.”",
+    "sodaAnswer": "자립적인 게 아니라, 거절당했을 때의 상처가 두려운 고립입니다.",
+    "description": "도움을 청했다가 거절당하면 내 가치까지 부정당할 것 같은 공포 때문에, 아무도 믿지 않고 스스로 성벽을 쌓아 자신을 가두는 외로운 방어입니다.",
+    "curiosityQuestion": "“내 경우에는 누구에게 부탁을 건네는 것이 가장 굴욕적이고 두렵게 느껴질까?”",
+    "scanQuestion": "도움을 청하려 할 때 혀가 굳고 식은땀이 흐르는 감각을 관찰해보셨나요?",
+    "syncSentence": "“거절받아 비참해질까 봐 혼자 모든 짐을 지고 견뎌온 내 외로움을 위로한다.”",
+    "shiftQuestion": "도움을 청하는 것은 상대에게 기여할 기회를 선물하는 일이라면?",
+    "tenPercentAction": "지인에게 “혹시 시간 될 때 이 링크 한 번만 봐줄 수 있어?” 가볍게 물어보기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "appCTA": "내 도움 요청 회피 신호 직접 확인하기",
+    "appSubtext": "혼자 끙끙 앓으려 할 때 1분 SCAN으로 고립의 성벽을 넘어 작은 손을 내밀어봅니다.",
+    "bookCTA": "거절 공포가 쌓아 올린 고립 요새의 원리 읽기",
+    "bookSubtext": "상처받지 않으려 고립을 택한 뇌의 생존 전략을 이해하고 안전하게 연결되는 법을 배웁니다.",
+    "searchKeywords": [
+      "도움 요청 못해요",
+      "혼자 다 해요",
+      "부탁",
+      "거절 공포",
+      "고립",
+      "외로움"
+    ],
+    "relatedBookChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "featured": false,
+    "routeTags": [
+      "거절 공포",
+      "경계와 관계",
+      "고립",
+      "도움 요청 못해요",
+      "도움요청",
+      "부탁",
+      "외로움",
+      "혼자 다 해요"
+    ],
+    "triggerTags": [
+      "도움요청"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "지인에게 “혹시 시간 될 때 이 링크 한 번만 봐줄 수"
+    ],
+    "relatedCards": [
+      "peoplepleaser-02",
+      "boundary-03",
+      "attachment-07"
+    ]
+  },
+  {
+    "id": "observationtrap-28",
+    "category": "정체성과 관찰",
+    "keyword": "관찰함정",
+    "cardTitle": "해석 중독 모드",
+    "question": "“내 패턴을 분석하느라 하루가 다 가요.”",
+    "sodaAnswer": "관찰이 아니라, 또 다른 형태의 통제이자 지적 강박입니다.",
+    "description": "마음공부나 심리학 지식에 매몰되어 모든 순간을 분석하고 채점하는 것은, 온전히 살아가는 삶을 회피하고 '머릿속 안전지대'에 숨는 또 다른 방어막입니다.",
+    "curiosityQuestion": "“내 경우에는 마음을 느낄 시간에 머리로 라벨을 붙이며 관조만 하고 있지 않을까?”",
+    "scanQuestion": "마음을 지켜보면서도 미간을 찌푸린 채 끊임없이 평가하고 있는 나를 보셨나요?",
+    "syncSentence": "“안전해지고 싶어서 지식과 분석 뒤로 숨으려 했던 내 지적 방어를 알아챈다.”",
+    "shiftQuestion": "분석을 멈추고 지금 창밖의 시원한 바람을 온몸의 피부로 느껴본다면?",
+    "tenPercentAction": "모든 심리 분석을 중단하고 밖으로 나가 동네 한 바퀴 15분간 산책하기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "appCTA": "내 분석 중독 함정 직접 확인하기",
+    "appSubtext": "생각으로 생각을 분석하려는 헛바퀴질을 1분 SCAN으로 멈추고 몸의 감각으로 내려옵니다.",
+    "bookCTA": "분석 강박을 넘어선 순수 현존의 원리 읽기",
+    "bookSubtext": "심리학 지식의 감옥에서 벗어나 지금 이 순간의 생생한 현실을 온전히 경험하는 법을 확인하세요.",
+    "searchKeywords": [
+      "분석 강박",
+      "마음공부 부작용",
+      "생각 중독",
+      "지적 방어",
+      "지식 집착"
+    ],
+    "relatedBookChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "featured": false,
+    "routeTags": [
+      "관찰함정",
+      "마음공부 부작용",
+      "분석 강박",
+      "생각 중독",
+      "정체성과 관찰",
+      "지식 집착",
+      "지적 방어"
+    ],
+    "triggerTags": [
+      "관찰함정"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "모든 심리 분석을 중단하고 밖으로 나가 동네 한 바퀴 "
+    ],
+    "relatedCards": [
+      "identity-23",
+      "identification-29",
+      "zeropoint-30"
+    ]
+  },
+  {
+    "id": "identification-29",
+    "category": "정체성과 관찰",
+    "keyword": "동일시",
+    "cardTitle": "판결 모드",
+    "question": "“이 패턴이 나라는 사람의 본질인 것 같아요.”",
+    "sodaAnswer": "구름이 하늘이 아니듯, 감정과 생각은 당신의 본질이 아닙니다.",
+    "description": "먹구름이 아무리 짙게 끼어도 그 뒤편의 푸른 하늘은 손상되지 않습니다. 부정적 감정과 생각에 압도되는 순간에도 그것을 바라보는 '관찰자(나)'는 온전합니다.",
+    "curiosityQuestion": "“내 경우에는 먹구름 같은 내 기분을 나 자신 전체라고 착각하고 있지 않을까?”",
+    "scanQuestion": "마음의 폭풍우가 몰아칠 때, 그것을 바라보고 있는 고요한 시선을 느껴보셨나요?",
+    "syncSentence": "“비바람이 칠 수 있다. 하지만 나는 비바람을 품고 있는 드넓은 하늘이다.”",
+    "shiftQuestion": "지나가는 날씨와 싸우지 않고 그저 지나가도록 자리를 내어준다면?",
+    "tenPercentAction": "가슴에 손을 대고 “이건 날씨일 뿐, 내 본질은 하늘이다” 3번 숨 쉬며 읊기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "appCTA": "내 생각과의 동일시 분리해보기",
+    "appSubtext": "생각과 나를 하나로 뭉개는 착각을 1분 SCAN으로 떼어내고 본래의 중심을 회복합니다.",
+    "bookCTA": "생각과 나를 분리하는 메타인지의 비밀 읽기",
+    "bookSubtext": "뇌의 일시적 전기 신호에 불과한 생각을 나와 분리하는 신경인지적 탈융합 원리를 배웁니다.",
+    "searchKeywords": [
+      "동일시",
+      "나는 원래 이래",
+      "자괴감",
+      "우울",
+      "구름과 하늘",
+      "본질"
+    ],
+    "relatedBookChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "featured": false,
+    "routeTags": [
+      "구름과 하늘",
+      "나는 원래 이래",
+      "동일시",
+      "본질",
+      "우울",
+      "자괴감",
+      "정체성과 관찰"
+    ],
+    "triggerTags": [
+      "동일시"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "가슴에 손을 대고 “이건 날씨일 뿐, 내 본질은 하늘이"
+    ],
+    "relatedCards": [
+      "identity-23",
+      "observationtrap-28",
+      "zeropoint-30"
+    ]
+  },
+  {
+    "id": "zeropoint-30",
+    "category": "정체성과 관찰",
+    "keyword": "제로포인트",
+    "cardTitle": "평온의 중심 모드",
+    "question": "“내 모든 반응을 멈추고 새롭게 시작할 자리가 있나요?”",
+    "sodaAnswer": "반응과 선택 사이의 그 고요한 틈, 그곳이 바로 당신의 ‘제로 포인트’입니다.",
+    "description": "자극이 들어왔을 때 자동반응으로 튕겨 나가기 전, 숨 한 번을 고를 수 있는 1초의 틈이 있습니다. 그 틈에서 사람은 완전히 새로운 선택의 주인이 됩니다.",
+    "curiosityQuestion": "“내 경우에는 오늘 하루 중 단 10초라도 자극과 반응 사이의 틈에 머물러 보았을까?”",
+    "scanQuestion": "숨을 들이쉬고 내쉬는 그 사이, 잠시 멈추는 지점의 고요를 만나보셨나요?",
+    "syncSentence": "“과거의 조건화도, 미래의 불안도 닿지 않는 내 안의 가장 평온한 중심에 머문다.”",
+    "shiftQuestion": "이 평온한 중심에서 오늘 나에게 가장 자비로운 선택 1가지를 고른다면?",
+    "tenPercentAction": "하던 일을 멈추고 눈을 감은 채 10초간 완전히 정적 속에 머물러보기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "appCTA": "내 안의 제로 포인트 직접 확인하기",
+    "appSubtext": "자극과 반응 사이의 1초의 틈을 열어내는 1분 SCAN 호흡으로 평온의 중심을 찾습니다.",
+    "bookCTA": "반응과 선택 사이의 틈을 여는 제로 포인트 읽기",
+    "bookSubtext": "자동반응에 끌려다니지 않고 내 삶의 진정한 주권자로 서는 제로 포인트 원리를 깊이 만납니다.",
+    "searchKeywords": [
+      "평온",
+      "중심",
+      "제로포인트",
+      "명상",
+      "호흡",
+      "선택의 자유",
+      "마음의 평화"
+    ],
+    "relatedBookChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "featured": false,
+    "routeTags": [
+      "마음의 평화",
+      "명상",
+      "선택의 자유",
+      "정체성과 관찰",
+      "제로포인트",
+      "중심",
+      "평온",
+      "호흡"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "하던 일을 멈추고 눈을 감은 채 10초간 완전히 정적 "
+    ],
+    "relatedCards": [
+      "regret-13",
+      "perf-005",
+      "code-003"
+    ]
+  }
+]
