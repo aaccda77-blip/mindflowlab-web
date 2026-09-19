@@ -1,5 +1,7 @@
 # Production Environment
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/
 
 Sitemap: https://lab.mindflowlab.co.kr/sitemap.xml
