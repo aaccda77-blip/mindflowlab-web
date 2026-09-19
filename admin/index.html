@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM ADMIN CMS | 명심코칭 카드 운영 시스템</title>
+
+  <!-- Search Engine Security: Absolute Noindex -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#0F6B5B',
+              greenDark: '#0A493E',
+              gold: '#C7A86B',
+              navy: '#14233B',
+            }
+          },
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+  <!-- Admin Custom Styles -->
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+  <!-- Admin Application Root -->
+  <div id="admin-app-root">
+    <!-- Initial Loading Spinner -->
+    <div class="min-h-screen flex items-center justify-center">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-10 h-10 border-4 border-[#0F6B5B]/20 border-t-[#0F6B5B] rounded-full animate-spin"></div>
+        <span class="text-xs font-bold text-slate-400">MYUNGSIM ADMIN CMS 불러오는 중...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Application Script -->
+  <script src="admin.js"></script>
+</body>
+</html>
