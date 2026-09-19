@@ -271,23 +271,23 @@
      */
     extractCodeHint(cards, rawQuery) {
       const q = rawQuery.toLowerCase();
-      if (q.includes('왜') || q.includes('계속') || q.includes('자꾸') || q.includes('원인') || q.includes('이유')) {
+      if (q.includes('왜') || q.includes('계속') || q.includes('자꾸') || q.includes('원인') || q.includes('이유') || q.includes('패턴')) {
         return {
           code: "Dark Code",
-          tag: "Dark Code 관점",
-          hint: "지금은 억지로 바꾸려 하기보다, 내 안에서 어떤 자동 해석(STORY)과 충동이 먼저 켜지는지 관찰하는 것이 도움이 될 수 있습니다."
+          tag: "Dark Code",
+          hint: "지금은 먼저 패턴을 보는 것이 도움이 될 수 있습니다."
         };
-      } else if (q.includes('어떻게') || q.includes('행동') || q.includes('시작') || q.includes('미루') || q.includes('실행')) {
+      } else if (q.includes('어떻게') || q.includes('행동') || q.includes('시작') || q.includes('미루') || q.includes('실행') || q.includes('바뀌')) {
         return {
           code: "Neural Code",
-          tag: "Neural Code 관점",
-          hint: "패턴을 충분히 알고 있다면, 이번에는 완벽한 성공 대신 실패해도 안전한 10% 작은 행동실험을 하나 선택해볼 수 있습니다."
+          tag: "Neural Code",
+          hint: "패턴은 이미 잘 알고 있는 것 같습니다. 이번에는 작은 행동실험을 해볼 수 있습니다."
         };
       } else {
         return {
           code: "Zero Point",
-          tag: "Zero Point 관점",
-          hint: "생각과 감정이 강하게 휘몰아칠 때, 그것이 '나 전체'가 아님을 알아차리고 한 걸음 물러나 선택의 영점을 회복해보세요."
+          tag: "Zero Point",
+          hint: "생각과 감정이 너무 강하게 ‘나 전체’처럼 느껴진다면 선택의 공간부터 살펴볼 수 있습니다."
         };
       }
     }
