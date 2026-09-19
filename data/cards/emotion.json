@@ -1,22 +1,812 @@
 [
   {
+    "id": "nunchi-04",
+    "category": "감정 민감성",
+    "keyword": "눈치",
+    "cardTitle": "안테나 과출력 모드",
+    "question": "왜 상대가 한마디만 차갑게 해도 하루 종일 신경 쓰일까요?",
+    "sodaAnswer": "상대의 차가운 말투는 상대의 피로일 수 있지만, 내 안테나는 그것을 '나를 향한 공격'으로 해석합니다.",
+    "description": "사람의 기류를 민감하게 감지하는 감각은 귀한 안테나입니다. 문제는 감지하는 즉시 '저 사람 기분을 내가 풀어줘야 해'라며 나를 구부리는 데 있습니다.",
+    "curiosityQuestion": "내 경우에는 상대의 굳은 얼굴을 볼 때 어떤 위험 경보가 가장 먼저 울릴까?",
+    "scanQuestion": "상대 표정이 안 좋을 때 내 가슴이 쿵 내려앉는 신체 신호(Body Signature)를 보셨나요?",
+    "syncSentence": "상대 기분을 빠르게 읽는 내 민감성을 존중한다. 하지만 저 기분은 저 사람의 날씨다.",
+    "shiftQuestion": "상대의 기분과 나의 존재 사이에 투명한 유리창을 하나 놓아둔다면?",
+    "tenPercentAction": "상대 안색이 안 좋을 때 속으로 “저건 저 사람의 이슈다”라고 3번 되뇌이기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "appCTA": "내 안테나 반응 직접 확인하기",
+    "appSubtext": "남의 눈치를 볼 때 가슴이 내려앉는 내 신체 신호(Body Signature)를 기록해봅니다.",
+    "bookCTA": "타인의 감정과 나를 분리하는 원리 읽기",
+    "bookSubtext": "타인의 표정을 내 생존 위기로 착각하는 뇌 편도체의 과잉 반응을 가라앉히는 법을 배웁니다.",
+    "searchKeywords": [
+      "회사 가기 싫어요",
+      "남의 시선",
+      "예민해요",
+      "상사 눈치",
+      "피곤해요",
+      "표정",
+      "말투",
+      "하루종일",
+      "눈치",
+      "차갑게",
+      "기분 눈치",
+      "신경쓰임",
+      "직장 스트레스"
+    ],
+    "relatedBookChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 과출력된 레이더와 분리 기술",
+    "featured": true,
+    "routeTags": [
+      "감정 민감성",
+      "기분 눈치",
+      "남의 시선",
+      "눈치",
+      "말투",
+      "상사 눈치",
+      "신경쓰임",
+      "예민해요",
+      "직장 스트레스",
+      "차갑게"
+    ],
+    "triggerTags": [
+      "눈치"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "상대 안색이 안 좋을 때 속으로 “저건 저 사람의 이슈다”라고 3번 되뇌이기."
+    ],
+    "relatedCards": [
+      "mindreading-09",
+      "comparison-18"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 상대의 굳은 얼굴을 볼 때 어떤 위험 경보가 가장 먼저 울릴까?",
+    "syncMessage": "상대 기분을 빠르게 읽는 내 민감성을 존중한다. 하지만 저 기분은 저 사람의 날씨다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "overexplaining-05",
+    "category": "불안과 방어",
+    "keyword": "과잉설명",
+    "cardTitle": "설명 강박 모드",
+    "question": "왜 오해받을 것 같으면 말이 턱없이 길어질까요?",
+    "sodaAnswer": "말이 길어지는 건 친절이 아니라, 버림받을까 두려운 무의식의 변론입니다.",
+    "description": "충분히 전달되었는데도 카톡을 장문으로 덧붙이거나 변명을 거듭하는 것은 상대가 나를 오해하고 비난할 것이라는 깊은 불신에서 출발합니다.",
+    "curiosityQuestion": "내 경우에는 어떤 사람 앞에서 오해받을까 봐 말이 걷잡을 수 없이 길어질까?",
+    "scanQuestion": "카톡을 길게 쓰면서 호흡이 가빠지고 심장이 빨리 뛰는 것을 관찰해보셨나요?",
+    "syncSentence": "오해받아 공격당할까 봐 나를 필사적으로 변호하려는 마음을 알아차린다.",
+    "shiftQuestion": "상대가 나를 어떻게 생각하든 내 진심은 이미 충분하다면?",
+    "tenPercentAction": "장문 카톡을 보내기 전 마지막 문단 3줄을 과감히 지우고 전송 버튼 누르기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제5장 · 투사와 자기변호의 늪",
+    "appCTA": "내 설명 강박 패턴 직접 확인하기",
+    "appSubtext": "말이 길어지려는 충동이 일어날 때, 1분 SCAN으로 그 밑의 두려움을 먼저 읽어줍니다.",
+    "bookCTA": "과잉설명의 무의식 메커니즘 읽기",
+    "bookSubtext": "인정받지 못할 것이라는 불안이 어떻게 장황한 변호 언어로 전환되는지 구조를 밝힙니다.",
+    "searchKeywords": [
+      "과잉설명",
+      "말이 길어져요",
+      "카톡 장문",
+      "오해",
+      "변명",
+      "두려움"
+    ],
+    "relatedBookChapter": "제5장 · 투사와 자기변호의 늪",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 투사와 자기변호의 늪",
+    "featured": false,
+    "routeTags": [
+      "과잉설명",
+      "두려움",
+      "말이 길어져요",
+      "변명",
+      "불안과 방어",
+      "오해",
+      "카톡 장문"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "장문 카톡을 보내기 전 마지막 문단 3줄을 과감히 지우고 전송 버튼 누르기."
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-005"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 어떤 사람 앞에서 오해받을까 봐 말이 걷잡을 수 없이 길어질까?",
+    "syncMessage": "오해받아 공격당할까 봐 나를 필사적으로 변호하려는 마음을 알아차린다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "apology-06",
+    "category": "불안과 방어",
+    "keyword": "습관적 사과",
+    "cardTitle": "반사적 항복 모드",
+    "question": "잘못한 것도 없는데 왜 먼저 사과하고 싶을까요?",
+    "sodaAnswer": "내 잘못을 인정해서가 아니라, 어색한 침묵과 갈등의 공기를 1초라도 빨리 없애고 싶기 때문입니다.",
+    "description": "어색한 공기를 깨거나 갈등을 예방하기 위해 습관적으로 고개를 숙이는 행동은 안전을 사기 위해 나의 존엄을 바겐세일하는 자동반응입니다.",
+    "curiosityQuestion": "내 경우에는 무엇이 불편해서 죄송하다는 말로 그 자리를 모면하려 할까?",
+    "scanQuestion": "사과하기 직전 목을 움츠리거나 눈을 피하는 신체 반응이 있었나요?",
+    "syncSentence": "비난받지 않고 안전하고 싶어서 먼저 엎드렸던 내 방어기제를 위로한다.",
+    "shiftQuestion": "죄송합니다 대신 ‘감사합니다’로 문장의 주도권을 바꾼다면?",
+    "tenPercentAction": "길을 비켜줄 때 “죄송합니다” 대신 “감사합니다”라고 한마디로 바꿔보기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "appCTA": "내 반사적 사과 습관 직접 확인하기",
+    "appSubtext": "죄송하다는 말이 튀어나오려는 순간의 충동을 1분 만에 멈추고 새 반응을 연습합니다.",
+    "bookCTA": "복종 언어를 바꾸는 뇌신경 재설계 읽기",
+    "bookSubtext": "언어 패턴이 뇌의 자존감 회로에 미치는 신경학적 영향과 대안 언어 훈련법을 읽어보세요.",
+    "searchKeywords": [
+      "위축",
+      "습관적 사과",
+      "사과",
+      "사과 강박",
+      "갈등 회피",
+      "죄송합니다",
+      "먼저 사과",
+      "눈치",
+      "저자세",
+      "잘못",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족",
+      "거절을 못해요",
+      "착한아이"
+    ],
+    "relatedBookChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제2장 · 복종 언어에서 주체 언어로의 재설계",
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "갈등 회피",
+      "거절을 못해요",
+      "눈치",
+      "먼저 사과",
+      "부모님",
+      "부모님 때문에 힘들어요",
+      "불안과 방어",
+      "사과",
+      "사과 강박"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "과도하게 해명하려는 충동"
+    ],
+    "actionTags": [
+      "길을 비켜줄 때 “죄송합니다” 대신 “감사합니다”라고 한마디로 바꿔보기."
+    ],
+    "relatedCards": [
+      "rel-003",
+      "boundary-03"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "내 경우에는 무엇이 불편해서 죄송하다는 말로 그 자리를 모면하려 할까?",
+    "syncMessage": "비난받지 않고 안전하고 싶어서 먼저 엎드렸던 내 방어기제를 위로한다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "mindreading-09",
+    "category": "감정 민감성",
+    "keyword": "독심술",
+    "cardTitle": "궁예 모드",
+    "question": "상대 표정만 봐도 날 싫어하는 게 100% 보여요?",
+    "sodaAnswer": "상대의 마음을 읽은 게 아니라, 내 안의 불신을 투사한 것입니다.",
+    "description": "우리는 남의 마음을 투시하는 초능력자가 아닙니다. 상대의 피곤한 얼굴에 '나를 향한 적의'라는 라벨을 붙이는 건 내 내면의 투사입니다.",
+    "curiosityQuestion": "내 경우에는 상대의 표정을 볼 때 내 안의 어떤 결핍이 먼저 덧씌워질까?",
+    "scanQuestion": "확신이 들 때, 그게 ‘관찰된 사실’인지 ‘내 추측’인지 검증해보셨나요?",
+    "syncSentence": "미움받고 싶지 않아 미리 짐작하려 애쓰는 내 연약함을 알아차린다.",
+    "shiftQuestion": "상대의 표정은 상대의 소화불량이나 피로 때문일 수 있다면?",
+    "tenPercentAction": "상대에게 속단 대신 “오늘 많이 피곤해 보이시네요, 괜찮으세요?” 물어보기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제8장 · 투사의 거울과 현실 검증",
+    "appCTA": "내 독심술 착각 직접 확인하기",
+    "appSubtext": "상대의 의도를 단정 짓고 싶어질 때, 1분 SCAN으로 사실과 해석의 경계를 점검합니다.",
+    "bookCTA": "내면의 불안을 타인에게 투사하는 원리 읽기",
+    "bookSubtext": "독심술 오류가 어떻게 관계를 고립시키는지, 투사를 거두고 현실을 만나는 법을 배웁니다.",
+    "searchKeywords": [
+      "독심술",
+      "기분 짐작",
+      "날 싫어해",
+      "피해의식",
+      "오해",
+      "인간관계"
+    ],
+    "relatedBookChapter": "제8장 · 투사의 거울과 현실 검증",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제8장 · 투사의 거울과 현실 검증",
+    "featured": false,
+    "routeTags": [
+      "감정 민감성",
+      "기분 짐작",
+      "날 싫어해",
+      "독심술",
+      "오해",
+      "인간관계",
+      "피해의식"
+    ],
+    "triggerTags": [
+      "독심술"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "상대에게 속단 대신 “오늘 많이 피곤해 보이시네요, 괜찮으세요?” 물어보기."
+    ],
+    "relatedCards": [
+      "nunchi-04",
+      "comparison-18"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 상대의 표정을 볼 때 내 안의 어떤 결핍이 먼저 덧씌워질까?",
+    "syncMessage": "미움받고 싶지 않아 미리 짐작하려 애쓰는 내 연약함을 알아차린다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "overthinking-12",
+    "category": "생각 과열",
+    "keyword": "반추",
+    "cardTitle": "두뇌 폭주 모드",
+    "question": "자려고 누우면 왜 낮에 했던 말실수가 계속 떠오를까요?",
+    "sodaAnswer": "해결하려는 생각이 아니라, 뇌가 틀어놓은 편집증 리플레이입니다.",
+    "description": "이미 지나간 과거의 한 장면을 수백 번 되감는 것은 반성이 아닙니다. 통제력을 잃었다는 불안을 상상 속의 재구성으로 만회하려는 두뇌의 헛바퀴질입니다.",
+    "curiosityQuestion": "내 경우에는 과거의 어떤 장면에 유독 닻을 내리고 밤마다 자책을 반복하고 있을까?",
+    "scanQuestion": "그 생각이 돌 때 머리에 열이 오르고 눈 주변이 뻐근해지는 신체 반응을 보셨나요?",
+    "syncSentence": "완벽하게 통제하고 싶었던 내 아쉬움과 자책을 조용히 지켜본다.",
+    "shiftQuestion": "이불 속에서 후회하는 것을 멈추고 ‘내일 아침 9시의 나’에게 결재를 넘긴다면?",
+    "tenPercentAction": "스탠드를 켜고 그 기억을 종이에 적은 뒤 서랍 속에 쏙 넣어두기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "appCTA": "내 밤마다 도는 생각 루프 직접 확인하기",
+    "appSubtext": "잠들기 전 폭주하는 머릿속 재생 목록을 1분 SCAN으로 객관화하여 서랍에 넣습니다.",
+    "bookCTA": "밤마다 켜지는 반추 루프의 원리 읽기",
+    "bookSubtext": "뇌의 디폴트 모드 네트워크(DMN)가 왜 부정적 기억을 반복 재생하는지 원리를 밝힙니다.",
+    "searchKeywords": [
+      "이불킥",
+      "밤에 생각",
+      "불면증",
+      "말실수",
+      "후회",
+      "생각이 많아요",
+      "반추"
+    ],
+    "relatedBookChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제9장 · 반추 루프의 차단과 수면 위생",
+    "featured": false,
+    "routeTags": [
+      "말실수",
+      "반추",
+      "밤에 생각",
+      "불면증",
+      "생각 과열",
+      "생각이 많아요",
+      "이불킥",
+      "후회"
+    ],
+    "triggerTags": [
+      "실수",
+      "실패",
+      "돌발상황"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "스탠드를 켜고 그 기억을 종이에 적은 뒤 서랍 속에 쏙 넣어두기."
+    ],
+    "relatedCards": [
+      "regret-13",
+      "selfcriticism-19"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 과거의 어떤 장면에 유독 닻을 내리고 밤마다 자책을 반복하고 있을까?",
+    "syncMessage": "완벽하게 통제하고 싶었던 내 아쉬움과 자책을 조용히 지켜본다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "regret-13",
+    "category": "생각 과열",
+    "keyword": "후회",
+    "cardTitle": "타임머신 망령 모드",
+    "question": "그때 다른 선택을 했다면 지금 인생이 달라졌을 텐데…?",
+    "sodaAnswer": "과거를 후회하는 게 아니라, 지금 현실의 고통을 외면하는 것입니다.",
+    "description": "선택하지 않은 길은 언제나 장밋빛으로 미화됩니다. '만약 그때'라는 환상에 매달리는 것은 지금 내가 책임져야 할 현실의 불안을 마주하기 싫은 회피입니다.",
+    "curiosityQuestion": "내 경우에는 지금 현실의 어떤 막막함 때문에 자꾸 과거의 갈림길로 도망칠까?",
+    "scanQuestion": "후회할 때 명치가 답답해지며 한숨이 깊게 터져 나오는 감각을 관찰해보셨나요?",
+    "syncSentence": "지금 상황이 고통스러워 과거의 환상으로 숨고 싶어 하는 나를 이해한다.",
+    "shiftQuestion": "그때의 나는 그 시점의 정보와 자원 안에서 최선을 다했음을 인정한다면?",
+    "tenPercentAction": "그때는 그게 최선이었다” 거울을 보며 내 눈을 보고 따뜻하게 말해주기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "appCTA": "내 후회 패턴과 지금 현실 직접 확인하기",
+    "appSubtext": "과거로 도망치는 순간을 포착하고, 지금 내 앞에 있는 10%의 선택으로 돌아옵니다.",
+    "bookCTA": "선택하지 않은 길을 미화하는 심리 읽기",
+    "bookSubtext": "과거의 망령에서 벗어나 현재의 중심(Zero Point)에 단단히 발을 딛는 원리를 탐구합니다.",
+    "searchKeywords": [
+      "그때 그랬더라면",
+      "후회",
+      "인생 망함",
+      "과거 미련",
+      "되돌리고 싶다"
+    ],
+    "relatedBookChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제1장 · 과거나 미래가 아닌 ‘지금 여기’로의 복귀",
+    "featured": false,
+    "routeTags": [
+      "과거 미련",
+      "그때 그랬더라면",
+      "되돌리고 싶다",
+      "생각 과열",
+      "인생 망함",
+      "후회"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "그때는 그게 최선이었다” 거울을 보며 내 눈을 보고 따뜻하게 말해주기."
+    ],
+    "relatedCards": [
+      "zeropoint-30",
+      "perf-005"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "내 경우에는 지금 현실의 어떤 막막함 때문에 자꾸 과거의 갈림길로 도망칠까?",
+    "syncMessage": "지금 상황이 고통스러워 과거의 환상으로 숨고 싶어 하는 나를 이해한다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "comparison-18",
+    "category": "감정 민감성",
+    "keyword": "비교",
+    "cardTitle": "SNS 돋보기 모드",
+    "question": "남들은 다 잘 사는 것 같은데 왜 나만 제자리일까요?",
+    "sodaAnswer": "남의 하이라이트 무대 뒤편과 나의 리허설 대기실을 비교하지 마세요.",
+    "description": "타인의 편집된 최고 순간과 나의 날것 그대로인 일상을 비교하는 것은 공정하지 못한 자해입니다. 비교는 언제나 나의 결핍만을 정밀 조준합니다.",
+    "curiosityQuestion": "내 경우에는 누구의 어떤 모습을 볼 때 가장 배가 아프고 초라해질까?",
+    "scanQuestion": "SNS 피드를 내릴 때 위장이 싸해지고 침이 마르는 신체 반응을 느껴보셨나요?",
+    "syncSentence": "나도 빛나고 싶고 인정받고 싶은 내 솔직한 부러움을 숨기지 않고 인정한다.",
+    "shiftQuestion": "타인의 성공이 나의 실패를 의미하지 않는다는 진실을 받아들인다면?",
+    "tenPercentAction": "SNS 앱을 24시간 동안 숨김 폴더로 이동시키고 내 방 책상 정리하기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "appCTA": "내 비교 자해 반응 직접 확인하기",
+    "appSubtext": "남과 비교하며 초라해지는 순간의 감정 파동을 1분 SCAN으로 즉시 차단합니다.",
+    "bookCTA": "비교가 뇌의 고통 중추를 자극하는 원리 읽기",
+    "bookSubtext": "SNS 시대에 타인 중심의 참조점을 내면의 고유한 중심축으로 되돌리는 원리를 탐구합니다.",
+    "searchKeywords": [
+      "비교",
+      "자격지심",
+      "SNS 우울증",
+      "박탈감",
+      "열등감",
+      "부러워요"
+    ],
+    "relatedBookChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제12장 · 비교 지옥과 자기 참조점의 회복",
+    "featured": false,
+    "routeTags": [
+      "SNS 우울증",
+      "감정 민감성",
+      "박탈감",
+      "부러워요",
+      "비교",
+      "열등감",
+      "자격지심"
+    ],
+    "triggerTags": [
+      "타인비교",
+      "SNS",
+      "성과"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "SNS 앱을 24시간 동안 숨김 폴더로 이동시키고 내 방 책상 정리하기."
+    ],
+    "relatedCards": [
+      "career-010",
+      "perf-009"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 누구의 어떤 모습을 볼 때 가장 배가 아프고 초라해질까?",
+    "syncMessage": "나도 빛나고 싶고 인정받고 싶은 내 솔직한 부러움을 숨기지 않고 인정한다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "selfcriticism-19",
+    "category": "생각 과열",
+    "keyword": "자기비난",
+    "cardTitle": "셀프 법정 모드",
+    "question": "나 자신에게 엄격해야 발전할 수 있는 것 아닌가요?",
+    "sodaAnswer": "채찍질로 달리는 말은 언젠가 지쳐 쓰러집니다. 비난은 성장이 아닌 위축을 낳습니다.",
+    "description": "나를 호되게 몰아세워야 나태해지지 않는다는 생각은 지독한 오해입니다. 뇌는 지속적인 자기비난을 신체적 공격으로 인식해 방어 모드로 굳어버립니다.",
+    "curiosityQuestion": "내 경우에는 실수를 저질렀을 때 내면에서 어떤 거친 폭언이 쏟아져 나올까?",
+    "scanQuestion": "스스로를 욕할 때 가슴이 오그라들고 숨이 턱 막히는 감각을 보셨나요?",
+    "syncSentence": "나를 채찍질해서라도 잘 살게 만들고 싶었던 내면 검사의 안타까운 진심을 본다.",
+    "shiftQuestion": "가장 소중한 친구가 실수했을 때처럼 나에게도 친절한 코치가 되어준다면?",
+    "tenPercentAction": "실수했을 때 가슴에 손을 얹고 “괜찮아, 그럴 수 있어. 다음 걸 보자” 말해주기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "appCTA": "내 자기비난 스위치 직접 확인하기",
+    "appSubtext": "실수 직후 내면에서 판결을 내리려는 검사의 목소리를 1분 SCAN으로 멈춰 세웁니다.",
+    "bookCTA": "자기비난이 뇌를 마비시키는 신경학적 기원 읽기",
+    "bookSubtext": "가혹한 내면 비판자를 지혜로운 내면 코치로 전환하는 신경가소성 훈련법을 읽어보세요.",
+    "searchKeywords": [
+      "자기비난",
+      "자책",
+      "자존감",
+      "엄격함",
+      "실수",
+      "욕심",
+      "스스로 채찍질"
+    ],
+    "relatedBookChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 내면 비판자에서 내면 코치로의 전환",
+    "featured": false,
+    "routeTags": [
+      "생각 과열",
+      "스스로 채찍질",
+      "실수",
+      "엄격함",
+      "욕심",
+      "자기비난",
+      "자존감",
+      "자책"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "실수했을 때 가슴에 손을 얹고 “괜찮아, 그럴 수 있어. 다음 걸 보자” 말해주기."
+    ],
+    "relatedCards": [
+      "dec-010",
+      "emo-006"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "내 경우에는 실수를 저질렀을 때 내면에서 어떤 거친 폭언이 쏟아져 나올까?",
+    "syncMessage": "나를 채찍질해서라도 잘 살게 만들고 싶었던 내면 검사의 안타까운 진심을 본다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "repression-20",
+    "category": "감정 민감성",
+    "keyword": "감정억압",
+    "cardTitle": "압력밥솥 모드",
+    "question": "화를 내면 관계가 깨질까 봐 꾹 참게 돼요?",
+    "sodaAnswer": "참는 것은 평화가 아니라, 내 안에서 시한폭탄을 조립하는 일입니다.",
+    "description": "부정적 감정을 억누르면 사라지는 것이 아니라 몸속 지하수로 스며듭니다. 결국 만성 피로, 소화불량, 혹은 무고한 사람을 향한 폭발로 터져 나옵니다.",
+    "curiosityQuestion": "내 경우에는 누구 앞에서 감정을 억누르고 속으로 피눈물을 삼키고 있을까?",
+    "scanQuestion": "참을 때 턱관절이 뻐근하고 위장이 딱딱하게 굳어오는 걸 감지해보셨나요?",
+    "syncSentence": "관계를 지키려 내 소중한 감정을 가두어버린 내 오랜 습관을 마주한다.",
+    "shiftQuestion": "화를 공격적으로 폭발시키는 것과 안전하게 표현하는 것은 다르다면?",
+    "tenPercentAction": "화가 날 때 화장실로 가서 찬물로 손을 씻으며 속으로 “나 지금 화났어” 인정하기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "appCTA": "내 억압된 감정 신호 직접 확인하기",
+    "appSubtext": "꾹 눌러 삼키는 감정이 신체에 남긴 긴장 신호를 1분 SCAN으로 안전하게 녹여냅니다.",
+    "bookCTA": "억압된 감정이 병이 되는 신경신체학 읽기",
+    "bookSubtext": "감정을 폭발하지도 억압하지도 않으면서 건강하게 흘려보내는 SYNC의 기술을 탐구합니다.",
+    "searchKeywords": [
+      "참기만 해요",
+      "속병",
+      "화병",
+      "감정 억압",
+      "답답해요",
+      "갈등 회피"
+    ],
+    "relatedBookChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제13장 · 억압된 감정의 신체화와 안전한 방출",
+    "featured": false,
+    "routeTags": [
+      "갈등 회피",
+      "감정 민감성",
+      "감정 억압",
+      "감정억압",
+      "답답해요",
+      "속병",
+      "참기만 해요",
+      "화병"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "감정을 억누르고 삼키려는 충동"
+    ],
+    "actionTags": [
+      "화가 날 때 화장실로 가서 찬물로 손을 씻으며 속으로 “나 지금 화났어” 인정하기."
+    ],
+    "relatedCards": [
+      "anger-21",
+      "rel-010"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 누구 앞에서 감정을 억누르고 속으로 피눈물을 삼키고 있을까?",
+    "syncMessage": "관계를 지키려 내 소중한 감정을 가두어버린 내 오랜 습관을 마주한다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "anger-21",
+    "category": "감정 민감성",
+    "keyword": "분노폭발",
+    "cardTitle": "용암 분출 모드",
+    "question": "화낸 뒤에는 왜 제가 더 싫어질까요?",
+    "sodaAnswer": "사소한 일에 터진 게 아니라, 오랫동안 무시당한 감정의 역습입니다.",
+    "description": "평소에 경계를 세우지 못하고 억누르다가 한계선(RED)을 넘는 순간 이성을 잃는 것입니다. 분노는 나쁜 것이 아니라 내 경계선이 짓밟혔다는 신호입니다.",
+    "curiosityQuestion": "내 경우에는 폭발하기 직전에 어떤 노란 불(YELLOW) 신호가 먼저 켜지고 있을까?",
+    "scanQuestion": "욱하는 순간 피가 거꾸로 솟구치며 시야가 좁아지는 경험을 해보셨나요?",
+    "syncSentence": "내 한계를 넘어서까지 참아내느라 고통받았던 내 내면의 비명을 경청한다.",
+    "shiftQuestion": "빨간 불에서 터뜨리기 전에 노란 불 단계에서 타임아웃을 요청한다면?",
+    "tenPercentAction": "목소리가 커지려 할 때 “잠시 5분만 바람 쐬고 다시 이야기하자”고 선언하기.",
+    "relatedBook": "뉴럴 코드",
+    "bookChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "appCTA": "내 분노 폭발 전조 신호 직접 확인하기",
+    "appSubtext": "폭발 직전의 아드레날린 급증을 1분 SCAN으로 포착하고 안전한 타임아웃을 만듭니다.",
+    "bookCTA": "분노 폭발 회로를 차단하는 뇌과학 읽기",
+    "bookSubtext": "편도체 납치(Amygdala Hijack) 상황에서 전두엽의 이성을 5초 만에 복구하는 원리를 배웁니다.",
+    "searchKeywords": [
+      "폭발",
+      "욱해요",
+      "욱함",
+      "분노",
+      "분노조절",
+      "짜증",
+      "화를 내고 후회해요",
+      "후회",
+      "사소한 일에 화",
+      "욱하고 후회"
+    ],
+    "relatedBookChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 감정 화재 경보기와 YELLOW 상태 제어",
+    "featured": true,
+    "routeTags": [
+      "감정 민감성",
+      "분노",
+      "분노조절",
+      "분노폭발",
+      "사소한 일에 화",
+      "욱하고 후회",
+      "욱함",
+      "욱해요",
+      "짜증",
+      "폭발"
+    ],
+    "triggerTags": [
+      "감정고조",
+      "신체긴장",
+      "피로"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "목소리가 커지려 할 때 “잠시 5분만 바람 쐬고 다시 이야기하자”고 선언하기."
+    ],
+    "relatedCards": [
+      "repression-20",
+      "rel-011"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "내 경우에는 폭발하기 직전에 어떤 노란 불(YELLOW) 신호가 먼저 켜지고 있을까?",
+    "syncMessage": "내 한계를 넘어서까지 참아내느라 고통받았던 내 내면의 비명을 경청한다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
     "id": "emo-001",
     "packId": "emotion-recovery-01",
     "category": "유리멘탈·자책·불안",
     "keyword": "한마디반추",
     "cardTitle": "한마디 하루종일 모드",
-    "question": "“누가 한마디만 해도 왜 하루 종일 마음에 남을까요?”",
-    "sodaAnswer": "“그 말이 아팠다는 사실과 하루 종일 나 전체를 판정해야 한다는 것은 같은 일이 아닙니다.”",
+    "question": "누가 한마디만 해도 왜 하루 종일 마음에 남을까요?",
+    "sodaAnswer": "그 말이 아팠다는 사실과 하루 종일 나 전체를 판정해야 한다는 것은 같은 일이 아닙니다.",
     "description": "상대의 말 한마디라는 중립적 자극에 뇌가 '나의 무가치함'이라는 거대한 스토리를 결합하여 온종일 반추하는 과잉 결합 반응입니다.",
-    "curiosityQuestion": "“그 말에서 내가 가장 크게 들은 의미는 무엇이었을까?”",
+    "curiosityQuestion": "그 말에서 내가 가장 크게 들은 의미는 무엇이었을까?",
     "scanQuestion": "“실제로 들은 말 / 내가 붙인 의미 / 아직 모르는 것은?”",
     "factQuestion": "실제로 카메라와 마이크에 녹음된 상대의 정확한 말은 무엇인가요? (예: '이 부분 서식이 좀 안 맞네요')",
     "storyQuestion": "그 말 위에 내 마음이 붙인 자막은 무엇인가요? (예: '나를 일 못하고 무능한 사람으로 찍었구나')",
     "unknownQuestion": "아직 확인되지 않은 사실은 무엇인가요? (예: 상대가 단순히 서식만 보았을 가능성, 상대의 바쁜 상황)",
     "bodyQuestion": "그 말을 떠올릴 때 목구멍이 조여오고 가슴 한가운데가 무거워지나요?",
-    "syncSentence": "“그 말이 중요한 부분을 건드렸구나.”",
-    "shiftQuestion": "“그 사람의 한마디를 정보로만 남긴다면?”",
-    "tenPercentAction": "“FACT 한 줄과 STORY 한 줄만 적고 다시 일상 행동 하나를 한다.”",
+    "syncSentence": "그 말이 중요한 부분을 건드렸구나.",
+    "shiftQuestion": "그 사람의 한마디를 정보로만 남긴다면?",
+    "tenPercentAction": "FACT 한 줄과 STORY 한 줄만 적고 다시 일상 행동 하나를 한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "01장. 자극과 반응 사이: 타인의 말에 마음이 자막을 입히는 순간",
     "appCTA": "내 감정 1분 SCAN",
@@ -56,13 +846,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“FACT 한 줄과 STORY 한 줄만 적고 다시 일상"
+      "FACT 한 줄과 STORY 한 줄만 적고 다시 일상 행동 하나를 한다."
     ],
     "relatedCards": [
       "emo-007",
-      "emo-015",
-      "emo-002"
-    ]
+      "emo-015"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "그 말에서 내가 가장 크게 들은 의미는 무엇이었을까?",
+    "syncMessage": "그 말이 중요한 부분을 건드렸구나.",
+    "scanGuide": {
+      "step1": "실제로 카메라와 마이크에 녹음된 상대의 정확한 말은 무엇인가요? (예: '이 부분 서식이 좀 안 맞네요')",
+      "step2": "그 말 위에 내 마음이 붙인 자막은 무엇인가요? (예: '나를 일 못하고 무능한 사람으로 찍었구나')",
+      "step3": "아직 확인되지 않은 사실은 무엇인가요? (예: 상대가 단순히 서식만 보았을 가능성, 상대의 바쁜 상황)",
+      "step4": "그 말을 떠올릴 때 목구멍이 조여오고 가슴 한가운데가 무거워지나요?"
+    }
   },
   {
     "id": "emo-002",
@@ -70,18 +870,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "가슴철렁",
     "cardTitle": "가슴 철렁 모드",
-    "question": "“가슴이 철렁하면 제 불길한 느낌이 맞는 것 아닌가요?”",
-    "sodaAnswer": "“몸의 긴장은 중요한 신호지만 외부에서 나쁜 일이 일어났다는 증거와 같지는 않습니다.”",
+    "question": "가슴이 철렁하면 제 불길한 느낌이 맞는 것 아닌가요?",
+    "sodaAnswer": "몸의 긴장은 중요한 신호지만 외부에서 나쁜 일이 일어났다는 증거와 같지는 않습니다.",
     "description": "자율신경계의 급격한 각성(심박수 증가, 흉부 압박)을 미래의 파국적 예언으로 오인하는 정서적 추론(Emotional Reasoning) 오류입니다.",
-    "curiosityQuestion": "“내 몸의 경보는 실제 화재를 감지한 걸까, 연기 감지기의 오작동일까?”",
+    "curiosityQuestion": "내 몸의 경보는 실제 화재를 감지한 걸까, 연기 감지기의 오작동일까?",
     "scanQuestion": "“BODY에서 실제로 느껴지는 것은 무엇이고, 마음이 붙인 자막은 무엇인가?”",
     "factQuestion": "지금 내 몸에서 객관적으로 일어나는 물리적 감각은 무엇인가요? (예: 심장이 빠르게 뜀, 명치가 조여옴)",
     "storyQuestion": "그 감각에 마음이 붙인 번역은 무엇인가요? (예: '분명 큰 사고가 터졌거나 나쁜 일이 생길 거야')",
     "unknownQuestion": "실제 외부 현실에서 지금 당장 확인된 객관적 위험이 있나요?",
     "bodyQuestion": "가슴이 철렁 내려앉으며 호흡이 가빠지고 손끝이 차가워지나요?",
-    "syncSentence": "“몸이 먼저 경보를 울리고 있구나.”",
-    "shiftQuestion": "“몸의 신호와 현실의 증거를 잠시 분리한다면?”",
-    "tenPercentAction": "“외부 FACT 하나를 확인하기 전까지 결론을 보류한다.”",
+    "syncSentence": "몸이 먼저 경보를 울리고 있구나.",
+    "shiftQuestion": "몸의 신호와 현실의 증거를 잠시 분리한다면?",
+    "tenPercentAction": "외부 FACT 하나를 확인하기 전까지 결론을 보류한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "02장. 몸의 조기신호와 가짜 경보: 자율신경계의 언어 번역하기",
     "appCTA": "BODY SIGNAL 확인하기",
@@ -120,13 +920,23 @@
       "즉시 확인하려는 충동"
     ],
     "actionTags": [
-      "“외부 FACT 하나를 확인하기 전까지 결론을 보류한다"
+      "외부 FACT 하나를 확인하기 전까지 결론을 보류한다."
     ],
     "relatedCards": [
       "emo-001",
-      "emo-003",
-      "emo-004"
-    ]
+      "emo-003"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 몸의 경보는 실제 화재를 감지한 걸까, 연기 감지기의 오작동일까?",
+    "syncMessage": "몸이 먼저 경보를 울리고 있구나.",
+    "scanGuide": {
+      "step1": "지금 내 몸에서 객관적으로 일어나는 물리적 감각은 무엇인가요? (예: 심장이 빠르게 뜀, 명치가 조여옴)",
+      "step2": "그 감각에 마음이 붙인 번역은 무엇인가요? (예: '분명 큰 사고가 터졌거나 나쁜 일이 생길 거야')",
+      "step3": "실제 외부 현실에서 지금 당장 확인된 객관적 위험이 있나요?",
+      "step4": "가슴이 철렁 내려앉으며 호흡이 가빠지고 손끝이 차가워지나요?"
+    }
   },
   {
     "id": "emo-003",
@@ -134,18 +944,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "불안확인",
     "cardTitle": "불안 확인 모드",
-    "question": "“불안하면 왜 계속 확인해야 마음이 놓일까요?”",
-    "sodaAnswer": "“확인은 잠깐 안심을 줄 수 있습니다. 그래서 다시 반복되기 쉬울 수 있습니다.”",
+    "question": "불안하면 왜 계속 확인해야 마음이 놓일까요?",
+    "sodaAnswer": "확인은 잠깐 안심을 줄 수 있습니다. 그래서 다시 반복되기 쉬울 수 있습니다.",
     "description": "확인 행동은 불안을 잠시 낮춰주는 '즉각적 보상'을 제공하지만, 장기적으로는 확인하지 않으면 견디지 못하는 내성을 만듭니다.",
-    "curiosityQuestion": "“확인은 불안을 치료하는 약일까, 불안을 먹여 살리는 먹이일까?”",
+    "curiosityQuestion": "확인은 불안을 치료하는 약일까, 불안을 먹여 살리는 먹이일까?",
     "scanQuestion": "“확인 전 불안 / 확인 직후 / 조금 지난 뒤를 비교하면?”",
     "factQuestion": "오늘 하루 동안 같은 대상을 몇 번 확인했나요? (예: 가스 밸브 5번, 메신저 읽음 확인 10번)",
     "storyQuestion": "확인하지 않으면 뇌가 속삭이는 최악의 결말은 무엇인가요? (예: '확인 안 하면 불이 나거나 상대가 날 손절할 거야')",
     "unknownQuestion": "한 번 더 확인한다고 해서 미래의 모든 변수가 100% 제거될 수 있나요?",
     "bodyQuestion": "확인하려는 순간 손가락이 떨리고 초조해지다가, 확인 직후 순간적으로 숨이 트이나요?",
     "syncSentence": "불안해서 1초라도 빨리 안심하고 싶었구나.",
-    "shiftQuestion": "“새로운 정보가 없는 확인을 한 번 줄인다면?”",
-    "tenPercentAction": "“다음 확인 시간을 정하고 그 전에는 다시 보지 않는다.”",
+    "shiftQuestion": "새로운 정보가 없는 확인을 한 번 줄인다면?",
+    "tenPercentAction": "다음 확인 시간을 정하고 그 전에는 다시 보지 않는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "03장. 강박과 확인 루프: 안심의 중독에서 빠져나오는 법",
     "appCTA": "감정 / 충동 / 행동 나누기",
@@ -187,13 +997,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“다음 확인 시간을 정하고 그 전에는 다시 보지 않는다"
+      "다음 확인 시간을 정하고 그 전에는 다시 보지 않는다."
     ],
     "relatedCards": [
       "emo-019",
-      "emo-004",
-      "emo-006"
-    ]
+      "emo-004"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "확인은 불안을 치료하는 약일까, 불안을 먹여 살리는 먹이일까?",
+    "syncMessage": "불안해서 1초라도 빨리 안심하고 싶었구나.",
+    "scanGuide": {
+      "step1": "오늘 하루 동안 같은 대상을 몇 번 확인했나요? (예: 가스 밸브 5번, 메신저 읽음 확인 10번)",
+      "step2": "확인하지 않으면 뇌가 속삭이는 최악의 결말은 무엇인가요? (예: '확인 안 하면 불이 나거나 상대가 날 손절할 거야')",
+      "step3": "한 번 더 확인한다고 해서 미래의 모든 변수가 100% 제거될 수 있나요?",
+      "step4": "확인하려는 순간 손가락이 떨리고 초조해지다가, 확인 직후 순간적으로 숨이 트이나요?"
+    }
   },
   {
     "id": "emo-004",
@@ -201,18 +1021,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "최악예고편",
     "cardTitle": "최악 예고편 모드",
-    "question": "“아직 아무 일도 안 생겼는데 왜 최악부터 상상할까요?”",
-    "sodaAnswer": "“미래를 미리 생각하는 능력이 불확실성을 없애기 위해 가능한 모든 나쁜 장면을 재생하고 있을 수 있습니다.”",
+    "question": "아직 아무 일도 안 생겼는데 왜 최악부터 상상할까요?",
+    "sodaAnswer": "미래를 미리 생각하는 능력이 불확실성을 없애기 위해 가능한 모든 나쁜 장면을 재생하고 있을 수 있습니다.",
     "description": "불확실성을 견디지 못하는 뇌가 가장 끔찍한 시나리오를 미리 대비책으로 시뮬레이션하며 스스로를 공포에 빠뜨리는 파국화 반응입니다.",
-    "curiosityQuestion": "“내 머릿속 영화관은 지금 예고편을 트는 중일까, 호러 영화를 상영 중일까?”",
+    "curiosityQuestion": "내 머릿속 영화관은 지금 예고편을 트는 중일까, 호러 영화를 상영 중일까?",
     "scanQuestion": "“FACT / STORY / UNKNOWN으로 나누면?”",
     "factQuestion": "현재 시점에 객관적으로 확인된 현실 사건은 무엇인가요? (예: 내일 회의 일정이 잡힘)",
     "storyQuestion": "그 위에 마음이 상영 중인 파국적 스토리는 무엇인가요? (예: '회의에서 큰 실수를 하고 망신당해 잘릴 것이다')",
     "unknownQuestion": "내일 회의에서 실제로 일어날 미지의 사실은 무엇인가요?",
     "bodyQuestion": "상상만으로 입안이 바짝 마르고 어깨가 움츠러드나요?",
     "syncSentence": "갑작스러운 충격을 받지 않으려고 미리 방패를 들고 있었구나.",
-    "shiftQuestion": "“예방해야 할 현실적 위험과 아직 모르는 미래를 나눈다면?”",
-    "tenPercentAction": "“지금 준비 가능한 것 하나만 하고 나머지는 UNKNOWN으로 둔다.”",
+    "shiftQuestion": "예방해야 할 현실적 위험과 아직 모르는 미래를 나눈다면?",
+    "tenPercentAction": "지금 준비 가능한 것 하나만 하고 나머지는 UNKNOWN으로 둔다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "04장. 파국화의 덫: 최악의 상상이 현실의 에너지를 갉아먹을 때",
     "appCTA": "내 감정 1분 SCAN",
@@ -253,13 +1073,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“지금 준비 가능한 것 하나만 하고 나머지는 UNKNO"
+      "지금 준비 가능한 것 하나만 하고 나머지는 UNKNOWN으로 둔다."
     ],
     "relatedCards": [
       "emo-003",
-      "emo-001",
-      "emo-002"
-    ]
+      "emo-001"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 머릿속 영화관은 지금 예고편을 트는 중일까, 호러 영화를 상영 중일까?",
+    "syncMessage": "갑작스러운 충격을 받지 않으려고 미리 방패를 들고 있었구나.",
+    "scanGuide": {
+      "step1": "현재 시점에 객관적으로 확인된 현실 사건은 무엇인가요? (예: 내일 회의 일정이 잡힘)",
+      "step2": "그 위에 마음이 상영 중인 파국적 스토리는 무엇인가요? (예: '회의에서 큰 실수를 하고 망신당해 잘릴 것이다')",
+      "step3": "내일 회의에서 실제로 일어날 미지의 사실은 무엇인가요?",
+      "step4": "상상만으로 입안이 바짝 마르고 어깨가 움츠러드나요?"
+    }
   },
   {
     "id": "emo-005",
@@ -267,18 +1097,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "눈물수치심",
     "cardTitle": "눈물 부끄러움 모드",
-    "question": "“눈물이 나면 왜 제가 약한 사람이 된 것 같죠?”",
-    "sodaAnswer": "“눈물이 난다는 경험과 사람 전체의 강함·약함에 대한 판정은 같은 정보가 아닙니다.”",
+    "question": "눈물이 나면 왜 제가 약한 사람이 된 것 같죠?",
+    "sodaAnswer": "눈물이 난다는 경험과 사람 전체의 강함·약함에 대한 판정은 같은 정보가 아닙니다.",
     "description": "자연스러운 신체적 감정 방출(눈물)을 무능함이나 유약함이라는 자책의 꼬리표와 결합하여 감정 자체를 억압하는 패턴입니다.",
-    "curiosityQuestion": "“눈물은 나약함의 증거일까, 과부하된 신경계가 압력을 빼내는 밸브일까?”",
+    "curiosityQuestion": "눈물은 나약함의 증거일까, 과부하된 신경계가 압력을 빼내는 밸브일까?",
     "scanQuestion": "“지금 느끼는 감정과 내가 나에게 붙인 평가를 나누면?”",
     "factQuestion": "지금 일어난 생리적 사실은 무엇인가요? (예: 눈에서 눈물이 흐르고 목이 멘다)",
     "storyQuestion": "그 사실에 덧붙인 가혹한 평가는 무엇인가요? (예: '이 나이 먹고 울다니 난 구제불능이고 한심해')",
     "unknownQuestion": "눈물을 흘렸다고 해서 내 지적 능력이나 삶의 성취가 0이 된다는 증거가 있나요?",
     "bodyQuestion": "눈물을 참으려고 턱에 힘을 주고 이를 악물고 있나요?",
     "syncSentence": "그동안 너무 무거운 짐을 혼자 버텨내느라 감정이 넘쳐흘렀구나.",
-    "shiftQuestion": "“감정이 올라오는 것을 허용하면서 행동은 선택한다면?”",
-    "tenPercentAction": "“감정을 평가하는 말 없이 ‘지금 ○○하다’라고 한 문장만 적는다.”",
+    "shiftQuestion": "감정이 올라오는 것을 허용하면서 행동은 선택한다면?",
+    "tenPercentAction": "감정을 평가하는 말 없이 ‘지금 ○○하다’라고 한 문장만 적는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "05장. 감정 수치심: 슬픔과 취약성을 부끄러워하는 뇌",
     "appCTA": "BODY SIGNAL 확인하기",
@@ -317,13 +1147,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“감정을 평가하는 말 없이 ‘지금 ○○하다’라고 한 문"
+      "감정을 평가하는 말 없이 ‘지금 ○○하다’라고 한 문장만 적는다."
     ],
     "relatedCards": [
       "emo-008",
-      "emo-001",
-      "emo-002"
-    ]
+      "emo-001"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "눈물은 나약함의 증거일까, 과부하된 신경계가 압력을 빼내는 밸브일까?",
+    "syncMessage": "그동안 너무 무거운 짐을 혼자 버텨내느라 감정이 넘쳐흘렀구나.",
+    "scanGuide": {
+      "step1": "지금 일어난 생리적 사실은 무엇인가요? (예: 눈에서 눈물이 흐르고 목이 멘다)",
+      "step2": "그 사실에 덧붙인 가혹한 평가는 무엇인가요? (예: '이 나이 먹고 울다니 난 구제불능이고 한심해')",
+      "step3": "눈물을 흘렸다고 해서 내 지적 능력이나 삶의 성취가 0이 된다는 증거가 있나요?",
+      "step4": "눈물을 참으려고 턱에 힘을 주고 이를 악물고 있나요?"
+    }
   },
   {
     "id": "emo-006",
@@ -331,18 +1171,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "두번째화살",
     "cardTitle": "화난 나까지 미워하기 모드",
-    "question": "“화를 낸 뒤 왜 화낸 일보다 제가 더 싫어질까요?”",
-    "sodaAnswer": "“첫 번째 문제 뒤에 ‘나는 왜 이런 인간이지?’라는 두 번째 공격이 붙을 수 있습니다.”",
+    "question": "화를 낸 뒤 왜 화낸 일보다 제가 더 싫어질까요?",
+    "sodaAnswer": "첫 번째 문제 뒤에 ‘나는 왜 이런 인간이지?’라는 두 번째 공격이 붙을 수 있습니다.",
     "description": "사건으로 인한 첫 번째 고통 위에, 스스로를 공격하는 '자기비난의 두 번째 화살'을 쏘아 고통의 강도와 기간을 증폭시키는 회로입니다.",
-    "curiosityQuestion": "“나는 문제를 수습하는 중일까, 스스로를 때리느라 수습을 미루는 중일까?”",
+    "curiosityQuestion": "나는 문제를 수습하는 중일까, 스스로를 때리느라 수습을 미루는 중일까?",
     "scanQuestion": "“첫 번째 사건 / 실제 결과 / 두 번째 자기공격을 나누면?”",
     "factQuestion": "실제로 일어난 첫 번째 사건은 무엇인가요? (예: 상대의 무례한 태도에 언성을 높였다)",
     "storyQuestion": "그 뒤에 스스로에게 쏜 두 번째 화살은 무엇인가요? (예: '성격 파탄자, 넌 왜 분노조절도 못하니?')",
     "unknownQuestion": "자신을 며칠 동안 난도질하는 것이 상대에게 사과하거나 관계를 복구하는 데 도움이 되나요?",
     "bodyQuestion": "자책할 때 가슴이 찢어지는 듯하고 온몸에 기운이 빠지나요?",
     "syncSentence": "화내고 싶지 않았는데 감정이 폭발해서 스스로에게 너무 실망스러웠구나.",
-    "shiftQuestion": "“자기공격 대신 필요한 복구로 간다면?”",
-    "tenPercentAction": "“사과·수정·다음 행동 중 하나를 실행한다.”",
+    "shiftQuestion": "자기공격 대신 필요한 복구로 간다면?",
+    "tenPercentAction": "사과·수정·다음 행동 중 하나를 실행한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "06장. 두 번째 화살의 고통: 자기처벌을 책임으로 착각하지 마라",
     "appCTA": "SECOND ARROW SCAN",
@@ -382,13 +1222,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“사과·수정·다음 행동 중 하나를 실행한다"
+      "사과·수정·다음 행동 중 하나를 실행한다."
     ],
     "relatedCards": [
       "emo-012",
-      "emo-014",
-      "emo-003"
-    ]
+      "emo-014"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 문제를 수습하는 중일까, 스스로를 때리느라 수습을 미루는 중일까?",
+    "syncMessage": "화내고 싶지 않았는데 감정이 폭발해서 스스로에게 너무 실망스러웠구나.",
+    "scanGuide": {
+      "step1": "실제로 일어난 첫 번째 사건은 무엇인가요? (예: 상대의 무례한 태도에 언성을 높였다)",
+      "step2": "그 뒤에 스스로에게 쏜 두 번째 화살은 무엇인가요? (예: '성격 파탄자, 넌 왜 분노조절도 못하니?')",
+      "step3": "자신을 며칠 동안 난도질하는 것이 상대에게 사과하거나 관계를 복구하는 데 도움이 되나요?",
+      "step4": "자책할 때 가슴이 찢어지는 듯하고 온몸에 기운이 빠지나요?"
+    }
   },
   {
     "id": "emo-007",
@@ -396,18 +1246,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "즉시사과",
     "cardTitle": "즉시 사과 모드",
-    "question": "“상대 표정이 안 좋으면 왜 바로 미안하다고 하게 될까요?”",
-    "sodaAnswer": "“죄책감이 올라오는 것과 실제 잘못이 확인된 것은 다를 수 있습니다.”",
+    "question": "상대 표정이 안 좋으면 왜 바로 미안하다고 하게 될까요?",
+    "sodaAnswer": "죄책감이 올라오는 것과 실제 잘못이 확인된 것은 다를 수 있습니다.",
     "description": "상대의 불편한 감정을 견디지 못해 자신의 잘못 여부와 상관없이 먼저 사과하여 긴장을 낮추려는 자동 순응·평화유지 방어행동입니다.",
-    "curiosityQuestion": "“내 사과는 진정한 책임일까, 어색한 긴장을 빨리 끄려는 소화기일까?”",
+    "curiosityQuestion": "내 사과는 진정한 책임일까, 어색한 긴장을 빨리 끄려는 소화기일까?",
     "scanQuestion": "“내가 실제로 잘못한 행동은 무엇인가?”",
     "factQuestion": "내가 실제로 어긴 구체적인 약속이나 규칙이 있나요? (예: 단순히 상대가 굳은 표정으로 앉아 있음)",
     "storyQuestion": "내 마음의 무의식 스토리는 무엇인가요? (예: '나 때문에 기분 나쁜 게 분명해. 빨리 사과해서 달래야 해')",
     "unknownQuestion": "상대가 피곤하거나 다른 개인적인 일 때문에 표정이 어두울 가능성은 없나요?",
     "bodyQuestion": "상대 표정을 보자마자 목덜미가 서늘해지고 심장이 쿵쾅거리나요?",
     "syncSentence": "갈등이 생길까 봐 두렵고 빨리 평화를 되찾고 싶었구나.",
-    "shiftQuestion": "“책임이 있다면 정확히 사과하고, 없다면 상대의 감정까지 전부 가져오지 않는다면?”",
-    "tenPercentAction": "“‘미안해’ 전에 ‘내가 실제로 잘못한 게 무엇이지?’를 한 번 묻는다.”",
+    "shiftQuestion": "책임이 있다면 정확히 사과하고, 없다면 상대의 감정까지 전부 가져오지 않는다면?",
+    "tenPercentAction": "‘미안해’ 전에 ‘내가 실제로 잘못한 게 무엇이지?’를 한 번 묻는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "07장. 만성 죄책감과 반사적 사과: 착한 사람의 방어 회로",
     "appCTA": "감정 / 충동 / 행동 나누기",
@@ -447,13 +1297,23 @@
       "과도하게 해명하려는 충동"
     ],
     "actionTags": [
-      "“‘미안해’ 전에 ‘내가 실제로 잘못한 게 무엇이지?’"
+      "‘미안해’ 전에 ‘내가 실제로 잘못한 게 무엇이지?’를 한 번 묻는다."
     ],
     "relatedCards": [
       "emo-015",
-      "emo-010",
-      "emo-009"
-    ]
+      "emo-010"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 사과는 진정한 책임일까, 어색한 긴장을 빨리 끄려는 소화기일까?",
+    "syncMessage": "갈등이 생길까 봐 두렵고 빨리 평화를 되찾고 싶었구나.",
+    "scanGuide": {
+      "step1": "내가 실제로 어긴 구체적인 약속이나 규칙이 있나요? (예: 단순히 상대가 굳은 표정으로 앉아 있음)",
+      "step2": "내 마음의 무의식 스토리는 무엇인가요? (예: '나 때문에 기분 나쁜 게 분명해. 빨리 사과해서 달래야 해')",
+      "step3": "상대가 피곤하거나 다른 개인적인 일 때문에 표정이 어두울 가능성은 없나요?",
+      "step4": "상대 표정을 보자마자 목덜미가 서늘해지고 심장이 쿵쾅거리나요?"
+    }
   },
   {
     "id": "emo-008",
@@ -461,18 +1321,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "수치심숨기",
     "cardTitle": "수치심 숨기기 모드",
-    "question": "“실수하면 왜 아무도 안 보고 싶고 숨고 싶을까요?”",
-    "sodaAnswer": "“수치심은 사람들 앞에서 사라지고 싶다는 충동을 만들 수 있지만 그 충동을 반드시 실행해야 하는 것은 아닙니다.”",
+    "question": "실수하면 왜 아무도 안 보고 싶고 숨고 싶을까요?",
+    "sodaAnswer": "수치심은 사람들 앞에서 사라지고 싶다는 충동을 만들 수 있지만 그 충동을 반드시 실행해야 하는 것은 아닙니다.",
     "description": "실수에 대한 노출 공포로 인해 동굴 속으로 숨거나 잠수를 타는 회피 충동(Urge)을 그대로 실행하여 고립을 부르는 반응입니다.",
-    "curiosityQuestion": "“숨고 싶은 충동을 따르는 것이 내 삶을 안전하게 지켜줄까?”",
+    "curiosityQuestion": "숨고 싶은 충동을 따르는 것이 내 삶을 안전하게 지켜줄까?",
     "scanQuestion": "“감정은 무엇이고, 그 감정이 시키는 행동은 무엇인가?”",
     "factQuestion": "실제로 벌어진 일은 무엇인가요? (예: 메일에 오타를 내어 전체 발송함)",
     "storyQuestion": "수치심이 만든 극단적 결론은 무엇인가요? (예: '모두가 날 비웃고 있을 거야. 이 회사에서 사라져야 해')",
     "unknownQuestion": "사람들이 그 메일을 보고 5분 뒤 자기 일에 집중하고 있을 가능성은 없나요?",
     "bodyQuestion": "얼굴이 화끈거리고 심장이 내려앉으며 책상 밑으로 숨고 싶어지나요?",
-    "syncSentence": "“드러나고 싶지 않은 마음이 크구나.”",
-    "shiftQuestion": "“숨지 않고도 책임질 수 있는 작은 행동은?”",
-    "tenPercentAction": "“필요한 수정이나 연락 하나만 먼저 한다.”",
+    "syncSentence": "드러나고 싶지 않은 마음이 크구나.",
+    "shiftQuestion": "숨지 않고도 책임질 수 있는 작은 행동은?",
+    "tenPercentAction": "필요한 수정이나 연락 하나만 먼저 한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "08장. 수치심과 노출 공포: 숨고 싶은 뇌에게 안전한 땅 주기",
     "appCTA": "감정 / 충동 / 행동 나누기",
@@ -514,13 +1374,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“필요한 수정이나 연락 하나만 먼저 한다"
+      "필요한 수정이나 연락 하나만 먼저 한다."
     ],
     "relatedCards": [
       "emo-005",
-      "emo-007",
-      "emo-009"
-    ]
+      "emo-007"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "숨고 싶은 충동을 따르는 것이 내 삶을 안전하게 지켜줄까?",
+    "syncMessage": "드러나고 싶지 않은 마음이 크구나.",
+    "scanGuide": {
+      "step1": "실제로 벌어진 일은 무엇인가요? (예: 메일에 오타를 내어 전체 발송함)",
+      "step2": "수치심이 만든 극단적 결론은 무엇인가요? (예: '모두가 날 비웃고 있을 거야. 이 회사에서 사라져야 해')",
+      "step3": "사람들이 그 메일을 보고 5분 뒤 자기 일에 집중하고 있을 가능성은 없나요?",
+      "step4": "얼굴이 화끈거리고 심장이 내려앉으며 책상 밑으로 숨고 싶어지나요?"
+    }
   },
   {
     "id": "emo-009",
@@ -528,18 +1398,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "실수확대",
     "cardTitle": "실수 확대 모드",
-    "question": "“작은 실수 하나가 왜 ‘인생 망했다’까지 가죠?”",
-    "sodaAnswer": "“실수는 FACT일 수 있지만 인생 전체에 대한 판결은 그 위에 붙은 STORY일 수 있습니다.”",
+    "question": "작은 실수 하나가 왜 ‘인생 망했다’까지 가죠?",
+    "sodaAnswer": "실수는 FACT일 수 있지만 인생 전체에 대한 판결은 그 위에 붙은 STORY일 수 있습니다.",
     "description": "국소적인 한 번의 결함(Local error)을 인생 전체의 영구적 실패(Global failure)로 비약시키는 과대일반화 인지 오류입니다.",
-    "curiosityQuestion": "“깨진 것은 찻잔 하나인가, 집 전체가 무너진 것인가?”",
+    "curiosityQuestion": "깨진 것은 찻잔 하나인가, 집 전체가 무너진 것인가?",
     "scanQuestion": "“정확히 무엇이 잘못됐고 실제 영향은 어디까지인가?”",
     "factQuestion": "실제로 손상된 범위는 어디까지인가요? (예: 프레젠테이션 슬라이드 1장에서 데이터 수치를 잘못 읽음)",
     "storyQuestion": "마음이 내린 거대한 판결문은 무엇인가요? (예: '내 커리어는 끝장났고 다신 중요한 일을 못 맡을 거야')",
     "unknownQuestion": "이 실수가 3년 뒤 내 인생에 치명적인 영향을 미칠지 장담할 수 있나요?",
     "bodyQuestion": "몸에 힘이 쭉 빠지고 세상이 캄캄해지는 기분이 드나요?",
     "syncSentence": "완벽하고 싶었던 만큼 작은 흠집 하나에도 벼랑 끝에 선 기분이 드는구나.",
-    "shiftQuestion": "“사건의 크기로 다시 줄인다면?”",
-    "tenPercentAction": "“수정해야 할 범위를 3줄 이내로 적는다.”",
+    "shiftQuestion": "사건의 크기로 다시 줄인다면?",
+    "tenPercentAction": "수정해야 할 범위를 3줄 이내로 적는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "03장. 과대일반화의 착시: 국소적 오류를 존재론적 실패로 키우는 뇌",
     "appCTA": "내 감정 1분 SCAN",
@@ -578,13 +1448,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“수정해야 할 범위를 3줄 이내로 적는다"
+      "수정해야 할 범위를 3줄 이내로 적는다."
     ],
     "relatedCards": [
       "emo-007",
-      "emo-010",
-      "emo-015"
-    ]
+      "emo-010"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "깨진 것은 찻잔 하나인가, 집 전체가 무너진 것인가?",
+    "syncMessage": "완벽하고 싶었던 만큼 작은 흠집 하나에도 벼랑 끝에 선 기분이 드는구나.",
+    "scanGuide": {
+      "step1": "실제로 손상된 범위는 어디까지인가요? (예: 프레젠테이션 슬라이드 1장에서 데이터 수치를 잘못 읽음)",
+      "step2": "마음이 내린 거대한 판결문은 무엇인가요? (예: '내 커리어는 끝장났고 다신 중요한 일을 못 맡을 거야')",
+      "step3": "이 실수가 3년 뒤 내 인생에 치명적인 영향을 미칠지 장담할 수 있나요?",
+      "step4": "몸에 힘이 쭉 빠지고 세상이 캄캄해지는 기분이 드나요?"
+    }
   },
   {
     "id": "emo-010",
@@ -592,18 +1472,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "반성무한루프",
     "cardTitle": "반성 무한반복 모드",
-    "question": "“계속 자책하면 다음에는 실수하지 않을 것 같은데요?”",
-    "sodaAnswer": "“자기공격이 길어질수록 실제 수정과 복구가 늦어질 수도 있습니다.”",
+    "question": "계속 자책하면 다음에는 실수하지 않을 것 같은데요?",
+    "sodaAnswer": "자기공격이 길어질수록 실제 수정과 복구가 늦어질 수도 있습니다.",
     "description": "자기처벌을 도덕적 속죄나 성장으로 착각하여, 에너지를 고갈시키고 정작 필요한 현실적 복구 행동을 마비시키는 역설적 패턴입니다.",
-    "curiosityQuestion": "“지난 30분의 자책이 실제로 만든 생산적인 행동은 무엇인가?”",
+    "curiosityQuestion": "지난 30분의 자책이 실제로 만든 생산적인 행동은 무엇인가?",
     "scanQuestion": "“반성인가, 자기처벌인가?”",
     "factQuestion": "지금까지 몇 시간 동안 같은 자책 문장을 머릿속으로 반복했나요? (예: 2시간째 침대에 누워 자책 중)",
     "storyQuestion": "그 자책이 나에게 주는 가짜 도덕적 위안은 무엇인가요? (예: '충분히 괴로워해야 나쁜 놈이 안 돼')",
     "unknownQuestion": "나를 잔인하게 학대하는 것이 피해자나 동료에게 실질적인 보탬이 되나요?",
     "bodyQuestion": "가슴을 쥐어뜯으며 머리가 지끈거리고 무기력해지나요?",
     "syncSentence": "정말 잘하고 싶었고 잘못을 만회하고 싶어서 나를 몰아세웠구나.",
-    "shiftQuestion": "“고통의 양 대신 복구의 질을 본다면?”",
-    "tenPercentAction": "“자책 문장을 멈추고 다음 수정 행동 하나를 적는다.”",
+    "shiftQuestion": "고통의 양 대신 복구의 질을 본다면?",
+    "tenPercentAction": "자책 문장을 멈추고 다음 수정 행동 하나를 적는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "06장. 속죄의 환상: 고통의 크기가 아니라 복구의 실행이 성장을 만든다",
     "appCTA": "오늘의 복구 행동 정하기",
@@ -643,13 +1523,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“자책 문장을 멈추고 다음 수정 행동 하나를 적는다"
+      "자책 문장을 멈추고 다음 수정 행동 하나를 적는다."
     ],
     "relatedCards": [
       "emo-007",
-      "emo-015",
-      "emo-009"
-    ]
+      "emo-015"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "지난 30분의 자책이 실제로 만든 생산적인 행동은 무엇인가?",
+    "syncMessage": "정말 잘하고 싶었고 잘못을 만회하고 싶어서 나를 몰아세웠구나.",
+    "scanGuide": {
+      "step1": "지금까지 몇 시간 동안 같은 자책 문장을 머릿속으로 반복했나요? (예: 2시간째 침대에 누워 자책 중)",
+      "step2": "그 자책이 나에게 주는 가짜 도덕적 위안은 무엇인가요? (예: '충분히 괴로워해야 나쁜 놈이 안 돼')",
+      "step3": "나를 잔인하게 학대하는 것이 피해자나 동료에게 실질적인 보탬이 되나요?",
+      "step4": "가슴을 쥐어뜯으며 머리가 지끈거리고 무기력해지나요?"
+    }
   },
   {
     "id": "emo-011",
@@ -657,18 +1547,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "유리멘탈",
     "cardTitle": "유리멘탈 판결 모드",
-    "question": "“이 정도 말에도 흔들리면 저는 유리멘탈 아닌가요?”",
-    "sodaAnswer": "“한 장면에서 크게 흔들렸다는 사실이 당신 전체의 멘탈을 판정하지는 않습니다.”",
+    "question": "이 정도 말에도 흔들리면 저는 유리멘탈 아닌가요?",
+    "sodaAnswer": "한 장면에서 크게 흔들렸다는 사실이 당신 전체의 멘탈을 판정하지는 않습니다.",
     "description": "특정 민감한 트리거(존중, 배제, 비난 등)에 취약했던 일시적 상태를 '유리멘탈'이라는 영구적 정체성 라벨로 낙인찍는 오류입니다.",
-    "curiosityQuestion": "“모든 상황에서 약한 걸까, 특정 조건(Trigger)에 스위치가 켜진 걸까?”",
+    "curiosityQuestion": "모든 상황에서 약한 걸까, 특정 조건(Trigger)에 스위치가 켜진 걸까?",
     "scanQuestion": "“어떤 Trigger에서 특히 흔들렸나?”",
     "factQuestion": "나를 흔들리게 만든 정확한 자극은 무엇이었나요? (예: 공개적인 자리에서 내 의견이 묵살당함)",
     "storyQuestion": "그 사실에 붙인 내 정체성 낙인은 무엇인가요? (예: '난 멘탈이 두부 같아서 사회생활 못할 인간이야')",
     "unknownQuestion": "내가 잘 버텨내고 단단하게 해냈던 다른 수많은 장면들은 어디로 갔나요?",
     "bodyQuestion": "남들과 비교하며 내 자신이 초라하게 쪼그라드는 기분이 드나요?",
     "syncSentence": "내가 가장 아끼고 소중히 여기는 가치를 건드려서 크게 아팠구나.",
-    "shiftQuestion": "“‘나는 약해’를 상황문장으로 바꾼다면?”",
-    "tenPercentAction": "“‘나는 ○○ 상황에서 ○○ 반응이 빨리 올라온다’라고 다시 쓴다.”",
+    "shiftQuestion": "‘나는 약해’를 상황문장으로 바꾼다면?",
+    "tenPercentAction": "‘나는 ○○ 상황에서 ○○ 반응이 빨리 올라온다’라고 다시 쓴다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "02장. 정체성 라벨의 함정: 유리멘탈이라는 허상을 깨뜨리기",
     "appCTA": "BODY SIGNAL 확인하기",
@@ -704,13 +1594,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“‘나는 ○○ 상황에서 ○○ 반응이 빨리 올라온다’라고"
+      "‘나는 ○○ 상황에서 ○○ 반응이 빨리 올라온다’라고 다시 쓴다."
     ],
     "relatedCards": [
       "emo-001",
-      "emo-002",
-      "emo-003"
-    ]
+      "emo-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "모든 상황에서 약한 걸까, 특정 조건(Trigger)에 스위치가 켜진 걸까?",
+    "syncMessage": "내가 가장 아끼고 소중히 여기는 가치를 건드려서 크게 아팠구나.",
+    "scanGuide": {
+      "step1": "나를 흔들리게 만든 정확한 자극은 무엇이었나요? (예: 공개적인 자리에서 내 의견이 묵살당함)",
+      "step2": "그 사실에 붙인 내 정체성 낙인은 무엇인가요? (예: '난 멘탈이 두부 같아서 사회생활 못할 인간이야')",
+      "step3": "내가 잘 버텨내고 단단하게 해냈던 다른 수많은 장면들은 어디로 갔나요?",
+      "step4": "남들과 비교하며 내 자신이 초라하게 쪼그라드는 기분이 드나요?"
+    }
   },
   {
     "id": "emo-012",
@@ -718,18 +1618,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "감정없애기",
     "cardTitle": "감정 없애기 모드",
-    "question": "“불안이나 화가 없어져야 제가 괜찮아진 것 아닌가요?”",
-    "sodaAnswer": "“변화는 감정이 사라지는 것보다 감정이 있어도 다음 행동을 선택할 수 있는 쪽으로 나타날 수 있습니다.”",
+    "question": "불안이나 화가 없어져야 제가 괜찮아진 것 아닌가요?",
+    "sodaAnswer": "변화는 감정이 사라지는 것보다 감정이 있어도 다음 행동을 선택할 수 있는 쪽으로 나타날 수 있습니다.",
     "description": "감정을 0으로 만들어야만 온전해진다는 환상 때문에, 자연스러운 인간의 정서를 억압하고 감정과 끝없는 전쟁을 벌이는 상태입니다.",
-    "curiosityQuestion": "“감정을 완전히 없애는 것이 성숙일까, 감정이 있어도 삶을 사는 것이 성숙일까?”",
+    "curiosityQuestion": "감정을 완전히 없애는 것이 성숙일까, 감정이 있어도 삶을 사는 것이 성숙일까?",
     "scanQuestion": "“감정이 있는 상태에서도 가능한 행동은?”",
     "factQuestion": "지금 내 안에 피어오른 감정은 무엇인가요? (예: 긴장감 70%, 불안 60%)",
     "storyQuestion": "감정에 대해 내 마음이 내린 요구는 무엇인가요? (예: '이 떨림을 당장 없애지 못하면 난 실패자야')",
     "unknownQuestion": "가슴이 떨리는 채로도 무대에 올라 연설을 훌륭히 마친 사람들이 있지 않나요?",
     "bodyQuestion": "불안을 억지로 누르려 할수록 심장이 더 세차게 뛰나요?",
     "syncSentence": "편안해지고 싶은 간절한 마음에 불안조차 쫓아내고 싶었구나.",
-    "shiftQuestion": "“감정을 없애는 대신 결재권만 되찾는다면?”",
-    "tenPercentAction": "“감정은 그대로 두고 행동 하나만 다르게 선택한다.”",
+    "shiftQuestion": "감정을 없애는 대신 결재권만 되찾는다면?",
+    "tenPercentAction": "감정은 그대로 두고 행동 하나만 다르게 선택한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "05장. 수용과 전념의 신경과학: 감정을 태우고 달리는 자동차",
     "appCTA": "감정 / 충동 / 행동 나누기",
@@ -769,13 +1669,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“감정은 그대로 두고 행동 하나만 다르게 선택한다"
+      "감정은 그대로 두고 행동 하나만 다르게 선택한다."
     ],
     "relatedCards": [
       "emo-006",
-      "emo-014",
-      "emo-003"
-    ]
+      "emo-014"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "감정을 완전히 없애는 것이 성숙일까, 감정이 있어도 삶을 사는 것이 성숙일까?",
+    "syncMessage": "편안해지고 싶은 간절한 마음에 불안조차 쫓아내고 싶었구나.",
+    "scanGuide": {
+      "step1": "지금 내 안에 피어오른 감정은 무엇인가요? (예: 긴장감 70%, 불안 60%)",
+      "step2": "감정에 대해 내 마음이 내린 요구는 무엇인가요? (예: '이 떨림을 당장 없애지 못하면 난 실패자야')",
+      "step3": "가슴이 떨리는 채로도 무대에 올라 연설을 훌륭히 마친 사람들이 있지 않나요?",
+      "step4": "불안을 억지로 누르려 할수록 심장이 더 세차게 뛰나요?"
+    }
   },
   {
     "id": "emo-013",
@@ -783,18 +1693,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "도망충동",
     "cardTitle": "도망 충동 모드",
-    "question": "“불편하면 그냥 그 자리에서 도망가고 싶어요.”",
-    "sodaAnswer": "“떠나고 싶은 충동은 정보입니다. 실제 위험인지, 감정을 더 느끼기 싫은 것인지는 따로 확인해야 합니다.”",
+    "question": "불편하면 그냥 그 자리에서 도망가고 싶어요?",
+    "sodaAnswer": "떠나고 싶은 충동은 정보입니다. 실제 위험인지, 감정을 더 느끼기 싫은 것인지는 따로 확인해야 합니다.",
     "description": "상황의 불편함과 신체적 위협을 구분하지 못하고, 불편한 장면에 노출되는 즉시 도피(Flight) 충동에 몸을 내맡기는 회피 회로입니다.",
-    "curiosityQuestion": "“지금 나는 맹수를 피해 도망치는 중일까, 불편한 대화를 피해 도망치는 중일까?”",
+    "curiosityQuestion": "지금 나는 맹수를 피해 도망치는 중일까, 불편한 대화를 피해 도망치는 중일까?",
     "scanQuestion": "“지금 위험해서 떠나고 싶은가, 불편해서 떠나고 싶은가?”",
     "factQuestion": "지금 이 자리에 물리적 폭력이나 안전상의 위험이 있나요? (예: 단순히 상대와 의견이 엇갈려 어색함)",
     "storyQuestion": "도망치고 싶은 충동이 만드는 생각은 무엇인가요? (예: '여기 더 있으면 숨 막혀 죽을 것 같아')",
     "unknownQuestion": "3분만 더 머물며 심호흡을 했을 때 이 불편함이 어떻게 변할지 지켜본 적이 있나요?",
     "bodyQuestion": "엉덩이가 들썩거리고 문쪽을 자꾸 쳐다보며 발끝에 힘이 들어가나요?",
     "syncSentence": "어색하고 답답한 공기를 견디기가 너무 버겁구나.",
-    "shiftQuestion": "“실제 위험이 아니라면 10% 더 머무를 수 있을까?”",
-    "tenPercentAction": "“가능한 안전한 상황에서는 즉시 사라지지 않고 필요한 시간을 말한다.”",
+    "shiftQuestion": "실제 위험이 아니라면 10% 더 머무를 수 있을까?",
+    "tenPercentAction": "가능한 안전한 상황에서는 즉시 사라지지 않고 필요한 시간을 말한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "04장. 도피 충동과 경계선: 위험과 불편함을 구별하는 뇌",
     "appCTA": "감정 / 충동 / 행동 나누기",
@@ -832,13 +1742,23 @@
       "자리를 피하거나 중단하려는 충동"
     ],
     "actionTags": [
-      "“가능한 안전한 상황에서는 즉시 사라지지 않고 필요한 "
+      "가능한 안전한 상황에서는 즉시 사라지지 않고 필요한 시간을 말한다."
     ],
     "relatedCards": [
       "emo-008",
-      "emo-001",
-      "emo-002"
-    ]
+      "emo-001"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "지금 나는 맹수를 피해 도망치는 중일까, 불편한 대화를 피해 도망치는 중일까?",
+    "syncMessage": "어색하고 답답한 공기를 견디기가 너무 버겁구나.",
+    "scanGuide": {
+      "step1": "지금 이 자리에 물리적 폭력이나 안전상의 위험이 있나요? (예: 단순히 상대와 의견이 엇갈려 어색함)",
+      "step2": "도망치고 싶은 충동이 만드는 생각은 무엇인가요? (예: '여기 더 있으면 숨 막혀 죽을 것 같아')",
+      "step3": "3분만 더 머물며 심호흡을 했을 때 이 불편함이 어떻게 변할지 지켜본 적이 있나요?",
+      "step4": "엉덩이가 들썩거리고 문쪽을 자꾸 쳐다보며 발끝에 힘이 들어가나요?"
+    }
   },
   {
     "id": "emo-014",
@@ -846,18 +1766,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "분노즉시전송",
     "cardTitle": "분노 즉시전송 모드",
-    "question": "“화가 나면 왜 꼭 바로 말해야 할 것 같죠?”",
-    "sodaAnswer": "“분노가 있다는 것과 지금 이 방식으로 전달해야 한다는 것은 별개의 선택입니다.”",
+    "question": "화가 나면 왜 꼭 바로 말해야 할 것 같죠?",
+    "sodaAnswer": "분노가 있다는 것과 지금 이 방식으로 전달해야 한다는 것은 별개의 선택입니다.",
     "description": "분노의 에너지를 해소하기 위해 가시 돋친 메시지를 즉각 발송하거나 폭언을 쏟아내어 장기적 관계를 파괴하는 충동 반응입니다.",
-    "curiosityQuestion": "“지금 보내려는 메시지는 문제를 해결할까, 상대에게 폭탄을 던지는 것일까?”",
+    "curiosityQuestion": "지금 보내려는 메시지는 문제를 해결할까, 상대에게 폭탄을 던지는 것일까?",
     "scanQuestion": "“감정 / URGE / 원하는 결과를 나누면?”",
     "factQuestion": "상대가 보낸 텍스트나 행동 팩트는 무엇인가요? (예: 약속 시간에 20분 늦음)",
     "storyQuestion": "내 마음의 분노 자막은 무엇인가요? (예: '나를 철저히 무시하고 있네. 내가 만만해 보여?')",
     "unknownQuestion": "지금 거친 메시지를 보냈을 때 상대가 진심으로 반성할 확률은 몇 퍼센트일까요?",
     "bodyQuestion": "손가락에 힘이 잔뜩 들어가고 숨이 거칠어지며 키보드를 두드리나요?",
     "syncSentence": "내 시간과 존중을 함부로 대우받은 것 같아 너무 억울하고 화가 났구나.",
-    "shiftQuestion": "“감정은 표현하되 행동 방향만 다시 고른다면?”",
-    "tenPercentAction": "“메시지는 작성해도 전송은 잠시 보류한다.”",
+    "shiftQuestion": "감정은 표현하되 행동 방향만 다시 고른다면?",
+    "tenPercentAction": "메시지는 작성해도 전송은 잠시 보류한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "03장. 자극과 반응 사이 10초의 틈: 분노의 신경 전달 늦추기",
     "appCTA": "감정 / 충동 / 행동 나누기",
@@ -898,13 +1818,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“메시지는 작성해도 전송은 잠시 보류한다"
+      "메시지는 작성해도 전송은 잠시 보류한다."
     ],
     "relatedCards": [
       "emo-006",
-      "emo-012",
-      "emo-003"
-    ]
+      "emo-012"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "지금 보내려는 메시지는 문제를 해결할까, 상대에게 폭탄을 던지는 것일까?",
+    "syncMessage": "내 시간과 존중을 함부로 대우받은 것 같아 너무 억울하고 화가 났구나.",
+    "scanGuide": {
+      "step1": "상대가 보낸 텍스트나 행동 팩트는 무엇인가요? (예: 약속 시간에 20분 늦음)",
+      "step2": "내 마음의 분노 자막은 무엇인가요? (예: '나를 철저히 무시하고 있네. 내가 만만해 보여?')",
+      "step3": "지금 거친 메시지를 보냈을 때 상대가 진심으로 반성할 확률은 몇 퍼센트일까요?",
+      "step4": "손가락에 힘이 잔뜩 들어가고 숨이 거칠어지며 키보드를 두드리나요?"
+    }
   },
   {
     "id": "emo-015",
@@ -912,18 +1842,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "죄책감결재",
     "cardTitle": "죄책감 결재 모드",
-    "question": "“죄책감이 들면 제가 잘못한 게 맞는 것 아닌가요?”",
-    "sodaAnswer": "“죄책감은 살펴볼 신호지만 최종 판결문은 아닙니다.”",
+    "question": "죄책감이 들면 제가 잘못한 게 맞는 것 아닌가요?",
+    "sodaAnswer": "죄책감은 살펴볼 신호지만 최종 판결문은 아닙니다.",
     "description": "과도한 도덕적 감수성으로 인해 상대방의 실망이나 불쾌함까지 자신의 잘못으로 환원하여 스스로 유죄를 선고하는 패턴입니다.",
-    "curiosityQuestion": "“나는 실제 약속을 깬 것일까, 상대의 기대에 부응하지 못한 것일까?”",
+    "curiosityQuestion": "나는 실제 약속을 깬 것일까, 상대의 기대에 부응하지 못한 것일까?",
     "scanQuestion": "“구체적으로 어떤 약속·책임·경계를 어겼는가?”",
     "factQuestion": "객관적으로 내가 어긴 규칙이나 합의된 의무는 무엇인가요? (예: 주말 추가 근무 요청을 정중히 거절함)",
     "storyQuestion": "죄책감이 씌운 혐의는 무엇인가요? (예: '동료를 돕지 않는 이기적이고 나쁜 인간이야')",
     "unknownQuestion": "상대가 거절당해 아쉬워하는 것과 내가 범죄를 저지른 것이 같은 수준의 일인가요?",
     "bodyQuestion": "등을 굽히고 고개를 숙이며 마음에 무거운 돌덩이를 얹은 기분이 드나요?",
     "syncSentence": "남을 서운하게 하고 싶지 않고 좋은 사람으로 남고 싶었구나.",
-    "shiftQuestion": "“실제 잘못과 상대의 실망을 분리한다면?”",
-    "tenPercentAction": "“책임이 있으면 구체적으로 복구하고, 없다면 자동사과는 보류한다.”",
+    "shiftQuestion": "실제 잘못과 상대의 실망을 분리한다면?",
+    "tenPercentAction": "책임이 있으면 구체적으로 복구하고, 없다면 자동사과는 보류한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "07장. 건강한 책임과 병리적 죄책감의 경계선 긋기",
     "appCTA": "SECOND ARROW SCAN",
@@ -964,13 +1894,23 @@
       "과도하게 해명하려는 충동"
     ],
     "actionTags": [
-      "“책임이 있으면 구체적으로 복구하고, 없다면 자동사과는"
+      "책임이 있으면 구체적으로 복구하고, 없다면 자동사과는 보류한다."
     ],
     "relatedCards": [
       "emo-007",
-      "emo-010",
-      "emo-009"
-    ]
+      "emo-010"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 실제 약속을 깬 것일까, 상대의 기대에 부응하지 못한 것일까?",
+    "syncMessage": "남을 서운하게 하고 싶지 않고 좋은 사람으로 남고 싶었구나.",
+    "scanGuide": {
+      "step1": "객관적으로 내가 어긴 규칙이나 합의된 의무는 무엇인가요? (예: 주말 추가 근무 요청을 정중히 거절함)",
+      "step2": "죄책감이 씌운 혐의는 무엇인가요? (예: '동료를 돕지 않는 이기적이고 나쁜 인간이야')",
+      "step3": "상대가 거절당해 아쉬워하는 것과 내가 범죄를 저지른 것이 같은 수준의 일인가요?",
+      "step4": "등을 굽히고 고개를 숙이며 마음에 무거운 돌덩이를 얹은 기분이 드나요?"
+    }
   },
   {
     "id": "emo-016",
@@ -978,18 +1918,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "감정예측",
     "cardTitle": "감정 예측 모드",
-    "question": "“오늘 기분이 이러면 하루 종일 망한 것 같아요.”",
-    "sodaAnswer": "“지금의 감정이 오늘 전체의 예보가 될 필요는 없습니다.”",
+    "question": "오늘 기분이 이러면 하루 종일 망한 것 같아요?",
+    "sodaAnswer": "지금의 감정이 오늘 전체의 예보가 될 필요는 없습니다.",
     "description": "아침의 저조한 컨디션이나 일시적 불쾌감을 하루 전체의 고정된 날씨로 규정하여 지레 포기하고 눕는 감정 예보 편향입니다.",
-    "curiosityQuestion": "“아침 안개가 끼었다고 하루 종일 비바람이 몰아칠 거라 단정할 수 있을까?”",
+    "curiosityQuestion": "아침 안개가 끼었다고 하루 종일 비바람이 몰아칠 거라 단정할 수 있을까?",
     "scanQuestion": "“지금 이 순간의 상태와 오늘 남은 시간을 분리하면?”",
     "factQuestion": "지금 객관적인 시간과 남은 일정은 무엇인가요? (예: 오전 10시, 오늘 하루는 14시간 남음)",
     "storyQuestion": "현재 기분이 내리는 종말 예보는 무엇인가요? (예: '오늘 시작부터 기분 잡쳤으니 뭘 해도 엉망일 거야')",
     "unknownQuestion": "점심을 먹고 산책을 한 뒤 내 뇌의 도파민 수치가 어떻게 변할지 미리 알 수 있나요?",
     "bodyQuestion": "온몸이 침대로 빨려 들어가듯 축 늘어지나요?",
     "syncSentence": "아침부터 몸과 마음이 무거워서 출발하기가 참 버겁구나.",
-    "shiftQuestion": "“기분을 고치기 전에 다음 행동만 고른다면?”",
-    "tenPercentAction": "“다음 10분에 할 현실 행동 하나를 선택한다.”",
+    "shiftQuestion": "기분을 고치기 전에 다음 행동만 고른다면?",
+    "tenPercentAction": "다음 10분에 할 현실 행동 하나를 선택한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "01장. 기분의 물결과 일상의 닻: 감정을 기다리지 않고 움직이기",
     "appCTA": "오늘의 복구 행동 정하기",
@@ -1029,13 +1969,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“다음 10분에 할 현실 행동 하나를 선택한다"
+      "다음 10분에 할 현실 행동 하나를 선택한다."
     ],
     "relatedCards": [
       "emo-001",
-      "emo-002",
-      "emo-003"
-    ]
+      "emo-002"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "아침 안개가 끼었다고 하루 종일 비바람이 몰아칠 거라 단정할 수 있을까?",
+    "syncMessage": "아침부터 몸과 마음이 무거워서 출발하기가 참 버겁구나.",
+    "scanGuide": {
+      "step1": "지금 객관적인 시간과 남은 일정은 무엇인가요? (예: 오전 10시, 오늘 하루는 14시간 남음)",
+      "step2": "현재 기분이 내리는 종말 예보는 무엇인가요? (예: '오늘 시작부터 기분 잡쳤으니 뭘 해도 엉망일 거야')",
+      "step3": "점심을 먹고 산책을 한 뒤 내 뇌의 도파민 수치가 어떻게 변할지 미리 알 수 있나요?",
+      "step4": "온몸이 침대로 빨려 들어가듯 축 늘어지나요?"
+    }
   },
   {
     "id": "emo-017",
@@ -1043,18 +1993,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "조기신호",
     "cardTitle": "다시는 안 그래 모드",
-    "question": "“이번에는 진짜 다시는 이렇게 안 하고 싶은데요.”",
-    "sodaAnswer": "“‘다시는’보다 다음번에 조금 더 일찍 발견할 신호를 찾는 편이 실제 계획에 가깝습니다.”",
+    "question": "이번에는 진짜 다시는 이렇게 안 하고 싶은데요?",
+    "sodaAnswer": "‘다시는’보다 다음번에 조금 더 일찍 발견할 신호를 찾는 편이 실제 계획에 가깝습니다.",
     "description": "비현실적인 무결점의 결심('다시는 절대 화 안 내') 대신, 감정 폭발 전에 몸과 마음에서 일어나는 미세한 전조 증상을 포착하는 전략입니다.",
-    "curiosityQuestion": "“폭탄이 터진 뒤 수습하는 것이 쉬울까, 퓨즈에 불이 붙었을 때 끄는 것이 쉬울까?”",
+    "curiosityQuestion": "폭탄이 터진 뒤 수습하는 것이 쉬울까, 퓨즈에 불이 붙었을 때 끄는 것이 쉬울까?",
     "scanQuestion": "“이번 행동이 시작되기 직전 가장 먼저 나타난 신호는?”",
     "factQuestion": "감정이 폭발하기 직전 내 몸에서 일어난 첫 신호는 무엇이었나요? (예: 어금니 악물림, 목소리 떨림, 호흡 짧아짐)",
     "storyQuestion": "그 신호와 함께 머릿속을 스쳐 지나간 생각은 무엇이었나요? (예: '또 저러네. 진짜 못 참겠다')",
     "unknownQuestion": "그 신호가 왔을 때 물 한 잔을 마시며 10초만 멈춘다면 결말이 어떻게 바뀔까요?",
     "bodyQuestion": "신호가 오던 순간 몸의 근육들이 딱딱하게 경직되었나요?",
     "syncSentence": "후회하고 싶지 않아서 완벽하게 통제하고 싶은 간절한 마음이 있구나.",
-    "shiftQuestion": "“100에서 멈추는 대신 더 이른 지점에서 발견한다면?”",
-    "tenPercentAction": "“다음번 조기신호 하나를 정한다.”",
+    "shiftQuestion": "100에서 멈추는 대신 더 이른 지점에서 발견한다면?",
+    "tenPercentAction": "다음번 조기신호 하나를 정한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "04장. 보디 시그니처(Body Signature): 감정의 0~100 스케일과 조기 차단",
     "appCTA": "BODY SIGNAL 확인하기",
@@ -1094,13 +2044,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“다음번 조기신호 하나를 정한다"
+      "다음번 조기신호 하나를 정한다."
     ],
     "relatedCards": [
       "emo-001",
-      "emo-002",
-      "emo-003"
-    ]
+      "emo-002"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "폭탄이 터진 뒤 수습하는 것이 쉬울까, 퓨즈에 불이 붙었을 때 끄는 것이 쉬울까?",
+    "syncMessage": "후회하고 싶지 않아서 완벽하게 통제하고 싶은 간절한 마음이 있구나.",
+    "scanGuide": {
+      "step1": "감정이 폭발하기 직전 내 몸에서 일어난 첫 신호는 무엇이었나요? (예: 어금니 악물림, 목소리 떨림, 호흡 짧아짐)",
+      "step2": "그 신호와 함께 머릿속을 스쳐 지나간 생각은 무엇이었나요? (예: '또 저러네. 진짜 못 참겠다')",
+      "step3": "그 신호가 왔을 때 물 한 잔을 마시며 10초만 멈춘다면 결말이 어떻게 바뀔까요?",
+      "step4": "신호가 오던 순간 몸의 근육들이 딱딱하게 경직되었나요?"
+    }
   },
   {
     "id": "emo-018",
@@ -1108,18 +2068,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "회복조급함",
     "cardTitle": "회복 조급함 모드",
-    "question": "“왜 저는 감정에서 빨리 못 빠져나오죠?”",
-    "sodaAnswer": "“회복 속도까지 평가하기 시작하면 힘든 감정 위에 또 다른 싸움이 붙을 수 있습니다.”",
+    "question": "왜 저는 감정에서 빨리 못 빠져나오죠?",
+    "sodaAnswer": "회복 속도까지 평가하기 시작하면 힘든 감정 위에 또 다른 싸움이 붙을 수 있습니다.",
     "description": "감정의 자연스러운 반감기를 기다리지 못하고, 회복 속도마저 남들과 비교하고 채찍질하여 2차 스트레스를 유발하는 조급증입니다.",
-    "curiosityQuestion": "“멍든 자리를 계속 손가락으로 누르면서 왜 아직도 멍이 안 빠지냐고 묻고 있지는 않나?”",
+    "curiosityQuestion": "멍든 자리를 계속 손가락으로 누르면서 왜 아직도 멍이 안 빠지냐고 묻고 있지는 않나?",
     "scanQuestion": "“지금 힘든 감정과 ‘빨리 괜찮아져야 해’라는 요구를 나누면?”",
     "factQuestion": "충격적인 사건이 일어난 지 객관적으로 얼마나 지났나요? (예: 실연당한 지 겨우 3일 지남)",
     "storyQuestion": "내 마음의 가혹한 압박은 무엇인가요? (예: '남들은 쿨하게 털어내는데 난 왜 아직도 찌질하게 울고 있지?')",
     "unknownQuestion": "마음의 상처가 아무는 데도 피부의 상처처럼 세포가 재생될 시간이 필요하지 않을까요?",
     "bodyQuestion": "빨리 괜찮아져야 한다는 강박에 명치가 더 뻐근해지나요?",
-    "syncSentence": "“빨리 원래 상태로 돌아가고 싶은 마음도 있구나.”",
-    "shiftQuestion": "“완벽히 괜찮아지기 전에 삶으로 조금 돌아간다면?”",
-    "tenPercentAction": "“기분 회복을 기다리지 않고 일상 행동 하나를 한다.”",
+    "syncSentence": "빨리 원래 상태로 돌아가고 싶은 마음도 있구나.",
+    "shiftQuestion": "완벽히 괜찮아지기 전에 삶으로 조금 돌아간다면?",
+    "tenPercentAction": "기분 회복을 기다리지 않고 일상 행동 하나를 한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "05장. 정서적 반감기의 생리학: 회복의 속도를 채찍질하지 않는 지혜",
     "appCTA": "오늘의 복구 행동 정하기",
@@ -1157,13 +2117,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“기분 회복을 기다리지 않고 일상 행동 하나를 한다"
+      "기분 회복을 기다리지 않고 일상 행동 하나를 한다."
     ],
     "relatedCards": [
       "emo-001",
-      "emo-002",
-      "emo-003"
-    ]
+      "emo-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "멍든 자리를 계속 손가락으로 누르면서 왜 아직도 멍이 안 빠지냐고 묻고 있지는 않나?",
+    "syncMessage": "빨리 원래 상태로 돌아가고 싶은 마음도 있구나.",
+    "scanGuide": {
+      "step1": "충격적인 사건이 일어난 지 객관적으로 얼마나 지났나요? (예: 실연당한 지 겨우 3일 지남)",
+      "step2": "내 마음의 가혹한 압박은 무엇인가요? (예: '남들은 쿨하게 털어내는데 난 왜 아직도 찌질하게 울고 있지?')",
+      "step3": "마음의 상처가 아무는 데도 피부의 상처처럼 세포가 재생될 시간이 필요하지 않을까요?",
+      "step4": "빨리 괜찮아져야 한다는 강박에 명치가 더 뻐근해지나요?"
+    }
   },
   {
     "id": "emo-019",
@@ -1171,18 +2141,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "또흔들림",
     "cardTitle": "또 흔들림 판결 모드",
-    "question": "“또 불안해졌으면 결국 하나도 안 변한 것 아닌가요?”",
-    "sodaAnswer": "“감정이 다시 올라왔는지만이 아니라 언제 알아차렸고 무엇을 다르게 했는지도 변화의 데이터입니다.”",
+    "question": "또 불안해졌으면 결국 하나도 안 변한 것 아닌가요?",
+    "sodaAnswer": "감정이 다시 올라왔는지만이 아니라 언제 알아차렸고 무엇을 다르게 했는지도 변화의 데이터입니다.",
     "description": "감정의 '발생 자체'만 보고 변화가 없다고 단정하지만, 실제 신경망의 진보는 감정을 알아차리는 '속도'와 '복구력'에서 일어납니다.",
-    "curiosityQuestion": "“감정이 파도처럼 다시 친 것일까, 내가 배운 모든 노력이 사라진 것일까?”",
+    "curiosityQuestion": "감정이 파도처럼 다시 친 것일까, 내가 배운 모든 노력이 사라진 것일까?",
     "scanQuestion": "“이번에는 이전보다 빨리 알아차렸나? 행동 강도는 달랐나? 복구는 빨랐나?”",
     "factQuestion": "예전과 비교해 이번에 실제로 달라진 데이터는 무엇인가요? (예: 예전엔 3일간 폭식했으나 이번엔 30분 만에 산책을 나감)",
     "storyQuestion": "내 마음의 흑백논리 판결은 무엇인가요? (예: '또 불안해하다니, 난 평생 치료 안 될 거야')",
     "unknownQuestion": "감정이 올라왔음에도 불구하고 내가 이전과 다르게 선택할 수 있는 10%가 존재하지 않나요?",
     "bodyQuestion": "스스로에게 실망하며 한숨이 깊게 내쉬어지나요?",
     "syncSentence": "이번에는 안 흔들릴 줄 알았는데 또 감정이 출렁여서 힘이 빠졌구나.",
-    "shiftQuestion": "“감정 재발과 행동 재선택을 분리한다면?”",
-    "tenPercentAction": "“이번에 달랐던 점 하나를 기록한다.”",
+    "shiftQuestion": "감정 재발과 행동 재선택을 분리한다면?",
+    "tenPercentAction": "이번에 달랐던 점 하나를 기록한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "08장. 감정 가소성: 흔들리지 않는 나무가 아니라 다시 돌아오는 스프링",
     "appCTA": "BODY SIGNAL 확인하기",
@@ -1224,13 +2194,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“이번에 달랐던 점 하나를 기록한다"
+      "이번에 달랐던 점 하나를 기록한다."
     ],
     "relatedCards": [
       "emo-003",
-      "emo-006",
-      "emo-012"
-    ]
+      "emo-006"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "감정이 파도처럼 다시 친 것일까, 내가 배운 모든 노력이 사라진 것일까?",
+    "syncMessage": "이번에는 안 흔들릴 줄 알았는데 또 감정이 출렁여서 힘이 빠졌구나.",
+    "scanGuide": {
+      "step1": "예전과 비교해 이번에 실제로 달라진 데이터는 무엇인가요? (예: 예전엔 3일간 폭식했으나 이번엔 30분 만에 산책을 나감)",
+      "step2": "내 마음의 흑백논리 판결은 무엇인가요? (예: '또 불안해하다니, 난 평생 치료 안 될 거야')",
+      "step3": "감정이 올라왔음에도 불구하고 내가 이전과 다르게 선택할 수 있는 10%가 존재하지 않나요?",
+      "step4": "스스로에게 실망하며 한숨이 깊게 내쉬어지나요?"
+    }
   },
   {
     "id": "emo-020",
@@ -1238,18 +2218,18 @@
     "category": "유리멘탈·자책·불안",
     "keyword": "대응가능성",
     "cardTitle": "대응 가능한 나 모드",
-    "question": "“나쁜 일이 생기지 않게 다 준비해야 안심할 수 있지 않나요?”",
-    "sodaAnswer": "“모든 일을 예방할 수 있다는 확신보다, 일이 생겼을 때 대응할 수 있다는 경험이 더 현실적인 안전감이 될 수 있습니다.”",
+    "question": "나쁜 일이 생기지 않게 다 준비해야 안심할 수 있지 않나요?",
+    "sodaAnswer": "모든 일을 예방할 수 있다는 확신보다, 일이 생겼을 때 대응할 수 있다는 경험이 더 현실적인 안전감이 될 수 있습니다.",
     "description": "세상의 모든 위험을 100% 사전에 통제하려는 불가능한 방어벽 대신, 어떤 파도가 쳐도 서핑하듯 회복할 수 있는 자기효능감의 완성입니다.",
-    "curiosityQuestion": "“절대 파도가 치지 않는 바다를 원하는가, 파도를 탈 수 있는 서퍼가 되고 싶은가?”",
+    "curiosityQuestion": "절대 파도가 치지 않는 바다를 원하는가, 파도를 탈 수 있는 서퍼가 되고 싶은가?",
     "scanQuestion": "“현실적으로 준비할 부분과 통제할 수 없는 부분은?”",
     "factQuestion": "지금 내 통제 범위 안에 있는 현실적 준비 1가지는 무엇인가요? (예: 예상 질문 리스트 검토)",
     "storyQuestion": "통제할 수 없는 영역에 대해 마음이 요구하는 것은 무엇인가요? (예: '면접관의 모든 반응을 미리 통제해야 해')",
     "unknownQuestion": "예상치 못한 질문이 나와도 '잠시 생각할 시간을 주시겠습니까?'라고 대응할 수 있지 않나요?",
     "bodyQuestion": "모든 것을 통제하려는 긴장을 내려놓고 깊은 숨을 바닥까지 쉴 수 있나요?",
     "syncSentence": "절대로 다치고 싶지 않아서 온 힘을 다해 철벽을 치고 있었구나.",
-    "shiftQuestion": "“‘안 생기게 해야 해’에서 ‘생기면 어떻게 대응하지?’로 질문을 바꾼다면?”",
-    "tenPercentAction": "“예방 행동 하나와 대응 계획 하나만 정한다.”",
+    "shiftQuestion": "‘안 생기게 해야 해’에서 ‘생기면 어떻게 대응하지?’로 질문을 바꾼다면?",
+    "tenPercentAction": "예방 행동 하나와 대응 계획 하나만 정한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "07장. 완벽한 방어에서 탄력적 대응으로: 심리적 안전감의 신경학",
     "appCTA": "오늘의 복구 행동 정하기",
@@ -1287,12 +2267,22 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“예방 행동 하나와 대응 계획 하나만 정한다"
+      "예방 행동 하나와 대응 계획 하나만 정한다."
     ],
     "relatedCards": [
       "emo-001",
-      "emo-002",
-      "emo-003"
-    ]
+      "emo-002"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "절대 파도가 치지 않는 바다를 원하는가, 파도를 탈 수 있는 서퍼가 되고 싶은가?",
+    "syncMessage": "절대로 다치고 싶지 않아서 온 힘을 다해 철벽을 치고 있었구나.",
+    "scanGuide": {
+      "step1": "지금 내 통제 범위 안에 있는 현실적 준비 1가지는 무엇인가요? (예: 예상 질문 리스트 검토)",
+      "step2": "통제할 수 없는 영역에 대해 마음이 요구하는 것은 무엇인가요? (예: '면접관의 모든 반응을 미리 통제해야 해')",
+      "step3": "예상치 못한 질문이 나와도 '잠시 생각할 시간을 주시겠습니까?'라고 대응할 수 있지 않나요?",
+      "step4": "모든 것을 통제하려는 긴장을 내려놓고 깊은 숨을 바닥까지 쉴 수 있나요?"
+    }
   }
 ]

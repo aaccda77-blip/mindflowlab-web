@@ -179,6 +179,7 @@
     trackMindEvent('belief_pack_view', { packId: 'belief-fate-uncertainty-01', source: 'home_load' });
     trackMindEvent('three_code_pack_view', { packId: 'three-code-integration-01', source: 'home_load' });
     renderPopularQuestions();
+    renderCategoryCards();
     renderMoneyQuestions();
     renderCareerQuestions();
     renderPerfectionQuestions();
@@ -529,11 +530,14 @@
       return;
     }
 
-    const related = window.MyeongsimAIRouter.getRelatedCards(card.id);
-    if (!related || related.length === 0) {
+    const rawRelated = window.MyeongsimAIRouter.getRelatedCards(card.id);
+    if (!rawRelated || rawRelated.length === 0) {
       container.classList.add('hidden');
       return;
     }
+
+    // Phase 9: 연관 카드는 최대 2장까지만 노출
+    const related = rawRelated.slice(0, 2);
 
     container.classList.remove('hidden');
     const isLimitReached = window.MyeongsimAIRouter.sessionBrowseCount >= 2;
@@ -541,18 +545,18 @@
     let loopLimitBanner = '';
     if (isLimitReached) {
       loopLimitBanner = `
-        <div class="p-3.5 rounded-2xl bg-emerald-50 border-2 border-emerald-500/50 text-slate-800 space-y-1.5 shadow-sm">
+        <div class="p-3.5 rounded-2xl bg-amber-50/90 border-2 border-amber-400/60 text-slate-800 space-y-1.5 shadow-sm">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-black text-[#0F6B5B] flex items-center gap-1">
+            <span class="text-xs font-black text-amber-900 flex items-center gap-1">
               <span>🌱</span>
-              <span>이제 분석보다 오늘의 행동을 골라볼까요?</span>
+              <span>생각이 많아질 땐 분석보다 10% 행동 하나가 더 빠릅니다.</span>
             </span>
             <button onclick="document.getElementById('mind-action-container')?.scrollIntoView({behavior:'smooth'})" class="px-3 py-1 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-[11px] shadow-xs cursor-pointer">
               오늘 10% 행동 정하기 &uarr;
             </button>
           </div>
-          <p class="text-[11px] text-slate-600 leading-relaxed">
-            질문을 끝없이 분석하는 것보다, 아주 작은 10%의 다른 행동을 하나 해보는 것이 뇌에 가장 강력한 새로운 데이터를 만듭니다.
+          <p class="text-[11px] text-slate-700 leading-relaxed">
+            새로운 질문을 계속 찾아보는 것보다, 지금 정한 작은 10% 행동 하나를 실행하는 순간 뇌의 새로운 신경망이 활성화됩니다.
           </p>
         </div>
       `;
@@ -566,20 +570,20 @@
             <span>🔗</span>
             <span>이 질문과 함께 많이 이어지는 관점</span>
           </span>
-          <span class="text-[10px] text-slate-400">최대 3개 연결</span>
+          <span class="text-[10px] text-slate-400">관련 관점 2장 추천</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           ${related.map(rc => `
-            <div onclick="navigateToRelatedCard('${rc.id}')" class="p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer flex flex-col justify-between group text-left">
+            <div onclick="navigateToRelatedCard('${rc.id}')" class="p-3 rounded-xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer flex flex-col justify-between group text-left">
               <div>
-                <div class="text-[9px] text-[#0F6B5B] font-bold mb-0.5">${rc.category} · ${rc.cardTitle}</div>
+                <div class="text-[9px] text-[#0F6B5B] font-bold mb-1">${rc.category} · ${rc.cardTitle}</div>
                 <div class="text-xs font-bold text-slate-800 group-hover:text-[#0F6B5B] leading-snug line-clamp-2">
                   ${rc.question}
                 </div>
               </div>
-              <div class="mt-2 text-[10px] text-slate-400 group-hover:text-[#0F6B5B] font-bold flex items-center justify-end gap-0.5">
-                <span>관점 보기</span>
+              <div class="mt-2.5 text-[10px] text-slate-400 group-hover:text-[#0F6B5B] font-bold flex items-center justify-end gap-1">
+                <span>관점 살펴보기</span>
                 <span>&rarr;</span>
               </div>
             </div>
@@ -2681,28 +2685,37 @@
     'rel-019'  // 자기비난 모드
   ];
 
+  // =================================================================
+  // SECTION 2: 요즘 많이 찾는 질문 (카테고리 믹스 8선 큐레이션)
+  // =================================================================
+  const POPULAR_MIX_IDS = [
+    'rel-001',   // 관계·심리: 답장 대기 모드
+    'money-001', // 돈·사업: 통장 잔고 불안
+    'career-001',// 번아웃·성과: 일 멈춤 불안
+    'perf-001',  // 완벽주의·비교: 실수 재난화 모드
+    'fam-001',   // 부모·가족: 부모 기대 충돌
+    'love-001',  // 연애·친밀감: 가까워지면 밀어내기
+    'dec-001',   // 결정·미루기: 결정 마비 모드
+    'fate-001'   // 사주·운명: 사주 불안·삼재 모드
+  ];
+
   function renderPopularQuestions() {
     const carousel = document.getElementById('popular-questions-carousel');
     if (!carousel || !cardsData || cardsData.length === 0) return;
 
-    // 1. 관계·불안 명심카드 대표 6개 최우선 배치 (지정된 순서 엄수)
-    const relFeatured = [];
-    FEATURED_RELATIONSHIP_IDS.forEach(id => {
+    // 1. 카테고리 믹스 8대 대표 카드 우선 정렬
+    const curated = [];
+    POPULAR_MIX_IDS.forEach(id => {
       const card = cardsData.find(c => c.id === id);
-      if (card) relFeatured.push(card);
+      if (card) curated.push(card);
     });
 
-    // 2. 추가 추천 카드 (그 외 featured)
-    const otherFeatured = cardsData.filter(c => 
-      (c.isFeatured || c.featured) && !FEATURED_RELATIONSHIP_IDS.includes(c.id)
-    );
-
-    // 3. 인기순 정렬된 추가 카드
-    const remaining = cardsData.filter(c => 
-      !c.isFeatured && !c.featured && !FEATURED_RELATIONSHIP_IDS.includes(c.id)
-    ).sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-
-    const curated = [...relFeatured, ...otherFeatured, ...remaining].slice(0, 12);
+    // 8개 미만일 경우 인기 카드로 보충
+    if (curated.length < 8) {
+      const more = cardsData.filter(c => !POPULAR_MIX_IDS.includes(c.id))
+                            .sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+      curated.push(...more.slice(0, 8 - curated.length));
+    }
 
     carousel.innerHTML = curated.map((card, idx) => `
       <div onclick="pickMindCard(0, '${card.id}')" class="shrink-0 w-64 sm:w-72 p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
@@ -2721,12 +2734,160 @@
           </p>
         </div>
         <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
-          <span class="text-[#0F6B5B]">사이다 답변 확인 &rarr;</span>
-          <span>${card.cardTitle}</span>
+          <span class="text-[#0F6B5B] group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
+            <span>1분 SCAN 시작</span>
+            <span>&rarr;</span>
+          </span>
+          <span class="text-slate-500">${card.cardTitle}</span>
         </div>
       </div>
     `).join('');
   }
+
+  // =================================================================
+  // SECTION 3: 10대 카테고리 탭 탐색기 (10 Categories Explorer)
+  // =================================================================
+  const CATEGORY_MAP = {
+    'all': null,
+    'relationship': ['관계·심리', '경계와 관계'],
+    'money': ['돈·사업실패·빚', '생존·불안'],
+    'career': ['번아웃·이직퇴사·성과', '에너지와 번아웃', '성취·일'],
+    'perfection': ['완벽주의·인정욕구·비교', '완벽주의와 통제'],
+    'family': ['부모원망·가족독립'],
+    'love': ['연애애착·이별·친밀감'],
+    'decision': ['결정·미루기·습관', '변화와 시도'],
+    'emotion': ['유리멘탈·자책·불안', '감정 민감성', '불안과 방어', '생각 과열'],
+    'belief': ['사주미신·삼재·운명역전', '불확실성'],
+    'code': ['3대코드·제로포인트', '정체성과 관찰']
+  };
+
+  let currentCategoryFilter = 'all';
+  let categoryCardLimit = 6;
+
+  window.selectCategoryFilter = function (catKey) {
+    currentCategoryFilter = catKey;
+    categoryCardLimit = 6;
+
+    // 1. 탭 버튼 스타일 갱신
+    document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+      const match = btn.getAttribute('data-cat') === catKey;
+      if (match) {
+        btn.className = 'cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-[#0F6B5B] text-white shadow-sm';
+      } else {
+        btn.className = 'cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200';
+      }
+    });
+
+    // 2. 카드 렌더링
+    renderCategoryCards();
+    trackMindEvent('category_tab_selected', { category: catKey });
+  };
+
+  function renderCategoryCards() {
+    const grid = document.getElementById('category-cards-grid');
+    const moreContainer = document.getElementById('category-more-container');
+    if (!grid || !cardsData || cardsData.length === 0) return;
+
+    let filtered = cardsData;
+    const catList = CATEGORY_MAP[currentCategoryFilter];
+    if (catList) {
+      filtered = cardsData.filter(c => catList.includes(c.category));
+    }
+
+    const visibleCards = filtered.slice(0, categoryCardLimit);
+
+    grid.innerHTML = visibleCards.map((card) => `
+      <div onclick="pickMindCard(0, '${card.id}')" class="p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[#0F6B5B] font-black text-[10px]">
+              ${card.category}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">${card.threeCodeHint || 'Card'}</span>
+          </div>
+          <h5 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#0F6B5B] transition-colors leading-snug line-clamp-2 mb-1.5">
+            ${card.question}
+          </h5>
+          <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+            ${card.sodaAnswer}
+          </p>
+        </div>
+        <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+          <span class="text-[#0F6B5B] group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
+            <span>1분 SCAN</span>
+            <span>&rarr;</span>
+          </span>
+          <span class="text-slate-500">${card.cardTitle}</span>
+        </div>
+      </div>
+    `).join('');
+
+    // 더보기 버튼 표시 여부
+    if (moreContainer) {
+      if (filtered.length > categoryCardLimit) {
+        moreContainer.classList.remove('hidden');
+      } else {
+        moreContainer.classList.add('hidden');
+      }
+    }
+  }
+
+  window.loadMoreCategoryCards = function () {
+    categoryCardLimit += 6;
+    renderCategoryCards();
+  };
+
+  // =================================================================
+  // SECTION 4: 3대 코드 접기/펼침 및 상세 렌즈 인터랙션
+  // =================================================================
+  window.toggleThreeCodeDetail = function () {
+    const container = document.getElementById('three-code-detail-container');
+    const arrow = document.getElementById('three-code-detail-arrow');
+    const btnText = document.getElementById('three-code-detail-btn-text');
+    if (!container) return;
+
+    const isHidden = container.classList.contains('hidden');
+    if (isHidden) {
+      container.classList.remove('hidden');
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+      if (btnText) btnText.textContent = '3대 코드 상세 관점 및 작동지도 접기';
+      trackMindEvent('three_code_detail_opened', {});
+    } else {
+      container.classList.add('hidden');
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+      if (btnText) btnText.textContent = '3대 코드 상세 관점(ONE SCENE 3 LENSES) 및 작동지도 펼치기';
+    }
+  };
+
+  window.switchThreeCodeLens = function (lens) {
+    const darkBox = document.getElementById('lens-content-dark');
+    const neuralBox = document.getElementById('lens-content-neural');
+    const zeroBox = document.getElementById('lens-content-zero');
+
+    const darkBtn = document.getElementById('lens-btn-dark');
+    const neuralBtn = document.getElementById('lens-btn-neural');
+    const zeroBtn = document.getElementById('lens-btn-zero');
+
+    if (darkBox) darkBox.classList.add('hidden');
+    if (neuralBox) neuralBox.classList.add('hidden');
+    if (zeroBox) zeroBox.classList.add('hidden');
+
+    const resetBtnClass = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-600 border border-slate-200';
+    if (darkBtn) darkBtn.className = resetBtnClass;
+    if (neuralBtn) neuralBtn.className = resetBtnClass;
+    if (zeroBtn) zeroBtn.className = resetBtnClass;
+
+    if (lens === 'dark') {
+      if (darkBox) darkBox.classList.remove('hidden');
+      if (darkBtn) darkBtn.className = 'px-3 py-1 rounded-lg text-xs font-black bg-slate-900 text-white shadow-xs';
+    } else if (lens === 'neural') {
+      if (neuralBox) neuralBox.classList.remove('hidden');
+      if (neuralBtn) neuralBtn.className = 'px-3 py-1 rounded-lg text-xs font-black bg-[#0F6B5B] text-white shadow-xs';
+    } else if (lens === 'zero') {
+      if (zeroBox) zeroBox.classList.remove('hidden');
+      if (zeroBtn) zeroBtn.className = 'px-3 py-1 rounded-lg text-xs font-black bg-[#C7A86B] text-white shadow-xs';
+    }
+  };
 
 
   // =================================================================

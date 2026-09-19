@@ -5,18 +5,18 @@
     "category": "관계·심리",
     "keyword": "답장불안",
     "cardTitle": "답장 대기 모드",
-    "question": "“답장이 늦으면 왜 마음이 식었다고 느껴질까요?”",
-    "sodaAnswer": "“답장이 늦었다는 사실과 마음이 식었다는 해석은 같은 것이 아닙니다.”",
+    "question": "답장이 늦으면 왜 마음이 식었다고 느껴질까요?",
+    "sodaAnswer": "답장이 늦었다는 사실과 마음이 식었다는 해석은 같은 것이 아닙니다.",
     "description": "답장이 늦었다는 것은 확인된 사실일 수 있지만, 상대의 마음이 식었다는 것은 아직 해석일 수 있습니다. UNKNOWN을 견디기 어려울수록 마음은 가장 두려운 결론부터 채워 넣기도 합니다.",
-    "curiosityQuestion": "“나는 모르는 시간을 어떤 이야기로 가장 빨리 채우는 편일까?”",
+    "curiosityQuestion": "나는 모르는 시간을 어떤 이야기로 가장 빨리 채우는 편일까?",
     "scanQuestion": "“실제로 확인된 것과 내가 해석한 것을 나눠보면?”",
     "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요? (예: 메시지 보낸 지 1시간 지남)",
     "storyQuestion": "그 사실에 내가 붙인 해석(STORY)은 무엇인가요? (예: 내게 마음이 식었다)",
     "unknownQuestion": "아직 확인되지 않은 영역(UNKNOWN)은 무엇인가요? (예: 상대의 바쁜 상황)",
     "bodyQuestion": "몸에서는 어디가 먼저 긴장했나요?",
-    "syncSentence": "“모르는 시간이 불편해서 빨리 답을 얻고 싶은 마음이 있구나.”",
-    "shiftQuestion": "“지금 결론을 조금만 늦춘다면?”",
-    "tenPercentAction": "“추가 메시지를 보내기 전 30분 기다려본다.”",
+    "syncSentence": "모르는 시간이 불편해서 빨리 답을 얻고 싶은 마음이 있구나.",
+    "shiftQuestion": "지금 결론을 조금만 늦춘다면?",
+    "tenPercentAction": "추가 메시지를 보내기 전 30분 기다려본다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "1장. 무의식의 Trigger와 자동해석 코드",
     "appCTA": "“내 관계 패턴 SCAN하기”",
@@ -61,13 +61,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“추가 메시지를 보내기 전 30분 기다려본다"
+      "추가 메시지를 보내기 전 30분 기다려본다."
     ],
     "relatedCards": [
       "relationship-reply-001",
-      "rel-006",
-      "rel-015"
-    ]
+      "rel-006"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 모르는 시간을 어떤 이야기로 가장 빨리 채우는 편일까?",
+    "syncMessage": "모르는 시간이 불편해서 빨리 답을 얻고 싶은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요? (예: 메시지 보낸 지 1시간 지남)",
+      "step2": "그 사실에 내가 붙인 해석(STORY)은 무엇인가요? (예: 내게 마음이 식었다)",
+      "step3": "아직 확인되지 않은 영역(UNKNOWN)은 무엇인가요? (예: 상대의 바쁜 상황)",
+      "step4": "몸에서는 어디가 먼저 긴장했나요?"
+    }
   },
   {
     "id": "rel-002",
@@ -75,18 +85,18 @@
     "category": "관계·심리",
     "keyword": "마음읽기",
     "cardTitle": "표정 읽기 모드",
-    "question": "“상대 표정만 봐도 저를 싫어하는 것 같아요.”",
-    "sodaAnswer": "“표정은 정보 하나이지 상대 마음 전체의 판결문은 아닙니다.”",
+    "question": "상대 표정만 봐도 저를 싫어하는 것 같아요?",
+    "sodaAnswer": "표정은 정보 하나이지 상대 마음 전체의 판결문은 아닙니다.",
     "description": "상대의 굳은 표정은 개인적인 피로, 소화불량, 다른 고민 때문일 수 있습니다. 안테나가 과열되면 외부의 작은 단서를 나를 향한 공격이나 거부로 급히 단정 짓게 됩니다.",
-    "curiosityQuestion": "“나는 상대의 표정에서 무엇을 가장 먼저 읽어내는 편일까?”",
+    "curiosityQuestion": "나는 상대의 표정에서 무엇을 가장 먼저 읽어내는 편일까?",
     "scanQuestion": "“내가 실제로 본 것과 붙인 의미는 각각 무엇인가?”",
     "factQuestion": "실제로 내가 눈으로 본 객관적 사실은 무엇인가요? (예: 무표정, 시선 돌림)",
     "storyQuestion": "그 표정을 보며 내가 단정한 결론은 무엇인가요? (예: 날 싫어한다)",
     "unknownQuestion": "상대가 오늘 겪었을 다른 변수 중 내가 모르는 것은 무엇인가요?",
     "bodyQuestion": "어깨가 굳거나 시선을 피하게 되나요?",
-    "syncSentence": "“상대의 마음을 빨리 알고 싶어 하는 마음이 있구나.”",
-    "shiftQuestion": "“추측 대신 확인할 방법이 있을까?”",
-    "tenPercentAction": "“필요하면 ‘무슨 일 있어?’라고 직접 한 번 묻는다.”",
+    "syncSentence": "상대의 마음을 빨리 알고 싶어 하는 마음이 있구나.",
+    "shiftQuestion": "추측 대신 확인할 방법이 있을까?",
+    "tenPercentAction": "필요하면 ‘무슨 일 있어?’라고 직접 한 번 묻는다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "2장. 마음읽기 모드와 투사 회로",
     "appCTA": "“내 마음읽기 패턴 SCAN하기”",
@@ -128,13 +138,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“필요하면 ‘무슨 일 있어?’라고 직접 한 번 묻는다"
+      "필요하면 ‘무슨 일 있어?’라고 직접 한 번 묻는다."
     ],
     "relatedCards": [
       "rel-012",
-      "rel-013",
-      "rel-001"
-    ]
+      "rel-013"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 상대의 표정에서 무엇을 가장 먼저 읽어내는 편일까?",
+    "syncMessage": "상대의 마음을 빨리 알고 싶어 하는 마음이 있구나.",
+    "scanGuide": {
+      "step1": "실제로 내가 눈으로 본 객관적 사실은 무엇인가요? (예: 무표정, 시선 돌림)",
+      "step2": "그 표정을 보며 내가 단정한 결론은 무엇인가요? (예: 날 싫어한다)",
+      "step3": "상대가 오늘 겪었을 다른 변수 중 내가 모르는 것은 무엇인가요?",
+      "step4": "어깨가 굳거나 시선을 피하게 되나요?"
+    }
   },
   {
     "id": "rel-003",
@@ -142,18 +162,18 @@
     "category": "관계·심리",
     "keyword": "사과중독",
     "cardTitle": "선제 사과 모드",
-    "question": "“제가 잘못한 것도 없는데 왜 먼저 미안하다고 할까요?”",
-    "sodaAnswer": "“사과가 책임을 위한 것인지 불편한 공기를 빨리 끝내기 위한 것인지 구분해보세요.”",
+    "question": "제가 잘못한 것도 없는데 왜 먼저 미안하다고 할까요?",
+    "sodaAnswer": "사과가 책임을 위한 것인지 불편한 공기를 빨리 끝내기 위한 것인지 구분해보세요.",
     "description": "선제 사과는 내 잘못을 인정해서라기보다, 어색한 침묵과 갈등의 공기를 1초라도 빨리 꺼버리기 위한 방어적 소화기일 수 있습니다.",
-    "curiosityQuestion": "“나는 무엇이 불편해서 먼저 사과하고 싶어질까?”",
+    "curiosityQuestion": "나는 무엇이 불편해서 먼저 사과하고 싶어질까?",
     "scanQuestion": "“내가 실제로 책임져야 할 행동이 있었나?”",
     "factQuestion": "내가 실제로 규칙이나 약속을 위반한 행동이 있었나요?",
     "storyQuestion": "사과하지 않으면 나쁜 사람이 되거나 버려질 것이라는 두려움이 있나요?",
     "unknownQuestion": "침묵이나 갈등이 잠시 흘러가도 관계가 깨지지 않는다는 증거는 무엇인가요?",
     "bodyQuestion": "목구멍이 조여오거나 머리가 복잡해지나요?",
-    "syncSentence": "“갈등을 빨리 끝내고 싶은 마음이 있구나.”",
-    "shiftQuestion": "“사과 대신 질문을 한다면?”",
-    "tenPercentAction": "“자동으로 ‘미안해’라고 말하기 전에 10초 멈춘다.”",
+    "syncSentence": "갈등을 빨리 끝내고 싶은 마음이 있구나.",
+    "shiftQuestion": "사과 대신 질문을 한다면?",
+    "tenPercentAction": "자동으로 ‘미안해’라고 말하기 전에 10초 멈춘다.",
     "relatedBook": "뉴럴 코드",
     "relatedChapter": "3장. 반사적 자동행동을 늦추는 10초 HOLD",
     "appCTA": "“내 자동 사과 패턴 확인하기”",
@@ -196,13 +216,23 @@
       "과도하게 해명하려는 충동"
     ],
     "actionTags": [
-      "“자동으로 ‘미안해’라고 말하기 전에 10초 멈춘다"
+      "자동으로 ‘미안해’라고 말하기 전에 10초 멈춘다."
     ],
     "relatedCards": [
       "rel-012",
-      "rel-019",
-      "rel-008"
-    ]
+      "rel-019"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "나는 무엇이 불편해서 먼저 사과하고 싶어질까?",
+    "syncMessage": "갈등을 빨리 끝내고 싶은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "내가 실제로 규칙이나 약속을 위반한 행동이 있었나요?",
+      "step2": "사과하지 않으면 나쁜 사람이 되거나 버려질 것이라는 두려움이 있나요?",
+      "step3": "침묵이나 갈등이 잠시 흘러가도 관계가 깨지지 않는다는 증거는 무엇인가요?",
+      "step4": "목구멍이 조여오거나 머리가 복잡해지나요?"
+    }
   },
   {
     "id": "rel-004",
@@ -210,18 +240,18 @@
     "category": "관계·심리",
     "keyword": "좋은사람강박",
     "cardTitle": "좋은 사람 모드",
-    "question": "“싫다고 말하면 왜 제가 나쁜 사람이 된 것 같죠?”",
-    "sodaAnswer": "“상대가 실망하는 것과 내가 나쁜 사람이 되는 것은 같은 일이 아닙니다.”",
+    "question": "싫다고 말하면 왜 제가 나쁜 사람이 된 것 같죠?",
+    "sodaAnswer": "상대가 실망하는 것과 내가 나쁜 사람이 되는 것은 같은 일이 아닙니다.",
     "description": "거절은 상대의 요구에 대한 나의 물리적·시간적 한계를 알리는 신호입니다. 상대의 일시적인 아쉬움을 내 인격 전체의 결함으로 연결 짓지 않아도 됩니다.",
-    "curiosityQuestion": "“나는 거절했을 때 어떤 사람이 될까 봐 두려운 걸까?”",
+    "curiosityQuestion": "나는 거절했을 때 어떤 사람이 될까 봐 두려운 걸까?",
     "scanQuestion": "“내가 실제 약속을 어겼나, 아니면 부탁을 거절했을 뿐인가?”",
     "factQuestion": "실제로 내가 맺은 약속을 깬 것인가요, 아니면 새로운 부탁을 정중히 거절한 것인가요?",
     "storyQuestion": "거절하면 '이기적이고 냉정한 사람'이라는 낙인이 찍힐 거라 믿고 있나요?",
     "unknownQuestion": "상대가 거절을 건강하게 수용하고 다른 대안을 찾을 가능성은 얼마인가요?",
     "bodyQuestion": "가슴이 답답하거나 손에 힘이 들어가나요?",
-    "syncSentence": "“좋은 관계를 지키고 싶은 마음이 크구나.”",
-    "shiftQuestion": "“좋은 사람이면서도 NO라고 말할 수 있다면?”",
-    "tenPercentAction": "“‘이번에는 어렵습니다.’ 한 문장으로 말한다.”",
+    "syncSentence": "좋은 관계를 지키고 싶은 마음이 크구나.",
+    "shiftQuestion": "좋은 사람이면서도 NO라고 말할 수 있다면?",
+    "tenPercentAction": "‘이번에는 어렵습니다.’ 한 문장으로 말한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "4장. 착한 아이 가면과 인정욕구의 덫",
     "appCTA": "“내 거절 패턴 SCAN하기”",
@@ -263,13 +293,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“‘이번에는 어렵습니다"
+      "‘이번에는 어렵습니다.’ 한 문장으로 말한다."
     ],
     "relatedCards": [
       "rel-009",
-      "rel-001",
-      "rel-002"
-    ]
+      "rel-001"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 거절했을 때 어떤 사람이 될까 봐 두려운 걸까?",
+    "syncMessage": "좋은 관계를 지키고 싶은 마음이 크구나.",
+    "scanGuide": {
+      "step1": "실제로 내가 맺은 약속을 깬 것인가요, 아니면 새로운 부탁을 정중히 거절한 것인가요?",
+      "step2": "거절하면 '이기적이고 냉정한 사람'이라는 낙인이 찍힐 거라 믿고 있나요?",
+      "step3": "상대가 거절을 건강하게 수용하고 다른 대안을 찾을 가능성은 얼마인가요?",
+      "step4": "가슴이 답답하거나 손에 힘이 들어가나요?"
+    }
   },
   {
     "id": "rel-005",
@@ -277,18 +317,18 @@
     "category": "관계·심리",
     "keyword": "과잉설명",
     "cardTitle": "과잉설명 모드",
-    "question": "“왜 오해받을 것 같으면 자꾸 말을 길게 하죠?”",
-    "sodaAnswer": "“설명이 정보를 전달하는 행동에서 이미지와 불안을 관리하는 행동으로 바뀔 때가 있습니다.”",
+    "question": "왜 오해받을 것 같으면 자꾸 말을 길게 하죠?",
+    "sodaAnswer": "설명이 정보를 전달하는 행동에서 이미지와 불안을 관리하는 행동으로 바뀔 때가 있습니다.",
     "description": "불안할수록 뇌는 상대의 머릿속 생각을 100% 통제하려 합니다. 하지만 말이 길어질수록 핵심은 흐려지고 나의 불안감이 상대에게 먼저 전달됩니다.",
-    "curiosityQuestion": "“지금 나는 정보를 전달하려는 걸까, 나를 변호하려는 걸까?”",
+    "curiosityQuestion": "지금 나는 정보를 전달하려는 걸까, 나를 변호하려는 걸까?",
     "scanQuestion": "“설명을 멈추면 어떤 일이 생길 것 같나?”",
     "factQuestion": "지금 상대에게 꼭 전달해야 할 핵심 사실 1문장은 무엇인가요?",
     "storyQuestion": "구구절절 변명하지 않으면 나를 악의적인 사람으로 볼 것이라는 생각인가요?",
     "unknownQuestion": "상대가 내 설명을 다 듣지 않고도 충분히 이해할 수 있다는 것을 믿나요?",
     "bodyQuestion": "숨이 가빠지거나 말이 빨라지나요?",
-    "syncSentence": "“오해받고 싶지 않은 마음이 있구나.”",
-    "shiftQuestion": "“한 문장을 덜 말한다면?”",
-    "tenPercentAction": "“오늘 한 번만 설명을 평소보다 한 문장 줄인다.”",
+    "syncSentence": "오해받고 싶지 않은 마음이 있구나.",
+    "shiftQuestion": "한 문장을 덜 말한다면?",
+    "tenPercentAction": "오늘 한 번만 설명을 평소보다 한 문장 줄인다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "3장. 결백 증명과 통제 회로",
     "appCTA": "“내 설명 모드 SCAN하기”",
@@ -328,13 +368,23 @@
       "과도하게 해명하려는 충동"
     ],
     "actionTags": [
-      "“오늘 한 번만 설명을 평소보다 한 문장 줄인다"
+      "오늘 한 번만 설명을 평소보다 한 문장 줄인다."
     ],
     "relatedCards": [
       "rel-007",
-      "rel-001",
-      "rel-002"
-    ]
+      "rel-001"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "지금 나는 정보를 전달하려는 걸까, 나를 변호하려는 걸까?",
+    "syncMessage": "오해받고 싶지 않은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "지금 상대에게 꼭 전달해야 할 핵심 사실 1문장은 무엇인가요?",
+      "step2": "구구절절 변명하지 않으면 나를 악의적인 사람으로 볼 것이라는 생각인가요?",
+      "step3": "상대가 내 설명을 다 듣지 않고도 충분히 이해할 수 있다는 것을 믿나요?",
+      "step4": "숨이 가빠지거나 말이 빨라지나요?"
+    }
   },
   {
     "id": "rel-006",
@@ -342,18 +392,18 @@
     "category": "관계·심리",
     "keyword": "관계확인",
     "cardTitle": "관계 테스트 모드",
-    "question": "“사랑받는지 확인하려고 일부러 연락을 끊고 싶을 때가 있어요.”",
-    "sodaAnswer": "“상대의 마음을 시험하면 답을 얻는 것 같지만 관계에는 새로운 불확실성이 생길 수 있습니다.”",
+    "question": "사랑받는지 확인하려고 일부러 연락을 끊고 싶을 때가 있어요?",
+    "sodaAnswer": "상대의 마음을 시험하면 답을 얻는 것 같지만 관계에는 새로운 불확실성이 생길 수 있습니다.",
     "description": "시험(Test)은 불안을 잠재우려는 간절한 시도이지만, 상대에게는 알 수 없는 혼란과 피로를 줍니다. 진짜 원하는 연결은 시험이 아닌 솔직한 초대로 만들어집니다.",
-    "curiosityQuestion": "“나는 무엇을 확인받아야 안심할 수 있을까?”",
+    "curiosityQuestion": "나는 무엇을 확인받아야 안심할 수 있을까?",
     "scanQuestion": "“내가 원하는 것은 정보인가, 확신인가?”",
     "factQuestion": "최근 상대가 보여준 일관된 애정이나 행동 사실은 무엇인가요?",
     "storyQuestion": "상대가 먼저 연락하지 않으면 나를 버릴 것이라는 시나리오인가요?",
     "unknownQuestion": "시험하지 않고 솔직하게 말했을 때 관계가 더 단단해질 가능성은?",
     "bodyQuestion": "심장이 두근거리고 핸드폰만 계속 보게 되나요?",
-    "syncSentence": "“관계가 중요해서 확신이 필요하구나.”",
-    "shiftQuestion": "“시험 대신 직접 요청한다면?”",
-    "tenPercentAction": "“떠보기 대신 궁금한 것을 한 문장으로 직접 말한다.”",
+    "syncSentence": "관계가 중요해서 확신이 필요하구나.",
+    "shiftQuestion": "시험 대신 직접 요청한다면?",
+    "tenPercentAction": "떠보기 대신 궁금한 것을 한 문장으로 직접 말한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "5장. 관계 중독과 애착 불안의 트리거",
     "appCTA": "“내 관계 확인 패턴 보기”",
@@ -397,13 +447,23 @@
       "즉시 확인하려는 충동"
     ],
     "actionTags": [
-      "“떠보기 대신 궁금한 것을 한 문장으로 직접 말한다"
+      "떠보기 대신 궁금한 것을 한 문장으로 직접 말한다."
     ],
     "relatedCards": [
       "rel-001",
-      "rel-015",
-      "relationship-reply-001"
-    ]
+      "rel-015"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 무엇을 확인받아야 안심할 수 있을까?",
+    "syncMessage": "관계가 중요해서 확신이 필요하구나.",
+    "scanGuide": {
+      "step1": "최근 상대가 보여준 일관된 애정이나 행동 사실은 무엇인가요?",
+      "step2": "상대가 먼저 연락하지 않으면 나를 버릴 것이라는 시나리오인가요?",
+      "step3": "시험하지 않고 솔직하게 말했을 때 관계가 더 단단해질 가능성은?",
+      "step4": "심장이 두근거리고 핸드폰만 계속 보게 되나요?"
+    }
   },
   {
     "id": "rel-007",
@@ -411,18 +471,18 @@
     "category": "관계·심리",
     "keyword": "무시당함",
     "cardTitle": "마음읽기 모드",
-    "question": "“저 사람은 분명 저를 무시한 거 아닌가요?”",
-    "sodaAnswer": "“그럴 수도 있습니다. 하지만 ‘그럴 수 있다’와 ‘분명 그렇다’ 사이에는 선택할 공간이 있습니다.”",
+    "question": "저 사람은 분명 저를 무시한 거 아닌가요?",
+    "sodaAnswer": "그럴 수도 있습니다. 하지만 ‘그럴 수 있다’와 ‘분명 그렇다’ 사이에는 선택할 공간이 있습니다.",
     "description": "상대에게 무례한 의도가 진짜 있었을 수도 있습니다. 그러나 확인되지 않은 단계에서 '분명히 날 무시했다'고 단정하면 내 몸과 감정이 가장 먼저 다칩니다.",
-    "curiosityQuestion": "“내가 가장 견디기 어려운 해석은 무엇인가?”",
+    "curiosityQuestion": "내가 가장 견디기 어려운 해석은 무엇인가?",
     "scanQuestion": "“정확히 어떤 말이나 행동이 있었나?”",
     "factQuestion": "상대가 한 구체적인 워딩이나 제스처는 무엇이었나요?",
     "storyQuestion": "그 행동을 보며 '나는 함부로 대해도 되는 사람인가'라는 옛날 통증이 켜졌나요?",
     "unknownQuestion": "상대의 성격적 서투름이나 상황적 급박함일 가능성은 없는가요?",
     "bodyQuestion": "턱이 긴장되고 얼굴이 달아오르나요?",
-    "syncSentence": "“존중받고 싶은 마음이 건드려졌구나.”",
-    "shiftQuestion": "“반박하기 전에 실제 의도를 확인한다면?”",
-    "tenPercentAction": "“‘그 말의 뜻을 조금 더 설명해줄래요?’라고 묻는다.”",
+    "syncSentence": "존중받고 싶은 마음이 건드려졌구나.",
+    "shiftQuestion": "반박하기 전에 실제 의도를 확인한다면?",
+    "tenPercentAction": "‘그 말의 뜻을 조금 더 설명해줄래요?’라고 묻는다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "2장. FACT·STORY·UNKNOWN 3분법",
     "appCTA": "“내 존중 Trigger SCAN하기”",
@@ -464,13 +524,23 @@
       "과도하게 해명하려는 충동"
     ],
     "actionTags": [
-      "“‘그 말의 뜻을 조금 더 설명해줄래요?’라고 묻는다"
+      "‘그 말의 뜻을 조금 더 설명해줄래요?’라고 묻는다."
     ],
     "relatedCards": [
       "rel-005",
-      "rel-012",
-      "rel-001"
-    ]
+      "rel-012"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내가 가장 견디기 어려운 해석은 무엇인가?",
+    "syncMessage": "존중받고 싶은 마음이 건드려졌구나.",
+    "scanGuide": {
+      "step1": "상대가 한 구체적인 워딩이나 제스처는 무엇이었나요?",
+      "step2": "그 행동을 보며 '나는 함부로 대해도 되는 사람인가'라는 옛날 통증이 켜졌나요?",
+      "step3": "상대의 성격적 서투름이나 상황적 급박함일 가능성은 없는가요?",
+      "step4": "턱이 긴장되고 얼굴이 달아오르나요?"
+    }
   },
   {
     "id": "rel-008",
@@ -478,18 +548,18 @@
     "category": "관계·심리",
     "keyword": "일반화",
     "cardTitle": "항상 모드",
-    "question": "“왜 싸우기만 하면 ‘넌 항상 그래’가 나올까요?”",
-    "sodaAnswer": "“강한 감정 속에서는 오늘의 한 장면이 관계 전체로 확대되기 쉽습니다.”",
+    "question": "왜 싸우기만 하면 ‘넌 항상 그래’가 나올까요?",
+    "sodaAnswer": "강한 감정 속에서는 오늘의 한 장면이 관계 전체로 확대되기 쉽습니다.",
     "description": "‘항상’, ‘절대’, ‘한 번도’ 같은 극단적 수식어는 상대를 방어벽 뒤로 숨게 만듭니다. 오늘 일어난 구체적인 한 사건으로 초점을 좁히면 대화의 문이 열립니다.",
-    "curiosityQuestion": "“오늘의 사건이 관계 전체의 판결이 되고 있지는 않을까?”",
+    "curiosityQuestion": "오늘의 사건이 관계 전체의 판결이 되고 있지는 않을까?",
     "scanQuestion": "“정확히 이번 장면에서 무슨 일이 있었나?”",
     "factQuestion": "오늘 구체적으로 발생한 사건 하나는 무엇인가요?",
     "storyQuestion": "'상대는 영원히 바뀌지 않을 것이다'라는 무력감 스토리인가요?",
     "unknownQuestion": "상대가 과거에 잘 맞추어주었던 순간들이 정말 0건이었나요?",
     "bodyQuestion": "가슴에 열이 오르고 손이 떨리나요?",
-    "syncSentence": "“그동안 쌓인 답답함까지 한꺼번에 올라오는구나.”",
-    "shiftQuestion": "“‘항상’ 대신 오늘의 장면만 말한다면?”",
-    "tenPercentAction": "“‘방금 있었던 일에서는…’으로 문장을 시작한다.”",
+    "syncSentence": "그동안 쌓인 답답함까지 한꺼번에 올라오는구나.",
+    "shiftQuestion": "‘항상’ 대신 오늘의 장면만 말한다면?",
+    "tenPercentAction": "‘방금 있었던 일에서는…’으로 문장을 시작한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "4장. 인지 왜곡과 흑백논리 회로",
     "appCTA": "“내 갈등 패턴 SCAN하기”",
@@ -527,13 +597,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“‘방금 있었던 일에서는…’으로 문장을 시작한다"
+      "‘방금 있었던 일에서는…’으로 문장을 시작한다."
     ],
     "relatedCards": [
       "rel-003",
-      "rel-010",
-      "rel-001"
-    ]
+      "rel-010"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "오늘의 사건이 관계 전체의 판결이 되고 있지는 않을까?",
+    "syncMessage": "그동안 쌓인 답답함까지 한꺼번에 올라오는구나.",
+    "scanGuide": {
+      "step1": "오늘 구체적으로 발생한 사건 하나는 무엇인가요?",
+      "step2": "'상대는 영원히 바뀌지 않을 것이다'라는 무력감 스토리인가요?",
+      "step3": "상대가 과거에 잘 맞추어주었던 순간들이 정말 0건이었나요?",
+      "step4": "가슴에 열이 오르고 손이 떨리나요?"
+    }
   },
   {
     "id": "rel-009",
@@ -541,18 +621,18 @@
     "category": "관계·심리",
     "keyword": "거절공포",
     "cardTitle": "거절 공포 모드",
-    "question": "“부탁을 거절하면 관계가 끝날 것 같아요.”",
-    "sodaAnswer": "“마음속에서 ‘거절하면 실망하고 결국 관계가 끝난다’는 예측이 자동으로 연결될 수 있습니다.”",
+    "question": "부탁을 거절하면 관계가 끝날 것 같아요?",
+    "sodaAnswer": "마음속에서 ‘거절하면 실망하고 결국 관계가 끝난다’는 예측이 자동으로 연결될 수 있습니다.",
     "description": "거절에 대한 공포는 거절 그 자체보다 '거절하면 버림받는다'는 오래된 등식에서 비롯됩니다. 안전한 관계는 건강한 거절을 주고받으며 더 단단해집니다.",
-    "curiosityQuestion": "“내가 NO라고 말했을 때 가장 두려운 결과는?”",
+    "curiosityQuestion": "내가 NO라고 말했을 때 가장 두려운 결과는?",
     "scanQuestion": "“그 결과는 확인된 사실인가, 예상인가?”",
     "factQuestion": "부탁을 거절했을 때 실제로 상대가 관계를 끊겠다고 한 적이 있나요?",
     "storyQuestion": "거절하면 '모든 사람이 나를 떠날 것'이라는 비극적 시나리오인가요?",
     "unknownQuestion": "상대가 거절을 성숙하게 받아들일 가능성은 없는가요?",
     "bodyQuestion": "손발이 차가워지거나 가슴이 두근거리나요?",
-    "syncSentence": "“관계를 잃고 싶지 않은 마음이 있구나.”",
-    "shiftQuestion": "“안전한 상황에서 10% 작은 거절을 해본다면?”",
-    "tenPercentAction": "“사소한 부탁 하나를 정중하게 거절해본다.”",
+    "syncSentence": "관계를 잃고 싶지 않은 마음이 있구나.",
+    "shiftQuestion": "안전한 상황에서 10% 작은 거절을 해본다면?",
+    "tenPercentAction": "사소한 부탁 하나를 정중하게 거절해본다.",
     "relatedBook": "뉴럴 코드",
     "relatedChapter": "2장. 작은 행동실험으로 불안 회로 재학습하기",
     "appCTA": "“내 IF-THEN 패턴 시험하기”",
@@ -593,13 +673,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“사소한 부탁 하나를 정중하게 거절해본다"
+      "사소한 부탁 하나를 정중하게 거절해본다."
     ],
     "relatedCards": [
       "rel-004",
-      "rel-003",
-      "rel-013"
-    ]
+      "rel-003"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "내가 NO라고 말했을 때 가장 두려운 결과는?",
+    "syncMessage": "관계를 잃고 싶지 않은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "부탁을 거절했을 때 실제로 상대가 관계를 끊겠다고 한 적이 있나요?",
+      "step2": "거절하면 '모든 사람이 나를 떠날 것'이라는 비극적 시나리오인가요?",
+      "step3": "상대가 거절을 성숙하게 받아들일 가능성은 없는가요?",
+      "step4": "손발이 차가워지거나 가슴이 두근거리나요?"
+    }
   },
   {
     "id": "rel-010",
@@ -607,18 +697,18 @@
     "category": "관계·심리",
     "keyword": "갈등회피",
     "cardTitle": "갈등 회피 모드",
-    "question": "“싸우기 싫어서 참았는데 왜 나중에 더 화가 날까요?”",
-    "sodaAnswer": "“갈등을 해결한 것이 아니라 표현을 미뤘을 수 있습니다.”",
+    "question": "싸우기 싫어서 참았는데 왜 나중에 더 화가 날까요?",
+    "sodaAnswer": "갈등을 해결한 것이 아니라 표현을 미뤘을 수 있습니다.",
     "description": "참는 것은 평화를 만드는 것이 아니라 내 안에서 갈등을 혼자 키우는 일일 수 있습니다. 제때 표현되지 않은 작은 불편은 나중에 거대한 분노로 폭발합니다.",
-    "curiosityQuestion": "“나는 갈등 자체가 싫은 걸까, 갈등 뒤 결과가 무서운 걸까?”",
+    "curiosityQuestion": "나는 갈등 자체가 싫은 걸까, 갈등 뒤 결과가 무서운 걸까?",
     "scanQuestion": "“말하지 못한 요구나 경계는 무엇인가?”",
     "factQuestion": "그 순간 내가 실제로 상대에게 요구하거나 거절하고 싶었던 구체적 내용은?",
     "storyQuestion": "표현하면 관계가 회복 불가능하게 깨질 것이라는 두려움 때문인가요?",
     "unknownQuestion": "진솔하게 표현했을 때 오히려 상대가 더 배려해줄 가능성은?",
     "bodyQuestion": "명치가 얹힌 듯 답답하거나 속이 쓰린가요?",
-    "syncSentence": "“관계를 깨고 싶지 않아 참았구나.”",
-    "shiftQuestion": "“불만 10개 대신 필요한 요청 하나만 말한다면?”",
-    "tenPercentAction": "“오늘 필요한 요청 한 문장만 말한다.”",
+    "syncSentence": "관계를 깨고 싶지 않아 참았구나.",
+    "shiftQuestion": "불만 10개 대신 필요한 요청 하나만 말한다면?",
+    "tenPercentAction": "오늘 필요한 요청 한 문장만 말한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "3장. 억압과 분노의 보호기제",
     "appCTA": "“내 갈등 회피 패턴 보기”",
@@ -660,13 +750,23 @@
       "감정을 억누르고 삼키려는 충동"
     ],
     "actionTags": [
-      "“오늘 필요한 요청 한 문장만 말한다"
+      "오늘 필요한 요청 한 문장만 말한다."
     ],
     "relatedCards": [
       "rel-011",
-      "rel-017",
-      "rel-003"
-    ]
+      "rel-017"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 갈등 자체가 싫은 걸까, 갈등 뒤 결과가 무서운 걸까?",
+    "syncMessage": "관계를 깨고 싶지 않아 참았구나.",
+    "scanGuide": {
+      "step1": "그 순간 내가 실제로 상대에게 요구하거나 거절하고 싶었던 구체적 내용은?",
+      "step2": "표현하면 관계가 회복 불가능하게 깨질 것이라는 두려움 때문인가요?",
+      "step3": "진솔하게 표현했을 때 오히려 상대가 더 배려해줄 가능성은?",
+      "step4": "명치가 얹힌 듯 답답하거나 속이 쓰린가요?"
+    }
   },
   {
     "id": "rel-011",
@@ -674,18 +774,18 @@
     "category": "관계·심리",
     "keyword": "분노",
     "cardTitle": "분노 즉답 모드",
-    "question": "“화나면 왜 꼭 보내고 나서 후회할 말을 할까요?”",
-    "sodaAnswer": "“감정을 없애는 것보다 자동으로 시작된 행동의 방향을 잠깐 확인하는 것이 중요합니다.”",
+    "question": "화나면 왜 꼭 보내고 나서 후회할 말을 할까요?",
+    "sodaAnswer": "감정을 없애는 것보다 자동으로 시작된 행동의 방향을 잠깐 확인하는 것이 중요합니다.",
     "description": "분노가 치솟을 때 뇌는 생존 비상사태로 인식하여 공격 행동을 즉각 명령합니다. 감정을 느끼는 것은 정상이지만, 즉각 발사하는 행동은 10초만 늦춰도 바뀝니다.",
-    "curiosityQuestion": "“지금 내가 정말 원하는 결과는 무엇일까?”",
+    "curiosityQuestion": "지금 내가 정말 원하는 결과는 무엇일까?",
     "scanQuestion": "“이기고 싶은가, 경계를 말하고 싶은가, 해결하고 싶은가?”",
     "factQuestion": "상대가 한 행동 중 객관적인 팩트는 무엇인가요?",
     "storyQuestion": "지금 당장 독설을 날려야 내 자존심이 지켜진다는 충동인가요?",
     "unknownQuestion": "10분 뒤 내 감정이 가라앉았을 때도 이 말을 그대로 하고 싶을까요?",
     "bodyQuestion": "얼굴에 피가 쏠리고 손가락이 빠르게 움직이나요?",
-    "syncSentence": "“화가 날 만큼 중요한 것이 있었구나.”",
-    "shiftQuestion": "“10초만 방향을 확인한다면?”",
-    "tenPercentAction": "“메시지를 작성한 뒤 바로 보내지 않고 10분 기다린다.”",
+    "syncSentence": "화가 날 만큼 중요한 것이 있었구나.",
+    "shiftQuestion": "10초만 방향을 확인한다면?",
+    "tenPercentAction": "메시지를 작성한 뒤 바로 보내지 않고 10분 기다린다.",
     "relatedBook": "뉴럴 코드",
     "relatedChapter": "4장. 자동반응을 멈추는 10초 HOLD 기법",
     "appCTA": "“내 분노 직전 10초 확인하기”",
@@ -725,13 +825,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“메시지를 작성한 뒤 바로 보내지 않고 10분 기다린다"
+      "메시지를 작성한 뒤 바로 보내지 않고 10분 기다린다."
     ],
     "relatedCards": [
       "rel-010",
-      "rel-017",
-      "rel-013"
-    ]
+      "rel-017"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "지금 내가 정말 원하는 결과는 무엇일까?",
+    "syncMessage": "화가 날 만큼 중요한 것이 있었구나.",
+    "scanGuide": {
+      "step1": "상대가 한 행동 중 객관적인 팩트는 무엇인가요?",
+      "step2": "지금 당장 독설을 날려야 내 자존심이 지켜진다는 충동인가요?",
+      "step3": "10분 뒤 내 감정이 가라앉았을 때도 이 말을 그대로 하고 싶을까요?",
+      "step4": "얼굴에 피가 쏠리고 손가락이 빠르게 움직이나요?"
+    }
   },
   {
     "id": "rel-012",
@@ -739,18 +849,18 @@
     "category": "관계·심리",
     "keyword": "상대기분관리",
     "cardTitle": "상대 기분 관리 모드",
-    "question": "“상대가 기분 나빠하면 왜 제 책임 같을까요?”",
-    "sodaAnswer": "“상대의 감정을 알아차리는 것과 그 감정을 모두 해결할 책임은 다릅니다.”",
+    "question": "상대가 기분 나빠하면 왜 제 책임 같을까요?",
+    "sodaAnswer": "상대의 감정을 알아차리는 것과 그 감정을 모두 해결할 책임은 다릅니다.",
     "description": "공감 능력이 높은 사람일수록 주변 공기의 온도를 자신의 탓으로 돌리기 쉽습니다. 상대의 감정은 상대의 삶의 몫이며, 내가 관리할 수 있는 통제 영역 밖입니다.",
-    "curiosityQuestion": "“나는 왜 상대가 불편하면 바로 움직이게 될까?”",
+    "curiosityQuestion": "나는 왜 상대가 불편하면 바로 움직이게 될까?",
     "scanQuestion": "“내가 실제로 책임져야 할 것은 무엇인가?”",
     "factQuestion": "상대의 불쾌감이 실제로 나의 잘못된 행동 때문이라는 명백한 근거가 있나요?",
     "storyQuestion": "주변 사람이 기분 나쁘면 '내가 분위기를 망친 사람'이라는 죄책감인가요?",
     "unknownQuestion": "상대 스스로 기분을 달래고 회복할 힘이 있다는 것을 믿어줄 수 있나요?",
     "bodyQuestion": "안절부절못하며 상대 눈치를 계속 살피나요?",
-    "syncSentence": "“관계를 안전하게 유지하고 싶은 마음이 있구나.”",
-    "shiftQuestion": "“상대의 몫을 상대에게 남겨둔다면?”",
-    "tenPercentAction": "“상대 기분을 고치기 전에 내 책임만 한 줄 적는다.”",
+    "syncSentence": "관계를 안전하게 유지하고 싶은 마음이 있구나.",
+    "shiftQuestion": "상대의 몫을 상대에게 남겨둔다면?",
+    "tenPercentAction": "상대 기분을 고치기 전에 내 책임만 한 줄 적는다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "5장. 감정적 경계선과 과잉 책임감",
     "appCTA": "“내 과잉책임 패턴 SCAN하기”",
@@ -791,13 +901,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“상대 기분을 고치기 전에 내 책임만 한 줄 적는다"
+      "상대 기분을 고치기 전에 내 책임만 한 줄 적는다."
     ],
     "relatedCards": [
       "rel-002",
-      "rel-003",
-      "rel-019"
-    ]
+      "rel-003"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 왜 상대가 불편하면 바로 움직이게 될까?",
+    "syncMessage": "관계를 안전하게 유지하고 싶은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "상대의 불쾌감이 실제로 나의 잘못된 행동 때문이라는 명백한 근거가 있나요?",
+      "step2": "주변 사람이 기분 나쁘면 '내가 분위기를 망친 사람'이라는 죄책감인가요?",
+      "step3": "상대 스스로 기분을 달래고 회복할 힘이 있다는 것을 믿어줄 수 있나요?",
+      "step4": "안절부절못하며 상대 눈치를 계속 살피나요?"
+    }
   },
   {
     "id": "rel-013",
@@ -805,18 +925,18 @@
     "category": "관계·심리",
     "keyword": "버림불안",
     "cardTitle": "버림 예측 모드",
-    "question": "“조금 차가워지기만 해도 관계가 끝날 것 같아요.”",
-    "sodaAnswer": "“현재의 변화 하나가 미래 전체의 예고편처럼 느껴질 때가 있습니다.”",
+    "question": "조금 차가워지기만 해도 관계가 끝날 것 같아요?",
+    "sodaAnswer": "현재의 변화 하나가 미래 전체의 예고편처럼 느껴질 때가 있습니다.",
     "description": "작은 온도 변화에 파국적 결말을 떠올리는 것은 상처를 덜 받기 위해 뇌가 미리 예방주사를 놓는 방식입니다. 오늘의 차가움이 관계의 사망선고는 아닙니다.",
-    "curiosityQuestion": "“나는 어떤 신호를 관계의 끝으로 해석하는 편일까?”",
+    "curiosityQuestion": "나는 어떤 신호를 관계의 끝으로 해석하는 편일까?",
     "scanQuestion": "“FACT / STORY / UNKNOWN으로 나누면?”",
     "factQuestion": "오늘 실제로 확인된 단 하나의 변화(예: 짧은 통화)는 무엇인가요?",
     "storyQuestion": "이 신호가 '결국 나를 버릴 것이다'라는 오래된 두려움의 재상영인가요?",
     "unknownQuestion": "상대의 피로도, 업무 압박 등 외부 변수일 가능성은?",
     "bodyQuestion": "가슴이 철렁 내려앉고 손발이 차가워지나요?",
-    "syncSentence": "“관계가 소중해서 끝을 미리 대비하고 싶구나.”",
-    "shiftQuestion": "“미래를 예측하지 않고 현재 데이터만 본다면?”",
-    "tenPercentAction": "“오늘 확인 가능한 관계의 사실 3개를 적는다.”",
+    "syncSentence": "관계가 소중해서 끝을 미리 대비하고 싶구나.",
+    "shiftQuestion": "미래를 예측하지 않고 현재 데이터만 본다면?",
+    "tenPercentAction": "오늘 확인 가능한 관계의 사실 3개를 적는다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "6장. 유기 불안과 파국화 회로",
     "appCTA": "“내 관계 예측 패턴 보기”",
@@ -858,13 +978,23 @@
       "즉시 확인하려는 충동"
     ],
     "actionTags": [
-      "“오늘 확인 가능한 관계의 사실 3개를 적는다"
+      "오늘 확인 가능한 관계의 사실 3개를 적는다."
     ],
     "relatedCards": [
       "rel-002",
-      "rel-009",
-      "rel-010"
-    ]
+      "rel-009"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 어떤 신호를 관계의 끝으로 해석하는 편일까?",
+    "syncMessage": "관계가 소중해서 끝을 미리 대비하고 싶구나.",
+    "scanGuide": {
+      "step1": "오늘 실제로 확인된 단 하나의 변화(예: 짧은 통화)는 무엇인가요?",
+      "step2": "이 신호가 '결국 나를 버릴 것이다'라는 오래된 두려움의 재상영인가요?",
+      "step3": "상대의 피로도, 업무 압박 등 외부 변수일 가능성은?",
+      "step4": "가슴이 철렁 내려앉고 손발이 차가워지나요?"
+    }
   },
   {
     "id": "rel-014",
@@ -872,18 +1002,18 @@
     "category": "관계·심리",
     "keyword": "확인욕구",
     "cardTitle": "칭찬 확인 모드",
-    "question": "“사랑한다고 들어도 왜 또 확인하고 싶죠?”",
-    "sodaAnswer": "“새 정보보다 안심을 반복해서 얻으려는 행동이 될 때가 있습니다.”",
+    "question": "사랑한다고 들어도 왜 또 확인하고 싶죠?",
+    "sodaAnswer": "새 정보보다 안심을 반복해서 얻으려는 행동이 될 때가 있습니다.",
     "description": "확인은 불안을 일시적으로 꺼주는 알약 같아서, 먹을수록 약효는 짧아지고 더 자주 찾게 됩니다. 확인 횟수를 하나 줄일 때 내 안의 자생적 안도감이 자라납니다.",
-    "curiosityQuestion": "“무엇을 들어야 안심이 오래 갈 것 같나?”",
+    "curiosityQuestion": "무엇을 들어야 안심이 오래 갈 것 같나?",
     "scanQuestion": "“지금 새로운 정보가 필요한가, 안심이 필요한가?”",
     "factQuestion": "상대가 최근에 건넨 진심 어린 말이나 행동 사실은 무엇인가요?",
     "storyQuestion": "다시 확인받지 않으면 그 마음이 사라졌을 거라는 의심인가요?",
     "unknownQuestion": "확인하지 않아도 상대의 마음이 변함없이 유지될 수 있음을 신뢰할 수 있나요?",
     "bodyQuestion": "목이 타고 계속 휴대폰 화면을 들여다보나요?",
-    "syncSentence": "“확실히 사랑받고 싶은 마음이 있구나.”",
-    "shiftQuestion": "“이번에는 확인을 한 번 줄인다면?”",
-    "tenPercentAction": "“같은 질문을 오늘 한 번 덜 한다.”",
+    "syncSentence": "확실히 사랑받고 싶은 마음이 있구나.",
+    "shiftQuestion": "이번에는 확인을 한 번 줄인다면?",
+    "tenPercentAction": "같은 질문을 오늘 한 번 덜 한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "5장. 불안형 애착과 재확인 강박",
     "appCTA": "“내 확인 모드 SCAN하기”",
@@ -922,13 +1052,23 @@
       "즉시 확인하려는 충동"
     ],
     "actionTags": [
-      "“같은 질문을 오늘 한 번 덜 한다"
+      "같은 질문을 오늘 한 번 덜 한다."
     ],
     "relatedCards": [
       "rel-006",
-      "rel-019",
-      "rel-001"
-    ]
+      "rel-019"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "무엇을 들어야 안심이 오래 갈 것 같나?",
+    "syncMessage": "확실히 사랑받고 싶은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "상대가 최근에 건넨 진심 어린 말이나 행동 사실은 무엇인가요?",
+      "step2": "다시 확인받지 않으면 그 마음이 사라졌을 거라는 의심인가요?",
+      "step3": "확인하지 않아도 상대의 마음이 변함없이 유지될 수 있음을 신뢰할 수 있나요?",
+      "step4": "목이 타고 계속 휴대폰 화면을 들여다보나요?"
+    }
   },
   {
     "id": "rel-015",
@@ -936,18 +1076,18 @@
     "category": "관계·심리",
     "keyword": "관계수습",
     "cardTitle": "과잉수습 모드",
-    "question": "“싸우고 나면 제가 계속 연락해서 풀어야 마음이 놓여요.”",
-    "sodaAnswer": "“복구를 시도하는 것과 상대의 반응까지 관리하는 것은 다른 일입니다.”",
+    "question": "싸우고 나면 제가 계속 연락해서 풀어야 마음이 놓여요?",
+    "sodaAnswer": "복구를 시도하는 것과 상대의 반응까지 관리하는 것은 다른 일입니다.",
     "description": "침묵의 시간을 견디지 못하고 계속 메시지를 보내는 것은 상대와의 연결보다 내 안의 불안을 견디지 못해서일 수 있습니다. 침묵은 상대가 감정을 정리하는 방입니다.",
-    "curiosityQuestion": "“지금 관계를 복구하려는 걸까, 불안을 빨리 끝내려는 걸까?”",
+    "curiosityQuestion": "지금 관계를 복구하려는 걸까, 불안을 빨리 끝내려는 걸까?",
     "scanQuestion": "“필요한 사과나 요청은 이미 했나?”",
     "factQuestion": "내가 전달할 핵심 사과나 의견이 이미 상대에게 도달했나요?",
     "storyQuestion": "지금 당장 답을 듣지 못하면 관계가 영원히 파탄 날 것이라는 공포인가요?",
     "unknownQuestion": "상대에게 시간을 줄 때 오히려 더 건강한 대화가 가능할 가능성은?",
     "bodyQuestion": "가슴이 쿵쾅거리고 방 안을 서성이게 되나요?",
-    "syncSentence": "“빨리 괜찮아지고 싶은 마음이 있구나.”",
-    "shiftQuestion": "“상대에게 반응할 공간을 준다면?”",
-    "tenPercentAction": "“사과나 요청 1회 후 추가 메시지를 잠시 멈춘다.”",
+    "syncSentence": "빨리 괜찮아지고 싶은 마음이 있구나.",
+    "shiftQuestion": "상대에게 반응할 공간을 준다면?",
+    "tenPercentAction": "사과나 요청 1회 후 추가 메시지를 잠시 멈춘다.",
     "relatedBook": "뉴럴 코드",
     "relatedChapter": "3장. 충동적 행동을 지연시키는 DELAY 전략",
     "appCTA": "“내 관계수습 패턴 보기”",
@@ -986,13 +1126,23 @@
       "과도하게 해명하려는 충동"
     ],
     "actionTags": [
-      "“사과나 요청 1회 후 추가 메시지를 잠시 멈춘다"
+      "사과나 요청 1회 후 추가 메시지를 잠시 멈춘다."
     ],
     "relatedCards": [
       "rel-001",
-      "rel-006",
-      "relationship-reply-001"
-    ]
+      "rel-006"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "지금 관계를 복구하려는 걸까, 불안을 빨리 끝내려는 걸까?",
+    "syncMessage": "빨리 괜찮아지고 싶은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "내가 전달할 핵심 사과나 의견이 이미 상대에게 도달했나요?",
+      "step2": "지금 당장 답을 듣지 못하면 관계가 영원히 파탄 날 것이라는 공포인가요?",
+      "step3": "상대에게 시간을 줄 때 오히려 더 건강한 대화가 가능할 가능성은?",
+      "step4": "가슴이 쿵쾅거리고 방 안을 서성이게 되나요?"
+    }
   },
   {
     "id": "rel-016",
@@ -1000,18 +1150,18 @@
     "category": "관계·심리",
     "keyword": "경계죄책감",
     "cardTitle": "경계 후 죄책감",
-    "question": "“선을 그었는데 왜 하루 종일 찜찜하죠?”",
-    "sodaAnswer": "“죄책감이 올라온다고 해서 그 경계가 틀렸다는 뜻은 아닙니다.”",
+    "question": "선을 그었는데 왜 하루 종일 찜찜하죠?",
+    "sodaAnswer": "죄책감이 올라온다고 해서 그 경계가 틀렸다는 뜻은 아닙니다.",
     "description": "평생 남을 배려하던 사람이 처음 건강한 선을 그을 때 뇌는 이를 '위험한 공격'으로 오인하여 죄책감 신호를 울립니다. 죄책감은 성장의 성장통일 수 있습니다.",
-    "curiosityQuestion": "“나는 어떤 관계 규칙을 어겼다고 느끼는 걸까?”",
+    "curiosityQuestion": "나는 어떤 관계 규칙을 어겼다고 느끼는 걸까?",
     "scanQuestion": "“실제로 피해를 줬나, 상대의 기대와 달랐을 뿐인가?”",
     "factQuestion": "내가 상대의 권리를 침해했나요, 아니면 나의 정당한 한계를 알렸나요?",
     "storyQuestion": "선을 그으면 상대가 나를 비정하고 이기적이라 여길 것이라는 자책인가요?",
     "unknownQuestion": "경계를 존중받으면서 더 오래 건강하게 이어질 관계의 가능성은?",
     "bodyQuestion": "체한 듯 속이 더부룩하고 마음이 무겁나요?",
-    "syncSentence": "“익숙하지 않은 경계를 세워 불편하구나.”",
-    "shiftQuestion": "“죄책감이 있어도 경계를 유지할 수 있다면?”",
-    "tenPercentAction": "“방금 세운 경계를 24시간 취소하지 않는다.”",
+    "syncSentence": "익숙하지 않은 경계를 세워 불편하구나.",
+    "shiftQuestion": "죄책감이 있어도 경계를 유지할 수 있다면?",
+    "tenPercentAction": "방금 세운 경계를 24시간 취소하지 않는다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "4장. 죄책감 없는 건강한 경계 세우기",
     "appCTA": "“내 경계 패턴 SCAN하기”",
@@ -1048,13 +1198,23 @@
       "자리를 피하거나 중단하려는 충동"
     ],
     "actionTags": [
-      "“방금 세운 경계를 24시간 취소하지 않는다"
+      "방금 세운 경계를 24시간 취소하지 않는다."
     ],
     "relatedCards": [
       "rel-013",
-      "rel-017",
-      "rel-018"
-    ]
+      "rel-017"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 어떤 관계 규칙을 어겼다고 느끼는 걸까?",
+    "syncMessage": "익숙하지 않은 경계를 세워 불편하구나.",
+    "scanGuide": {
+      "step1": "내가 상대의 권리를 침해했나요, 아니면 나의 정당한 한계를 알렸나요?",
+      "step2": "선을 그으면 상대가 나를 비정하고 이기적이라 여길 것이라는 자책인가요?",
+      "step3": "경계를 존중받으면서 더 오래 건강하게 이어질 관계의 가능성은?",
+      "step4": "체한 듯 속이 더부룩하고 마음이 무겁나요?"
+    }
   },
   {
     "id": "rel-017",
@@ -1062,18 +1222,18 @@
     "category": "관계·심리",
     "keyword": "통제",
     "cardTitle": "상대 변화 대기 모드",
-    "question": "“저 사람만 바뀌면 저는 괜찮아질 것 같은데요.”",
-    "sodaAnswer": "“상대에게 실제 문제가 있을 수도 있습니다. 동시에 상대가 바뀌기 전에도 내가 선택할 수 있는 것은 남아 있습니다.”",
+    "question": "저 사람만 바뀌면 저는 괜찮아질 것 같은데요?",
+    "sodaAnswer": "상대에게 실제 문제가 있을 수도 있습니다. 동시에 상대가 바뀌기 전에도 내가 선택할 수 있는 것은 남아 있습니다.",
     "description": "상대의 변화에 내 평온을 저당 잡히면 내 삶의 운전대를 상대에게 넘겨주게 됩니다. 상대가 바뀌지 않더라도 내가 오늘 나를 위해 세울 수 있는 경계가 있습니다.",
-    "curiosityQuestion": "“상대 몫과 내 몫을 나누면 무엇이 남을까?”",
+    "curiosityQuestion": "상대 몫과 내 몫을 나누면 무엇이 남을까?",
     "scanQuestion": "“내 책임 / 영향 가능 / 통제 밖으로 나누면?”",
     "factQuestion": "내가 통제할 수 없는 상대방의 성격이나 습관은 무엇인가요?",
     "storyQuestion": "상대가 바뀌지 않으면 내 삶은 절대 행복해질 수 없다는 체념인가요?",
     "unknownQuestion": "상대와 무관하게 오늘 내가 온전히 선택할 수 있는 작은 일은 무엇인가요?",
     "bodyQuestion": "어깨가 무겁고 한숨이 깊게 나오나요?",
-    "syncSentence": "“상황이 달라지길 바라는 마음이 크구나.”",
-    "shiftQuestion": "“오늘 내가 정할 수 있는 경계는?”",
-    "tenPercentAction": "“내가 통제 가능한 행동 하나만 결정한다.”",
+    "syncSentence": "상황이 달라지길 바라는 마음이 크구나.",
+    "shiftQuestion": "오늘 내가 정할 수 있는 경계는?",
+    "tenPercentAction": "내가 통제 가능한 행동 하나만 결정한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "1장. 통제의 환상과 무력감 탈출",
     "appCTA": "“통제의 세 영역 SCAN하기”",
@@ -1113,13 +1273,23 @@
       "상대를 내 뜻대로 바꾸려는 충동"
     ],
     "actionTags": [
-      "“내가 통제 가능한 행동 하나만 결정한다"
+      "내가 통제 가능한 행동 하나만 결정한다."
     ],
     "relatedCards": [
       "rel-010",
-      "rel-011",
-      "rel-013"
-    ]
+      "rel-011"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "상대 몫과 내 몫을 나누면 무엇이 남을까?",
+    "syncMessage": "상황이 달라지길 바라는 마음이 크구나.",
+    "scanGuide": {
+      "step1": "내가 통제할 수 없는 상대방의 성격이나 습관은 무엇인가요?",
+      "step2": "상대가 바뀌지 않으면 내 삶은 절대 행복해질 수 없다는 체념인가요?",
+      "step3": "상대와 무관하게 오늘 내가 온전히 선택할 수 있는 작은 일은 무엇인가요?",
+      "step4": "어깨가 무겁고 한숨이 깊게 나오나요?"
+    }
   },
   {
     "id": "rel-018",
@@ -1127,18 +1297,18 @@
     "category": "관계·심리",
     "keyword": "취약성",
     "cardTitle": "취약성 회피 모드",
-    "question": "“좋아할수록 오히려 무심한 척하게 돼요.”",
-    "sodaAnswer": "“중요할수록 상처 가능성도 크게 느껴져 먼저 거리를 두는 보호전략이 나올 수 있습니다.”",
+    "question": "좋아할수록 오히려 무심한 척하게 돼요?",
+    "sodaAnswer": "중요할수록 상처 가능성도 크게 느껴져 먼저 거리를 두는 보호전략이 나올 수 있습니다.",
     "description": "쿨한 척, 무관심한 척하는 것은 내 진심이 거절당했을 때 입을 치명상을 막기 위한 선제 갑옷입니다. 하지만 갑옷을 입은 채로는 진짜 따뜻함을 느낄 수 없습니다.",
-    "curiosityQuestion": "“나는 무엇을 지키려고 거리를 두는 걸까?”",
+    "curiosityQuestion": "나는 무엇을 지키려고 거리를 두는 걸까?",
     "scanQuestion": "“내가 두려워하는 최악의 결과는?”",
     "factQuestion": "실제로 내 호감이나 마음을 표현했을 때 비웃거나 상처 준 적이 있나요?",
     "storyQuestion": "마음을 들키면 약자가 되고 휘둘릴 것이라는 과거의 학습인가요?",
     "unknownQuestion": "진심을 조금 열었을 때 상대도 더 편안하게 다가올 가능성은?",
     "bodyQuestion": "턱에 힘이 들어가고 눈빛이 차가워지나요?",
-    "syncSentence": "“상처받고 싶지 않은 마음이 있구나.”",
-    "shiftQuestion": "“전부가 아니라 진심 10%만 표현한다면?”",
-    "tenPercentAction": "“오늘 진심 한 문장만 말한다.”",
+    "syncSentence": "상처받고 싶지 않은 마음이 있구나.",
+    "shiftQuestion": "전부가 아니라 진심 10%만 표현한다면?",
+    "tenPercentAction": "오늘 진심 한 문장만 말한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "5장. 회피형 방어기제와 취약성의 용기",
     "appCTA": "“내 보호전략 SCAN하기”",
@@ -1178,13 +1348,23 @@
       "자리를 피하거나 중단하려는 충동"
     ],
     "actionTags": [
-      "“오늘 진심 한 문장만 말한다"
+      "오늘 진심 한 문장만 말한다."
     ],
     "relatedCards": [
       "rel-006",
-      "rel-010",
-      "rel-013"
-    ]
+      "rel-010"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 무엇을 지키려고 거리를 두는 걸까?",
+    "syncMessage": "상처받고 싶지 않은 마음이 있구나.",
+    "scanGuide": {
+      "step1": "실제로 내 호감이나 마음을 표현했을 때 비웃거나 상처 준 적이 있나요?",
+      "step2": "마음을 들키면 약자가 되고 휘둘릴 것이라는 과거의 학습인가요?",
+      "step3": "진심을 조금 열었을 때 상대도 더 편안하게 다가올 가능성은?",
+      "step4": "턱에 힘이 들어가고 눈빛이 차가워지나요?"
+    }
   },
   {
     "id": "rel-019",
@@ -1192,18 +1372,18 @@
     "category": "관계·심리",
     "keyword": "자기비난",
     "cardTitle": "자기비난 모드",
-    "question": "“싸우고 나면 상대보다 제가 더 싫어져요.”",
-    "sodaAnswer": "“책임을 지는 것과 사람 전체를 공격하는 것은 다릅니다.”",
+    "question": "싸우고 나면 상대보다 제가 더 싫어져요?",
+    "sodaAnswer": "책임을 지는 것과 사람 전체를 공격하는 것은 다릅니다.",
     "description": "상대와의 갈등 후 내면의 법정을 열어 나를 사형수로 몰아세우는 것은 문제 해결이 아닌 가학적 도피일 수 있습니다. 미숙했던 행동 하나와 내 인격 전체를 분리하세요.",
-    "curiosityQuestion": "“내가 수정해야 할 행동은 정확히 무엇일까?”",
+    "curiosityQuestion": "내가 수정해야 할 행동은 정확히 무엇일까?",
     "scanQuestion": "“행동 하나와 나 전체를 구분하면?”",
     "factQuestion": "이번 다툼에서 내가 개선해야 할 객관적 말실수나 행동 1가지는?",
     "storyQuestion": "그 행동 하나 때문에 '나는 사랑받을 자격이 없는 사람'이라는 낙인인가요?",
     "unknownQuestion": "부족한 순간이 있어도 여전히 좋은 사람으로 회복하고 성장할 가능성은?",
     "bodyQuestion": "가슴을 쥐어뜯거나 자책하며 머리를 싸매나요?",
-    "syncSentence": "“잘하고 싶었는데 그렇게 되지 않아 속상하구나.”",
-    "shiftQuestion": "“자책 대신 복구 행동을 고른다면?”",
-    "tenPercentAction": "“사과 / 수정 / 재시도 중 하나만 실행한다.”",
+    "syncSentence": "잘하고 싶었는데 그렇게 되지 않아 속상하구나.",
+    "shiftQuestion": "자책 대신 복구 행동을 고른다면?",
+    "tenPercentAction": "사과 / 수정 / 재시도 중 하나만 실행한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "6장. 내면의 비판자와 자기자비 코드",
     "appCTA": "“자기비난을 복구계획으로 바꾸기”",
@@ -1246,13 +1426,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“사과 / 수정 / 재시도 중 하나만 실행한다"
+      "사과 / 수정 / 재시도 중 하나만 실행한다."
     ],
     "relatedCards": [
       "rel-003",
-      "rel-012",
-      "rel-011"
-    ]
+      "rel-012"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내가 수정해야 할 행동은 정확히 무엇일까?",
+    "syncMessage": "잘하고 싶었는데 그렇게 되지 않아 속상하구나.",
+    "scanGuide": {
+      "step1": "이번 다툼에서 내가 개선해야 할 객관적 말실수나 행동 1가지는?",
+      "step2": "그 행동 하나 때문에 '나는 사랑받을 자격이 없는 사람'이라는 낙인인가요?",
+      "step3": "부족한 순간이 있어도 여전히 좋은 사람으로 회복하고 성장할 가능성은?",
+      "step4": "가슴을 쥐어뜯거나 자책하며 머리를 싸매나요?"
+    }
   },
   {
     "id": "rel-020",
@@ -1260,18 +1450,18 @@
     "category": "관계·심리",
     "keyword": "자기관찰",
     "cardTitle": "관찰 과잉 모드",
-    "question": "“요즘 제 마음을 너무 분석해서 더 피곤해요.”",
-    "sodaAnswer": "“자기관찰은 더 많이 분석하기 위한 것이 아니라 다시 삶으로 돌아가기 위한 도구입니다.”",
+    "question": "요즘 제 마음을 너무 분석해서 더 피곤해요?",
+    "sodaAnswer": "자기관찰은 더 많이 분석하기 위한 것이 아니라 다시 삶으로 돌아가기 위한 도구입니다.",
     "description": "마음을 관찰하는 것조차 또 하나의 완벽주의적 통제 도구가 될 때가 있습니다. 관찰은 생각의 소용돌이를 멈추고 현실의 감각으로 가볍게 돌아오기 위함입니다.",
-    "curiosityQuestion": "“지금 더 분석하는 것이 정말 필요한가?”",
+    "curiosityQuestion": "지금 더 분석하는 것이 정말 필요한가?",
     "scanQuestion": "“지금 필요한 것은 관찰인가, 행동인가?”",
     "factQuestion": "지금 내가 생각에 빠져 있는 시간은 몇 분째인가요?",
     "storyQuestion": "내 마음의 모든 원인을 다 파헤쳐야만 편안해질 수 있다는 강박인가요?",
     "unknownQuestion": "분석을 지금 멈추고 차 한 잔을 마셔도 아무 문제 없다는 사실을 믿나요?",
     "bodyQuestion": "머리에 열감이 차오르고 눈이 뻑뻑한가요?",
-    "syncSentence": "“잘 이해하고 싶어서 계속 들여다보고 있구나.”",
-    "shiftQuestion": "“여기서 관찰을 끝내고 삶으로 돌아간다면?”",
-    "tenPercentAction": "“기록을 닫고 현실 행동 하나를 한다.”",
+    "syncSentence": "잘 이해하고 싶어서 계속 들여다보고 있구나.",
+    "shiftQuestion": "여기서 관찰을 끝내고 삶으로 돌아간다면?",
+    "tenPercentAction": "기록을 닫고 현실 행동 하나를 한다.",
     "relatedBook": "다크 코드",
     "relatedChapter": "7장. 관찰자 자아와 생각 내려놓기",
     "appCTA": "“오늘의 SCAN 마치기”",
@@ -1309,12 +1499,513 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“기록을 닫고 현실 행동 하나를 한다"
+      "기록을 닫고 현실 행동 하나를 한다."
     ],
     "relatedCards": [
       "rel-001",
-      "rel-002",
-      "rel-003"
-    ]
+      "rel-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "지금 더 분석하는 것이 정말 필요한가?",
+    "syncMessage": "잘 이해하고 싶어서 계속 들여다보고 있구나.",
+    "scanGuide": {
+      "step1": "지금 내가 생각에 빠져 있는 시간은 몇 분째인가요?",
+      "step2": "내 마음의 모든 원인을 다 파헤쳐야만 편안해질 수 있다는 강박인가요?",
+      "step3": "분석을 지금 멈추고 차 한 잔을 마셔도 아무 문제 없다는 사실을 믿나요?",
+      "step4": "머리에 열감이 차오르고 눈이 뻑뻑한가요?"
+    }
+  },
+  {
+    "id": "relationship-reply-001",
+    "category": "관계·심리",
+    "keyword": "답장불안",
+    "cardTitle": "마음읽기 모드",
+    "question": "답장이 늦으면 왜 최악부터 생각할까요?",
+    "sodaAnswer": "답장이 늦었다는 사실과 마음이 식었다는 해석은 같은 것이 아닙니다.",
+    "description": "마음은 UNKNOWN 상태를 불편해하기 때문에 아직 확인되지 않은 부분을 STORY로 빠르게 채울 수 있습니다.",
+    "curiosityQuestion": "나는 모르는 시간을 어떤 이야기로 가장 빨리 채우는 편일까?",
+    "scanQuestion": "답장을 기다리는 동안 가장 먼저 무엇이 올라왔나요?",
+    "factQuestion": "실제로 확인된 것은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 것은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요?",
+    "syncSentence": "불확실해서 확인하고 싶은 마음이 올라오는구나.",
+    "shiftQuestion": "지금 바로 결론내리지 않는다면 어떤 선택이 가능할까요?",
+    "tenPercentAction": "30분 동안 추가 메시지를 보내지 않고 기다려본다.",
+    "relatedBook": "다크 코드",
+    "relatedBookChapter": "제2장 · 무의식적 마음읽기와 투사의 해체",
+    "appCTA": "내 관계 패턴 SCAN하기",
+    "bookCTA": "마음읽기 패턴의 뿌리 읽기",
+    "searchKeywords": [
+      "답장이 안 와요",
+      "답장",
+      "읽씹",
+      "카톡",
+      "연락",
+      "마음 식음",
+      "연락불안",
+      "연락이 안 와요",
+      "카톡 안 읽음"
+    ],
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "relatedChapter": "제2장 · 무의식적 마음읽기와 투사의 해체",
+    "featured": true,
+    "routeTags": [
+      "관계",
+      "답장",
+      "답장불안",
+      "답장이 안 와요",
+      "마음 식음",
+      "심리",
+      "연락",
+      "연락불안",
+      "연락이 안 와요",
+      "읽씹"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "30분 동안 추가 메시지를 보내지 않고 기다려본다."
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-006"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 모르는 시간을 어떤 이야기로 가장 빨리 채우는 편일까?",
+    "syncMessage": "불확실해서 확인하고 싶은 마음이 올라오는구나.",
+    "scanGuide": {
+      "step1": "실제로 확인된 것은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미를 붙였나요?",
+      "step3": "아직 확인되지 않은 것은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요?"
+    }
+  },
+  {
+    "id": "peoplepleaser-02",
+    "category": "경계와 관계",
+    "keyword": "좋은 사람 강박",
+    "cardTitle": "착한 아이 모드",
+    "question": "좋은 사람으로 살았는데 왜 주변에는 당연하게 여기는 사람만 남았을까요?",
+    "sodaAnswer": "경계가 없는 친절은 배려가 아니라 상대에게 '나를 함부로 대해도 된다'는 허가증이 되기 때문입니다.",
+    "description": "남의 부탁을 거절했을 때 밀려오는 죄책감은 도덕적 잘못이 아니라, '착하지 않으면 버림받는다'는 어린 시절의 생존 방어막입니다.",
+    "curiosityQuestion": "내 경우에는 누구의 실망이 가장 두려워서 나를 깎아내리며 부탁을 들어주고 있을까?",
+    "scanQuestion": "부탁을 들었을 때 입은 '네'라고 하면서 속에서는 어떤 답답함이 올라왔나요?",
+    "syncSentence": "좋은 사람으로 남고 싶어 거절하기 힘든 내 두려움을 존중한다.",
+    "shiftQuestion": "상대를 실망시키지 않으려 나를 실망시키는 일을 멈춘다면?",
+    "tenPercentAction": "부탁을 받았을 때 3초간 멈추고 “일정 확인 후 10분 뒤에 말씀드릴게요”라고 말하기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "appCTA": "내 착한 아이 모드 직접 확인하기",
+    "appSubtext": "부탁을 받았을 때 입과 속마음이 엇갈리는 바로 그 순간의 자동반응을 관찰합니다.",
+    "bookCTA": "거절 죄책감의 무의식 뿌리 더 읽기",
+    "bookSubtext": "어린 시절 형성된 관계 생존 방어막이 성인의 삶을 지배하는 메커니즘을 탐구합니다.",
+    "searchKeywords": [
+      "거절 못함",
+      "착한아이",
+      "거절을 못해요",
+      "거절",
+      "부탁",
+      "지침",
+      "착한 사람",
+      "거절을 못하겠어요",
+      "좋은 사람",
+      "죄책감",
+      "배려",
+      "당연하게",
+      "호구",
+      "미안해요",
+      "좋은 사람이고 싶은데 왜 점점 지칠까요",
+      "착한사람",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족"
+    ],
+    "relatedBookChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 인정중독과 희생의 자동문장",
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "거절",
+      "거절 못함",
+      "거절을 못하겠어요",
+      "거절을 못해요",
+      "경계와 관계",
+      "당연하게",
+      "미안해요",
+      "배려",
+      "부모님"
+    ],
+    "triggerTags": [
+      "좋은 사람 강박"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "부탁을 받았을 때 3초간 멈추고 “일정 확인 후 10분 뒤에 말씀드릴게요”라고 말하기."
+    ],
+    "relatedCards": [
+      "boundary-03",
+      "apology-06"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 누구의 실망이 가장 두려워서 나를 깎아내리며 부탁을 들어주고 있을까?",
+    "syncMessage": "좋은 사람으로 남고 싶어 거절하기 힘든 내 두려움을 존중한다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "boundary-03",
+    "category": "경계와 관계",
+    "keyword": "거절",
+    "cardTitle": "경계 모드",
+    "question": "왜 저는 싫다는 말을 못할까요?",
+    "sodaAnswer": "거절해서 깨질 관계라면 참아봤자 언젠가 더 비참하게 터집니다.",
+    "description": "건강한 경계는 상대를 향한 공격이 아니라, 나를 온전히 지키며 오래 함께하기 위한 울타리입니다. 솔직한 선 긋기가 진정한 신뢰를 만듭니다.",
+    "curiosityQuestion": "내 경우에는 솔직하게 선을 그었을 때 어떤 최악의 결말을 상상하고 있을까?",
+    "scanQuestion": "싫다고 말하지 못할 때 목구멍이 턱 막히는 감각을 느껴보셨나요?",
+    "syncSentence": "관계를 잃을까 봐 두려워하는 내 연약한 마음을 다정하게 안아준다.",
+    "shiftQuestion": "관계를 깨뜨리지 않는 10%의 단호한 표현은 무엇일까?",
+    "tenPercentAction": "무리한 제안에 “지금 제 상황에서는 어렵습니다. 제안 감사합니다” 담백하게 끊기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "appCTA": "내 관계 경계선 반응 직접 확인하기",
+    "appSubtext": "싫은 소리를 삼킬 때 내 몸이 보내는 위기 경보를 1분 SCAN으로 안전하게 분리합니다.",
+    "bookCTA": "안전한 경계 설정의 신경학적 원리 읽기",
+    "bookSubtext": "타인과의 경계를 세우면서도 연결감을 유지하는 신경계 안정화 원리를 책에서 배웁니다.",
+    "searchKeywords": [
+      "싫다는 말",
+      "거절",
+      "손절",
+      "경계",
+      "갈등 회피",
+      "관계 단절",
+      "싸움",
+      "싫은 소리",
+      "거절을 못하겠어요",
+      "부모님 때문에 힘들어요",
+      "부모님",
+      "가족",
+      "거절을 못해요",
+      "착한아이"
+    ],
+    "relatedBookChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 건강한 경계선과 무의식 방어",
+    "featured": true,
+    "routeTags": [
+      "가족",
+      "갈등 회피",
+      "거절",
+      "거절을 못하겠어요",
+      "거절을 못해요",
+      "경계",
+      "경계와 관계",
+      "관계 단절",
+      "부모님",
+      "부모님 때문에 힘들어요"
+    ],
+    "triggerTags": [
+      "거절"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "무리한 제안에 “지금 제 상황에서는 어렵습니다. 제안 감사합니다” 담백하게 끊기."
+    ],
+    "relatedCards": [
+      "peoplepleaser-02",
+      "apology-06"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 솔직하게 선을 그었을 때 어떤 최악의 결말을 상상하고 있을까?",
+    "syncMessage": "관계를 잃을까 봐 두려워하는 내 연약한 마음을 다정하게 안아준다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "attachment-07",
+    "category": "경계와 관계",
+    "keyword": "불안형 애착",
+    "cardTitle": "연락 확인 모드",
+    "question": "왜 가까워지면 갑자기 거리를 두고 싶을까요?",
+    "sodaAnswer": "연락이 늦은 게 사건인데, 뇌는 이별이라는 소설을 씁니다.",
+    "description": "답장이 조금만 지연되어도 심장이 뛰고 식은땀이 나는 것은 성인의 문제가 아니라, 애착 대상과의 단절을 생존 위기로 느꼈던 신경계의 조기경보입니다.",
+    "curiosityQuestion": "내 경우에는 상대의 침묵을 마주할 때 어떤 버림받음의 시나리오가 켜질까?",
+    "scanQuestion": "화면을 새로고침할 때 가슴이 쿵쾅거리는 촉각 신호를 느껴보셨나요?",
+    "syncSentence": "연락이 안 되면 세상에 혼자 남겨진 것 같은 외로움과 공포를 온전히 알아준다.",
+    "shiftQuestion": "상대의 답장 속도와 내 존재 가치가 아무 상관이 없다면?",
+    "tenPercentAction": "스마트폰을 엎어두고 10분간 따뜻한 차 한 잔을 끝까지 마시기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제6장 · 애착 상처와 파국화 회로",
+    "appCTA": "내 애착 불안 반응 직접 확인하기",
+    "appSubtext": "답장을 기다리며 스마트폰을 쥐고 있는 바로 그 순간의 불안 파도를 1분 SCAN합니다.",
+    "bookCTA": "침묵을 파국으로 해석하는 뇌의 기원 읽기",
+    "bookSubtext": "불안형 애착이 어떻게 신경계에 각인되었는지, 그 인지적 덫에서 벗어나는 법을 확인하세요.",
+    "searchKeywords": [
+      "연락 불안",
+      "답장",
+      "애착",
+      "읽씹",
+      "불안형",
+      "연애 불안",
+      "버림받을까봐"
+    ],
+    "relatedBookChapter": "제6장 · 애착 상처와 파국화 회로",
+    "safetyLevel": "일상관찰",
+    "isFeatured": true,
+    "popularity": 98,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 애착 상처와 파국화 회로",
+    "featured": true,
+    "routeTags": [
+      "경계와 관계",
+      "답장",
+      "버림받을까봐",
+      "불안형",
+      "불안형 애착",
+      "애착",
+      "연락 불안",
+      "연애 불안",
+      "읽씹"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "스마트폰을 엎어두고 10분간 따뜻한 차 한 잔을 끝까지 마시기."
+    ],
+    "relatedCards": [
+      "love-001",
+      "relationship-reply-001"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 상대의 침묵을 마주할 때 어떤 버림받음의 시나리오가 켜질까?",
+    "syncMessage": "연락이 안 되면 세상에 혼자 남겨진 것 같은 외로움과 공포를 온전히 알아준다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "attachment-breakup-22",
+    "category": "관계·심리",
+    "keyword": "이별흔들림",
+    "cardTitle": "간헐적 도파민 모드",
+    "question": "헤어져야 한다는 걸 아는데 왜 연락 한 번이면 다시 흔들릴까요?",
+    "sodaAnswer": "그 사람을 아직 사랑해서가 아니라, 예측 불가능한 도파민 자극에 뇌가 중독되어 있기 때문입니다.",
+    "description": "불규칙하게 주어지는 관심과 연락은 뇌의 보상회로를 가장 강력하게 자극하여 이성적 결단을 마비시킵니다.",
+    "curiosityQuestion": "나는 그 사람과의 진짜 현실을 그리워하는 걸까, 결말을 내 손으로 고치고 싶은 걸까?",
+    "scanQuestion": "휴대폰 알림이 떴을 때 심장이 쿵 내려앉는 감각을 알아차렸나요?",
+    "syncSentence": "외롭고 흔들리는 내 마음에 먼저 따뜻하게 머물러주자.",
+    "shiftQuestion": "지금 바로 답장하는 대신, 내 감정에 1시간의 유예 시간을 준다면?",
+    "tenPercentAction": "연락이 왔을 때 즉시 열어보지 않고 최소 30분 뒤에 확인한다.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제14장 · 신경계 셧다운과 트라우마의 해리",
+    "appCTA": "내 관계 중독 패턴 SCAN하기",
+    "appSubtext": "머리가 하얘지는 동결 순간, 1분 SCAN으로 발바닥의 감각을 깨워 현실로 돌아옵니다.",
+    "bookCTA": "반복되는 관계 덫의 뿌리 읽기",
+    "bookSubtext": "트라우마성 동결 반응에서 벗어나 성인으로서의 주체성을 복원하는 원리를 탐구합니다.",
+    "searchKeywords": [
+      "이별",
+      "헤어짐",
+      "전남친",
+      "전여친",
+      "연락",
+      "흔들림",
+      "재회",
+      "미련"
+    ],
+    "relatedBookChapter": "5장. 집착과 무의식적 결핍 회로",
+    "safetyLevel": "safe",
+    "isFeatured": true,
+    "popularity": 99,
+    "factQuestion": "그 사람과의 관계에서 반복되었던 명백한 사실(Fact)은 무엇인가요?",
+    "storyQuestion": "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?",
+    "unknownQuestion": "다시 연락한다고 해서 근본적인 문제가 해결될 거라는 증거가 있나요?",
+    "bodyQuestion": "가슴이 답답하고 목구멍이 메여오나요?",
+    "relatedChapter": "5장. 집착과 무의식적 결핍 회로",
+    "featured": true,
+    "routeTags": [
+      "관계",
+      "미련",
+      "심리",
+      "연락",
+      "이별",
+      "이별흔들림",
+      "재회",
+      "전남친",
+      "전여친",
+      "헤어짐"
+    ],
+    "triggerTags": [
+      "연락",
+      "메시지",
+      "답장"
+    ],
+    "storyTags": [
+      "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동",
+      "즉시 전부 고쳐버리려는 충동"
+    ],
+    "actionTags": [
+      "연락이 왔을 때 즉시 열어보지 않고 최소 30분 뒤에 확인한다."
+    ],
+    "relatedCards": [
+      "rel-001",
+      "rel-006"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "나는 그 사람과의 진짜 현실을 그리워하는 걸까, 결말을 내 손으로 고치고 싶은 걸까?",
+    "syncMessage": "외롭고 흔들리는 내 마음에 먼저 따뜻하게 머물러주자.",
+    "scanGuide": {
+      "step1": "그 사람과의 관계에서 반복되었던 명백한 사실(Fact)은 무엇인가요?",
+      "step2": "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?",
+      "step3": "다시 연락한다고 해서 근본적인 문제가 해결될 거라는 증거가 있나요?",
+      "step4": "가슴이 답답하고 목구멍이 메여오나요?"
+    }
+  },
+  {
+    "id": "helpseeking-27",
+    "category": "경계와 관계",
+    "keyword": "도움요청",
+    "cardTitle": "고립 요새 모드",
+    "question": "남에게 아쉬운 소리 하느니 혼자 끙끙 앓는 게 편해요?",
+    "sodaAnswer": "자립적인 게 아니라, 거절당했을 때의 상처가 두려운 고립입니다.",
+    "description": "도움을 청했다가 거절당하면 내 가치까지 부정당할 것 같은 공포 때문에, 아무도 믿지 않고 스스로 성벽을 쌓아 자신을 가두는 외로운 방어입니다.",
+    "curiosityQuestion": "내 경우에는 누구에게 부탁을 건네는 것이 가장 굴욕적이고 두렵게 느껴질까?",
+    "scanQuestion": "도움을 청하려 할 때 혀가 굳고 식은땀이 흐르는 감각을 관찰해보셨나요?",
+    "syncSentence": "거절받아 비참해질까 봐 혼자 모든 짐을 지고 견뎌온 내 외로움을 위로한다.",
+    "shiftQuestion": "도움을 청하는 것은 상대에게 기여할 기회를 선물하는 일이라면?",
+    "tenPercentAction": "지인에게 “혹시 시간 될 때 이 링크 한 번만 봐줄 수 있어?” 가볍게 물어보기.",
+    "relatedBook": "다크 코드",
+    "bookChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "appCTA": "내 도움 요청 회피 신호 직접 확인하기",
+    "appSubtext": "혼자 끙끙 앓으려 할 때 1분 SCAN으로 고립의 성벽을 넘어 작은 손을 내밀어봅니다.",
+    "bookCTA": "거절 공포가 쌓아 올린 고립 요새의 원리 읽기",
+    "bookSubtext": "상처받지 않으려 고립을 택한 뇌의 생존 전략을 이해하고 안전하게 연결되는 법을 배웁니다.",
+    "searchKeywords": [
+      "도움 요청 못해요",
+      "혼자 다 해요",
+      "부탁",
+      "거절 공포",
+      "고립",
+      "외로움"
+    ],
+    "relatedBookChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제15장 · 취약성의 힘과 건강한 상호의존",
+    "featured": false,
+    "routeTags": [
+      "거절 공포",
+      "경계와 관계",
+      "고립",
+      "도움 요청 못해요",
+      "도움요청",
+      "부탁",
+      "외로움",
+      "혼자 다 해요"
+    ],
+    "triggerTags": [
+      "도움요청"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "즉시 확인하려는 충동"
+    ],
+    "actionTags": [
+      "지인에게 “혹시 시간 될 때 이 링크 한 번만 봐줄 수 있어?” 가볍게 물어보기."
+    ],
+    "relatedCards": [
+      "peoplepleaser-02",
+      "boundary-03"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내 경우에는 누구에게 부탁을 건네는 것이 가장 굴욕적이고 두렵게 느껴질까?",
+    "syncMessage": "거절받아 비참해질까 봐 혼자 모든 짐을 지고 견뎌온 내 외로움을 위로한다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
   }
 ]

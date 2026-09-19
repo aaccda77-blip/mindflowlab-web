@@ -1,22 +1,322 @@
 [
   {
+    "id": "identity-23",
+    "category": "정체성과 관찰",
+    "keyword": "정체성",
+    "cardTitle": "낙인 모드",
+    "question": "원래 나는 태어날 때부터 소심하고 예민한 사람이에요?",
+    "sodaAnswer": "당신이 그런 사람이 아니라, 그 방어 패턴을 오랫동안 입고 있었을 뿐입니다.",
+    "description": "‘나는 원래 이런 사람’이라는 낙인은 과거의 상처와 환경이 빚어낸 옷일 뿐, 당신의 본질이 아닙니다. 패턴과 나를 동일시하면 변화의 문은 닫힙니다.",
+    "curiosityQuestion": "내 경우에는 어떤 한계 규정을 내 정체성이라 믿으며 새로운 시도를 막고 있을까?",
+    "scanQuestion": "“난 원래 그래”라는 말이 나올 때 무의식적으로 안주하려는 안도감을 보셨나요?",
+    "syncSentence": "상처받지 않기 위해 일찍이 나를 규정해버렸던 내 두려움을 따뜻하게 바라본다.",
+    "shiftQuestion": "패턴은 내 성격이 아니라 단지 날씨처럼 지나가는 반응에 불과하다면?",
+    "tenPercentAction": "나는 소심한 사람이다” 대신 “내게 지금 소심한 반응이 올라왔다”로 고쳐 말하기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "appCTA": "내 정체성 낙인 직접 확인하기",
+    "appSubtext": "나를 옭아매던 고정관념을 1분 SCAN으로 분리하고, 반응 뒤의 자유로운 나를 봅니다.",
+    "bookCTA": "성격이라는 가면에 갇힌 뇌의 착각 읽기",
+    "bookSubtext": "‘나’와 ‘내 패턴’을 엄밀하게 분리하여 본래의 잠재력을 깨우는 제로 포인트 철학을 만납니다.",
+    "searchKeywords": [
+      "성격",
+      "소심해요",
+      "원래 이래요",
+      "낙인",
+      "정체성",
+      "변화 불가능"
+    ],
+    "relatedBookChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제3장 · 정체성 판결의 보류와 순수 관찰자",
+    "featured": false,
+    "routeTags": [
+      "낙인",
+      "변화 불가능",
+      "성격",
+      "소심해요",
+      "원래 이래요",
+      "정체성",
+      "정체성과 관찰"
+    ],
+    "triggerTags": [
+      "정체성"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "나는 소심한 사람이다” 대신 “내게 지금 소심한 반응이 올라왔다”로 고쳐 말하기."
+    ],
+    "relatedCards": [
+      "observationtrap-28",
+      "identification-29"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "내 경우에는 어떤 한계 규정을 내 정체성이라 믿으며 새로운 시도를 막고 있을까?",
+    "syncMessage": "상처받지 않기 위해 일찍이 나를 규정해버렸던 내 두려움을 따뜻하게 바라본다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "observationtrap-28",
+    "category": "정체성과 관찰",
+    "keyword": "관찰함정",
+    "cardTitle": "해석 중독 모드",
+    "question": "내 패턴을 분석하느라 하루가 다 가요?",
+    "sodaAnswer": "관찰이 아니라, 또 다른 형태의 통제이자 지적 강박입니다.",
+    "description": "마음공부나 심리학 지식에 매몰되어 모든 순간을 분석하고 채점하는 것은, 온전히 살아가는 삶을 회피하고 '머릿속 안전지대'에 숨는 또 다른 방어막입니다.",
+    "curiosityQuestion": "내 경우에는 마음을 느낄 시간에 머리로 라벨을 붙이며 관조만 하고 있지 않을까?",
+    "scanQuestion": "마음을 지켜보면서도 미간을 찌푸린 채 끊임없이 평가하고 있는 나를 보셨나요?",
+    "syncSentence": "안전해지고 싶어서 지식과 분석 뒤로 숨으려 했던 내 지적 방어를 알아챈다.",
+    "shiftQuestion": "분석을 멈추고 지금 창밖의 시원한 바람을 온몸의 피부로 느껴본다면?",
+    "tenPercentAction": "모든 심리 분석을 중단하고 밖으로 나가 동네 한 바퀴 15분간 산책하기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "appCTA": "내 분석 중독 함정 직접 확인하기",
+    "appSubtext": "생각으로 생각을 분석하려는 헛바퀴질을 1분 SCAN으로 멈추고 몸의 감각으로 내려옵니다.",
+    "bookCTA": "분석 강박을 넘어선 순수 현존의 원리 읽기",
+    "bookSubtext": "심리학 지식의 감옥에서 벗어나 지금 이 순간의 생생한 현실을 온전히 경험하는 법을 확인하세요.",
+    "searchKeywords": [
+      "분석 강박",
+      "마음공부 부작용",
+      "생각 중독",
+      "지적 방어",
+      "지식 집착"
+    ],
+    "relatedBookChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제4장 · 지적 앎을 넘어선 순수한 현존",
+    "featured": false,
+    "routeTags": [
+      "관찰함정",
+      "마음공부 부작용",
+      "분석 강박",
+      "생각 중독",
+      "정체성과 관찰",
+      "지식 집착",
+      "지적 방어"
+    ],
+    "triggerTags": [
+      "관찰함정"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "모든 심리 분석을 중단하고 밖으로 나가 동네 한 바퀴 15분간 산책하기."
+    ],
+    "relatedCards": [
+      "identity-23",
+      "identification-29"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "내 경우에는 마음을 느낄 시간에 머리로 라벨을 붙이며 관조만 하고 있지 않을까?",
+    "syncMessage": "안전해지고 싶어서 지식과 분석 뒤로 숨으려 했던 내 지적 방어를 알아챈다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "identification-29",
+    "category": "정체성과 관찰",
+    "keyword": "동일시",
+    "cardTitle": "판결 모드",
+    "question": "이 패턴이 나라는 사람의 본질인 것 같아요?",
+    "sodaAnswer": "구름이 하늘이 아니듯, 감정과 생각은 당신의 본질이 아닙니다.",
+    "description": "먹구름이 아무리 짙게 끼어도 그 뒤편의 푸른 하늘은 손상되지 않습니다. 부정적 감정과 생각에 압도되는 순간에도 그것을 바라보는 '관찰자(나)'는 온전합니다.",
+    "curiosityQuestion": "내 경우에는 먹구름 같은 내 기분을 나 자신 전체라고 착각하고 있지 않을까?",
+    "scanQuestion": "마음의 폭풍우가 몰아칠 때, 그것을 바라보고 있는 고요한 시선을 느껴보셨나요?",
+    "syncSentence": "비바람이 칠 수 있다. 하지만 나는 비바람을 품고 있는 드넓은 하늘이다.",
+    "shiftQuestion": "지나가는 날씨와 싸우지 않고 그저 지나가도록 자리를 내어준다면?",
+    "tenPercentAction": "가슴에 손을 대고 “이건 날씨일 뿐, 내 본질은 하늘이다” 3번 숨 쉬며 읊기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "appCTA": "내 생각과의 동일시 분리해보기",
+    "appSubtext": "생각과 나를 하나로 뭉개는 착각을 1분 SCAN으로 떼어내고 본래의 중심을 회복합니다.",
+    "bookCTA": "생각과 나를 분리하는 메타인지의 비밀 읽기",
+    "bookSubtext": "뇌의 일시적 전기 신호에 불과한 생각을 나와 분리하는 신경인지적 탈융합 원리를 배웁니다.",
+    "searchKeywords": [
+      "동일시",
+      "나는 원래 이래",
+      "자괴감",
+      "우울",
+      "구름과 하늘",
+      "본질"
+    ],
+    "relatedBookChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제5장 · 하늘과 구름의 비유와 메타인지",
+    "featured": false,
+    "routeTags": [
+      "구름과 하늘",
+      "나는 원래 이래",
+      "동일시",
+      "본질",
+      "우울",
+      "자괴감",
+      "정체성과 관찰"
+    ],
+    "triggerTags": [
+      "동일시"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "가슴에 손을 대고 “이건 날씨일 뿐, 내 본질은 하늘이다” 3번 숨 쉬며 읊기."
+    ],
+    "relatedCards": [
+      "identity-23",
+      "observationtrap-28"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "내 경우에는 먹구름 같은 내 기분을 나 자신 전체라고 착각하고 있지 않을까?",
+    "syncMessage": "비바람이 칠 수 있다. 하지만 나는 비바람을 품고 있는 드넓은 하늘이다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
+    "id": "zeropoint-30",
+    "category": "정체성과 관찰",
+    "keyword": "제로포인트",
+    "cardTitle": "평온의 중심 모드",
+    "question": "내 모든 반응을 멈추고 새롭게 시작할 자리가 있나요?",
+    "sodaAnswer": "반응과 선택 사이의 그 고요한 틈, 그곳이 바로 당신의 ‘제로 포인트’입니다.",
+    "description": "자극이 들어왔을 때 자동반응으로 튕겨 나가기 전, 숨 한 번을 고를 수 있는 1초의 틈이 있습니다. 그 틈에서 사람은 완전히 새로운 선택의 주인이 됩니다.",
+    "curiosityQuestion": "내 경우에는 오늘 하루 중 단 10초라도 자극과 반응 사이의 틈에 머물러 보았을까?",
+    "scanQuestion": "숨을 들이쉬고 내쉬는 그 사이, 잠시 멈추는 지점의 고요를 만나보셨나요?",
+    "syncSentence": "과거의 조건화도, 미래의 불안도 닿지 않는 내 안의 가장 평온한 중심에 머문다.",
+    "shiftQuestion": "이 평온한 중심에서 오늘 나에게 가장 자비로운 선택 1가지를 고른다면?",
+    "tenPercentAction": "하던 일을 멈추고 눈을 감은 채 10초간 완전히 정적 속에 머물러보기.",
+    "relatedBook": "제로 포인트",
+    "bookChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "appCTA": "내 안의 제로 포인트 직접 확인하기",
+    "appSubtext": "자극과 반응 사이의 1초의 틈을 열어내는 1분 SCAN 호흡으로 평온의 중심을 찾습니다.",
+    "bookCTA": "반응과 선택 사이의 틈을 여는 제로 포인트 읽기",
+    "bookSubtext": "자동반응에 끌려다니지 않고 내 삶의 진정한 주권자로 서는 제로 포인트 원리를 깊이 만납니다.",
+    "searchKeywords": [
+      "평온",
+      "중심",
+      "제로포인트",
+      "명상",
+      "호흡",
+      "선택의 자유",
+      "마음의 평화"
+    ],
+    "relatedBookChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "safetyLevel": "일상관찰",
+    "isFeatured": false,
+    "popularity": 90,
+    "factQuestion": "실제로 확인된 사실(FACT)은 무엇인가요?",
+    "storyQuestion": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+    "unknownQuestion": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+    "bodyQuestion": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)",
+    "relatedChapter": "제6장 · 제로 포인트에서 일어나는 진정한 변용",
+    "featured": false,
+    "routeTags": [
+      "마음의 평화",
+      "명상",
+      "선택의 자유",
+      "정체성과 관찰",
+      "제로포인트",
+      "중심",
+      "평온",
+      "호흡"
+    ],
+    "triggerTags": [
+      "마감임박",
+      "결정순간",
+      "시작",
+      "감정고조"
+    ],
+    "storyTags": [
+      "그 사실에 나는 어떤 의미(STORY)를 붙였나요?"
+    ],
+    "urgeTags": [
+      "상황을 통제하려는 즉각 충동"
+    ],
+    "actionTags": [
+      "하던 일을 멈추고 눈을 감은 채 10초간 완전히 정적 속에 머물러보기."
+    ],
+    "relatedCards": [
+      "regret-13",
+      "perf-005"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "내 경우에는 오늘 하루 중 단 10초라도 자극과 반응 사이의 틈에 머물러 보았을까?",
+    "syncMessage": "과거의 조건화도, 미래의 불안도 닿지 않는 내 안의 가장 평온한 중심에 머문다.",
+    "scanGuide": {
+      "step1": "실제로 확인된 사실(FACT)은 무엇인가요?",
+      "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
+      "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
+      "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    }
+  },
+  {
     "id": "code-001",
     "packId": "three-code-integration-01",
     "category": "3대코드·제로포인트",
     "keyword": "패턴반복",
     "cardTitle": "알면서 또 반복 모드",
-    "question": "“왜 제 패턴을 다 아는데도 또 똑같이 행동할까요?”",
-    "sodaAnswer": "“패턴을 이해하는 것과 그 패턴이 켜진 순간 다른 행동을 해보는 것은 서로 다른 단계의 경험입니다.”",
+    "question": "왜 제 패턴을 다 아는데도 또 똑같이 행동할까요?",
+    "sodaAnswer": "패턴을 이해하는 것과 그 패턴이 켜진 순간 다른 행동을 해보는 것은 서로 다른 단계의 경험입니다.",
     "description": "머리로 패턴을 분석하는 지적 이해와, 가슴이 조이고 충동이 솟구치는 바로 그 찰나에 10% 다른 행동을 시도하는 것은 전혀 다른 신경회로의 훈련입니다.",
-    "curiosityQuestion": "“패턴을 안다는 안도감 뒤에, 정작 행동 시도는 멈춰있지 않았을까?”",
+    "curiosityQuestion": "패턴을 안다는 안도감 뒤에, 정작 행동 시도는 멈춰있지 않았을까?",
     "scanQuestion": "“이번 장면에서 Trigger → STORY → URGE → ACTION은 어떻게 이어졌나?”",
     "factQuestion": "실제로 일어난 Trigger(촉발 사건)는 무엇인가요?",
     "storyQuestion": "그 순간 머릿속에서 자동으로 떠오른 STORY(해석)는?",
     "unknownQuestion": "내가 아직 실제로 확인하지 않은 현실의 영역은?",
     "bodyQuestion": "그 순간 몸의 어느 부위가 먼저 긴장했나요?",
-    "syncSentence": "“패턴을 알아도 몸의 관성이 먼저 켜질 수 있음을 인정한다.”",
-    "shiftQuestion": "“다음번에 단 한 지점만 10% 다르게 한다면?”",
-    "tenPercentAction": "“가장 바꾸기 쉬운 화살표 하나만 고른다.”",
+    "syncSentence": "패턴을 알아도 몸의 관성이 먼저 켜질 수 있음을 인정한다.",
+    "shiftQuestion": "다음번에 단 한 지점만 10% 다르게 한다면?",
+    "tenPercentAction": "가장 바꾸기 쉬운 화살표 하나만 고른다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "1장. 무의식의 Trigger와 자동해석 코드",
     "appCTA": "“내 자동반응 화살표 SCAN하기”",
@@ -55,13 +355,23 @@
       "상대를 내 뜻대로 바꾸려는 충동"
     ],
     "actionTags": [
-      "“가장 바꾸기 쉬운 화살표 하나만 고른다"
+      "가장 바꾸기 쉬운 화살표 하나만 고른다."
     ],
     "relatedCards": [
       "code-002",
-      "code-009",
-      "code-010"
-    ]
+      "code-009"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "패턴을 안다는 안도감 뒤에, 정작 행동 시도는 멈춰있지 않았을까?",
+    "syncMessage": "패턴을 알아도 몸의 관성이 먼저 켜질 수 있음을 인정한다.",
+    "scanGuide": {
+      "step1": "실제로 일어난 Trigger(촉발 사건)는 무엇인가요?",
+      "step2": "그 순간 머릿속에서 자동으로 떠오른 STORY(해석)는?",
+      "step3": "내가 아직 실제로 확인하지 않은 현실의 영역은?",
+      "step4": "그 순간 몸의 어느 부위가 먼저 긴장했나요?"
+    }
   },
   {
     "id": "code-002",
@@ -69,18 +379,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "정체성분리",
     "cardTitle": "나는 원래 이래 모드",
-    "question": "“계속 반복된다면 결국 저는 원래 이런 사람 아닌가요?”",
-    "sodaAnswer": "“반복되는 길이 있다는 것과 그 길이 당신 전체라는 것은 같은 말이 아닙니다.”",
+    "question": "계속 반복된다면 결국 저는 원래 이런 사람 아닌가요?",
+    "sodaAnswer": "반복되는 길이 있다는 것과 그 길이 당신 전체라는 것은 같은 말이 아닙니다.",
     "description": "반복되는 행동 경로는 오랜 세월 뇌에 새겨진 고속도로일 뿐, 운전자인 당신의 존재 자체가 아닙니다. '나는 원래 이래'라는 정체성 문장을 구체적인 상황과 작동 문장으로 분리해보세요.",
-    "curiosityQuestion": "“내가 나를 가두고 있는 ‘원래 그렇다’는 말 뒤에는 무엇이 있을까?”",
+    "curiosityQuestion": "내가 나를 가두고 있는 ‘원래 그렇다’는 말 뒤에는 무엇이 있을까?",
     "scanQuestion": "“정체성 문장 대신 어떤 장면에서 어떤 행동이 반복되는가?”",
     "factQuestion": "내가 규정해버린 '나는 원래 ○○다'라는 문장은 무엇인가요?",
     "storyQuestion": "그것이 과거의 생존 방식이었을 가능성은?",
     "unknownQuestion": "새로운 조건에서도 과연 똑같이 작동해야만 할까요?",
     "bodyQuestion": "‘원래 이런 사람’이라고 단정할 때 몸의 무력감은 어디서 느껴지나요?",
-    "syncSentence": "“익숙한 길이 내 안에 흐르고 있지만, 그 길이 나의 전부는 아니다.”",
-    "shiftQuestion": "“‘나는 ○○다’를 작동문장으로 바꾼다면?”",
-    "tenPercentAction": "“‘나는 원래…’ 대신 ‘나는 ○○ 상황에서 ○○할 때가 있다’라고 적는다.”",
+    "syncSentence": "익숙한 길이 내 안에 흐르고 있지만, 그 길이 나의 전부는 아니다.",
+    "shiftQuestion": "‘나는 ○○다’를 작동문장으로 바꾼다면?",
+    "tenPercentAction": "‘나는 원래…’ 대신 ‘나는 ○○ 상황에서 ○○할 때가 있다’라고 적는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "2장. 반복되는 작동패턴의 발견과 해체",
     "appCTA": "“정체성 대신 작동지도 관찰하기”",
@@ -120,13 +430,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“‘나는 원래…’ 대신 ‘나는 ○○ 상황에서 ○○할 때"
+      "‘나는 원래…’ 대신 ‘나는 ○○ 상황에서 ○○할 때가 있다’라고 적는다."
     ],
     "relatedCards": [
       "code-001",
-      "code-015",
-      "code-016"
-    ]
+      "code-015"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "내가 나를 가두고 있는 ‘원래 그렇다’는 말 뒤에는 무엇이 있을까?",
+    "syncMessage": "익숙한 길이 내 안에 흐르고 있지만, 그 길이 나의 전부는 아니다.",
+    "scanGuide": {
+      "step1": "내가 규정해버린 '나는 원래 ○○다'라는 문장은 무엇인가요?",
+      "step2": "그것이 과거의 생존 방식이었을 가능성은?",
+      "step3": "새로운 조건에서도 과연 똑같이 작동해야만 할까요?",
+      "step4": "‘원래 이런 사람’이라고 단정할 때 몸의 무력감은 어디서 느껴지나요?"
+    }
   },
   {
     "id": "code-003",
@@ -134,18 +454,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "분석중독",
     "cardTitle": "코드 찾기 중독 모드",
-    "question": "“모든 행동에서 제 다크 코드를 찾아야 하나요?”",
-    "sodaAnswer": "“자기관찰은 삶을 더 많이 분석하기 위한 일이 아니라 필요할 때 보고 다시 삶으로 돌아가기 위한 도구입니다.”",
+    "question": "모든 행동에서 제 다크 코드를 찾아야 하나요?",
+    "sodaAnswer": "자기관찰은 삶을 더 많이 분석하기 위한 일이 아니라 필요할 때 보고 다시 삶으로 돌아가기 위한 도구입니다.",
     "description": "마음공부나 심리분석 자체가 또 다른 완벽주의와 도피처가 되어서는 안 됩니다. 관찰은 짧게 끝내고, 남은 하루의 실제 생활과 행동으로 복귀하는 것이 진짜 목적입니다.",
-    "curiosityQuestion": "“분석하느라 정작 지금 마주해야 할 현실을 미루고 있지는 않은가?”",
+    "curiosityQuestion": "분석하느라 정작 지금 마주해야 할 현실을 미루고 있지는 않은가?",
     "scanQuestion": "“지금 분석이 실제 선택에 도움이 되고 있는가?”",
     "factQuestion": "지금 분석에 쏟고 있는 시간과 주의는 얼마인가요?",
     "storyQuestion": "모든 것을 파헤치지 않으면 큰일 난다는 두려움이 있나요?",
     "unknownQuestion": "완벽히 분석하지 않아도 지금 당장 할 수 있는 작은 일은?",
     "bodyQuestion": "머리만 뜨거워지고 손발은 멈춰있지 않나요?",
-    "syncSentence": "“충분히 보았다. 이제 분석을 멈추고 삶의 순간으로 돌아간다.”",
-    "shiftQuestion": "“여기에서 관찰을 끝내도 된다면?”",
-    "tenPercentAction": "“SCAN을 닫고 현실 행동 하나를 한다.”",
+    "syncSentence": "충분히 보았다. 이제 분석을 멈추고 삶의 순간으로 돌아간다.",
+    "shiftQuestion": "여기에서 관찰을 끝내도 된다면?",
+    "tenPercentAction": "SCAN을 닫고 현실 행동 하나를 한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "3장. 관찰의 끝과 일상으로의 복귀",
     "appCTA": "“1분 SCAN 마치고 현실 복귀하기”",
@@ -184,13 +504,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“SCAN을 닫고 현실 행동 하나를 한다"
+      "SCAN을 닫고 현실 행동 하나를 한다."
     ],
     "relatedCards": [
       "code-014",
-      "code-019",
-      "zeropoint-30"
-    ]
+      "code-019"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "분석하느라 정작 지금 마주해야 할 현실을 미루고 있지는 않은가?",
+    "syncMessage": "충분히 보았다. 이제 분석을 멈추고 삶의 순간으로 돌아간다.",
+    "scanGuide": {
+      "step1": "지금 분석에 쏟고 있는 시간과 주의는 얼마인가요?",
+      "step2": "모든 것을 파헤치지 않으면 큰일 난다는 두려움이 있나요?",
+      "step3": "완벽히 분석하지 않아도 지금 당장 할 수 있는 작은 일은?",
+      "step4": "머리만 뜨거워지고 손발은 멈춰있지 않나요?"
+    }
   },
   {
     "id": "code-004",
@@ -198,18 +528,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "패턴의유용성",
     "cardTitle": "다크 코드 나쁜 것 모드",
-    "question": "“다크 코드는 결국 없애야 하는 나쁜 습관 아닌가요?”",
-    "sodaAnswer": "“반복패턴 안에는 지키려 했던 무언가와 유용했던 능력이 함께 있을 수 있습니다.”",
+    "question": "다크 코드는 결국 없애야 하는 나쁜 습관 아닌가요?",
+    "sodaAnswer": "반복패턴 안에는 지키려 했던 무언가와 유용했던 능력이 함께 있을 수 있습니다.",
     "description": "다크 코드는 당신을 망치려고 생긴 악마가 아니라, 어린 시절이나 과거 힘든 상황에서 나를 지켜주었던 보호 장치였습니다. 그 능력(주의력, 철저함, 배려 등)은 간직하고, 과도한 출력만 10% 줄이면 됩니다.",
-    "curiosityQuestion": "“이 지긋지긋한 패턴이 과거에는 어떤 소중한 것을 지켜주었을까?”",
+    "curiosityQuestion": "이 지긋지긋한 패턴이 과거에는 어떤 소중한 것을 지켜주었을까?",
     "scanQuestion": "“이 패턴은 무엇을 지키려고 했을까?”",
     "factQuestion": "이 패턴이 작동할 때 지켜지는 것(보상/안전감)은 무엇인가요?",
     "storyQuestion": "이 패턴을 '나쁜 죄'로 규정하며 자책하고 있지는 않나요?",
     "unknownQuestion": "이 패턴의 긍정적인 면(장점·능력)은 무엇일까요?",
     "bodyQuestion": "이 반응을 악마화할 때 가슴에 어떤 저항감이 드나요?",
-    "syncSentence": "“나를 지켜주려 애썼던 오래된 방식에 감사하며, 이제 과출력을 내려놓는다.”",
-    "shiftQuestion": "“능력은 남기고 과출력만 줄인다면?”",
-    "tenPercentAction": "“남길 능력 1개 / 줄일 과출력 1개를 적는다.”",
+    "syncSentence": "나를 지켜주려 애썼던 오래된 방식에 감사하며, 이제 과출력을 내려놓는다.",
+    "shiftQuestion": "능력은 남기고 과출력만 줄인다면?",
+    "tenPercentAction": "남길 능력 1개 / 줄일 과출력 1개를 적는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "4장. 보호 메커니즘과 자원으로서의 재발견",
     "appCTA": "“내 패턴의 보호의도 SCAN하기”",
@@ -247,13 +577,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“남길 능력 1개 / 줄일 과출력 1개를 적는다"
+      "남길 능력 1개 / 줄일 과출력 1개를 적는다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-003"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "이 지긋지긋한 패턴이 과거에는 어떤 소중한 것을 지켜주었을까?",
+    "syncMessage": "나를 지켜주려 애썼던 오래된 방식에 감사하며, 이제 과출력을 내려놓는다.",
+    "scanGuide": {
+      "step1": "이 패턴이 작동할 때 지켜지는 것(보상/안전감)은 무엇인가요?",
+      "step2": "이 패턴을 '나쁜 죄'로 규정하며 자책하고 있지는 않나요?",
+      "step3": "이 패턴의 긍정적인 면(장점·능력)은 무엇일까요?",
+      "step4": "이 반응을 악마화할 때 가슴에 어떤 저항감이 드나요?"
+    }
   },
   {
     "id": "code-005",
@@ -261,18 +601,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "과거원인집착",
     "cardTitle": "원인 찾기 모드",
-    "question": "“왜 이렇게 됐는지 원인을 정확히 알아야 바뀌는 것 아닌가요?”",
-    "sodaAnswer": "“원인을 이해하는 것이 도움이 될 수 있지만 완벽한 과거 설명이 없어도 현재의 반복을 관찰하고 다른 행동을 시험할 수 있습니다.”",
+    "question": "왜 이렇게 됐는지 원인을 정확히 알아야 바뀌는 것 아닌가요?",
+    "sodaAnswer": "원인을 이해하는 것이 도움이 될 수 있지만 완벽한 과거 설명이 없어도 현재의 반복을 관찰하고 다른 행동을 시험할 수 있습니다.",
     "description": "어린 시절의 모든 상처와 원인을 고고학자처럼 전부 발굴해야만 나아갈 수 있는 것은 아닙니다. 지금 이 순간 켜지는 Trigger와 자동 경로를 발견하면, 오늘 바로 새로운 행동을 실험할 수 있습니다.",
-    "curiosityQuestion": "“과거의 원인 퍼즐을 다 맞출 때까지 오늘의 변화를 미루고 있지는 않은가?”",
+    "curiosityQuestion": "과거의 원인 퍼즐을 다 맞출 때까지 오늘의 변화를 미루고 있지는 않은가?",
     "scanQuestion": "“과거 원인과 별개로 오늘 확인 가능한 작동경로는?”",
     "factQuestion": "오늘 내 눈앞에서 반복된 명확한 사실(Trigger)은 무엇인가요?",
     "storyQuestion": "‘원인을 모르면 절대 못 고친다’는 또 다른 규칙을 쥐고 있나요?",
     "unknownQuestion": "원인 규명 없이도 지금 당장 바꿀 수 있는 10% 행동은?",
     "bodyQuestion": "과거를 캐낼 때 느껴지는 피로감은 어디에 머무나요?",
-    "syncSentence": "“모든 이유를 다 알지 못해도, 지금 여기서 새로운 선택을 시작할 수 있다.”",
-    "shiftQuestion": "“원인을 완성하기 전에 선택 가능한 지점을 찾는다면?”",
-    "tenPercentAction": "“오늘 Trigger 하나만 기록한다.”",
+    "syncSentence": "모든 이유를 다 알지 못해도, 지금 여기서 새로운 선택을 시작할 수 있다.",
+    "shiftQuestion": "원인을 완성하기 전에 선택 가능한 지점을 찾는다면?",
+    "tenPercentAction": "오늘 Trigger 하나만 기록한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "2장. 원인 규명을 넘어 현재 작동경로로",
     "appCTA": "“오늘의 Trigger 1개 기록하기”",
@@ -310,13 +650,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“오늘 Trigger 하나만 기록한다"
+      "오늘 Trigger 하나만 기록한다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-003"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "과거의 원인 퍼즐을 다 맞출 때까지 오늘의 변화를 미루고 있지는 않은가?",
+    "syncMessage": "모든 이유를 다 알지 못해도, 지금 여기서 새로운 선택을 시작할 수 있다.",
+    "scanGuide": {
+      "step1": "오늘 내 눈앞에서 반복된 명확한 사실(Trigger)은 무엇인가요?",
+      "step2": "‘원인을 모르면 절대 못 고친다’는 또 다른 규칙을 쥐고 있나요?",
+      "step3": "원인 규명 없이도 지금 당장 바꿀 수 있는 10% 행동은?",
+      "step4": "과거를 캐낼 때 느껴지는 피로감은 어디에 머무나요?"
+    }
   },
   {
     "id": "code-006",
@@ -324,18 +674,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "SCAN완벽주의",
     "cardTitle": "완벽한 SCAN 모드",
-    "question": "“SCAN을 제대로 하려면 모든 생각과 감정을 다 알아차려야 하나요?”",
-    "sodaAnswer": "“완벽한 자기관찰 자체가 새로운 수행과제가 될 필요는 없습니다.”",
+    "question": "SCAN을 제대로 하려면 모든 생각과 감정을 다 알아차려야 하나요?",
+    "sodaAnswer": "완벽한 자기관찰 자체가 새로운 수행과제가 될 필요는 없습니다.",
     "description": "SCAN은 100점짜리 시험이 아닙니다. 복잡한 생각 전체를 다 적으려 애쓸 필요 없이, 몸의 조임이든 불쑥 튀어나온 단어 하나든 가장 먼저 선명하게 느껴지는 단서 하나만 가볍게 짚고 넘어가면 충분합니다.",
-    "curiosityQuestion": "“자기관찰마저 완벽하게 해내려 하며 또 다른 부담을 만들고 있지는 않은가?”",
+    "curiosityQuestion": "자기관찰마저 완벽하게 해내려 하며 또 다른 부담을 만들고 있지는 않은가?",
     "scanQuestion": "“지금 가장 먼저 보이는 것 하나는?”",
     "factQuestion": "지금 가장 확실하게 인지되는 단 하나의 신호는?",
     "storyQuestion": "모든 감정을 미세하게 다 포착해야 한다는 강박이 있나요?",
     "unknownQuestion": "하나만 알아차려도 변화의 문이 열린다는 사실을 허용할 수 있나요?",
     "bodyQuestion": "숨을 들이쉬고 내쉴 때 가장 뚜렷한 감각 부위는?",
-    "syncSentence": "“완벽할 필요 없다. 단 하나의 선명한 신호만으로 충분하다.”",
-    "shiftQuestion": "“전부가 아니라 한 가지 신호만 잡는다면?”",
-    "tenPercentAction": "“생각·몸·충동 중 가장 선명한 하나만 기록한다.”",
+    "syncSentence": "완벽할 필요 없다. 단 하나의 선명한 신호만으로 충분하다.",
+    "shiftQuestion": "전부가 아니라 한 가지 신호만 잡는다면?",
+    "tenPercentAction": "생각·몸·충동 중 가장 선명한 하나만 기록한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "1장. 1분 SCAN의 미니멀 원칙",
     "appCTA": "“가장 선명한 신호 1개 탭하기”",
@@ -373,13 +723,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“생각·몸·충동 중 가장 선명한 하나만 기록한다"
+      "생각·몸·충동 중 가장 선명한 하나만 기록한다."
     ],
     "relatedCards": [
       "code-017",
-      "code-001",
-      "code-002"
-    ]
+      "code-001"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "자기관찰마저 완벽하게 해내려 하며 또 다른 부담을 만들고 있지는 않은가?",
+    "syncMessage": "완벽할 필요 없다. 단 하나의 선명한 신호만으로 충분하다.",
+    "scanGuide": {
+      "step1": "지금 가장 확실하게 인지되는 단 하나의 신호는?",
+      "step2": "모든 감정을 미세하게 다 포착해야 한다는 강박이 있나요?",
+      "step3": "하나만 알아차려도 변화의 문이 열린다는 사실을 허용할 수 있나요?",
+      "step4": "숨을 들이쉬고 내쉴 때 가장 뚜렷한 감각 부위는?"
+    }
   },
   {
     "id": "code-007",
@@ -387,18 +747,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "SYNC오해",
     "cardTitle": "SYNC 오해 모드",
-    "question": "“SYNC는 제 감정을 좋게 바꾸는 단계인가요?”",
-    "sodaAnswer": "“감정을 억지로 좋은 감정으로 바꾸기보다 ‘이 반응이 지금 내 안에 있다’고 함께 두는 데 가깝습니다.”",
+    "question": "SYNC는 제 감정을 좋게 바꾸는 단계인가요?",
+    "sodaAnswer": "감정을 억지로 좋은 감정으로 바꾸기보다 ‘이 반응이 지금 내 안에 있다’고 함께 두는 데 가깝습니다.",
     "description": "SYNC(공명·수용)는 억지 긍정 확언이 아닙니다. 슬픔이나 분노를 기쁨으로 둔갑시키는 것이 아니라, '지금 내 안에 화가 솟구치고 있구나'라고 저항 없이 있는 그대로 함께 머물러주는 힘입니다.",
-    "curiosityQuestion": "“부정적인 감정을 몰아내려고 오히려 더 큰 에너지를 소모하고 있지는 않은가?”",
+    "curiosityQuestion": "부정적인 감정을 몰아내려고 오히려 더 큰 에너지를 소모하고 있지는 않은가?",
     "scanQuestion": "“지금 없애려고 싸우고 있는 감정은?”",
     "factQuestion": "내가 밀어내고 통제하려 드는 불편한 감정은 무엇인가요?",
     "storyQuestion": "이 감정을 느끼면 안 된다는 두려움이나 수치심이 있나요?",
     "unknownQuestion": "감정을 바꾸지 않고도 다음 행동을 선택할 수 있다는 것을 안다면?",
     "bodyQuestion": "그 감정과 싸움을 멈출 때 몸의 힘이 어떻게 풀리나요?",
-    "syncSentence": "“이 반응이 있다. 하지만 이것이 나의 전부는 아니다.”",
-    "shiftQuestion": "“감정을 해결하지 않아도 다음 행동을 고를 수 있다면?”",
-    "tenPercentAction": "“감정은 그대로 두고 현실 행동 하나를 선택한다.”",
+    "syncSentence": "이 반응이 있다. 하지만 이것이 나의 전부는 아니다.",
+    "shiftQuestion": "감정을 해결하지 않아도 다음 행동을 고를 수 있다면?",
+    "tenPercentAction": "감정은 그대로 두고 현실 행동 하나를 선택한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "3장. SYNC: 억지 긍정을 넘어 공명으로",
     "appCTA": "“SYNC 문장으로 호흡하기”",
@@ -436,13 +796,23 @@
       "상대를 내 뜻대로 바꾸려는 충동"
     ],
     "actionTags": [
-      "“감정은 그대로 두고 현실 행동 하나를 선택한다"
+      "감정은 그대로 두고 현실 행동 하나를 선택한다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-003"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "부정적인 감정을 몰아내려고 오히려 더 큰 에너지를 소모하고 있지는 않은가?",
+    "syncMessage": "이 반응이 있다. 하지만 이것이 나의 전부는 아니다.",
+    "scanGuide": {
+      "step1": "내가 밀어내고 통제하려 드는 불편한 감정은 무엇인가요?",
+      "step2": "이 감정을 느끼면 안 된다는 두려움이나 수치심이 있나요?",
+      "step3": "감정을 바꾸지 않고도 다음 행동을 선택할 수 있다는 것을 안다면?",
+      "step4": "그 감정과 싸움을 멈출 때 몸의 힘이 어떻게 풀리나요?"
+    }
   },
   {
     "id": "code-008",
@@ -450,18 +820,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "SHIFT정답강박",
     "cardTitle": "SHIFT 정답 찾기 모드",
-    "question": "“SHIFT를 하면 항상 정답을 알 수 있어야 하나요?”",
-    "sodaAnswer": "“SHIFT는 미래의 정답을 알아내는 기술보다 현재의 정보와 가치 안에서 선택하고 결과를 다시 보는 과정에 가깝습니다.”",
+    "question": "SHIFT를 하면 항상 정답을 알 수 있어야 하나요?",
+    "sodaAnswer": "SHIFT는 미래의 정답을 알아내는 기술보다 현재의 정보와 가치 안에서 선택하고 결과를 다시 보는 과정에 가깝습니다.",
     "description": "인생에 100% 보장된 정답 선택이란 존재하지 않습니다. SHIFT는 후회 없는 완벽한 한 수를 찾는 것이 아니라, 지금 알 수 있는 범위 내에서 10% 다르게 시도해보고 그 결과를 배움으로 삼는 태도입니다.",
-    "curiosityQuestion": "“정답을 확신할 수 없다는 이유로 한 걸음도 내딛지 못하고 있지는 않은가?”",
+    "curiosityQuestion": "정답을 확신할 수 없다는 이유로 한 걸음도 내딛지 못하고 있지는 않은가?",
     "scanQuestion": "“현재 알고 있는 것 / 모르는 것은?”",
     "factQuestion": "지금 내 손에 쥐어진 명확한 사실과 데이터는 무엇인가요?",
     "storyQuestion": "‘실패하면 끝장’이라는 극단적 파국화가 작동하고 있나요?",
     "unknownQuestion": "시도해봐야만 알 수 있는 미지의 결과는 무엇인가요?",
     "bodyQuestion": "정답을 내려놓을 때 어깨의 무거운 짐이 가벼워지나요?",
-    "syncSentence": "“정답을 몰라도 괜찮다. 지금 내 가치에 맞는 작은 시도를 한다.”",
-    "shiftQuestion": "“불확실성이 남아 있어도 선택할 수 있는 것은?”",
-    "tenPercentAction": "“다음 선택 하나를 하고 결과를 관찰한다.”",
+    "syncSentence": "정답을 몰라도 괜찮다. 지금 내 가치에 맞는 작은 시도를 한다.",
+    "shiftQuestion": "불확실성이 남아 있어도 선택할 수 있는 것은?",
+    "tenPercentAction": "다음 선택 하나를 하고 결과를 관찰한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "2장. SHIFT: 결과주의를 넘어 실험주의로",
     "appCTA": "“10% 작은 선택 실행하기”",
@@ -499,13 +869,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“다음 선택 하나를 하고 결과를 관찰한다"
+      "다음 선택 하나를 하고 결과를 관찰한다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-003"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "정답을 확신할 수 없다는 이유로 한 걸음도 내딛지 못하고 있지는 않은가?",
+    "syncMessage": "정답을 몰라도 괜찮다. 지금 내 가치에 맞는 작은 시도를 한다.",
+    "scanGuide": {
+      "step1": "지금 내 손에 쥐어진 명확한 사실과 데이터는 무엇인가요?",
+      "step2": "‘실패하면 끝장’이라는 극단적 파국화가 작동하고 있나요?",
+      "step3": "시도해봐야만 알 수 있는 미지의 결과는 무엇인가요?",
+      "step4": "정답을 내려놓을 때 어깨의 무거운 짐이 가벼워지나요?"
+    }
   },
   {
     "id": "code-009",
@@ -513,18 +893,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "행동학습",
     "cardTitle": "확신 없는 행동 모드",
-    "question": "“아직 마음이 안 바뀌었는데 행동부터 바꿔도 되나요?”",
-    "sodaAnswer": "“마음이 완전히 확신한 뒤에만 행동이 바뀌는 것은 아닙니다. 작은 행동 뒤에 새로운 학습이 생길 수도 있습니다.”",
+    "question": "아직 마음이 안 바뀌었는데 행동부터 바꿔도 되나요?",
+    "sodaAnswer": "마음이 완전히 확신한 뒤에만 행동이 바뀌는 것은 아닙니다. 작은 행동 뒤에 새로운 학습이 생길 수도 있습니다.",
     "description": "뇌 신경가소성은 생각이 다 정리된 후 행동이 따라오기보다, 안전한 10% 행동 실험을 실제로 경험했을 때 '어라? 아무 일도 안 일어나네?'라는 데이터를 통해 재배선됩니다.",
-    "curiosityQuestion": "“마음이 100% 편안해질 때까지 기다리느라 삶의 행동을 멈추고 있지는 않은가?”",
+    "curiosityQuestion": "마음이 100% 편안해질 때까지 기다리느라 삶의 행동을 멈추고 있지는 않은가?",
     "scanQuestion": "“안전하게 시험 가능한 행동은?”",
     "factQuestion": "지금 당장 마음이 불안해도 실행 가능한 가장 안전한 행동은?",
     "storyQuestion": "마음이 편해져야만 움직일 수 있다는 믿음은 사실일까요?",
     "unknownQuestion": "이 작은 행동 후 실제로 어떤 반응이 돌아올까요?",
     "bodyQuestion": "행동을 시작하기 직전 느껴지는 두근거림을 있는 그대로 허용할 수 있나요?",
-    "syncSentence": "“마음은 여전히 떨려도, 손발은 다른 길을 걸어볼 수 있다.”",
-    "shiftQuestion": "“10% 다른 행동이라면?”",
-    "tenPercentAction": "“예상 결과를 적고 작은 행동 하나를 시험한다.”",
+    "syncSentence": "마음은 여전히 떨려도, 손발은 다른 길을 걸어볼 수 있다.",
+    "shiftQuestion": "10% 다른 행동이라면?",
+    "tenPercentAction": "예상 결과를 적고 작은 행동 하나를 시험한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "1장. 신경가소성과 10% 행동 실험",
     "appCTA": "“10% 행동 실험 등록하기”",
@@ -563,13 +943,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“예상 결과를 적고 작은 행동 하나를 시험한다"
+      "예상 결과를 적고 작은 행동 하나를 시험한다."
     ],
     "relatedCards": [
       "code-011",
-      "code-020",
-      "code-017"
-    ]
+      "code-020"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "마음이 100% 편안해질 때까지 기다리느라 삶의 행동을 멈추고 있지는 않은가?",
+    "syncMessage": "마음은 여전히 떨려도, 손발은 다른 길을 걸어볼 수 있다.",
+    "scanGuide": {
+      "step1": "지금 당장 마음이 불안해도 실행 가능한 가장 안전한 행동은?",
+      "step2": "마음이 편해져야만 움직일 수 있다는 믿음은 사실일까요?",
+      "step3": "이 작은 행동 후 실제로 어떤 반응이 돌아올까요?",
+      "step4": "행동을 시작하기 직전 느껴지는 두근거림을 있는 그대로 허용할 수 있나요?"
+    }
   },
   {
     "id": "code-010",
@@ -577,18 +967,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "실험과피드백",
     "cardTitle": "예상과 실제 모드",
-    "question": "“새로운 행동을 했는데 결과가 안 좋으면 역시 예전 방식이 맞았던 건가요?”",
-    "sodaAnswer": "“한 번의 결과만으로 오래된 방식이나 새로운 방식을 모두 확정할 필요는 없습니다.”",
+    "question": "새로운 행동을 했는데 결과가 안 좋으면 역시 예전 방식이 맞았던 건가요?",
+    "sodaAnswer": "한 번의 결과만으로 오래된 방식이나 새로운 방식을 모두 확정할 필요는 없습니다.",
     "description": "실험의 결과는 나에 대한 사형선고가 아니라 귀중한 데이터입니다. 오래된 예측(EXPECTED)과 현실(ACTUAL)의 차이를 비교하고, 다음 실험에서 10%만 조율해나가면 신경망은 점진적으로 학습합니다.",
-    "curiosityQuestion": "“한 번의 삐끗함을 가지고 또다시 과거의 익숙한 감옥으로 숨으려 하지는 않는가?”",
+    "curiosityQuestion": "한 번의 삐끗함을 가지고 또다시 과거의 익숙한 감옥으로 숨으려 하지는 않는가?",
     "scanQuestion": "“내 예상 / 실제 결과 / 새로 알게 된 것은?”",
     "factQuestion": "내가 두려워했던 예상 결과와 실제 일어난 결과의 차이는?",
     "storyQuestion": "이 한 번의 일로 '역시 난 안 돼'라고 파국적 결론을 내렸나요?",
     "unknownQuestion": "이번 시행착오에서 새롭게 건져 올린 사실 데이터는?",
     "bodyQuestion": "실망감이 느껴질 때 호흡을 가다듬고 몸의 긴장을 풀 수 있나요?",
-    "syncSentence": "“모든 결과는 판결이 아니라 배움의 데이터다.”",
-    "shiftQuestion": "“실험 결과를 판결이 아니라 데이터로 사용한다면?”",
-    "tenPercentAction": "“다음 실험에서 조정할 점 하나를 적는다.”",
+    "syncSentence": "모든 결과는 판결이 아니라 배움의 데이터다.",
+    "shiftQuestion": "실험 결과를 판결이 아니라 데이터로 사용한다면?",
+    "tenPercentAction": "다음 실험에서 조정할 점 하나를 적는다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "3장. EXPECTED vs ACTUAL: 재학습의 기술",
     "appCTA": "“실험 데이터 기록하기”",
@@ -626,13 +1016,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“다음 실험에서 조정할 점 하나를 적는다"
+      "다음 실험에서 조정할 점 하나를 적는다."
     ],
     "relatedCards": [
       "code-001",
-      "code-009",
-      "code-016"
-    ]
+      "code-009"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "한 번의 삐끗함을 가지고 또다시 과거의 익숙한 감옥으로 숨으려 하지는 않는가?",
+    "syncMessage": "모든 결과는 판결이 아니라 배움의 데이터다.",
+    "scanGuide": {
+      "step1": "내가 두려워했던 예상 결과와 실제 일어난 결과의 차이는?",
+      "step2": "이 한 번의 일로 '역시 난 안 돼'라고 파국적 결론을 내렸나요?",
+      "step3": "이번 시행착오에서 새롭게 건져 올린 사실 데이터는?",
+      "step4": "실망감이 느껴질 때 호흡을 가다듬고 몸의 긴장을 풀 수 있나요?"
+    }
   },
   {
     "id": "code-011",
@@ -640,18 +1040,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "제로포인트상태오해",
     "cardTitle": "Zero Point 상태 모드",
-    "question": "“Zero Point에 들어가면 불안이나 생각이 없어져야 하나요?”",
-    "sodaAnswer": "“Zero Point를 특정한 완벽한 상태나 성적표로 만들 필요는 없습니다.”",
+    "question": "Zero Point에 들어가면 불안이나 생각이 없어져야 하나요?",
+    "sodaAnswer": "Zero Point를 특정한 완벽한 상태나 성적표로 만들 필요는 없습니다.",
     "description": "Zero Point는 번뇌가 0이 되는 초능력이나 깨달음의 등급이 아닙니다. 불안과 잡념이 파도처럼 쳐도, 그 파도와 나 사이에 '아, 지금 불안이 일어나는구나'라는 한 뼘의 선택 공간을 발견하는 것이 전부입니다.",
-    "curiosityQuestion": "“아무 생각도 안 드는 무결점 상태를 만들려다 오히려 더 긴장하고 있지는 않은가?”",
+    "curiosityQuestion": "아무 생각도 안 드는 무결점 상태를 만들려다 오히려 더 긴장하고 있지는 않은가?",
     "scanQuestion": "“지금 생각과 감정을 없애려 하고 있나?”",
     "factQuestion": "지금 내 안에서 요동치는 생각과 신체 감각은 무엇인가요?",
     "storyQuestion": "Zero Point에 도달하지 못했다고 스스로를 책망하고 있나요?",
     "unknownQuestion": "생각이 시끄러워도 그 너머에서 선택할 수 있는 작은 여백은?",
     "bodyQuestion": "소란스러운 감정 속에서도 숨이 쉬어지는 중심부를 느껴봅니다.",
-    "syncSentence": "“생각도 감정도 올라올 수 있다. 나는 그 모든 것을 담는 넓은 공간이다.”",
-    "shiftQuestion": "“그것들이 있어도 선택의 공간을 발견한다면?”",
-    "tenPercentAction": "“생각을 없애려 하지 말고 다음 행동 하나를 직접 선택한다.”",
+    "syncSentence": "생각도 감정도 올라올 수 있다. 나는 그 모든 것을 담는 넓은 공간이다.",
+    "shiftQuestion": "그것들이 있어도 선택의 공간을 발견한다면?",
+    "tenPercentAction": "생각을 없애려 하지 말고 다음 행동 하나를 직접 선택한다.",
     "relatedBook": "제로 포인트",
     "relatedBookChapter": "1장. 상태가 아닌 공간으로서의 Zero Point",
     "appCTA": "“선택의 공간으로 돌아가기”",
@@ -690,13 +1090,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“생각을 없애려 하지 말고 다음 행동 하나를 직접 선택"
+      "생각을 없애려 하지 말고 다음 행동 하나를 직접 선택한다."
     ],
     "relatedCards": [
       "code-009",
-      "code-020",
-      "code-017"
-    ]
+      "code-020"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "아무 생각도 안 드는 무결점 상태를 만들려다 오히려 더 긴장하고 있지는 않은가?",
+    "syncMessage": "생각도 감정도 올라올 수 있다. 나는 그 모든 것을 담는 넓은 공간이다.",
+    "scanGuide": {
+      "step1": "지금 내 안에서 요동치는 생각과 신체 감각은 무엇인가요?",
+      "step2": "Zero Point에 도달하지 못했다고 스스로를 책망하고 있나요?",
+      "step3": "생각이 시끄러워도 그 너머에서 선택할 수 있는 작은 여백은?",
+      "step4": "소란스러운 감정 속에서도 숨이 쉬어지는 중심부를 느껴봅니다."
+    }
   },
   {
     "id": "code-012",
@@ -704,18 +1114,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "관찰자함정",
     "cardTitle": "관찰자 정체성 모드",
-    "question": "“생각과 감정을 관찰하는 ‘진짜 나’를 찾으면 되는 건가요?”",
-    "sodaAnswer": "“관찰하는 나까지 또 하나의 고정된 정체성으로 붙잡을 필요는 없습니다.”",
+    "question": "생각과 감정을 관찰하는 ‘진짜 나’를 찾으면 되는 건가요?",
+    "sodaAnswer": "관찰하는 나까지 또 하나의 고정된 정체성으로 붙잡을 필요는 없습니다.",
     "description": "‘나는 초연한 관찰자여야 해’라는 생각마저 또 다른 지적 집착이 될 수 있습니다. 관찰은 도구일 뿐, 참된 자아를 찾는 형이상학적 미로에 갇히지 말고 오늘 밥 먹고 일하는 생생한 현실로 발을 디뎌야 합니다.",
-    "curiosityQuestion": "“관찰자라는 멋진 가면을 쓰고 삶의 실제 관계와 책임을 회피하고 있지는 않은가?”",
+    "curiosityQuestion": "관찰자라는 멋진 가면을 쓰고 삶의 실제 관계와 책임을 회피하고 있지는 않은가?",
     "scanQuestion": "“지금 ‘나는 관찰자여야 해’라는 새로운 규칙이 생겼나?”",
     "factQuestion": "현재 내 머릿속에서 돌고 있는 영적이거나 관념적인 개념은?",
     "storyQuestion": "감정을 느끼면 영적으로 미성숙하다는 식의 잣대가 있나요?",
     "unknownQuestion": "개념을 다 내려놓고 지금 내 앞에 놓인 구체적인 현실 과제는?",
     "bodyQuestion": "발바닥이 바닥에 닿는 촉감과 단단한 현실감을 느껴보세요.",
-    "syncSentence": "“관찰자라는 역할마저 내려놓고, 그저 온전한 삶으로 돌아온다.”",
-    "shiftQuestion": "“설명보다 현재 경험으로 돌아간다면?”",
-    "tenPercentAction": "“개념을 잠시 내려놓고 지금 하고 있던 삶의 행동으로 돌아간다.”",
+    "syncSentence": "관찰자라는 역할마저 내려놓고, 그저 온전한 삶으로 돌아온다.",
+    "shiftQuestion": "설명보다 현재 경험으로 돌아간다면?",
+    "tenPercentAction": "개념을 잠시 내려놓고 지금 하고 있던 삶의 행동으로 돌아간다.",
     "relatedBook": "제로 포인트",
     "relatedBookChapter": "2장. 관찰자 정체성의 함정과 현실 복귀",
     "appCTA": "“개념을 닫고 삶으로 복귀하기”",
@@ -752,13 +1162,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“개념을 잠시 내려놓고 지금 하고 있던 삶의 행동으로 "
+      "개념을 잠시 내려놓고 지금 하고 있던 삶의 행동으로 돌아간다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-003"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "관찰자라는 멋진 가면을 쓰고 삶의 실제 관계와 책임을 회피하고 있지는 않은가?",
+    "syncMessage": "관찰자라는 역할마저 내려놓고, 그저 온전한 삶으로 돌아온다.",
+    "scanGuide": {
+      "step1": "현재 내 머릿속에서 돌고 있는 영적이거나 관념적인 개념은?",
+      "step2": "감정을 느끼면 영적으로 미성숙하다는 식의 잣대가 있나요?",
+      "step3": "개념을 다 내려놓고 지금 내 앞에 놓인 구체적인 현실 과제는?",
+      "step4": "발바닥이 바닥에 닿는 촉감과 단단한 현실감을 느껴보세요."
+    }
   },
   {
     "id": "code-013",
@@ -766,18 +1186,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "책임과이해",
     "cardTitle": "다크 코드 면허증 모드",
-    "question": "“제 패턴 때문이었다면 제가 한 행동도 어쩔 수 없었던 것 아닌가요?”",
-    "sodaAnswer": "“행동의 이유를 이해하는 것과 그 행동의 책임이 사라지는 것은 같은 일이 아닙니다.”",
+    "question": "제 패턴 때문이었다면 제가 한 행동도 어쩔 수 없었던 것 아닌가요?",
+    "sodaAnswer": "행동의 이유를 이해하는 것과 그 행동의 책임이 사라지는 것은 같은 일이 아닙니다.",
     "description": "심리적 원인을 안다는 것이 잘못된 행동에 대한 면죄부가 될 수는 없습니다. '내 상처와 패턴 때문에 그랬어'로 끝나면 타인에게 피해를 줍니다. 자기이해는 책임 있는 복구와 사과로 이어질 때 비로소 완성됩니다.",
-    "curiosityQuestion": "“다크 코드를 내 미숙한 행동을 정당화하는 방패로 쓰고 있지는 않은가?”",
+    "curiosityQuestion": "다크 코드를 내 미숙한 행동을 정당화하는 방패로 쓰고 있지는 않은가?",
     "scanQuestion": "“왜 그런 행동이 나왔나 / 실제로 어떤 영향을 줬나?”",
     "factQuestion": "내 행동으로 인해 상대나 현실에 실제로 발생한 결과는?",
     "storyQuestion": "‘어쩔 수 없었다’며 상황 탓으로 돌리고 싶은 충동이 있나요?",
     "unknownQuestion": "이유를 이해하면서도 성숙하게 책임을 질 수 있는 방법은?",
     "bodyQuestion": "미안함을 직면할 때 명치 끝의 뻐근함을 솔직하게 느껴봅니다.",
-    "syncSentence": "“내 패턴을 깊이 이해한다. 그리고 그 행동의 결과에 온전히 책임진다.”",
-    "shiftQuestion": "“이해 AND 책임을 함께 둔다면?”",
-    "tenPercentAction": "“필요한 사과·수정·복구 중 하나를 한다.”",
+    "syncSentence": "내 패턴을 깊이 이해한다. 그리고 그 행동의 결과에 온전히 책임진다.",
+    "shiftQuestion": "이해 AND 책임을 함께 둔다면?",
+    "tenPercentAction": "필요한 사과·수정·복구 중 하나를 한다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "5장. 면책을 넘어 책임 있는 성숙으로",
     "appCTA": "“이해와 책임 분리 기록하기”",
@@ -818,13 +1238,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“필요한 사과·수정·복구 중 하나를 한다"
+      "필요한 사과·수정·복구 중 하나를 한다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-003"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "다크 코드를 내 미숙한 행동을 정당화하는 방패로 쓰고 있지는 않은가?",
+    "syncMessage": "내 패턴을 깊이 이해한다. 그리고 그 행동의 결과에 온전히 책임진다.",
+    "scanGuide": {
+      "step1": "내 행동으로 인해 상대나 현실에 실제로 발생한 결과는?",
+      "step2": "‘어쩔 수 없었다’며 상황 탓으로 돌리고 싶은 충동이 있나요?",
+      "step3": "이유를 이해하면서도 성숙하게 책임을 질 수 있는 방법은?",
+      "step4": "미안함을 직면할 때 명치 끝의 뻐근함을 솔직하게 느껴봅니다."
+    }
   },
   {
     "id": "code-014",
@@ -832,18 +1262,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "감정결재권",
     "cardTitle": "감정 결재권 모드",
-    "question": "“감정이 이렇게 강한데 어떻게 다른 선택을 하죠?”",
-    "sodaAnswer": "“감정이 강하다는 사실을 인정하면서도 행동의 최종 결재권까지 자동으로 넘기지 않는 작은 공간을 만들 수 있습니다.”",
+    "question": "감정이 이렇게 강한데 어떻게 다른 선택을 하죠?",
+    "sodaAnswer": "감정이 강하다는 사실을 인정하면서도 행동의 최종 결재권까지 자동으로 넘기지 않는 작은 공간을 만들 수 있습니다.",
     "description": "감정은 회사로 치면 의견을 내는 열정적인 기획자일 뿐입니다. 발언권은 100% 주되, 내 인생 행동의 최종 결재 도장은 대표이사인 당신이 쥐고 있습니다. 감정과 충동, 행동을 3단계로 분리하세요.",
-    "curiosityQuestion": "“감정이 큰 소리를 친다고 해서 내 행동의 도장을 그냥 넘겨주고 있지는 않은가?”",
+    "curiosityQuestion": "감정이 큰 소리를 친다고 해서 내 행동의 도장을 그냥 넘겨주고 있지는 않은가?",
     "scanQuestion": "“감정 / URGE / ACTION을 나누면?”",
     "factQuestion": "지금 치밀어 오르는 감정과 그에 따른 즉각적 충동(URGE)은?",
     "storyQuestion": "이 감정을 느끼면 반드시 그 행동을 해야만 직성이 풀린다는 착각은?",
     "unknownQuestion": "감정이 휘몰아치는 와중에도 취할 수 있는 다른 행동은?",
     "bodyQuestion": "충동이 치솟는 아랫배나 목구멍의 압박감을 지켜봅니다.",
-    "syncSentence": "“감정은 얼마든지 말해도 좋다. 하지만 행동의 결재권은 내가 쥔다.”",
-    "shiftQuestion": "“감정에게 발언권은 주고 결재권은 내가 가진다면?”",
-    "tenPercentAction": "“충동과 다른 행동 하나를 선택한다.”",
+    "syncSentence": "감정은 얼마든지 말해도 좋다. 하지만 행동의 결재권은 내가 쥔다.",
+    "shiftQuestion": "감정에게 발언권은 주고 결재권은 내가 가진다면?",
+    "tenPercentAction": "충동과 다른 행동 하나를 선택한다.",
     "relatedBook": "제로 포인트",
     "relatedBookChapter": "3장. 충동과 결재권의 분리",
     "appCTA": "“충동-행동 분리 실습하기”",
@@ -881,13 +1311,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“충동과 다른 행동 하나를 선택한다"
+      "충동과 다른 행동 하나를 선택한다."
     ],
     "relatedCards": [
       "code-003",
-      "code-019",
-      "zeropoint-30"
-    ]
+      "code-019"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "감정이 큰 소리를 친다고 해서 내 행동의 도장을 그냥 넘겨주고 있지는 않은가?",
+    "syncMessage": "감정은 얼마든지 말해도 좋다. 하지만 행동의 결재권은 내가 쥔다.",
+    "scanGuide": {
+      "step1": "지금 치밀어 오르는 감정과 그에 따른 즉각적 충동(URGE)은?",
+      "step2": "이 감정을 느끼면 반드시 그 행동을 해야만 직성이 풀린다는 착각은?",
+      "step3": "감정이 휘몰아치는 와중에도 취할 수 있는 다른 행동은?",
+      "step4": "충동이 치솟는 아랫배나 목구멍의 압박감을 지켜봅니다."
+    }
   },
   {
     "id": "code-015",
@@ -895,18 +1335,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "패턴과현실분리",
     "cardTitle": "패턴 vs 현실 모드",
-    "question": "“모든 문제가 결국 제 패턴 때문인가요?”",
-    "sodaAnswer": "“아닙니다. 실제 환경의 문제는 현실의 문제로 봐야 합니다. 동시에 그 현실에 내가 어떻게 반응하는지도 따로 살펴볼 수 있습니다.”",
+    "question": "모든 문제가 결국 제 패턴 때문인가요?",
+    "sodaAnswer": "아닙니다. 실제 환경의 문제는 현실의 문제로 봐야 합니다. 동시에 그 현실에 내가 어떻게 반응하는지도 따로 살펴볼 수 있습니다.",
     "description": "불합리한 직장 상사, 갑작스러운 경기 침체, 부당한 대우는 외부 현실의 문제입니다. 세상의 모든 잘못을 '내 패턴 탓'이라며 자책하지 마세요. 외부 팩트와 내 반응을 명확히 갈라놓아야 진짜 힘이 생깁니다.",
-    "curiosityQuestion": "“외부 세상의 부당함까지 전부 내 탓으로 끌어안으며 자학하고 있지는 않은가?”",
+    "curiosityQuestion": "외부 세상의 부당함까지 전부 내 탓으로 끌어안으며 자학하고 있지는 않은가?",
     "scanQuestion": "“외부 FACT / 내 반응을 각각 나누면?”",
     "factQuestion": "순수하게 외부에서 일어난 객관적 현실 상황(FACT)은?",
     "storyQuestion": "그 상황을 보고 내 안에서 자동으로 작동한 반응은?",
     "unknownQuestion": "현실에 대해 단호하게 경계를 긋거나 대책을 세울 부분은?",
     "bodyQuestion": "남의 짐을 짊어졌을 때 느껴지는 등의 묵직함을 내려놓습니다.",
-    "syncSentence": "“세상의 부당함은 현실의 문제다. 나는 내 반응의 영역을 단단히 지킨다.”",
-    "shiftQuestion": "“세상의 책임까지 내 책임으로 가져오지 않는다면?”",
-    "tenPercentAction": "“현실 문제 하나와 내 행동 하나를 별도로 적는다.”",
+    "syncSentence": "세상의 부당함은 현실의 문제다. 나는 내 반응의 영역을 단단히 지킨다.",
+    "shiftQuestion": "세상의 책임까지 내 책임으로 가져오지 않는다면?",
+    "tenPercentAction": "현실 문제 하나와 내 행동 하나를 별도로 적는다.",
     "relatedBook": "다크 코드",
     "relatedBookChapter": "2장. 외부 현실과 내면 반응의 명확한 경계",
     "appCTA": "“현실 FACT와 내 반응 분리하기”",
@@ -944,13 +1384,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“현실 문제 하나와 내 행동 하나를 별도로 적는다"
+      "현실 문제 하나와 내 행동 하나를 별도로 적는다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-018"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "다크 코드",
+    "threeCodeHint": "Dark Code",
+    "bookLink": "https://www.yes24.com/product/goods/196721492",
+    "curiosityBridge": "외부 세상의 부당함까지 전부 내 탓으로 끌어안으며 자학하고 있지는 않은가?",
+    "syncMessage": "세상의 부당함은 현실의 문제다. 나는 내 반응의 영역을 단단히 지킨다.",
+    "scanGuide": {
+      "step1": "순수하게 외부에서 일어난 객관적 현실 상황(FACT)은?",
+      "step2": "그 상황을 보고 내 안에서 자동으로 작동한 반응은?",
+      "step3": "현실에 대해 단호하게 경계를 긋거나 대책을 세울 부분은?",
+      "step4": "남의 짐을 짊어졌을 때 느껴지는 등의 묵직함을 내려놓습니다."
+    }
   },
   {
     "id": "code-016",
@@ -958,18 +1408,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "기질과조율",
     "cardTitle": "새로운 나 만들기 모드",
-    "question": "“명심코칭을 하면 완전히 다른 사람이 되어야 하나요?”",
-    "sodaAnswer": "“목표는 자신을 다른 사람으로 교체하는 것이 아니라 같은 기질과 능력을 조금 더 선택적으로 사용하는 데 있을 수 있습니다.”",
+    "question": "명심코칭을 하면 완전히 다른 사람이 되어야 하나요?",
+    "sodaAnswer": "목표는 자신을 다른 사람으로 교체하는 것이 아니라 같은 기질과 능력을 조금 더 선택적으로 사용하는 데 있을 수 있습니다.",
     "description": "내성적인 사람을 외향적으로 개조하거나, 예민한 안테나를 둔감하게 부수는 것이 아닙니다. 예민함은 탁월한 직관으로 살리고, 과도한 소설 쓰기만 줄이는 '출력 볼륨 조절'이 명심코칭의 본질입니다.",
-    "curiosityQuestion": "“나라는 고유한 악기를 버리고 전혀 다른 남의 악기가 되려고 애쓰고 있지는 않은가?”",
+    "curiosityQuestion": "나라는 고유한 악기를 버리고 전혀 다른 남의 악기가 되려고 애쓰고 있지는 않은가?",
     "scanQuestion": "“남기고 싶은 내 능력은?”",
     "factQuestion": "지금까지 나를 지탱해준 나의 타고난 기질과 강점은?",
     "storyQuestion": "이 기질을 완전히 뜯어고쳐야만 행복해질 수 있다는 착각은?",
     "unknownQuestion": "같은 악기로 10%만 더 부드럽고 선택적으로 연주한다면?",
     "bodyQuestion": "자신을 뜯어고치려 할 때의 긴장을 풀고 편안한 호흡을 찾습니다.",
-    "syncSentence": "“나는 나를 바꿀 필요 없다. 내 고유한 악기의 볼륨을 현명하게 조절한다.”",
-    "shiftQuestion": "“같은 나로 조금 다르게 행동한다면?”",
-    "tenPercentAction": "“남길 능력 1개와 조절할 과출력 1개를 정한다.”",
+    "syncSentence": "나는 나를 바꿀 필요 없다. 내 고유한 악기의 볼륨을 현명하게 조절한다.",
+    "shiftQuestion": "같은 나로 조금 다르게 행동한다면?",
+    "tenPercentAction": "남길 능력 1개와 조절할 과출력 1개를 정한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "4장. 기질의 보존과 과출력 조율",
     "appCTA": "“내 강점과 조절목록 설정하기”",
@@ -1009,13 +1459,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“남길 능력 1개와 조절할 과출력 1개를 정한다"
+      "남길 능력 1개와 조절할 과출력 1개를 정한다."
     ],
     "relatedCards": [
       "code-001",
-      "code-002",
-      "code-009"
-    ]
+      "code-002"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "나라는 고유한 악기를 버리고 전혀 다른 남의 악기가 되려고 애쓰고 있지는 않은가?",
+    "syncMessage": "나는 나를 바꿀 필요 없다. 내 고유한 악기의 볼륨을 현명하게 조절한다.",
+    "scanGuide": {
+      "step1": "지금까지 나를 지탱해준 나의 타고난 기질과 강점은?",
+      "step2": "이 기질을 완전히 뜯어고쳐야만 행복해질 수 있다는 착각은?",
+      "step3": "같은 악기로 10%만 더 부드럽고 선택적으로 연주한다면?",
+      "step4": "자신을 뜯어고치려 할 때의 긴장을 풀고 편안한 호흡을 찾습니다."
+    }
   },
   {
     "id": "code-017",
@@ -1023,18 +1483,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "변화의지표",
     "cardTitle": "변화 확인 모드",
-    "question": "“제가 정말 변하고 있는지 어떻게 알 수 있죠?”",
-    "sodaAnswer": "“감정이 다시 올라오지 않는지만 볼 필요는 없습니다. 더 빨리 알아차렸는지, 행동이 달라졌는지, 복구가 빨라졌는지도 데이터입니다.”",
+    "question": "제가 정말 변하고 있는지 어떻게 알 수 있죠?",
+    "sodaAnswer": "감정이 다시 올라오지 않는지만 볼 필요는 없습니다. 더 빨리 알아차렸는지, 행동이 달라졌는지, 복구가 빨라졌는지도 데이터입니다.",
     "description": "‘완벽히 평온해야 성공’이라는 흑백논리를 버리세요. 예전엔 3일 동안 앓던 것을 반나절 만에 알아차렸거나, 소리를 지르려다 5초 멈췄다면 이미 당신의 뇌 신경망은 거대하게 진화하고 있는 중입니다.",
-    "curiosityQuestion": "“이미 일어난 수많은 작은 진전들을 무시한 채 완벽만을 요구하고 있지는 않은가?”",
+    "curiosityQuestion": "이미 일어난 수많은 작은 진전들을 무시한 채 완벽만을 요구하고 있지는 않은가?",
     "scanQuestion": "“발견 시점 / 행동 / 복구 중 달라진 것은?”",
     "factQuestion": "지난주와 비교해 1초라도 더 빨리 알아차렸거나 멈칫했던 순간은?",
     "storyQuestion": "조금이라도 흔들리면 '말짱 도루묵'이라는 흑백논리에 빠져있나요?",
     "unknownQuestion": "방향이 바뀌고 있다는 작은 신호들은 무엇인가요?",
     "bodyQuestion": "스스로의 성장을 인정해줄 때 가슴에 퍼지는 온기를 느껴봅니다.",
-    "syncSentence": "“완벽하지 않아도 괜찮다. 나의 회복 속도와 알아차림은 날마다 빨라지고 있다.”",
-    "shiftQuestion": "“완벽함이 아니라 방향 변화를 본다면?”",
-    "tenPercentAction": "“이번 주 달랐던 장면 하나를 저장한다.”",
+    "syncSentence": "완벽하지 않아도 괜찮다. 나의 회복 속도와 알아차림은 날마다 빨라지고 있다.",
+    "shiftQuestion": "완벽함이 아니라 방향 변화를 본다면?",
+    "tenPercentAction": "이번 주 달랐던 장면 하나를 저장한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "3장. 변화의 미세 지표: 인지·지연·복구",
     "appCTA": "“달라진 장면 1개 저장하기”",
@@ -1075,13 +1535,23 @@
       "즉시 확인하려는 충동"
     ],
     "actionTags": [
-      "“이번 주 달랐던 장면 하나를 저장한다"
+      "이번 주 달랐던 장면 하나를 저장한다."
     ],
     "relatedCards": [
       "code-009",
-      "code-001",
-      "code-006"
-    ]
+      "code-001"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "이미 일어난 수많은 작은 진전들을 무시한 채 완벽만을 요구하고 있지는 않은가?",
+    "syncMessage": "완벽하지 않아도 괜찮다. 나의 회복 속도와 알아차림은 날마다 빨라지고 있다.",
+    "scanGuide": {
+      "step1": "지난주와 비교해 1초라도 더 빨리 알아차렸거나 멈칫했던 순간은?",
+      "step2": "조금이라도 흔들리면 '말짱 도루묵'이라는 흑백논리에 빠져있나요?",
+      "step3": "방향이 바뀌고 있다는 작은 신호들은 무엇인가요?",
+      "step4": "스스로의 성장을 인정해줄 때 가슴에 퍼지는 온기를 느껴봅니다."
+    }
   },
   {
     "id": "code-018",
@@ -1089,18 +1559,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "재발과복구",
     "cardTitle": "다시 돌아감 모드",
-    "question": "“한동안 잘하다가 다시 예전 패턴으로 돌아왔어요.”",
-    "sodaAnswer": "“자동반응으로 다시 돌아가는 것은 일어날 수 있습니다. 중요한 것은 그 사실을 얼마나 빨리 알아차리고 다시 선택하느냐입니다.”",
+    "question": "한동안 잘하다가 다시 예전 패턴으로 돌아왔어요?",
+    "sodaAnswer": "자동반응으로 다시 돌아가는 것은 일어날 수 있습니다. 중요한 것은 그 사실을 얼마나 빨리 알아차리고 다시 선택하느냐입니다.",
     "description": "오래된 신경 경로는 피곤하거나 스트레스를 받으면 언제든 다시 켜질 수 있습니다. 그것은 실패가 아니라 자연스러운 생체 신호입니다. 실망하며 자책할 시간에, '아 다시 켜졌네' 하고 다음 행동을 고르면 됩니다.",
-    "curiosityQuestion": "“한 번 미끄러졌다고 해서 그동안 쌓아온 모든 노력을 스스로 지워버리고 있지는 않은가?”",
+    "curiosityQuestion": "한 번 미끄러졌다고 해서 그동안 쌓아온 모든 노력을 스스로 지워버리고 있지는 않은가?",
     "scanQuestion": "“언제 다시 알아차렸나?”",
     "factQuestion": "예전 패턴이 다시 불쑥 튀어나온 구체적 상황은?",
     "storyQuestion": "‘역시 난 안 변해’라는 자책의 두 번째 화살을 쏘고 있나요?",
     "unknownQuestion": "넘어진 자리에서 바로 털고 일어나는 복구 시간은?",
     "bodyQuestion": "무릎을 털고 일어나는 가벼운 심호흡을 한 번 쉽니다.",
-    "syncSentence": "“다시 돌아갈 수 있다. 중요한 건 지금 이 순간 다시 시작하는 것이다.”",
-    "shiftQuestion": "“지금 이 순간부터 다시 선택한다면?”",
-    "tenPercentAction": "“다음 행동 하나만 이전과 다르게 한다.”",
+    "syncSentence": "다시 돌아갈 수 있다. 중요한 건 지금 이 순간 다시 시작하는 것이다.",
+    "shiftQuestion": "지금 이 순간부터 다시 선택한다면?",
+    "tenPercentAction": "다음 행동 하나만 이전과 다르게 한다.",
     "relatedBook": "뉴럴 코드",
     "relatedBookChapter": "5장. 재발의 수용과 신속한 복구 루프",
     "appCTA": "“지금 즉시 리셋하고 재선택하기”",
@@ -1138,13 +1608,23 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“다음 행동 하나만 이전과 다르게 한다"
+      "다음 행동 하나만 이전과 다르게 한다."
     ],
     "relatedCards": [
       "code-015",
-      "code-001",
-      "code-002"
-    ]
+      "code-001"
+    ],
+    "recommendedBook": "뉴럴 코드",
+    "threeCodeHint": "Neural Code",
+    "bookLink": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%20%EC%BD%94%EB%93%9C",
+    "curiosityBridge": "한 번 미끄러졌다고 해서 그동안 쌓아온 모든 노력을 스스로 지워버리고 있지는 않은가?",
+    "syncMessage": "다시 돌아갈 수 있다. 중요한 건 지금 이 순간 다시 시작하는 것이다.",
+    "scanGuide": {
+      "step1": "예전 패턴이 다시 불쑥 튀어나온 구체적 상황은?",
+      "step2": "‘역시 난 안 변해’라는 자책의 두 번째 화살을 쏘고 있나요?",
+      "step3": "넘어진 자리에서 바로 털고 일어나는 복구 시간은?",
+      "step4": "무릎을 털고 일어나는 가벼운 심호흡을 한 번 쉽니다."
+    }
   },
   {
     "id": "code-019",
@@ -1152,18 +1632,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "도구선택",
     "cardTitle": "세 코드 어디부터 모드",
-    "question": "“다크 코드, 뉴럴 코드, 제로포인트 중 어디부터 해야 하나요?”",
-    "sodaAnswer": "“세 코드를 순서대로 졸업해야 하는 코스처럼 볼 필요는 없습니다.”",
+    "question": "다크 코드, 뉴럴 코드, 제로포인트 중 어디부터 해야 하나요?",
+    "sodaAnswer": "세 코드를 순서대로 졸업해야 하는 코스처럼 볼 필요는 없습니다.",
     "description": "3대 코드는 1단계, 2단계, 3단계 레벨이 아닙니다. 패턴을 관찰할 땐 다크 코드, 다른 행동을 실험할 땐 뉴럴 코드, 감정과 거리를 둘 땐 제로포인트라는 공구함 속의 세 가지 렌즈입니다.",
-    "curiosityQuestion": "“순서를 지켜야 한다는 형식에 얽매여 지금 당장 필요한 도구를 놓치고 있지는 않은가?”",
+    "curiosityQuestion": "순서를 지켜야 한다는 형식에 얽매여 지금 당장 필요한 도구를 놓치고 있지는 않은가?",
     "scanQuestion": "“지금 필요한 것은 발견인가, 실험인가, 선택의 공간인가?”",
     "factQuestion": "지금 내 앞에 닥친 장면에 가장 절실한 마음의 도움은?",
     "storyQuestion": "반드시 단계별로 마스터해야 한다는 완벽주의가 있나요?",
     "unknownQuestion": "지금 바로 내 손에 잡히는 가장 쉬운 도구 하나는?",
     "bodyQuestion": "세 도구 중 떠올렸을 때 몸이 가장 가벼워지는 도구는?",
-    "syncSentence": "“순서는 없다. 지금 이 순간 나를 돕는 단 하나의 도구를 꺼내든다.”",
-    "shiftQuestion": "“현재 장면에 필요한 도구 하나만 사용한다면?”",
-    "tenPercentAction": "“아래 세 가지 중 하나만 선택한다: 패턴 보기 / 작은 실험 / 한 걸음 떨어져 선택하기.”",
+    "syncSentence": "순서는 없다. 지금 이 순간 나를 돕는 단 하나의 도구를 꺼내든다.",
+    "shiftQuestion": "현재 장면에 필요한 도구 하나만 사용한다면?",
+    "tenPercentAction": "아래 세 가지 중 하나만 선택한다: 패턴 보기 / 작은 실험 / 한 걸음 떨어져 선택하기.",
     "relatedBook": "제로 포인트",
     "relatedBookChapter": "4장. 3대 코드의 유기적 통합과 도구적 활용",
     "appCTA": "“지금 필요한 도구 1개 탭하기”",
@@ -1201,13 +1681,23 @@
       "상황을 통제하려는 즉각 충동"
     ],
     "actionTags": [
-      "“아래 세 가지 중 하나만 선택한다: 패턴 보기 / 작"
+      "아래 세 가지 중 하나만 선택한다: 패턴 보기 / 작은 실험 / 한 걸음 떨어져 선택하기."
     ],
     "relatedCards": [
       "code-003",
-      "code-014",
-      "zeropoint-30"
-    ]
+      "code-014"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "순서를 지켜야 한다는 형식에 얽매여 지금 당장 필요한 도구를 놓치고 있지는 않은가?",
+    "syncMessage": "순서는 없다. 지금 이 순간 나를 돕는 단 하나의 도구를 꺼내든다.",
+    "scanGuide": {
+      "step1": "지금 내 앞에 닥친 장면에 가장 절실한 마음의 도움은?",
+      "step2": "반드시 단계별로 마스터해야 한다는 완벽주의가 있나요?",
+      "step3": "지금 바로 내 손에 잡히는 가장 쉬운 도구 하나는?",
+      "step4": "세 도구 중 떠올렸을 때 몸이 가장 가벼워지는 도구는?"
+    }
   },
   {
     "id": "code-020",
@@ -1215,18 +1705,18 @@
     "category": "3대코드·제로포인트",
     "keyword": "삶으로복귀",
     "cardTitle": "다시 삶으로 모드",
-    "question": "“계속 저를 관찰하다 보면 결국 뭐가 달라져야 하는 건가요?”",
-    "sodaAnswer": "“명심코칭의 목적은 자신을 영원히 분석하는 사람이 되는 것이 아니라 삶으로 돌아가 조금 더 선택하며 사는 데 있습니다.”",
+    "question": "계속 저를 관찰하다 보면 결국 뭐가 달라져야 하는 건가요?",
+    "sodaAnswer": "명심코칭의 목적은 자신을 영원히 분석하는 사람이 되는 것이 아니라 삶으로 돌아가 조금 더 선택하며 사는 데 있습니다.",
     "description": "마음 카드를 들여다보는 시간은 짧을수록 좋습니다. 중요한 것은 화면을 끄고 당신의 소중한 사람을 안아주고, 눈앞의 업무를 해내며, 오늘 하루를 직접 살아내는 구체적인 당신의 삶입니다.",
-    "curiosityQuestion": "“마음 연구라는 성채 안에 머무느라 진짜 살아있는 삶의 모험을 뒤로 미루고 있지는 않은가?”",
+    "curiosityQuestion": "마음 연구라는 성채 안에 머무느라 진짜 살아있는 삶의 모험을 뒤로 미루고 있지는 않은가?",
     "scanQuestion": "“지금까지 무엇을 발견했나?”",
     "factQuestion": "오늘 내가 화면 밖 현실에서 직접 부딪치고 사랑해야 할 삶의 과제는?",
     "storyQuestion": "더 완벽히 깨달아야만 진짜 인생이 시작된다는 미신이 있나요?",
     "unknownQuestion": "지금 휴대폰을 덮고 세상으로 걸어 나갈 때 만날 새로운 풍경은?",
     "bodyQuestion": "가슴을 펴고 온몸으로 차오르는 생생한 활력을 느껴보세요.",
-    "syncSentence": "“이것도 나의 일부지만 나의 전부는 아니다. 나는 이제 삶으로 돌아간다.”",
-    "shiftQuestion": "“그래서 오늘 실제 삶에서 무엇을 할 것인가?”",
-    "tenPercentAction": "“앱을 닫은 뒤 실행할 현실 행동 하나를 선택한다.”",
+    "syncSentence": "이것도 나의 일부지만 나의 전부는 아니다. 나는 이제 삶으로 돌아간다.",
+    "shiftQuestion": "그래서 오늘 실제 삶에서 무엇을 할 것인가?",
+    "tenPercentAction": "앱을 닫은 뒤 실행할 현실 행동 하나를 선택한다.",
     "relatedBook": "제로 포인트",
     "relatedBookChapter": "5장. 관찰의 완성: 삶으로의 완전한 복귀",
     "appCTA": "“현실 행동 1개 정하고 앱 닫기”",
@@ -1265,12 +1755,22 @@
       "즉시 전부 고쳐버리려는 충동"
     ],
     "actionTags": [
-      "“앱을 닫은 뒤 실행할 현실 행동 하나를 선택한다"
+      "앱을 닫은 뒤 실행할 현실 행동 하나를 선택한다."
     ],
     "relatedCards": [
       "code-009",
-      "code-011",
-      "code-017"
-    ]
+      "code-011"
+    ],
+    "recommendedBook": "제로 포인트",
+    "threeCodeHint": "Zero Point",
+    "bookLink": "https://www.yes24.com/product/goods/195946431",
+    "curiosityBridge": "마음 연구라는 성채 안에 머무느라 진짜 살아있는 삶의 모험을 뒤로 미루고 있지는 않은가?",
+    "syncMessage": "이것도 나의 일부지만 나의 전부는 아니다. 나는 이제 삶으로 돌아간다.",
+    "scanGuide": {
+      "step1": "오늘 내가 화면 밖 현실에서 직접 부딪치고 사랑해야 할 삶의 과제는?",
+      "step2": "더 완벽히 깨달아야만 진짜 인생이 시작된다는 미신이 있나요?",
+      "step3": "지금 휴대폰을 덮고 세상으로 걸어 나갈 때 만날 새로운 풍경은?",
+      "step4": "가슴을 펴고 온몸으로 차오르는 생생한 활력을 느껴보세요."
+    }
   }
 ]

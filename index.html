@@ -1522,7 +1522,7 @@
                   이번 주를 시작할 첫 카드를 발견해 보세요.
                 </p>
                 <p class="text-[11px] text-slate-400 mb-3 italic">
-                  “최근 기록에서는 이 질문들을 자주 선택했습니다. 이것은 성격판정이 아니라 최근 기록의 패턴입니다.”
+                  “성격이나 성향을 판정하는 것이 아니라, 최근 당신이 주목했던 질문들의 기록입니다.”
                 </p>
 
                 <!-- 7 Days Card Flow List -->
@@ -1556,601 +1556,293 @@
         </div>
 
         <!-- ============================================================= -->
-        <!-- 요즘 사람들이 많이 묻는 질문 (가로 스크롤 캐러셀)             -->
+        <!-- SECTION 2: 요즘 많이 찾는 질문 (카테고리 믹스 8선)              -->
         <!-- ============================================================= -->
         <div id="popular-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-5 gap-2">
             <div>
-              <span class="text-[11px] font-black text-[#0F6B5B] uppercase tracking-wider block">RELATIONSHIP & ANXIETY PACK 01</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">요즘 관계에서 이런 생각 해본 적 있나요?</h4>
-              <p class="text-xs text-slate-500 mt-0.5">사람을 몇 개의 유형 상자에 가두지 않습니다. 지금 이 순간 켜진 상태(동사)부터 살펴봅니다.</p>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-[#0F6B5B] text-xs font-black mb-1.5 border border-emerald-100">
+                <span>🔥 요즘 많이 찾는 대표 질문</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              </div>
+              <h4 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                지금 많은 사람들이 멈춰 서서 바라보는 질문들
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                사람을 유형으로 단정하지 않습니다. 지금 내 마음에 켜진 생각과 질문을 하나 골라 1분 SCAN을 시작해보세요.
+              </p>
             </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
+            <span class="text-xs text-slate-400 font-bold hidden sm:inline-flex items-center gap-1 shrink-0">
+              <span>← 가로로 넘겨보세요 →</span>
+            </span>
           </div>
 
-          <div id="popular-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured relationship cards + more -->
+          <div id="popular-questions-carousel" class="flex gap-3.5 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth snap-x">
+            <!-- JavaScript will render 8 curated mixed-category cards -->
           </div>
         </div>
 
         <!-- ============================================================= -->
-        <!-- 돈·사업·경제불안 PACK 02 (가로 스크롤 캐러셀)                -->
+        <!-- SECTION 3: 10대 카테고리 탭 탐색기 (10 Categories Explorer)     -->
         <!-- ============================================================= -->
-        <div id="money-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#C7A86B] uppercase tracking-wider block">MONEY & BUSINESS ANXIETY PACK 02</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">돈 문제 앞에서 나는 어떤 모드가 켜질까?</h4>
-              <p class="text-xs text-slate-500 mt-0.5">돈 문제는 현실입니다. 그리고 그 현실 앞에서 반복되는 내 반응도 살펴볼 수 있습니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
+        <div id="category-explorer-section" class="mb-16 text-left p-5 sm:p-7 rounded-3xl bg-slate-50/80 border border-slate-200/90 shadow-sm">
+          <div class="mb-5">
+            <span class="text-[11px] font-black text-[#0F6B5B] uppercase tracking-wider block mb-1">200 CARDS EXPLORER</span>
+            <h4 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              200장의 질문, 10대 카테고리로 찾아보기
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              지금 내 일상에서 가장 마찰이 일어나는 주제를 선택하세요.
+            </p>
           </div>
 
-          <div id="money-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured money cards -->
-          </div>
-        </div>
-
-        <!-- ============================================================= -->
-        <!-- 직장·성과·번아웃 PACK 03 (가로 스크롤 캐러셀)                  -->
-        <!-- ============================================================= -->
-        <div id="career-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#0284C7] uppercase tracking-wider block">CAREER & BURNOUT PACK 03</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">일이 힘든 걸까, 일 앞에서 켜지는 내 반응까지 힘든 걸까?</h4>
-              <p class="text-xs text-slate-500 mt-0.5">현실의 업무 문제는 현실대로 봅니다. 그리고 그 상황에서 반복되는 내 반응도 함께 봅니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
+          <!-- 10대 카테고리 탭 버튼 바 -->
+          <div id="category-tabs-container" class="flex flex-wrap gap-1.5 sm:gap-2 mb-6 pb-2 border-b border-slate-200/70">
+            <button type="button" onclick="selectCategoryFilter('all')" data-cat="all" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-[#0F6B5B] text-white shadow-sm">전체 (200+)</button>
+            <button type="button" onclick="selectCategoryFilter('relationship')" data-cat="relationship" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">🤝 관계·심리</button>
+            <button type="button" onclick="selectCategoryFilter('money')" data-cat="money" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">💰 돈·사업·빚</button>
+            <button type="button" onclick="selectCategoryFilter('career')" data-cat="career" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">💼 번아웃·성과</button>
+            <button type="button" onclick="selectCategoryFilter('perfection')" data-cat="perfection" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">🎯 완벽주의·비교</button>
+            <button type="button" onclick="selectCategoryFilter('family')" data-cat="family" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">🏡 부모·가족독립</button>
+            <button type="button" onclick="selectCategoryFilter('love')" data-cat="love" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">💌 연애·친밀감</button>
+            <button type="button" onclick="selectCategoryFilter('decision')" data-cat="decision" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">⚡ 결정·미루기</button>
+            <button type="button" onclick="selectCategoryFilter('emotion')" data-cat="emotion" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">🌊 자책·불안</button>
+            <button type="button" onclick="selectCategoryFilter('belief')" data-cat="belief" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">🔮 사주·운명·선택</button>
+            <button type="button" onclick="selectCategoryFilter('code')" data-cat="code" class="cat-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">🧭 3대 코드 통합</button>
           </div>
 
-          <div id="career-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured career cards -->
-          </div>
-        </div>
-
-        <!-- ============================================================= -->
-        <!-- 완벽주의·인정·비교 PACK 04 (가로 스크롤 캐러셀)                -->
-        <!-- ============================================================= -->
-        <div id="perfection-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#7C3AED] uppercase tracking-wider block">PERFECTION & COMPARISON PACK 04</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">잘하고 싶은 마음이 언제부터 나를 심사하기 시작했을까?</h4>
-              <p class="text-xs text-slate-500 mt-0.5">높은 기준을 버리는 것이 아닙니다. 기준을 내가 사용하는지, 기준이 나를 평가하고 있는지 살펴봅니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
+          <!-- 카테고리 카드 렌더링 컨테이너 -->
+          <div id="category-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
+            <!-- JavaScript will dynamically render cards according to selected category -->
           </div>
 
-          <div id="perfection-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured perfection cards -->
+          <!-- 카테고리 카드 더보기 버튼 -->
+          <div id="category-more-container" class="mt-5 text-center hidden">
+            <button type="button" onclick="loadMoreCategoryCards()" class="px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:border-[#0F6B5B] hover:text-[#0F6B5B] text-slate-700 font-bold text-xs shadow-2xs transition-all">
+              <span>카드 더 보기 (남은 카드 탐색)</span> ↓
+            </button>
           </div>
         </div>
 
         <!-- ============================================================= -->
-        <!-- 부모·가족·독립 PACK 05 (가로 스크롤 캐러셀)                    -->
+        <!-- SECTION 4: 3대 코드 간결화 (Dark · Neural · Zero Point)          -->
         <!-- ============================================================= -->
-        <div id="family-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#E11D48] uppercase tracking-wider block">FAMILY & BOUNDARY PACK 05</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">가족을 사랑하는 것과 내 삶을 포기하는 것은 같은 말일까?</h4>
-              <p class="text-xs text-slate-500 mt-0.5">부모를 탓하기 위한 검사도, 무조건 이해하기 위한 검사도 아닙니다. 가족 안에서 내 책임과 상대의 책임, 사랑과 경계, 죄책감과 실제 잘못을 구분해봅니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
+        <div id="three-codes-section" class="mb-16 text-left">
+          <div class="mb-6">
+            <span class="text-[11px] font-black text-[#C7A86B] uppercase tracking-wider block mb-1">THE 3-CODE FRAMEWORK</span>
+            <h4 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              명심코칭의 핵심 원리 — 3대 코드
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              반복되는 무의식 패턴을 알아차리고, 신경망을 다시 훈련하며, 선택할 수 있는 내면의 자유를 회복합니다.
+            </p>
           </div>
 
-          <div id="family-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured family cards -->
+          <!-- 3대 코드 요약 카드 3장 -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <!-- 1. Dark Code -->
+            <div class="p-5 rounded-3xl bg-white border-2 border-rose-100 hover:border-rose-300 hover:shadow-md transition-all">
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 text-[10px] font-black tracking-wider uppercase">CODE 01 · 원인 탐색</span>
+                <span class="text-xs">🌑</span>
+              </div>
+              <h5 class="text-base font-black text-slate-900 mb-1">다크 코드 (Dark Code)</h5>
+              <p class="text-xs font-bold text-rose-600 mb-2">무의식적 자동반응의 발견</p>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                자극이 주어질 때 0.1초 만에 켜지는 나의 자동 해석과 방어기제를 발견합니다. 내가 부족해서가 아니라, 과거에 작동했던 생존 알고리즘이었음을 이해합니다.
+              </p>
+            </div>
+
+            <!-- 2. Neural Code -->
+            <div class="p-5 rounded-3xl bg-white border-2 border-emerald-100 hover:border-emerald-300 hover:shadow-md transition-all">
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-[#0F6B5B] text-[10px] font-black tracking-wider uppercase">CODE 02 · 행동 전환</span>
+                <span class="text-xs">⚡</span>
+              </div>
+              <h5 class="text-base font-black text-slate-900 mb-1">뉴럴 코드 (Neural Code)</h5>
+              <p class="text-xs font-bold text-[#0F6B5B] mb-2">신경망 재설계와 10% 실험</p>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                거창한 결심은 뇌의 저항을 부릅니다. 10초 멈춤(HOLD), 10% 최소 단위의 마이크로 행동실험을 통해 뇌에 새로운 신경 경로를 만들어냅니다.
+              </p>
+            </div>
+
+            <!-- 3. Zero Point -->
+            <div class="p-5 rounded-3xl bg-white border-2 border-amber-100 hover:border-amber-300 hover:shadow-md transition-all">
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-[#C7A86B] text-[10px] font-black tracking-wider uppercase">CODE 03 · 본질 회복</span>
+                <span class="text-xs">✨</span>
+              </div>
+              <h5 class="text-base font-black text-slate-900 mb-1">제로 포인트 (Zero Point)</h5>
+              <p class="text-xs font-bold text-[#C7A86B] mb-2">선택하는 관찰자의 공간</p>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                생각과 나를 분리하는 영점(Zero Point). 불안이나 분노가 지나가도 그것이 ‘나 자신’이 아님을 알아차리고, 매 순간 자유로운 선택의 주인이 됩니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3대 코드 심층 인터랙션 접기/펼침 버튼 -->
+          <div class="text-center">
+            <button type="button" id="three-code-detail-toggle-btn" onclick="toggleThreeCodeDetail()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
+              <span id="three-code-detail-btn-text">3대 코드 상세 관점(ONE SCENE 3 LENSES) 및 작동지도 펼치기</span>
+              <span id="three-code-detail-arrow" class="transition-transform duration-300">▼</span>
+            </button>
+          </div>
+
+          <!-- 접혀 있는 3대 코드 심층 인터랙션 컨테이너 -->
+          <div id="three-code-detail-container" class="hidden mt-6 p-6 rounded-3xl bg-slate-50 border border-slate-200">
+            <!-- 1 SCENE - 3 LENSES -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-3">
+                <h6 class="text-sm font-black text-slate-900">단 하나의 장면, 3가지 렌즈로 바라보기</h6>
+                <div class="flex gap-1.5">
+                  <button type="button" onclick="switchThreeCodeLens('dark')" id="lens-btn-dark" class="px-3 py-1 rounded-lg text-xs font-black bg-slate-900 text-white">Dark Code</button>
+                  <button type="button" onclick="switchThreeCodeLens('neural')" id="lens-btn-neural" class="px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-600 border border-slate-200">Neural Code</button>
+                  <button type="button" onclick="switchThreeCodeLens('zero')" id="lens-btn-zero" class="px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-600 border border-slate-200">Zero Point</button>
+                </div>
+              </div>
+              <div id="lens-content-dark" class="p-4 rounded-2xl bg-white border border-rose-100 text-xs text-slate-700 leading-relaxed">
+                <strong class="text-rose-700 block mb-1">상황: 팀장의 한숨 소리를 들었을 때</strong>
+                “저 한숨은 나 때문이야. 이번 보고서가 엉망이었나 봐. 난 왜 늘 이 모양일까?” → <strong>내면의 무의식적 자동 해석(STORY)을 발견합니다.</strong>
+              </div>
+              <div id="lens-content-neural" class="hidden p-4 rounded-2xl bg-white border border-emerald-100 text-xs text-slate-700 leading-relaxed">
+                <strong class="text-[#0F6B5B] block mb-1">상황: 팀장의 한숨 소리를 들었을 때</strong>
+                “10초 동안 호흡을 고르고, 혼자 상상하는 대신 팀장님께 ‘수정할 부분이 있는지’ 직접 1문장 질문하기” → <strong>충동 대신 10%의 새로운 행동을 실행합니다.</strong>
+              </div>
+              <div id="lens-content-zero" class="hidden p-4 rounded-2xl bg-white border border-amber-100 text-xs text-slate-700 leading-relaxed">
+                <strong class="text-[#C7A86B] block mb-1">상황: 팀장의 한숨 소리를 들었을 때</strong>
+                “한숨 소리는 사실(Fact)이고, 두려움은 일어났다 사라지는 감정일 뿐이다. 나는 이 반응보다 크다.” → <strong>어떤 해석에도 갇히지 않는 영점에 머뭅니다.</strong>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- ============================================================= -->
-        <!-- 연애·친밀감·이별 PACK 06 (가로 스크롤 캐러셀)                 -->
+        <!-- SECTION 5: 실제 사용법 4단계 (How to Use in 4 Steps)           -->
         <!-- ============================================================= -->
-        <div id="love-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#F43F5E] uppercase tracking-wider block">LOVE & INTIMACY PACK 06</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">사랑의 미래를 맞히기보다 지금 이 관계에서 확인된 것을 봅니다.</h4>
-              <p class="text-xs text-slate-500 mt-0.5">당신이나 상대를 ‘불안형’, ‘회피형’으로 판정하지 않습니다. 지금 어떤 장면에서 어떤 STORY와 행동이 반복되는지 살펴봅니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
+        <div id="how-to-use-section" class="mb-16 text-left p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0F2824]/5 via-white to-[#0F6B5B]/5 border border-emerald-100">
+          <div class="mb-6 text-center sm:text-left">
+            <span class="text-[11px] font-black text-[#0F6B5B] uppercase tracking-wider block mb-1">PRACTICAL STEP GUIDE</span>
+            <h4 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              명심카드 실제 사용법 4단계
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              분석에 갇히지 않고, 오늘 하루의 작은 변화로 건너가는 4개의 관문입니다.
+            </p>
           </div>
 
-          <div id="love-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured love cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Step 1 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+              <div class="w-8 h-8 rounded-xl bg-emerald-100 text-[#0F6B5B] font-black text-sm flex items-center justify-center mb-3">1</div>
+              <h5 class="text-sm font-black text-slate-900 mb-1">질문 고르기</h5>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                오늘의 카드를 무작위로 뽑거나, 지금 내 머릿속을 괴롭히는 고민을 입력해 질문 카드를 마주합니다.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+              <div class="w-8 h-8 rounded-xl bg-emerald-100 text-[#0F6B5B] font-black text-sm flex items-center justify-center mb-3">2</div>
+              <h5 class="text-sm font-black text-slate-900 mb-1">1분 SCAN</h5>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                실제로 확인된 사실(FACT)과 내가 덧붙인 해석(STORY), 몸의 신체 반응과 즉각 충동을 1분간 분리해 봅니다.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+              <div class="w-8 h-8 rounded-xl bg-emerald-100 text-[#0F6B5B] font-black text-sm flex items-center justify-center mb-3">3</div>
+              <h5 class="text-sm font-black text-slate-900 mb-1">10% 행동</h5>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                거창한 다짐 대신 지금 10분 안에 바로 실천할 수 있는 가장 가벼운 마이크로 행동 하나를 정합니다.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+              <div class="w-8 h-8 rounded-xl bg-emerald-100 text-[#0F6B5B] font-black text-sm flex items-center justify-center mb-3">4</div>
+              <h5 class="text-sm font-black text-slate-900 mb-1">삶으로 돌아가기</h5>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                앱에 기록하여 습관으로 만들고, 관련 도서로 원리를 심화하며 가벼워진 마음으로 내 삶을 살아갑니다.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- ============================================================= -->
-        <!-- 결정·미루기·습관 PACK 07 (가로 스크롤 캐러셀)                 -->
+        <!-- SECTION 6: APP 실천 기능 (우선 배치)                           -->
         <!-- ============================================================= -->
-        <div id="decision-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#4F46E5] uppercase tracking-wider block">DECISION & ACTION PACK 07</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">변화는 마음이 완벽히 준비된 뒤에만 시작될까?</h4>
-              <p class="text-xs text-slate-500 mt-0.5">확신을 기다리기보다 안전한 범위에서 작게 행동하고, 예상과 실제를 비교해봅니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
-          </div>
-
-          <div id="decision-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured decision cards -->
-          </div>
-        </div>
-
-        <!-- ============================================================= -->
-        <!-- 자책·불안·감정회복 PACK 08 (가로 스크롤 캐러셀)               -->
-        <!-- ============================================================= -->
-        <div id="emotion-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#0D9488] uppercase tracking-wider block">EMOTION RECOVERY & RESILIENCE PACK 08</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">감정을 없애려 애쓰지 않고, 두 번째 화살(자기비난)을 멈출 수 있을까?</h4>
-              <p class="text-xs text-slate-500 mt-0.5">몸의 신호 → 감정 → 충동 → 행동을 분리하고, 실수 뒤에 붙는 자책을 수습과 회복 행동으로 전환합니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
-          </div>
-
-          <div id="emotion-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured emotion recovery cards -->
-          </div>
-        </div>
-
-        <!-- ============================================================= -->
-        <!-- 사주·삼재·운명·선택 PACK 09 (가로 스크롤 캐러셀)               -->
-        <!-- ============================================================= -->
-        <div id="belief-questions-section" class="mb-14 text-left">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#8B5CF6] uppercase tracking-wider block">BELIEF, FATE & CHOICE PACK 09</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">미래를 맞히기보다 지금 내 선택권이 어디에 있는지 봅니다.</h4>
-              <p class="text-xs text-slate-500 mt-0.5">“믿음에는 발언권을 줄 수 있다. 그러나 행동의 결재권까지 자동으로 넘기지는 않는다.” 믿음을 조롱하지 않습니다. 맹신하도록 만들지도 않습니다. 무엇을 믿든 오늘 행동의 결재권까지 넘겨줄 필요는 없습니다.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
-          </div>
-
-          <div id="belief-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured belief & choice cards -->
-          </div>
-        </div>
-
-        <!-- ============================================================= -->
-        <!-- 3대 코드 통합 (Dark · Neural · Zero Point) PACK 10             -->
-        <!-- ============================================================= -->
-        <div id="three-code-integration-section" class="mb-16 text-left">
+        <div id="myungsim-app-section" class="mb-16 text-left p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#14233B] via-[#0F2824] to-[#0A493E] text-white border-2 border-[#C7A86B]/50 shadow-2xl relative overflow-hidden">
+          <div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
           
-          <!-- 1. 메인 헤더 & 홈페이지 통합 섹션 -->
-          <div class="mb-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-emerald-950 text-white border border-emerald-500/30 shadow-xl relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
-
-            <div class="relative z-10 max-w-3xl">
-              <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-black text-[10px] uppercase tracking-wider border border-emerald-500/30 inline-flex items-center gap-1.5 mb-3">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                CORE INTEGRATION PACK 10
+          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div class="max-w-xl space-y-2.5">
+              <span class="px-3 py-1 rounded-full bg-white/10 text-[#E2CF9F] text-xs font-black uppercase tracking-wider border border-white/10 inline-block">
+                📱 MYUNGSIM COACHING APP — 일상 실천
               </span>
-              <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug mb-3">
-                “왜 반복하는지 보고,<br class="sm:hidden" /> 조금 다르게 해보고,<br />
-                <span class="text-emerald-400">다시 내 삶으로 돌아옵니다.</span>”
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
-                당신을 고정된 유형으로 설명하지 않습니다. 지금 어떤 길을 타고 있는지 보고, 필요하면 다른 길을 시험하고, 다시 삶으로 돌아갑니다.
+              <h4 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+                머리로 이해한 것을 몸의 습관으로 — 명심코칭 앱
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                오늘 마주한 질문과 1분 SCAN 결과를 앱에 남겨두세요. 며칠간 쌓인 나의 반응 지도를 확인하고, 같은 실수를 반복하려 할 때 나만의 맞춤 알림을 받을 수 있습니다.
               </p>
-
-              <!-- 3대 코드 일상어 번역 3개 카드 -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                <!-- DARK CODE -->
-                <div class="p-4 rounded-2xl bg-white/10 border border-white/10 hover:border-emerald-400/50 transition">
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-black text-amber-300 uppercase tracking-wider">DARK CODE</span>
-                    <span class="text-[10px] text-slate-400">도구 1</span>
-                  </div>
-                  <div class="text-sm font-bold text-white mb-1">“반복되는 자동길”</div>
-                  <p class="text-[11px] text-slate-300 leading-relaxed">
-                    반복의 지도를 봅니다. 내가 어떤 자극에서 어떤 길을 자동으로 타는지 관찰합니다.
-                  </p>
-                </div>
-
-                <!-- NEURAL CODE -->
-                <div class="p-4 rounded-2xl bg-white/10 border border-white/10 hover:border-emerald-400/50 transition">
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-black text-emerald-300 uppercase tracking-wider">NEURAL CODE</span>
-                    <span class="text-[10px] text-slate-400">도구 2</span>
-                  </div>
-                  <div class="text-sm font-bold text-white mb-1">“새로운 경험을 만드는 연습”</div>
-                  <p class="text-[11px] text-slate-300 leading-relaxed">
-                    새로운 경험을 만듭니다. 오래된 예측을 10% 안전한 작은 행동 실험으로 다시 학습합니다.
-                  </p>
-                </div>
-
-                <!-- ZERO POINT -->
-                <div class="p-4 rounded-2xl bg-white/10 border border-white/10 hover:border-emerald-400/50 transition">
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-black text-cyan-300 uppercase tracking-wider">ZERO POINT</span>
-                    <span class="text-[10px] text-slate-400">도구 3</span>
-                  </div>
-                  <div class="text-sm font-bold text-white mb-1">“반응과 나 사이의 선택공간”</div>
-                  <p class="text-[11px] text-slate-300 leading-relaxed">
-                    패턴보다 넓은 자리에서 다시 선택합니다. 생각·감정과 나 사이에 한 뼘의 공간을 엽니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2. 3-CODE ROUTER (도구 라우터) -->
-          <div id="three-code-router-section" class="mb-10 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm">
-            <div class="mb-5">
-              <span class="text-[11px] font-black text-[#0F766E] uppercase tracking-wider block">3-CODE ROUTER</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">“지금 나에게 필요한 질문은 무엇일까?”</h4>
-              <p class="text-xs text-slate-500 mt-1">세 코드는 사람의 등급이나 레벨이 아닙니다. 지금 장면에서 필요한 도구 하나를 선택해보세요.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <!-- ROUTER A: DARK CODE -->
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 hover:shadow-md transition-all flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 font-black text-[10px]">DARK CODE</span>
-                    <span class="text-[10px] text-slate-400 font-bold">반복 관찰</span>
-                  </div>
-                  <h5 class="text-sm sm:text-base font-black text-slate-900 mb-1.5">
-                    “왜 또 이 길로 왔지?”
-                  </h5>
-                  <div class="text-xs text-slate-600 mb-2">
-                    <strong class="text-slate-900">사용 시점:</strong> 같은 상황과 행동이 반복될 때
-                  </div>
-                  <p class="text-[11px] text-slate-500 leading-relaxed">
-                    Trigger → Story → Body → Urge → Action의 연결고리를 차분히 내려다봅니다.
-                  </p>
-                </div>
-                <button type="button" onclick="selectThreeCodeRouter('dark')" class="mt-4 w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition cursor-pointer">
-                  내 작동지도 보기 &rarr;
-                </button>
-              </div>
-
-              <!-- ROUTER B: NEURAL CODE -->
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-900 font-black text-[10px]">NEURAL CODE</span>
-                    <span class="text-[10px] text-slate-400 font-bold">행동 재학습</span>
-                  </div>
-                  <h5 class="text-sm sm:text-base font-black text-slate-900 mb-1.5">
-                    “다음에는 무엇을 10% 다르게 해볼까?”
-                  </h5>
-                  <div class="text-xs text-slate-600 mb-2">
-                    <strong class="text-slate-900">사용 시점:</strong> 패턴은 보이지만 실제 행동을 바꿔보고 싶을 때
-                  </div>
-                  <p class="text-[11px] text-slate-500 leading-relaxed">
-                    Hold → Delay → 10% Experiment → Relearn 과정을 거쳐 뇌 회로를 재배선합니다.
-                  </p>
-                </div>
-                <button type="button" onclick="selectThreeCodeRouter('neural')" class="mt-4 w-full py-2.5 rounded-xl bg-[#007A55] hover:bg-[#006042] text-white font-bold text-xs transition cursor-pointer">
-                  작은 행동실험 시작하기 &rarr;
-                </button>
-              </div>
-
-              <!-- ROUTER C: ZERO POINT -->
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-cyan-500 hover:shadow-md transition-all flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="px-2 py-0.5 rounded-md bg-cyan-100 text-cyan-900 font-black text-[10px]">ZERO POINT</span>
-                    <span class="text-[10px] text-slate-400 font-bold">선택 공간</span>
-                  </div>
-                  <h5 class="text-sm sm:text-base font-black text-slate-900 mb-1.5">
-                    “이 반응이 내 삶의 모든 것을 결정해야 할까?”
-                  </h5>
-                  <div class="text-xs text-slate-600 mb-2">
-                    <strong class="text-slate-900">사용 시점:</strong> 생각·감정과 너무 붙어 선택지가 안 보일 때
-                  </div>
-                  <p class="text-[11px] text-slate-500 leading-relaxed">
-                    반응을 없애려 싸우지 않고, 현재의 정보·가치·현실 안에서 다시 선택할 공간을 만듭니다.
-                  </p>
-                </div>
-                <button type="button" onclick="selectThreeCodeRouter('zero')" class="mt-4 w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition cursor-pointer">
-                  선택의 공간으로 돌아가기 &rarr;
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. ONE SCENE — THREE LENSES 인터랙션 -->
-          <div class="mb-10 p-6 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
-              <div>
-                <span class="text-[11px] font-black text-indigo-600 uppercase tracking-wider block">ONE SCENE — THREE LENSES</span>
-                <h4 class="text-base sm:text-lg font-black text-slate-900">한 장면을 세 개의 렌즈로 들여다보기</h4>
-                <p class="text-xs text-slate-600 mt-0.5">상황 예시: <span class="text-indigo-700 font-bold">“상대에게 답장이 없다.”</span></p>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <button type="button" id="lens-btn-dark" onclick="switchThreeCodeLens('dark')" class="lens-tab-btn px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-sm transition cursor-pointer">
-                  Dark Code
-                </button>
-                <button type="button" id="lens-btn-neural" onclick="switchThreeCodeLens('neural')" class="lens-tab-btn px-3 py-1.5 rounded-xl bg-white text-slate-700 hover:bg-slate-100 text-xs font-bold transition cursor-pointer">
-                  Neural Code
-                </button>
-                <button type="button" id="lens-btn-zero" onclick="switchThreeCodeLens('zero')" class="lens-tab-btn px-3 py-1.5 rounded-xl bg-white text-slate-700 hover:bg-slate-100 text-xs font-bold transition cursor-pointer">
-                  Zero Point
-                </button>
+              <div class="flex flex-wrap gap-2.5 pt-2 text-xs text-[#E2CF9F] font-bold">
+                <span class="flex items-center gap-1">✓ 1분 SCAN 데일리 간편 기록</span>
+                <span class="flex items-center gap-1">✓ 내 작동지도(Working Map) 시각화</span>
+                <span class="flex items-center gap-1">✓ 10% 행동 실천 알림</span>
               </div>
             </div>
 
-            <!-- Lens Content: Dark Code -->
-            <div id="lens-content-dark" class="p-4 rounded-2xl bg-white border border-amber-200/80 shadow-2xs space-y-2">
-              <div class="flex items-center justify-between text-xs font-bold text-amber-800 border-b border-amber-100 pb-2">
-                <span>🔍 Dark Code 렌즈: 자동반응 관찰</span>
-                <span class="text-[10px] text-slate-400 font-mono">Trigger → STORY → URGE → ACTION</span>
-              </div>
-              <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
-                <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100">
-                  <div class="text-[10px] font-black text-amber-700">1. TRIGGER</div>
-                  <div class="font-bold text-slate-800 mt-1">답장이 없다</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100">
-                  <div class="text-[10px] font-black text-amber-700">2. STORY</div>
-                  <div class="font-bold text-slate-800 mt-1">마음이 식었다</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100">
-                  <div class="text-[10px] font-black text-amber-700">3. BODY</div>
-                  <div class="font-bold text-slate-800 mt-1">가슴 긴장</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100">
-                  <div class="text-[10px] font-black text-amber-700">4. URGE</div>
-                  <div class="font-bold text-slate-800 mt-1">확인 메시지 충동</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100 col-span-2 sm:col-span-1">
-                  <div class="text-[10px] font-black text-amber-700">5. ACTION</div>
-                  <div class="font-bold text-slate-800 mt-1">반복 연락</div>
-                </div>
-              </div>
+            <div class="w-full md:w-auto shrink-0 flex flex-col gap-2">
+              <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_click', { source: 'ia_app_section' })" class="px-7 py-4 rounded-2xl bg-[#0F6B5B] hover:bg-emerald-600 text-white font-black text-sm text-center shadow-lg transition flex items-center justify-center gap-2 cursor-pointer border border-emerald-400/30">
+                <span>⚡ 명심코칭 앱에서 실천 시작하기</span>
+                <span>&rarr;</span>
+              </a>
+              <span class="text-[10px] text-slate-400 text-center">웹 브라우저 & 스마트폰 모두 즉시 사용 가능</span>
             </div>
-
-            <!-- Lens Content: Neural Code -->
-            <div id="lens-content-neural" class="hidden p-4 rounded-2xl bg-white border border-emerald-200/80 shadow-2xs space-y-2">
-              <div class="flex items-center justify-between text-xs font-bold text-emerald-800 border-b border-emerald-100 pb-2">
-                <span>🧪 Neural Code 렌즈: 10% 안전한 행동 실험</span>
-                <span class="text-[10px] text-slate-400 font-mono">Expected → Experiment → Actual → Relearn</span>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
-                <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100">
-                  <div class="text-[10px] font-black text-emerald-700">EXPECTED (예측)</div>
-                  <div class="font-bold text-slate-800 mt-1">연락하지 않으면 관계가 더 멀어진다</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100">
-                  <div class="text-[10px] font-black text-emerald-700">EXPERIMENT (실험)</div>
-                  <div class="font-bold text-slate-800 mt-1">추가 메시지를 30분 보류한다</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100">
-                  <div class="text-[10px] font-black text-emerald-700">ACTUAL (실제)</div>
-                  <div class="font-bold text-slate-800 mt-1">상대가 회의를 마치고 정상 답장했다</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100">
-                  <div class="text-[10px] font-black text-emerald-700">RELEARN (재학습)</div>
-                  <div class="font-bold text-slate-800 mt-1">답장이 늦는 것이 거절을 뜻하진 않는다</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Lens Content: Zero Point -->
-            <div id="lens-content-zero" class="hidden p-4 rounded-2xl bg-white border border-cyan-200/80 shadow-2xs space-y-2">
-              <div class="flex items-center justify-between text-xs font-bold text-cyan-800 border-b border-cyan-100 pb-2">
-                <span>🌌 Zero Point 렌즈: 반응과 나 사이의 선택공간</span>
-                <span class="text-[10px] text-slate-400 font-mono">Notice → AND → Choice</span>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-                <div class="p-2.5 rounded-xl bg-cyan-50 border border-cyan-100">
-                  <div class="text-[10px] font-black text-cyan-700">NOTICE (알아차림)</div>
-                  <div class="font-bold text-slate-800 mt-1">“불안이 올라오고 있다.”</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-cyan-50 border border-cyan-100">
-                  <div class="text-[10px] font-black text-cyan-700">AND (공존)</div>
-                  <div class="font-bold text-slate-800 mt-1">“불안이 내 안에 있지만, 불안이 나의 전부는 아니다.”</div>
-                </div>
-                <div class="p-2.5 rounded-xl bg-cyan-50 border border-cyan-100">
-                  <div class="text-[10px] font-black text-cyan-700">CHOICE (선택)</div>
-                  <div class="font-bold text-slate-800 mt-1">“현재 정보와 가치 안에서 무엇을 선택할까?”</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. AUTO → SPACE → CHOICE 서비스 대표 다이어그램 & AND LANGUAGE -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-            <!-- AUTO → SPACE → CHOICE -->
-            <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-              <div>
-                <span class="text-[11px] font-black text-[#007A55] uppercase tracking-wider block">REPRESENTATIVE DIAGRAM</span>
-                <h4 class="text-base sm:text-lg font-black text-slate-900 mb-1">AUTO → SPACE → CHOICE</h4>
-                <p class="text-xs text-slate-500 mb-4">명심코칭 전체 서비스의 핵심 작동 원리 다이어그램입니다.</p>
-
-                <div class="space-y-2 text-xs font-bold">
-                  <div class="p-2.5 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-between">
-                    <span>1. TRIGGER (촉발 자극)</span>
-                    <span class="text-[10px] text-slate-400 font-normal">외부 사건 · 단서</span>
-                  </div>
-                  <div class="text-center text-slate-400 text-xs">↓</div>
-                  <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 flex items-center justify-between">
-                    <span>2. AUTO (자동 반응)</span>
-                    <span class="text-[10px] text-amber-700 font-normal">생각 · 감정 · 몸 · 충동 · 익숙한 행동</span>
-                  </div>
-                  <div class="text-center text-slate-400 text-xs">↓</div>
-                  <div class="p-2.5 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-900 flex items-center justify-between">
-                    <span>3. SPACE (선택의 여백)</span>
-                    <span class="text-[10px] text-cyan-700 font-normal">“아, 지금 시작됐구나.”</span>
-                  </div>
-                  <div class="text-center text-slate-400 text-xs">↓</div>
-                  <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-center justify-between">
-                    <span>4. CHOICE (새로운 선택)</span>
-                    <span class="text-[10px] text-emerald-700 font-normal">같이 가기 · 조금 다르게 · 잠시 보류 · 경계 긋기</span>
-                  </div>
-                  <div class="text-center text-slate-400 text-xs">↓</div>
-                  <div class="p-2 rounded-xl bg-slate-900 text-white text-center text-xs">
-                    RESULT (결과 확인) → 다시 SCAN
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- AND LANGUAGE -->
-            <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-              <div>
-                <span class="text-[11px] font-black text-emerald-600 uppercase tracking-wider block">AND LANGUAGE</span>
-                <h4 class="text-base sm:text-lg font-black text-slate-900 mb-1">이분법을 벗어나는 AND의 언어</h4>
-                <p class="text-xs text-slate-500 mb-3">‘둘 중 하나’라는 흑백논리에서 벗어나 양쪽을 모두 포용합니다.</p>
-
-                <!-- 선택된 문장 큰 디스플레이 -->
-                <div id="and-display-text" class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-slate-800 text-xs sm:text-sm text-center font-bold mb-3 min-h-[58px] flex items-center justify-center">
-                  <span class="text-slate-900 font-bold">“불안하다</span>
-                  <span class="mx-2 px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-black text-xs uppercase tracking-wider">AND</span>
-                  <span class="text-emerald-700 font-bold">행동을 선택할 수 있다.”</span>
-                </div>
-
-                <!-- AND 칩 버튼들 -->
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                  <button type="button" onclick="selectAndSentence(0)" class="and-chip-btn px-2.5 py-1.5 rounded-xl text-xs font-bold border transition cursor-pointer bg-emerald-600 text-white border-emerald-600">
-                    불안 AND 선택
-                  </button>
-                  <button type="button" onclick="selectAndSentence(1)" class="and-chip-btn px-2.5 py-1.5 rounded-xl text-xs font-bold border transition cursor-pointer bg-slate-100 text-slate-700 border-slate-200">
-                    사랑 AND 거절
-                  </button>
-                  <button type="button" onclick="selectAndSentence(2)" class="and-chip-btn px-2.5 py-1.5 rounded-xl text-xs font-bold border transition cursor-pointer bg-slate-100 text-slate-700 border-slate-200">
-                    실수 AND 전체아님
-                  </button>
-                  <button type="button" onclick="selectAndSentence(3)" class="and-chip-btn px-2.5 py-1.5 rounded-xl text-xs font-bold border transition cursor-pointer bg-slate-100 text-slate-700 border-slate-200">
-                    분노 AND 비공격
-                  </button>
-                  <button type="button" onclick="selectAndSentence(4)" class="and-chip-btn px-2.5 py-1.5 rounded-xl text-xs font-bold border transition cursor-pointer bg-slate-100 text-slate-700 border-slate-200">
-                    사주참고 AND 선택권
-                  </button>
-                  <button type="button" onclick="selectAndSentence(5)" class="and-chip-btn px-2.5 py-1.5 rounded-xl text-xs font-bold border transition cursor-pointer bg-slate-100 text-slate-700 border-slate-200">
-                    과거패턴 AND 재선택
-                  </button>
-                </div>
-              </div>
-
-              <!-- MY WORKING MAP 트리거 버튼 -->
-              <div class="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between">
-                <span class="text-[11px] text-slate-500 font-medium">나만의 패턴 지도가 궁금하다면?</span>
-                <button type="button" onclick="renderMyWorkingMap()" class="px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition cursor-pointer flex items-center gap-1">
-                  <span>🗺️ 나의 작동지도 보기</span>
-                  <span>&rarr;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5. MY WORKING MAP ("최근 발견한 나의 작동지도") 컴포넌트 -->
-          <div id="my-working-map-box" class="hidden mb-10 p-6 sm:p-7 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 text-white border border-emerald-500/40 shadow-xl">
-            <div class="mb-4">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="px-2 py-0.5 rounded-md bg-emerald-400/20 text-emerald-300 font-bold text-[10px]">MY WORKING MAP</span>
-                <span class="text-xs text-amber-300 font-bold">절대적 성격분석이 아닌 작동 관찰</span>
-              </div>
-              <h4 class="text-lg sm:text-xl font-black text-white">최근 발견한 나의 작동지도</h4>
-              <p class="text-xs text-slate-300 mt-1 font-semibold leading-relaxed">
-                “이것은 당신의 정체성 지도가 아닙니다. 최근 기록에서 반복해서 발견된 하나의 작동지도입니다.”
-              </p>
-            </div>
-
-            <!-- 9대 작동지도 그리드 -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-2">
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-amber-400 font-bold block">1. 자주 등장한 Trigger</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">예측 불가능한 상황 / 모호한 답장</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-amber-400 font-bold block">2. 자주 등장한 STORY</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">“내가 잘못했거나 배제당할 것이다”</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-amber-400 font-bold block">3. Body Signal</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">가슴 조임 · 목 뻣뻣함 · 얕은 호흡</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-emerald-400 font-bold block">4. 자주 등장한 URGE</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">즉시 확인 메시지 / 과도한 설명 충동</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-emerald-400 font-bold block">5. 반복 Action</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">거듭 사과하기 / 스마트폰 반복 새로고침</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-emerald-400 font-bold block">6. Immediate Reward</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">일시적인 안도감 (불안 3초 해소)</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-cyan-400 font-bold block">7. Long-term Cost</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">피로감 누적 · 관계 의존도 심화</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-cyan-400 font-bold block">8. What I Protect</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">버림받지 않을 안전 · 인정받고 싶은 마음</span>
-              </div>
-              <div class="p-3 rounded-2xl bg-white/10 border border-white/10">
-                <span class="text-[10px] text-cyan-400 font-bold block">9. 10% Different Action</span>
-                <span class="font-bold text-white text-xs mt-0.5 block">전송 전 10초 멈추고 심호흡 3번 하기</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6. PACK 10 Featured 6 가로 스크롤 캐러셀 -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
-            <div>
-              <span class="text-[11px] font-black text-[#0F766E] uppercase tracking-wider block">FEATURED INTEGRATION CARDS</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">3대 코드 통합 핵심 카드 (Featured 6)</h4>
-              <p class="text-xs text-slate-500 mt-0.5">패턴을 알면서도 반복될 때, 정체성과 작동을 분리하고 다시 삶으로 돌아오는 핵심 사이다 즉답.</p>
-            </div>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline">&larr; 가로로 스크롤하여 탐색하세요 &rarr;</span>
-          </div>
-
-          <div id="three-code-questions-carousel" class="flex gap-3 overflow-x-auto pb-4 horizontal-scroll-container scroll-smooth">
-            <!-- Javascript will render 6 featured three-code integration cards -->
           </div>
         </div>
 
         <!-- ============================================================= -->
-        <!-- 05. 책으로 더 깊이 (청류출판사 3대 명심 도서 브릿지)          -->
+        <!-- SECTION 7: BOOKS 구조화 4권 (도서출판 청류 핵심 라인업)          -->
         <!-- ============================================================= -->
-        <div id="cheongryu-books-section" class="mb-14 text-left">
-          <div class="flex items-center justify-between mb-4">
+        <div id="cheongryu-books-section" class="mb-16 text-left">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2">
             <div>
-              <span class="text-[11px] font-black text-[#C7A86B] uppercase tracking-wider block">DEEP PRINCIPLES & ROOTS</span>
-              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">책으로 더 깊이 — 청류출판사 3대 도서</h4>
+              <span class="text-[11px] font-black text-[#C7A86B] uppercase tracking-wider block mb-1">DEEP ARCHITECTURE & PRINCIPLES</span>
+              <h4 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                책으로 더 깊이 — 도서출판 청류 명심 도서 4종
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                카드로 내 문제를 마주했다면, 책으로 인간 본성과 인지 구조의 작동 원리를 깊이 탐구합니다.
+              </p>
             </div>
-            <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-[#0F6B5B] font-bold transition flex items-center gap-1">
+            <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-[#0F6B5B] font-bold transition flex items-center gap-1 shrink-0">
               <span>청류 전 도서 YES24에서 보기</span>
               <span>&rarr;</span>
             </a>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-            <!-- 1. 다크 코드 (신간 발간) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- 1. 다크 코드 (최신간) -->
             <div class="p-5 rounded-3xl bg-white border-2 border-rose-200 hover:border-rose-500 hover:shadow-xl transition-all flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 text-[10px] font-black">🔥 2026 신간 발간 · 패턴 발견</span>
+                  <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 text-[10px] font-black">🔥 2026 최신간</span>
                   <span class="text-[10px] text-rose-500 font-bold">Book 01</span>
                 </div>
-                <div class="flex items-start gap-3.5 mb-3">
-                  <img src="/assets/book-cover-darkcode.jpg" alt="다크 코드 표지" class="w-16 sm:w-20 rounded-xl shadow-md border border-slate-200 shrink-0 object-cover" />
-                  <div>
-                    <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-rose-700 transition-colors mb-0.5">
-                      청류 《다크 코드》
-                    </h5>
-                    <p class="text-[11px] text-rose-600 font-bold mb-1">
-                      “나는 왜 알면서도 같은 패턴을 반복하는가”
-                    </p>
-                    <p class="text-[11px] text-slate-600 leading-relaxed line-clamp-2 sm:line-clamp-3">
-                      심리학, 행동과학, 뇌과학이 만난 자기이해의 결정판. 무의식 방어기제와 자동패턴을 해체합니다.
-                    </p>
-                  </div>
-                </div>
+                <h5 class="text-sm font-black text-slate-900 group-hover:text-rose-700 transition-colors mb-1">
+                  청류 《다크 코드》
+                </h5>
+                <p class="text-[11px] text-rose-600 font-bold mb-2">
+                  “나는 왜 알면서도 같은 패턴을 반복하는가”
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                  무의식 방어기제와 자동패턴의 암호를 해체하고 나를 괴롭히던 감정의 뿌리를 밝혀냅니다.
+                </p>
               </div>
               <a href="https://www.yes24.com/product/goods/196721492" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'dark_code' })" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-slate-900 hover:from-rose-700 hover:to-slate-800 text-white font-black text-xs text-center transition block shadow-sm">
-                📚 YES24에서 도서구매하기 &rarr;
+                📚 YES24 바로가기 &rarr;
               </a>
             </div>
 
@@ -2158,76 +1850,106 @@
             <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-lg transition-all flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-[#0F6B5B] text-[10px] font-black">신경망 · 10% 행동</span>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-[#0F6B5B] text-[10px] font-black">신경망 · 10% 행동</span>
                   <span class="text-[10px] text-slate-400 font-bold">Book 02</span>
                 </div>
-                <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-[#0F6B5B] transition-colors mb-1.5">
-                  청류출판사 《뉴럴 코드》
+                <h5 class="text-sm font-black text-slate-900 group-hover:text-[#0F6B5B] transition-colors mb-1">
+                  청류 《뉴럴 코드》
                 </h5>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  DELAY, 10% 행동, IF-THEN. 무거운 결심 대신 신경계를 다시 훈련시키는 인지행동 재학습 가이드입니다.
+                <p class="text-[11px] text-[#0F6B5B] font-bold mb-2">
+                  “신경계를 훈련하는 작은 행동의 과학”
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                  무거운 결심 대신 신경망에 새로운 길을 놓아주는 10초 HOLD와 10% 행동실험 가이드.
                 </p>
               </div>
               <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'neural_code' })" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block">
-                📚 YES24에서 도서구매하기 &rarr;
+                📚 YES24 바로가기 &rarr;
               </a>
             </div>
 
-            <!-- 3. 제로 포인트 -->
+            <!-- 3. 제로 포인트 (최신 직링크) -->
             <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-[#C7A86B] hover:shadow-lg transition-all flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-[#C7A86B] text-[10px] font-black">순수 의식 · 알아차림</span>
+                  <span class="px-2 py-0.5 rounded-full bg-amber-50 text-[#C7A86B] text-[10px] font-black">알아차림 · 중심 회복</span>
                   <span class="text-[10px] text-slate-400 font-bold">Book 03</span>
                 </div>
-                <h5 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-amber-800 transition-colors mb-1.5">
-                  청류출판사 《제로 포인트》
+                <h5 class="text-sm font-black text-slate-900 group-hover:text-amber-800 transition-colors mb-1">
+                  청류 《제로 포인트》
                 </h5>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  생각과 나와의 거리, 동일시 해제. 어떤 감정이 덮쳐와도 요동치지 않는 내면의 영점(Zero Point)을 회복합니다.
+                <p class="text-[11px] text-[#C7A86B] font-bold mb-2">
+                  “어떤 감정 앞에서도 흔들리지 않는 영점”
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                  감정과 생각과 나 사이의 거리. 동일시를 해제하고 내면의 고요한 선택권을 회복합니다.
                 </p>
               </div>
               <a href="https://www.yes24.com/product/goods/195946431" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'zero_point' })" class="w-full py-2.5 rounded-xl bg-[#14233B] hover:bg-slate-800 text-[#E2CF9F] font-black text-xs text-center transition block border border-slate-700">
-                📚 YES24에서 도서구매하기 &rarr;
+                📚 YES24 바로가기 &rarr;
+              </a>
+            </div>
+
+            <!-- 4. 나는 믿는다 그러나 갇히지 않는다 -->
+            <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-cyan-600 hover:shadow-lg transition-all flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-800 text-[10px] font-black">신념 · 내적 주권</span>
+                  <span class="text-[10px] text-slate-400 font-bold">Book 04</span>
+                </div>
+                <h5 class="text-sm font-black text-slate-900 group-hover:text-cyan-800 transition-colors mb-1">
+                  청류 《나는 믿는다 그러나...》
+                </h5>
+                <p class="text-[11px] text-cyan-800 font-bold mb-2">
+                  “믿되 갇히지 않는 지혜와 자유”
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                  사주, 신념, 프레임에 휘둘리지 않고 모든 믿음을 도구로서 자유롭게 활용하는 내적 주권.
+                </p>
+              </div>
+              <a href="https://www.yes24.com/product/goods/196550353" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'belief_freedom' })" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-black text-xs text-center transition block">
+                📚 YES24 바로가기 &rarr;
               </a>
             </div>
           </div>
         </div>
 
         <!-- ============================================================= -->
-        <!-- 06. 앱에서 직접 해보기 (명심코칭 앱 브릿지)                    -->
+        <!-- SECTION 8: 윤리·신뢰 면책 배너 (Trust & Ethics Notice)          -->
         <!-- ============================================================= -->
-        <div id="myungsim-app-section" class="mb-14 text-left p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#14233B] via-[#0F2824] to-[#0A493E] text-white border-2 border-[#C7A86B]/50 shadow-2xl relative overflow-hidden">
-          <div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
-          
-          <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div class="max-w-lg space-y-2">
-              <span class="px-3 py-1 rounded-full bg-white/10 text-[#E2CF9F] text-xs font-black uppercase tracking-wider border border-white/10">
-                📱 MYUNGSIM COACHING APP
-              </span>
-              <h4 class="text-xl sm:text-2xl font-black text-white tracking-tight">
-                앱에서 직접 해보기 — 나의 작동지도 저장과 실천
-              </h4>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                오늘의 통찰을 휘발시키지 마세요. 명심코칭 앱에서 나의 1분 SCAN 기록을 저장하고, 지난 패턴과 비교하며 10% 행동 실험을 이어갈 수 있습니다.
-              </p>
-              <div class="flex flex-wrap gap-2 pt-1 text-[11px] text-[#E2CF9F] font-bold">
-                <span>✓ 1분 SCAN 빠른 기록</span>
-                <span>✓ 반복 Trigger 감지 알림</span>
-                <span>✓ 비진단 작동지도 아카이빙</span>
+        <div id="trust-safety-section" class="mb-14 text-left p-6 rounded-3xl bg-slate-50 border border-slate-200 text-slate-700">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200/80">
+            <div class="flex items-center gap-2.5">
+              <span class="text-xl">🛡️</span>
+              <div>
+                <h5 class="text-sm font-black text-slate-900">명심코칭의 신뢰와 윤리 약속</h5>
+                <p class="text-[11px] text-slate-500">우리는 사람을 틀에 가두거나 운명에 기대지 않습니다.</p>
               </div>
             </div>
+            <div class="text-[11px] font-bold text-slate-500 flex items-center gap-2">
+              <span>비진단 코칭 모델</span>
+              <span>·</span>
+              <span>인지행동 실천 가이드</span>
+              <span>·</span>
+              <span>연구 및 교육 목적</span>
+            </div>
+          </div>
 
-            <div class="w-full sm:w-auto shrink-0 flex flex-col gap-2">
-              <a href="https://myeongsimcoaching.com" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('app_click', { source: 'main_section' })" class="px-6 py-3.5 rounded-2xl bg-[#0F6B5B] hover:bg-emerald-600 text-white font-black text-xs sm:text-sm text-center shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
-                <span>⚡ 앱에서 오늘 기록 저장하기</span>
-                <span>&rarr;</span>
-              </a>
-              <span class="text-[10px] text-slate-400 text-center">웹 / 모바일 앱 즉시 연동 지원</span>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-600 leading-relaxed">
+            <div class="p-3.5 rounded-2xl bg-white border border-slate-200/60">
+              <strong class="text-slate-900 block mb-1">1. 점술·운세·성격단정이 아닙니다</strong>
+              사주팔자나 미신으로 미래를 예언하지 않습니다. 무의식의 언어를 이해하고 현재의 알아차림과 행동 주권을 회복하도록 돕습니다.
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-slate-200/60">
+              <strong class="text-slate-900 block mb-1">2. 의료·심리 치료를 대체하지 않습니다</strong>
+              본 서비스는 질환의 의학적 진단 및 치료 목적이 아닙니다. 중증 우울, 불안, 공황 등의 어려움은 전문 의료기관의 진료를 권장합니다.
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-rose-100 bg-rose-50/30">
+              <strong class="text-rose-900 block mb-1">3. 24시간 위기 상담 안내</strong>
+              극심한 심리적 위기나 자해/자살 충동이 들 때는 주저하지 마시고 24시간 위기상담전화(109, 1393, 1577-0199)로 즉시 도움을 요청하세요.
             </div>
           </div>
         </div>
-
         <!-- Toast Notification -->
         <div id="mind-toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-2xl bg-slate-900/95 border border-[#C7A86B]/60 text-white font-bold text-xs sm:text-sm shadow-2xl backdrop-blur-md transition-all duration-300 opacity-0 pointer-events-none translate-y-4 flex items-center gap-2">
           <span>🌿</span>
