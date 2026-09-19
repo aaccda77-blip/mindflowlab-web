@@ -1,26 +1,4 @@
-/**
- * =================================================================
- * MYUNGSIM DAILY INSIGHT · MIND CARDS CONFIG & FALLBACK BUNDLE
- * AUTO-SYNCHRONIZED FROM data/service-config.json & data/mind-cards.json
- * =================================================================
- */
-
-// 1. 시스템 설정 (URL Config)
-window.MIND_CONFIG = {
-  "APP_URL": "https://myeongsimcoaching.com",
-  "PUBLISHER_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
-  "DARK_CODE_URL": "https://www.yes24.com/product/goods/196721492",
-  "NEURAL_CODE_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
-  "ZERO_POINT_URL": "https://www.yes24.com/product/goods/195946431",
-  "DARK_CODE_BOOK_URL": "https://www.yes24.com/product/goods/196721492",
-  "NEURAL_CODE_BOOK_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4",
-  "ZERO_POINT_BOOK_URL": "https://www.yes24.com/product/goods/195946431",
-  "BELIEF_BOOK_URL": "https://www.yes24.com/product/goods/196550353",
-  "BELIEVE_NOT_TRAPPED_URL": "https://www.yes24.com/product/goods/196550353",
-  "YES24_URL": "https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4"
-};
-
-// 2. 오프라인 / file:// 로컬 미리보기용 캐시 데이터 (data/mind-cards.json과 실시간 동기화)
+// Canonical Mind Cards Data (Enriched for NO-AI Rule Router)
 window.MIND_CARDS_DATA = [
   {
     "id": "rel-001",
@@ -100,6 +78,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 내가 붙인 해석(STORY)은 무엇인가요? (예: 내게 마음이 식었다)",
       "step3": "아직 확인되지 않은 영역(UNKNOWN)은 무엇인가요? (예: 상대의 바쁜 상황)",
       "step4": "몸에서는 어디가 먼저 긴장했나요?"
+    },
+    "contextTags": [
+      "communication",
+      "relationship",
+      "reply_anxiety"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "상대의 반응이 확인되지 않아 연락 화면을 계속 보게 되는 순간과 가깝습니다.",
+      "story": "답장이 늦은 사실 뒤에 ‘마음이 식었다’거나 ‘무시당했다’는 예측이 켜지는 지점을 다룹니다.",
+      "urge": "불안을 덜기 위해 자꾸 폰을 들여다보거나 확인 연락을 보내고 싶은 충동과 연결됩니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -177,6 +173,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 표정을 보며 내가 단정한 결론은 무엇인가요? (예: 날 싫어한다)",
       "step3": "상대가 오늘 겪었을 다른 변수 중 내가 모르는 것은 무엇인가요?",
       "step4": "어깨가 굳거나 시선을 피하게 되나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘마음읽기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -255,6 +267,22 @@ window.MIND_CARDS_DATA = [
       "step2": "사과하지 않으면 나쁜 사람이 되거나 버려질 것이라는 두려움이 있나요?",
       "step3": "침묵이나 갈등이 잠시 흘러가도 관계가 깨지지 않는다는 증거는 무엇인가요?",
       "step4": "목구멍이 조여오거나 머리가 복잡해지나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘사과중독’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -332,6 +360,22 @@ window.MIND_CARDS_DATA = [
       "step2": "거절하면 '이기적이고 냉정한 사람'이라는 낙인이 찍힐 거라 믿고 있나요?",
       "step3": "상대가 거절을 건강하게 수용하고 다른 대안을 찾을 가능성은 얼마인가요?",
       "step4": "가슴이 답답하거나 손에 힘이 들어가나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘좋은사람강박’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -407,6 +451,22 @@ window.MIND_CARDS_DATA = [
       "step2": "구구절절 변명하지 않으면 나를 악의적인 사람으로 볼 것이라는 생각인가요?",
       "step3": "상대가 내 설명을 다 듣지 않고도 충분히 이해할 수 있다는 것을 믿나요?",
       "step4": "숨이 가빠지거나 말이 빨라지나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘과잉설명’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -486,6 +546,24 @@ window.MIND_CARDS_DATA = [
       "step2": "상대가 먼저 연락하지 않으면 나를 버릴 것이라는 시나리오인가요?",
       "step3": "시험하지 않고 솔직하게 말했을 때 관계가 더 단단해질 가능성은?",
       "step4": "심장이 두근거리고 핸드폰만 계속 보게 되나요?"
+    },
+    "contextTags": [
+      "communication",
+      "relationship",
+      "reply_anxiety"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘관계확인’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -563,6 +641,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 행동을 보며 '나는 함부로 대해도 되는 사람인가'라는 옛날 통증이 켜졌나요?",
       "step3": "상대의 성격적 서투름이나 상황적 급박함일 가능성은 없는가요?",
       "step4": "턱이 긴장되고 얼굴이 달아오르나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘무시당함’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -636,6 +730,22 @@ window.MIND_CARDS_DATA = [
       "step2": "'상대는 영원히 바뀌지 않을 것이다'라는 무력감 스토리인가요?",
       "step3": "상대가 과거에 잘 맞추어주었던 순간들이 정말 0건이었나요?",
       "step4": "가슴에 열이 오르고 손이 떨리나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘일반화’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -712,6 +822,22 @@ window.MIND_CARDS_DATA = [
       "step2": "거절하면 '모든 사람이 나를 떠날 것'이라는 비극적 시나리오인가요?",
       "step3": "상대가 거절을 성숙하게 받아들일 가능성은 없는가요?",
       "step4": "손발이 차가워지거나 가슴이 두근거리나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -789,6 +915,22 @@ window.MIND_CARDS_DATA = [
       "step2": "표현하면 관계가 회복 불가능하게 깨질 것이라는 두려움 때문인가요?",
       "step3": "진솔하게 표현했을 때 오히려 상대가 더 배려해줄 가능성은?",
       "step4": "명치가 얹힌 듯 답답하거나 속이 쓰린가요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘갈등회피’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -864,6 +1006,24 @@ window.MIND_CARDS_DATA = [
       "step2": "지금 당장 독설을 날려야 내 자존심이 지켜진다는 충동인가요?",
       "step3": "10분 뒤 내 감정이 가라앉았을 때도 이 말을 그대로 하고 싶을까요?",
       "step4": "얼굴에 피가 쏠리고 손가락이 빠르게 움직이나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "relationship",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘분노’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -940,6 +1100,22 @@ window.MIND_CARDS_DATA = [
       "step2": "주변 사람이 기분 나쁘면 '내가 분위기를 망친 사람'이라는 죄책감인가요?",
       "step3": "상대 스스로 기분을 달래고 회복할 힘이 있다는 것을 믿어줄 수 있나요?",
       "step4": "안절부절못하며 상대 눈치를 계속 살피나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘상대기분관리’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1017,6 +1193,22 @@ window.MIND_CARDS_DATA = [
       "step2": "이 신호가 '결국 나를 버릴 것이다'라는 오래된 두려움의 재상영인가요?",
       "step3": "상대의 피로도, 업무 압박 등 외부 변수일 가능성은?",
       "step4": "가슴이 철렁 내려앉고 손발이 차가워지나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘버림불안’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1091,6 +1283,24 @@ window.MIND_CARDS_DATA = [
       "step2": "다시 확인받지 않으면 그 마음이 사라졌을 거라는 의심인가요?",
       "step3": "확인하지 않아도 상대의 마음이 변함없이 유지될 수 있음을 신뢰할 수 있나요?",
       "step4": "목이 타고 계속 휴대폰 화면을 들여다보나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection",
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘확인욕구’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1165,6 +1375,24 @@ window.MIND_CARDS_DATA = [
       "step2": "지금 당장 답을 듣지 못하면 관계가 영원히 파탄 날 것이라는 공포인가요?",
       "step3": "상대에게 시간을 줄 때 오히려 더 건강한 대화가 가능할 가능성은?",
       "step4": "가슴이 쿵쾅거리고 방 안을 서성이게 되나요?"
+    },
+    "contextTags": [
+      "communication",
+      "relationship",
+      "reply_anxiety"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘관계수습’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1237,6 +1465,22 @@ window.MIND_CARDS_DATA = [
       "step2": "선을 그으면 상대가 나를 비정하고 이기적이라 여길 것이라는 자책인가요?",
       "step3": "경계를 존중받으면서 더 오래 건강하게 이어질 관계의 가능성은?",
       "step4": "체한 듯 속이 더부룩하고 마음이 무겁나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘경계죄책감’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1312,6 +1556,22 @@ window.MIND_CARDS_DATA = [
       "step2": "상대가 바뀌지 않으면 내 삶은 절대 행복해질 수 없다는 체념인가요?",
       "step3": "상대와 무관하게 오늘 내가 온전히 선택할 수 있는 작은 일은 무엇인가요?",
       "step4": "어깨가 무겁고 한숨이 깊게 나오나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘통제’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1387,6 +1647,22 @@ window.MIND_CARDS_DATA = [
       "step2": "마음을 들키면 약자가 되고 휘둘릴 것이라는 과거의 학습인가요?",
       "step3": "진심을 조금 열었을 때 상대도 더 편안하게 다가올 가능성은?",
       "step4": "턱에 힘이 들어가고 눈빛이 차가워지나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘취약성’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1465,6 +1741,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 행동 하나 때문에 '나는 사랑받을 자격이 없는 사람'이라는 낙인인가요?",
       "step3": "부족한 순간이 있어도 여전히 좋은 사람으로 회복하고 성장할 가능성은?",
       "step4": "가슴을 쥐어뜯거나 자책하며 머리를 싸매나요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘자기비난’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1538,6 +1830,22 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 모든 원인을 다 파헤쳐야만 편안해질 수 있다는 강박인가요?",
       "step3": "분석을 지금 멈추고 차 한 잔을 마셔도 아무 문제 없다는 사실을 믿나요?",
       "step4": "머리에 열감이 차오르고 눈이 뻑뻑한가요?"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘자기관찰’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1617,6 +1925,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미를 붙였나요?",
       "step3": "아직 확인되지 않은 것은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요?"
+    },
+    "contextTags": [
+      "communication",
+      "relationship",
+      "reply_anxiety"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "상대의 반응이 확인되지 않아 연락 화면을 계속 보게 되는 순간과 가깝습니다.",
+      "story": "답장이 늦은 사실 뒤에 ‘마음이 식었다’거나 ‘무시당했다’는 예측이 켜지는 지점을 다룹니다.",
+      "urge": "불안을 덜기 위해 자꾸 폰을 들여다보거나 확인 연락을 보내고 싶은 충동과 연결됩니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1706,6 +2032,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘과잉확인’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1796,6 +2139,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘좋은 사람 강박’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1881,6 +2240,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -1965,6 +2340,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘눈치’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2042,6 +2433,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘과잉설명’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "self_compassion 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2130,6 +2537,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘습관적 사과’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2210,6 +2635,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "communication",
+      "relationship",
+      "reply_anxiety"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘불안형 애착’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2284,6 +2727,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘독심술’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2362,6 +2821,28 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "approval",
+      "fate_belief",
+      "fortune",
+      "perfection"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘완벽주의’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2436,6 +2917,25 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "approval",
+      "decision",
+      "perfection",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘미루기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2514,6 +3014,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘반추’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2589,6 +3106,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘후회’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2664,6 +3198,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "phone_checking"
+    ],
+    "matchReasons": {
+      "trigger": "‘통제’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2750,6 +3301,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘번아웃’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2833,6 +3400,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘휴식죄책감’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2907,6 +3490,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘성취중독’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -2983,6 +3582,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3061,6 +3677,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘자기비난’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3138,6 +3770,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘감정억압’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3221,6 +3869,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘분노폭발’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3303,6 +3967,29 @@ window.MIND_CARDS_DATA = [
       "step2": "‘이번에는 다를 거야’라는 간절한 희망을 사실로 착각하고 있진 않나요?",
       "step3": "다시 연락한다고 해서 근본적인 문제가 해결될 거라는 증거가 있나요?",
       "step4": "가슴이 답답하고 목구멍이 메여오나요?"
+    },
+    "contextTags": [
+      "communication",
+      "love",
+      "relationship",
+      "reply_anxiety",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘이별흔들림’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3377,6 +4064,25 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘정체성’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3464,6 +4170,24 @@ window.MIND_CARDS_DATA = [
       "step2": "‘나는 결국 파멸할 것이다, 감당 못한다’라는 옛날 이야기를 덧붙이고 있지 않나요?",
       "step3": "아직 일어나지 않은 1년 뒤, 3년 뒤의 경제 상황을 지금 확정지을 수 있나요?",
       "step4": "명치 끝이 옥죄어오거나 호흡이 얕아지나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘돈불안’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3538,6 +4262,26 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘재발’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3619,6 +4363,22 @@ window.MIND_CARDS_DATA = [
       "step2": "‘나는 가짜야, 곧 들통날 거야’라는 이야기를 반복하고 있지 않나요?",
       "step3": "내가 실수하더라도 그것이 내 존재 전체의 파멸을 의미하나요?",
       "step4": "어깨가 움츠러들고 손발이 차가워지나요?"
+    },
+    "contextTags": [
+      "general_life"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘성공공포’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "general_life 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3694,6 +4454,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘도움요청’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "relationship 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3767,6 +4543,25 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘관찰함정’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3841,6 +4636,25 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘동일시’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -3920,6 +4734,27 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 나는 어떤 의미(STORY)를 붙였나요?",
       "step3": "아직 확인되지 않은 미지의 영역(UNKNOWN)은 무엇인가요?",
       "step4": "몸에서는 어디가 가장 먼저 긴장했나요? (가슴, 목, 어깨, 호흡)"
+    },
+    "contextTags": [
+      "career",
+      "decision",
+      "procrastination",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘제로포인트’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4000,6 +4835,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘지금 통장을 안 보면 큰일이 날 것 같다’는 통제 강박인가요?",
       "step3": "오늘 더 이상 잔고를 보지 않아도 내 경제적 상황이 달라지지 않는다는 사실을 알고 있나요?",
       "step4": "손가락이 초조하게 화면을 탭하고 가슴이 조여오나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4080,6 +4932,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘오늘 안에 복구하지 못하면 영원히 패배자다’라는 파국적 스토리인가요?",
       "step3": "지금 멈추고 냉정하게 재정비했을 때 지킬 수 있는 남은 자산의 크기는 얼마인가요?",
       "step4": "심장이 격하게 뛰고 머리에 피가 쏠리나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "phone_checking"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4161,6 +5030,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘사업을 접었으니 나는 쓸모없는 사람이다’라는 정체성 낙인인가요?",
       "step3": "이 시도를 통해 얻은 시장 지식과 경험이 다음 단계에서 어떻게 쓰일 수 있을까요?",
       "step4": "어깨가 무겁게 처지고 고개를 들기 힘든가요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4240,6 +5126,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘오늘 안 팔렸으니 우리 제품은 끝났다’는 과잉일반화인가요?",
       "step3": "요일, 날씨, 계절성 등 통제 밖의 변수가 작용했을 가능성은?",
       "step4": "포스기나 정산 화면을 새로고침하며 명치가 답답해지나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4322,6 +5225,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘이 가격을 부르면 상대가 나를 사기꾼으로 볼 것이다’라는 두려움인가요?",
       "step3": "제값을 불렀을 때 고객이 더 신뢰하고 흔쾌히 동의할 가능성은?",
       "step4": "가격을 말할 때 목소리가 작아지고 눈치를 보게 되나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4403,6 +5323,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘돈을 청구하면 상대가 나를 돈만 밝히는 사람으로 볼 것’이라는 착각인가요?",
       "step3": "상대가 제때 비용을 지불하고 홀가분하게 프로젝트를 마치는 것을 원할 가능성은?",
       "step4": "입금 요청 메시지를 보낼 때 손이 떨리고 문장을 수십 번 고치나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4483,6 +5420,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘남들이 앞서갈 때 나는 영원히 낙오될 것이다’라는 비교 스토리인가요?",
       "step3": "그 사람의 이면에 감춰진 리스크나 불확실성에 대해 내가 모르는 것은 무엇인가요?",
       "step4": "가슴이 답답하고 스마트폰 피드를 신경질적으로 넘기나요?"
+    },
+    "contextTags": [
+      "approval",
+      "financial_anxiety",
+      "money",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4562,6 +5518,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘빚이 있으니 나는 인생의 패배자다’라는 자기단죄인가요?",
       "step3": "서민금융진흥원, 신용회복위 등 공적 채무조정 제도가 제공하는 법적 대안은?",
       "step4": "가슴이 짓눌리고 누군가 알아챌까 봐 눈치를 보게 되나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4642,6 +5615,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘힘들다고 말하면 사람들이 나를 동정하거나 무시할 것’이라는 공포인가요?",
       "step3": "솔직하게 상황을 공유했을 때 뜻밖의 조언이나 실질적 지원을 만날 가능성은?",
       "step4": "미소를 짓고 있지만 턱관절이 굳어 있고 속이 울렁거리나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "chest_tightness"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4721,6 +5711,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘누군가 오른다고 확답을 줘야만 밤에 잠을 잘 수 있다’는 의존 스토리인가요?",
       "step3": "지금 커뮤니티를 끄고 내 본업에 집중했을 때 얻게 될 평온의 가치는?",
       "step4": "시세 창과 토론방 댓글을 새로고침하며 눈이 피로해지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "financial_anxiety",
+      "money",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4800,6 +5809,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘그 기회를 놓쳤으니 내 인생의 대박은 끝났다’는 과잉 비관인가요?",
       "step3": "앞으로 내 능력과 시장에서 새롭게 열릴 수많은 기회는 몇 개일까요?",
       "step4": "가슴을 치며 한숨을 쉬거나 속이 쓰린가요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "guilt",
+      "money",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4879,6 +5907,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘단 1원이라도 새어나가면 결국 파산할 것이다’라는 공포 회로인가요?",
       "step3": "내게 필요한 작은 휴식이나 배움에 돈을 썼을 때 생길 긍정적 에너지의 가치는?",
       "step4": "영수증을 확인할 때 미간이 찌푸려지고 숨을 참나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -4959,6 +6004,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘이번 달을 못 넘기면 내 인생은 길거리에서 끝난다’는 파국화인가요?",
       "step3": "지출 유예, 분할 상환, 단기 알바 등 내가 시도해볼 수 있는 대안은?",
       "step4": "심장이 덜컥 내려앉고 숨이 턱 끝까지 차오르나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5039,6 +6101,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘돈을 못 벌었으니 나는 무능하고 가치 없는 인간이다’라는 낙인인가요?",
       "step3": "매출과 무관하게 내 곁을 지키는 사람들과 내 성품의 가치는 얼마인가요?",
       "step4": "거울을 보기 싫어지고 몸을 웅크리게 되나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5118,6 +6197,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘도움을 요청하면 무능하다고 손가락질받을 것이다’라는 공포인가요?",
       "step3": "주변 전문가나 멘토가 기꺼이 도움을 주며 해결책을 찾아줄 가능성은?",
       "step4": "목구멍이 꽉 막힌 듯 말이 안 나오고 혼자 삭히나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5197,6 +6293,28 @@ window.MIND_CARDS_DATA = [
       "step2": "‘내가 다 해결해주지 않으면 가족이 풍비박산 날 것이다’라는 과잉책임인가요?",
       "step3": "내가 명확한 한계를 그어줄 때 가족 스스로 대안을 찾을 가능성은?",
       "step4": "어깨와 등에 무거운 바위를 얹은 듯 온몸이 뻐근한가요?"
+    },
+    "contextTags": [
+      "family",
+      "financial_anxiety",
+      "money",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5276,6 +6394,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘쉬는 1분 동안에도 경쟁자들은 앞서가고 있다’는 불안 강박인가요?",
       "step3": "오늘 2시간 푹 쉬었을 때 내일 업무 효율이 2배로 올라갈 가능성은?",
       "step4": "소파에 누워 있어도 등이 긴장되어 있고 안절부절못하나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5356,6 +6491,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘100억은 있어야 절대 안전하다’는 끝없는 공포 스토리인가요?",
       "step3": "숫자 목표 외에 오늘 내 삶에서 누릴 수 있는 관계와 여유의 가치는?",
       "step4": "늘 쫓기듯 가슴이 조이고 목이 마른 느낌이 드나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "money"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "muscle_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5434,6 +6586,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘조금이라도 손해 보면 절대 회복할 수 없다’는 0 아니면 100의 사고인가요?",
       "step3": "100% 안전한 결정은 세상에 없으며, 결정 후 수정해나갈 수 있음을 신뢰할 수 있나요?",
       "step4": "머리가 지끈거리고 두통이 오며 선택지를 계속 왔다 갔다 하나요?"
+    },
+    "contextTags": [
+      "decision",
+      "financial_anxiety",
+      "money",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "phone_checking"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5513,6 +6684,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘나는 또다시 실패해서 완전히 파멸할 것이다’라는 트라우마의 재연인가요?",
       "step3": "이번에는 무리하지 않고 아주 작게(10%) 시작하여 안전하게 검증할 가능성은?",
       "step4": "새 사업이나 시도를 생각만 해도 심장이 조여오고 뒷목이 굳나요?"
+    },
+    "contextTags": [
+      "decision",
+      "financial_anxiety",
+      "money",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5592,6 +6782,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘오늘 하루도 감당하기 힘들 것이다’라는 머릿속 사전 시뮬레이션인가요?",
       "step3": "오늘 일어날 일들의 실제 결과는 아직 일어나지 않았음을 알고 있나요?",
       "step4": "출근길에 어깨가 굳고 발걸음이 무겁게 가라앉나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "직장에서의 평가 신호나 메신저 알림 하나에 온몸이 과긴장 상태로 전환되는 상황과 가깝습니다.",
+      "story": "상사의 짧은 한마디에 내 존재 가치가 흔들리는 자동 스토리 엔진을 끕니다.",
+      "urge": "퇴근 후에도 계속 머릿속으로 업무를 곱씹으며 긴장을 풀지 못하는 반응을 다룹니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5668,6 +6877,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘여기서 벗어나지 않으면 내 인생이 무너진다’는 즉각적 탈출 충동인가요?",
       "step3": "차분한 상태에서 검토해야 할 이직 시장 상황과 현실적 대안은 무엇인가요?",
       "step4": "가슴이 답답하고 당장 사직서를 던지고 싶은 충동이 치솟나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘퇴사충동’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5747,6 +6975,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘저 표정은 나에 대한 실망이다’라는 마음읽기 해석인가요?",
       "step3": "상사 개인의 컨디션이나 다른 업무 이슈 때문일 가능성을 열어두었나요?",
       "step4": "목덜미가 뻣뻣해지고 상사의 걸음걸이나 키보드 소리까지 예민하게 살피나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘상사눈치’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5825,6 +7072,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘내 의견을 깠으니 나를 무시하는 것이다’라는 정체성 위협 해석인가요?",
       "step3": "상대의 지적이 결과물의 완성도를 높이는 데 도움이 될 여지가 있나요?",
       "step4": "목소리 톤이 날카로워지고 가슴이 쿵쾅거리며 반박할 말을 급하게 찾나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘회의방어’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5901,6 +7167,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘모른다고 답하면 내 평가가 깎일 것이다’라는 두려움인가요?",
       "step3": "‘확인 후 공유드리겠습니다’라는 정직한 답변이 더 신뢰를 줄 수 있음을 알고 있나요?",
       "step4": "말이 빨라지고 불필요한 배경 설명을 장황하게 늘어놓나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘증명모드’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -5979,6 +7264,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘이번 실수로 내 모든 신뢰가 사라졌다’는 파국화 상상인가요?",
       "step3": "신속하고 차분한 수습이 오히려 신뢰를 회복하는 계기가 될 수 있음을 알고 있나요?",
       "step4": "머리가 하얘지고 식은땀이 흐르며 심장이 가라앉나요?"
+    },
+    "contextTags": [
+      "career",
+      "guilt",
+      "self_compassion",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘실수재판’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6058,6 +7364,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘완벽하지 않으면 인정받지 못할 것이다’라는 무결점 강박인가요?",
       "step3": "일찍 초안을 공유하고 피드백을 받아 수정하는 것이 최종 완성도에 더 유리함을 아시나요?",
       "step4": "마우스를 쥔 손가락이 굳어 제출 버튼 위에서 망설이고 있나요?"
+    },
+    "contextTags": [
+      "approval",
+      "career",
+      "perfection",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘완벽제출’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6135,6 +7462,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘충분한 영감이 떠오르거나 완벽히 준비되어야 시작할 수 있다’는 착각인가요?",
       "step3": "5분만 시작해도 뇌의 작업흥분(Task-induced arousal)이 켜진다는 사실을 알고 있나요?",
       "step4": "모니터를 켜두고 휴대폰을 만지작거리며 속으로는 죄책감이 쌓이나요?"
+    },
+    "contextTags": [
+      "career",
+      "decision",
+      "procrastination",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘마감직전’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6212,6 +7560,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘쉬면 나태해지고 도태된다’는 무의식적 불안인가요?",
       "step3": "성취를 뇌에 저장하지 않으면 성과는 오르고 자존감은 고갈된다는 것을 알고 있나요?",
       "step4": "목표를 끝냈는데도 가슴이 뻥 뚫린 듯 공허하고 긴장이 풀리지 않나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "muscle_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘성과삭제’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6290,6 +7657,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘저 사람이 앞서갔으니 나는 뒤처졌다’는 제로섬 게임 상상인가요?",
       "step3": "각자의 강점과 성장 속도가 다른 영역에서 빛을 발한다는 점을 기억하고 있나요?",
       "step4": "속이 쓰리고 동료의 얼굴을 똑바로 바라보기 어색해지나요?"
+    },
+    "contextTags": [
+      "approval",
+      "career",
+      "perfection",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6368,6 +7756,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘다음번에 못하면 가짜임이 들통날 것이다’라는 가면 증후군 스토리인가요?",
       "step3": "한 번의 실망스러운 결과가 내 전문성 전체를 부정하지 않음을 알고 있나요?",
       "step4": "칭찬을 듣는 순간 기쁨보다 '다음엔 어떡하지' 하는 서늘한 압박감이 드나요?"
+    },
+    "contextTags": [
+      "approval",
+      "career",
+      "perfection",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘칭찬갱신’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6447,6 +7856,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘도와달라고 하면 나를 능력 없는 직원으로 볼 것이다’라는 지레짐작인가요?",
       "step3": "적절한 시점의 도움 요청(Escalation)이 조직의 리스크를 줄이는 프로다운 태도임을 알고 있나요?",
       "step4": "혼자 야근하며 목이 바짝 마르고 가슴이 무겁게 짓눌리나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘도움요청회피’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6525,6 +7953,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘남에게 맡기면 엉망이 되어 결국 내가 두 번 일하게 될 것이다’라는 불신인가요?",
       "step3": "상대에게 기회를 주고 명확한 가이드를 주면 기대 이상으로 해낼 수 있음을 알고 있나요?",
       "step4": "다른 사람의 작업물을 볼 때마다 안절부절못하며 손이 근질거리나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘내가해야돼’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6601,6 +8048,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘지금 계속 걱정하고 있어야 내일 실수를 안 한다’는 통제 착각인가요?",
       "step3": "뇌가 밤에 온전히 쉬어야 내일 더 명료한 판단을 내릴 수 있음을 알고 있나요?",
       "step4": "스마트폰 메신저를 무의식적으로 새로고침하며 심장이 두근거리나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "직장에서의 평가 신호나 메신저 알림 하나에 온몸이 과긴장 상태로 전환되는 상황과 가깝습니다.",
+      "story": "상사의 짧은 한마디에 내 존재 가치가 흔들리는 자동 스토리 엔진을 끕니다.",
+      "urge": "퇴근 후에도 계속 머릿속으로 업무를 곱씹으며 긴장을 풀지 못하는 반응을 다룹니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6677,6 +8143,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘쉬는 나는 가치가 없고 뒤처질 것이다’라는 자기비하인가요?",
       "step3": "기계도 과열되면 멈추듯 인간의 뇌도 무목적의 휴식 속에서 회복된다는 것을 알고 있나요?",
       "step4": "누워 있으면서도 마음이 조급해 스마트폰 강의나 자기계발 영상을 뒤적이시나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘휴식죄책감’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6753,6 +8238,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘예전의 기량을 잃었으니 나는 이제 끝났다’는 가혹한 자기 낙인인가요?",
       "step3": "에너지가 고갈된 상태에서 자책하는 것은 멈춘 자동차의 엔진을 발로 차는 것과 같음을 아시나요?",
       "step4": "아침에 눈을 뜨기 힘들고 온몸이 물에 젖은 솜처럼 무겁게 가라앉나요?"
+    },
+    "contextTags": [
+      "career",
+      "guilt",
+      "self_compassion",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘번아웃자책’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6833,6 +8339,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘저 알림은 나에 대한 비난이나 나쁜 소식일 것이다’라는 예견 불안인가요?",
       "step3": "단순한 업무 공유나 일정 확인일 가능성이 훨씬 높음을 기억하고 있나요?",
       "step4": "알림 소리에 심장이 쿵 내려앉고 손에 식은땀이 배어나오나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "chest_tightness",
+      "muscle_tension"
+    ],
+    "matchReasons": {
+      "trigger": "직장에서의 평가 신호나 메신저 알림 하나에 온몸이 과긴장 상태로 전환되는 상황과 가깝습니다.",
+      "story": "상사의 짧은 한마디에 내 존재 가치가 흔들리는 자동 스토리 엔진을 끕니다.",
+      "urge": "퇴근 후에도 계속 머릿속으로 업무를 곱씹으며 긴장을 풀지 못하는 반응을 다룹니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6911,6 +8437,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘거절하면 관계가 틀어지고 무책임한 사람으로 찍힐 것이다’라는 두려움인가요?",
       "step3": "일정을 명확히 조율하여 거절하거나 기한을 늦추는 것이 오히려 완성도를 지키는 길임을 아시나요?",
       "step4": "부탁을 받는 순간 목구멍에서 반사적으로 '네'가 튀어나오고 속으로는 후회가 밀려오나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘바로YES’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -6987,6 +8532,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘옮겼다가 거기도 망하면 내 인생은 끝장이다’라는 파국화 불안인가요?",
       "step3": "실제로 입사해 일해보기 전까지는 완전히 알 수 없는 미지의 영역이 있음을 인정하나요?",
       "step4": "이직 사이트를 뒤적이다가도 불안해져서 창을 닫아버리나요?"
+    },
+    "contextTags": [
+      "career",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘이직확신’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7065,6 +8629,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘열심히 하면 무조건 다시 무너질 것이다’라는 비관적 운명론인가요?",
       "step3": "쉬는 법과 조절하는 법을 배운 지금의 나는 예전과 다른 선택을 할 수 있음을 알고 있나요?",
       "step4": "새로운 프로젝트를 맡을 때 가슴 한구석에서 불안한 두근거림이 올라오나요?"
+    },
+    "contextTags": [
+      "career",
+      "decision",
+      "procrastination",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘다시시작’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7142,6 +8727,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘더 고치지 않으면 부족한 사람으로 보일 것이다’라는 불안 스토리인가요?",
       "step3": "지금 상태로도 충분히 훌륭하며, 추가 수정의 기여도가 미미함을 알고 있나요?",
       "step4": "마우스나 펜을 놓지 못하고 어깨와 목에 잔뜩 힘이 들어가 있나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7219,6 +8821,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘제출하는 순간 내 밑천이 드러나 비난받을 것이다’라는 상상인가요?",
       "step3": "제출 후 받는 피드백은 나를 공격하는 칼이 아니라 결과물을 다듬는 도구임을 아시나요?",
       "step4": "제출 버튼 위에서 손가락이 굳고 심장이 조여오나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7296,6 +8915,28 @@ window.MIND_CARDS_DATA = [
       "step2": "‘완벽하지 못했으니 이번 일은 다 망쳤다’는 전부 아니면 전무의 스토리인가요?",
       "step3": "현실 세계의 거의 모든 가치 있는 일들은 완벽이 아닌 지속적 개선을 통해 이루어짐을 알고 있나요?",
       "step4": "칭찬을 들어도 가슴 한구석이 찝찝하고 10점의 미흡함만 머릿속을 맴도나요?"
+    },
+    "contextTags": [
+      "approval",
+      "fate_belief",
+      "fortune",
+      "perfection"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7375,6 +9016,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘나는 왜 항상 이 모양일까’라는 과잉 일반화 판결인가요?",
       "step3": "실수를 했다는 사실이 내 존재 전체의 무능을 입증하지 못함을 알고 있나요?",
       "step4": "얼굴이 화끈거리고 가슴 속에서 자신을 향한 날카로운 비난의 목소리가 울리나요?"
+    },
+    "contextTags": [
+      "approval",
+      "guilt",
+      "perfection",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7454,6 +9114,24 @@ window.MIND_CARDS_DATA = [
       "step2": "‘남들의 찬사가 끊기면 나는 가치 없는 사람이 된다’는 결핍 공포인가요?",
       "step3": "남의 인정이 없어도 내가 확인한 나의 성실함은 사라지지 않음을 알고 있나요?",
       "step4": "좋은 말을 들으면서도 속으로는 '다음엔 어떡하지' 하는 초조함이 고개를 드나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7531,6 +9209,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘열광적인 반응이 없으면 내 노력은 실패한 것이다’라는 관객 의존 스토리인가요?",
       "step3": "사람들의 무반응이 무관심이나 비판이 아닌, 단지 각자의 바쁜 일상 때문일 수 있음을 아시나요?",
       "step4": "화면을 계속 새로고침하며 댓글이나 답장을 기다리느라 목이 타나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7609,6 +9304,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘선택받지 못했으니 나는 평생 무대 뒤편에 남을 것이다’라는 낙인인가요?",
       "step3": "이번의 비선택이 다음 기회에 더 적합한 문을 여는 데이터가 될 수 있음을 알고 있나요?",
       "step4": "가슴이 텅 빈 듯 공허하고 사람들의 시선을 마주치기 부끄러워지나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7686,6 +9398,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘세상은 하나의 결승선을 향해 달리는 달리기 시합이다’라는 환상인가요?",
       "step3": "각자 뛰고 있는 트랙의 종목과 목적지가 완전히 다름을 기억하고 있나요?",
       "step4": "가슴이 철렁 내려앉고 온몸이 굳으며 머릿속으로 계산기를 두드리게 되나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7766,6 +9495,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘나만 빼고 모두 행복하고 앞서가고 있다’는 왜곡된 착시인가요?",
       "step3": "누구에게나 남들에게 보이지 않는 저마다의 어둠과 흔들림이 있음을 알고 있나요?",
       "step4": "피드를 끝없이 내리며 엄지손가락이 멈추지 않고 마음이 무겁게 가라앉나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7845,6 +9591,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘친구가 앞서갔으니 우리의 격차는 영원히 벌어질 것이다’라는 두려움인가요?",
       "step3": "질투와 사랑은 동시에 느낄 수 있는 자연스러운 인간의 감정임을 인정할 수 있나요?",
       "step4": "축하의 메시지를 보내면서도 가슴 한구석이 찌릿하게 아려오나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -7921,6 +9684,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘여기서 만족하면 도태되고 패배자가 된다’는 강박적 채찍질인가요?",
       "step3": "도착지에 머물러 기쁨을 축하하는 시간이 다음 여정의 진짜 에너지가 됨을 아시나요?",
       "step4": "성취 직후 짧은 안도 뒤에 다시 목덜미가 뻐근해지며 초조해지나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "muscle_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8001,6 +9781,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘저 사람보다 적게 버니 내 노력은 헛된 것이었다’는 숫자 등치화인가요?",
       "step3": "남의 연봉 숫자가 그 사람의 행복이나 내면의 평화를 보장하지 않음을 알고 있나요?",
       "step4": "타인의 연봉 이야기를 듣는 순간 가슴이 턱 막히고 기운이 빠지나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8077,6 +9874,27 @@ window.MIND_CARDS_DATA = [
       "step2": "‘단 하나의 흠결이 전체의 가치를 무효화한다’는 삭제 편향인가요?",
       "step3": "성공한 경험을 뇌에 명확히 입력해야 신경계의 효능감이 올라간다는 사실을 알고 있나요?",
       "step4": "결과물을 보며 나도 모르게 아쉬운 부분에만 눈이 고정되고 한숨이 나오나요?"
+    },
+    "contextTags": [
+      "approval",
+      "career",
+      "perfection",
+      "workplace"
+    ],
+    "negativeTags": [
+      "romantic_breakup"
+    ],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8155,6 +9973,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘죽을힘을 다하지 않으면 게으르고 쓸모없는 인간이다’라는 가혹한 규칙인가요?",
       "step3": "과도한 소진은 장기적으로 창의성과 업무 품질을 떨어뜨리는 주원인임을 알고 있나요?",
       "step4": "눈이 충혈되고 허리가 끊어질 듯 아픈데도 의자에서 일어나지 못하나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8233,6 +10068,24 @@ window.MIND_CARDS_DATA = [
       "step2": "‘쉬는 순간 나는 뒤처지고 영원히 따라잡지 못한다’는 공포인가요?",
       "step3": "F1 레이싱카도 피트스탑에서 바퀴를 갈고 기름을 채워야 우승할 수 있음을 알고 있나요?",
       "step4": "소파에 누워 있으면서도 다리를 떨거나 마음속으로 시계를 재고 있나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8309,6 +10162,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘비범하지 못하면 살아갈 자격이 없다’는 가혹한 엘리트주의 스토리인가요?",
       "step3": "평범함은 지루한 실패가 아니라 모든 비범함이 쉬어가는 가장 안전한 토대임을 알고 있나요?",
       "step4": "평범한 일상을 보낼 때 가슴속에서 이유 모를 불안과 초조함이 솟구치나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8387,6 +10257,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘사람들이 나를 보고 실망하여 비웃을 것이다’라는 예단인가요?",
       "step3": "결과가 나오기 전까지는 누구도 최종 평가를 단정할 수 없음을 인정하나요?",
       "step4": "머릿속으로 상상의 비난을 듣느라 심장이 두근거리고 시선을 피하게 되나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8465,6 +10352,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘나에게는 엄벌을 내려야만 나태해지지 않는다’는 가혹한 처벌 신념인가요?",
       "step3": "가혹한 자기비난보다 따뜻한 자기자비(Self-compassion)가 회복 탄력성을 3배 높인다는 뇌과학 연구를 아시나요?",
       "step4": "스스로에게 화가 나 주먹을 꽉 쥐거나 입술을 깨물고 있나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8542,6 +10446,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘한번 정한 기준을 낮추는 것은 타협이자 패배다’라는 경직된 규칙인가요?",
       "step3": "유연하게 기준을 조정하는 능력이 진짜 고수의 위기관리 능력임을 알고 있나요?",
       "step4": "스스로 정한 루틴이나 계획을 지키지 못해 숨이 턱턱 막히나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8619,6 +10540,23 @@ window.MIND_CARDS_DATA = [
       "step2": "‘남들의 승인이 없으면 내 가치는 존재하지 않는다’는 의존성 스토리인가요?",
       "step3": "외부 평가는 참고용 정보일 뿐, 내 삶의 최종 채점관은 나 자신이어야 함을 아시나요?",
       "step4": "타인의 눈치를 살피던 어깨를 펴고 심호흡을 깊게 내쉴 수 있나요?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8699,6 +10637,29 @@ window.MIND_CARDS_DATA = [
       "step2": "‘거절하면 불효자이고 가족의 평화를 깨는 주범이 된다’는 오래된 두려움인가요?",
       "step3": "성인 자녀가 정중하게 일정을 조율해도 부모와 자식의 유대가 끊어지지 않음을 알고 있나요?",
       "step4": "부모님의 전화를 받으면 목소리가 착해지고 가슴 안쪽이 답답하게 굳어지나요?"
+    },
+    "contextTags": [
+      "career",
+      "family",
+      "parent_boundary",
+      "workplace"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_breakup",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "직장에서의 평가 신호나 메신저 알림 하나에 온몸이 과긴장 상태로 전환되는 상황과 가깝습니다.",
+      "story": "상사의 짧은 한마디에 내 존재 가치가 흔들리는 자동 스토리 엔진을 끕니다.",
+      "urge": "퇴근 후에도 계속 머릿속으로 업무를 곱씹으며 긴장을 풀지 못하는 반응을 다룹니다.",
+      "context": "career 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8779,6 +10740,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모님의 뜻과 다른 길을 가면 나는 배은망덕한 사람이다’라는 죄책감 낙인인가요?",
       "step3": "자녀가 자신의 삶을 온전히 살아가는 것이 장기적으로 부모에게도 진정한 독립임을 알고 있나요?",
       "step4": "나를 위한 소비나 결정을 할 때 가슴 한구석이 찌릿하게 아려오나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8856,6 +10837,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모님이 서운해하시면 내 모든 선택은 틀린 것이다’라는 등치 스토리인가요?",
       "step3": "부모님도 성인으로서 자신의 실망감을 스스로 소화할 수 있는 능력이 있음을 인정하나요?",
       "step4": "부모님의 한숨 소리에 안절부절못하며 손끝이 차가워지나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -8934,6 +10935,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘내 뜻대로 살면 부모의 희생을 배신하는 이기주의자다’라는 가혹한 규칙인가요?",
       "step3": "건강하게 자기 욕구를 표현하는 자녀가 더 건강한 가족 관계를 만든다는 것을 아시나요?",
       "step4": "내 주장을 입 밖으로 낼 때 목구멍이 턱 막히고 죄책감이 차오르나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9014,6 +11035,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모님이 반대하는 결정은 실패할 저주에 걸린다’는 무의식적 미신인가요?",
       "step3": "부모님의 우려 섞인 조언을 귀담아듣되 최종 결정은 내가 내릴 수 있음을 아시나요?",
       "step4": "결정을 앞두고 부모님께 언제 말해야 할지 며칠씩 고민하며 속이 타나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9094,6 +11135,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모가 진심으로 사과하지 않으면 내 인생은 영원히 구원받지 못한다’는 결박인가요?",
       "step3": "부모를 억지로 용서하지 않고도 오늘 내 삶을 안전하게 보호할 수 있음을 알고 있나요?",
       "step4": "과거 기억이 스칠 때 주먹이 떨리고 호흡이 가빠지며 가슴이 타들어 가나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9174,6 +11235,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모님이 이해해주지 않는 선택은 불안해서 밀고 나갈 수 없다’는 의존인가요?",
       "step3": "부모님이 끝까지 내 뜻에 동의하지 않아도 내 결정은 온전히 효력을 가짐을 아시나요?",
       "step4": "말이 빨라지고 목이 쉬도록 설명하면서도 답답함에 눈물이 핑 도나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9255,6 +11336,28 @@ window.MIND_CARDS_DATA = [
       "step2": "‘하루라도 일찍 가거나 늦게 오면 가족의 정을 깨뜨리는 죄인이다’라는 관습인가요?",
       "step3": "도착 시간과 머무는 시간을 사전에 명확히 협의하는 것이 오히려 관계 피로를 줄임을 아시나요?",
       "step4": "명절 2주 전부터 소화가 안 되고 두통이 지끈거리며 한숨이 나오나요?"
+    },
+    "contextTags": [
+      "decision",
+      "family",
+      "parent_boundary",
+      "procrastination"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9334,6 +11437,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘내가 손을 놓으면 가족 전체가 파탄 날 것이다’라는 과잉책임 망상인가요?",
       "step3": "내가 대신 해결해주지 않아야 다른 가족 구성원도 스스로 문제를 수습하는 법을 배움을 아시나요?",
       "step4": "가족의 연락을 받을 때마다 심장이 쿵 내려앉고 어깨에 바위가 얹힌 듯 무겁나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9414,6 +11537,28 @@ window.MIND_CARDS_DATA = [
       "step2": "‘거절하면 가족을 버린 천하의 냉혈한이다’라는 죄책감 낙인인가요?",
       "step3": "명확한 금전적 한계를 긋는 것이 오히려 장기적인 파국을 막는 진짜 안전장치임을 알고 있나요?",
       "step4": "통장 잔고를 보며 가슴이 타들어가고 가족의 돈 요구 전화에 공포를 느끼나요?"
+    },
+    "contextTags": [
+      "family",
+      "financial_anxiety",
+      "money",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9494,6 +11639,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘내가 들어주지 않으면 부모님이 무너져버릴 것이다’라는 과도한 불안인가요?",
       "step3": "부모의 감정적 짐을 덜어주는 것과 내 정신건강을 지키는 선을 함께 둘 수 있음을 알고 있나요?",
       "step4": "통화가 길어질수록 귓가가 멍멍해지고 머리가 지끈거리며 온몸의 힘이 빠지나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9574,6 +11739,25 @@ window.MIND_CARDS_DATA = [
       "step2": "‘한쪽 편을 들면 다른 쪽을 배신하는 패륜아가 된다’는 극단적 이분법인가요?",
       "step3": "성인으로서 새로운 가정의 독립성을 확고히 지키는 것이 결국 모든 관계를 보호함을 아시나요?",
       "step4": "배우자와 부모 사이에서 전화가 울릴 때마다 속이 울렁거리고 식은땀이 나나요?"
+    },
+    "contextTags": [
+      "family",
+      "love",
+      "parent_boundary",
+      "romantic_relationship"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9655,6 +11839,28 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모님께 인정받지 못하면 나는 영원히 부족한 둘째/첫째다’라는 낙인인가요?",
       "step3": "부모님의 편향된 시선과 상관없이 내 삶은 이미 내 기준으로 단단하게 서 있음을 알고 있나요?",
       "step4": "비교를 듣는 순간 귀가 붉어지고 숟가락을 내려놓고 싶을 만큼 불쾌해지나요?"
+    },
+    "contextTags": [
+      "approval",
+      "family",
+      "parent_boundary",
+      "perfection"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9735,6 +11941,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘내가 목소리를 내면 우리 가족은 풍비박산이 날 것이다’라는 공포 스토리인가요?",
       "step3": "솔직하고 정중한 한계를 표현하는 것이 관계를 건강하게 오래 지탱함을 아시나요?",
       "step4": "가슴속에 울화가 치밀어 오르는데도 억지로 웃는 표정을 짓고 있나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9814,6 +12040,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘가족이라면 무조건 자주 만나고 속을 다 터놓아야 정상이다’라는 가족 신화인가요?",
       "step3": "적절한 물리적, 심리적 거리가 오히려 부모에 대한 최소한의 존중과 애정을 지켜줌을 아시나요?",
       "step4": "부모님의 전화를 피하고 나서 온종일 마음이 무겁고 찜찜한가요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9892,6 +12138,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모님이 서운해하시면 즉시 내 결정을 취소해야 효도다’라는 반사반응인가요?",
       "step3": "새로운 경계선이 자리를 잡으려면 양쪽 모두에게 적응할 시간과 진통이 필요함을 알고 있나요?",
       "step4": "경계를 말한 뒤 안절부절못하며 휴대폰을 들었다 놨다 망설이고 있나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -9972,6 +12238,28 @@ window.MIND_CARDS_DATA = [
       "step2": "‘부모가 인정해주지 않는 내 고통은 진짜 고통이 아니다’라는 승인 갈망인가요?",
       "step3": "부모의 인정 없이도 내가 나 자신의 고통을 증명하고 어루만져줄 수 있음을 아시나요?",
       "step4": "부모님과의 대화에서 벽에 부딪힌 듯 가슴을 치며 분통을 터뜨리나요?"
+    },
+    "contextTags": [
+      "approval",
+      "family",
+      "parent_boundary",
+      "perfection"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10052,6 +12340,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘아이의 실패는 곧 내 인생의 총체적 파산이다’라는 동일시 착각인가요?",
       "step3": "자녀가 스스로 넘어지고 일어서는 경험을 통해서만 진정한 독립 인격체로 자라남을 아시나요?",
       "step4": "아이의 작은 실수나 성적표에 심장이 덜컥 내려앉고 초조해지나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10131,6 +12439,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘밖에 말하는 순간 나는 가족을 파괴한 배신자가 된다’는 두려움인가요?",
       "step3": "안전한 전문가나 기관에 도움을 요청하는 것이 진정으로 가족과 나를 살리는 길임을 알고 있나요?",
       "step4": "누군가 집안일을 물어보면 입을 다물고 시선을 피하며 가슴이 조여오나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10208,6 +12536,26 @@ window.MIND_CARDS_DATA = [
       "step2": "‘가족이 불행한데 나 혼자 행복하면 죄악이다’라는 생존자 죄책감인가요?",
       "step3": "내가 건강하고 단단하게 내 삶을 영위할 때 비로소 가족에게도 건강한 버팀목이 될 수 있음을 아시나요?",
       "step4": "내 미래를 계획하다가도 가족 생각이 나면 한숨을 쉬며 계획표를 덮어버리나요?"
+    },
+    "contextTags": [
+      "family",
+      "parent_boundary"
+    ],
+    "negativeTags": [
+      "dating_app",
+      "romantic_only"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "가족의 부탁이나 기대를 거절하려 할 때 무거운 죄책감이 밀려오는 순간과 연결됩니다.",
+      "story": "가족의 감정적 실망을 온전히 내 책임으로 떠안으려는 자동 패턴을 점검합니다.",
+      "urge": "죄책감을 피하기 위해 결국 거절을 취소하고 내 경계를 허물어버리는 행동을 멈춰봅니다.",
+      "context": "family 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10285,6 +12633,29 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 빈칸에 쓴 자막은 무엇인가요? (예: '마음이 식었어. 날 귀찮아해. 헤어질 거야')",
       "step3": "상대가 회의 중이거나 운전 중이거나 폰을 확인하지 못한 상황일 가능성은 얼마인가요?",
       "step4": "답장을 기다리는 동안 스마트폰을 쥔 손가락이 초조하고 가슴이 쿵쾅거리나요?"
+    },
+    "contextTags": [
+      "communication",
+      "love",
+      "relationship",
+      "reply_anxiety",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "상대의 반응이 확인되지 않아 연락 화면을 계속 보게 되는 순간과 가깝습니다.",
+      "story": "답장이 늦은 사실 뒤에 ‘마음이 식었다’거나 ‘무시당했다’는 예측이 켜지는 지점을 다룹니다.",
+      "urge": "불안을 덜기 위해 자꾸 폰을 들여다보거나 확인 연락을 보내고 싶은 충동과 연결됩니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10362,6 +12733,29 @@ window.MIND_CARDS_DATA = [
       "step2": "연락이 줄어든 것에 내 마음이 내린 판결은 무엇인가요? (예: '날 더 이상 사랑하지 않아')",
       "step3": "이번 프로젝트가 끝나면 다시 연락이 편안해질 가능성은 확인해보셨나요?",
       "step4": "연락 텀이 길어질 때마다 속이 타들어가고 버림받을 것 같은 불안이 엄습하나요?"
+    },
+    "contextTags": [
+      "communication",
+      "love",
+      "relationship",
+      "reply_anxiety",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘마음식음’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10436,6 +12830,27 @@ window.MIND_CARDS_DATA = [
       "step2": "확인하지 않으면 상대의 마음이 증발해버릴 것 같은 자막이 있나요?",
       "step3": "확인 질문을 한 번 멈추고 내 호흡을 고를 때 상대와의 관계가 오히려 편안해질 가능성은?",
       "step4": "질문을 던지기 직전 목구멍이 바짝 마르고 조급함이 치솟나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘확인질문’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10512,6 +12927,29 @@ window.MIND_CARDS_DATA = [
       "step2": "내 머릿속이 덧붙인 악의적 해석은 무엇인가요? (예: '날 만만하게 보고 일부러 씹는 거야')",
       "step3": "상대가 답장을 쓰다가 상사가 불러서 급히 회의에 들어갔을 가능성은?",
       "step4": "읽씹을 확인한 순간 피가 거꾸로 솟구치거나 가슴이 철렁 내려앉나요?"
+    },
+    "contextTags": [
+      "communication",
+      "love",
+      "relationship",
+      "reply_anxiety",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘읽씹해석’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10589,6 +13027,29 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 붙인 내 배신감 시나리오는 무엇인가요? (예: '나한테는 연락 안 하고 딴 사람이랑 히히덕거리네')",
       "step3": "업무 단톡방을 확인하거나 스크롤만 넘기다 나갔을 가능성은 확인해봤나요?",
       "step4": "상대의 접속 상태를 스토킹하듯 확인하며 손가락이 떨리고 머리가 지끈거리나요?"
+    },
+    "contextTags": [
+      "communication",
+      "love",
+      "relationship",
+      "reply_anxiety",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "상대의 반응이 확인되지 않아 연락 화면을 계속 보게 되는 순간과 가깝습니다.",
+      "story": "답장이 늦은 사실 뒤에 ‘마음이 식었다’거나 ‘무시당했다’는 예측이 켜지는 지점을 다룹니다.",
+      "urge": "불안을 덜기 위해 자꾸 폰을 들여다보거나 확인 연락을 보내고 싶은 충동과 연결됩니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10666,6 +13127,27 @@ window.MIND_CARDS_DATA = [
       "step2": "직접 말하면 자존심 상하거나 거절당할 것 같다는 공포가 있나요?",
       "step3": "내가 따뜻하고 솔직하게 요청했을 때 상대가 흔쾌히 안아줄 가능성은?",
       "step4": "상대를 떠볼 때 속으로는 조마조마하고 불안해지나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘떠보기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10743,6 +13225,30 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음이 상상한 거대한 위협 시나리오는 무엇인가요? (예: '저 사람에게 마음을 빼앗길 거야')",
       "step3": "상대가 나를 가장 특별하게 아끼고 존중하고 있다는 현실 데이터는 없나요?",
       "step4": "질투가 날 때 위장이 뒤틀리고 명치가 찌릿하며 공격성이 올라오나요?"
+    },
+    "contextTags": [
+      "approval",
+      "love",
+      "perfection",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "anxiety",
+      "shame"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "타인의 성공 소식을 듣고 축하하면서도 내 안에서 초라함이 올라오는 순간과 가깝습니다.",
+      "story": "보이지 않는 순위표를 세워 나 자신을 끊임없이 깎아내리는 비교 엔진을 관찰합니다.",
+      "urge": "친구의 소식을 회피하거나 반대로 SNS를 염탐하며 상처를 확인하려는 충동을 다룹니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10818,6 +13324,27 @@ window.MIND_CARDS_DATA = [
       "step2": "과거를 파헤치며 내린 열등감의 결론은 무엇인가요? (예: '그 사람을 나보다 더 사랑했을 거야')",
       "step3": "과거는 이미 지나간 데이터일 뿐, 오늘의 관계를 만드는 것은 지금의 대화이지 않나요?",
       "step4": "과거 사진을 찾아보는 동안 손끝이 서늘해지고 숨이 턱 막히나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘과거검색’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10892,6 +13419,27 @@ window.MIND_CARDS_DATA = [
       "step2": "그 깊은 친밀감 뒤에 엄습한 무의식적 공포는 무엇인가요? (예: '이러다 나를 다 들키면 버려질 거야')",
       "step3": "완전히 도망치지 않고 적당한 내 공간을 유지하며 친밀함을 나눌 방법은 없을까요?",
       "step4": "상대가 너무 깊이 다가올 때 숨이 막히고 도망치고 싶은 충동이 이나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘가까워지면거리두기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -10966,6 +13514,27 @@ window.MIND_CARDS_DATA = [
       "step2": "뇌가 켜버린 경고 사이렌은 무엇인가요? (예: '폭풍전야야. 너무 잘해주면 꼭 뒤통수치더라')",
       "step3": "과거의 그 사람과 지금 눈앞의 이 사람이 전혀 다른 인격체라는 사실을 받아들일 수 있나요?",
       "step4": "연인이 다정하게 안아줄 때 왠지 모르게 몸이 굳고 긴장되나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘좋을때의심’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11040,6 +13609,27 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 내린 숙명론적 결론은 무엇인가요? (예: '어차피 1년 뒤엔 다 남이야')",
       "step3": "오늘 서로 존중하고 성숙하게 소통하는 것이 둘의 내일을 더 단단하게 만들 가능성은?",
       "step4": "'어차피'라는 생각을 할 때 가슴 한구석이 서늘하고 공허해지나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘결국떠난다’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11117,6 +13707,29 @@ window.MIND_CARDS_DATA = [
       "step2": "상대와 대화하면 어떤 파국이 일어날 것 같나요? (예: '내 바닥을 다 보이고 끝장날 거야')",
       "step3": "시간을 달라고 정중히 예고하고 쉰 뒤 대화했을 때 문제가 부드럽게 풀릴 가능성은?",
       "step4": "싸우는 순간 숨이 턱 막히고 이 세상에서 사라져버리고 싶나요?"
+    },
+    "contextTags": [
+      "communication",
+      "love",
+      "relationship",
+      "reply_anxiety",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘갈등후잠수’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11192,6 +13805,27 @@ window.MIND_CARDS_DATA = [
       "step2": "오늘 밤 풀지 않고 자면 어떤 재앙이 닥칠 것 같나요? (예: '자고 일어나면 날 버릴 거야')",
       "step3": "하룻밤 푹 자고 맑은 정신으로 이야기할 때 훨씬 성숙한 합의가 나올 가능성은?",
       "step4": "상대가 '내일 얘기하자'고 할 때 심장이 미친 듯이 뛰고 공포가 엄습하나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘즉시해결’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11265,6 +13899,27 @@ window.MIND_CARDS_DATA = [
       "step2": "상대가 안 해줬을 때 내린 자막은 무엇인가요? (예: '날 소중하게 생각하지 않는 증거야')",
       "step3": "상대가 다른 방식으로 나에게 사랑을 표현하고 있는 장면들은 없나요?",
       "step4": "기대가 어긋났을 때 속에서 서운함과 냉담한 분노가 치밀어 오르나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘사랑증명’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11341,6 +13996,27 @@ window.MIND_CARDS_DATA = [
       "step2": "내가 상대를 바꿀 수 있다는 전능 환상을 쥐고 있나요?",
       "step3": "내가 단호하게 한계선을 긋고 거절할 때 상대의 태도가 바뀔 가능성은?",
       "step4": "상대를 고치려다 좌절할 때마다 만성적인 무기력과 피로가 몰려오나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘상대변화대기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11417,6 +14093,27 @@ window.MIND_CARDS_DATA = [
       "step2": "내 머릿속 판사가 때리는 가혹한 자책은 무엇인가요? (예: '내가 그때 참았어야 해')",
       "step3": "그때 참았더라도 결국 다른 장면에서 부딪혔을 가능성이 더 높지 않았을까요?",
       "step4": "과거를 후회할 때 가슴이 찢어지듯 아프고 죄책감에 눈물이 쏟아지나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘이별재판’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11494,6 +14191,27 @@ window.MIND_CARDS_DATA = [
       "step2": "상대의 새 게시물을 보며 내 머릿속이 쓴 비극 시나리오는 무엇인가요? (예: '나 없이 너무 잘 사네. 날 잊었어')",
       "step3": "그 화면 너머의 상대도 나름의 혼란과 일상을 살아가고 있을 뿐이라는 것을 인정할 수 있나요?",
       "step4": "상대의 피드를 누르기 직전 심장이 쿵쾅거리고 손이 떨리나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘전연인확인’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11570,6 +14288,29 @@ window.MIND_CARDS_DATA = [
       "step2": "연락하면 이번엔 동화처럼 완벽해질 거라는 착각이 있나요?",
       "step3": "하룻밤의 외로움을 참고 내일 아침을 맞이했을 때 느끼게 될 안도감은?",
       "step4": "새벽에 전화번호를 누를 때 손끝이 저릿하고 충동이 온몸을 휘감나요?"
+    },
+    "contextTags": [
+      "communication",
+      "love",
+      "relationship",
+      "reply_anxiety",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘재회충동’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "communication 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11646,6 +14387,27 @@ window.MIND_CARDS_DATA = [
       "step2": "내 정체성에 붙인 낙인은 무엇인가요? (예: '난 평생 혼자 비참하게 살 거야')",
       "step3": "나와 가치관이 잘 맞고 내 소통 방식을 존중해줄 사람을 만났을 때의 가능성은?",
       "step4": "자신을 탓할 때 가슴이 무너져 내리고 깊은 수치심이 밀려오나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11720,6 +14482,27 @@ window.MIND_CARDS_DATA = [
       "step2": "사랑하니까 모든 폭언이나 무책임도 다 견뎌야 한다는 신념이 있나요?",
       "step3": "나를 안전하게 지키면서 더 건강하고 존중받는 사랑을 경험할 가능성은?",
       "step4": "관계를 유지하느라 내 영혼이 닳아 없어지는 듯한 만성 피로가 느껴지나요?"
+    },
+    "contextTags": [
+      "love",
+      "relationship",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "family_only",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘사랑과현실분리’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "love 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11796,6 +14579,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 행동 뒤에 내 마음이 속삭인 생각은 무엇인가요? (예: '혹시 내가 치명적인 하자를 놓치고 후회하면 어쩌지?')",
       "step3": "지금 단계에서 100% 확신할 수 없는 미지의 영역은 무엇인가요? (예: 써보기 전까지는 알 수 없는 실제 사용 만족도)",
       "step4": "스마트폰을 쥐고 화면을 넘길 때 호흡이 얕아지고 목 뒤가 굳어있나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘재검색’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11873,6 +14673,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 자동 생각은 무엇인가요? (예: '확신 없는 상태로 쓰면 형편없는 글이 나와 망신당할 거야')",
       "step3": "지금 단계에서 알 수 없는 미지의 사실은 무엇인가요? (예: 실제로 몇 줄 적었을 때 아이디어가 어떻게 연결될지)",
       "step4": "시작하려 할 때 가슴이 답답하고 몸이 뒤로 눕혀지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘확신대기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -11948,6 +14765,23 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 붙인 스토리는 무엇인가요? (예: '아직 A 개념을 완벽히 소화하지 못했으니 더 공부해야 해')",
       "step3": "아직 겪어보지 않은 미지는 무엇인가요? (예: 직접 부딪혀야만 드러나는 실제 질문과 해결책)",
       "step4": "공부할 땐 편안하다가 '이제 해볼까' 할 때 어깨가 굳어지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘준비지연’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12025,6 +14859,25 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 속삭임은 무엇인가요? (예: '계획이 빈틈없어야 실행할 때 한 번도 안 헤매고 성공해')",
       "step3": "계획표에는 적을 수 없는 미지의 변수는 무엇인가요? (예: 내일 내 에너지 상태와 예상치 못한 업무 돌발상황)",
       "step4": "계획을 짤 때는 손끝이 가볍고 신나다가 실행하려니 손이 무거워지나요?"
+    },
+    "contextTags": [
+      "approval",
+      "decision",
+      "perfection",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘완벽계획’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12097,6 +14950,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 합리화 스토리는 무엇인가요? (예: '내일은 컨디션도 완벽하고 의욕도 100%일 테니 훨씬 잘 될 거야')",
       "step3": "내일 아침의 실제 컨디션은 어떨지 알 수 있나요? (예: 내일도 오늘처럼 피곤하고 일어나기 싫을 가능성)",
       "step4": "내일로 미루는 순간 가슴이 가벼워지고 긴장이 풀리나요? (즉각적 보상)"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘내일부터’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12171,6 +15041,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 생각이 내게 주는 스토리는 무엇인가요? (예: '이거 시작하면 밤새도록 고통받고 죽을 만큼 힘들 거야')",
       "step3": "과연 한 걸음 내딛는 것조차 그렇게 고통스러울지는 알 수 없지 않나요?",
       "step4": "해야 한다는 생각이 들자마자 온몸에 힘이 빠지고 딴짓(SNS, 청소)을 시작하나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘시작압박’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12247,6 +15134,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 두려움은 무엇인가요? (예: '다른 걸 골랐다가 최선이 아니면 돈과 시간을 날릴 거야')",
       "step3": "골라보기 전까지 100% 최선인지 아닌지 미리 검증할 방법이 있나요?",
       "step4": "머리가 지끈거리고 선택 창을 닫아버리고 싶은 피로감이 드나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘선택과부하’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12323,6 +15227,25 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 스토리텔링은 무엇인가요? (예: '역시 B를 샀어야 해. 난 항상 잘못된 선택을 해')",
       "step3": "B를 샀더라도 다른 아쉬운 점이 없었을지는 알 수 없지 않나요?",
       "step4": "가슴에 찜찜함이 맴돌며 방금 내린 결정을 번복하고 싶어지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "guilt",
+      "procrastination",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘결정후회’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12397,6 +15320,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 조급함은 무엇인가요? (예: '이왕 시작했으니 단기간에 살을 싹 빼고 달라져야 해')",
       "step3": "오늘 100점을 만든다고 해서 내일 피로가 저절로 사라질까요?",
       "step4": "운동이나 작업이 끝난 뒤 기분 좋은 활력 대신 탈진과 거부감이 드나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘첫날과출력’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12472,6 +15412,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 덧붙인 정체성 낙인은 무엇인가요? (예: '난 역시 끈기 없는 인간이야. 뭘 해도 안 돼')",
       "step3": "한 번 쉰 것이 내 인생의 모든 능력치를 0으로 만든다는 증거가 있나요?",
       "step4": "비난할 때 가슴이 꺾이고 패배감이 몰려오나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘작심삼일’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12549,6 +15506,23 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 내린 극단적 선고는 무엇인가요? (예: '오늘 루틴 망했네. 오늘은 그냥 막 살고 다음 주부터 하자')",
       "step3": "남은 16시간 동안 좋은 선택을 하나도 할 수 없다는 것이 사실인가요?",
       "step4": "계획이 어긋난 순간 자포자기하며 몸을 내던지고 싶어지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘흑백사고’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12621,6 +15595,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 논리는 무엇인가요? (예: '지금 억지로 해봤자 집중도 안 되고 효율만 떨어져')",
       "step3": "5분 동안 연필을 쥐었을 때 도파민이 실제로 분비될지 아닐지 미리 알 수 있나요?",
       "step4": "몸이 무겁고 침대에 누워 릴스나 쇼츠를 보고 싶은 충동이 이나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘기분대기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12695,6 +15686,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 머릿속 스토리텔링은 무엇인가요? (예: '지금 안 먹으면 스트레스 받아서 미칠 것 같아')",
       "step3": "10초만 멈추었을 때 이 충동의 파도가 어떻게 가라앉을지 지켜본 적이 있나요?",
       "step4": "손가락이 저절로 배달 앱을 누르고 심장이 두근거리나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘충동실행’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12770,6 +15778,23 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 붙잡고 있는 생각은 무엇인가요? (예: '모든 리스크를 100% 계산해내지 못하면 망할 거야')",
       "step3": "머릿속으로 아무리 시뮬레이션을 돌려도 실제로 부딪히지 않으면 알 수 없는 데이터가 있지 않나요?",
       "step4": "미간이 찌푸려지고 머리가 뜨거워지며 무기력해지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘과잉분석’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12846,6 +15871,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 방어 스토리는 무엇인가요? (예: '도전했다 떨어지면 바보 같잖아. 안 하면 본전은 건져')",
       "step3": "작게 시도했을 때 내가 무엇을 새롭게 배우고 깨달을지 미리 닫아버리고 있지는 않나요?",
       "step4": "포기하기로 결정했을 때 안도감과 함께 깊은 공허함이 찾아오나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12921,6 +15963,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 조급함은 무엇인가요? (예: '이렇게 통째로 뜯어고치지 않으면 내 한심한 인생은 안 바뀌어')",
       "step3": "작은 행동 하나가 굳어졌을 때 생겨나는 도미노 효과를 믿어본 적이 있나요?",
       "step4": "결심할 때는 웅장하지만 둘째 날부터 온몸이 납덩이처럼 무거워지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘전면변화’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -12995,6 +16054,25 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 완벽주의 스토리텔링은 무엇인가요? (예: '연속 기록 깨졌으니 이제 다 망했어. 무의미해')",
       "step3": "기록이 하루 비었다고 해서 지난 20일 동안 뇌에 새겨진 신경망이 사라질까요?",
       "step4": "빈칸을 보았을 때 눈살이 찌푸려지고 짜증이 솟구치나요?"
+    },
+    "contextTags": [
+      "approval",
+      "decision",
+      "perfection",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘기록완벽’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13072,6 +16150,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음이 내린 최종 판결문은 무엇인가요? (예: '역시 난 구제불능이야. 말짱 도루묵이야')",
       "step3": "예전에는 며칠 동안 폭식했다면, 이번에는 한 끼 만에 알아차리지 않았나요?",
       "step4": "스스로를 비난하며 침대에 웅크리고 싶어지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘재발판결’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13145,6 +16240,23 @@ window.MIND_CARDS_DATA = [
       "step2": "그 상상에 마음이 부여한 의미는 무엇인가요? (예: '망신당하느니 그냥 입 다물고 있는 게 안전해')",
       "step3": "상대가 실제로 친절하게 대답해줄 가능성은 0%라고 장담할 수 있나요?",
       "step4": "시도하기 전에 이미 심장이 쿵쾅거리고 손발이 차가워지나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘예상공포’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13220,6 +16332,23 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 비난 목소리는 무엇인가요? (예: '알면서도 또 이러니 난 영원히 못 고쳐')",
       "step3": "지금 이 순간 핸들을 돌려 책을 펼치면 다음 30분은 다른 삶이 되지 않을까요?",
       "step4": "알아차린 순간 자책감으로 몸이 경직되는 대신 심호흡을 할 수 있나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘다시선택’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13295,6 +16424,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 말 위에 내 마음이 붙인 자막은 무엇인가요? (예: '나를 일 못하고 무능한 사람으로 찍었구나')",
       "step3": "아직 확인되지 않은 사실은 무엇인가요? (예: 상대가 단순히 서식만 보았을 가능성, 상대의 바쁜 상황)",
       "step4": "그 말을 떠올릴 때 목구멍이 조여오고 가슴 한가운데가 무거워지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘한마디반추’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13369,6 +16516,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 감각에 마음이 붙인 번역은 무엇인가요? (예: '분명 큰 사고가 터졌거나 나쁜 일이 생길 거야')",
       "step3": "실제 외부 현실에서 지금 당장 확인된 객관적 위험이 있나요?",
       "step4": "가슴이 철렁 내려앉으며 호흡이 가빠지고 손끝이 차가워지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "chest_tightness"
+    ],
+    "matchReasons": {
+      "trigger": "‘가슴철렁’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13446,6 +16611,24 @@ window.MIND_CARDS_DATA = [
       "step2": "확인하지 않으면 뇌가 속삭이는 최악의 결말은 무엇인가요? (예: '확인 안 하면 불이 나거나 상대가 날 손절할 거야')",
       "step3": "한 번 더 확인한다고 해서 미래의 모든 변수가 100% 제거될 수 있나요?",
       "step4": "확인하려는 순간 손가락이 떨리고 초조해지다가, 확인 직후 순간적으로 숨이 트이나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘불안확인’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13522,6 +16705,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 위에 마음이 상영 중인 파국적 스토리는 무엇인가요? (예: '회의에서 큰 실수를 하고 망신당해 잘릴 것이다')",
       "step3": "내일 회의에서 실제로 일어날 미지의 사실은 무엇인가요?",
       "step4": "상상만으로 입안이 바짝 마르고 어깨가 움츠러드나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘최악예고편’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13596,6 +16797,25 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 덧붙인 가혹한 평가는 무엇인가요? (예: '이 나이 먹고 울다니 난 구제불능이고 한심해')",
       "step3": "눈물을 흘렸다고 해서 내 지적 능력이나 삶의 성취가 0이 된다는 증거가 있나요?",
       "step4": "눈물을 참으려고 턱에 힘을 주고 이를 악물고 있나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt",
+      "lethargy"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘눈물수치심’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13671,6 +16891,25 @@ window.MIND_CARDS_DATA = [
       "step2": "그 뒤에 스스로에게 쏜 두 번째 화살은 무엇인가요? (예: '성격 파탄자, 넌 왜 분노조절도 못하니?')",
       "step3": "자신을 며칠 동안 난도질하는 것이 상대에게 사과하거나 관계를 복구하는 데 도움이 되나요?",
       "step4": "자책할 때 가슴이 찢어지는 듯하고 온몸에 기운이 빠지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger",
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘두번째화살’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13746,6 +16985,24 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 무의식 스토리는 무엇인가요? (예: '나 때문에 기분 나쁜 게 분명해. 빨리 사과해서 달래야 해')",
       "step3": "상대가 피곤하거나 다른 개인적인 일 때문에 표정이 어두울 가능성은 없나요?",
       "step4": "상대 표정을 보자마자 목덜미가 서늘해지고 심장이 쿵쾅거리나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘즉시사과’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13823,6 +17080,24 @@ window.MIND_CARDS_DATA = [
       "step2": "수치심이 만든 극단적 결론은 무엇인가요? (예: '모두가 날 비웃고 있을 거야. 이 회사에서 사라져야 해')",
       "step3": "사람들이 그 메일을 보고 5분 뒤 자기 일에 집중하고 있을 가능성은 없나요?",
       "step4": "얼굴이 화끈거리고 심장이 내려앉으며 책상 밑으로 숨고 싶어지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "chest_tightness"
+    ],
+    "matchReasons": {
+      "trigger": "‘수치심숨기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13897,6 +17172,26 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 내린 거대한 판결문은 무엇인가요? (예: '내 커리어는 끝장났고 다신 중요한 일을 못 맡을 거야')",
       "step3": "이 실수가 3년 뒤 내 인생에 치명적인 영향을 미칠지 장담할 수 있나요?",
       "step4": "몸에 힘이 쭉 빠지고 세상이 캄캄해지는 기분이 드나요?"
+    },
+    "contextTags": [
+      "financial_anxiety",
+      "guilt",
+      "money",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "일이나 사업의 결과가 기대에 미치지 못해 마음이 무너져 내릴 때 마주하는 장면입니다.",
+      "story": "결과의 부진을 ‘내 삶 전체의 실패’로 동일시하는 가혹한 해석을 분리해 봅니다.",
+      "urge": "모든 것을 포기하고 숨어버리거나 다음 시도를 영원히 보류하고 싶은 마음을 살핍니다.",
+      "context": "financial_anxiety 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -13972,6 +17267,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 자책이 나에게 주는 가짜 도덕적 위안은 무엇인가요? (예: '충분히 괴로워해야 나쁜 놈이 안 돼')",
       "step3": "나를 잔인하게 학대하는 것이 피해자나 동료에게 실질적인 보탬이 되나요?",
       "step4": "가슴을 쥐어뜯으며 머리가 지끈거리고 무기력해지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘반성무한루프’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14043,6 +17356,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사실에 붙인 내 정체성 낙인은 무엇인가요? (예: '난 멘탈이 두부 같아서 사회생활 못할 인간이야')",
       "step3": "내가 잘 버텨내고 단단하게 해냈던 다른 수많은 장면들은 어디로 갔나요?",
       "step4": "남들과 비교하며 내 자신이 초라하게 쪼그라드는 기분이 드나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘유리멘탈’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14118,6 +17449,25 @@ window.MIND_CARDS_DATA = [
       "step2": "감정에 대해 내 마음이 내린 요구는 무엇인가요? (예: '이 떨림을 당장 없애지 못하면 난 실패자야')",
       "step3": "가슴이 떨리는 채로도 무대에 올라 연설을 훌륭히 마친 사람들이 있지 않나요?",
       "step4": "불안을 억지로 누르려 할수록 심장이 더 세차게 뛰나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger",
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘감정없애기’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14191,6 +17541,24 @@ window.MIND_CARDS_DATA = [
       "step2": "도망치고 싶은 충동이 만드는 생각은 무엇인가요? (예: '여기 더 있으면 숨 막혀 죽을 것 같아')",
       "step3": "3분만 더 머물며 심호흡을 했을 때 이 불편함이 어떻게 변할지 지켜본 적이 있나요?",
       "step4": "엉덩이가 들썩거리고 문쪽을 자꾸 쳐다보며 발끝에 힘이 들어가나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘도망충동’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14267,6 +17635,25 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 분노 자막은 무엇인가요? (예: '나를 철저히 무시하고 있네. 내가 만만해 보여?')",
       "step3": "지금 거친 메시지를 보냈을 때 상대가 진심으로 반성할 확률은 몇 퍼센트일까요?",
       "step4": "손가락에 힘이 잔뜩 들어가고 숨이 거칠어지며 키보드를 두드리나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger",
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘분노즉시전송’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14343,6 +17730,24 @@ window.MIND_CARDS_DATA = [
       "step2": "죄책감이 씌운 혐의는 무엇인가요? (예: '동료를 돕지 않는 이기적이고 나쁜 인간이야')",
       "step3": "상대가 거절당해 아쉬워하는 것과 내가 범죄를 저지른 것이 같은 수준의 일인가요?",
       "step4": "등을 굽히고 고개를 숙이며 마음에 무거운 돌덩이를 얹은 기분이 드나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘죄책감결재’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14418,6 +17823,24 @@ window.MIND_CARDS_DATA = [
       "step2": "현재 기분이 내리는 종말 예보는 무엇인가요? (예: '오늘 시작부터 기분 잡쳤으니 뭘 해도 엉망일 거야')",
       "step3": "점심을 먹고 산책을 한 뒤 내 뇌의 도파민 수치가 어떻게 변할지 미리 알 수 있나요?",
       "step4": "온몸이 침대로 빨려 들어가듯 축 늘어지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘감정예측’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14493,6 +17916,24 @@ window.MIND_CARDS_DATA = [
       "step2": "그 신호와 함께 머릿속을 스쳐 지나간 생각은 무엇이었나요? (예: '또 저러네. 진짜 못 참겠다')",
       "step3": "그 신호가 왔을 때 물 한 잔을 마시며 10초만 멈춘다면 결말이 어떻게 바뀔까요?",
       "step4": "신호가 오던 순간 몸의 근육들이 딱딱하게 경직되었나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘조기신호’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14566,6 +18007,24 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 가혹한 압박은 무엇인가요? (예: '남들은 쿨하게 털어내는데 난 왜 아직도 찌질하게 울고 있지?')",
       "step3": "마음의 상처가 아무는 데도 피부의 상처처럼 세포가 재생될 시간이 필요하지 않을까요?",
       "step4": "빨리 괜찮아져야 한다는 강박에 명치가 더 뻐근해지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘회복조급함’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14643,6 +18102,24 @@ window.MIND_CARDS_DATA = [
       "step2": "내 마음의 흑백논리 판결은 무엇인가요? (예: '또 불안해하다니, 난 평생 치료 안 될 거야')",
       "step3": "감정이 올라왔음에도 불구하고 내가 이전과 다르게 선택할 수 있는 10%가 존재하지 않나요?",
       "step4": "스스로에게 실망하며 한숨이 깊게 내쉬어지나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘또흔들림’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14716,6 +18193,24 @@ window.MIND_CARDS_DATA = [
       "step2": "통제할 수 없는 영역에 대해 마음이 요구하는 것은 무엇인가요? (예: '면접관의 모든 반응을 미리 통제해야 해')",
       "step3": "예상치 못한 질문이 나와도 '잠시 생각할 시간을 주시겠습니까?'라고 대응할 수 있지 않나요?",
       "step4": "모든 것을 통제하려는 긴장을 내려놓고 깊은 숨을 바닥까지 쉴 수 있나요?"
+    },
+    "contextTags": [
+      "guilt",
+      "self_compassion"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety",
+      "guilt"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘대응가능성’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "guilt 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14793,6 +18288,26 @@ window.MIND_CARDS_DATA = [
       "step2": "그 사건들을 하나로 묶어 내린 마음의 자막은 무엇인가요? (예: '삼재라서 뭘 해도 안 풀릴 운명이야')",
       "step3": "각 사건의 실제 현실적 요인(시장 상황, 면역력 저하, 소통 부재) 중 내가 개선할 수 있는 부분은 무엇인가요?",
       "step4": "삼재라는 말을 떠올릴 때 무기력하게 어깨가 처지고 한숨이 나오나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14871,6 +18386,28 @@ window.MIND_CARDS_DATA = [
       "step2": "사주풀이를 듣고 마음이 내린 판결은 무엇인가요? (예: '어차피 난 평생 가난할 테니 아껴 써봤자 소용없어')",
       "step3": "오늘 내가 지출 1만원을 아끼거나 새로운 기술을 배우는 것이 미래에 어떤 누적 복리를 만들지 알 수 있나요?",
       "step4": "돈복이 없다는 말을 떠올리면 가슴이 턱 막히고 돈 관리가 하기 싫어지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "financial_anxiety",
+      "fortune",
+      "money"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -14947,6 +18484,30 @@ window.MIND_CARDS_DATA = [
       "step2": "그 행동에 이별수를 덧씌워 만든 스토리텔링은 무엇인가요? (예: '마음이 식었네. 역시 이별수가 맞아가고 있어')",
       "step3": "오늘 따뜻한 안부 한마디를 건네는 것이 관계에 어떤 온기를 줄지는 확인해보셨나요?",
       "step4": "연인의 연락을 기다릴 때 의심과 불안으로 목덜미가 서늘해지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune",
+      "love",
+      "romantic_relationship"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "family_only",
+      "high_stakes_investment",
+      "parent_guilt"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15023,6 +18584,26 @@ window.MIND_CARDS_DATA = [
       "step2": "궁합이 안 좋다는 말에 내 마음이 내린 유죄 판결은 무엇인가요? (예: '결국엔 원수가 되어 파국을 맞을 거야')",
       "step3": "갈등이 생겼을 때 성숙하게 소통하고 조율하는 훈련을 통해 성숙해질 가능성은 없나요?",
       "step4": "상대를 바라볼 때 애정 대신 찜찜함과 불안이 가슴을 누르나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15099,6 +18680,26 @@ window.MIND_CARDS_DATA = [
       "step2": "불길한 날짜에 시작하면 뇌가 상상하는 파국은 무엇인가요? (예: '이날 시작하면 무조건 사업이 망할 거야')",
       "step3": "길일에 시작하고도 철저한 준비 부족으로 실패한 사례들이 무수히 많지 않나요?",
       "step4": "달력을 보며 결정을 내리지 못해 머리가 지끈거리고 초조해지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15175,6 +18776,26 @@ window.MIND_CARDS_DATA = [
       "step2": "그 꿈에 붙인 징조 해석은 무엇인가요? (예: '가족 중에 누가 크게 다치거나 죽을 징조야')",
       "step3": "오늘 밤 편안히 숙면을 취하고 평소처럼 안전을 챙기면 아무 일도 없을 가능성이 99%이지 않나요?",
       "step4": "잠에서 깨어났을 때 식은땀이 흐르고 가슴이 두근거리나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15251,6 +18872,26 @@ window.MIND_CARDS_DATA = [
       "step2": "계속 찾아다니는 내 마음의 결핍은 무엇인가요? (예: '100% 안전하다는 보장을 받지 못하면 결정을 못 하겠어')",
       "step3": "인간의 삶에서 미래의 불확실성을 0으로 만들어주는 도구가 세상에 존재할 수 있나요?",
       "step4": "상담을 받고 돌아오는 길에 잠깐 후련하다가 며칠 뒤 다시 불안이 스멀스멀 올라오나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15327,6 +18968,26 @@ window.MIND_CARDS_DATA = [
       "step2": "그 한 문장을 바탕으로 내가 지어낸 거대한 재난 시나리오는 무엇인가요? (예: '소송에 걸려 감옥 가고 전 재산을 날릴 거야')",
       "step3": "술사가 말한 '조심하라'는 조언이 '반드시 파멸한다'는 뜻과 같은 것인가요?",
       "step4": "그 말이 떠오를 때마다 목구멍이 마르고 손에 힘이 빠지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15403,6 +19064,26 @@ window.MIND_CARDS_DATA = [
       "step2": "운세를 보기 전 내 마음에 도사린 불안은 무엇이었나요? (예: '오늘 중요한 발표가 있는데 망칠까 봐 겁나')",
       "step3": "운세 글귀를 읽는 대신 발표 자료를 한 번 더 소리 내어 읽는 것이 결과에 더 확실한 영향을 주지 않을까요?",
       "step4": "운세 창을 열기 전 초조하게 손가락을 꼼지락거리나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15478,6 +19159,26 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 무의식적으로 덮어씌운 운명 공식은 무엇인가요? (예: '사주에서 올해 깨진다고 했으니 내가 아무리 해도 안 돼')",
       "step3": "사주에서 경고했던 불운 중 실제로 일어나지 않고 무사히 지나간 일들은 몇 개나 되나요?",
       "step4": "'거봐'라고 생각하는 순간 씁쓸한 체념과 함께 힘이 빠지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15552,6 +19253,26 @@ window.MIND_CARDS_DATA = [
       "step2": "물건이 없을 때 머릿속을 스치는 공포는 무엇인가요? (예: '부적이 없으니 악귀가 붙어서 면접을 망칠 거야')",
       "step3": "내가 지난 수개월간 갈고닦은 실력과 지식이 부적 하나 없다고 증발할까요?",
       "step4": "물건을 집에 두고 왔다는 것을 알았을 때 가슴이 쿵 내려앉나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15628,6 +19349,26 @@ window.MIND_CARDS_DATA = [
       "step2": "징크스 행동을 했을 때 뇌가 켜는 비상경보는 무엇인가요? (예: '빨간 펜으로 이름을 썼으니 큰 벌을 받을 거야')",
       "step3": "오늘 징크스를 깨뜨리고 당당히 시험을 치렀을 때 어떤 새로운 데이터가 생길지 궁금하지 않나요?",
       "step4": "징크스에 걸리는 순간 온몸이 긴장하고 실패할 핑계를 미리 찾게 되나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15705,6 +19446,26 @@ window.MIND_CARDS_DATA = [
       "step2": "대운을 핑계로 미루는 내 마음의 게으름은 무엇인가요? (예: '어차피 지금은 운이 안 따르니 3년 뒤 대운 오면 그때 대박 터뜨리자')",
       "step3": "오늘 아무 준비도 하지 않는 사람에게 대운이 온들 그것을 기회로 바꿀 수 있을까요?",
       "step4": "대운 상상을 할 때는 기분이 좋다가 현실로 돌아오면 무기력해지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15781,6 +19542,26 @@ window.MIND_CARDS_DATA = [
       "step2": "삶을 동결시켰을 때 마음이 주는 가짜 안전감은 무엇인가요? (예: '가만히 숨죽이고 있으면 안 다칠 거야')",
       "step3": "아무것도 하지 않고 1년을 보냈을 때 치러야 할 기회비용과 내면의 퇴행은 계산해보셨나요?",
       "step4": "도전할 기회가 와도 자라처럼 목을 움츠리고 뒤로 물러서나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15858,6 +19639,26 @@ window.MIND_CARDS_DATA = [
       "step2": "술사의 말에 따랐을 때 실패하면 탓할 핑계가 생긴다는 무의식적 계산이 있나요?",
       "step3": "내 삶의 책임을 내가 온전히 지고 나아갈 때 생겨나는 자존감과 효능감을 느껴본 적이 있나요?",
       "step4": "남의 말에 내 인생을 맡기려니 왠지 찜찜하고 마음 깊은 곳에서 반발심이 이나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -15932,6 +19733,26 @@ window.MIND_CARDS_DATA = [
       "step2": "그 정체성이 내게 주는 체념은 무엇인가요? (예: '어차피 난 평탄하게 못 사니 포기하자')",
       "step3": "그 강한 에너지를 건강한 리더십이나 전문성으로 전환할 수 있는 선택지는 없을까요?",
       "step4": "팔자 탓을 할 때 서글픔과 함께 굳은 긴장이 느껴지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16007,6 +19828,26 @@ window.MIND_CARDS_DATA = [
       "step2": "사주를 나와 동일시할 때 생기는 한계는 무엇인가요? (예: '난 불(火) 기운이 없으니 열정을 낼 수 없어')",
       "step3": "어떤 사주 틀에도 규정되지 않는 내 안의 잠재력이 무궁무진하지 않을까요?",
       "step4": "사주 설명을 들을 때 틀 속에 갇힌 듯 답답함이 느껴지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16084,6 +19925,26 @@ window.MIND_CARDS_DATA = [
       "step2": "그 반복에 내가 붙인 숙명론적 자막은 무엇인가요? (예: '내 운명은 항상 인간관계가 파탄 나게 프로그래밍되어 있어')",
       "step3": "다음번 Trigger에서 내가 10% 다른 말 한마디를 건넨다면 결말이 어떻게 바뀔까요?",
       "step4": "또 비슷한 일이 시작될 때 등골이 서늘해지며 체념하게 되나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16159,6 +20020,28 @@ window.MIND_CARDS_DATA = [
       "step2": "미래를 모른 채 결정하면 뇌가 상상하는 공포는 무엇인가요? (예: '단 하나의 변수 때문에 패가망신할 거야')",
       "step3": "불확실성이 남아 있어도 내 원칙과 가치에 따라 행동하고, 결과에 따라 수정해나갈 수 있지 않나요?",
       "step4": "미래를 알 수 없다는 생각에 가슴이 답답하고 숨이 막히나요?"
+    },
+    "contextTags": [
+      "decision",
+      "fate_belief",
+      "fortune",
+      "procrastination"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16235,6 +20118,26 @@ window.MIND_CARDS_DATA = [
       "step2": "그 믿음이 내 결재권까지 빼앗으려 할 때 생기는 부작용은 무엇인가요? (예: '어차피 운명대로니 노력 안 해')",
       "step3": "믿음에 발언권을 주고, 행동의 결재권은 내가 가질 때 얼마나 홀가분하고 주체적일 수 있을까요?",
       "step4": "선택권이 온전히 나에게 있음을 느낄 때 어깨가 펴지고 가슴이 넓어지나요?"
+    },
+    "contextTags": [
+      "fate_belief",
+      "fortune"
+    ],
+    "negativeTags": [
+      "emergency_medical",
+      "high_stakes_investment"
+    ],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "미래의 불확실성을 견디기 어려워 외부의 예언이나 사주에 기대게 되는 장면입니다.",
+      "story": "정해진 운명이 있다는 믿음 뒤에 숨은 ‘책임과 실패에 대한 두려움’을 비춥니다.",
+      "urge": "내 삶의 결정권을 점괘나 남의 말에 통째로 넘겨주고 싶은 충동을 관찰합니다.",
+      "context": "fate_belief 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16309,6 +20212,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 순간 머릿속에서 자동으로 떠오른 STORY(해석)는?",
       "step3": "내가 아직 실제로 확인하지 않은 현실의 영역은?",
       "step4": "그 순간 몸의 어느 부위가 먼저 긴장했나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘패턴반복’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16384,6 +20303,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그것이 과거의 생존 방식이었을 가능성은?",
       "step3": "새로운 조건에서도 과연 똑같이 작동해야만 할까요?",
       "step4": "‘원래 이런 사람’이라고 단정할 때 몸의 무력감은 어디서 느껴지나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘정체성분리’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16458,6 +20393,22 @@ window.MIND_CARDS_DATA = [
       "step2": "모든 것을 파헤치지 않으면 큰일 난다는 두려움이 있나요?",
       "step3": "완벽히 분석하지 않아도 지금 당장 할 수 있는 작은 일은?",
       "step4": "머리만 뜨거워지고 손발은 멈춰있지 않나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘분석중독’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16531,6 +20482,24 @@ window.MIND_CARDS_DATA = [
       "step2": "이 패턴을 '나쁜 죄'로 규정하며 자책하고 있지는 않나요?",
       "step3": "이 패턴의 긍정적인 면(장점·능력)은 무엇일까요?",
       "step4": "이 반응을 악마화할 때 가슴에 어떤 저항감이 드나요?"
+    },
+    "contextTags": [
+      "decision",
+      "procrastination",
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘패턴의유용성’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "decision 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16604,6 +20573,22 @@ window.MIND_CARDS_DATA = [
       "step2": "‘원인을 모르면 절대 못 고친다’는 또 다른 규칙을 쥐고 있나요?",
       "step3": "원인 규명 없이도 지금 당장 바꿀 수 있는 10% 행동은?",
       "step4": "과거를 캐낼 때 느껴지는 피로감은 어디에 머무나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘과거원인집착’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16677,6 +20662,24 @@ window.MIND_CARDS_DATA = [
       "step2": "모든 감정을 미세하게 다 포착해야 한다는 강박이 있나요?",
       "step3": "하나만 알아차려도 변화의 문이 열린다는 사실을 허용할 수 있나요?",
       "step4": "숨을 들이쉬고 내쉴 때 가장 뚜렷한 감각 부위는?"
+    },
+    "contextTags": [
+      "approval",
+      "perfection",
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘SCAN완벽주의’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "approval 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16750,6 +20753,22 @@ window.MIND_CARDS_DATA = [
       "step2": "이 감정을 느끼면 안 된다는 두려움이나 수치심이 있나요?",
       "step3": "감정을 바꾸지 않고도 다음 행동을 선택할 수 있다는 것을 안다면?",
       "step4": "그 감정과 싸움을 멈출 때 몸의 힘이 어떻게 풀리나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘SYNC오해’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16823,6 +20842,22 @@ window.MIND_CARDS_DATA = [
       "step2": "‘실패하면 끝장’이라는 극단적 파국화가 작동하고 있나요?",
       "step3": "시도해봐야만 알 수 있는 미지의 결과는 무엇인가요?",
       "step4": "정답을 내려놓을 때 어깨의 무거운 짐이 가벼워지나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘SHIFT정답강박’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16897,6 +20932,22 @@ window.MIND_CARDS_DATA = [
       "step2": "마음이 편해져야만 움직일 수 있다는 믿음은 사실일까요?",
       "step3": "이 작은 행동 후 실제로 어떤 반응이 돌아올까요?",
       "step4": "행동을 시작하기 직전 느껴지는 두근거림을 있는 그대로 허용할 수 있나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘행동학습’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -16970,6 +21021,22 @@ window.MIND_CARDS_DATA = [
       "step2": "이 한 번의 일로 '역시 난 안 돼'라고 파국적 결론을 내렸나요?",
       "step3": "이번 시행착오에서 새롭게 건져 올린 사실 데이터는?",
       "step4": "실망감이 느껴질 때 호흡을 가다듬고 몸의 긴장을 풀 수 있나요?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘실험과피드백’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17044,6 +21111,22 @@ window.MIND_CARDS_DATA = [
       "step2": "Zero Point에 도달하지 못했다고 스스로를 책망하고 있나요?",
       "step3": "생각이 시끄러워도 그 너머에서 선택할 수 있는 작은 여백은?",
       "step4": "소란스러운 감정 속에서도 숨이 쉬어지는 중심부를 느껴봅니다."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anxiety"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘제로포인트상태오해’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17116,6 +21199,22 @@ window.MIND_CARDS_DATA = [
       "step2": "감정을 느끼면 영적으로 미성숙하다는 식의 잣대가 있나요?",
       "step3": "개념을 다 내려놓고 지금 내 앞에 놓인 구체적인 현실 과제는?",
       "step4": "발바닥이 바닥에 닿는 촉감과 단단한 현실감을 느껴보세요."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘관찰자함정’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17192,6 +21291,22 @@ window.MIND_CARDS_DATA = [
       "step2": "‘어쩔 수 없었다’며 상황 탓으로 돌리고 싶은 충동이 있나요?",
       "step3": "이유를 이해하면서도 성숙하게 책임을 질 수 있는 방법은?",
       "step4": "미안함을 직면할 때 명치 끝의 뻐근함을 솔직하게 느껴봅니다."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘책임과이해’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17265,6 +21380,22 @@ window.MIND_CARDS_DATA = [
       "step2": "이 감정을 느끼면 반드시 그 행동을 해야만 직성이 풀린다는 착각은?",
       "step3": "감정이 휘몰아치는 와중에도 취할 수 있는 다른 행동은?",
       "step4": "충동이 치솟는 아랫배나 목구멍의 압박감을 지켜봅니다."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘감정결재권’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17338,6 +21469,22 @@ window.MIND_CARDS_DATA = [
       "step2": "그 상황을 보고 내 안에서 자동으로 작동한 반응은?",
       "step3": "현실에 대해 단호하게 경계를 긋거나 대책을 세울 부분은?",
       "step4": "남의 짐을 짊어졌을 때 느껴지는 등의 묵직함을 내려놓습니다."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘패턴과현실분리’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17413,6 +21560,22 @@ window.MIND_CARDS_DATA = [
       "step2": "이 기질을 완전히 뜯어고쳐야만 행복해질 수 있다는 착각은?",
       "step3": "같은 악기로 10%만 더 부드럽고 선택적으로 연주한다면?",
       "step4": "자신을 뜯어고치려 할 때의 긴장을 풀고 편안한 호흡을 찾습니다."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘기질과조율’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17489,6 +21652,22 @@ window.MIND_CARDS_DATA = [
       "step2": "조금이라도 흔들리면 '말짱 도루묵'이라는 흑백논리에 빠져있나요?",
       "step3": "방향이 바뀌고 있다는 작은 신호들은 무엇인가요?",
       "step4": "스스로의 성장을 인정해줄 때 가슴에 퍼지는 온기를 느껴봅니다."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "anger"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘변화의지표’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17562,6 +21741,22 @@ window.MIND_CARDS_DATA = [
       "step2": "‘역시 난 안 변해’라는 자책의 두 번째 화살을 쏘고 있나요?",
       "step3": "넘어진 자리에서 바로 털고 일어나는 복구 시간은?",
       "step4": "무릎을 털고 일어나는 가벼운 심호흡을 한 번 쉽니다."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘재발과복구’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17635,6 +21830,22 @@ window.MIND_CARDS_DATA = [
       "step2": "반드시 단계별로 마스터해야 한다는 완벽주의가 있나요?",
       "step3": "지금 바로 내 손에 잡히는 가장 쉬운 도구 하나는?",
       "step4": "세 도구 중 떠올렸을 때 몸이 가장 가벼워지는 도구는?"
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘도구선택’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   },
   {
@@ -17709,6 +21920,22 @@ window.MIND_CARDS_DATA = [
       "step2": "더 완벽히 깨달아야만 진짜 인생이 시작된다는 미신이 있나요?",
       "step3": "지금 휴대폰을 덮고 세상으로 걸어 나갈 때 만날 새로운 풍경은?",
       "step4": "가슴을 펴고 온몸으로 차오르는 생생한 활력을 느껴보세요."
+    },
+    "contextTags": [
+      "three_code"
+    ],
+    "negativeTags": [],
+    "emotionTags": [
+      "uncertainty"
+    ],
+    "bodyTags": [
+      "general_tension"
+    ],
+    "matchReasons": {
+      "trigger": "‘삶으로복귀’와 관련된 외부 자극이나 상황이 일어난 순간과 가장 가깝습니다.",
+      "story": "머릿속에서 나쁜 결론이나 확인되지 않은 시나리오를 빠르게 예상하는 자동 해석을 멈추고 비춰보는 질문입니다.",
+      "urge": "불안을 낮추기 위해 즉시 확인하거나 방어하고 싶어지는 충동을 관찰하도록 돕습니다.",
+      "context": "three_code 맥락에서 불필요한 자책을 내려놓고 자기 선택권을 회복하는 관점입니다."
     }
   }
 ];

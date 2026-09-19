@@ -1646,28 +1646,30 @@
     const query = input.value.trim();
     if (!query) return;
 
-    const tokens = query.split(/\s+/);
-    const scored = state.cards.map(c => {
-      let kwScore = 0;
-      let tagScore = 0;
-      let semScore = 0;
+    if (!window.MyeongsimAIRouter && window.RuleBasedRouter) {
+      window.MyeongsimAIRouter = new window.RuleBasedRouter(state.cards);
+    }
 
-      const targetText = `${c.question} ${c.cardTitle} ${c.sodaAnswer}`.toLowerCase();
-      tokens.forEach(t => {
-        if (targetText.includes(t.toLowerCase())) kwScore += 10;
-        if ((c.searchKeywords || []).some(k => k.includes(t))) tagScore += 8;
-        if ((c.routeTags || []).some(r => r.includes(t))) semScore += 6;
-      });
+    const router = window.MyeongsimAIRouter;
+    if (!router) {
+      container.innerHTML = `<p class="text-xs text-rose-600">RuleBasedRouter 인스턴스를 찾을 수 없습니다.</p>`;
+      return;
+    }
 
-      const finalScore = kwScore + tagScore + semScore;
-      return { card: c, kwScore, tagScore, semScore, finalScore };
-    }).filter(x => x.finalScore > 0).sort((a, b) => b.finalScore - a.finalScore).slice(0, 3);
+    const result = router.route(query, { debug: true });
 
     container.classList.remove('hidden');
     container.innerHTML = `
-      <h4 class="text-xs font-black text-slate-900 mb-2">TOP ${scored.length} 라우팅 결과</h4>
+      <div class="p-3 bg-slate-100 rounded-xl text-xs space-y-1 font-mono text-slate-700">
+        <div><strong>정규화 토큰:</strong> [${(result.normalizedTerms || []).join(', ')}]</div>
+        <div><strong>감지된 컨텍스트:</strong> [${(result.detectedContexts || []).join(', ')}]</div>
+        <div><strong>엔진 모드:</strong> ${result.routerMode} (100% NO-AI Rule Engine)</div>
+      </div>
+      <h4 class="text-xs font-black text-slate-900 mt-3 mb-2">TOP ${result.recommendations.length} 추천 결과 (실시간 가중치 랭킹)</h4>
       <div class="space-y-2">
-        ${scored.map((item, idx) => `
+        ${result.recommendations.map((item, idx) => {
+          const bd = item.debugBreakdown || { kwScore: 0, tagScore: 0, contextScore: 0, penalty: 0 };
+          return `
           <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <div class="flex items-center gap-2 mb-1">
@@ -1676,37 +1678,42 @@
                 <span class="text-[10px] font-mono text-slate-400">(${item.card.id})</span>
               </div>
               <p class="text-[11px] text-slate-600">${item.card.question}</p>
+              <p class="text-[10px] text-[#0F6B5B] font-bold mt-1">💡 WHY: ${item.why}</p>
             </div>
-            <div class="flex items-center gap-3 text-[10px] font-mono text-slate-500 shrink-0">
-              <span>Keyword: <strong class="text-slate-700">${item.kwScore}</strong></span>
-              <span>Tag: <strong class="text-slate-700">${item.tagScore}</strong></span>
-              <span>Semantic: <strong class="text-slate-700">${item.semScore}</strong></span>
-              <span class="px-2 py-1 rounded bg-[#0F6B5B] text-white font-black text-xs">Total ${item.finalScore}</span>
+            <div class="flex items-center gap-2 text-[10px] font-mono text-slate-500 shrink-0">
+              <span>KW: <strong>${bd.kwScore}</strong></span>
+              <span>Tag: <strong>${bd.tagScore}</strong></span>
+              <span>Ctx: <strong>${bd.contextScore}</strong></span>
+              <span>Pen: <strong class="text-rose-600">-${bd.penalty}</strong></span>
+              <span class="px-2 py-1 rounded bg-[#0F6B5B] text-white font-black text-xs">Total ${item.score}</span>
             </div>
           </div>
-        `).join('')}
+        `}).join('')}
       </div>
     `;
   };
 
   // =================================================================
-  // VIEW 8: AI ROUTER TEST CONSOLE
+  // VIEW 8: AI ROUTER TEST CONSOLE (NO-AI Rule Router Debugger)
   // =================================================================
   function renderAiRouterTestView() {
     return `
       <div class="space-y-6 text-left">
         <div>
-          <h2 class="text-2xl font-black text-slate-900 tracking-tight">명심AI 라우터 테스트 콘솔</h2>
-          <p class="text-xs text-slate-500 mt-0.5">사용자 문장 입력 시 추천 카드 3장, 비진단 WHY 문장, Safety Router 여부를 확인하고 피드백을 기록합니다.</p>
+          <div class="flex items-center gap-2">
+            <h2 class="text-2xl font-black text-slate-900 tracking-tight">명심AI 라우터 디버거</h2>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-[#0F6B5B] border border-emerald-300">NO-AI CORE v1</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5">외부 AI API 호출 0건. 실제 230개 카드 인덱스 기반으로 고민 문장 정규화, 컨텍스트 감지, 가중치 스코어링, 사전 작성 WHY 매칭을 실시간 검증합니다.</p>
         </div>
 
         <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-2xs space-y-4">
           <div>
-            <label class="block text-xs font-black text-slate-700 mb-1.5">고민 문장 시뮬레이션</label>
+            <label class="block text-xs font-black text-slate-700 mb-1.5">고민 문장 시뮬레이션 입력</label>
             <div class="flex gap-2">
-              <input type="text" id="admin-ai-test-input" placeholder="예: 사업이 망하고 제가 쓸모없는 사람 같아 다시 시작하기 무서워요" class="flex-1 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-900 outline-none focus:bg-white focus:border-[#0F6B5B]" />
+              <input type="text" id="admin-ai-test-input" placeholder="예: 답장이 늦으면 버림받은 것 같아서 계속 폰만 봐요" class="flex-1 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-900 outline-none focus:bg-white focus:border-[#0F6B5B]" />
               <button type="button" onclick="runAdminAiTest()" class="px-5 py-3 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs shadow-xs transition cursor-pointer">
-                AI 라우팅 테스트 &rarr;
+                실시간 룰 라우팅 &rarr;
               </button>
             </div>
           </div>
@@ -1725,47 +1732,101 @@
     const query = input.value.trim();
     if (!query) return;
 
-    // Safety Router check
-    const isCrisis = HIGH_RISK_KEYWORDS.some(k => query.includes(k));
+    if (!window.MyeongsimAIRouter && window.RuleBasedRouter) {
+      window.MyeongsimAIRouter = new window.RuleBasedRouter(state.cards);
+    }
 
-    if (isCrisis) {
-      container.classList.remove('hidden');
+    const router = window.MyeongsimAIRouter;
+    if (!router) {
+      container.innerHTML = `<p class="text-xs text-rose-600">RuleBasedRouter 엔진이 로드되지 않았습니다.</p>`;
+      return;
+    }
+
+    const result = router.route(query, { debug: true });
+    container.classList.remove('hidden');
+
+    // 1. Safety 고위험 긴급 위기 차단 화면
+    if (result.status === 'high_risk_blocked') {
+      const s = result.safety || {};
       container.innerHTML = `
-        <div class="p-5 rounded-2xl bg-rose-50 border-2 border-rose-500 text-rose-900 space-y-2">
+        <div class="p-5 rounded-2xl bg-rose-50 border-2 border-rose-500 text-rose-900 space-y-3">
           <div class="font-black text-sm flex items-center gap-1.5">
             <span>🚨</span>
-            <span>Safety Router 즉시 트리거 (고위험 위기 감지)</span>
+            <span>Safety Router 즉시 트리거 (고위험 위기 감지 &middot; 카드 검색 차단)</span>
           </div>
-          <p class="text-xs">상업적 카드 및 책 노출이 차단되고 24시간 자살예방 상담전화(109)가 최우선 표출됩니다.</p>
+          <p class="text-xs leading-relaxed">${s.message || '긴급 위기 지원 상담으로 직결됩니다.'}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs font-mono">
+            ${(s.contacts || []).map(c => `
+              <div class="p-2 rounded-xl bg-white/80 border border-rose-200">
+                <strong>${c.name} (${c.tel})</strong> - ${c.note}
+              </div>
+            `).join('')}
+          </div>
         </div>
       `;
       return;
     }
 
-    const matched = state.cards.slice(0, 3);
+    // 2. High-Stakes 재무 또는 의료 주의 안내
+    let alertBanner = '';
+    if (result.safety && result.safety.isFinancialHighStakes) {
+      alertBanner = `
+        <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 text-xs font-bold">
+          ⚠️ Financial High-Stakes: ${result.safety.notice}
+        </div>
+      `;
+    } else if (result.safety && result.safety.isFortuneQuery) {
+      alertBanner = `
+        <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold">
+          🔮 Fortune Notice: ${result.safety.fortuneNotice}
+        </div>
+      `;
+    }
 
-    container.classList.remove('hidden');
     container.innerHTML = `
-      <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 space-y-1">
-        <div class="text-xs font-black">💡 AI 생성 비진단 WHY 문구</div>
-        <p class="text-xs">“입력하신 고민 속 '${query.slice(0, 8)}...'과 관련된 자동 해석 패턴 및 10% 작은 행동을 제안합니다.”</p>
+      ${alertBanner}
+
+      <!-- Debug Meta Info -->
+      <div class="p-3.5 bg-slate-100 rounded-2xl text-xs space-y-1 font-mono text-slate-700">
+        <div class="flex items-center justify-between">
+          <span><strong>엔진 모드:</strong> ${result.routerMode} (외부 AI 네트워크 호출: 0건)</span>
+          <span class="text-emerald-700 font-bold">Zero-API Production Pass</span>
+        </div>
+        <div><strong>정규화 토큰:</strong> [${(result.normalizedTerms || []).join(', ')}]</div>
+        <div><strong>감지 컨텍스트:</strong> [${(result.detectedContexts || []).join(', ')}]</div>
+        <div><strong>헤드라인:</strong> “${result.uiHeadline}”</div>
       </div>
 
-      <div class="space-y-2 mt-3">
-        ${matched.map((c, idx) => `
-          <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-            <div>
-              <span class="px-2 py-0.5 rounded bg-white text-[#0F6B5B] font-bold text-[10px] mr-1.5">추천 ${idx + 1}</span>
-              <strong class="text-slate-900">${c.cardTitle}</strong>
-              <span class="text-slate-500 ml-2">${c.question}</span>
+      <!-- Top 3 Recommendations -->
+      <div class="space-y-3 mt-3">
+        ${result.recommendations.map((item, idx) => {
+          const bd = item.debugBreakdown || { kwScore: 0, tagScore: 0, contextScore: 0, penalty: 0 };
+          return `
+          <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs text-xs space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-[#0F6B5B] font-black text-[10px]">TOP ${idx + 1}</span>
+                <strong class="text-sm font-black text-slate-900">${item.card.cardTitle}</strong>
+                <span class="text-[10px] font-mono text-slate-400">(${item.card.id}) &middot; ${item.card.category}</span>
+              </div>
+              <div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+                <span>KW: <strong>${bd.kwScore}</strong></span>
+                <span>Tag: <strong>${bd.tagScore}</strong></span>
+                <span>Ctx: <strong>${bd.contextScore}</strong></span>
+                <span>Pen: <strong class="text-rose-600">-${bd.penalty}</strong></span>
+                <span class="px-2 py-1 rounded bg-[#0F6B5B] text-white font-black text-xs">Total ${item.score}</span>
+              </div>
             </div>
-            <div class="flex gap-1.5">
-              <button onclick="showToast('피드백 [Good] 기록 완료')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-emerald-700 font-bold text-[10px] hover:bg-emerald-50">👍 Good</button>
-              <button onclick="showToast('피드백 [Weak] 기록 완료')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-amber-700 font-bold text-[10px] hover:bg-amber-50">⚠️ Weak</button>
-              <button onclick="showToast('피드백 [Wrong] 기록 완료')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-rose-700 font-bold text-[10px] hover:bg-rose-50">❌ Wrong</button>
+
+            <p class="text-xs text-slate-700 font-medium"><strong>사이다 질문:</strong> ${item.card.question}</p>
+            <p class="text-xs text-slate-500 leading-relaxed"><strong>SODA 답변:</strong> ${item.card.sodaAnswer}</p>
+
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950 text-xs">
+              <strong>💡 비진단 WHY (${item.whySource}):</strong><br />
+              <span class="text-slate-800">${item.why}</span>
             </div>
           </div>
-        `).join('')}
+        `}).join('')}
       </div>
     `;
   };
