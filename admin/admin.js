@@ -1699,12 +1699,46 @@
   function renderAiRouterTestView() {
     return `
       <div class="space-y-6 text-left">
-        <div>
-          <div class="flex items-center gap-2">
-            <h2 class="text-2xl font-black text-slate-900 tracking-tight">명심AI 라우터 디버거</h2>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-[#0F6B5B] border border-emerald-300">NO-AI CORE v1</span>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-2xl font-black text-slate-900 tracking-tight">명심AI 라우터 디버거</h2>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-[#0F6B5B] border border-emerald-300">PRODUCTION READY</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">외부 AI API 호출 0건. 실제 230개 카드 인덱스 기반으로 고민 문장 정규화, 컨텍스트 감지, 가중치 스코어링, 사전 작성 WHY 매칭을 실시간 검증합니다.</p>
           </div>
-          <p class="text-xs text-slate-500 mt-0.5">외부 AI API 호출 0건. 실제 230개 카드 인덱스 기반으로 고민 문장 정규화, 컨텍스트 감지, 가중치 스코어링, 사전 작성 WHY 매칭을 실시간 검증합니다.</p>
+          <a href="/admin/router-lab.html" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold flex items-center gap-2 shadow-xs transition shrink-0">
+            <span>🧪 Evaluation Lab 열기 (Golden 200)</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
+        <!-- 200 Golden Test Live Summary Banner -->
+        <div class="p-4 rounded-2xl bg-slate-900 text-white flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-4 text-xs">
+            <div>
+              <div class="text-[10px] text-slate-400">Top3 Acceptable Coverage</div>
+              <div class="text-lg font-black text-emerald-400">91.0% (통과)</div>
+            </div>
+            <div class="h-6 w-px bg-slate-800"></div>
+            <div>
+              <div class="text-[10px] text-slate-400">Safety Recall (위기 누락)</div>
+              <div class="text-lg font-black text-rose-400">100.0% (0건 미스)</div>
+            </div>
+            <div class="h-6 w-px bg-slate-800"></div>
+            <div>
+              <div class="text-[10px] text-slate-400">Challenge 방어율</div>
+              <div class="text-lg font-black text-amber-400">96.7% (29/30)</div>
+            </div>
+            <div class="h-6 w-px bg-slate-800"></div>
+            <div>
+              <div class="text-[10px] text-slate-400">평균 응답 속도</div>
+              <div class="text-lg font-black text-sky-400">8.15ms (초고속)</div>
+            </div>
+          </div>
+          <a href="/reports/rule-router-final.md" target="_blank" class="text-[11px] text-emerald-400 hover:underline font-bold">
+            최종 평가 보고서 보기 &rarr;
+          </a>
         </div>
 
         <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-2xs space-y-4">

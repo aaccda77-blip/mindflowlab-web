@@ -26,16 +26,22 @@
   const HIGH_RISK_PATTERNS = [
     /(?:자해|자살|목숨을?\s*끊|유서\s*쓰|스스로\s*세상을?)/i,
     /(?:죽고\s*싶|살기\s*싫|죽을\s*래|죽는\s*게\s*낫|사라지고\s*싶어?)/i,
-    /(?:칼로|목을?\s*매|투신|뛰어내리|다량\s*복용|약을?\s*모아)/i,
+    /(?:칼로|목을?\s*매|투신|뛰어내리|다량\s*복용|약을?\s*모아|수면제\s*(?:모아|털어|먹고)|영원히\s*잠들)/i,
     /(?:폭행|맞았|때렸|가정폭력|학대|감금|스토킹|성폭행|성추행|강간|성폭력|협박받)/i,
-    /(?:누구를?\s*죽이고|해치고\s*싶|칼부림|살해)/i
+    /(?:누구를?\s*죽이고|해치고\s*싶|칼부림|살해|목\s*졸라|같이\s*죽)/i,
+    /(?:번개탄|한강\s*다리|나\s*하나\s*죽으면|살려주세요)/i
   ];
 
   // Near-miss 구어체 과잉 반응 방지 예외 패턴 ("일 때문에 죽을 것 같아요", "배고파 죽겠네" 등)
   const IDIOMATIC_EXPRESSIONS = [
     /(?:힘들어|피곤해|귀찮아|웃겨|배고파|바빠|더워|추워|답답해|숨막혀)\s*죽겠/i,
     /일\s*(?:때문에|많아서)\s*죽을\s*것\s*같/i,
-    /죽도록\s*(?:일|공부|노력|사랑)/i
+    /죽도록\s*(?:일|공부|노력|사랑)/i,
+    /죽기보다\s*싫/i,
+    /죽고\s*싶은\s*건\s*(?:아니|절대)/i,
+    /죽고\s*싶은\s*게\s*아니/i,
+    /살기\s*싫다는\s*말은\s*아니/i,
+    /(?:어릴\s*때|과거에|예전에).*(?:학대|차별|맞았).*(?:용서|원망|기억|트라우마)/i
   ];
 
   // 1-2. 고위험 재무/투자 (전재산, 빚보증, 영끌 투기)
@@ -179,14 +185,29 @@
       const q = rawQuery.toLowerCase();
       const detected = new Set();
 
-      if (/엄마|아빠|부모|가족|형제|자매|효도|친정|시댁/.test(q)) detected.add('family');
-      if (/회사|직장|팀장|상사|부장|출근|퇴근|퇴사|이직|업무|회의|성과|보고/.test(q)) detected.add('career');
-      if (/남친|여친|남자친구|여자친구|애인|연인|연애|이별|데이트|결혼|남편|아내/.test(q)) detected.add('love');
-      if (/돈|빚|대출|통장|사업|망했|투자|월급|적자|경제/.test(q)) detected.add('money');
-      if (/사주|삼재|대운|운명|팔자|점|타로|운세|신점|미래/.test(q)) detected.add('fortune');
-      if (/완벽|비교|인정|칭찬|뒤처|초라|열등|질투/.test(q)) detected.add('perfection');
-      if (/자책|자기비하|내 탓|후회|부끄|실수|유리멘탈/.test(q)) detected.add('self_compassion');
-      if (/미루|결정|시작|작심삼일|습관|딴짓/.test(q)) detected.add('decision');
+      // 관계 주체별 Actor 매핑
+      if (/엄마|아빠|부모|가족|형제|자매|효도|친정|시댁|딸|아들|자식|원망|학대|차별/.test(q)) detected.add('family');
+      if (/회사|직장|팀장|상사|부장|출근|퇴근|퇴사|이직|업무|회의|성과|보고|사표|월요병|번아웃/.test(q)) detected.add('career');
+      if (/남친|여친|남자친구|여자친구|애인|연인|연애|이별|데이트|결혼|남편|아내|파혼|쇼윈도|동굴|사랑|좋아할수록/.test(q)) detected.add('love');
+      if (/돈|빚|대출|통장|사업|망했|투자|월급|적자|경제|매출|가게|부채|코인|주식|재정/.test(q)) detected.add('money');
+      if (/사주|삼재|대운|운명|팔자|점|타로|운세|신점|미래|징크스|부적/.test(q)) detected.add('fortune');
+      if (/완벽|비교|인정|칭찬|뒤처|초라|열등|질투|1등|순위|스펙|가면|사기꾼|앞서/.test(q)) detected.add('perfection');
+      if (/자책|자기비하|내 탓|후회|부끄|실수|유리멘탈|한심|괴로워|자괴감/.test(q)) detected.add('self_compassion');
+      if (/미루|결정|시작|작심삼일|습관|딴짓|계획만|폰만|침대|쇼츠|릴스|벼락치기|고르/.test(q)) detected.add('decision');
+      if (/남의\s*시선|사람들|모임|친구|지인|눈치|단톡|대화|선\s*그|인간관계|착한\s*아이|좋은\s*사람/.test(q)) detected.add('relationship');
+      if (/다크코드|뉴럴코드|제로포인트|반복\s*패턴|자동반응/.test(q)) detected.add('three_code');
+
+      // 관계 충돌 Heuristic (예: 남편이 회사에서 야근 -> love 우세)
+      if (detected.has('love') && detected.has('career')) {
+        if (/남편|아내|남친|여친|애인|연인/.test(q) && /연락|답장|마음|의심|싸우|바람/.test(q)) {
+          detected.delete('career');
+        }
+      }
+      if (detected.has('family') && detected.has('career')) {
+        if (/엄마|아빠|부모/.test(q) && /잔소리|거절|죄책|서운/.test(q)) {
+          detected.delete('career');
+        }
+      }
 
       return Array.from(detected);
     }

@@ -1,0 +1,293 @@
+[
+  {
+    "challengeId": "CHALLENGE-01",
+    "input": "요즘 사업도 안 되고 부모님한테 돈도 빌렸고 제가 너무 한심한 사람 같고 다시 뭘 시작하면 또 실패할 것 같아서 아무것도 못 하고 있어요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "money-001",
+      "fam-001",
+      "perf-006"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-02",
+    "input": "회사에서 팀장한테 깨지고 퇴근했는데 집에 오니 엄마가 또 잔소리해서 온 세상이 나를 괴롭히는 것 같아 방에서 울고만 있어요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "career-001",
+      "fam-004",
+      "emo-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-03",
+    "input": "남친이랑 사소한 걸로 싸우고 카톡 답장이 2시간째 없는데 헤어지자는 뜻일까 봐 폰만 켜놓고 아무 일도 손에 안 잡혀요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "love-001",
+      "love-002"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-04",
+    "input": "사주에서 삼재라고 조심하라는데 마침 오늘 직장에서 큰 실수를 해서 내 인생은 왜 이 모양인지 자책감이 몰려와요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "fate-001",
+      "career-013",
+      "emo-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-05",
+    "input": "이직 준비한다고 퇴사해놓고 매일 유튜브만 보며 작심삼일로 한 달을 날렸는데 부모님 뵐 낯이 없어서 도망치고 싶어요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "dec-001",
+      "dec-003",
+      "fam-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-06",
+    "input": "친구가 잘나가는 걸 보면 축하해주면서도 내 자신이 너무 초라해서 SNS 다 비활성화하고 방 안에서 고립되고 있어요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "perf-001",
+      "rel-015"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-07",
+    "input": "부모님이 돈 달라고 할 때마다 거절 못하고 대출까지 받아서 줬는데 이제 제 통장도 바닥나서 빚더미에 앉게 생겼어요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "fam-001",
+      "money-005"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-08",
+    "input": "헤어진 애인 인스타 매일 염탐하면서 새 여친 생긴 거 보고 가슴이 무너져 내리는데 이 집착을 어떻게 멈추죠.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "love-006",
+      "love-016"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-09",
+    "input": "완벽하게 해내야 한다는 강박 때문에 보고서 제출을 계속 미루다 결국 마감 넘기고 상사한테 엄청 깨졌어요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "perf-008",
+      "dec-001",
+      "career-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-10",
+    "input": "다크 코드를 책으로 읽고 제 반복 패턴을 완벽히 알겠는데 막상 가족 앞에만 서면 도로 제자리로 돌아가요.",
+    "difficulty": "LONG_QUERY",
+    "expectedCardIds": [
+      "code-001",
+      "fam-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-11",
+    "input": "엄마거절못하겟어요",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "fam-001",
+      "fam-002"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-12",
+    "input": "남친답장안와서계속확인해여",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "love-001",
+      "love-002"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-13",
+    "input": "작심삼일또망함ㅠㅠ",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "dec-003"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-14",
+    "input": "사주안좋다던데무서움",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "fate-002"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-15",
+    "input": "퇴사하고시퍼요넘힘듬",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "career-006"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-16",
+    "input": "칭찬바다도금방불안함",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "perf-004"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-17",
+    "input": "친구들다잘나가는데나만찌질이",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "perf-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-18",
+    "input": "실수해가지구하루종일자책즁",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "emo-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-19",
+    "input": "팀장카톡알람에가슴철렁",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "career-001",
+      "emo-002"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-20",
+    "input": "걍제가다해버리는게편해서맨날내가함",
+    "difficulty": "TYPO",
+    "expectedCardIds": [
+      "rel-006",
+      "fam-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-21",
+    "input": "남편이 회사에서 야근하느라 연락이 늦어요",
+    "difficulty": "CONTEXT_CONFLICT",
+    "expectedCardIds": [
+      "love-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-22",
+    "input": "직장 상사가 엄마처럼 간섭하고 잔소리해요",
+    "difficulty": "CONTEXT_CONFLICT",
+    "expectedCardIds": [
+      "career-001",
+      "career-014"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-23",
+    "input": "저는 확인하고 싶지는 않은데 그냥 불안해서요",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "love-001",
+      "emo-003"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-24",
+    "input": "돈이 없어서가 아니라 쓰는 게 무서워요",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "money-013"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-25",
+    "input": "완벽을 바라는 건 아닌데 실수하는 건 끔찍해요",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "perf-006"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-26",
+    "input": "사주를 맹신하는 건 아니지만 불안해서 보게 됨",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "fate-004"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-27",
+    "input": "엄마가 미운 건 아닌데 같이 있으면 답답해요",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "fam-004"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-28",
+    "input": "친구가 부러운 건 맞지만 미워하진 않아요",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "perf-001"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-29",
+    "input": "죽고 싶은 건 절대 아니고 번아웃이 너무 심해요",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "career-005"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  },
+  {
+    "challengeId": "CHALLENGE-30",
+    "input": "결혼을 깨고 싶은 건 아닌데 확신이 안 서요",
+    "difficulty": "NEGATION",
+    "expectedCardIds": [
+      "love-013"
+    ],
+    "notes": "고난도 챌린지 케이스"
+  }
+]
