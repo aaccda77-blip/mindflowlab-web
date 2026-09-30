@@ -93,9 +93,10 @@
     },
     {
       bookId: 'neural_code',
-      title: '뉴럴 코드 (Neural Code)',
-      subtitle: '신경계를 다시 훈련하는 10% 행동의 과학',
-      author: '청류출판사',
+      title: '뉴럴 코드 (THE NEURAL CODE)',
+      subtitle: '생각이 삶이 되는 순간 — 반응과 행동 사이, 새로운 선택을 배우는 심리 수업',
+      author: '이경윤 (청류)',
+      coverImage: '/assets/book-cover-neuralcode.jpg',
       url: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
       status: 'published',
       threeCode: 'Neural Code'

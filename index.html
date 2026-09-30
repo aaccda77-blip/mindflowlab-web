@@ -640,6 +640,9 @@
         <a href="#codes">3대 코드</a>
         <a href="/faq" class="inline-flex items-center gap-1.5 font-bold text-slate-800 hover:text-[#007A55] transition"><span>사이다 Q&amp;A</span><span class="px-1.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-2xs">215 🔥</span></a>
         <a href="/library">31권 시리즈</a>
+        <a href="/my/home.html" class="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-[#007A55] transition"><span>🌱 내 개인 홈</span></a>
+        <a href="/my/experiments.html" class="inline-flex items-center gap-1 font-bold text-slate-600 hover:text-[#007A55] transition"><span>실험실</span></a>
+        <a href="/my/working-map.html" class="inline-flex items-center gap-1 font-bold text-slate-600 hover:text-[#007A55] transition"><span>작동지도</span></a>
         <a href="/self-check">Self Check</a>
         <a href="/trust">윤리·신뢰</a>
         <a class="btn btn-primary" href="/self-check">내 패턴 확인하기</a>
@@ -679,11 +682,19 @@
       <a href="#codes">3대 코드</a>
       <a href="/faq" class="inline-flex items-center gap-1.5 font-bold text-slate-800 hover:text-[#007A55] transition"><span>사이다 Q&amp;A</span><span class="px-1.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-2xs">215 🔥</span></a>
       <a href="/library">31권 시리즈</a>
+      <a href="/my/experiments.html" class="inline-flex items-center gap-1 font-bold text-emerald-800"><span>🌱 내 10% 행동실험실</span></a>
+      <a href="/my/working-map.html" class="inline-flex items-center gap-1 font-bold text-slate-700"><span>🗺️ 나의 작동지도</span></a>
       <a href="/self-check">Self Check (패턴 자각)</a>
       <a href="/trust">윤리·신뢰</a>
       <a class="btn btn-primary" href="/self-check">내 패턴 확인하기</a>
     </nav>
   </header>
+
+  <!-- Active Experiment & Reassurance Loop Alert Container -->
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 pt-4">
+    <div id="myungsim-active-experiment-banner-container" style="display:none;"></div>
+    <div id="myungsim-reassurance-guard-container"></div>
+  </div>
 
   <main id="main">
     <!-- Hero Section -->
@@ -1846,24 +1857,28 @@
               </a>
             </div>
 
-            <!-- 2. 뉴럴 코드 -->
-            <div class="p-5 rounded-3xl bg-white border border-slate-200/90 hover:border-[#0F6B5B] hover:shadow-lg transition-all flex flex-col justify-between group">
+            <!-- 2. 뉴럴 코드 (2026 신간) -->
+            <div class="p-5 rounded-3xl bg-white border-2 border-emerald-300 hover:border-emerald-600 hover:shadow-xl transition-all flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-[#0F6B5B] text-[10px] font-black">신경망 · 10% 행동</span>
-                  <span class="text-[10px] text-slate-400 font-bold">Book 02</span>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black">🔥 2026 신간 발간</span>
+                  <span class="text-[10px] text-emerald-600 font-bold">Book 02</span>
                 </div>
-                <h5 class="text-sm font-black text-slate-900 group-hover:text-[#0F6B5B] transition-colors mb-1">
+                <div class="text-center my-3">
+                  <img src="/assets/book-cover-neuralcode.jpg" alt="뉴럴 코드 표지" class="h-36 mx-auto rounded-xl shadow-md border border-slate-200 object-contain group-hover:scale-105 transition duration-300" />
+                </div>
+                <h5 class="text-sm font-black text-slate-900 group-hover:text-[#0F6B5B] transition-colors mb-0.5">
                   청류 《뉴럴 코드》
                 </h5>
-                <p class="text-[11px] text-[#0F6B5B] font-bold mb-2">
-                  “신경계를 훈련하는 작은 행동의 과학”
+                <span class="text-[10px] font-mono text-emerald-700 font-bold block mb-1">THE NEURAL CODE</span>
+                <p class="text-[11px] text-emerald-700 font-bold mb-1.5">
+                  “생각이 삶이 되는 순간”
                 </p>
                 <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                  무거운 결심 대신 신경망에 새로운 길을 놓아주는 10초 HOLD와 10% 행동실험 가이드.
+                  반응과 행동 사이, 새로운 선택을 배우는 심리 수업. 10초 멈춤과 10% 행동실험으로 신경망을 재학습합니다.
                 </p>
               </div>
-              <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'neural_code' })" class="w-full py-2.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-black text-xs text-center transition block">
+              <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" onclick="trackMindEvent('book_click', { book: 'neural_code' })" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-[#0F6B5B] hover:from-emerald-700 hover:to-[#0A493E] text-white font-black text-xs text-center transition block shadow-sm">
                 📚 YES24 바로가기 &rarr;
               </a>
             </div>
@@ -2554,159 +2569,206 @@
       </div>
 
       
-      <!-- [FEATURED BOOKS] 현재 정식 출간 도서 3종 컬렉션 -->
+      <!-- [FEATURED BOOKS] 현재 정식 출간 도서 4종 컬렉션 -->
       <div class="mb-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-[#0B1528] to-slate-950 border-2 border-amber-500/40 shadow-2xl relative overflow-hidden">
         <div class="absolute -right-20 -top-20 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-12 relative z-10">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500/20 to-amber-500/20 border border-amber-500/40 text-xs font-bold text-amber-300 mb-3 shadow-sm">
-            <span>👑 AUTHOR'S PUBLISHED WORKS · 이경윤 대표 정식 출간작 3종</span>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-rose-500/20 to-amber-500/20 border border-emerald-500/40 text-xs font-bold text-emerald-300 mb-3 shadow-sm">
+            <span>👑 AUTHOR'S PUBLISHED WORKS · 이경윤 대표 정식 출간작 4종</span>
           </div>
           <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-            현재 정식 출간된 <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-300 via-amber-200 to-teal-300">대표 도서 컬렉션</span>
+            현재 정식 출간된 <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-amber-200 to-teal-300">대표 도서 컬렉션</span>
           </h2>
           <p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-            2026 최신간 《다크 코드》부터 일상의 자유를 찾는 《나는 믿는다, 그러나 갇히지 않는다》, 순수 자각 《ZERO POINT》까지,<br class="hidden sm:inline" />
+            2026 최신간 《다크 코드》와 《뉴럴 코드》부터 일상의 자유를 찾는 《나는 믿는다, 그러나 갇히지 않는다》, 순수 자각 《ZERO POINT》까지,<br class="hidden sm:inline" />
             전국 온·오프라인 서점에서 지금 바로 실물 도서로 만나보실 수 있습니다.
           </p>
         </div>
 
-        <!-- 3 Books Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10">
+        <!-- 4 Books Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 relative z-10">
           
           <!-- Book 1: 다크 코드 (THE DARK CODE) - 최신간 -->
-          <div class="p-6 sm:p-7 rounded-3xl bg-slate-950/90 border-2 border-rose-500/50 flex flex-col justify-between hover:border-rose-400 transition group shadow-2xl relative">
-            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-gradient-to-r from-rose-600 to-amber-600 text-white text-[11px] font-black shadow-lg animate-pulse">
-              🔥 2026 최신간 발간!
+          <div class="p-6 rounded-3xl bg-slate-950/90 border-2 border-rose-500/50 flex flex-col justify-between hover:border-rose-400 transition group shadow-2xl relative">
+            <div class="absolute -top-3.5 right-4 px-3 py-0.5 rounded-full bg-gradient-to-r from-rose-600 to-amber-600 text-white text-[10px] font-black shadow-lg">
+              🔥 2026 최신간
             </div>
             <div>
-              <div class="text-center mb-5">
+              <div class="text-center mb-4">
                 <div class="relative group-hover:scale-[1.03] transition duration-300 inline-block">
                   <div class="absolute -inset-1 bg-gradient-to-r from-rose-600 to-amber-600 rounded-xl blur opacity-40 group-hover:opacity-80 transition"></div>
                   <img 
                     src="/assets/book-cover-darkcode.jpg" 
                     alt="다크 코드 - THE DARK CODE" 
-                    class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20 object-cover mx-auto"
+                    class="relative w-36 sm:w-40 rounded-xl shadow-2xl border border-white/20 object-cover mx-auto"
                   />
                 </div>
-                <div class="mt-3">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-500 text-white shadow">
-                    ✓ 정식 출간 도서 (BEST)
+                <div class="mt-2.5">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-black bg-rose-500 text-white shadow">
+                    ✓ 정식 출간 (BEST)
                   </span>
                 </div>
               </div>
-              <div class="space-y-2.5 text-left">
-                <span class="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-wider">마인드풀니스 코드 시리즈 01 · 인지행동과학</span>
-                <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
+              <div class="space-y-2 text-left">
+                <span class="text-[9px] font-mono font-bold text-rose-400 uppercase tracking-wider">명심코드 시리즈 01 · 인지행동과학</span>
+                <h3 class="text-lg sm:text-xl font-black text-white leading-snug">
                   다크 코드<br />
-                  <span class="text-rose-300 font-serif">THE DARK CODE</span>
+                  <span class="text-rose-300 font-serif text-sm">THE DARK CODE</span>
                 </h3>
                 <p class="text-xs text-rose-200/90 font-bold">
                   “나는 왜 알면서도 같은 패턴을 반복하는가”
                 </p>
-                <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
-                  <span>저자 이경윤</span>
+                <div class="text-[10px] text-slate-400 border-y border-slate-800/80 py-1 flex items-center gap-2">
+                  <span>이경윤</span>
                   <span>|</span>
-                  <span>도서출판 청류</span>
+                  <span>청류</span>
                 </div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  “무의식을 읽는 새로운 통찰” 심리학, 행동과학, 뇌과학이 만난 자기이해의 결정판. 반복되는 나의 패턴 속에 숨겨진 진짜 나를 만나고, 무의식 방어기제와 자동패턴의 알고리즘을 해체하여 삶의 주도권을 되찾습니다.
+                <p class="text-[11px] text-slate-300 leading-relaxed">
+                  무의식 방어기제와 자동패턴의 알고리즘을 해체하여 삶의 주도권을 되찾습니다.
                 </p>
               </div>
             </div>
-            <div class="pt-5 mt-4 border-t border-slate-800/80">
-              <a href="https://www.yes24.com/product/goods/196721492" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-black text-xs text-center transition block shadow-md">
-                📚 YES24에서 도서구매하기 &rarr;
+            <div class="pt-4 mt-3 border-t border-slate-800/80">
+              <a href="https://www.yes24.com/product/goods/196721492" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-black text-xs text-center transition block shadow-md">
+                📚 YES24 구매하기 &rarr;
               </a>
             </div>
           </div>
 
-          <!-- Book 2: 나는 믿는다, 그러나 갇히지 않는다 -->
-          <div class="p-6 sm:p-7 rounded-3xl bg-slate-950/80 border border-emerald-500/30 flex flex-col justify-between hover:border-emerald-400 transition group shadow-xl">
+          <!-- Book 2: 뉴럴 코드 (THE NEURAL CODE) - 2026 신간 -->
+          <div class="p-6 rounded-3xl bg-slate-950/90 border-2 border-emerald-500/60 flex flex-col justify-between hover:border-emerald-400 transition group shadow-2xl relative">
+            <div class="absolute -top-3.5 right-4 px-3 py-0.5 rounded-full bg-gradient-to-r from-emerald-600 to-[#0F6B5B] text-white text-[10px] font-black shadow-lg animate-pulse">
+              🔥 2026 신간 발간!
+            </div>
             <div>
-              <div class="text-center mb-5">
+              <div class="text-center mb-4">
                 <div class="relative group-hover:scale-[1.03] transition duration-300 inline-block">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur opacity-30 group-hover:opacity-70 transition"></div>
+                  <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur opacity-40 group-hover:opacity-80 transition"></div>
+                  <img 
+                    src="/assets/book-cover-neuralcode.jpg" 
+                    alt="뉴럴 코드 - THE NEURAL CODE" 
+                    class="relative w-36 sm:w-40 rounded-xl shadow-2xl border border-white/20 object-cover mx-auto"
+                  />
+                </div>
+                <div class="mt-2.5">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-500 text-slate-950 shadow">
+                    ✓ 2026 신간 정식 발간
+                  </span>
+                </div>
+              </div>
+              <div class="space-y-2 text-left">
+                <span class="text-[9px] font-mono font-bold text-emerald-400 uppercase tracking-wider">명심코드 시리즈 02 · 행동신경과학</span>
+                <h3 class="text-lg sm:text-xl font-black text-white leading-snug">
+                  뉴럴 코드<br />
+                  <span class="text-emerald-300 font-serif text-sm">THE NEURAL CODE</span>
+                </h3>
+                <p class="text-xs text-emerald-200/90 font-bold">
+                  “생각이 삶이 되는 순간”
+                </p>
+                <div class="text-[10px] text-slate-400 border-y border-slate-800/80 py-1 flex items-center gap-2">
+                  <span>이경윤</span>
+                  <span>|</span>
+                  <span>청류</span>
+                </div>
+                <p class="text-[11px] text-slate-300 leading-relaxed">
+                  반응과 행동 사이, 새로운 선택을 배우는 심리 수업. 10초 멈춤과 10% 행동실험으로 신경망을 재학습합니다.
+                </p>
+              </div>
+            </div>
+            <div class="pt-4 mt-3 border-t border-slate-800/80">
+              <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-[#0F6B5B] hover:from-emerald-500 hover:to-[#0A493E] text-white font-black text-xs text-center transition block shadow-md">
+                📚 YES24 구매하기 &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Book 3: 나는 믿는다, 그러나 갇히지 않는다 -->
+          <div class="p-6 rounded-3xl bg-slate-950/80 border border-teal-500/30 flex flex-col justify-between hover:border-teal-400 transition group shadow-xl">
+            <div>
+              <div class="text-center mb-4">
+                <div class="relative group-hover:scale-[1.03] transition duration-300 inline-block">
+                  <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-xl blur opacity-30 group-hover:opacity-70 transition"></div>
                   <img 
                     src="/assets/book-cover-freedom.jpg" 
                     alt="나는 믿는다, 그러나 갇히지 않는다" 
-                    class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20 mx-auto"
+                    class="relative w-36 sm:w-40 rounded-xl shadow-2xl border border-white/20 mx-auto"
                   />
                 </div>
-                <div class="mt-3">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500 text-slate-950 shadow">
+                <div class="mt-2.5">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold bg-teal-500 text-slate-950 shadow">
                     ✓ 정식 출간 도서
                   </span>
                 </div>
               </div>
-              <div class="space-y-2.5 text-left">
-                <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider">인문 · 심리 · 영성</span>
-                <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
+              <div class="space-y-2 text-left">
+                <span class="text-[9px] font-mono font-bold text-teal-400 uppercase tracking-wider">인문 · 심리 · 영성</span>
+                <h3 class="text-lg sm:text-xl font-black text-white leading-snug">
                   나는 믿는다,<br />
-                  <span class="text-emerald-300">그러나 갇히지 않는다</span>
+                  <span class="text-teal-300 font-serif text-sm">그러나 갇히지 않는다</span>
                 </h3>
-                <p class="text-xs text-emerald-200/80 font-medium">
+                <p class="text-xs text-teal-200/80 font-medium">
                   다른 믿음과 함께 살아가는 자유인의 사용 설명서
                 </p>
-                <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
-                  <span>저자 이경윤</span>
+                <div class="text-[10px] text-slate-400 border-y border-slate-800/80 py-1 flex items-center gap-2">
+                  <span>이경윤</span>
                   <span>|</span>
-                  <span>도서출판 청류</span>
+                  <span>청류</span>
                 </div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  신앙과 신념이 왜 사랑 대신 갈등과 배척을 낳는가? 믿음과 결합한 무의식적 자동반응(Dark Code)을 자각하고, 내 믿음을 지키며 타인을 끌어안는 ‘성숙한 자유인의 공존법’을 전합니다.
+                <p class="text-[11px] text-slate-300 leading-relaxed">
+                  믿음과 결합한 자동반응을 자각하고 내 믿음을 지키며 타인을 품는 성숙한 자유인의 공존법.
                 </p>
               </div>
             </div>
-            <div class="pt-5 mt-4 border-t border-slate-800/80">
-              <a href="https://www.yes24.com/product/goods/196550353" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-emerald-500/40 text-emerald-300 font-bold text-xs text-center transition block">
-                📚 YES24에서 도서구매하기 &rarr;
+            <div class="pt-4 mt-3 border-t border-slate-800/80">
+              <a href="https://www.yes24.com/product/goods/196550353" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-teal-500/40 text-teal-300 font-bold text-xs text-center transition block">
+                📚 YES24 구매하기 &rarr;
               </a>
             </div>
           </div>
 
-          <!-- Book 3: ZERO POINT -->
-          <div class="p-6 sm:p-7 rounded-3xl bg-slate-950/80 border border-amber-500/40 flex flex-col justify-between hover:border-amber-400 transition group shadow-xl">
+          <!-- Book 4: ZERO POINT -->
+          <div class="p-6 rounded-3xl bg-slate-950/80 border border-amber-500/40 flex flex-col justify-between hover:border-amber-400 transition group shadow-xl">
             <div>
-              <div class="text-center mb-5">
+              <div class="text-center mb-4">
                 <div class="relative group-hover:scale-[1.03] transition duration-300 inline-block">
                   <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl blur opacity-30 group-hover:opacity-70 transition"></div>
                   <img 
                     src="/assets/book-cover-zeropoint.jpg" 
                     alt="ZERO POINT: Awareness of Awareness" 
-                    class="relative w-44 sm:w-48 rounded-xl shadow-2xl border border-white/20 mx-auto"
+                    class="relative w-36 sm:w-40 rounded-xl shadow-2xl border border-white/20 mx-auto"
                   />
                 </div>
-                <div class="mt-3">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 shadow">
+                <div class="mt-2.5">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-500 text-slate-950 shadow">
                     ✓ 정식 출간 도서
                   </span>
                 </div>
               </div>
-              <div class="space-y-2.5 text-left">
-                <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider">31권 대통합 완결작 · 인지과학</span>
-                <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
+              <div class="space-y-2 text-left">
+                <span class="text-[9px] font-mono font-bold text-amber-400 uppercase tracking-wider">31권 대통합 완결작 · 인지과학</span>
+                <h3 class="text-lg sm:text-xl font-black text-white leading-snug">
                   ZERO POINT<br />
-                  <span class="text-amber-300">AWARENESS OF AWARENESS</span>
+                  <span class="text-amber-300 font-serif text-sm">AWARENESS OF AWARENESS</span>
                 </h3>
                 <p class="text-xs text-amber-200/80 font-medium">
-                  알아차림의 알아차림 · 아무것도 바꾸지 않아도 자유로운 자리
+                  아무것도 바꾸지 않아도 자유로운 자리
                 </p>
-                <div class="text-[11px] text-slate-400 border-y border-slate-800/80 py-1.5 flex items-center gap-3">
-                  <span>저자 이경윤</span>
+                <div class="text-[10px] text-slate-400 border-y border-slate-800/80 py-1 flex items-center gap-2">
+                  <span>이경윤</span>
                   <span>|</span>
-                  <span>도서출판 청류</span>
+                  <span>청류</span>
                 </div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  생각과 감정, 관찰자의 착각마저 멈추는 곳. 31권 마스터 시리즈의 최종 대통합 완결권으로서, 조건을 바꾸지 않고도 현실을 있는 그대로 안고 살아가는 ‘영점(Zero Point)의 절대 자유’를 밝힙니다.
+                <p class="text-[11px] text-slate-300 leading-relaxed">
+                  생각과 감정이 멈추는 곳. 조건을 바꾸지 않고도 현실을 안고 살아가는 영점의 절대 자유.
                 </p>
               </div>
             </div>
-            <div class="pt-5 mt-4 border-t border-slate-800/80">
-              <a href="https://www.yes24.com/product/goods/195946431" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-amber-500/40 text-amber-300 font-bold text-xs text-center transition block">
-                📚 YES24에서 도서구매하기 &rarr;
+            <div class="pt-4 mt-3 border-t border-slate-800/80">
+              <a href="https://www.yes24.com/product/goods/195946431" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-amber-500/40 text-amber-300 font-bold text-xs text-center transition block">
+                📚 YES24 구매하기 &rarr;
               </a>
             </div>
           </div>
@@ -2715,7 +2777,7 @@
 
         <!-- 31 Series Notice Footer -->
         <div class="mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-400 relative z-10">
-          ※ 상기 3종 도서(《다크 코드》, 《나는 믿는다, 그러나 갇히지 않는다》, 《ZERO POINT》)는 현재 정식 출간되어 전국 서점에서 바로 구매하실 수 있으며, 아래의 <strong>명심코칭 31권 마스터 시리즈는 순차적으로 출간예정</strong>입니다.
+          ※ 상기 4종 도서(《다크 코드》, 《뉴럴 코드》, 《나는 믿는다, 그러나 갇히지 않는다》, 《ZERO POINT》)는 현재 정식 출간되어 전국 서점에서 바로 구매하실 수 있으며, 아래의 <strong>명심코칭 31권 마스터 시리즈는 순차적으로 출간예정</strong>입니다.
         </div>
       </div>
       </div>
@@ -2854,30 +2916,31 @@
             </div>
           </div>
 
-          <!-- Canon 2: 02 뉴럴 코드 -->
-          <div class="p-6 rounded-3xl bg-slate-900/90 border border-purple-500/50 shadow-xl flex flex-col justify-between hover:border-purple-400 transition group relative">
-            <div class="absolute -top-3 right-5 px-3 py-1 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] font-black shadow-md animate-pulse">
-              HOT • 42장 완제 집필 중
+          <!-- Canon 2: 02 뉴럴 코드 (정식 출간작) -->
+          <div class="p-6 rounded-3xl bg-slate-900/90 border-2 border-emerald-500/50 shadow-xl flex flex-col justify-between hover:border-emerald-400 transition group relative">
+            <div class="absolute -top-3 right-5 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[10px] font-black shadow-md animate-pulse">
+              HOT • 2026 신간 발간!
             </div>
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-mono font-black text-purple-400">VOL.02</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40">집필 중 (42장)</span>
+                <span class="text-xs font-mono font-black text-emerald-400">VOL.02</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-600 text-white shadow-sm">✓ 정식 출간 완료 (발간작)</span>
               </div>
-              <div class="w-full h-44 rounded-2xl bg-gradient-to-b from-purple-950 to-slate-950 border border-purple-500/30 flex flex-col items-center justify-center p-4 text-center mb-5 group-hover:scale-[1.02] transition">
-                <span class="text-xs text-purple-400 font-semibold">행동 재학습 실전서</span>
-                <h4 class="text-xl font-black text-white mt-1">뉴럴 코드</h4>
-                <span class="text-[11px] text-purple-300 mt-1">330~370p</span>
+              <div class="w-full h-48 rounded-2xl bg-gradient-to-b from-slate-950 to-slate-900 border border-emerald-500/30 flex items-center justify-center p-2 mb-5 group-hover:scale-[1.02] transition">
+                <img src="/assets/book-cover-neuralcode.jpg" alt="뉴럴 코드" class="h-44 w-auto rounded-xl shadow-2xl border border-white/20 object-contain mx-auto" />
               </div>
-              <h5 class="text-lg font-black text-white group-hover:text-purple-300 transition">《뉴럴 코드》</h5>
-              <p class="text-xs font-bold text-purple-400 mt-1">“알면서도 바뀌지 않는 나를 실제 행동으로 바꾸는 법”</p>
+              <h5 class="text-lg font-black text-white group-hover:text-emerald-300 transition">《뉴럴 코드 (THE NEURAL CODE)》</h5>
+              <p class="text-xs font-bold text-emerald-400 mt-1">“생각이 삶이 되는 순간 — 반응과 행동 사이, 새로운 선택을 배우는 심리 수업”</p>
               <div class="mt-3 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-300 leading-relaxed">
-                <strong>🎯 추천 독자:</strong> 심리책은 많이 읽었지만 삶이 변하지 않는 독자, 8대 에너지(통제·완벽 등)를 능력으로 전환할 독자.
+                <strong>🎯 추천 독자:</strong> 알면서도 행동이 바뀌지 않는 분, 10초 멈춤(DELAY)과 10% 작은 행동실험(EXPERIMENT)으로 신경망을 재학습하고 싶은 독자.
               </div>
             </div>
             <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
-              <span class="text-slate-400 font-mono">7 PART 42개 장</span>
-              <a href="#neural-detail-section" class="font-bold text-purple-400 hover:underline">42장 전문 보기 &rarr;</a>
+              <span class="text-slate-400 font-mono">이경윤 지음 · 도서출판 청류</span>
+              <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EB%89%B4%EB%9F%B4%EC%BD%94%EB%93%9C+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-400 hover:underline flex items-center gap-1">
+                <span>YES24에서 구매하기</span>
+                <span>&rarr;</span>
+              </a>
             </div>
           </div>
 
@@ -19439,6 +19502,9 @@
   <script src="js/mind-cards-data.js?v=20260919_v1"></script>
   <script src="js/myeongsim-ai-router.js?v=20260919_v1"></script>
   <script src="js/daily-mind-card.js?v=20260919_v1"></script>
+  <script src="js/myungsim-personal-home.js?v=20260921_v1"></script>
+  <script src="js/myungsim-behavior-experiment.js?v=20260921_v1"></script>
+  <script src="js/myungsim-core-flow.js?v=20260920_v1"></script>
   <script src="js/theme-music-player.js?v=20260919_v1"></script>
 </body>
 </html>
