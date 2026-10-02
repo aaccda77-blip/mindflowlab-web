@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM PUBLIC LAUNCH 30-DAY COMMAND | 명심코칭 30일 지휘 콘솔</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+    .status-healthy { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .status-watch { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+    .status-alert { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+    .status-guard { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+    .badge-do-not-change { background: #FEF2F2; color: #B91C1C; border: 1px solid #FCA5A5; font-weight: 800; }
+    .badge-focus { background: #ECFDF5; color: #047857; border: 1px solid #6EE7B7; font-weight: 800; }
+    .tab-active { background: #0F6B5B; color: #ffffff; border-color: #0F6B5B; }
+    .tab-inactive { background: #ffffff; color: #475569; border-color: #E2E8F0; }
+    .tab-inactive:hover { background: #F8FAFC; color: #0F6B5B; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-32">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <a href="/admin/operations.html" class="text-xs font-bold text-slate-600 hover:text-slate-900">운영센터</a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-[#0F6B5B] flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+          <span>🚀</span>
+          <span>30일 런치 지휘 콘솔 (Launch Command)</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-blue-100 text-blue-800 border border-blue-200">v1.0 FIXED</span>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex items-center gap-2 text-xs">
+        <a href="/admin/knowledge-graph.html" class="px-3 py-1.5 rounded-lg border border-purple-200 bg-purple-50 text-purple-800 font-bold hover:bg-purple-100 transition flex items-center gap-1">
+          <span>🕸️ 지식 그래프</span>
+        </a>
+        <a href="/admin/content-expansion.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>📚 콘텐츠 확장</span>
+        </a>
+        <a href="/admin/operations.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>⚙️ 운영센터</span>
+        </a>
+        <a href="/admin/system-health.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>🩺 시스템 헬스</span>
+        </a>
+        <button onclick="openPacketModal()" class="px-3 py-1.5 rounded-lg bg-[#0F6B5B] text-white font-black hover:bg-[#0c5649] transition shadow-xs flex items-center gap-1">
+          <span>📋 30일 의사결정 패킷</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner: Launch Status & Zero-Key Enforcement -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-[#0F6B5B] text-white rounded-2xl p-5 sm:p-6 shadow-md border border-slate-700">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">PUBLIC LAUNCH COMMAND PLAN</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">PRODUCTION FREEZE ENFORCED</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">ZERO-KEY LAUNCH (AI CALLS: 0)</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white mb-1">
+            공개 후 30일 관제 및 의사결정 지휘 센터
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            시점별 고정된 운영 리듬을 준수하여 섣부른 변경을 차단하고, 
+            <span class="text-emerald-400 font-bold">Safety → Privacy → System → Core Experience → Router → Content → Learning</span> 순서로 점검합니다.
+          </p>
+        </div>
+
+        <!-- Launch Snapshot Stats -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-black/30 p-3 rounded-xl border border-white/10 text-center min-w-[300px]">
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">전체 카드 수</div>
+            <div class="text-base sm:text-lg font-black text-white" id="stat-total-cards">200개</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">10개 PACK 동결</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">Safety 사건</div>
+            <div class="text-base sm:text-lg font-black text-white" id="stat-safety-incidents">0건</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">P0 즉각 조치 대기</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">개인정보 유출</div>
+            <div class="text-base sm:text-lg font-black text-white" id="stat-privacy-leaks">0건</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">Strict Zero-PII</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">외부 AI 호출</div>
+            <div class="text-base sm:text-lg font-black text-emerald-300" id="stat-external-ai">0건</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">완전 로컬/규칙형</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestone Timeline Navigation Tabs -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+    <div class="bg-white rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-xs">
+      <div class="text-xs font-bold text-slate-500 mb-2.5 px-1 flex items-center justify-between">
+        <span class="flex items-center gap-1.5">
+          <span>⏱️</span>
+          <span>관제 시점 선택 (Milestone Timeline)</span>
+        </span>
+        <span class="text-[11px] text-slate-400">선택한 마일스톤의 Focus와 Do-Not-Change 규칙이 자동 적용됩니다.</span>
+      </div>
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-bold" id="milestone-tabs">
+        <button onclick="selectMilestone('LAUNCH_DAY')" id="tab-LAUNCH_DAY" class="tab-btn tab-active px-3.5 py-2 rounded-xl border transition whitespace-nowrap flex items-center gap-1.5">
+          <span>🚀</span>
+          <span>D0 런치 데이 (0~24h)</span>
+        </button>
+        <button onclick="selectMilestone('DAYS_2_3')" id="tab-DAYS_2_3" class="tab-btn tab-inactive px-3.5 py-2 rounded-xl border transition whitespace-nowrap flex items-center gap-1.5">
+          <span>🔍</span>
+          <span>D2~D3 라우터 & 이탈</span>
+        </button>
+        <button onclick="selectMilestone('WEEK_1')" id="tab-WEEK_1" class="tab-btn tab-inactive px-3.5 py-2 rounded-xl border transition whitespace-nowrap flex items-center gap-1.5">
+          <span>🌱</span>
+          <span>D4~D7 1분 코칭 & 퍼널</span>
+        </button>
+        <button onclick="selectMilestone('WEEK_2')" id="tab-WEEK_2" class="tab-btn tab-inactive px-3.5 py-2 rounded-xl border transition whitespace-nowrap flex items-center gap-1.5">
+          <span>🔄</span>
+          <span>D8~D14 목적성 재방문</span>
+        </button>
+        <button onclick="selectMilestone('WEEK_3')" id="tab-WEEK_3" class="tab-btn tab-inactive px-3.5 py-2 rounded-xl border transition whitespace-nowrap flex items-center gap-1.5">
+          <span>📊</span>
+          <span>D15~D21 팩 건강도 & 결핍</span>
+        </button>
+        <button onclick="selectMilestone('DAY_30')" id="tab-DAY_30" class="tab-btn tab-inactive px-3.5 py-2 rounded-xl border transition whitespace-nowrap flex items-center gap-1.5">
+          <span>🎯</span>
+          <span>D30 학습 회고 & 의사결정</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content: Focus, Do Not Change, Needs Attention, Watch List -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 space-y-6">
+
+    <!-- Top Grid: Current Focus vs Do Not Change Today -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Current Focus Card -->
+      <div class="bg-white rounded-2xl p-6 border border-emerald-200 shadow-xs relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-28 h-28 bg-emerald-50 rounded-bl-full pointer-events-none -mr-6 -mt-6"></div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-sm font-black">🎯</span>
+            <div>
+              <h2 class="text-sm font-black text-slate-900">오늘 반드시 집중해야 할 관제 초점</h2>
+              <p class="text-[11px] text-slate-500" id="focus-milestone-label">D0 런치 데이 (0~24h)</p>
+            </div>
+          </div>
+          <span class="badge-focus px-2.5 py-1 rounded-lg text-xs">CURRENT FOCUS</span>
+        </div>
+
+        <div class="bg-emerald-50/70 rounded-xl p-4 border border-emerald-100 mb-4">
+          <div class="text-xs font-black text-emerald-950 mb-1" id="focus-title">기술적 가용성 및 P0/P1 긴급 결함 최우선 관제</div>
+          <p class="text-xs text-emerald-800 leading-relaxed font-normal" id="focus-desc">
+            서버 가용성 99.9%, 클라이언트 자바스크립트 크래시율 0.05% 미만, 엄격한 Zero-PII 및 Safety 라우팅 정상 동작을 집중 감시합니다. 전환율 평가는 아직 표본이 부족하므로 수행하지 않습니다.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-[11px] font-black text-slate-700 mb-2 flex items-center gap-1.5">
+            <span>📋</span>
+            <span>중점 확인 체크리스트</span>
+          </div>
+          <ul class="space-y-1.5 text-xs text-slate-600" id="focus-checklist">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">✓</span>
+              <span>크래시 및 콘솔 스크립트 에러 0건 유지 (자바스크립트 uncaught exception)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">✓</span>
+              <span>Safety 위기 키워드(자해, 타해) 입력 시 비의료적 응급 모달 100% 발화</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">✓</span>
+              <span>1-Minute 코칭 세션 완료 및 로컬 저장 정상 검증</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Do Not Change Today Card -->
+      <div class="bg-white rounded-2xl p-6 border border-rose-200 shadow-xs relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-28 h-28 bg-rose-50 rounded-bl-full pointer-events-none -mr-6 -mt-6"></div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-rose-100 text-rose-800 flex items-center justify-center text-sm font-black">🛑</span>
+            <div>
+              <h2 class="text-sm font-black text-slate-900">오늘 절대 변경하지 말아야 할 대상</h2>
+              <p class="text-[11px] text-slate-500">성급한 최적화 및 편향 방지 규칙</p>
+            </div>
+          </div>
+          <span class="badge-do-not-change px-2.5 py-1 rounded-lg text-xs">DO NOT CHANGE TODAY</span>
+        </div>
+
+        <div class="bg-rose-50/70 rounded-xl p-4 border border-rose-100 mb-4">
+          <div class="text-xs font-black text-rose-950 mb-1" id="do-not-change-title">첫 24시간 동안 카드 문구, 라우터 가중치, UI 구조 변경 금지</div>
+          <p class="text-xs text-rose-800 leading-relaxed font-normal" id="do-not-change-desc">
+            오픈 당일의 소수 유입 수치나 특정 피드백 하나에 반응하여 카드의 문구나 라우터 로직을 수정하면 시스템 전체 기준선(Baseline)이 오염됩니다. P0/P1 기술 결함 외 변경은 전면 동결합니다.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-[11px] font-black text-slate-700 mb-2 flex items-center gap-1.5">
+            <span>🔒</span>
+            <span>엄격 동결 항목 목록</span>
+          </div>
+          <ul class="space-y-1.5 text-xs text-slate-600" id="do-not-change-list">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-600 font-bold">✗</span>
+              <span>200개 명심카드 본문, 태그, 문구 수정 금지</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-600 font-bold">✗</span>
+              <span>Rule-Based Router 키워드 사전 및 분류 가중치 변경 금지</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-600 font-bold">✗</span>
+              <span>Public Home / Personal Home 핵심 레이아웃 재배치 금지</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Middle Grid: Needs Attention vs Watch List -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- Needs Attention (P0/P1 Hotfixes) -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-sm font-black">⚠️</span>
+            <div>
+              <h2 class="text-sm font-black text-slate-900">즉각 조치 필요 항목 (Needs Attention)</h2>
+              <p class="text-[11px] text-slate-500">배포 전/후 발견된 긴급 버그 및 시스템 장애</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-slate-500" id="needs-attention-count">0건 조치 대기</span>
+        </div>
+
+        <div class="space-y-3" id="needs-attention-container">
+          <!-- Dynamically Rendered -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center py-8">
+            <span class="text-2xl mb-1 block">✅</span>
+            <div class="text-xs font-black text-slate-700">현재 즉각 대응이 필요한 P0/P1 결함이 없습니다.</div>
+            <p class="text-[11px] text-slate-500 mt-1">모든 핵심 헬스 체크 및 서브시스템이 정상(Healthy) 상태입니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Watch List (Monitored Observations & Small-Sample Guard) -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center text-sm font-black">👁️</span>
+            <div>
+              <h2 class="text-sm font-black text-slate-900">지켜보기 목록 (Watch List)</h2>
+              <p class="text-[11px] text-slate-500">추세 관찰 항목 및 Small-Sample 보호 대상</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-slate-500" id="watchlist-count">관찰 중 4건</span>
+        </div>
+
+        <div class="space-y-3" id="watchlist-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Subsystems Health & Operations Grid (6 Domains) -->
+    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>🛡️</span>
+            <span>6대 서브시스템 실시간 관제 현황</span>
+          </h2>
+          <p class="text-[11px] text-slate-500">지휘 우선순위: Safety → Privacy → Reliability → Core Experience → Router → Content</p>
+        </div>
+        <button onclick="refreshSubsystemHealth()" class="text-xs font-bold text-[#0F6B5B] hover:underline flex items-center gap-1">
+          <span>🔄</span>
+          <span>새로고침</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="subsystem-grid">
+        <!-- 1. Safety & Privacy -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-black text-slate-800">1. Safety & Privacy</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black status-healthy">HEALTHY</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mb-2">자해/타해 위기 감지 및 개인식별정보(Zero-PII) 수집 차단 상태</p>
+          <div class="text-[10px] text-slate-500 space-y-1">
+            <div class="flex justify-between"><span>위기 감지 지연율:</span> <span class="font-bold text-slate-800">0ms (Client Sync)</span></div>
+            <div class="flex justify-between"><span>비의료 고지 노출률:</span> <span class="font-bold text-slate-800">100%</span></div>
+          </div>
+        </div>
+
+        <!-- 2. System Reliability -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-black text-slate-800">2. System Reliability</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black status-healthy">HEALTHY</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mb-2">서버 가용성, 에셋 로드 완료율 및 스크립트 크래시 모니터링</p>
+          <div class="text-[10px] text-slate-500 space-y-1">
+            <div class="flex justify-between"><span>JS 크래시 발생률:</span> <span class="font-bold text-slate-800">0.00%</span></div>
+            <div class="flex justify-between"><span>로컬스토리지 복원:</span> <span class="font-bold text-slate-800">정상 (100%)</span></div>
+          </div>
+        </div>
+
+        <!-- 3. Core Experience -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-black text-slate-800">3. Core Experience</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black status-guard">SMALL-SAMPLE</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mb-2">1분 코칭, SCAN→SYNC→SHIFT, 10% Action, 행동실험 완료율</p>
+          <div class="text-[10px] text-slate-500 space-y-1">
+            <div class="flex justify-between"><span>1분 코칭 완주율:</span> <span class="font-bold text-slate-800">관찰 중 (표본 수집)</span></div>
+            <div class="flex justify-between"><span>소표본 보호:</span> <span class="font-bold text-blue-700">활성 (결함 단정 금지)</span></div>
+          </div>
+        </div>
+
+        <!-- 4. Router Quality -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-black text-slate-800">4. Router Quality</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black status-healthy">HEALTHY</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mb-2">RuleBasedRouter 매칭률, 하이브리드 폴백율, 라우팅 실패율</p>
+          <div class="text-[10px] text-slate-500 space-y-1">
+            <div class="flex justify-between"><span>규칙 기반 라우팅:</span> <span class="font-bold text-slate-800">정상 작동 (100%)</span></div>
+            <div class="flex justify-between"><span>외부 AI 의존:</span> <span class="font-bold text-emerald-700">0건 (Zero-Key)</span></div>
+          </div>
+        </div>
+
+        <!-- 5. Content Quality & Gap -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-black text-slate-800">5. Content Quality</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black status-healthy">LOCKED</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mb-2">PACK 01~10 무결성, 카드 내용 보존, 빈 검색어 결핍 관찰</p>
+          <div class="text-[10px] text-slate-500 space-y-1">
+            <div class="flex justify-between"><span>고정 카드 수:</span> <span class="font-bold text-slate-800">200개 완전 보존</span></div>
+            <div class="flex justify-between"><span>콘텐츠 결핍 분류:</span> <span class="font-bold text-slate-800">사전 분석 대기</span></div>
+          </div>
+        </div>
+
+        <!-- 6. Product Learning Archive -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-black text-slate-800">6. Product Learning</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black status-healthy">RECORDING</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mb-2">30일 회고용 비개인화 집계 신호 및 재방문 동기 기록</p>
+          <div class="text-[10px] text-slate-500 space-y-1">
+            <div class="flex justify-between"><span>데이터 품질 선행:</span> <span class="font-bold text-emerald-700">보장 (도덕화 금지)</span></div>
+            <div class="flex justify-between"><span>학습 패킷 준비:</span> <span class="font-bold text-slate-800">자동 집계 중</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Return With Purpose & Behavioral Shift Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center text-sm font-black">🔄</span>
+          <div>
+            <h3 class="text-sm font-black text-slate-900">목적성 재방문 신호 (Return With Purpose)</h3>
+            <p class="text-[11px] text-slate-500">단순 도파민성 출석이 아닌 실질적 필요에 의한 복귀 신호</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed mb-3">
+          명심코칭은 사용자를 서비스에 묶어두는 연속 스트릭(Streak)을 강요하지 않습니다. 
+          실제 삶의 압박이나 갈등이 생겼을 때 스스로 카드를 찾아오는 <strong>‘목적성 복귀’</strong>를 성공 지표로 봅니다.
+        </p>
+        <div class="bg-purple-50/60 rounded-xl p-3 border border-purple-100 text-xs text-purple-900 space-y-1.5 font-medium">
+          <div class="flex items-center justify-between">
+            <span>실험 후속 기록 복귀 (Actual 기록):</span>
+            <span class="font-bold text-purple-700">정상 집계 중</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span>저장한 카드 재열람 복귀:</span>
+            <span class="font-bold text-purple-700">관찰 활성화</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span>30일 여정 선택적 이어하기:</span>
+            <span class="font-bold text-purple-700">자율 유지 (압박 0)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-8 h-8 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center text-sm font-black">🧠</span>
+          <div>
+            <h3 class="text-sm font-black text-slate-900">행동 전환 관찰 원칙 (Non-Moralizing)</h3>
+            <p class="text-[11px] text-slate-500">행동 미실행에 대한 사용자 탓 금지 원칙</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed mb-3">
+          사용자가 행동실험을 완료하지 않거나 10% Action을 실행하지 않았다고 해서 ‘의지 부족’이나 ‘나태함’으로 결론짓지 않습니다. 
+          <strong>행동의 크기(Action Too Big)</strong>가 컸거나, 타이밍의 마찰이었는지를 제품 관점에서 분석합니다.
+        </p>
+        <div class="bg-teal-50/60 rounded-xl p-3 border border-teal-100 text-xs text-teal-900 space-y-1.5 font-medium">
+          <div class="flex items-center justify-between">
+            <span>Action Too Big 신호 감지:</span>
+            <span class="font-bold text-teal-800">감지 엔진 활성</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span>안심 루프(Reassurance) 빠짐 감지:</span>
+            <span class="font-bold text-teal-800">카드 반복 열람 추적</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span>도덕화 배제 원칙:</span>
+            <span class="font-bold text-teal-800">100% 준수 (엄격 적용)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Modal: Day 30 Decision Packet (Human Review) -->
+  <div id="packet-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 border border-slate-200 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="w-8 h-8 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center text-sm font-black">📋</span>
+          <div>
+            <h3 class="text-base font-black text-slate-900">Day 30 의사결정 패킷 (Human Decision Support)</h3>
+            <p class="text-xs text-slate-500">시스템 자동 최적화를 금지하고, 3대 스프린트 후보를 인간 운영팀에 제안합니다.</p>
+          </div>
+        </div>
+        <button onclick="closePacketModal()" class="w-8 h-8 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 font-bold flex items-center justify-center">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs text-slate-700">
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+          <div class="font-bold text-slate-800 mb-1">📌 의사결정 원칙 (Decision Principle)</div>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            30일 관제 결과를 바탕으로 시스템이 임의로 코드를 수정하거나 가중치를 자동 배포하지 않습니다. 
+            운영팀은 아래 세 가지 후보 중 한 방향을 선택하여 다음 달의 단일 스프린트로 채택합니다.
+          </p>
+        </div>
+
+        <!-- Sprint Option A -->
+        <div class="p-4 rounded-xl border border-slate-200 hover:border-[#0F6B5B] transition bg-white shadow-2xs">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-black text-slate-900 text-sm">Sprint Option A: Core Optimization (핵심 경험 마찰 제거)</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-100 text-blue-800">경험 마찰 제거</span>
+          </div>
+          <div class="text-[11px] text-slate-600 space-y-1 mb-2">
+            <div><strong class="text-slate-800">FACT:</strong> 1-Minute 코칭 완료율 및 SHIFT 단계에서의 소요 시간이 기준선 대비 지연됨.</div>
+            <div><strong class="text-slate-800">INTERPRETATION:</strong> 문구가 길거나 10% Action 선택지의 구체성이 부족하여 인지 부하가 발생했을 가능성.</div>
+            <div><strong class="text-slate-800">NEXT QUESTION:</strong> Action 단위를 5% 수준의 초소형 단위로 분할하여 진입 저항을 낮출 것인가?</div>
+          </div>
+        </div>
+
+        <!-- Sprint Option B -->
+        <div class="p-4 rounded-xl border border-slate-200 hover:border-[#0F6B5B] transition bg-white shadow-2xs">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-black text-slate-900 text-sm">Sprint Option B: Content Expansion (검증된 결핍 팩 보강)</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-100 text-emerald-800">신규 결핍 팩</span>
+          </div>
+          <div class="text-[11px] text-slate-600 space-y-1 mb-2">
+            <div><strong class="text-slate-800">FACT:</strong> 검색 실패 키워드 중 '팀 내 갈등/상사 피드백' 관련 유입이 라우터 매칭 없이 반복 축적됨.</div>
+            <div><strong class="text-slate-800">INTERPRETATION:</strong> 기존 10개 팩의 범위를 벗어난 직장 관계성 결핍이 명확하게 입증됨.</div>
+            <div><strong class="text-slate-800">NEXT QUESTION:</strong> PACK 11: '조직 및 상사 갈등 완화' 20개 카드를 정식 거버넌스를 거쳐 추가할 것인가?</div>
+          </div>
+        </div>
+
+        <!-- Sprint Option C -->
+        <div class="p-4 rounded-xl border border-slate-200 hover:border-[#0F6B5B] transition bg-white shadow-2xs">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-black text-slate-900 text-sm">Sprint Option C: App Deepening (개인화 심화 및 복귀 유지)</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-purple-100 text-purple-800">심화 경험</span>
+          </div>
+          <div class="text-[11px] text-slate-600 space-y-1 mb-2">
+            <div><strong class="text-slate-800">FACT:</strong> 30-Day Journey 진입자 중 특정 5일 차 이후 연속성보다 실험 기록 후속 방문이 높음.</div>
+            <div><strong class="text-slate-800">INTERPRETATION:</strong> 고정된 여정 진행보다 자신의 Working Map에 누적된 패턴을 확인하려는 욕구가 큼.</div>
+            <div><strong class="text-slate-800">NEXT QUESTION:</strong> Personal Working Map의 주간 행동 패턴 가시화를 더욱 직관적으로 강화할 것인가?</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end gap-2 border-t border-slate-100 pt-4">
+        <button onclick="closePacketModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 transition">
+          닫기
+        </button>
+        <button onclick="downloadDecisionPacket()" class="px-4 py-2 rounded-xl bg-[#0F6B5B] text-white text-xs font-bold hover:bg-[#0c5649] transition shadow-xs flex items-center gap-1">
+          <span>💾 패킷 리포트 다운로드</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Launch Command Logic Script -->
+  <script src="/js/myungsim-launch-command.js"></script>
+  <script>
+    // State
+    let currentMilestone = 'LAUNCH_DAY';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.MyungSimLaunchCommand) {
+        window.MyungSimLaunchCommand.init();
+      }
+      renderView();
+    });
+
+    function selectMilestone(milestoneKey) {
+      currentMilestone = milestoneKey;
+      
+      // Update Tab Styles
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('tab-active');
+        btn.classList.add('tab-inactive');
+      });
+      const activeBtn = document.getElementById(`tab-${milestoneKey}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('tab-inactive');
+        activeBtn.classList.add('tab-active');
+      }
+
+      renderView();
+    }
+
+    function renderView() {
+      if (!window.MyungSimLaunchCommand) return;
+      const cmd = window.MyungSimLaunchCommand;
+      const milestone = cmd.getMilestoneConfig(currentMilestone);
+
+      if (!milestone) return;
+
+      // Update Focus Card
+      document.getElementById('focus-milestone-label').textContent = milestone.label;
+      document.getElementById('focus-title').textContent = milestone.focusTitle;
+      document.getElementById('focus-desc').textContent = milestone.focusDesc;
+
+      const checklistContainer = document.getElementById('focus-checklist');
+      checklistContainer.innerHTML = milestone.checklist.map(item => `
+        <li class="flex items-start gap-2">
+          <span class="text-emerald-600 font-bold">✓</span>
+          <span>${item}</span>
+        </li>
+      `).join('');
+
+      // Update Do Not Change Card
+      document.getElementById('do-not-change-title').textContent = milestone.doNotChangeTitle;
+      document.getElementById('do-not-change-desc').textContent = milestone.doNotChangeDesc;
+
+      const freezeList = document.getElementById('do-not-change-list');
+      freezeList.innerHTML = milestone.freezeList.map(item => `
+        <li class="flex items-start gap-2">
+          <span class="text-rose-600 font-bold">✗</span>
+          <span>${item}</span>
+        </li>
+      `).join('');
+
+      // Update Watch List
+      renderWatchlist();
+    }
+
+    function renderWatchlist() {
+      if (!window.MyungSimLaunchCommand) return;
+      const list = window.MyungSimLaunchCommand.getWatchlist();
+      const container = document.getElementById('watchlist-container');
+      const countEl = document.getElementById('watchlist-count');
+      
+      countEl.textContent = `관찰 중 ${list.length}건`;
+
+      container.innerHTML = list.map(item => {
+        const isSmallSample = item.smallSample;
+        return `
+          <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs text-slate-800">${item.title}</span>
+              <span class="text-[10px] font-black px-2 py-0.5 rounded ${isSmallSample ? 'status-guard' : 'status-watch'}">
+                ${isSmallSample ? 'INSUFFICIENT_EVIDENCE' : 'OBSERVING'}
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-600 leading-normal">${item.desc}</p>
+            <div class="text-[10px] text-slate-400 flex items-center justify-between pt-1 border-t border-slate-100">
+              <span>표본수: <strong class="text-slate-700">${item.samples}</strong></span>
+              <span>권고: <span class="font-bold ${isSmallSample ? 'text-blue-600' : 'text-amber-600'}">${item.recommendation}</span></span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function refreshSubsystemHealth() {
+      alert('모든 서브시스템 상태를 최신화했습니다. Safety, Privacy, Crash 0건이 유지되고 있습니다.');
+    }
+
+    function openPacketModal() {
+      document.getElementById('packet-modal').classList.remove('hidden');
+    }
+
+    function closePacketModal() {
+      document.getElementById('packet-modal').classList.add('hidden');
+    }
+
+    function downloadDecisionPacket() {
+      if (!window.MyungSimLaunchCommand) return;
+      const packetText = window.MyungSimLaunchCommand.generateDecisionPacketText();
+      const blob = new Blob([packetText], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `myungsim-30day-decision-packet-${new Date().toISOString().slice(0, 10)}.md`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

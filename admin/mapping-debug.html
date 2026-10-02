@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM ONTOLOGY MAPPING DEBUGGER | 자연어 온톨로지 매핑 디버거</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-32">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-[#0F6B5B] flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+          <span>🔍</span>
+          <span>자연어 온톨로지 매핑 디버거 (Mapping Debugger v1)</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-100 text-emerald-800 border border-emerald-200">15 SYNTHETIC TESTS READY</span>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <a href="/admin/ontology-qa.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>🛡️ 온톨로지 QA</span>
+        </a>
+        <a href="/admin/knowledge-graph.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>🕸️ 지식 그래프</span>
+        </a>
+        <a href="/admin/operations.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>⚙️ 운영센터</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-teal-900 text-white rounded-2xl p-5 sm:p-6 shadow-md border border-slate-700">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">ZERO-KEY DETERMINISTIC</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-rose-500/20 text-rose-300 border border-rose-500/30">NEGATIVE GUARDS ACTIVE</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">SAFETY INTERCEPT FIRST</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white mb-1">
+            자연어 문구 10대 계층 분해 및 비약 추론 차단 디버거
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            내담자의 문장을 인공지능 API 없이 순수 로컬 결정론적 규칙으로 
+            <strong class="text-emerald-300">장면, 촉발신호, 해석, 몸 감각, 정서, 충동, 행동</strong>으로 분해하고 성급한 비약 추론을 차단합니다.
+          </p>
+        </div>
+
+        <div class="bg-black/30 p-3 rounded-xl border border-white/10 text-center min-w-[200px]">
+          <div class="text-[10px] text-slate-400 font-bold">외부 AI 호출 수</div>
+          <div class="text-2xl font-black text-emerald-300">0건</div>
+          <div class="text-[9px] text-slate-300 font-semibold mt-0.5">Strictly Zero-Key</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 space-y-6">
+
+    <!-- Section 1: 15대 Synthetic 케이스 프리셋 -->
+    <section class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+      <h2 class="text-sm font-black text-slate-900 mb-3 flex items-center gap-2">
+        <span>⚡</span>
+        <span>15대 Synthetic 골든 테스트 케이스 프리셋</span>
+      </h2>
+      <div class="flex flex-wrap gap-2 text-xs" id="preset-buttons-container">
+        <!-- Dynamic Preset Buttons -->
+      </div>
+    </section>
+
+    <!-- Section 2: 실시간 분석 입력창 -->
+    <section class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input 
+          type="text" 
+          id="debug-input" 
+          placeholder="예: 카톡이 안 와서 마음이 식었나 싶어요 / 가슴이 철렁했어요 / 남편이 저를 때렸어요" 
+          class="flex-1 border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#0F6B5B]"
+          onkeydown="if(event.key === 'Enter') analyzeText()"
+        />
+        <button 
+          onclick="analyzeText()" 
+          class="px-5 py-2.5 bg-[#0F6B5B] hover:bg-[#0c5447] text-white font-bold rounded-lg text-xs transition flex items-center justify-center gap-1.5"
+        >
+          <span>🔍 계층 분해 분석</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Section 3: 분석 결과 카드 -->
+    <section id="analysis-result-section" class="space-y-4">
+      <!-- Safety Alert Banner (조건부 표시) -->
+      <div id="safety-alert-banner" class="hidden bg-rose-600 text-white p-4 rounded-xl shadow-md flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🚨</span>
+          <div>
+            <div class="font-black text-sm">SAFETY INTERCEPT FIRST (안전 위기 최우선 가로채기)</div>
+            <div class="text-xs text-rose-100" id="safety-alert-message">신체 폭력 및 위기 상황이 감지되었습니다. 일반 카드 추천을 즉각 중단합니다.</div>
+          </div>
+        </div>
+        <span class="px-3 py-1 bg-white text-rose-800 rounded-full text-xs font-black">CRISIS ROUTE</span>
+      </div>
+
+      <!-- 계층 분해 결과 그리드 -->
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <h3 class="text-sm font-black text-slate-900 mb-4 flex items-center gap-2">
+          <span>📊</span>
+          <span>10대 온톨로지 계층 매핑 결과</span>
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs" id="mapped-layers-grid">
+          <!-- Dynamic Injected Layer Cards -->
+        </div>
+      </div>
+
+      <!-- 차단된 비약 추론 목록 (Negative Guards) -->
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <h3 class="text-sm font-black text-slate-900 mb-3 flex items-center gap-2">
+          <span>🛡️</span>
+          <span>차단된 비약 추론 (Negative Guards Enforced)</span>
+        </h3>
+        <p class="text-xs text-slate-500 mb-3">내담자의 말에 없는 내용을 성급하게 단정하거나 병합하지 않도록 엄격히 차단된 목록입니다.</p>
+
+        <div id="blocked-inferences-list" class="space-y-2">
+          <!-- Dynamic Injected Guard Badges -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script: 온톨로지 거버넌스 로더 & 매핑 컨트롤러 -->
+  <script src="/js/myungsim-ontology-governance.js"></script>
+
+  <script>
+    var SYNTHETIC_CASES = [
+      { id: 1, text: "카톡이 안 와요", desc: "message_no_reply (관계단절 억지추론 차단)" },
+      { id: 2, text: "카톡이 안 와서 마음이 식었나 싶어요", desc: "message_no_reply + relationship_ending" },
+      { id: 3, text: "가슴이 철렁했어요", desc: "BODY_SIGNAL (불안 정서로 성급한 변환 차단)" },
+      { id: 4, text: "무서워요", desc: "EMOTION: fear (신체감각 아님)" },
+      { id: 5, text: "계속 확인하고 싶어요", desc: "URGE: check (실제 행동 아님)" },
+      { id: 6, text: "계속 폰을 열어봤어요", desc: "ACTION: phone_check (충동 아님)" },
+      { id: 7, text: "제가 나쁜 딸 같아요", desc: "STORY: bad_child (정체성 라벨화 차단)" },
+      { id: 8, text: "엄마가 부탁했어요", desc: "Scene/Trigger (죄책감/수락 억지추론 차단)" },
+      { id: 9, text: "삼재래요", desc: "Context/Trigger (실제 사고 발생 비약 차단)" },
+      { id: 10, text: "삼재라서 아무것도 하면 안 될 것 같아요", desc: "warning + bad_period + freeze" },
+      { id: 11, text: "남편이 저를 때렸어요", desc: "SAFETY VIOLENCE INTERCEPT FIRST" },
+      { id: 12, text: "퇴사하고 싶어요", desc: "URGE: quit (실제 퇴사 단정 차단)" },
+      { id: 13, text: "오늘 퇴사했어요", desc: "ACTION: quit_job (충동 아님)" },
+      { id: 14, text: "나는 원래 실패자야", desc: "STORY: failure (영구 진단 배제, 생각의 이야기)" },
+      { id: 15, text: "실제로 계약이 취소됐어요", desc: "FACT: contract_cancelled (재앙화 왜곡 차단)" }
+    ];
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderPresets();
+      // 기본 1번 케이스 자동 실행
+      loadPreset(SYNTHETIC_CASES[0].text);
+    });
+
+    function renderPresets() {
+      var container = document.getElementById('preset-buttons-container');
+      container.innerHTML = '';
+
+      SYNTHETIC_CASES.forEach(function(sc) {
+        var btn = document.createElement('button');
+        btn.className = 'px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium transition text-left';
+        btn.innerHTML = `<span class="font-bold text-[#0F6B5B]">#${sc.id}</span> "${sc.text}"`;
+        btn.onclick = function() { loadPreset(sc.text); };
+        container.appendChild(btn);
+      });
+    }
+
+    function loadPreset(text) {
+      document.getElementById('debug-input').value = text;
+      analyzeText();
+    }
+
+    function analyzeText() {
+      var text = document.getElementById('debug-input').value.trim();
+      if (!text) return;
+
+      var gov = window.MyungSimOntologyGovernance;
+      var res = gov.mapUserInputToOntology(text);
+
+      // Safety Banner
+      var sBanner = document.getElementById('safety-alert-banner');
+      if (res.safetyIntercepted) {
+        sBanner.classList.remove('hidden');
+        document.getElementById('safety-alert-message').innerText = res.message;
+      } else {
+        sBanner.classList.add('hidden');
+      }
+
+      // Render Mapped Layers
+      var grid = document.getElementById('mapped-layers-grid');
+      grid.innerHTML = '';
+
+      var layers = [
+        { label: 'Layer 1: CONTEXT', value: res.mappedLayers.context, color: 'border-blue-200 bg-blue-50/40 text-blue-900' },
+        { label: 'Layer 2: SCENE', value: res.mappedLayers.scene, color: 'border-slate-200 bg-slate-50 text-slate-900' },
+        { label: 'Layer 2: TRIGGER', value: res.mappedLayers.trigger, color: 'border-amber-200 bg-amber-50/40 text-amber-900' },
+        { label: 'Layer 3: STORY (해석)', value: res.mappedLayers.story, color: 'border-purple-200 bg-purple-50/40 text-purple-900' },
+        { label: 'Layer 3: FACT (객관 사실)', value: res.mappedLayers.fact, color: 'border-cyan-200 bg-cyan-50/40 text-cyan-900' },
+        { label: 'Layer 4: BODY SIGNAL (신체)', value: res.mappedLayers.bodySignal, color: 'border-orange-200 bg-orange-50/40 text-orange-900' },
+        { label: 'Layer 4: EMOTION (정서)', value: res.mappedLayers.emotion, color: 'border-rose-200 bg-rose-50/40 text-rose-900' },
+        { label: 'Layer 5: URGE (충동)', value: res.mappedLayers.urge, color: 'border-indigo-200 bg-indigo-50/40 text-indigo-900' },
+        { label: 'Layer 6: ACTION (행동)', value: res.mappedLayers.action, color: 'border-emerald-200 bg-emerald-50/40 text-emerald-900' },
+        { label: 'Layer 10: SAFETY (위기)', value: res.mappedLayers.safety, color: 'border-red-300 bg-red-50 text-red-900' }
+      ];
+
+      layers.forEach(function(l) {
+        var card = document.createElement('div');
+        card.className = `p-3 rounded-lg border ${l.color}`;
+        
+        var valHtml = l.value 
+          ? `<div class="font-bold text-slate-800 text-xs mt-1">[${l.value.id}] ${l.value.label}</div>`
+          : `<div class="text-[11px] text-slate-400 mt-1 italic">(매핑 없음)</div>`;
+
+        card.innerHTML = `
+          <div class="text-[10px] font-black uppercase tracking-wider opacity-75">${l.label}</div>
+          ${valHtml}
+        `;
+        grid.appendChild(card);
+      });
+
+      // Render Blocked Inferences
+      var list = document.getElementById('blocked-inferences-list');
+      list.innerHTML = '';
+
+      if (res.unsupportedInferencesBlocked && res.unsupportedInferencesBlocked.length > 0) {
+        res.unsupportedInferencesBlocked.forEach(function(item) {
+          var div = document.createElement('div');
+          div.className = 'p-2.5 rounded-lg border border-rose-200 bg-rose-50 text-rose-800 text-xs flex items-center justify-between';
+          div.innerHTML = `
+            <div class="flex items-center gap-2">
+              <span class="font-bold">⛔ 차단됨:</span>
+              <span>${item}</span>
+            </div>
+            <span class="text-[10px] font-black px-2 py-0.5 bg-rose-200 text-rose-900 rounded">NEGATIVE GUARD</span>
+          `;
+          list.appendChild(div);
+        });
+      } else {
+        var clean = document.createElement('div');
+        clean.className = 'p-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-600 text-xs';
+        clean.innerText = '비약적인 과잉 추론이나 금지된 라벨링이 발견되지 않았습니다 (정상 규칙 통과).';
+        list.appendChild(clean);
+      }
+    }
+  </script>
+</body>
+</html>

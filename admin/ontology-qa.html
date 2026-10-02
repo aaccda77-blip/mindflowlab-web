@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM ONTOLOGY QA & GOVERNANCE | 명심 온톨로지 품질 및 거버넌스 센터</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+    .status-healthy { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .status-watch { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+    .status-alert { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-32">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-[#0F6B5B] flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+          <span>🛡️</span>
+          <span>온톨로지 QA & 거버넌스 (Ontology Governance v1)</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-purple-100 text-purple-800 border border-purple-200">10 LAYERS CANONICAL</span>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <a href="/admin/knowledge-graph.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>🕸️ 지식 그래프</span>
+        </a>
+        <a href="/admin/mapping-debug.html" class="px-3 py-1.5 rounded-lg border border-emerald-300 bg-emerald-50 text-emerald-800 font-bold transition flex items-center gap-1">
+          <span>🔍 매핑 디버거</span>
+        </a>
+        <a href="/admin/content-expansion.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>📚 콘텐츠 확장</span>
+        </a>
+        <a href="/admin/operations.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>⚙️ 운영센터</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+    <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-[#0F6B5B] text-white rounded-2xl p-5 sm:p-6 shadow-md border border-slate-700">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">10-LAYER CANONICAL ONTOLOGY</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">IDENTITY LABELS: DISABLED</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">EXTERNAL AI CALLS: 0</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white mb-1">
+            명심 온톨로지 품질 관리(QA) 및 변경 거버넌스 센터
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            카드가 500장 이상으로 늘어나도 개념이 오염되거나 "태그 창고"로 무너지지 않도록, 
+            <strong class="text-emerald-300">몸의 신호와 정서, 충동과 행동, 장면과 촉발신호</strong>를 10대 계층으로 엄격히 분리하고 통제합니다.
+          </p>
+        </div>
+
+        <!-- Metrics Snapshot -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-black/30 p-3 rounded-xl border border-white/10 text-center min-w-[320px]">
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">정규 개념 (Canonical)</div>
+            <div class="text-base sm:text-lg font-black text-white" id="stat-canonical-count">36개</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">10대 계층 분리</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">검색 별칭 (Aliases)</div>
+            <div class="text-base sm:text-lg font-black text-white" id="stat-aliases-count">32개</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">온톨로지 격리</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">중복 후보</div>
+            <div class="text-base sm:text-lg font-black text-emerald-300" id="stat-duplicates-count">0건</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">Clean 상태</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">금지된 엣지</div>
+            <div class="text-base sm:text-lg font-black text-emerald-300" id="stat-forbidden-count">0건</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">원천 차단 완료</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 space-y-6">
+
+    <!-- Section 1: 5대 엄격 분리 원칙 (Separation Principles) -->
+    <section class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+      <h2 class="text-sm font-black text-slate-900 mb-3 flex items-center gap-2">
+        <span>⚖️</span>
+        <span>5대 엄격 분리 원칙 (5 Canonical Separation Principles)</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+        <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50/50">
+          <div class="font-black text-emerald-900 mb-1">1. Body != Emotion</div>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            `가슴 철렁`은 생리적 감각(Body Signal)이며, `불안/두려움`(Emotion)으로 뭉개지 않고 분리합니다.
+          </p>
+          <div class="mt-2 text-[10px] font-black text-emerald-700">✓ ENFORCED</div>
+        </div>
+        <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50/50">
+          <div class="font-black text-emerald-900 mb-1">2. Urge != Action</div>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            `확인하고 싶은 충동`(Urge)과 실제 `휴대폰을 열어본 행위`(Action)를 절대 동일 노드로 취급하지 않습니다.
+          </p>
+          <div class="mt-2 text-[10px] font-black text-emerald-700">✓ ENFORCED</div>
+        </div>
+        <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50/50">
+          <div class="font-black text-emerald-900 mb-1">3. Scene != Trigger</div>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            상황적 장면(`엄마와의 통화`)과 자극 신호(`엄마의 부탁`)를 분리하여 과잉 일반화를 방지합니다.
+          </p>
+          <div class="mt-2 text-[10px] font-black text-emerald-700">✓ ENFORCED</div>
+        </div>
+        <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50/50">
+          <div class="font-black text-emerald-900 mb-1">4. Story != Fact</div>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            객관적 현실(`계약 취소 통보`)과 머릿속 이야기(`나는 실패자다`)를 혼동하지 않도록 구별합니다.
+          </p>
+          <div class="mt-2 text-[10px] font-black text-emerald-700">✓ ENFORCED</div>
+        </div>
+        <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50/50">
+          <div class="font-black text-emerald-900 mb-1">5. Function != Strength</div>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            무의식적 방어 기능(`관계 갈등 회피`)과 내담자의 본래 자원(`배려심`)을 분리하여 존중합니다.
+          </p>
+          <div class="mt-2 text-[10px] font-black text-emerald-700">✓ ENFORCED</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 10대 온톨로지 계층 현황 (10 Layers Table) -->
+    <section class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>📚</span>
+            <span>10대 온톨로지 계층별 정규 개념 현황 (Layer 1~10)</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">서로 다른 계층 간에는 무분별한 결합이나 서열화가 금지됩니다.</p>
+        </div>
+        <span class="text-xs font-bold text-slate-500" id="current-layer-filter-label">전체 계층 표시 중</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-50 text-slate-600 font-bold border-b border-slate-200">
+              <th class="py-2.5 px-3">계층 (Layer)</th>
+              <th class="py-2.5 px-3">계층명 / 노드 타입</th>
+              <th class="py-2.5 px-3">포함 정규 개념 예시</th>
+              <th class="py-2.5 px-3">등록 노드 수</th>
+              <th class="py-2.5 px-3">상태</th>
+            </tr>
+          </thead>
+          <tbody id="ontology-layers-tbody" class="divide-y divide-slate-100">
+            <!-- Dynamic Injection -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: 개념 병합(Merge) / 분할(Split) 거버넌스 랩 & Dry Run 시뮬레이터 -->
+    <section class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>🔬</span>
+            <span>개념 변경 통제 랩 (Merge / Split Governance & Dry Run)</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">6대 질문을 통과하지 못하면 어떤 개념도 병합할 수 없습니다.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+        <!-- 병합 시뮬레이터 폼 -->
+        <div class="space-y-4 text-xs">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">소스 개념 (병합 대상)</label>
+              <select id="merge-source-select" class="w-full border border-slate-300 rounded-lg p-2 bg-white">
+                <!-- Dynamic Options -->
+              </select>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">타깃 개념 (통합될 정규 개념)</label>
+              <select id="merge-target-select" class="w-full border border-slate-300 rounded-lg p-2 bg-white">
+                <!-- Dynamic Options -->
+              </select>
+            </div>
+          </div>
+
+          <!-- 6대 질문 체크리스트 -->
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-2">
+            <div class="font-black text-slate-800">병합 전 6대 질문 전수 검증:</div>
+            <label class="flex items-center gap-2 text-slate-700">
+              <input type="checkbox" id="q1-check" class="rounded text-[#0F6B5B] focus:ring-0" />
+              <span>1. 같은 장면(Scene)인가?</span>
+            </label>
+            <label class="flex items-center gap-2 text-slate-700">
+              <input type="checkbox" id="q2-check" class="rounded text-[#0F6B5B] focus:ring-0" />
+              <span>2. 같은 촉발 신호(Trigger)인가?</span>
+            </label>
+            <label class="flex items-center gap-2 text-slate-700">
+              <input type="checkbox" id="q3-check" class="rounded text-[#0F6B5B] focus:ring-0" />
+              <span>3. 같은 머릿속 이야기(Story)인가?</span>
+            </label>
+            <label class="flex items-center gap-2 text-slate-700">
+              <input type="checkbox" id="q4-check" class="rounded text-[#0F6B5B] focus:ring-0" />
+              <span>4. 같은 즉각적 충동(Urge)인가?</span>
+            </label>
+            <label class="flex items-center gap-2 text-slate-700">
+              <input type="checkbox" id="q5-check" class="rounded text-[#0F6B5B] focus:ring-0" />
+              <span>5. 같은 구체적 행동(Action)인가?</span>
+            </label>
+            <label class="flex items-center gap-2 text-slate-700">
+              <input type="checkbox" id="q6-check" class="rounded text-[#0F6B5B] focus:ring-0" />
+              <span>6. Router 관점에서 100% 상호 교환 가능한가?</span>
+            </label>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="runMergeDryRun()" class="px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-bold transition flex items-center gap-1.5">
+              <span>🔍 Dry Run 시뮬레이션</span>
+            </button>
+            <button onclick="executeMerge()" class="px-4 py-2 bg-[#0F6B5B] hover:bg-[#0c5447] text-white rounded-lg font-bold transition flex items-center gap-1.5">
+              <span>⚡ 병합 실행 (스냅샷 자동저장)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dry Run 결과 표시 패널 -->
+        <div class="bg-slate-900 text-slate-200 rounded-xl p-4 text-xs font-mono border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-700 pb-2 mb-3">
+              <span class="text-emerald-400 font-bold">DRY RUN PREVIEW LOG</span>
+              <span class="text-[10px] text-slate-400" id="dry-run-status-badge">대기 중</span>
+            </div>
+            <div id="dry-run-output" class="text-slate-300 text-[11px] leading-relaxed whitespace-pre-wrap">
+// 시뮬레이션을 실행하면 영향받는 카드 수, 엣지 수, 5대 원칙 위반 여부가 이곳에 출력됩니다.
+// 예: Layer 4(Body)와 Layer 4(Emotion)를 병합하려 할 경우 거버넌스 룰에 의해 차단됩니다.
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[10px] text-slate-400 flex items-center justify-between">
+            <span>롤백 스냅샷: 활성화</span>
+            <span>Zero-AI Compliant: 100%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 스냅샷 및 롤백 (Rollback) 관리 -->
+    <section class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>⏪</span>
+            <span>온톨로지 버전 스냅샷 및 원클릭 롤백 (Rollback)</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">안전한 버전 관리를 위해 언제든지 이전 온톨로지 상태로 롤백할 수 있습니다.</p>
+        </div>
+        <button onclick="takeManualSnapshot()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-lg text-xs transition">
+          + 새 스냅샷 생성
+        </button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-50 text-slate-600 font-bold border-b border-slate-200">
+              <th class="py-2.5 px-3">스냅샷 ID</th>
+              <th class="py-2.5 px-3">라벨 / 설명</th>
+              <th class="py-2.5 px-3">생성 일시</th>
+              <th class="py-2.5 px-3">개념 수</th>
+              <th class="py-2.5 px-3">작업</th>
+            </tr>
+          </thead>
+          <tbody id="snapshots-tbody" class="divide-y divide-slate-100">
+            <!-- Dynamic Injection -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script: 온톨로지 거버넌스 로더 & UI 컨트롤러 -->
+  <script src="/js/myungsim-ontology-governance.js"></script>
+  <script src="/js/myungsim-knowledge-graph.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderDashboard();
+    });
+
+    function renderDashboard() {
+      if (!window.MyungSimOntologyGovernance) return;
+      var gov = window.MyungSimOntologyGovernance;
+      var kg = window.MyungSimKnowledgeGraph;
+
+      // 1. Stats Update
+      var totalConcepts = Object.keys(gov.concepts).length;
+      var totalAliases = gov.aliases.length;
+      document.getElementById('stat-canonical-count').innerText = totalConcepts + '개';
+      document.getElementById('stat-aliases-count').innerText = totalAliases + '개';
+
+      var audit = gov.runQualityAudit(kg);
+      document.getElementById('stat-duplicates-count').innerText = audit.duplicateCandidates.length + '건';
+      document.getElementById('stat-forbidden-count').innerText = audit.invalidEdges.length + '건';
+
+      // 2. Render Layers Table
+      var tbody = document.getElementById('ontology-layers-tbody');
+      tbody.innerHTML = '';
+
+      var layers = [
+        { layer: 1, name: 'CONTEXT', types: 'CONTEXT', sample: 'romantic, family, work, money, friendship, decision, belief_fate', count: 7 },
+        { layer: 2, name: 'SCENE_TRIGGER', types: 'SCENE, TRIGGER', sample: 'scene_reply_delayed, message_no_reply, mother_request', count: 7 },
+        { layer: 3, name: 'INTERPRETATION', types: 'STORY, UNKNOWN, FACT', sample: 'contract_cancelled, relationship_is_ending, bad_child', count: 6 },
+        { layer: 4, name: 'INTERNAL_SIGNAL', types: 'BODY_SIGNAL, EMOTION', sample: 'chest_drop, breath_shallow / fear, anxiety, guilt', count: 7 },
+        { layer: 5, name: 'URGE', types: 'URGE', sample: 'urge_to_check, urge_to_apologize, urge_to_freeze', count: 5 },
+        { layer: 6, name: 'BEHAVIOR', types: 'ACTION, ACTION_TYPE', sample: 'action_phone_check, action_quit_job, action_automatic_yes', count: 4 },
+        { layer: 7, name: 'RESULT_FUNCTION', types: 'RESULT, PROTECTION_FUNCTION, STRENGTH', sample: 'avoid_conflict, care_for_others, prudence', count: 5 },
+        { layer: 8, name: 'ALTERNATIVE_ACTION', types: 'TEN_PERCENT_ACTION', sample: 'pause_10sec, write_fact_story, postpone_decision', count: 3 },
+        { layer: 9, name: 'BOOK_CODE_CONCEPT', types: 'BOOK, BOOK_CONCEPT, CODE_CONCEPT', sample: '다크코드, 뉴럴코드, 제로포인트, fact_story_unknown', count: 10 },
+        { layer: 10, name: 'SAFETY', types: 'SAFETY_TOPIC', sample: 'safety.self_harm, safety.violence, safety.stalking', count: 4 }
+      ];
+
+      layers.forEach(function(l) {
+        var tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition';
+        tr.innerHTML = `
+          <td class="py-2.5 px-3 font-black text-slate-800">Layer ${l.layer}</td>
+          <td class="py-2.5 px-3 font-semibold text-slate-700">${l.name} <span class="text-[10px] text-slate-400">(${l.types})</span></td>
+          <td class="py-2.5 px-3 text-slate-600 font-mono text-[11px]">${l.sample}</td>
+          <td class="py-2.5 px-3 font-bold text-slate-800">${l.count}개</td>
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-800 border border-emerald-200">CANONICAL</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // 3. Render Select Options
+      var srcSelect = document.getElementById('merge-source-select');
+      var tgtSelect = document.getElementById('merge-target-select');
+      srcSelect.innerHTML = '';
+      tgtSelect.innerHTML = '';
+
+      Object.keys(gov.concepts).forEach(function(cid) {
+        var c = gov.concepts[cid];
+        var opt1 = document.createElement('option');
+        opt1.value = c.id;
+        opt1.innerText = `[L${c.layer} ${c.type}] ${c.label}`;
+        srcSelect.appendChild(opt1);
+
+        var opt2 = document.createElement('option');
+        opt2.value = c.id;
+        opt2.innerText = `[L${c.layer} ${c.type}] ${c.label}`;
+        tgtSelect.appendChild(opt2);
+      });
+
+      // 4. Render Snapshots
+      renderSnapshots();
+    }
+
+    function renderSnapshots() {
+      var gov = window.MyungSimOntologyGovernance;
+      var tbody = document.getElementById('snapshots-tbody');
+      tbody.innerHTML = '';
+
+      Object.keys(gov.snapshots).forEach(function(sid) {
+        var s = gov.snapshots[sid];
+        var tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition';
+        tr.innerHTML = `
+          <td class="py-2.5 px-3 font-mono font-bold text-slate-700">${s.id}</td>
+          <td class="py-2.5 px-3 text-slate-800 font-medium">${s.label} <span class="text-[10px] text-slate-400">(${s.description})</span></td>
+          <td class="py-2.5 px-3 text-slate-500">${s.createdAt.split('T')[0]}</td>
+          <td class="py-2.5 px-3 font-bold text-slate-700">${s.conceptsCount}개</td>
+          <td class="py-2.5 px-3">
+            <button onclick="restoreSnapshot('${s.id}')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-900 text-white rounded text-[10px] font-bold transition">
+              롤백 (Rollback)
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function runMergeDryRun() {
+      var gov = window.MyungSimOntologyGovernance;
+      var kg = window.MyungSimKnowledgeGraph;
+      var srcId = document.getElementById('merge-source-select').value;
+      var tgtId = document.getElementById('merge-target-select').value;
+
+      var answers = [
+        document.getElementById('q1-check').checked,
+        document.getElementById('q2-check').checked,
+        document.getElementById('q3-check').checked,
+        document.getElementById('q4-check').checked,
+        document.getElementById('q5-check').checked,
+        document.getElementById('q6-check').checked
+      ];
+
+      var res = gov.dryRunMerge(srcId, tgtId, answers, kg);
+      var badge = document.getElementById('dry-run-status-badge');
+      var out = document.getElementById('dry-run-output');
+
+      if (res.canMerge) {
+        badge.innerText = 'APPROVED (병합 가능)';
+        badge.className = 'text-[10px] font-bold text-emerald-400';
+        out.innerText = `[DRY RUN PASS]
+- Source Concept: ${res.sourceId}
+- Target Concept: ${res.targetId}
+- Affected Cards: ${res.affectedCards}개
+- Affected Edges: ${res.affectedEdges}개
+- 6 Questions: 6/6 All Agreed
+- 5 Separation Principles: PASSED
+- Result: 병합을 안전하게 실행할 수 있습니다.`;
+      } else {
+        badge.innerText = 'REJECTED (병합 반려)';
+        badge.className = 'text-[10px] font-bold text-rose-400';
+        out.innerText = `[DRY RUN REJECTED]
+- Violation Reason: ${res.error || res.warnings.join(', ')}
+- Failed Questions: ${res.failedQuestions ? res.failedQuestions.join(', ') : 'None'}
+- Governance Policy: 온톨로지 계층 교차 및 불일치 병합은 원천 차단됩니다.`;
+      }
+    }
+
+    function executeMerge() {
+      var gov = window.MyungSimOntologyGovernance;
+      var kg = window.MyungSimKnowledgeGraph;
+      var srcId = document.getElementById('merge-source-select').value;
+      var tgtId = document.getElementById('merge-target-select').value;
+
+      var answers = [
+        document.getElementById('q1-check').checked,
+        document.getElementById('q2-check').checked,
+        document.getElementById('q3-check').checked,
+        document.getElementById('q4-check').checked,
+        document.getElementById('q5-check').checked,
+        document.getElementById('q6-check').checked
+      ];
+
+      try {
+        gov.mergeConcepts(srcId, tgtId, answers, kg);
+        alert('개념 병합이 완료되었습니다. 안전 스냅샷이 생성되었습니다.');
+        renderDashboard();
+      } catch (e) {
+        alert('병합 실패: ' + e.message);
+      }
+    }
+
+    function takeManualSnapshot() {
+      var gov = window.MyungSimOntologyGovernance;
+      var label = prompt('스냅샷 라벨을 입력하세요:', 'manual-snapshot-' + Date.now());
+      if (label) {
+        gov.createSnapshot(label, '관리자 수동 생성 스냅샷');
+        renderDashboard();
+      }
+    }
+
+    function restoreSnapshot(sid) {
+      if (confirm('정말로 이 스냅샷으로 롤백하시겠습니까? 현재 온톨로지가 해당 시점으로 복구됩니다.')) {
+        var gov = window.MyungSimOntologyGovernance;
+        gov.rollback(sid);
+        alert('롤백 완료되었습니다.');
+        renderDashboard();
+      }
+    }
+  </script>
+</body>
+</html>

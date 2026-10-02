@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM CARD CANDIDATE EDITOR | 명심카드 후보 편집기</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+    .status-duplicate { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+    .status-unique { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-32">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <a href="/admin/content-expansion.html" class="text-xs font-bold text-slate-600 hover:text-slate-900">콘텐츠 확장</a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-[#0F6B5B] flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+          <span>✍️</span>
+          <span>신규 카드 후보 에디터 (Candidate Editor)</span>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs">
+        <a href="/admin/content-gaps.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>🔍 Content Gaps</span>
+        </a>
+        <a href="/admin/content-expansion.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>📊 종합 대시보드</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- Left 2 Cols: Form Editor (SCENE First Order) -->
+    <div class="lg:col-span-2 space-y-6">
+
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-5">
+        <div>
+          <div class="text-[10px] font-black text-[#0F6B5B] uppercase tracking-wider mb-1">EDITORIAL ORDER: SCENE → QUESTION → SODA → SCAN → ACTION → TITLE</div>
+          <h2 class="text-base font-black text-slate-900">새 카드 후보 작성 (Candidate Form)</h2>
+          <p class="text-xs text-slate-500">카드의 제목보다 일상에서 사용자가 겪는 '구체적 장면'을 가장 먼저 작성합니다.</p>
+        </div>
+
+        <!-- 1. SCENE (Mandatory 1st step) -->
+        <div>
+          <label class="block text-xs font-black text-slate-800 mb-1">
+            <span>1. SCENE (구체적 장면)</span>
+            <span class="text-red-500">*</span>
+          </label>
+          <textarea id="cand-scene" rows="2" oninput="runLiveQA()" class="w-full p-3 rounded-xl border border-slate-200 text-xs outline-none focus:border-[#0F6B5B]" placeholder="예: 친구에게 서운한 일이 있었는데, 말하면 손절당하거나 관계가 깨질까 봐 겉으로는 웃으며 참음."></textarea>
+          <div class="text-[10px] text-slate-400 mt-1">상상 가능한 일상의 단일 장면을 서술하세요. (추상적 진단어 배제)</div>
+        </div>
+
+        <!-- 2. USER QUESTION -->
+        <div>
+          <label class="block text-xs font-black text-slate-800 mb-1">
+            <span>2. USER QUESTION (실제 사용자가 검색할 한국어 질문)</span>
+            <span class="text-red-500">*</span>
+          </label>
+          <input type="text" id="cand-question" oninput="runLiveQA()" class="w-full p-2.5 rounded-xl border border-slate-200 text-xs outline-none focus:border-[#0F6B5B]" placeholder="예: 친구한테 서운한데 말하면 관계가 끝날까봐 못 말하겠어요." />
+          <div class="text-[10px] text-slate-400 mt-1">진단어(회피형, 유리멘탈 등)를 피하고 일상적인 대화체를 사용하세요.</div>
+        </div>
+
+        <!-- 3. SODA ANSWER / INSIGHT -->
+        <div>
+          <label class="block text-xs font-black text-slate-800 mb-1">
+            <span>3. SODA INSIGHT (1~3문장 관점 전환)</span>
+            <span class="text-red-500">*</span>
+          </label>
+          <textarea id="cand-soda" rows="2" oninput="runLiveQA()" class="w-full p-3 rounded-xl border border-slate-200 text-xs outline-none focus:border-[#0F6B5B]" placeholder="예: 서운함을 느끼는 사실과 관계 전체를 끝내야 하는 것은 같지 않습니다. 말하지 않고 혼자 결론내리는 것이 오히려 관계를 더 빨리 지치게 만들 수 있습니다."></textarea>
+          <div class="text-[10px] text-slate-400 mt-1">근거 없는 어린 시절 원인 추론이나 운세성 단정을 금지합니다.</div>
+        </div>
+
+        <!-- 4. SCAN & SYNC & SHIFT -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-black text-slate-800 mb-1">SCAN 질문 (FACT vs STORY 구분)</label>
+            <input type="text" id="cand-scan" class="w-full p-2.5 rounded-xl border border-slate-200 text-xs" placeholder="예: 실제로 상대가 한 행동과 내 머릿속 예상은 어떻게 다른가요?" />
+          </div>
+          <div>
+            <label class="block text-xs font-black text-slate-800 mb-1">SYNC 문장 (반응 수용)</label>
+            <input type="text" id="cand-sync" class="w-full p-2.5 rounded-xl border border-slate-200 text-xs" placeholder="예: 관계를 잃고 싶지 않아서 조심스러운 마음이 먼저 드는구나." />
+          </div>
+        </div>
+
+        <!-- 5. 10% ACTION (Safety check required) -->
+        <div>
+          <label class="block text-xs font-black text-slate-800 mb-1">
+            <span>5. 10% ACTION (오늘 가능한 최소 행동)</span>
+            <span class="text-red-500">*</span>
+          </label>
+          <input type="text" id="cand-action" oninput="runLiveQA()" class="w-full p-2.5 rounded-xl border border-slate-200 text-xs outline-none focus:border-[#0F6B5B]" placeholder="예: 서운했던 구체적 상황 1가지만 메모장에 사실 위주로 적어본다." />
+          <div class="text-[10px] text-slate-400 mt-1">되돌릴 수 없는 고위험 결단(퇴사, 절교, 손절, 이혼 등)은 엄격히 차단됩니다.</div>
+        </div>
+
+        <!-- 6. CARD TITLE & METADATA -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-slate-100">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">카드 가제 (Working Title)</label>
+            <input type="text" id="cand-title" class="w-full p-2 rounded-lg border border-slate-200 text-xs" placeholder="예: 서운함 대기 모드" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">편성 제안 팩 (Pack)</label>
+            <select id="cand-pack" class="w-full p-2 rounded-lg border border-slate-200 text-xs">
+              <option value="relationship-anxiety-01">PACK 01: 관계·불안</option>
+              <option value="boundary-family-05">PACK 05: 대인·경계</option>
+              <option value="work-power-07">PACK 07: 업무·조직</option>
+              <option value="perfection-start-04">PACK 04: 완벽주의</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">책 근거 (Book Grounding)</label>
+            <select id="cand-book" class="w-full p-2 rounded-lg border border-slate-200 text-xs">
+              <option value="다크 코드">다크 코드 (Trigger/Story/Unknown)</option>
+              <option value="뉴럴 코드">뉴럴 코드 (10% 작은 행동/새 경험)</option>
+              <option value="제로 포인트">제로 포인트 (선택공간/기준점)</option>
+              <option value="나는 믿는다 그러나 갇히지 않는다">나는 믿는다 (믿음과 선택)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-2 pt-4">
+          <button onclick="saveCandidate()" class="px-5 py-2.5 rounded-xl bg-[#0F6B5B] text-white text-xs font-black hover:bg-[#0c5649] transition shadow-xs">
+            💾 후보 카드 저장 (Save Candidate)
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right 1 Col: Live QA Feedback & Duplication Inspector -->
+    <div class="space-y-6">
+
+      <!-- Live QA Feedback Box -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs space-y-3">
+        <h3 class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+          <span>🩺</span>
+          <span>실시간 언어 및 안전 QA 검사</span>
+        </h3>
+
+        <div id="qa-feedback-container" class="space-y-2">
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-500">
+            필드를 입력하면 실시간으로 진단어, 고위험 액션, 운세 표현 여부를 검사합니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplication Inspector Box -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+            <span>🔍</span>
+            <span>중복 검사 (Duplication Engine)</span>
+          </h3>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded status-unique" id="dup-badge">UNIQUE</span>
+        </div>
+
+        <p class="text-[11px] text-slate-500 leading-normal">
+          AI 없이 200개 기존 카드의 태그 및 질문 유사도를 분석하여 유사 카드를 표시합니다.
+        </p>
+
+        <div class="space-y-2 text-xs" id="closest-cards-container">
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-400">
+            입력된 질문과 유사한 기존 카드가 여기에 표시됩니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Synthetic Routing Examples -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs space-y-2.5">
+        <h3 class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+          <span>🧪</span>
+          <span>합성 테스트 문항 (Synthetic Tests)</span>
+        </h3>
+        <p class="text-[11px] text-slate-500">새 카드의 Router Golden Test용 합성 발화 미리보기</p>
+        <ul class="text-[11px] text-slate-600 space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <li><strong>EASY:</strong> "친구한테 서운함을 말 못하겠어요"</li>
+          <li><strong>MEDIUM:</strong> "말하면 손절당할까봐 그냥 웃어 넘겨요"</li>
+          <li><strong>HARD:</strong> "내가 나쁜 애 될까봐 항상 먼저 미안하다 함"</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="/js/mind-cards-data.js"></script>
+  <script src="/js/myungsim-content-expansion.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.MyungSimContentExpansion) {
+        window.MyungSimContentExpansion.init();
+      }
+
+      // If gapId in url
+      const urlParams = new URLSearchParams(window.location.search);
+      const gapId = urlParams.get('gapId');
+      if (gapId && window.MyungSimContentExpansion) {
+        const gaps = window.MyungSimContentExpansion.getGaps();
+        const target = gaps.find(g => g.gapId === gapId);
+        if (target) {
+          document.getElementById('cand-scene').value = target.generalizedSituation || '';
+          document.getElementById('cand-question').value = target.observedKeyword ? target.observedKeyword + ' 때문에 고민입니다.' : '';
+          runLiveQA();
+        }
+      }
+    });
+
+    function runLiveQA() {
+      if (!window.MyungSimContentExpansion) return;
+
+      const cardData = {
+        scene: document.getElementById('cand-scene').value,
+        userQuestion: document.getElementById('cand-question').value,
+        sodaInsight: document.getElementById('cand-soda').value,
+        tenPercentAction: document.getElementById('cand-action').value
+      };
+
+      const qa = window.MyungSimContentExpansion.validateContentQuality(cardData);
+      const dup = window.MyungSimContentExpansion.checkDuplication({
+        question: cardData.userQuestion,
+        routeTags: ['관계', '친구', '손절', '서운함']
+      });
+
+      // Render QA
+      const qaContainer = document.getElementById('qa-feedback-container');
+      if (qa.errors.length === 0 && qa.warnings.length === 0) {
+        qaContainer.innerHTML = `
+          <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-800 font-bold">
+            ✓ 언어 및 안전 QA 기준 통과 (오류 0건)
+          </div>
+        `;
+      } else {
+        let html = '';
+        qa.errors.forEach(err => {
+          html += `<div class="p-2.5 rounded-lg bg-red-50 border border-red-200 text-[11px] text-red-800 font-bold">❌ ${err}</div>`;
+        });
+        qa.warnings.forEach(warn => {
+          html += `<div class="p-2.5 rounded-lg bg-amber-50 border border-amber-200 text-[11px] text-amber-800 font-bold">⚠️ ${warn}</div>`;
+        });
+        qaContainer.innerHTML = html;
+      }
+
+      // Render Dup
+      const dupBadge = document.getElementById('dup-badge');
+      const dupContainer = document.getElementById('closest-cards-container');
+      if (dup.isDuplicate) {
+        dupBadge.className = 'text-[10px] font-bold px-2 py-0.5 rounded status-duplicate';
+        dupBadge.textContent = `POSSIBLE_DUPLICATE (${dup.highestSimilarity}%)`;
+      } else {
+        dupBadge.className = 'text-[10px] font-bold px-2 py-0.5 rounded status-unique';
+        dupBadge.textContent = 'UNIQUE';
+      }
+
+      if (dup.closestCards && dup.closestCards.length > 0) {
+        dupContainer.innerHTML = dup.closestCards.map(c => `
+          <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex justify-between items-center text-[11px]">
+            <span class="font-bold text-slate-800">${c.cardTitle || c.cardId}</span>
+            <span class="text-slate-500">유사도 ${c.similarity}%</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    function saveCandidate() {
+      if (!window.MyungSimContentExpansion) return;
+
+      try {
+        const candidate = window.MyungSimContentExpansion.createCandidate({
+          scene: document.getElementById('cand-scene').value.trim(),
+          userQuestion: document.getElementById('cand-question').value.trim(),
+          sodaInsight: document.getElementById('cand-soda').value.trim(),
+          scanAngle: document.getElementById('cand-scan').value.trim(),
+          syncAngle: document.getElementById('cand-sync').value.trim(),
+          tenPercentAction: document.getElementById('cand-action').value.trim(),
+          workingTitle: document.getElementById('cand-title').value.trim() || '미정',
+          proposedPackId: document.getElementById('cand-pack').value,
+          bookGrounding: document.getElementById('cand-book').value
+        });
+
+        alert(`후보 카드가 성공적으로 등록되었습니다!\nID: ${candidate.candidateId}\n상태: ${candidate.status}`);
+        window.location.href = '/admin/content-expansion.html';
+      } catch (e) {
+        alert('후보 등록 실패: ' + e.message);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -195,6 +195,17 @@
     handleMindCardSearch('');
   });
 
+  // 1-Minute MyungSim Core Flow 인스턴스 전역 관리
+  let coreFlowInstance = null;
+  window.openMyungsimCoreFlow = function(initialQuery = '') {
+    if (!coreFlowInstance && window.MyungsimCoreFlow) {
+      coreFlowInstance = new window.MyungsimCoreFlow();
+    }
+    if (coreFlowInstance) {
+      coreFlowInstance.open(initialQuery);
+    }
+  };
+
   // =================================================================
   // 1. 홈 화면 입구 분리 (A. 오늘의 카드 한 장 vs B. 지금 고민이 있어요)
   // =================================================================

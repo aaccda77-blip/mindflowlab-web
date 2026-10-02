@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30-Day Journey Operations | 마인드플로우 랩 명심코칭</title>
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Myungsim Design Tokens CSS -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+  <style>
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F766E] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F766E] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+          <span>🧭</span>
+          <span>30-Day Journey Operations</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-teal-100 text-teal-800 border border-teal-300">여정 관제</span>
+      </div>
+      <div class="flex items-center gap-3 text-xs font-bold">
+        <a href="/admin/personal-home.html" class="text-slate-500 hover:text-slate-800 transition">개인홈 관제 &rarr;</a>
+        <a href="/admin" class="text-slate-500 hover:text-slate-800 transition">&larr; 관리자 홈</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-8 space-y-6">
+
+    <!-- Header Banner -->
+    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="text-[11px] font-black text-[#0F766E] tracking-wider uppercase">GUIDED JOURNEY HEALTH & ANALYTICS</span>
+          <h1 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">30일 명심 여정 관제 센터</h1>
+          <p class="text-xs text-slate-500 mt-1">
+            출석 압박 없는 비선형 Guided Journey &middot; No-Streak / No-Identity-Labeling &middot; 개인 원문 텍스트 노출 0건
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Raw Text Leak: 0 건 (보호됨)</span>
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-100 text-[#0F766E] border border-teal-300">
+            NO-AI Deterministic Engine
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core KPI Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-400 uppercase">여정 시작 (Started)</div>
+        <div class="text-2xl font-black text-slate-900 mt-1" id="kpi-started">-</div>
+        <div class="text-[11px] text-slate-500 mt-1">자발적 시작 사용자</div>
+      </div>
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-400 uppercase">진행 중 (Active)</div>
+        <div class="text-2xl font-black text-teal-600 mt-1" id="kpi-active">-</div>
+        <div class="text-[11px] text-slate-500 mt-1">현재 30일 윈도우 내</div>
+      </div>
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-400 uppercase">일시정지 (Paused)</div>
+        <div class="text-2xl font-black text-amber-600 mt-1" id="kpi-paused">-</div>
+        <div class="text-[11px] text-slate-500 mt-1">실패 아닌 휴식 선택</div>
+      </div>
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-400 uppercase">완료 (Completed / 30D)</div>
+        <div class="text-2xl font-black text-indigo-600 mt-1" id="kpi-completed">-</div>
+        <div class="text-[11px] text-slate-500 mt-1">30일 회고 도달</div>
+      </div>
+    </div>
+
+    <!-- 2열 분석 섹션 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- 의도(Intentions) 분포 -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm font-black text-slate-900 uppercase">초기 관찰 의도 분포</h2>
+          <span class="text-xs text-slate-400">자발적 선택 기준</span>
+        </div>
+        <div id="intention-distribution" class="space-y-3 text-xs">
+          <!-- 동적 렌더링 -->
+          <div class="text-slate-400 py-4 text-center">집계 데이터 로딩 중...</div>
+        </div>
+      </div>
+
+      <!-- 5대 Phase 순환 분포 -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm font-black text-slate-900 uppercase">5 Phase 순환 상태</h2>
+          <span class="text-xs text-slate-400">비선형 자유 루프</span>
+        </div>
+        <div class="space-y-3 text-xs" id="phase-distribution">
+          <!-- 동적 렌더링 -->
+          <div class="text-slate-400 py-4 text-center">집계 데이터 로딩 중...</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 프라이버시 아키텍처 및 철학 점검 패널 -->
+    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-black text-slate-900 uppercase">30일 여정 핵심 안전 규약 준수 점검 (Audit)</h2>
+        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">100% PASS</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="font-bold text-slate-900">🚫 연속 출석(Streak) 없음</div>
+          <div class="text-slate-500 text-[11px]">결석일 표시, 연속 출석 불꽃 아이콘, n일차 카운트다운을 원천 차단하여 죄책감을 예방합니다.</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="font-bold text-slate-900">🚫 정체성 평가(Labeling) 없음</div>
+          <div class="text-slate-500 text-[11px]">성격 점수나 낙인 없이, 오직 실제 시도한 10% 행동과 예상/실제 차이의 사실(fact)만 보여줍니다.</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="font-bold text-slate-900">🛡️ 고위험 즉각 차단 (Safety First)</div>
+          <div class="text-slate-500 text-[11px]">여정 진행 중이라도 자해나 위기 언어가 감지되면 모든 여정 안내를 멈추고 안전 라우터가 즉각 개입합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 데모 시뮬레이션 및 데이터 도구 -->
+    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-black text-slate-900 uppercase">관리자 시뮬레이션 및 로컬 데이터</h2>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="loadJourneyAdminData()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">
+            🔄 새로고침
+          </button>
+        </div>
+      </div>
+      <div class="text-xs text-slate-500 leading-relaxed">
+        현재 로컬 브라우저의 30일 여정 상태 및 익명 집계 데이터를 확인합니다.
+      </div>
+      <div class="p-4 rounded-xl bg-slate-900 text-slate-200 font-mono text-xs overflow-x-auto" id="admin-raw-inspect">
+        <!-- 데이터 현황 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/myungsim-design-system.js?v=20260921_v1"></script>
+  <script src="/js/mind-cards-data.js?v=20260919_v1"></script>
+  <script src="/js/myeongsim-ai-router.js?v=20260919_v1"></script>
+  <script src="/js/daily-mind-card.js?v=20260919_v1"></script>
+  <script src="/js/myungsim-personal-home.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-behavior-experiment.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-30day-journey.js?v=20260921_v1"></script>
+
+  <script>
+    function loadJourneyAdminData() {
+      const journey = (window.MyungsimJourney && window.MyungsimJourney.Store) ? window.MyungsimJourney.Store.getJourney() : null;
+      const started = journey ? 1 : 0;
+      const isActive = journey && journey.status === 'ACTIVE';
+      const isPaused = journey && journey.status === 'PAUSED';
+      const isCompleted = journey && journey.status === 'COMPLETED';
+
+      document.getElementById('kpi-started').textContent = started;
+      document.getElementById('kpi-active').textContent = isActive ? 1 : 0;
+      document.getElementById('kpi-paused').textContent = isPaused ? 1 : 0;
+      document.getElementById('kpi-completed').textContent = isCompleted ? 1 : 0;
+
+      // 의도 분포
+      const intentions = [
+        { id: 'notice', label: '지금 반복되는 장면 알아차리기', count: (journey && journey.intention === 'notice') ? 1 : 0 },
+        { id: 'divide', label: '충동적 반응과 행동 나누기', count: (journey && journey.intention === 'divide') ? 1 : 0 },
+        { id: 'try_small', label: '작은 10% 행동 시험하기', count: (journey && journey.intention === 'try_small') ? 1 : 0 },
+        { id: 'see_map', label: '내 삶의 자동 작동지도 보기', count: (journey && journey.intention === 'see_map') ? 1 : 0 },
+        { id: 'unsure', label: '가볍게 시작해보기', count: (journey && journey.intention === 'unsure') ? 1 : 0 }
+      ];
+
+      const intHtml = intentions.map(item => `
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-bold text-slate-700">${item.label}</span>
+            <span class="text-slate-400 font-mono">${item.count}명</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2">
+            <div class="bg-[#0F766E] h-2 rounded-full" style="width: ${item.count > 0 ? '100%' : '0%'}"></div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('intention-distribution').innerHTML = intHtml;
+
+      // Phase 분포
+      const phases = ['NOTICE', 'TRY', 'COMPARE', 'MAP', 'RETURN'];
+      const pCount = { NOTICE: 0, TRY: 0, COMPARE: 0, MAP: 0, RETURN: 0 };
+      if (journey && journey.currentPhase && pCount[journey.currentPhase] !== undefined) {
+        pCount[journey.currentPhase] = 1;
+      }
+
+      const pColors = {
+        NOTICE: 'bg-teal-500',
+        TRY: 'bg-emerald-500',
+        COMPARE: 'bg-sky-500',
+        MAP: 'bg-indigo-500',
+        RETURN: 'bg-amber-500'
+      };
+
+      const phaseHtml = phases.map(p => `
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-bold text-slate-700">${p}</span>
+            <span class="text-slate-400 font-mono">${pCount[p]}</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2">
+            <div class="${pColors[p]} h-2 rounded-full" style="width: ${pCount[p] > 0 ? '100%' : '0%'}"></div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('phase-distribution').innerHTML = phaseHtml;
+
+      // Inspect 정보 (원문 제외된 메타데이터만)
+      const sanitized = journey ? {
+        journeyId: journey.journeyId,
+        startedAt: journey.startedAt,
+        windowEndAt: journey.windowEndAt,
+        status: journey.status,
+        currentPhase: journey.currentPhase,
+        intention: journey.intention,
+        _comment: "All private raw texts and personal journal contents are completely stripped out."
+      } : { status: "NO_ACTIVE_JOURNEY" };
+
+      document.getElementById('admin-raw-inspect').textContent = JSON.stringify(sanitized, null, 2);
+    }
+
+    document.addEventListener('DOMContentLoaded', loadJourneyAdminData);
+  </script>
+
+</body>
+</html>

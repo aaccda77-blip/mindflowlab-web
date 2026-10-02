@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나의 개인 홈 | 마인드플로우 랩 명심코칭</title>
+  
+  <!-- 개인 프라이버시 보호 (검색 수집 차단) -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="referrer" content="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+  <style>
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+    .bottom-nav-item.active {
+      color: #0f766e;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-24">
+
+  <!-- Top Navigation Bar -->
+  <header class="w-full bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <!-- 브랜드 로고 -->
+      <a href="/my/home.html" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F766E] transition">
+        <span class="w-7 h-7 rounded-xl bg-[#0F766E] text-white flex items-center justify-center font-black text-xs shadow-xs">🌱</span>
+        <span class="tracking-tight">명심 개인 홈</span>
+      </a>
+
+      <!-- 사용자 프로필 & 로그아웃 컨트롤러 -->
+      <div id="mf-home-header-user-badge">
+        <!-- 자바스크립트로 동적 렌더링 -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container (모바일 390px 기준 최적 레이아웃) -->
+  <main class="max-w-xl mx-auto px-4 sm:px-6 py-6 space-y-5">
+
+    <!-- SECTION 1: 오늘 무엇이 마음에 걸리나요? (Today's Scene & Primary CTA) -->
+    <section id="sec-today-scene">
+      <!-- 동적 렌더링 -->
+    </section>
+
+    <!-- SECTION 2: 지난번 선택 (Active Experiment Follow-up) -->
+    <section id="sec-past-choice" style="display:none;">
+      <!-- 동적 렌더링 -->
+    </section>
+
+    <!-- SECTION 3: 최근 발견 (Recent Discovery) -->
+    <section id="sec-recent-discovery">
+      <!-- 동적 렌더링 -->
+    </section>
+
+    <!-- SECTION 4: 내 작동지도 프리뷰 (Working Map Preview) -->
+    <section id="sec-working-map">
+      <!-- 동적 렌더링 -->
+    </section>
+
+    <!-- SECTION 5: 오늘의 명심카드 (Daily Card) -->
+    <section id="sec-daily-card">
+      <!-- 동적 렌더링 -->
+    </section>
+
+    <!-- SECTION 6: 최근 기록 (Recent History) -->
+    <section id="sec-recent-history">
+      <!-- 동적 렌더링 -->
+    </section>
+
+    <!-- SECTION 7: 책 / 앱 Deep Dive -->
+    <section id="sec-deep-dive">
+      <!-- 동적 렌더링 -->
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation Bar (모바일 필수 IA: HOME / DISCOVER / HISTORY / MY MAP) -->
+  <nav class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 py-2">
+    <div class="max-w-xl mx-auto px-4 flex items-center justify-around text-center text-[10px] font-bold text-slate-500">
+      <a href="/my/home.html" id="bnav-home" class="bottom-nav-item active flex flex-col items-center gap-0.5 py-1">
+        <span class="text-base">🏡</span>
+        <span>홈</span>
+      </a>
+      <a href="/library" id="bnav-discover" class="bottom-nav-item flex flex-col items-center gap-0.5 py-1 hover:text-[#0F766E] transition">
+        <span class="text-base">🔍</span>
+        <span>질문탐색</span>
+      </a>
+      <a href="/my/experiments.html" id="bnav-history" class="bottom-nav-item flex flex-col items-center gap-0.5 py-1 hover:text-[#0F766E] transition">
+        <span class="text-base">🌱</span>
+        <span>행동실험</span>
+      </a>
+      <a href="/my/working-map.html" id="bnav-map" class="bottom-nav-item flex flex-col items-center gap-0.5 py-1 hover:text-[#0F766E] transition">
+        <span class="text-base">🗺️</span>
+        <span>작동지도</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="/js/mind-cards-data.js?v=20260919_v1"></script>
+  <script src="/js/myeongsim-ai-router.js?v=20260919_v1"></script>
+  <script src="/js/daily-mind-card.js?v=20260919_v1"></script>
+  <script src="/js/myungsim-personal-home.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-behavior-experiment.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-core-flow.js?v=20260920_v1"></script>
+
+</body>
+</html>

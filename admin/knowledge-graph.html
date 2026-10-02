@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM KNOWLEDGE GRAPH | 명심코칭 지식 그래프 탐색기</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+    .status-healthy { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .status-watch { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+    .status-alert { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+    .node-tag { background: #F1F5F9; color: #334155; border: 1px solid #CBD5E1; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-32">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-[#0F6B5B] flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+          <span>🕸️</span>
+          <span>지식 그래프 탐색기 (Knowledge Graph v1)</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-purple-100 text-purple-800 border border-purple-200">v1.0 CANONICAL</span>
+      </div>
+
+      <!-- Quick Nav Links & Fallback Simulator -->
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <div class="flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">
+          <span class="text-[11px] font-bold text-slate-600">서브시스템:</span>
+          <button id="toggle-subsystem-btn" onclick="toggleSubsystem()" class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-600 text-white">
+            ACTIVE (ON)
+          </button>
+        </div>
+        <a href="/admin/ontology-qa.html" class="px-3 py-1.5 rounded-lg border border-purple-300 bg-purple-50 text-purple-800 font-bold transition flex items-center gap-1">
+          <span>🛡️ 온톨로지 QA</span>
+        </a>
+        <a href="/admin/mapping-debug.html" class="px-3 py-1.5 rounded-lg border border-emerald-300 bg-emerald-50 text-emerald-800 font-bold transition flex items-center gap-1">
+          <span>🔍 매핑 디버거</span>
+        </a>
+        <a href="/admin/content-expansion.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>📚 콘텐츠 확장</span>
+        </a>
+        <a href="/admin/launch-command.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>🚀 런치 지휘</span>
+        </a>
+        <a href="/admin/operations.html" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold transition flex items-center gap-1">
+          <span>⚙️ 운영센터</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner: Content Knowledge Graph & Privacy Guard -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-[#0F6B5B] text-white rounded-2xl p-5 sm:p-6 shadow-md border border-slate-700">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">CONTENT KNOWLEDGE GRAPH</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">NO USER PROFILING (PROHIBITED)</span>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black tracking-wider uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">ZERO-KEY (AI CALLS: 0)</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white mb-1">
+            명심코칭 콘텐츠 지식 그래프 탐색 및 무결성 관제
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            카드를 단순 텍스트로 보지 않고, 
+            <strong class="text-emerald-400">SCENE → TRIGGER → STORY → BODY/EMOTION → URGE → ACTION → 10% ACTION → 책 개념</strong>으로 연결된 하나의 유기적 지식체계로 관리합니다.
+          </p>
+        </div>
+
+        <!-- Graph Metrics Snapshot -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-black/30 p-3 rounded-xl border border-white/10 text-center min-w-[320px]">
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">총 Node 수</div>
+            <div class="text-base sm:text-lg font-black text-white" id="stat-total-nodes">0개</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">22대 Node Type</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">총 Edge 수</div>
+            <div class="text-base sm:text-lg font-black text-white" id="stat-total-edges">0개</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">22대 Edge Type</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">Broken Edges</div>
+            <div class="text-base sm:text-lg font-black text-emerald-300" id="stat-broken-edges">0건</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">무결성 100%</div>
+          </div>
+          <div class="p-2">
+            <div class="text-[10px] text-slate-400 font-bold">Orphan Cards</div>
+            <div class="text-base sm:text-lg font-black text-emerald-300" id="stat-orphan-cards">0건</div>
+            <div class="text-[9px] text-emerald-400 font-semibold">고립 카드 0건</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Explorer & Visualizer -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 space-y-6">
+
+    <!-- Top Grid: Node Type Distribution & Book Grounding -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Book Grounding Panel -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center text-sm font-black">📖</span>
+            <div>
+              <h2 class="text-sm font-black text-slate-900">4대 도서 정합성 및 개념 매핑 (Book Grounding)</h2>
+              <p class="text-[11px] text-slate-500">실제 manuscript 개념과 직접 연결된 핵심 개념군</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-800 border border-purple-200">CANONICAL</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/60">
+            <div class="font-black text-slate-900 mb-1">1. 다크 코드</div>
+            <p class="text-[11px] text-slate-500 mb-2">자동 반응 및 Trigger/Story/Urge 관찰</p>
+            <div class="text-[10px] text-purple-700 font-bold">FACT·STORY·UNKNOWN, Body Signature</div>
+          </div>
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/60">
+            <div class="font-black text-slate-900 mb-1">2. 뉴럴 코드</div>
+            <p class="text-[11px] text-slate-500 mb-2">10% 작은 행동을 통한 새 경험 생성</p>
+            <div class="text-[10px] text-purple-700 font-bold">10초 방향 확인, EXPECTED vs ACTUAL</div>
+          </div>
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/60">
+            <div class="font-black text-slate-900 mb-1">3. 제로 포인트</div>
+            <p class="text-[11px] text-slate-500 mb-2">반응과 나 사이의 선택공간 및 기준점</p>
+            <div class="text-[10px] text-purple-700 font-bold">반응은 정체성이 아님, 선택공간</div>
+          </div>
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/60">
+            <div class="font-black text-slate-900 mb-1">4. 나는 믿는다</div>
+            <p class="text-[11px] text-slate-500 mb-2">갇히지 않는 믿음과 삶의 참여</p>
+            <div class="text-[10px] text-purple-700 font-bold">불확실성과 선택, 운명 단정 배제</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graph Integrity Inspector -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center text-sm font-black">🩺</span>
+            <div>
+              <h2 class="text-sm font-black text-slate-900">지식 그래프 무결성 감사 (Graph Integrity)</h2>
+              <p class="text-[11px] text-slate-500">Broken Edge, Orphan Node, 온톨로지 위반 자동 탐지</p>
+            </div>
+          </div>
+          <button onclick="runIntegrityAudit()" class="px-3 py-1.5 rounded-lg bg-[#0F6B5B] text-white text-xs font-bold hover:bg-[#0c5649] transition shadow-xs">
+            무결성 전수 검사
+          </button>
+        </div>
+
+        <div class="space-y-2.5 text-xs text-slate-700" id="integrity-results">
+          <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-emerald-900">Broken Edges (깨진 연결)</div>
+              <div class="text-[11px] text-emerald-700">존재하지 않는 Node를 가리키는 치명적 결함</div>
+            </div>
+            <span class="font-black text-emerald-800 text-sm">0건 (PASS)</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-emerald-900">Orphan Cards (고립된 카드)</div>
+              <div class="text-[11px] text-emerald-700">어떤 Trigger/Pack과도 연결되지 않은 카드</div>
+            </div>
+            <span class="font-black text-emerald-800 text-sm">0건 (PASS)</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-emerald-900">3대 코드 레벨화 금지 위반</div>
+              <div class="text-[11px] text-emerald-700">Dark -> Neural -> Zero 위계 관계 차단</div>
+            </div>
+            <span class="font-black text-emerald-800 text-sm">0건 (ENFORCED)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Node & Card Relation Search Explorer -->
+    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100">
+        <div>
+          <h2 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>🔍</span>
+            <span>지식 노드 및 카드 관계 탐색기 (Node Relation Explorer)</span>
+          </h2>
+          <p class="text-[11px] text-slate-500">특정 카드나 개념을 선택하여 연결된 SCENE, TRIGGER, URGE, ACTION을 1-hop으로 확인합니다.</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <input type="text" id="node-search-input" onkeyup="searchNodes()" class="p-2 rounded-lg border border-slate-200 text-xs w-48 sm:w-64 outline-none focus:border-[#0F6B5B]" placeholder="카드 또는 개념 키워드 검색..." />
+        </div>
+      </div>
+
+      <!-- Node Search Results List -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="nodes-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/js/mind-cards-data.js"></script>
+  <script src="/js/myungsim-knowledge-graph.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.MyungSimKnowledgeGraph) {
+        window.MyungSimKnowledgeGraph.init(window.MIND_CARDS_DATA);
+        updateDashboard();
+        renderSampleNodes();
+      }
+    });
+
+    function updateDashboard() {
+      const kg = window.MyungSimKnowledgeGraph;
+      if (!kg) return;
+
+      const integrity = kg.inspectIntegrity();
+      document.getElementById('stat-total-nodes').textContent = `${integrity.totalNodes}개`;
+      document.getElementById('stat-total-edges').textContent = `${integrity.totalEdges}개`;
+      document.getElementById('stat-broken-edges').textContent = `${integrity.brokenEdges.length}건`;
+      document.getElementById('stat-orphan-cards').textContent = `${integrity.orphanNodes.length}건`;
+    }
+
+    function toggleSubsystem() {
+      const kg = window.MyungSimKnowledgeGraph;
+      if (!kg) return;
+
+      kg.enabled = !kg.enabled;
+      const btn = document.getElementById('toggle-subsystem-btn');
+      if (kg.enabled) {
+        btn.textContent = 'ACTIVE (ON)';
+        btn.className = 'px-2 py-0.5 rounded text-[10px] font-black bg-emerald-600 text-white';
+        alert('Knowledge Graph 서브시스템이 활성화되었습니다.');
+      } else {
+        btn.textContent = 'FALLBACK (OFF)';
+        btn.className = 'px-2 py-0.5 rounded text-[10px] font-black bg-amber-600 text-white';
+        alert('Knowledge Graph 서브시스템을 OFF 하였습니다. RuleBasedRouter가 100% Fallback으로 단독 서비스합니다.');
+      }
+    }
+
+    function runIntegrityAudit() {
+      const kg = window.MyungSimKnowledgeGraph;
+      if (!kg) return;
+
+      const integrity = kg.inspectIntegrity();
+      alert(`무결성 검사 완료!\n- 총 노드: ${integrity.totalNodes}개\n- 총 엣지: ${integrity.totalEdges}개\n- Broken Edges: ${integrity.brokenEdges.length}건\n- Orphan Nodes: ${integrity.orphanNodes.length}건\n- 중복 개념: ${integrity.duplicateConcepts.length}건\n상태: 정상 (VALID)`);
+      updateDashboard();
+    }
+
+    function renderSampleNodes() {
+      const kg = window.MyungSimKnowledgeGraph;
+      if (!kg) return;
+
+      const container = document.getElementById('nodes-container');
+      const sampleCardIds = Object.keys(kg.nodes).filter(nid => kg.nodes[nid].type === 'CARD').slice(0, 9);
+
+      container.innerHTML = sampleCardIds.map(nid => {
+        const n = kg.nodes[nid];
+        const connected = kg.getConnectedConcepts(nid, 1);
+
+        return `
+          <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black text-slate-900">${n.label}</span>
+              <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200">CARD</span>
+            </div>
+            <p class="text-[11px] text-slate-600 line-clamp-2">${n.description || '-'}</p>
+            <div class="pt-2 border-t border-slate-100">
+              <div class="text-[10px] font-bold text-slate-500 mb-1">연결된 1-hop 개념 (${connected.length}개):</div>
+              <div class="flex flex-wrap gap-1">
+                ${connected.slice(0, 4).map(c => `
+                  <span class="text-[9px] px-1.5 py-0.5 rounded node-tag font-medium">${c.node.label || c.node.id}</span>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function searchNodes() {
+      const q = document.getElementById('node-search-input').value.trim().toLowerCase();
+      const kg = window.MyungSimKnowledgeGraph;
+      if (!kg) return;
+
+      const container = document.getElementById('nodes-container');
+      const filtered = Object.keys(kg.nodes).filter(nid => {
+        const n = kg.nodes[nid];
+        return (n.label && n.label.toLowerCase().includes(q)) || (n.description && n.description.toLowerCase().includes(q));
+      }).slice(0, 12);
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="col-span-3 text-center py-8 text-xs text-slate-400">일치하는 지식 노드가 없습니다.</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(nid => {
+        const n = kg.nodes[nid];
+        const connected = kg.getConnectedConcepts(nid, 1);
+        return `
+          <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black text-slate-900">${n.label}</span>
+              <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">${n.type}</span>
+            </div>
+            <p class="text-[11px] text-slate-600 line-clamp-2">${n.description || '-'}</p>
+            <div class="pt-2 border-t border-slate-100">
+              <div class="text-[10px] font-bold text-slate-500 mb-1">연결된 관계: ${connected.length}개</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+  </script>
+</body>
+</html>

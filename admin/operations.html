@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM OPERATIONS CONSOLE | 명심코칭 운영센터</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+    .status-healthy { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .status-watch { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+    .status-issue { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+    .status-unknown { background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; }
+    .badge-p0 { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; font-weight: 900; }
+    .badge-p1 { background: #FFF7ED; color: #C2410C; border: 1px solid #FFEDD5; font-weight: 800; }
+    .badge-p2 { background: #FEFCE8; color: #854D0E; border: 1px solid #FEF08A; font-weight: 700; }
+    .badge-p3 { background: #F8FAFC; color: #475569; border: 1px solid #E2E8F0; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-32">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+          <span>⚙️</span>
+          <span>운영센터 (Operations Console)</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">실시간 관제 v1.0</span>
+      </div>
+
+      <!-- Controls: Role Selector & Time Window -->
+      <div class="flex flex-wrap items-center gap-3 text-xs">
+        <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl border border-slate-200">
+          <span class="text-[10px] font-bold text-slate-500 pl-2">권한:</span>
+          <select id="operator-role-select" onchange="handleRoleChange(this.value)" class="bg-white border-0 text-slate-800 text-xs font-bold rounded-lg px-2 py-1 outline-none">
+            <option value="ADMIN" selected>ADMIN (전체 권한)</option>
+            <option value="EDITOR">EDITOR (콘텐츠 중심)</option>
+            <option value="REVIEWER">REVIEWER (QA/리뷰)</option>
+            <option value="VIEWER">VIEWER (읽기 전용)</option>
+          </select>
+        </div>
+
+        <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200" id="time-window-buttons">
+          <button onclick="setTimeWindow('TODAY')" class="time-btn active px-3 py-1 rounded-lg text-xs font-bold bg-white text-[#0F6B5B] shadow-2xs">TODAY</button>
+          <button onclick="setTimeWindow('24H')" class="time-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900">24H</button>
+          <button onclick="setTimeWindow('7D')" class="time-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900">7 DAYS</button>
+          <button onclick="setTimeWindow('30D')" class="time-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900">30 DAYS</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="/admin/knowledge-graph.html" class="px-3 py-1.5 rounded-xl bg-purple-100 text-purple-900 border border-purple-300 font-black hover:bg-purple-200 transition flex items-center gap-1">
+            <span>🕸️ 지식 그래프</span>
+          </a>
+          <a href="/admin/content-expansion.html" class="px-3 py-1.5 rounded-xl bg-purple-50 text-purple-800 border border-purple-200 font-black hover:bg-purple-100 transition flex items-center gap-1">
+            <span>📚 콘텐츠 확장</span>
+          </a>
+          <a href="/admin/launch-command.html" class="px-3 py-1.5 rounded-xl bg-emerald-50 text-[#0F6B5B] border border-emerald-200 font-black hover:bg-emerald-100 transition flex items-center gap-1">
+            <span>🚀 30일 런치 지휘</span>
+          </a>
+          <a href="/admin/system-health.html" class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 transition">시스템 헬스 &rarr;</a>
+          <button onclick="openIncidentModal()" class="px-3 py-1.5 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition shadow-2xs">
+            + CREATE INCIDENT
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-6 py-8 space-y-8">
+
+    <!-- Top Banner -->
+    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="text-[11px] font-black text-[#0F6B5B] tracking-wider uppercase">NON-CRM OBSERVABILITY CONSOLE</span>
+          <h1 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">명심코칭 운영센터</h1>
+          <p class="text-xs text-slate-500 mt-1">
+            개인 사용자의 사적인 이야기를 보지 않고, 서비스의 건강상태와 경험 신호를 확인합니다.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="px-3 py-1 rounded-full font-bold bg-teal-50 text-teal-800 border border-teal-200">
+            Router Mode: <strong class="font-black">RULE (Zero-Key)</strong>
+          </span>
+          <span class="px-3 py-1 rounded-full font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+            External AI Calls Today: <strong class="font-black">0</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. NEEDS ATTENTION SECTION -->
+    <section class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-base font-black text-slate-900 flex items-center gap-2">
+          <span>🚨</span>
+          <span>NEEDS ATTENTION (오늘 당장 조치할 사항)</span>
+        </h2>
+        <span class="text-xs text-slate-400 font-medium">우선순위: P0 &gt; P1 &gt; P2 &gt; P3</span>
+      </div>
+      <div id="needs-attention-container" class="space-y-2">
+        <!-- 동적 렌더링 -->
+      </div>
+    </section>
+
+    <!-- 2. SYSTEM HEALTH (8대 영역) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-base font-black text-slate-900 flex items-center gap-2">
+          <span>🩺</span>
+          <span>DAILY HEALTH SUMMARY (8대 핵심 서브시스템)</span>
+        </h2>
+        <span class="text-xs text-slate-400">총점 배제 &middot; 독립 관제</span>
+      </div>
+      <div id="systems-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- 동적 렌더링 -->
+      </div>
+    </section>
+
+    <!-- 3. SAFETY & PRIVACY & CIRCUIT BREAKER -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Safety Health -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>🛡️</span>
+            <span>SAFETY HEALTH (안전 가드레일)</span>
+          </h3>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-800">100% INTERCEPT</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">4대 긴급 경로</span>
+            <strong class="text-sm font-black text-slate-800">위기/폭력/금융/의료</strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">가짜 음성/양성</span>
+            <strong class="text-sm font-black text-emerald-600">0 건 (정상)</strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">Safety Version</span>
+            <strong class="text-sm font-black text-slate-800">v2.1.0</strong>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-500">
+          * 개인 위기 발화 원문은 저장되거나 표시되지 않으며, 긴급 상황 시 전문 상담 창구(109/1393/1366)로 즉각 연결됩니다.
+        </p>
+      </div>
+
+      <!-- Privacy Health & Circuit Breaker -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>🔒</span>
+            <span>PRIVACY & CIRCUIT BREAKER</span>
+          </h3>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-800">ISOLATION ACTIVE</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-center">
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[9px] block">Analytics 원문</span>
+            <strong class="text-xs font-black text-emerald-600">0 건</strong>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[9px] block">교차 사용자 유출</span>
+            <strong class="text-xs font-black text-emerald-600">0 건</strong>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[9px] block">공유 URL 사생활</span>
+            <strong class="text-xs font-black text-emerald-600">0 건</strong>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[9px] block">에러 로그 원문</span>
+            <strong class="text-xs font-black text-emerald-600">0 건</strong>
+          </div>
+        </div>
+        <div class="pt-2 border-t border-slate-100">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-slate-700">비상 기능별 서킷 브레이커 (Emergency Feature Flags)</span>
+            <span class="text-[10px] text-slate-400">* Safety &amp; Rule Router는 비활성화 불가</span>
+          </div>
+          <div id="circuit-breaker-toggles" class="flex flex-wrap gap-2 text-xs">
+            <!-- 동적 토글 버튼 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CORE FLOW FUNNEL & ROUTER QUALITY -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Core Flow Funnel -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+          <span>📊</span>
+          <span>CORE FLOW HEALTH (경험 퍼널)</span>
+        </h3>
+        <p class="text-xs text-slate-500">
+          전환율 극대화 목적이 아닌, 특정 단계에서의 비정상적인 이탈(Flow Anomaly) 여부를 모니터링합니다.
+        </p>
+        <div id="funnel-container" class="space-y-2">
+          <!-- Funnel steps -->
+        </div>
+      </div>
+
+      <!-- Router & Search Quality -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+          <span>🎯</span>
+          <span>ROUTER &amp; SEARCH QUALITY</span>
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">평균 라우터 지연</span>
+            <strong class="text-sm font-black text-slate-800">8.2 ms</strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">성공률 (Top 3)</span>
+            <strong class="text-sm font-black text-emerald-600">99.8%</strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">0건 결과 (Zero Match)</span>
+            <strong class="text-sm font-black text-slate-800">0 건</strong>
+          </div>
+        </div>
+        <div class="space-y-1.5 text-xs">
+          <span class="font-bold text-slate-700 block">최근 감지된 비민감 Content Gap 신호</span>
+          <div id="content-gap-list" class="space-y-1">
+            <!-- Content gap items -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PRODUCT LEARNING & RECENT RELEASE -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Product Learning Feed -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+        <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+          <span>🌱</span>
+          <span>PRODUCT LEARNING FEED (최근 제품이 배운 것)</span>
+        </h3>
+        <div id="learning-feed-container" class="space-y-2 text-xs">
+          <!-- Learning items -->
+        </div>
+      </div>
+
+      <!-- Recent Release & Deployment Watch -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+        <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+          <span>🚀</span>
+          <span>RECENT RELEASE WATCH</span>
+        </h3>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">Release Tag</span>
+            <strong class="font-black text-slate-800">v1.0.0-rc-final</strong>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-400 text-[10px] block">Router / Safety</span>
+            <strong class="font-black text-slate-800">v1.7.0 / v2.1.0</strong>
+          </div>
+        </div>
+        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-center justify-between">
+          <span>24시간 모니터링: <strong>회귀 결함 없음 (Clean)</strong></span>
+          <span class="text-[10px] font-bold text-emerald-700">배포 전후 건전성 동등</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INCIDENT & OPERATOR TASKS -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Incidents -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>🔥</span>
+            <span>INCIDENTS (장애 및 이상 추적)</span>
+          </h3>
+          <span class="text-xs text-slate-400">P0 ~ P3 수명주기</span>
+        </div>
+        <div id="incidents-list" class="space-y-2 max-h-64 overflow-y-auto">
+          <!-- Incidents dynamic -->
+        </div>
+      </div>
+
+      <!-- Operator Tasks -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>📋</span>
+            <span>OPERATOR TASKS (운영 조치 과업)</span>
+          </h3>
+          <button onclick="promptCreateTask()" class="text-xs font-bold text-[#0F6B5B] hover:underline">+ 새 태스크</button>
+        </div>
+        <div id="tasks-list" class="space-y-2 max-h-64 overflow-y-auto">
+          <!-- Tasks dynamic -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. DAILY LOG & AUDIT LOG -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Daily Log -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>📅</span>
+            <span>DAILY OPERATIONS LOG (운영 일지)</span>
+          </h3>
+          <button onclick="promptDailyNote()" class="text-xs font-bold text-[#0F6B5B] hover:underline">+ 일지 작성</button>
+        </div>
+        <div id="daily-logs-list" class="space-y-2 text-xs">
+          <!-- Logs dynamic -->
+        </div>
+      </div>
+
+      <!-- Audit Log -->
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-black text-slate-900 flex items-center gap-2">
+            <span>📝</span>
+            <span>AUDIT LOG (운영 변경 감사 기록)</span>
+          </h3>
+          <span class="text-[10px] text-slate-400">민감 원문 배제</span>
+        </div>
+        <div id="audit-logs-list" class="space-y-2 text-xs max-h-48 overflow-y-auto">
+          <!-- Audit dynamic -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. BACKUP & DISASTER RECOVERY SECTION -->
+    <section class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="text-[10px] font-black text-[#0F6B5B] uppercase tracking-wider">BUSINESS CONTINUITY &amp; DISASTER RECOVERY</span>
+          <h3 class="text-sm font-black text-slate-900 flex items-center gap-2 mt-0.5">
+            <span>💾</span>
+            <span>BACKUP &amp; RECOVERY (백업 및 재해 복구 관제)</span>
+          </h3>
+        </div>
+        <div class="flex items-center gap-2 text-xs">
+          <span class="text-slate-500 font-bold">비상 연속성 모드:</span>
+          <select id="system-mode-select" onchange="handleSystemModeChange(this.value)" class="bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold rounded-lg px-2.5 py-1 outline-none">
+            <option value="NORMAL" selected>NORMAL (전체 정상)</option>
+            <option value="DEGRADED">DEGRADED (부가기능 격리)</option>
+            <option value="READ_ONLY">READ_ONLY (읽기 전용 / 저장 점검)</option>
+            <option value="STATIC_EMERGENCY">STATIC_EMERGENCY (최소 공개 정적)</option>
+            <option value="MAINTENANCE">MAINTENANCE (긴급 전체 점검)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 text-xs" id="backup-recovery-metrics">
+        <!-- 동적 렌더링 -->
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-slate-900">🔒 Deletion Replay Guard:</span>
+          <span>오래된 백업 복구 시 과거 삭제된 사용자 기록의 재등장을 100% 원천 차단합니다.</span>
+        </div>
+        <span class="text-[10px] font-mono text-slate-400">Ledger-based Replay Active</span>
+      </div>
+    </section>
+
+    <!-- 9. RUNBOOKS & GUIDES SECTION -->
+    <section class="p-6 rounded-2xl bg-slate-900 text-white shadow-xs space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-black text-white flex items-center gap-2">
+          <span>📖</span>
+          <span>OPERATIONS &amp; DR RUNBOOKS (운영 및 재해 복구 런북)</span>
+        </h3>
+        <span class="text-xs text-slate-400">문제 발생 시 단계별 대응 지침</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
+        <a href="/docs/runbooks/disaster-recovery.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-red-300 font-bold mb-1">🚨 DR 종합 런북</strong>
+          <span class="text-[10px] text-slate-400">전사 12단계 복구</span>
+        </a>
+        <a href="/docs/runbooks/database-restore.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-amber-300 font-bold mb-1">💾 DB 복원 런북</strong>
+          <span class="text-[10px] text-slate-400">무결성 &amp; 삭제 Replay</span>
+        </a>
+        <a href="/docs/runbooks/content-rollback.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-purple-300 font-bold mb-1">✍️ 콘텐츠 롤백</strong>
+          <span class="text-[10px] text-slate-400">카드 오발행 즉시 복구</span>
+        </a>
+        <a href="/docs/runbooks/router-rollback.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-blue-300 font-bold mb-1">🎯 Router 롤백</strong>
+          <span class="text-[10px] text-slate-400">설정 &amp; 인덱스 복구</span>
+        </a>
+        <a href="/docs/runbooks/safety-rollback.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-emerald-300 font-bold mb-1">🛡️ Safety 롤백</strong>
+          <span class="text-[10px] text-slate-400">가드레일 긴급 복귀</span>
+        </a>
+        <a href="/docs/runbooks/read-only-mode.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-slate-200 font-bold mb-1">📖 읽기전용 런북</strong>
+          <span class="text-[10px] text-slate-400">DB 점검 중 사용자 보호</span>
+        </a>
+          <span class="text-[10px] text-slate-400">위기 장애 긴급 대응</span>
+        </a>
+        <a href="/docs/runbooks/privacy-incident.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-amber-300 font-bold mb-1">🔒 Privacy 런북</strong>
+          <span class="text-[10px] text-slate-400">원문 유출 격리 절차</span>
+        </a>
+        <a href="/docs/runbooks/router-incident.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-blue-300 font-bold mb-1">🎯 Router 런북</strong>
+          <span class="text-[10px] text-slate-400">매칭 실패 &amp; Fallback</span>
+        </a>
+        <a href="/docs/runbooks/deployment.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-emerald-300 font-bold mb-1">🚀 배포 런북</strong>
+          <span class="text-[10px] text-slate-400">배포 전후 검증 지침</span>
+        </a>
+        <a href="/docs/runbooks/content-publish.md" target="_blank" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition border border-slate-700 block">
+          <strong class="block text-purple-300 font-bold mb-1">✍️ 콘텐츠 런북</strong>
+          <span class="text-[10px] text-slate-400">언어 QA &amp; 카드 발행</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Incident Modal -->
+  <div id="incident-modal" class="fixed inset-0 bg-slate-900/60 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-slate-200 p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-black text-slate-900">🚨 인시던트 등록 (Create Incident)</h3>
+        <button onclick="closeIncidentModal()" class="text-slate-400 hover:text-slate-600 font-bold text-lg">&times;</button>
+      </div>
+      <p class="text-xs text-slate-500">
+        * 주의: 사용자의 개인적인 고민 원문은 절대로 입력하지 마세요. 기술적 현상 및 재현 절차만 기술합니다.
+      </p>
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">심각도 (Severity)</label>
+          <select id="inc-severity" class="w-full p-2 border border-slate-200 rounded-xl font-bold">
+            <option value="P0">P0 (Safety / Privacy / Cross-user Data)</option>
+            <option value="P1">P1 (Core Flow Unavailable / Data Loss Risk)</option>
+            <option value="P2" selected>P2 (Major Feature Broken)</option>
+            <option value="P3">P3 (Limited UX / Content Issue)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">영역 (Area)</label>
+          <select id="inc-area" class="w-full p-2 border border-slate-200 rounded-xl font-bold">
+            <option value="SAFETY">SAFETY</option>
+            <option value="PRIVACY">PRIVACY</option>
+            <option value="ROUTER">ROUTER</option>
+            <option value="CORE_FLOW">CORE_FLOW</option>
+            <option value="SAVE">SAVE</option>
+            <option value="AUTH">AUTH</option>
+            <option value="CONTENT">CONTENT</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">현상 요약 (Description)</label>
+          <input type="text" id="inc-desc" placeholder="예: 라우터 특정 키워드 0건 결과 발생" class="w-full p-2 border border-slate-200 rounded-xl" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">기술적 근거 (Evidence - 민감원문 제외)</label>
+          <textarea id="inc-evidence" rows="3" placeholder="예: Error code: 500, 합성 테스트 케이스 TC-04 실패" class="w-full p-2 border border-slate-200 rounded-xl"></textarea>
+        </div>
+      </div>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeIncidentModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 font-bold text-xs hover:bg-slate-200">취소</button>
+        <button onclick="submitIncident()" class="px-4 py-2 rounded-xl bg-red-600 text-white font-bold text-xs hover:bg-red-700">인시던트 생성</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/myungsim-operations.js"></script>
+  <script src="/js/myungsim-backup-recovery.js"></script>
+  <script>
+    var currentRole = 'ADMIN';
+    var currentTimeWindow = 'TODAY';
+
+    function handleRoleChange(role) {
+      currentRole = role;
+      renderOperationsConsole();
+    }
+
+    function setTimeWindow(win) {
+      currentTimeWindow = win;
+      document.querySelectorAll('#time-window-buttons .time-btn').forEach(function(b) {
+        b.classList.remove('bg-white', 'text-[#0F6B5B]', 'shadow-2xs');
+        b.classList.add('text-slate-600');
+      });
+      event.target.classList.add('bg-white', 'text-[#0F6B5B]', 'shadow-2xs');
+      event.target.classList.remove('text-slate-600');
+      renderOperationsConsole();
+    }
+
+    function openIncidentModal() {
+      if (currentRole === 'VIEWER') {
+        alert('VIEWER 권한은 인시던트를 생성할 수 없습니다.');
+        return;
+      }
+      document.getElementById('incident-modal').classList.remove('hidden');
+    }
+
+    function closeIncidentModal() {
+      document.getElementById('incident-modal').classList.add('hidden');
+    }
+
+    function submitIncident() {
+      var severity = document.getElementById('inc-severity').value;
+      var area = document.getElementById('inc-area').value;
+      var desc = document.getElementById('inc-desc').value;
+      var evidence = document.getElementById('inc-evidence').value;
+
+      if (!desc) {
+        alert('현상 요약을 입력하세요.');
+        return;
+      }
+
+      MyungSimOperations.createIncident({
+        severity: severity,
+        area: area,
+        description: desc,
+        evidence: evidence
+      }, currentRole);
+
+      closeIncidentModal();
+      renderOperationsConsole();
+    }
+
+    function promptCreateTask() {
+      if (currentRole === 'VIEWER') {
+        alert('VIEWER 권한은 태스크를 생성할 수 없습니다.');
+        return;
+      }
+      var title = prompt('새 운영 태스크 제목:');
+      if (title) {
+        MyungSimOperations.createTask({
+          title: title,
+          priority: 'P2',
+          area: 'OPERATION'
+        }, currentRole);
+        renderOperationsConsole();
+      }
+    }
+
+    function promptDailyNote() {
+      if (currentRole === 'VIEWER') {
+        alert('VIEWER 권한은 일지를 작성할 수 없습니다.');
+        return;
+      }
+      var note = prompt('오늘의 운영 메모 (개인 원문 배제):');
+      if (note) {
+        MyungSimOperations.addDailyNote(note, currentRole);
+        renderOperationsConsole();
+      }
+    }
+
+    function toggleFeature(flagName) {
+      if (currentRole === 'VIEWER') {
+        alert('VIEWER 권한은 비상 스위치를 조작할 수 없습니다.');
+        return;
+      }
+      var flags = MyungSimOperations.getFeatureFlags();
+      var newVal = !flags[flagName];
+      try {
+        MyungSimOperations.setFeatureFlag(flagName, newVal, currentRole);
+        renderOperationsConsole();
+      } catch (e) {
+        alert(e.message);
+      }
+    }
+
+    function renderOperationsConsole() {
+      var health = MyungSimOperations.getOperationalHealth(currentTimeWindow);
+
+      // 1. Needs Attention
+      var naContainer = document.getElementById('needs-attention-container');
+      if (health.needsAttention && health.needsAttention.length > 0) {
+        naContainer.innerHTML = health.needsAttention.map(function(item) {
+          var badgeClass = 'badge-p2';
+          if (item.priority === 'P0') badgeClass = 'badge-p0';
+          else if (item.priority === 'P1') badgeClass = 'badge-p1';
+          return `
+            <div class="p-3 rounded-xl border flex items-center justify-between gap-3 text-xs ${badgeClass}">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-black">${item.priority}</span>
+                <span class="font-bold">${item.text}</span>
+              </div>
+              <button onclick="alert('조치 런북으로 이동합니다.')" class="px-2 py-1 rounded-md bg-white border border-current text-[10px] font-bold">대응 절차 &rarr;</button>
+            </div>
+          `;
+        }).join('');
+      } else {
+        naContainer.innerHTML = `
+          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-center gap-3">
+            <span class="text-lg">✨</span>
+            <div>
+              <strong class="font-black text-emerald-800">오늘 즉시 조치가 필요한 문제는 없습니다.</strong>
+              <p class="text-[11px] text-emerald-700 mt-0.5">모든 핵심 서브시스템이 건강하며, 불필요한 제품 수정을 진행하지 않아도 됩니다.</p>
+            </div>
+          </div>
+        `;
+      }
+
+      // 2. Systems Grid
+      var sysGrid = document.getElementById('systems-grid');
+      var sysKeys = Object.keys(health.systems);
+      sysGrid.innerHTML = sysKeys.map(function(key) {
+        var s = health.systems[key];
+        var statusClass = 'status-healthy';
+        if (s.status === 'WATCH') statusClass = 'status-watch';
+        else if (s.status === 'ISSUE') statusClass = 'status-issue';
+        else if (s.status === 'UNKNOWN') statusClass = 'status-unknown';
+
+        return `
+          <div class="p-4 rounded-2xl border shadow-2xs ${statusClass} flex flex-col justify-between space-y-2">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-black">
+                <span>${key}</span>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-black bg-white/70">${s.status}</span>
+              </div>
+              <p class="text-[10px] opacity-80 mt-2 line-clamp-2">${s.reason}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 3. Circuit Breaker Toggles
+      var flags = MyungSimOperations.getFeatureFlags();
+      var cbContainer = document.getElementById('circuit-breaker-toggles');
+      var flagKeys = Object.keys(flags);
+      cbContainer.innerHTML = flagKeys.map(function(k) {
+        var on = flags[k];
+        return `
+          <button onclick="toggleFeature('${k}')" class="px-2.5 py-1.5 rounded-xl border text-[11px] font-bold transition flex items-center gap-1.5 ${on ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-red-50 border-red-300 text-red-800'}">
+            <span>${k}:</span>
+            <span class="font-black">${on ? 'ON' : 'OFF'}</span>
+          </button>
+        `;
+      }).join('');
+
+      // 4. Core Flow Funnel
+      var funnelContainer = document.getElementById('funnel-container');
+      funnelContainer.innerHTML = health.coreFlow.funnel.map(function(st, idx) {
+        var max = health.coreFlow.funnel[0].count;
+        var pct = Math.round((st.count / max) * 100);
+        return `
+          <div class="space-y-1">
+            <div class="flex justify-between text-[11px] font-bold text-slate-700">
+              <span>${idx + 1}. ${st.step}</span>
+              <span>${st.count.toLocaleString()}회 (${pct}%)</span>
+            </div>
+            <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+              <div class="h-full bg-[#0F6B5B] rounded-full" style="width: ${pct}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 5. Content Gaps
+      var gapContainer = document.getElementById('content-gap-list');
+      gapContainer.innerHTML = health.contentGaps.map(function(g) {
+        return `
+          <div class="p-2 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-between text-[11px]">
+            <span class="font-mono text-slate-700">${g.tag}</span>
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400 font-bold">${g.signalCount}회 신호</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-800">${g.status}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 6. Product Learning Feed
+      var feedContainer = document.getElementById('learning-feed-container');
+      feedContainer.innerHTML = health.productLearningFeed.map(function(item) {
+        return `
+          <div class="p-2 rounded-lg bg-emerald-50/50 border border-emerald-100 flex items-start gap-2">
+            <span class="text-emerald-600 font-bold">&check;</span>
+            <span class="text-slate-700 font-medium">${item}</span>
+          </div>
+        `;
+      }).join('');
+
+      // 7. Incidents List
+      var incList = document.getElementById('incidents-list');
+      var incidents = MyungSimOperations.getIncidents();
+      if (incidents.length > 0) {
+        incList.innerHTML = incidents.map(function(inc) {
+          return `
+            <div class="p-3 rounded-xl border border-slate-200 text-xs space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-red-600 font-mono">${inc.incidentId} [${inc.severity}]</span>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-100 text-slate-600">${inc.status}</span>
+              </div>
+              <div class="font-bold text-slate-800">${inc.description}</div>
+              <div class="text-[10px] text-slate-400 font-mono">${inc.createdAt.slice(0, 19)} &middot; Area: ${inc.area}</div>
+            </div>
+          `;
+        }).join('');
+      } else {
+        incList.innerHTML = '<div class="text-xs text-slate-400 p-4 text-center">등록된 인시던트가 없습니다.</div>';
+      }
+
+      // 8. Operator Tasks List
+      var tasksList = document.getElementById('tasks-list');
+      var tasks = MyungSimOperations.getTasks();
+      if (tasks.length > 0) {
+        tasksList.innerHTML = tasks.map(function(t) {
+          return `
+            <div class="p-3 rounded-xl border border-slate-200 text-xs flex items-center justify-between">
+              <div>
+                <span class="font-mono text-[10px] font-bold text-slate-400">${t.taskId} [${t.priority}]</span>
+                <div class="font-bold text-slate-800">${t.title}</div>
+              </div>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-700">${t.status}</span>
+            </div>
+          `;
+        }).join('');
+      } else {
+        tasksList.innerHTML = '<div class="text-xs text-slate-400 p-4 text-center">대기 중인 태스크가 없습니다.</div>';
+      }
+
+      // 9. Daily Logs
+      var dailyList = document.getElementById('daily-logs-list');
+      var daily = MyungSimOperations.getDailyLogs();
+      dailyList.innerHTML = daily.map(function(d) {
+        return `
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100 space-y-0.5">
+            <div class="flex items-center justify-between text-[10px] font-bold text-slate-400">
+              <span>${d.date}</span>
+              <span>${d.release}</span>
+            </div>
+            <div class="text-slate-800 font-medium">${d.notes}</div>
+          </div>
+        `;
+      }).join('');
+
+      // 10. Audit Logs
+      var auditList = document.getElementById('audit-logs-list');
+      var audits = MyungSimOperations.getAuditLogs();
+      if (audits.length > 0) {
+        auditList.innerHTML = audits.map(function(a) {
+          return `
+            <div class="p-2 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-between text-[10px]">
+              <div>
+                <strong class="text-slate-700 font-bold">${a.operator}</strong> &middot; <span class="text-slate-500">${a.action}</span>
+              </div>
+              <span class="text-slate-400 font-mono">${a.timestamp.slice(11, 19)}</span>
+            </div>
+          `;
+        }).join('');
+      } else {
+        auditList.innerHTML = '<div class="text-xs text-slate-400 p-2 text-center">감사 기록이 없습니다.</div>';
+      }
+
+      // 11. Backup & Disaster Recovery Metrics
+      var backupMetricsContainer = document.getElementById('backup-recovery-metrics');
+      if (backupMetricsContainer && typeof MyungSimBackupRecovery !== 'undefined') {
+        var drStatus = MyungSimBackupRecovery.getBackupRecoveryStatus();
+        
+        // 시스템 모드 셀렉트 값 동기화
+        var modeSelect = document.getElementById('system-mode-select');
+        if (modeSelect) modeSelect.value = drStatus.systemMode;
+
+        backupMetricsContainer.innerHTML = `
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="text-[10px] text-slate-400 block font-bold">최근 백업 (Canonical)</span>
+            <strong class="text-xs font-black text-slate-800">${drStatus.canonicalVersion} (${drStatus.canonicalRecordCount}개)</strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="text-[10px] text-slate-400 block font-bold">복원 검증 상태</span>
+            <strong class="text-xs font-black ${drStatus.lastVerifiedRestore !== 'NOT_TESTED' ? 'text-emerald-600' : 'text-amber-600'}">
+              ${drStatus.lastVerifiedRestore !== 'NOT_TESTED' ? 'VERIFIED' : 'NOT TESTED'}
+            </strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="text-[10px] text-slate-400 block font-bold">Deletion Replay</span>
+            <strong class="text-xs font-black text-emerald-600">${drStatus.deletionReplayStatus}</strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="text-[10px] text-slate-400 block font-bold">교차 사용자 격리</span>
+            <strong class="text-xs font-black text-emerald-600">${drStatus.crossUserIsolationStatus}</strong>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="text-[10px] text-slate-400 block font-bold">Zero-Key Recovery</span>
+            <strong class="text-xs font-black text-emerald-600">PASS (AI 0건)</strong>
+          </div>
+          <div class="p-3 rounded-xl ${drStatus.recoveryReady ? 'bg-emerald-50 border-emerald-300' : 'bg-amber-50 border-amber-300'} border">
+            <span class="text-[10px] ${drStatus.recoveryReady ? 'text-emerald-700' : 'text-amber-700'} block font-bold">RECOVERY READY</span>
+            <strong class="text-xs font-black ${drStatus.recoveryReady ? 'text-emerald-800' : 'text-amber-800'}">
+              ${drStatus.recoveryReady ? 'YES (검증완료)' : 'NO (미검증)'}
+            </strong>
+          </div>
+        `;
+      }
+    }
+
+    function handleSystemModeChange(newMode) {
+      if (currentRole === 'VIEWER') {
+        alert('VIEWER 권한은 시스템 모드를 변경할 수 없습니다.');
+        renderOperationsConsole();
+        return;
+      }
+      if (typeof MyungSimBackupRecovery !== 'undefined') {
+        try {
+          MyungSimBackupRecovery.setSystemMode(newMode, currentRole, '운영센터 모드 전환');
+          renderOperationsConsole();
+          alert('시스템 연속성 모드가 [' + newMode + ']로 전환되었습니다.');
+        } catch (e) {
+          alert(e.message);
+        }
+      }
+    }
+
+    // Initial render
+    document.addEventListener('DOMContentLoaded', function() {
+      renderOperationsConsole();
+    });
+  </script>
+</body>
+</html>

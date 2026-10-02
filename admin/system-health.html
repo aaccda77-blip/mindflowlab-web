@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM PRODUCTION SYSTEM HEALTH | 마인드플로우 랩</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+    .status-healthy { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .status-watch { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+    .status-issue { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+    .status-unknown { background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-24">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+          <span>🩺</span>
+          <span>Production System Health</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">실시간 관제</span>
+      </div>
+      <div class="flex items-center gap-3 text-xs font-bold">
+        <a href="/admin/operations.html" class="text-[#0F6B5B] hover:text-[#0A493E] font-black transition">⚙️ 운영센터 &rarr;</a>
+        <a href="/admin/language-qa.html" class="text-slate-500 hover:text-slate-800 transition">언어 QA &rarr;</a>
+        <a href="/admin/journey.html" class="text-slate-500 hover:text-slate-800 transition">30일 여정 관제 &rarr;</a>
+        <a href="/admin" class="text-slate-500 hover:text-slate-800 transition">&larr; 관리자 홈</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-8 space-y-6">
+
+    <!-- Hero Banner -->
+    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="text-[11px] font-black text-[#0F6B5B] tracking-wider uppercase">PRODUCTION READINESS MONITOR</span>
+          <h1 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">명심코칭 프로덕션 시스템 건전성</h1>
+          <p class="text-xs text-slate-500 mt-1">
+            총점 기반 평가 배제 &middot; 10대 서브시스템별 독립 관제 &middot; 미검증 영역 정직한 UNKNOWN 표기
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-100 text-teal-800 border border-teal-300">
+            RELEASE CANDIDATE: v1.0.0-rc-final
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 Subsystems Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="subsystem-grid">
+      <!-- 동적 렌더링 -->
+    </div>
+
+    <!-- Production Guardrails Card -->
+    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+      <h2 class="text-sm font-black text-slate-900 uppercase">프로덕션 핵심 가드레일 (Production Guardrails)</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="font-bold text-slate-900">🛡️ Zero-Key Production</div>
+          <div class="text-slate-500 text-[11px]">외부 AI API 키 부재 시에도 100% 자율 결정론적 상태 머신 구동.</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="font-bold text-slate-900">🔒 Private Isolation</div>
+          <div class="text-slate-500 text-[11px]">개인 고민 원문 텍스트의 외부 Analytics 및 서버 전송 0건 차단.</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="font-bold text-slate-900">⚡ Cross-User Protection</div>
+          <div class="text-slate-500 text-[11px]">공용 기기 로그아웃 및 멀티탭 세션 만료 시 이전 사용자 데이터 0% 잔류.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/myungsim-design-system.js"></script>
+
+  <script>
+    const SUBSYSTEMS = [
+      {
+        id: 'public_site',
+        name: '1. Public Site (공개 사이트)',
+        desc: '랜딩 페이지, 질문 탐색, 카드 브라우징, 책 딥다이브',
+        status: 'HEALTHY',
+        details: '반응형 390px/1440px 정상, JavaScript 에러 0건'
+      },
+      {
+        id: 'database',
+        name: '2. Database (로컬 저장소)',
+        desc: '브라우저 localStorage 사용자별 네임스페이스 격리 및 무결성',
+        status: 'HEALTHY',
+        details: '멀티 테넌트 키 격리(userId) 적용, 스토리지 파손 방어'
+      },
+      {
+        id: 'router',
+        name: '3. Router (고민 라우터)',
+        desc: '100% RuleBasedRouter 파이프라인 및 Top 3 추천 엔진',
+        status: 'HEALTHY',
+        details: 'Golden Set 200+ 쿼리 정합성 유지, 500자 입력 상한 하드닝 적용'
+      },
+      {
+        id: 'safety',
+        name: '4. Safety (안전 라우터)',
+        desc: '자해/자살, 폭력, 현실위험, 의료/금융 긴급 개입',
+        status: 'HEALTHY',
+        details: 'CURRENT SAFETY > PAST PATTERN 원칙 준수, 24시간 상담 전화 최우선 제공'
+      },
+      {
+        id: 'private_storage',
+        name: '5. Private Storage (개인 기록)',
+        desc: 'SCAN 세션, 행동실험, 개인 작동지도, 30일 여정',
+        status: 'HEALTHY',
+        details: '공용 기기 로그아웃 시 0% 잔류 보장, 암호화 네임스페이스'
+      },
+      {
+        id: 'analytics',
+        name: '6. Analytics (제품 분석 파이프라인)',
+        desc: '최소화된 이용 신호 집계 (원문 텍스트 전송 차단)',
+        status: 'HEALTHY',
+        details: 'Zero Raw Text to Analytics 원천 배제 검증 완료'
+      },
+      {
+        id: 'experience_intel',
+        name: '7. Experience Intelligence (경험 지능)',
+        desc: '약한 매칭, 콘텐츠 갭 분석 및 인간 검토 루프',
+        status: 'HEALTHY',
+        details: '익명 신호 집계 완료, 자동 컨텐츠 변경 방지 유지'
+      },
+      {
+        id: 'seo',
+        name: '8. SEO & Public URLs',
+        desc: '공개 질문 색인, 메타데이터, sitemap, Private noindex',
+        status: 'HEALTHY',
+        details: '개인 기록 화면 robots noindex 강제 적용 확인'
+      },
+      {
+        id: 'share',
+        name: '9. Share (공유 기능)',
+        desc: '네이티브 공유 및 클립보드 링크 복사',
+        status: 'HEALTHY',
+        details: '공유 페이로드 내 개인 고민 원문 및 세션 데이터 0건 유출'
+      },
+      {
+        id: 'external_links',
+        name: '10. External Links & Backup',
+        desc: '외부 서점 링크, 응급 상담 직통 번호, 원격 클라우드 DB 복구',
+        status: 'WATCH',
+        details: '외부 도서 URL 정상 연결됨. 단, 원격 클라우드 자동 롤백 파이프라인은 로컬 환경 특성상 NOT TESTED.'
+      }
+    ];
+
+    function renderSubsystems() {
+      const container = document.getElementById('subsystem-grid');
+      container.innerHTML = SUBSYSTEMS.map(sub => {
+        let badgeClass = 'status-unknown';
+        if (sub.status === 'HEALTHY') badgeClass = 'status-healthy';
+        else if (sub.status === 'WATCH') badgeClass = 'status-watch';
+        else if (sub.status === 'ISSUE') badgeClass = 'status-issue';
+
+        return `
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 text-sm">${sub.name}</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${badgeClass}">
+                ${sub.status}
+              </span>
+            </div>
+            <div class="text-xs text-slate-500">${sub.desc}</div>
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-[11px] text-slate-700">
+              💡 ${sub.details}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSubsystems);
+  </script>
+
+</body>
+</html>

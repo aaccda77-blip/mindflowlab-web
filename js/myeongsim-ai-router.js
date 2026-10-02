@@ -13,12 +13,14 @@
 
   // 0. Configuration
   const ROUTER_CONFIG = {
-    ROUTER_MODE: 'rule', // 'rule' (Default) | 'semantic' | 'hybrid'
+    ROUTER_MODE: 'rule',       // 'rule' (Default) | 'hybrid'
+    SEMANTIC_MODE: 'off',      // 'off' (Default) | 'local' | 'api'
     MAX_RECOMMENDATIONS: 3,
     MIN_SCORE_THRESHOLD: 2.0,
     FALLBACK_THRESHOLD: 1.0,
     ZERO_RAW_QUERY_LOG: true,
-    DEBUG_MODE: false
+    DEBUG_MODE: false,
+    SEMANTIC_TIMEOUT_MS: 1500
   };
 
   // 1. Safety Router 사전 및 패턴 (최우선 검사)
@@ -481,7 +483,12 @@
         }
       }
 
-      const query = (rawUserQuery || '').trim();
+      let query = (rawUserQuery || '').trim();
+      
+      // Production Hardening: 최대 500자 안전 컷오프 (비정상 대용량 DoS 방어)
+      if (query.length > 500) {
+        query = query.substring(0, 500);
+      }
 
       // 1. Safety Router Check (최우선)
       const safety = this.checkSafety(query);
@@ -609,52 +616,283 @@
     }
   }
 
-  // 7. SemanticRouter (향후 API/로컬 임베딩 연동용 스켈레톤)
-  class SemanticRouter extends RouterInterface {
-    constructor(cards) {
-      super();
-      this.cards = cards;
-      this.fallbackRouter = new RuleBasedRouter(cards);
+  // 7. Card Semantic Text Source Builder (사전 계산 규격)
+  function buildCardSemanticText(card) {
+    if (!card) return '';
+    const parts = [
+      card.cardTitle || '',
+      card.question || '',
+      card.sodaAnswer || '',
+      card.keyword || '',
+      card.category || '',
+      Array.isArray(card.searchKeywords) ? card.searchKeywords.join(' ') : '',
+      Array.isArray(card.routeTags) ? card.routeTags.join(' ') : '',
+      Array.isArray(card.triggerTags) ? card.triggerTags.join(' ') : '',
+      Array.isArray(card.storyTags) ? card.storyTags.join(' ') : '',
+      Array.isArray(card.urgeTags) ? card.urgeTags.join(' ') : '',
+      Array.isArray(card.contextTags) ? card.contextTags.join(' ') : ''
+    ];
+    // 도서 마케팅, 인기도, featured, 북마크 수 제외
+    return parts.join(' ').replace(/\s+/g, ' ').trim();
+  }
+
+  // 8. Semantic Provider 추상화 계층
+  class SemanticProvider {
+    constructor(config = {}) {
+      this.config = config;
     }
-    async route(query, options) {
-      // API 키가 없으므로 즉시 RuleBasedRouter로 안전하게 위임
-      return this.fallbackRouter.route(query, options);
+    async initialize() { return true; }
+    isAvailable() { return false; }
+    async retrieve(query, options = {}) { return []; }
+    getProviderInfo() {
+      return {
+        name: 'base_provider',
+        mode: 'off',
+        model: 'none',
+        version: 'none',
+        status: 'DISABLED'
+      };
     }
   }
 
-  // 8. HybridRouter (Rule + Semantic 앙상블 스켈레톤)
-  class HybridRouter extends RouterInterface {
-    constructor(cards) {
-      super();
-      this.cards = cards;
-      this.ruleRouter = new RuleBasedRouter(cards);
-      this.semanticRouter = new SemanticRouter(cards);
-    }
-    async route(query, options) {
-      // API 키가 없으므로 즉시 RuleBasedRouter로 완벽하게 위임
-      return this.ruleRouter.route(query, options);
+  // 8-1. Disabled Provider (Zero External AI Calls, 기본값)
+  class DisabledSemanticProvider extends SemanticProvider {
+    isAvailable() { return false; }
+    async retrieve(query, options = {}) { return []; }
+    getProviderInfo() {
+      return {
+        name: 'DisabledSemanticProvider',
+        mode: 'off',
+        model: 'none',
+        version: 'embed-disabled-v1',
+        status: 'DISABLED'
+      };
     }
   }
 
-  // 9. RouterFactory 및 전역 등록
-  class MyeongsimRouterFactory {
-    static create(mode = ROUTER_CONFIG.ROUTER_MODE) {
-      const cards = window.MIND_CARDS_DATA || [];
-      if (mode === 'semantic') {
-        return new SemanticRouter(cards);
-      } else if (mode === 'hybrid') {
-        return new HybridRouter(cards);
-      } else {
-        return new RuleBasedRouter(cards);
+  // 8-2. Local Provider (온디바이스 경량 모델용 스켈레톤, 미설치 시 AVAILABLE: false)
+  class LocalSemanticProvider extends SemanticProvider {
+    constructor(config = {}) {
+      super(config);
+      this.modelName = config.modelName || 'local-lightweight-korean-embed';
+      this.isInstalled = false; // 실제 로컬 모델 설치 여부
+    }
+    isAvailable() { return this.isInstalled; }
+    async retrieve(query, options = {}) {
+      if (!this.isAvailable()) return [];
+      // 로컬 임베딩 코사인 유사도 검색 (향후 설치 시 활성화)
+      return [];
+    }
+    getProviderInfo() {
+      return {
+        name: 'LocalSemanticProvider',
+        mode: 'local',
+        model: this.modelName,
+        version: 'embed-local-v1',
+        status: this.isInstalled ? 'ACTIVE' : 'DISABLED (Model Not Installed)'
+      };
+    }
+  }
+
+  // 8-3. API Provider (외부 임베딩 어댑터 스켈레톤, 타임아웃/오류 시 예외 없이 fallback)
+  class ApiSemanticProvider extends SemanticProvider {
+    constructor(config = {}) {
+      super(config);
+      this.apiKey = config.apiKey || null;
+      this.providerName = config.providerName || 'external-api';
+      this.model = config.model || 'text-embedding-3-small';
+    }
+    isAvailable() { return Boolean(this.apiKey); }
+    async retrieve(query, options = {}) {
+      if (!this.isAvailable()) return [];
+      try {
+        // 어댑터 호출 규격 (타임아웃 보호)
+        const timeout = options.timeout || ROUTER_CONFIG.SEMANTIC_TIMEOUT_MS;
+        // 실제 API 미설정 시 안전하게 빈 배열 반환
+        return [];
+      } catch (err) {
+        console.warn(`[ApiSemanticProvider] Retrieval failed: ${err.message}`);
+        return [];
       }
+    }
+    getProviderInfo() {
+      return {
+        name: 'ApiSemanticProvider',
+        mode: 'api',
+        model: this.model,
+        version: 'embed-api-v1',
+        status: this.apiKey ? 'ACTIVE' : 'DISABLED (No API Key)'
+      };
+    }
+  }
+
+  // 9. HybridRouter v2 (Rule Core + Adaptive Semantic Merge Engine)
+  class HybridRouter extends RouterInterface {
+    constructor(cards, options = {}) {
+      super();
+      this.cards = Array.isArray(cards) ? cards : [];
+      this.ruleRouter = new RuleBasedRouter(this.cards);
+      
+      const semanticMode = options.semanticMode || ROUTER_CONFIG.SEMANTIC_MODE;
+      if (semanticMode === 'local') {
+        this.semanticProvider = new LocalSemanticProvider(options.localConfig);
+      } else if (semanticMode === 'api' && options.apiKey) {
+        this.semanticProvider = new ApiSemanticProvider(options.apiConfig);
+      } else {
+        this.semanticProvider = new DisabledSemanticProvider();
+      }
+    }
+
+    setCards(cards) {
+      if (Array.isArray(cards)) {
+        this.cards = cards;
+        this.ruleRouter.setCards(cards);
+      }
+    }
+
+    /**
+     * Rule Confidence 계산 (HIGH / MEDIUM / LOW)
+     */
+    calculateRuleConfidence(ruleResults, tokens, contexts) {
+      if (!ruleResults || ruleResults.length === 0) return 'LOW';
+      const topScore = ruleResults[0].finalScore || 0;
+      const hasContext = contexts && contexts.length > 0;
+      
+      if (topScore >= 25.0 && hasContext) {
+        return 'HIGH'; // Rule 80%, Semantic 20%
+      } else if (topScore >= 12.0) {
+        return 'MEDIUM'; // Rule 60%, Semantic 40%
+      }
+      return 'LOW'; // Rule 40%, Semantic 60%
+    }
+
+    /**
+     * 3대 가드 및 Reranking 로직
+     */
+    applyGuards(candidate, query, contexts) {
+      const card = candidate.card;
+      const q = query.toLowerCase();
+      let adjustedScore = candidate.mergedScore || 0;
+
+      // 1. Rule Boost: 명시적 핵심 키워드 보호
+      const explicitKeywords = ["삼재", "읽씹", "작심삼일", "퇴사", "미루기", "손절", "눈치"];
+      const hasExplicit = explicitKeywords.some(kw => q.includes(kw) && (card.keyword || '').includes(kw));
+      if (hasExplicit) {
+        adjustedScore += 15.0; // 강한 룰 시그널 보호
+      }
+
+      // 2. Context Guard: 상위 맥락 불일치 감점
+      const cardContexts = card.contextTags || [];
+      if (contexts.includes('family') && !cardContexts.includes('family') && cardContexts.includes('romantic_only')) {
+        adjustedScore -= 20.0;
+      }
+      if (contexts.includes('love') && !cardContexts.includes('love') && cardContexts.includes('family_only')) {
+        adjustedScore -= 20.0;
+      }
+
+      // 3. Reality Guard: 현실 팩트 사건 보존
+      const realitySignals = ["폭행", "맞았", "부채", "빚", "압류", "계약 취소", "임금", "해고"];
+      const hasReality = realitySignals.some(s => q.includes(s));
+      if (hasReality) {
+        const isFactCard = (card.category || '').includes('돈') || (card.category || '').includes('직장') || (card.contextTags || []).includes('money');
+        if (isFactCard) {
+          adjustedScore += 10.0;
+        }
+      }
+
+      return Math.max(0, adjustedScore);
+    }
+
+    /**
+     * 메인 라우트 함수 (Adaptive Hybrid with 100% Rule Fallback)
+     */
+    route(rawUserQuery, options = {}) {
+      const query = (rawUserQuery || '').trim();
+
+      // 1. Safety Router 최우선 검사 (절대 순서 변경 금지)
+      const safety = this.ruleRouter.checkSafety(query);
+      if (!safety.isSafe) {
+        return {
+          status: 'high_risk_blocked',
+          safety,
+          routerMode: 'hybrid',
+          semanticMode: this.semanticProvider.getProviderInfo().mode,
+          recommendations: [],
+          disclaimer: "긴급 위기 지원을 최우선으로 안내합니다."
+        };
+      }
+
+      // 2. Rule Retrieval 실행 (Top 10~20)
+      const ruleResult = this.ruleRouter.route(query, { ...options, debug: true });
+      if (ruleResult.status === 'empty_query' || ruleResult.status === 'high_risk_blocked') {
+        return ruleResult;
+      }
+
+      // 3. Semantic Provider 가용성 검사
+      // 미가용 시 오류 없이 100% RuleOnly Fallback
+      if (!this.semanticProvider.isAvailable()) {
+        return {
+          ...ruleResult,
+          routerMode: 'hybrid_fallback_to_rule',
+          semanticStatus: this.semanticProvider.getProviderInfo().status,
+          ruleConfidence: this.calculateRuleConfidence(
+            (ruleResult.recommendations || []).map(r => ({ finalScore: r.score })),
+            ruleResult.normalizedTerms || [],
+            ruleResult.detectedContexts || []
+          ),
+          fallbackReason: 'semantic_disabled'
+        };
+      }
+
+      // 4. Semantic Retrieval 및 앙상블 (가용 시 활성화)
+      // 현재 환경에서는 DisabledSemanticProvider가 기본 탑재되어 항상 Rule Fallback으로 안전 보호
+      return ruleResult;
+    }
+  }
+
+  // 10. RouterFactory 및 전역 등록
+  class MyeongsimRouterFactory {
+    static create(mode = ROUTER_CONFIG.ROUTER_MODE, options = {}) {
+      const cards = (typeof window !== 'undefined' ? window.MIND_CARDS_DATA : global.MIND_CARDS_DATA) || [];
+      if (mode === 'concept' && typeof window !== 'undefined' && window.MyungSimConceptRouter) {
+        return window.MyungSimConceptRouter.create(cards, options);
+      }
+      if (mode === 'hybrid') {
+        return new HybridRouter(cards, options);
+      }
+      return new RuleBasedRouter(cards);
     }
   }
 
   // 전역 인스턴스 등록
-  const activeEngine = MyeongsimRouterFactory.create('rule');
-  window.MyeongsimAIRouter = activeEngine;
-  window.RuleBasedRouter = RuleBasedRouter;
-  window.KoreanNormalizer = KoreanNormalizer;
-  window.MyeongsimRouterFactory = MyeongsimRouterFactory;
+  const activeEngine = MyeongsimRouterFactory.create(ROUTER_CONFIG.ROUTER_MODE);
+  if (typeof window !== 'undefined') {
+    window.MyeongsimAIRouter = activeEngine;
+    window.RuleBasedRouter = RuleBasedRouter;
+    window.HybridRouter = HybridRouter;
+    window.SemanticProvider = SemanticProvider;
+    window.DisabledSemanticProvider = DisabledSemanticProvider;
+    window.LocalSemanticProvider = LocalSemanticProvider;
+    window.ApiSemanticProvider = ApiSemanticProvider;
+    window.KoreanNormalizer = KoreanNormalizer;
+    window.MyeongsimRouterFactory = MyeongsimRouterFactory;
+    window.buildCardSemanticText = buildCardSemanticText;
+  }
 
-})(window);
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+      ROUTER_CONFIG,
+      RuleBasedRouter,
+      HybridRouter,
+      SemanticProvider,
+      DisabledSemanticProvider,
+      LocalSemanticProvider,
+      ApiSemanticProvider,
+      KoreanNormalizer,
+      MyeongsimRouterFactory,
+      buildCardSemanticText
+    };
+  }
+
+})(typeof window !== 'undefined' ? window : global);
+

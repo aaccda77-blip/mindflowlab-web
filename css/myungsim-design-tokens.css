@@ -1,0 +1,410 @@
+/**
+ * =================================================================
+ * MYUNGSIM DESIGN TOKENS & SYSTEM FOUNDATION v1.0
+ * (c) 2026 Mindflow Lab. All rights reserved.
+ * 
+ * Calm, Clear, Non-judgmental & Life-oriented Design System
+ * 4px Base Grid · Mobile First (390px base) · Accessible & Responsive
+ * =================================================================
+ */
+
+:root {
+  /* -------------------------------------------------------------
+   * 1. COLOR TOKENS
+   * ----------------------------------------------------------- */
+  --warm-ivory: #F7F4EC;         /* 전체 배경 베이스 및 밝은 카드 */
+  --myungsim-emerald: #0F6B5B;   /* 명심코칭 대표 브랜드 에메랄드 */
+  --myungsim-emerald-dark: #0A493E; /* 딥 에메랄드 호버 상태 */
+  --myungsim-emerald-light: #ECFDF5;/* 부드러운 에메랄드 틴트 */
+  --deep-navy: #14233B;          /* 주요 텍스트 및 딥 카드 */
+  --deep-navy-dark: #0B1524;     /* 가장 깊은 네이비 배경 */
+  --soft-gold: #C7A86B;          /* 포인트 골드 및 절제된 테두리 */
+  --soft-gold-light: #FDF9F0;    /* 골드 연한 배경 */
+  --soft-sage: #DDE8E0;          /* 중립 소프트 세이지 */
+  --charcoal: #252A2D;           /* 정갈한 본문 텍스트 차콜 */
+  --slate-muted: #64748B;        /* 보조 설명 라벨 텍스트 */
+  --slate-light: #F8FAFC;        /* 컨테이너 배경 연그레이 */
+  --border-subtle: #E2E8F0;      /* 기본 연한 테두리 */
+
+  /* Semantic Alerts */
+  --color-info-bg: #F0F9FF;
+  --color-info-text: #0369A1;
+  --color-info-border: #BAE6FD;
+
+  --color-warning-bg: #FFFBEB;
+  --color-warning-text: #B45309;
+  --color-warning-border: #FDE68A;
+
+  --color-error-bg: #FEF2F2;
+  --color-error-text: #B91C1C;
+  --color-error-border: #FECACA;
+
+  --color-safety-bg: #FDF2F8;     /* 위기 개입 안전 알림 (자극적이지 않은 라즈베리/로즈 톤) */
+  --color-safety-text: #9D174D;
+  --color-safety-border: #FBCFE8;
+
+  /* -------------------------------------------------------------
+   * 2. TYPOGRAPHY TOKENS
+   * ----------------------------------------------------------- */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-serif: 'Noto Serif KR', 'MaruBuri', Georgia, serif;
+
+  /* Type Scale */
+  --font-size-display: clamp(1.75rem, 4vw, 2.25rem); /* 28~36px */
+  --line-height-display: 1.25;
+
+  --font-size-h1: clamp(1.35rem, 3vw, 1.65rem);      /* 22~26px */
+  --line-height-h1: 1.35;
+
+  --font-size-h2: clamp(1.15rem, 2.5vw, 1.35rem);    /* 18~22px */
+  --line-height-h2: 1.4;
+
+  --font-size-h3: 1.05rem;                           /* ~17px */
+  --line-height-h3: 1.45;
+
+  --font-size-body-lg: 1rem;                         /* 16px */
+  --line-height-body-lg: 1.6;
+
+  --font-size-body: 0.9375rem;                       /* 15px */
+  --line-height-body: 1.6;
+
+  --font-size-body-sm: 0.8125rem;                    /* 13px */
+  --line-height-body-sm: 1.5;
+
+  --font-size-caption: 0.75rem;                      /* 12px */
+  --line-height-caption: 1.4;
+
+  --font-size-btn: 0.875rem;                         /* 14px */
+  --line-height-btn: 1.2;
+
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* -------------------------------------------------------------
+   * 3. SPACING TOKENS (4px Base Grid)
+   * ----------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* -------------------------------------------------------------
+   * 4. RADIUS TOKENS
+   * ----------------------------------------------------------- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* Component Radius Standard */
+  --radius-card: 24px;
+  --radius-button: 14px;
+  --radius-choice: 16px;
+  --radius-chip: 9999px;
+
+  /* -------------------------------------------------------------
+   * 5. SHADOW TOKENS (Soft & Calm - No Casino / Tarot Floating)
+   * ----------------------------------------------------------- */
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --shadow-card: 0 4px 14px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+  --shadow-modal: 0 12px 32px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+
+  /* -------------------------------------------------------------
+   * 6. MOTION & TRANSITION TOKENS
+   * ----------------------------------------------------------- */
+  --motion-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-normal: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-card-flip: 550ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* -------------------------------------------------------------
+   * 7. LAYOUT & BREAKPOINTS
+   * ----------------------------------------------------------- */
+  --max-width-mobile: 430px;
+  --max-width-content: 600px;
+  --max-width-desktop: 1120px;
+  --touch-target-min: 44px;
+}
+
+/* Base Body Styles */
+body {
+  font-family: var(--font-sans);
+  color: var(--charcoal);
+  background-color: var(--slate-light);
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prefers Reduced Motion Support (접근성 보장) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =================================================================
+ * COMPONENT UTILITY CLASSES
+ * ================================================================= */
+
+/* 1. BUTTONS (Accessible Min Height: 44px) */
+.btn-myungsim {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target-min);
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-button);
+  font-size: var(--font-size-btn);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--motion-fast), border-color var(--motion-fast), transform var(--motion-fast), box-shadow var(--motion-fast);
+  border: 1px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-myungsim:focus-visible {
+  outline: 2px solid var(--myungsim-emerald);
+}
+
+.btn-primary {
+  background-color: var(--myungsim-emerald);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-subtle);
+}
+.btn-primary:hover {
+  background-color: var(--myungsim-emerald-dark);
+}
+.btn-primary:active {
+  transform: scale(0.985);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--deep-navy);
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+}
+.btn-secondary:hover {
+  background-color: var(--slate-light);
+  border-color: var(--myungsim-emerald);
+  color: var(--myungsim-emerald);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--slate-muted);
+}
+.btn-ghost:hover {
+  background-color: rgba(15, 23, 42, 0.04);
+  color: var(--charcoal);
+}
+
+.btn-danger {
+  background-color: var(--color-error-bg);
+  color: var(--color-error-text);
+  border-color: var(--color-error-border);
+}
+.btn-danger:hover {
+  background-color: #FEE2E2;
+}
+
+.btn-exit {
+  background-color: transparent;
+  color: var(--slate-muted);
+  font-size: var(--font-size-body-sm);
+  min-height: 40px;
+}
+.btn-exit:hover {
+  color: var(--charcoal);
+  text-decoration: underline;
+}
+
+/* 2. CARDS */
+.card-myungsim {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.card-warm {
+  background-color: var(--warm-ivory);
+  border-color: rgba(199, 168, 107, 0.3);
+}
+
+.card-navy {
+  background-color: var(--deep-navy);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Insight Card Standalone Spec */
+.insight-card-standard {
+  max-width: 246px;
+  min-height: 380px;
+  margin: 0 auto;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--soft-gold);
+  background: #FFFFFF;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-6);
+}
+
+/* 3. CHOICE CARD (Emotion, Body, Urge, 10% Action) */
+.choice-card-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-choice);
+  background-color: #FFFFFF;
+  color: var(--charcoal);
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--weight-medium);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--motion-fast);
+}
+
+.choice-card-item:hover {
+  background-color: var(--slate-light);
+  border-color: var(--myungsim-emerald);
+}
+
+.choice-card-item.is-selected {
+  border-color: var(--myungsim-emerald);
+  background-color: var(--myungsim-emerald-light);
+  color: var(--myungsim-emerald-dark);
+  font-weight: var(--weight-bold);
+}
+
+.choice-card-item:focus-visible {
+  outline: 2px solid var(--myungsim-emerald);
+  outline-offset: 2px;
+}
+
+/* 4. CHIPS & BADGES */
+.chip-myungsim {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 10px;
+  border-radius: var(--radius-chip);
+  font-size: var(--font-size-caption);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+
+.chip-category {
+  background-color: var(--soft-gold-light);
+  color: #92400E;
+  border: 1px solid rgba(199, 168, 107, 0.4);
+}
+
+.chip-status {
+  background-color: var(--myungsim-emerald-light);
+  color: var(--myungsim-emerald-dark);
+  border: 1px solid rgba(15, 107, 91, 0.25);
+}
+
+.chip-private {
+  background-color: var(--slate-light);
+  color: var(--slate-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+/* 5. ALERTS */
+.alert-myungsim {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.alert-info {
+  background-color: var(--color-info-bg);
+  color: var(--color-info-text);
+  border: 1px solid var(--color-info-border);
+}
+
+.alert-warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning-text);
+  border: 1px solid var(--color-warning-border);
+}
+
+.alert-error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error-text);
+  border: 1px solid var(--color-error-border);
+}
+
+.alert-safety {
+  background-color: var(--color-safety-bg);
+  color: var(--color-safety-text);
+  border: 1px solid var(--color-safety-border);
+}
+
+/* 6. FORM CONTROLS */
+.input-myungsim,
+.textarea-myungsim {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  color: var(--charcoal);
+  font-family: inherit;
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body-sm);
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.input-myungsim:focus,
+.textarea-myungsim:focus {
+  outline: none;
+  border-color: var(--myungsim-emerald);
+  box-shadow: 0 0 0 3px rgba(15, 107, 91, 0.12);
+}
+
+.textarea-myungsim {
+  min-height: 96px;
+  resize: vertical;
+}
+
+/* 7. LAYOUT CONTAINERS */
+.container-mobile {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}

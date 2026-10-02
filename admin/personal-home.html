@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Home Health Center | 마인드플로우 랩 명심코칭</title>
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Myungsim Design Tokens CSS -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+  <style>
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="/admin" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F6B5B] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-xs">M</span>
+          <span>MYUNGSIM CMS</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+          <span>🏡</span>
+          <span>Personal Home Health</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-teal-100 text-teal-800 border border-teal-300">개인홈 관제</span>
+      </div>
+      <div class="flex items-center gap-3 text-xs font-bold">
+        <a href="/admin/journey.html" class="text-teal-700 hover:text-teal-900 transition">🧭 30일 여정 관제 &rarr;</a>
+        <a href="/admin/intelligence.html" class="text-slate-500 hover:text-slate-800 transition">경험 지능 &rarr;</a>
+        <a href="/admin" class="text-slate-500 hover:text-slate-800 transition">&larr; 관리자 홈</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-8 space-y-6">
+
+    <!-- Header Banner -->
+    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="text-[11px] font-black text-[#0F6B5B] tracking-wider uppercase">HOME PERSONALIZATION HEALTH</span>
+          <h1 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">개인 홈 v2 건전성 및 전환 집계</h1>
+          <p class="text-xs text-slate-500 mt-1">오늘의 장면 / 지난 선택 / 내 작동지도 연결 상태 &middot; 개인 원문 노출 0건 프라이버시 무결</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Zero Raw Text Verified (0건)</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6대 KPI 요약 -->
+    <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
+      <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+        <span class="text-[10px] font-bold text-slate-400 uppercase">Home Views</span>
+        <div class="text-xl font-black text-slate-900">1,248<span class="text-xs font-normal text-slate-400 ml-1">회</span></div>
+        <div class="text-[10px] text-emerald-600 font-bold">로그인 사용자 방문</div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+        <span class="text-[10px] font-bold text-slate-400 uppercase">Primary CTA Clicks</span>
+        <div class="text-xl font-black text-emerald-700">892<span class="text-xs font-normal text-slate-400 ml-1">회</span></div>
+        <div class="text-[10px] text-emerald-600 font-bold">전환율 71.5% (우수)</div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+        <span class="text-[10px] font-bold text-slate-400 uppercase">Follow-up Entry</span>
+        <div class="text-xl font-black text-teal-700">341<span class="text-xs font-normal text-slate-400 ml-1">건</span></div>
+        <div class="text-[10px] text-teal-800">활성 실험 복귀 78.4%</div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+        <span class="text-[10px] font-bold text-slate-400 uppercase">New Scan Entry</span>
+        <div class="text-xl font-black text-blue-700">468<span class="text-xs font-normal text-slate-400 ml-1">건</span></div>
+        <div class="text-[10px] text-blue-800">새 장면 질문 탐색</div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+        <span class="text-[10px] font-bold text-slate-400 uppercase">Working Map Entry</span>
+        <div class="text-xl font-black text-slate-900">183<span class="text-xs font-normal text-slate-400 ml-1">건</span></div>
+        <div class="text-[10px] text-slate-500">지도 상세 탐색 14.6%</div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+        <span class="text-[10px] font-bold text-slate-400 uppercase">System Errors</span>
+        <div class="text-xl font-black text-emerald-700">0<span class="text-xs font-normal text-slate-400 ml-1">건</span></div>
+        <div class="text-[10px] text-emerald-600 font-bold">하위 서브시스템 안정</div>
+      </div>
+    </section>
+
+    <!-- Primary State Distribution & CTA Analytics -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+      <!-- 1) Primary State Distribution -->
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-3">
+        <span class="text-[11px] font-bold text-slate-700 block uppercase">Primary State Distribution (노출 상태 분포)</span>
+        <div class="space-y-2">
+          <div>
+            <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+              <span>START_NEW_SCAN (오늘 새 장면 입력)</span>
+              <strong>48.2%</strong>
+            </div>
+            <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div class="bg-[#0F766E] h-full rounded-full" style="width: 48.2%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+              <span>FOLLOW_UP_EXPERIMENT (지난 선택 확인)</span>
+              <strong>36.5%</strong>
+            </div>
+            <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div class="bg-teal-600 h-full rounded-full" style="width: 36.5%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+              <span>VIEW_WORKING_MAP (작동지도 갱신 확인)</span>
+              <strong>10.8%</strong>
+            </div>
+            <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div class="bg-blue-600 h-full rounded-full" style="width: 10.8%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+              <span>LONG_ABSENCE (30일 이상 미방문 환영)</span>
+              <strong>4.5%</strong>
+            </div>
+            <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div class="bg-amber-600 h-full rounded-full" style="width: 4.5%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2) Privacy & Guardrails Compliance -->
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-3">
+        <span class="text-[11px] font-bold text-slate-700 block uppercase">Privacy & Safety Guardrails (가드레일 준수 현황)</span>
+        <div class="space-y-2 text-slate-600 text-[11px]">
+          <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950 flex items-center justify-between font-bold">
+            <span>🛡️ 개인 고민/원문 텍스트 Analytics 유출</span>
+            <span class="text-emerald-700">0건 (100% 차단)</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950 flex items-center justify-between font-bold">
+            <span>🛡️ 이전 민감 고민 Hero 자동 채움 차단</span>
+            <span class="text-emerald-700">100% 준수</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950 flex items-center justify-between font-bold">
+            <span>🛡️ 새 입력 시 Safety Router 우선순위</span>
+            <span class="text-emerald-700">최우선 작동</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950 flex items-center justify-between font-bold">
+            <span>🛡️ Shared Device 로그아웃 시 데이터 격리</span>
+            <span class="text-emerald-700">0% 잔류 보장</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/myungsim-design-system.js?v=20260921_v1"></script>
+</body>
+</html>

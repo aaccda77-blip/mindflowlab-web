@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYUNGSIM DESIGN SYSTEM & COMPONENT SHOWCASE | 마인드플로우 랩</title>
+  
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Myungsim Design Tokens CSS -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: var(--font-sans); }
+    .token-box {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      background: #FFFFFF;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-24">
+
+  <!-- Top Header -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-xl bg-[#0F6B5B] text-white flex items-center justify-center font-black text-sm shadow-xs">0</span>
+        <div>
+          <div class="text-xs font-bold text-[#0F6B5B] uppercase tracking-wider">MIND DESIGN FOUNDATION v1.0</div>
+          <h1 class="text-base font-black text-slate-900 tracking-tight">명심 디자인 시스템 & 컴포넌트 쇼케이스</h1>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-bold">
+        <a href="/admin/language-qa.html" class="px-3 py-1.5 rounded-xl bg-teal-50 text-teal-800 hover:bg-teal-100 transition border border-teal-200">
+          📝 언어 QA 도구 &rarr;
+        </a>
+        <a href="/my/home.html" class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
+          개인홈 바로가기
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-6 py-8 space-y-10">
+
+    <!-- 1. Design Principles Banner -->
+    <section class="p-6 rounded-3xl bg-gradient-to-br from-teal-900 to-slate-900 text-white shadow-md space-y-3">
+      <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-400/20 text-teal-300 border border-teal-400/30">
+        CORE PRODUCT PRINCIPLES
+      </span>
+      <h2 class="text-xl font-black text-white">“당신을 규정하지 않고, 당신의 작동방식을 함께 봅니다.”</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300 pt-1">
+        <div class="p-3 rounded-2xl bg-white/5 border border-white/10">
+          🌿 <strong>삶으로의 복귀:</strong> 자기 관찰은 다시 삶으로 돌아가기 위해 존재합니다.
+        </div>
+        <div class="p-3 rounded-2xl bg-white/5 border border-white/10">
+          🧭 <strong>질문의 힘:</strong> 오늘의 카드는 미래를 맞히지 않습니다. 지금 무슨 일이 일어나고 있는지 묻습니다.
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Color Tokens -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-black text-slate-900 uppercase">1. 컬러 토큰 (Color Tokens)</h3>
+        <span class="text-xs text-slate-400">자연스럽고 차분한 정서적 안정 팔레트</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs">
+        <div class="p-3 rounded-2xl bg-[#F7F4EC] border border-[#C7A86B]/40 space-y-1">
+          <div class="h-10 rounded-xl bg-[#F7F4EC] border border-amber-200/60"></div>
+          <div class="font-bold text-slate-800">Warm Ivory</div>
+          <div class="text-[10px] text-slate-500 font-mono">#F7F4EC</div>
+        </div>
+        <div class="p-3 rounded-2xl bg-white border border-slate-200 space-y-1">
+          <div class="h-10 rounded-xl bg-[#0F6B5B]"></div>
+          <div class="font-bold text-slate-800">Emerald Primary</div>
+          <div class="text-[10px] text-slate-500 font-mono">#0F6B5B</div>
+        </div>
+        <div class="p-3 rounded-2xl bg-white border border-slate-200 space-y-1">
+          <div class="h-10 rounded-xl bg-[#14233B]"></div>
+          <div class="font-bold text-slate-800">Deep Navy</div>
+          <div class="text-[10px] text-slate-500 font-mono">#14233B</div>
+        </div>
+        <div class="p-3 rounded-2xl bg-white border border-slate-200 space-y-1">
+          <div class="h-10 rounded-xl bg-[#C7A86B]"></div>
+          <div class="font-bold text-slate-800">Soft Gold</div>
+          <div class="text-[10px] text-slate-500 font-mono">#C7A86B</div>
+        </div>
+        <div class="p-3 rounded-2xl bg-white border border-slate-200 space-y-1">
+          <div class="h-10 rounded-xl bg-[#DDE8E0]"></div>
+          <div class="font-bold text-slate-800">Soft Sage</div>
+          <div class="text-[10px] text-slate-500 font-mono">#DDE8E0</div>
+        </div>
+        <div class="p-3 rounded-2xl bg-white border border-slate-200 space-y-1">
+          <div class="h-10 rounded-xl bg-[#252A2D]"></div>
+          <div class="font-bold text-slate-800">Charcoal</div>
+          <div class="text-[10px] text-slate-500 font-mono">#252A2D</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Button System -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-black text-slate-900 uppercase">2. 버튼 시스템 (Button Components)</h3>
+        <span class="text-xs text-slate-400">터치 접근성 (최소 높이 44px) 보장</span>
+      </div>
+      <div class="token-box flex flex-wrap items-center gap-3">
+        <button type="button" class="btn-myungsim btn-primary">
+          오늘의 10% 선택 (Primary)
+        </button>
+        <button type="button" class="btn-myungsim btn-secondary">
+          내 경우를 1분 SCAN (Secondary)
+        </button>
+        <button type="button" class="btn-myungsim btn-ghost">
+          다른 질문 보기 (Ghost)
+        </button>
+        <button type="button" class="btn-myungsim btn-danger">
+          기록 삭제 (Danger)
+        </button>
+        <button type="button" class="btn-myungsim btn-exit">
+          여기서 끝내기 &rarr;
+        </button>
+      </div>
+    </section>
+
+    <!-- 4. Card System & Mobile Insight Card -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-black text-slate-900 uppercase">3. 카드 컴포넌트 (Card Components)</h3>
+        <span class="text-xs text-slate-400">카지노/타로식 과장 없는 정갈한 인사이트 카드</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Standalone Public Insight Card -->
+        <div class="insight-card-standard">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="chip-myungsim chip-category">PACK 01 관계</span>
+              <span class="text-[10px] font-mono text-slate-400">M-012</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900">상대의 불편한 표정</h4>
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200/50 text-xs font-bold text-slate-800 leading-relaxed">
+              “상대가 말없이 한숨을 쉴 때, 내가 뭔가를 잘못했다고 바로 확신하나요?”
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>SCAN &middot; SYNC &middot; SHIFT</span>
+            <span class="font-bold text-[#0F6B5B]">1분 관찰 &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Choice Card Components -->
+        <div class="token-box space-y-3">
+          <div class="text-xs font-bold text-slate-600">Choice Card (선택 상태)</div>
+          <button type="button" class="choice-card-item is-selected">
+            <span>스마트폰 서랍에 넣고 15분 대기</span>
+            <span class="text-teal-600 font-bold">✓</span>
+          </button>
+          <button type="button" class="choice-card-item">
+            <span>가슴에 손 얹고 깊게 세 번 숨쉬기</span>
+            <span class="text-slate-300">○</span>
+          </button>
+          <button type="button" class="choice-card-item">
+            <span>지금 드는 생각을 메모장 1줄로 적기</span>
+            <span class="text-slate-300">○</span>
+          </button>
+        </div>
+
+        <!-- Working Map Preview Node -->
+        <div class="token-box space-y-2 text-xs">
+          <div class="text-xs font-bold text-slate-600">Working Map Node (자동 작동 패턴)</div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+            <div class="text-[10px] font-bold text-slate-400">TRIGGER (장면)</div>
+            <div class="font-bold text-slate-800">답장 지연 1시간 초과</div>
+          </div>
+          <div class="p-3 rounded-xl bg-teal-50 border border-teal-200 space-y-1">
+            <div class="text-[10px] font-bold text-teal-700">10% ACTION (새로운 선택)</div>
+            <div class="font-bold text-teal-950">산책 10분 다녀오기</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Alert & Safety Notification -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-black text-slate-900 uppercase">4. 알림 시스템 (Alert & Safety System)</h3>
+        <span class="text-xs text-slate-400">과도한 공포 마케팅 배제 · 명확하고 침착한 지원</span>
+      </div>
+      <div class="space-y-3 text-xs">
+        <div class="alert-myungsim alert-info">
+          <span>ℹ️</span>
+          <div>
+            <strong>안내:</strong> 서비스 개선에는 개인의 고민 원문 대신 최소한의 이용 신호만을 안전하게 사용합니다.
+          </div>
+        </div>
+        <div class="alert-myungsim alert-warning">
+          <span>💡</span>
+          <div>
+            <strong>관찰 팁:</strong> 반응이 올라오는 것을 인정하되, 이 반응을 나 전체로 만들지는 않습니다.
+          </div>
+        </div>
+        <div class="alert-myungsim alert-safety">
+          <span>🛡️</span>
+          <div>
+            <strong>안전 지원 (Safety Gate):</strong> 지금 힘든 마음을 겪고 계시다면 24시간 정신건강 상담전화(1577-0199) 또는 109로 도움을 요청하세요.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/myungsim-design-system.js"></script>
+
+</body>
+</html>

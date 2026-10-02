@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30일 명심 여정 | 마인드플로우 랩 명심코칭</title>
+
+  <!-- 개인 프라이버시 보호 (검색 수집 차단) -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="referrer" content="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Myungsim Design Tokens CSS -->
+  <link rel="stylesheet" href="/css/myungsim-design-tokens.css" />
+
+  <style>
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+    .bottom-nav-item.active {
+      color: #0f766e;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen pb-28">
+
+  <!-- Top Header Bar -->
+  <header class="w-full bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="/my/home.html" class="p-1.5 -ml-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition" aria-label="개인 홈으로 이동">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </a>
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-teal-100 text-[#0F766E] flex items-center justify-center font-bold text-xs">🧭</span>
+          <span class="text-sm font-black text-slate-900 tracking-tight">30일 명심 여정</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="/my/home.html" class="text-xs font-bold text-slate-500 hover:text-[#0F766E] transition">
+          홈으로
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Root Container -->
+  <main class="max-w-xl mx-auto px-4 sm:px-6 py-6">
+    <div id="myungsim-journey-page-root">
+      <!-- js/myungsim-30day-journey.js에 의해 동적 렌더링 -->
+      <div class="py-12 text-center text-slate-400 text-xs animate-pulse">
+        30일 명심 여정을 불러오는 중입니다...
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Bar (모바일 필수 네비게이션) -->
+  <nav class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 py-2">
+    <div class="max-w-xl mx-auto px-4 flex items-center justify-around text-center text-[10px] font-bold text-slate-500">
+      <a href="/my/home.html" id="bnav-home" class="bottom-nav-item flex flex-col items-center gap-0.5 py-1 hover:text-[#0F766E] transition">
+        <span class="text-base">🏡</span>
+        <span>홈</span>
+      </a>
+      <a href="/library" id="bnav-discover" class="bottom-nav-item flex flex-col items-center gap-0.5 py-1 hover:text-[#0F766E] transition">
+        <span class="text-base">🔍</span>
+        <span>질문탐색</span>
+      </a>
+      <a href="/my/experiments.html" id="bnav-history" class="bottom-nav-item flex flex-col items-center gap-0.5 py-1 hover:text-[#0F766E] transition">
+        <span class="text-base">🌱</span>
+        <span>행동실험</span>
+      </a>
+      <a href="/my/working-map.html" id="bnav-map" class="bottom-nav-item flex flex-col items-center gap-0.5 py-1 hover:text-[#0F766E] transition">
+        <span class="text-base">🗺️</span>
+        <span>작동지도</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="/js/myungsim-design-system.js?v=20260921_v1"></script>
+  <script src="/js/mind-cards-data.js?v=20260919_v1"></script>
+  <script src="/js/myeongsim-ai-router.js?v=20260919_v1"></script>
+  <script src="/js/daily-mind-card.js?v=20260919_v1"></script>
+  <script src="/js/myungsim-personal-home.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-behavior-experiment.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-30day-journey.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-core-flow.js?v=20260920_v1"></script>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나의 10% 행동실험실 | 마인드플로우 랩 명심코칭</title>
+  
+  <!-- 개인 프라이버시 보호: 검색엔진 수집 완전 차단 및 소셜 공유 비공개 -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="referrer" content="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Official Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+  <style>
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+    .tab-btn.active {
+      background-color: #0f766e;
+      color: #ffffff;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen">
+
+  <!-- Top Navigation Bar -->
+  <header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="/" class="flex items-center gap-2 text-slate-900 font-black text-sm hover:text-[#0F766E] transition">
+          <span class="w-7 h-7 rounded-xl bg-[#0F766E] text-white flex items-center justify-center font-black text-xs shadow-xs">🌱</span>
+          <span class="tracking-tight">명심코칭</span>
+        </a>
+        <span class="text-slate-300 font-light">/</span>
+        <span class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+          <span>나의 10% 행동실험실</span>
+        </span>
+        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-[#0F766E] border border-emerald-200">개인 보관함</span>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs font-bold">
+        <a href="/my/working-map.html" class="text-slate-600 hover:text-[#0F766E] transition flex items-center gap-1">
+          <span>🗺️ 작동지도</span>
+        </a>
+        <a href="/" class="text-slate-500 hover:text-slate-900 transition">&larr; 홈으로</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-6">
+
+    <!-- Header & Core Philosophy Banner -->
+    <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <span class="text-[11px] font-black text-[#0F766E] tracking-wider uppercase">MYUNGSIM BEHAVIOR EXPERIMENT</span>
+          <h1 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">나의 작은 행동실험 기록</h1>
+          <p class="text-xs text-slate-500 mt-1">내 예상과 실제 결과를 비교하며 새로운 경험 데이터를 쌓아가는 개인 공간</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="startNewExperimentFromHistory()" class="px-4 py-2 bg-[#0F766E] hover:bg-[#115E59] text-white rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5">
+            <span>+ 새 10% 행동 탐색</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 철학 선언 배너 -->
+      <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 text-emerald-950 text-xs flex items-center gap-2.5">
+        <span class="text-base">🛡️</span>
+        <div class="leading-relaxed">
+          <strong>“생각만 바꾸는 것이 아니라, 작은 행동으로 실제 결과를 확인합니다.”</strong>
+          <span class="text-emerald-700 block text-[11px] mt-0.5">정답을 증명하는 시험이 아닙니다. 연속일(Streak), 점수, 실패는 없으며 행동하지 못한 것 또한 소중한 데이터입니다.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Experiment (진행 중인 실험) -->
+    <section id="active-experiment-section" class="space-y-3" style="display:none;">
+      <h2 class="text-sm font-black text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+        <span>📌</span>
+        <span>지금 진행 중인 선택 (Active)</span>
+      </h2>
+      <div id="active-experiment-card-container">
+        <!-- 동적으로 주입 -->
+      </div>
+    </section>
+
+    <!-- Filter Tabs & History Section -->
+    <section class="space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
+        <!-- 필터 버튼군 -->
+        <div class="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-2xl border border-slate-200 text-xs font-bold" id="status-filter-tabs">
+          <button type="button" class="tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition active" data-filter="all">전체 (<span id="cnt-all">0</span>)</button>
+          <button type="button" class="tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition" data-filter="DONE">완료 (<span id="cnt-done">0</span>)</button>
+          <button type="button" class="tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition" data-filter="PARTIAL">부분완료 (<span id="cnt-partial">0</span>)</button>
+          <button type="button" class="tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition" data-filter="NOT_DONE">미실행 (<span id="cnt-notdone">0</span>)</button>
+          <button type="button" class="tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition" data-filter="CANCELLED">상황 없음/닫힘 (<span id="cnt-cancelled">0</span>)</button>
+        </div>
+
+        <!-- 뷰 모드 토글 (카드 목록 vs 타임라인) -->
+        <div class="flex items-center gap-1 text-xs">
+          <button type="button" id="btn-view-cards" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 font-bold text-slate-900 shadow-2xs">카드 뷰</button>
+          <button type="button" id="btn-view-timeline" class="px-2.5 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 font-medium">타임라인 뷰</button>
+        </div>
+      </div>
+
+      <!-- 리스트 컨테이너 -->
+      <div id="experiments-list-container" class="space-y-3">
+        <!-- 자바스크립트로 렌더링 -->
+      </div>
+
+      <!-- 타임라인 컨테이너 (기본 hidden) -->
+      <div id="experiments-timeline-container" class="space-y-4 hidden">
+        <!-- 자바스크립트로 렌더링 -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/mind-cards-data.js?v=20260919_v1"></script>
+  <script src="/js/myeongsim-ai-router.js?v=20260919_v1"></script>
+  <script src="/js/daily-mind-card.js?v=20260919_v1"></script>
+  <script src="/js/myungsim-behavior-experiment.js?v=20260921_v1"></script>
+  <script src="/js/myungsim-core-flow.js?v=20260920_v1"></script>
+
+  <script>
+    let currentFilter = 'all';
+    let currentView = 'cards';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderExperimentsPage();
+      setupEventListeners();
+    });
+
+    function setupEventListeners() {
+      // 탭 필터 클릭
+      document.querySelectorAll('#status-filter-tabs .tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#status-filter-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter');
+          renderList();
+        });
+      });
+
+      // 뷰 모드 토글
+      const btnCards = document.getElementById('btn-view-cards');
+      const btnTimeline = document.getElementById('btn-view-timeline');
+      btnCards.addEventListener('click', () => {
+        currentView = 'cards';
+        btnCards.className = 'px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 font-bold text-slate-900 shadow-2xs';
+        btnTimeline.className = 'px-2.5 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 font-medium';
+        document.getElementById('experiments-list-container').classList.remove('hidden');
+        document.getElementById('experiments-timeline-container').classList.add('hidden');
+      });
+      btnTimeline.addEventListener('click', () => {
+        currentView = 'timeline';
+        btnTimeline.className = 'px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 font-bold text-slate-900 shadow-2xs';
+        btnCards.className = 'px-2.5 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 font-medium';
+        document.getElementById('experiments-list-container').classList.add('hidden');
+        document.getElementById('experiments-timeline-container').classList.remove('hidden');
+        renderTimeline();
+      });
+    }
+
+    function renderExperimentsPage() {
+      const all = window.MyungsimExperiment ? window.MyungsimExperiment.ExperimentStore.getAll() : [];
+      
+      // 카운트 업데이트
+      document.getElementById('cnt-all').textContent = all.length;
+      document.getElementById('cnt-done').textContent = all.filter(e => e.status === 'DONE').length;
+      document.getElementById('cnt-partial').textContent = all.filter(e => e.status === 'PARTIAL').length;
+      document.getElementById('cnt-notdone').textContent = all.filter(e => e.status === 'NOT_DONE').length;
+      document.getElementById('cnt-cancelled').textContent = all.filter(e => e.status === 'CANCELLED').length;
+
+      // Active Experiment
+      const active = all.find(e => e.status === 'PLANNED');
+      const activeSec = document.getElementById('active-experiment-section');
+      const activeCardBox = document.getElementById('active-experiment-card-container');
+
+      if (active) {
+        activeSec.style.display = 'block';
+        activeCardBox.innerHTML = `
+          <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-md space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 font-bold border border-emerald-400/30">
+                🌱 진행 중인 10% 시도
+              </span>
+              <span class="text-slate-400 text-[11px]">${formatDate(active.createdAt)} 시작</span>
+            </div>
+            
+            <div class="space-y-1">
+              <div class="text-xs text-slate-300">내 예상: "${escapeHtml(active.expectedResult)}"</div>
+              <div class="text-base font-bold text-white">행동: "${escapeHtml(active.selectedAction)}"</div>
+            </div>
+
+            <div class="pt-2 flex items-center justify-between border-t border-slate-700/60">
+              <span class="text-[11px] text-slate-400">결과를 바꾸기보다 일어나는 일을 편안히 관찰합니다.</span>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="window.MyungsimExperiment.ui.openFollowupModal('${active.experimentId}')" class="px-3.5 py-1.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs transition shadow-xs">
+                  어떻게 됐는지 기록하기 &rarr;
+                </button>
+                <button type="button" onclick="closeExperiment('${active.experimentId}')" class="px-2 py-1.5 text-xs text-slate-400 hover:text-white" title="실험 닫기">
+                  닫기
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        activeSec.style.display = 'none';
+      }
+
+      renderList();
+      if (currentView === 'timeline') renderTimeline();
+    }
+
+    function renderList() {
+      const container = document.getElementById('experiments-list-container');
+      const all = window.MyungsimExperiment ? window.MyungsimExperiment.ExperimentStore.getAll() : [];
+      let list = all;
+
+      if (currentFilter !== 'all') {
+        list = all.filter(e => e.status === currentFilter);
+      }
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="p-12 text-center rounded-3xl bg-white border border-slate-200 text-slate-400 space-y-3">
+            <div class="text-3xl">🌱</div>
+            <div class="text-sm font-bold text-slate-600">해당하는 행동실험 기록이 아직 없습니다.</div>
+            <div class="text-xs text-slate-400 leading-relaxed">
+              1-Minute MyungSim에서 10% 행동을 선택할 때,<br>
+              <strong>[실험으로 저장]</strong>을 누르면 언제든 나만의 작은 시도를 남길 수 있습니다.
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(exp => {
+        const isDone = exp.status === 'DONE';
+        const isPartial = exp.status === 'PARTIAL';
+        const isNotDone = exp.status === 'NOT_DONE';
+        const isCancelled = exp.status === 'CANCELLED';
+
+        const statusBadge = isDone ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">완료 (실제 확인)</span>`
+          : isPartial ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-100 text-teal-800 border border-teal-200">부분완료</span>`
+          : isNotDone ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">미실행 (원인 확인)</span>`
+          : isCancelled ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-500 border border-slate-200">상황 없음 / 닫힘</span>`
+          : `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">행동 대기 중</span>`;
+
+        return `
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs hover:border-slate-300 transition space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                ${statusBadge}
+                <span class="text-slate-400 text-[11px]">${formatDate(exp.createdAt)}</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="deleteExperiment('${exp.experimentId}')" class="text-slate-300 hover:text-rose-600 transition p-1 text-xs" title="삭제">
+                  🗑️ 삭제
+                </button>
+              </div>
+            </div>
+
+            <!-- 내용 그리드 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 block uppercase">상황 및 내 예상</span>
+                <div class="font-semibold text-slate-800">${escapeHtml(exp.expectedResult || '예상 기록 없음')}</div>
+                <div class="text-[11px] text-slate-400 mt-1">시도한 행동: "${escapeHtml(exp.selectedAction)}"</div>
+              </div>
+
+              <div class="p-3 rounded-xl ${isDone || isPartial ? 'bg-emerald-50/60 border border-emerald-100' : 'bg-slate-50 border border-slate-100'} space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 block uppercase">실제로 일어난 일 (FACT)</span>
+                <div class="font-semibold ${isDone || isPartial ? 'text-emerald-950' : 'text-slate-700'}">
+                  ${escapeHtml(exp.followup.actualResult || (isNotDone ? '행동이 너무 컸거나 불안으로 멈춤' : '기록 대기 중'))}
+                </div>
+                ${exp.followup.learning ? `
+                  <div class="text-[11px] text-[#0F766E] font-medium mt-1">💡 발견: ${escapeHtml(exp.followup.learning)}</div>
+                ` : ''}
+              </div>
+            </div>
+
+            ${exp.followup.nextChoice ? `
+              <div class="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-100">
+                <span>다음 비슷한 상황에서의 선택: <strong>${formatNextChoice(exp.followup.nextChoice)}</strong></span>
+                <a href="/my/working-map.html" class="text-[#0F766E] hover:underline font-bold">지도에서 확인 &rarr;</a>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('experiments-timeline-container');
+      const all = window.MyungsimExperiment ? window.MyungsimExperiment.ExperimentStore.getAll() : [];
+      const completedList = all.filter(e => e.status === 'DONE' || e.status === 'PARTIAL' || e.status === 'NOT_DONE');
+
+      if (completedList.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center rounded-3xl bg-white border border-slate-200 text-slate-400 text-xs">
+            완료되거나 피드백이 기록된 실험이 아직 없습니다.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-4">
+          <div class="text-xs text-slate-500">
+            동일하거나 유사한 장면에서 <strong>예상과 실제 결과가 어떻게 누적되었는지</strong> 흐름을 봅니다.
+          </div>
+          <div class="relative pl-6 border-l-2 border-emerald-300 space-y-6">
+            ${completedList.map((exp, idx) => `
+              <div class="relative group">
+                <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white shadow-xs"></div>
+                <div class="space-y-1">
+                  <div class="text-[11px] text-slate-400 font-bold">${formatDate(exp.createdAt)} &middot; ${idx + 1}회차 시도</div>
+                  <div class="text-xs font-bold text-slate-800">예상: "${escapeHtml(exp.expectedResult)}" &rarr; 행동: "${escapeHtml(exp.selectedAction)}"</div>
+                  <div class="text-xs text-emerald-800 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+                    <strong>실제 결과:</strong> ${escapeHtml(exp.followup.actualResult || exp.followup.learning || '관찰 기록됨')}
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function deleteExperiment(id) {
+      if (confirm('이 행동실험 기록을 삭제하시겠습니까?\n삭제된 기록은 나의 작동지도 집계에서도 안전하게 제외됩니다.')) {
+        window.MyungsimExperiment.ExperimentStore.remove(id);
+        renderExperimentsPage();
+      }
+    }
+
+    function closeExperiment(id) {
+      if (confirm('이 실험을 종료하시겠습니까?')) {
+        window.MyungsimExperiment.ExperimentStore.close(id);
+        renderExperimentsPage();
+      }
+    }
+
+    function startNewExperimentFromHistory() {
+      if (window.myungsimCoreFlow) {
+        window.myungsimCoreFlow.open();
+      } else {
+        window.location.href = '/';
+      }
+    }
+
+    function formatDate(iso) {
+      if (!iso) return '';
+      const d = new Date(iso);
+      return `${d.getMonth() + 1}월 ${d.getDate()}일`;
+    }
+
+    function formatNextChoice(val) {
+      const map = {
+        same_again: '같은 행동 다시 시도',
+        smaller: '조금 더 작은 행동으로 조율',
+        bigger: '조금 더 큰 행동으로 확장',
+        different: '다른 새로운 행동 탐색',
+        undecided: '아직 정하지 않음'
+      };
+      return map[val] || val;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>

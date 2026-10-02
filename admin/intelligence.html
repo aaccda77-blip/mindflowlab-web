@@ -277,6 +277,126 @@
       </div>
     </section>
 
+    <!-- 2.5 Behavior Experiment Intelligence (행동실험 집계 지표 및 개인 원문 0건 검증) -->
+    <section class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+        <div>
+          <h2 class="text-sm font-black text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+            <span>🌱</span>
+            <span>2.5 Behavior Experiment Intelligence (행동실험 집계 지능)</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">예상 vs 실제 비교 루프 집계 신호 &middot; 개인 원문 노출 0건 프라이버시 무결 보장</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-[#0F6B5B] border border-emerald-200 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>개인 원문 노출 0건 (Zero Raw Text)</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- 4대 요약 카드 -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <span class="text-[10px] font-bold text-slate-400 uppercase">총 생성된 실험</span>
+          <div class="text-xl font-black text-slate-900" id="adm-exp-total">421<span class="text-xs font-normal text-slate-400 ml-1">건</span></div>
+          <div class="text-[10px] text-emerald-700 font-semibold">1-Minute 완료자 중 55.2%</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <span class="text-[10px] font-bold text-slate-400 uppercase">팔로업 기록률</span>
+          <div class="text-xl font-black text-emerald-700" id="adm-exp-followup-rate">78.4<span class="text-xs font-normal text-slate-400 ml-1">%</span></div>
+          <div class="text-[10px] text-slate-500">완료(58.9%) + 부분(19.5%)</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <span class="text-[10px] font-bold text-slate-400 uppercase">미실행(NOT_DONE) 비율</span>
+          <div class="text-xl font-black text-amber-700" id="adm-exp-notdone-rate">12.8<span class="text-xs font-normal text-slate-400 ml-1">%</span></div>
+          <div class="text-[10px] text-amber-800">소중한 데이터 &middot; 0점/실패 없음</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <span class="text-[10px] font-bold text-slate-400 uppercase">Action Too Big 감지율</span>
+          <div class="text-xl font-black text-blue-700" id="adm-exp-toobig-rate">16.3<span class="text-xs font-normal text-slate-400 ml-1">%</span></div>
+          <div class="text-[10px] text-blue-800">5%/1% 축소 행동으로 조율됨</div>
+        </div>
+      </div>
+
+      <!-- 상세 집계 그리드: 마이크로 액션 분포 & Action Review Candidates -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-2">
+        <!-- 마이크로 액션 유형별 분포 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+          <span class="text-[11px] font-bold text-slate-700 block uppercase">주요 Micro Action Type 분포</span>
+          <div class="space-y-2">
+            <div>
+              <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+                <span>DELAY (반응 20분 보류하기)</span>
+                <strong>34.2%</strong>
+              </div>
+              <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                <div class="bg-teal-600 h-full rounded-full" style="width: 34.2%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+                <span>BOUNDARY (일정 확인 후 답하기)</span>
+                <strong>28.1%</strong>
+              </div>
+              <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                <div class="bg-emerald-600 h-full rounded-full" style="width: 28.1%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+                <span>ONE_SMALL_STEP (10분 거친 초안)</span>
+                <strong>18.5%</strong>
+              </div>
+              <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                <div class="bg-blue-600 h-full rounded-full" style="width: 18.5%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[11px] text-slate-600 mb-0.5">
+                <span>ASK (추측 대신 핵심 질문 1개)</span>
+                <strong>12.3%</strong>
+              </div>
+              <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                <div class="bg-amber-600 h-full rounded-full" style="width: 12.3%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Review Candidate (Too Big 반복 개선 후보) -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Action Review Candidates (개선 검토 후보)</span>
+            <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-100 text-amber-800">자동 수정 금지 &middot; 사람 검토</span>
+          </div>
+          <div class="space-y-2">
+            <div class="p-2.5 rounded-lg bg-white border border-slate-200 text-[11px] space-y-1">
+              <div class="flex items-center justify-between font-bold text-slate-800">
+                <span>fam-003: "부모에게 내 일정 먼저 말하기"</span>
+                <span class="text-rose-600">Too Big 31%</span>
+              </div>
+              <p class="text-slate-500 text-[10px]">
+                일부 경계 행동이 첫 행동실험으로 너무 클 가능성 &rarr; smallerAction("10분 뒤 답하기") 우선 노출 권장
+              </p>
+            </div>
+            <div class="p-2.5 rounded-lg bg-white border border-slate-200 text-[11px] space-y-1">
+              <div class="flex items-center justify-between font-bold text-slate-800">
+                <span>perf-010: "수정 1회만 하고 바로 제출하기"</span>
+                <span class="text-rose-600">Too Big 26%</span>
+              </div>
+              <p class="text-slate-500 text-[10px]">
+                실제 제출 부담이 큼 &rarr; "오늘 작업할 체크리스트 1개만 지우기"로 깃털 축소 제안
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 4. What We Learned (Product Learning Feed) - FACT / INTERPRETATION / NEXT QUESTION -->
     <section class="space-y-4">
       <div class="flex items-center justify-between">
