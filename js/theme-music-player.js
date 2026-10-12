@@ -26,12 +26,12 @@
     },
     {
       id: 'autumn',
-      title: '다시 나에게',
+      title: '다시, 나에게',
       badge: '🍁 가을 힐링송',
       subtitle: '가을에 듣기 좋은 노래',
-      src: '/assets/myungsim-autumn-theme.mp3',
+      src: '/assets/myungsim-autumn-theme.mp3?v=20261003_v2',
       tag: '가을 힐링 테마',
-      heroDesc: '🍂 가을 스페셜 힐링송 “다시 나에게” · 마음을 내려놓는 따뜻한 선율'
+      heroDesc: '🍂 가을 스페셜 힐링송 “다시, 나에게” · 마음을 내려놓는 따뜻한 선율'
     }
   ];
 

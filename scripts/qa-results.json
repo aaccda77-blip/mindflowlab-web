@@ -21,10 +21,9 @@
     ]
   },
   "gate4_prod_metadata_domain": {
-    "pass": true,
+    "pass": false,
     "details": [
-      "All 140 sitemap URLs point to https://lab.mindflowlab.co.kr",
-      "Core HTML files canonical/og point to https://lab.mindflowlab.co.kr"
+      "Sitemap prod check: false, Canonical check: true"
     ]
   },
   "gate5_faq_uniqueness": {
@@ -36,11 +35,9 @@
     ]
   },
   "gate6_cta_nav_flow": {
-    "pass": true,
+    "pass": false,
     "details": [
-      "Main navigation has all 6 core route links",
-      "Self Check provides deep links to FAQ and AI",
-      "Mobile menu triggers and responsive navigation verified"
+      "Nav checks: faq:true, sc:true, ai:false, scToFaq:true"
     ]
   },
   "gate7_self_check_design": {

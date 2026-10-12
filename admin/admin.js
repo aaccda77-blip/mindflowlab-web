@@ -102,6 +102,16 @@
       threeCode: 'Neural Code'
     },
     {
+      bookId: 'genre',
+      title: '오류가 아니라, 장르입니다',
+      subtitle: '주역과 뇌과학이 밝혀낸, 나라는 시스템을 100% 활용하는 법',
+      author: '이경윤 (청류)',
+      coverImage: '/assets/book-cover-genre.jpg',
+      url: 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%98%A4%EB%A5%98%EA%B0%80+%EC%95%84%EB%8B%88%EB%9D%BC+%EC%9E%A5%EB%A5%B4%EC%9E%85%EB%8B%88%EB%8B%A4+%EC%9D%B4%EA%B2%BD%EC%9C%A4',
+      status: 'published',
+      threeCode: 'Dark & Neural Code'
+    },
+    {
       bookId: 'zero_point',
       title: '제로 포인트 (Zero Point)',
       subtitle: '어떤 감정 앞에서도 흔들리지 않는 내면의 영점',
