@@ -1001,28 +1001,83 @@
                         지금 무엇이 가장 마음에 걸리나요?
                       </h4>
                       <p class="text-xs text-slate-300 leading-relaxed">
-                        정리해서 쓰지 않아도 됩니다. 평소 생각하는 말 그대로 적어보세요.
+                        글로 정리하지 않아도 괜찮습니다. 아래의 대표 장면을 누르거나 생각나는 그대로 적어보세요.
                       </p>
                     </div>
 
+                    <!-- 3대 대표 고민 1초 원클릭 퀵 카드 (Conversion Highway) -->
+                    <div class="space-y-1.5 pt-1">
+                      <div class="flex items-center justify-between text-[11px] font-bold">
+                        <span class="text-amber-300 flex items-center gap-1">
+                          <span>⚡ 1초 원클릭 즉각 진단</span>
+                          <span class="text-[9px] px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-200">추천</span>
+                        </span>
+                        <span class="text-slate-400 text-[10px]">누르면 바로 통찰 카드가 열립니다</span>
+                      </div>
+                      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <!-- Quick 1: 관계/연락 -->
+                        <button type="button" onclick="setMindSearchQuery('답장이 늦으면 버림받은 것 같아요.')" class="p-3 rounded-2xl bg-gradient-to-br from-rose-950/70 via-slate-900 to-slate-950 border border-rose-500/40 hover:border-rose-400 hover:shadow-lg hover:shadow-rose-950/50 transition-all text-left group cursor-pointer active:scale-[0.98]">
+                          <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs">💬 관계 · 연락</span>
+                            <span class="text-[9px] font-bold text-rose-300 px-1.5 py-0.5 rounded bg-rose-500/20">인기 1위 🔥</span>
+                          </div>
+                          <p class="text-xs font-bold text-white group-hover:text-rose-200 transition-colors leading-snug">
+                            “답장 늦으면 왜 나를 피하는 것 같죠?”
+                          </p>
+                          <span class="text-[10px] text-slate-400 block mt-1">확인 강박 · 관계 불안 해체 &rarr;</span>
+                        </button>
+
+                        <!-- Quick 2: 직장/번아웃 -->
+                        <button type="button" onclick="setMindSearchQuery('회사 가기만 하면 숨이 막혀요.')" class="p-3 rounded-2xl bg-gradient-to-br from-emerald-950/70 via-slate-900 to-slate-950 border border-emerald-500/40 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-950/50 transition-all text-left group cursor-pointer active:scale-[0.98]">
+                          <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs">💼 직장 · 평가</span>
+                            <span class="text-[9px] font-bold text-emerald-300 px-1.5 py-0.5 rounded bg-emerald-500/20">직장인 공감</span>
+                          </div>
+                          <p class="text-xs font-bold text-white group-hover:text-emerald-200 transition-colors leading-snug">
+                            “출근만 하면 숨 막히고 자책해요”
+                          </p>
+                          <span class="text-[10px] text-slate-400 block mt-1">인정욕구 · 번아웃 멈춤 &rarr;</span>
+                        </button>
+
+                        <!-- Quick 3: 실패/불안 -->
+                        <button type="button" onclick="setMindSearchQuery('사업 망하고 제가 실패자가 된 것 같아요.')" class="p-3 rounded-2xl bg-gradient-to-br from-amber-950/70 via-slate-900 to-slate-950 border border-amber-500/40 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-950/50 transition-all text-left group cursor-pointer active:scale-[0.98]">
+                          <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs">🌿 실수 · 불안</span>
+                            <span class="text-[9px] font-bold text-amber-300 px-1.5 py-0.5 rounded bg-amber-500/20">영점 회복</span>
+                          </div>
+                          <p class="text-xs font-bold text-white group-hover:text-amber-200 transition-colors leading-snug">
+                            “실패하면 제 인생도 끝난 걸까요?”
+                          </p>
+                          <span class="text-[10px] text-slate-400 block mt-1">자책 해제 · 10초 중심잡기 &rarr;</span>
+                        </button>
+                      </div>
+                    </div>
+
                     <!-- Search Input Bar with Action Button -->
-                    <div class="space-y-2">
+                    <div class="space-y-2 pt-1">
                       <div class="relative flex items-center">
                         <input 
                           type="text" 
                           id="mind-search-input"
                           onkeydown="if(event.key === 'Enter') handleMyeongsimAISearch();"
-                          placeholder="예: 답장이 늦으면 자꾸 버림받을 것 같아요."
+                          placeholder="직접 입력: 예) 실수하면 하루 종일 제가 미워요."
                           class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C7A86B] shadow-inner"
                         />
-                        <span class="absolute left-3.5 text-slate-400 text-sm">💬</span>
+                        <span class="absolute left-3.5 text-slate-400 text-sm">✍️</span>
                         <button id="mind-search-clear-btn" onclick="clearMindSearch()" class="hidden absolute right-3.5 text-slate-400 hover:text-slate-700 text-xs font-bold cursor-pointer">✕</button>
                       </div>
 
                       <div class="flex gap-2">
                         <button onclick="handleMyeongsimAISearch()" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#C7A86B] via-[#E2CF9F] to-[#C7A86B] hover:from-[#E2CF9F] hover:to-[#C7A86B] text-slate-950 font-black text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]">
-                          <span>🔍 내 고민과 가까운 질문 찾기</span>
+                          <span>🔍 내 마음의 자동패턴 라우팅하기</span>
                         </button>
+                      </div>
+
+                      <!-- 100% 철통 프라이버시 안심 마크 -->
+                      <div class="flex items-center justify-center gap-1.5 text-[10px] sm:text-[11px] text-slate-400 pt-0.5">
+                        <span class="text-emerald-400">🛡️ 100% 온디바이스 안심</span>
+                        <span>·</span>
+                        <span>입력하신 속마음은 AI 학습에 전송되지 않으며 서버에 저장되지 않습니다</span>
                       </div>
                     </div>
 
