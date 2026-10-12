@@ -1130,10 +1130,16 @@
                           🛡️ 일상관찰 · 비진단
                         </span>
                       </div>
-                      <button onclick="resetMindCardSelection()" class="text-xs font-bold text-slate-500 hover:text-[#0F6B5B] flex items-center gap-1 transition px-2.5 py-1 rounded-lg hover:bg-slate-100 cursor-pointer">
-                        <span>🔄</span>
-                        <span>다시 뽑기</span>
-                      </button>
+                      <div class="flex items-center gap-1.5">
+                        <button onclick="downloadPrescriptionCard()" title="인스타·카톡 공유용 처방전 이미지 저장" class="text-xs font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 flex items-center gap-1 transition px-2.5 py-1 rounded-lg cursor-pointer">
+                          <span>📸</span>
+                          <span class="hidden sm:inline">처방전</span><span>저장</span>
+                        </button>
+                        <button onclick="resetMindCardSelection()" class="text-xs font-bold text-slate-500 hover:text-[#0F6B5B] flex items-center gap-1 transition px-2.5 py-1 rounded-lg hover:bg-slate-100 cursor-pointer">
+                          <span>🔄</span>
+                          <span>다시 뽑기</span>
+                        </button>
+                      </div>
                     </div>
 
                     <!-- Scroll Anchor -->
@@ -1564,12 +1570,39 @@
                       <!-- Dynamically rendered by daily-mind-card.js -->
                     </div>
 
-                    <!-- Bottom Utilities -->
-                    <div class="pt-3 mt-3 border-t border-slate-200/80 flex items-center justify-between gap-2 text-xs">
-                      <button onclick="copyMindCardResult()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition flex items-center gap-1 cursor-pointer">
-                        <span>📋</span>
-                        <span>카드 복사</span>
+                    <!-- ===================================================== -->
+                    <!-- VIRAL SHARE: 인스타·카톡 공유용 처방전 카드 이미지 다운로드/공유 -->
+                    <!-- ===================================================== -->
+                    <div class="my-4 p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-[#0B2520] to-slate-900 border-2 border-[#C7A86B]/60 text-white shadow-lg space-y-2.5">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                          <span class="text-sm">📸</span>
+                          <span class="text-xs sm:text-sm font-black text-[#E2CF9F]">오늘의 처방전 티켓 저장</span>
+                        </div>
+                        <span class="text-[10px] text-emerald-300 font-bold bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/40">인스타 스토리·카톡 규격 (4:5)</span>
+                      </div>
+                      <p class="text-[11px] text-slate-300 leading-relaxed">
+                        오늘 나를 안도하게 한 사이다 통찰과 10% 실천 행동을 감각적인 처방전 티켓 이미지로 소장하거나 소중한 분에게 선물해보세요.
+                      </p>
+                      <button type="button" onclick="downloadPrescriptionCard()" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#C7A86B] via-[#E2CF9F] to-[#C7A86B] hover:opacity-95 text-slate-950 font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer active:scale-98">
+                        <span>📸</span>
+                        <span>처방전 카드 이미지 저장 및 공유하기</span>
+                        <span class="text-[10px] bg-slate-900/20 text-slate-900 px-1.5 py-0.5 rounded font-black">1초 완성</span>
                       </button>
+                    </div>
+
+                    <!-- Bottom Utilities -->
+                    <div class="pt-3 mt-3 border-t border-slate-200/80 flex items-center justify-between gap-2 text-xs flex-wrap">
+                      <div class="flex items-center gap-2">
+                        <button onclick="downloadPrescriptionCard()" class="px-3 py-1.5 rounded-xl bg-[#0F6B5B] hover:bg-[#0A493E] text-white font-bold transition flex items-center gap-1 cursor-pointer shadow-2xs">
+                          <span>📸</span>
+                          <span>처방전 이미지</span>
+                        </button>
+                        <button onclick="copyMindCardResult()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition flex items-center gap-1 cursor-pointer">
+                          <span>📋</span>
+                          <span>텍스트 복사</span>
+                        </button>
+                      </div>
                       <button onclick="resetMindCardSelection()" class="px-3.5 py-1.5 rounded-xl bg-[#0F6B5B]/10 hover:bg-[#0F6B5B]/20 text-[#0F6B5B] font-black transition flex items-center gap-1 cursor-pointer">
                         <span>🔄</span>
                         <span>다른 카드 뽑기</span>
@@ -3771,10 +3804,23 @@
                   <strong class="text-slate-200">8대 핵심 라이프 키워드</strong>: 명식 · 십성 · 관계 · 일 · 돈 · 의사결정 · 스트레스 · 30일 실천 가이드 완벽 수록
                 </div>
               </div>
+              <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 flex items-start gap-3">
+                <span class="text-emerald-400 font-bold">🛡️</span>
+                <div>
+                  <strong class="text-emerald-300">보안 철통 안심 설계 (POD 실물 양장본 &amp; 보안 뷰어)</strong>:
+                  <div class="text-[11px] text-slate-300 mt-0.5 leading-relaxed">
+                    단순 PDF 파일 배포 시 발생하는 무단 복제·유출 우려를 원천 차단하기 위해, 주문자 전용 <strong class="text-white">1:1 맞춤형 고급 하드커버 양장본(POD 인쇄 배송)</strong> 및 <strong class="text-white">워터마크 보안 웹 뷰어</strong>로 제공됩니다. (이론 도서는 <strong class="text-[#E2CF9F]">YES24 자체 DRM 전자책</strong>으로 안전하게 열람 가능)
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pt-4">
-              <a href="mailto:admin@mindflowlab.co.kr?subject=[START 48 맞춤형 리포트 제작 신청]" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm transition shadow-lg">
-                <span>나만의 START 48 리포트 제작 신청</span>
+            <div class="pt-4 flex flex-wrap items-center gap-3">
+              <a href="mailto:admin@mindflowlab.co.kr?subject=[START 48 1:1 맞춤형 양장 리포트북 제작 신청]" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm transition shadow-lg">
+                <span>나만의 맞춤형 실물 양장 리포트북 신청</span>
+                <span>&rarr;</span>
+              </a>
+              <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition border border-slate-700">
+                <span>YES24 정식 도서 보러가기</span>
                 <span>&rarr;</span>
               </a>
             </div>

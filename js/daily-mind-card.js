@@ -4446,19 +4446,322 @@ ${currentCard.tenPercentAction}
       }).catch(() => {
         fallbackCopyText(shareText);
       });
-    } else {
-      fallbackCopyText(shareText);
+  // =================================================================
+  // 16. 인스타·카톡 공유용 처방전 카드 이미지 생성 및 다운로드 (Canvas 2D)
+  // =================================================================
+  function drawRoundedRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  }
+
+  function wrapCanvasText(ctx, text, maxWidth) {
+    if (!text) return [];
+    const paragraphs = String(text).split('\n');
+    const lines = [];
+
+    paragraphs.forEach(p => {
+      p = p.trim();
+      if (!p) {
+        lines.push('');
+        return;
+      }
+      let currentLine = '';
+      const words = p.split(' ');
+      for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        const testLine = currentLine ? (currentLine + ' ' + word) : word;
+        if (ctx.measureText(testLine).width <= maxWidth) {
+          currentLine = testLine;
+        } else {
+          if (currentLine) lines.push(currentLine);
+          if (ctx.measureText(word).width > maxWidth) {
+            let charLine = '';
+            for (let j = 0; j < word.length; j++) {
+              const ch = word[j];
+              if (ctx.measureText(charLine + ch).width <= maxWidth) {
+                charLine += ch;
+              } else {
+                lines.push(charLine);
+                charLine = ch;
+              }
+            }
+            currentLine = charLine;
+          } else {
+            currentLine = word;
+          }
+        }
+      }
+      if (currentLine) lines.push(currentLine);
+    });
+    return lines;
+  }
+
+  window.downloadPrescriptionCard = async function () {
+    if (!currentCard) {
+      if (cardsData && cardsData.length > 0) {
+        currentCard = cardsData[0];
+      } else {
+        showToastNotification("카드를 먼저 선택해 주세요.");
+        return;
+      }
+    }
+
+    const card = currentCard;
+    trackMindEvent('prescription_card_click', { cardId: card.id, category: card.category });
+
+    try {
+      showToastNotification("🎨 고화질 처방전 티켓 이미지를 생성 중입니다...");
+
+      // 캔버스 크기: 1080 x 1350 (Instagram portrait / 카카오톡 4:5 고화질 규격)
+      const width = 1080;
+      const height = 1350;
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+
+      // 1. 다크 슬레이트 & 에메랄드 프리미엄 배경 그라디언트
+      const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+      bgGrad.addColorStop(0, '#0B1320');
+      bgGrad.addColorStop(0.5, '#071E1B');
+      bgGrad.addColorStop(1, '#0B1320');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, width, height);
+
+      // 2. 은은한 황금빛 상단 앰비언트 글로우
+      const glowGrad = ctx.createRadialGradient(width / 2, 100, 10, width / 2, 100, 520);
+      glowGrad.addColorStop(0, 'rgba(199, 168, 107, 0.16)');
+      glowGrad.addColorStop(1, 'rgba(199, 168, 107, 0)');
+      ctx.fillStyle = glowGrad;
+      ctx.fillRect(0, 0, width, 520);
+
+      // 3. 외부 골드 라인 프레임 (외곽 마진 36px)
+      ctx.strokeStyle = '#C7A86B';
+      ctx.lineWidth = 3;
+      drawRoundedRect(ctx, 36, 36, width - 72, height - 72, 36);
+      ctx.stroke();
+
+      // 4. 내부 은은한 점선/파선 티켓 가이드 라인 (외곽 마진 54px)
+      ctx.save();
+      ctx.setLineDash([8, 8]);
+      ctx.strokeStyle = 'rgba(226, 207, 159, 0.35)';
+      ctx.lineWidth = 1.5;
+      drawRoundedRect(ctx, 54, 54, width - 108, height - 108, 24);
+      ctx.stroke();
+      ctx.restore();
+
+      // 날짜 포맷 (예: 2026. 10. 12)
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}. ${String(now.getMonth() + 1).padStart(2, '0')}. ${String(now.getDate()).padStart(2, '0')}`;
+
+      // 5. 상단 헤더: 브랜드 라벨 & 타이틀
+      ctx.textAlign = 'center';
+
+      // 5-1. 상단 미니 뱃지 알약
+      ctx.fillStyle = 'rgba(199, 168, 107, 0.18)';
+      drawRoundedRect(ctx, width / 2 - 220, 85, 440, 38, 19);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(199, 168, 107, 0.5)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      ctx.font = 'bold 15px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#E2CF9F';
+      ctx.fillText('🌿 MINDFLOW LAB · 10-SEC PRESCRIPTION', width / 2, 110);
+
+      // 5-2. 메인 헤더 타이틀
+      ctx.font = '900 36px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillText('오늘의 명심 처방전', width / 2, 170);
+
+      // 5-3. 카테고리 & 일자 서브 라벨
+      ctx.font = '600 19px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#94A3B8';
+      const categoryLabel = card.category ? `[${card.category}]` : '[명심코칭]';
+      const titleLabel = card.cardTitle ? ` · ${card.cardTitle}` : '';
+      ctx.fillText(`${categoryLabel}${titleLabel}  |  ${dateStr}`, width / 2, 208);
+
+      // 5-4. 티켓 구분선 & 다이아몬드 포인트
+      ctx.strokeStyle = 'rgba(199, 168, 107, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(90, 238);
+      ctx.lineTo(width - 90, 238);
+      ctx.stroke();
+
+      ctx.fillStyle = '#E2CF9F';
+      ctx.font = 'bold 14px sans-serif';
+      ctx.fillText('◆', width / 2, 243);
+
+      // 6. 질문 (QUESTION) 블록
+      ctx.textAlign = 'left';
+      let currentY = 285;
+
+      // Q 뱃지
+      ctx.font = '900 20px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#C7A86B';
+      ctx.fillText('Q. 오늘의 마주침 (QUESTION)', 90, currentY);
+      currentY += 34;
+
+      // 질문 본문 (큰 글씨)
+      ctx.font = 'bold 31px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#FFFFFF';
+      const questionLines = wrapCanvasText(ctx, `“${card.question}”`, width - 180);
+      questionLines.forEach(line => {
+        ctx.fillText(line, 90, currentY);
+        currentY += 46;
+      });
+
+      currentY += 15;
+
+      // 7. 사이다 통찰 (SODA INSIGHT) 카드 박스
+      ctx.font = '500 23px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      const insightLines = wrapCanvasText(ctx, card.sodaAnswer || '', width - 240);
+      const insightBoxHeight = Math.max(160, 85 + (insightLines.length * 38));
+
+      // 사이다 카드 배경
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+      drawRoundedRect(ctx, 90, currentY, width - 180, insightBoxHeight, 22);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(199, 168, 107, 0.3)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // 사이다 헤더 라벨
+      ctx.font = '900 21px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#E2CF9F';
+      ctx.fillText('💡 사이다 통찰 (Insight)', 120, currentY + 45);
+
+      // 사이다 텍스트 본문
+      ctx.font = '500 23px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#E2E8F0';
+      let insightTextY = currentY + 86;
+      insightLines.forEach(line => {
+        ctx.fillText(line, 120, insightTextY);
+        insightTextY += 38;
+      });
+
+      currentY += insightBoxHeight + 25;
+
+      // 8. 오늘 10% 실천 행동 (MICRO ACTION) 박스 (티켓 강조 컬러)
+      ctx.font = 'bold 26px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      const actionText = card.tenPercentAction || '지금 당장 결론짓지 않고 호흡을 한 번 고른다.';
+      const actionLines = wrapCanvasText(ctx, actionText, width - 240);
+      const actionBoxHeight = Math.max(130, 80 + (actionLines.length * 40));
+
+      const actionGrad = ctx.createLinearGradient(90, currentY, width - 90, currentY + actionBoxHeight);
+      actionGrad.addColorStop(0, '#0F3E36');
+      actionGrad.addColorStop(1, '#0A2B25');
+      ctx.fillStyle = actionGrad;
+      drawRoundedRect(ctx, 90, currentY, width - 180, actionBoxHeight, 22);
+      ctx.fill();
+      ctx.strokeStyle = '#10B981';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // 액션 라벨
+      ctx.font = '900 20px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#6EE7B7';
+      ctx.fillText('⚡ 오늘 딱 10%만 다르게 해보기 (Action)', 120, currentY + 42);
+
+      // 액션 본문
+      ctx.font = 'bold 26px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#FFFFFF';
+      let actionTextY = currentY + 82;
+      actionLines.forEach(line => {
+        ctx.fillText(line, 120, actionTextY);
+        actionTextY += 40;
+      });
+
+      // 9. 하단 브랜딩 & 프라이버시 안심 워터마크 영역
+      const footerY = height - 120;
+
+      // 하단 구분선
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(90, footerY);
+      ctx.lineTo(width - 90, footerY);
+      ctx.stroke();
+
+      // 좌측: 온디바이스 안심 문구 & URL
+      ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#64748B';
+      ctx.fillText('🛡️ 100% 온디바이스 비진단 관점 스캔', 90, footerY + 36);
+
+      ctx.font = 'bold 19px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#C7A86B';
+      ctx.fillText('lab.mindflowlab.co.kr', 90, footerY + 68);
+
+      // 우측: 출판사 도서 기반 표기
+      ctx.textAlign = 'right';
+      ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#94A3B8';
+      const relatedBook = card.relatedBook || '뉴럴코드';
+      ctx.fillText(`청류출판사 《${relatedBook}》 원리 기반`, width - 90, footerY + 36);
+
+      ctx.font = '500 16px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#64748B';
+      ctx.fillText('고정된 성격 대신 지금 켜진 상태를 조율합니다', width - 90, footerY + 66);
+
+      // 10. Blob 변환 후 모바일 네이티브 공유 or 다운로드 실행
+      canvas.toBlob(async function (blob) {
+        if (!blob) {
+          showToastNotification("이미지 생성에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+          return;
+        }
+
+        const safeCardId = card.id ? card.id.replace(/[^a-zA-Z0-9_-]/g, '') : 'daily';
+        const fileName = `mindflow-prescription-${safeCardId}-${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}.png`;
+        const file = new File([blob], fileName, { type: 'image/png' });
+
+        // Web Share API 지원 여부 확인 (모바일 환경 네이티브 공유창)
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          try {
+            await navigator.share({
+              files: [file],
+              title: `[오늘의 명심 처방전] ${card.question}`,
+              text: `💡 사이다 통찰: ${card.sodaAnswer}\n\n🌿 마인드플로우 랩에서 확인하기: https://lab.mindflowlab.co.kr`
+            });
+            showToastNotification("✨ 처방전 카드가 성공적으로 공유되었습니다!");
+            trackMindEvent('prescription_card_shared', { cardId: card.id });
+            return;
+          } catch (shareErr) {
+            if (shareErr.name === 'AbortError') {
+              // 사용자가 공유창 취소한 경우 조용히 리턴
+              return;
+            }
+            console.warn('Web Share failed, fallback to direct download:', shareErr);
+          }
+        }
+
+        // 일반 데스크톱 및 Share 미지원 환경: 자동 파일 다운로드
+        const fileUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = fileUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(fileUrl), 2000);
+
+        showToastNotification("📸 감각적인 처방전 카드가 저장되었습니다! 인스타·카톡에 공유해보세요.");
+        trackMindEvent('prescription_card_downloaded', { cardId: card.id });
+      }, 'image/png', 0.95);
+
+    } catch (err) {
+      console.error('[Prescription Card Export Error]', err);
+      showToastNotification("처방전 카드 생성 중 오류가 발생했습니다.");
     }
   };
-
-  function fallbackCopyText(text) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    showToastNotification("📋 오늘의 명심 카드가 복사되었습니다!");
-  }
 
 })();
