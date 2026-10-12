@@ -79,7 +79,7 @@ for (const p of rootPages) {
   // Update og:url
   html = html.replace(/<meta property="og:url" content="[^"]*"\s*\/?>/gi, '<meta property="og:url" content="' + canonicalUrl + '" />');
   // Update og:image
-  html = html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/gi, '<meta property="og:image" content="' + SITE_URL + '/assets/start48-cover.jpg" />');
+  html = html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/gi, '<meta property="og:image" content="' + SITE_URL + '/assets/mindflow-saju-logo.jpg" />');
 
   fs.writeFileSync(filePath, html, 'utf8');
 }
@@ -95,7 +95,7 @@ for (const f of faqFiles) {
 
   html = html.replace(/<link rel="canonical" href="[^"]*"\s*\/?>/gi, '<link rel="canonical" href="' + canonicalUrl + '" />');
   html = html.replace(/<meta property="og:url" content="[^"]*"\s*\/?>/gi, '<meta property="og:url" content="' + canonicalUrl + '" />');
-  html = html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/gi, '<meta property="og:image" content="' + SITE_URL + '/assets/start48-cover.jpg" />');
+  html = html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/gi, '<meta property="og:image" content="' + SITE_URL + '/assets/mindflow-saju-logo.jpg" />');
 
   fs.writeFileSync(filePath, html, 'utf8');
 }

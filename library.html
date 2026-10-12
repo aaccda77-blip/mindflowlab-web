@@ -4,19 +4,19 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>31권 시리즈 & START 48 마스터 라이브러리 | 명심코칭 (MindflowLab)</title>
-  <meta name="description" content="31권 전체 출판기획표 명세서, 캐논 7권 대표작, 뉴럴코드 42개 장 목차, 그리고 48페이지 START 48 리포트북 샘플 뷰어." />
+  <title>31권 시리즈 출판기획표 & 마스터 라이브러리 | 명심코칭 (MindflowLab)</title>
+  <meta name="description" content="31권 전체 출판기획표 명세서, 캐논 7권 대표작, 뉴럴코드 42개 장 목차 및 청류출판사 도서 안내." />
   <link rel="canonical" href="https://lab.mindflowlab.co.kr/library" />
 
   <!-- Open Graph / SEO -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="31권 시리즈 & START 48 마스터 라이브러리 | 명심코칭" />
-  <meta property="og:description" content="31권 전체 출판기획표 명세서, 캐논 7권 대표작, 뉴럴코드 42개 장 목차, 그리고 48페이지 START 48 리포트북 샘플 뷰어." />
+  <meta property="og:title" content="31권 시리즈 출판기획표 & 마스터 라이브러리 | 명심코칭" />
+  <meta property="og:description" content="31권 전체 출판기획표 명세서, 캐논 7권 대표작, 뉴럴코드 42개 장 목차 및 청류출판사 도서 안내." />
   <meta property="og:site_name" content="명심코칭" />
   <meta property="og:url" content="https://lab.mindflowlab.co.kr/library" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <meta property="og:image" content="https://lab.mindflowlab.co.kr/assets/start48-cover.jpg" />
+  <meta property="og:image" content="https://lab.mindflowlab.co.kr/assets/mindflow-saju-logo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Tailwind CSS CDN -->
@@ -689,39 +689,32 @@
           </div>
         </div>
 
-        <!-- START 48 Interactive Report Viewer -->
+        <!-- START 48 Interactive Report (서비스 준비중) -->
         <div class="mb-20">
-          <div class="text-center max-w-3xl mx-auto mb-10">
-            <span class="text-xs font-bold text-[#007A55] uppercase tracking-wider">PREMIUM REPORTBOOK</span>
-            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">MYEONGSIM START 48 리포트 샘플링</h2>
-            <p class="text-xs sm:text-sm text-slate-600 mt-2">
-              실제 발행되는 48페이지 개인 맞춤형 리포트북의 표지, 목차, 내지 분석 샘플, 전체 전개도입니다.<br />
-              <span class="inline-flex items-center gap-1.5 mt-1.5 text-xs text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-medium">
-                <span>🛡️</span>
-                <span>PDF 무단 복제 우려를 없앤 1:1 맞춤형 고급 하드커버 양장본(POD) 인쇄 배송 및 보안 뷰어 제공</span>
-              </span>
-            </p>
-          </div>
+          <div class="rounded-3xl bg-slate-950 border border-slate-800 p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden">
+            <!-- 배경 앰비언트 글로우 -->
+            <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#C7A86B]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <div class="flex flex-wrap justify-center gap-2 mb-8">
-            <button onclick="switchTab('cover')" id="tab-btn-cover" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-[#007A55] text-white shadow-md">① 프리미엄 표지</button>
-            <button onclick="switchTab('contents')" id="tab-btn-contents" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">② 15개 챕터 목차</button>
-            <button onclick="switchTab('sample')" id="tab-btn-sample" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">③ 내지 분석 샘플 (08p)</button>
-            <button onclick="switchTab('fullmap')" id="tab-btn-fullmap" class="sample-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">④ 48페이지 전체 전개도</button>
-          </div>
-
-          <div class="bg-slate-950 rounded-3xl p-6 sm:p-10 border border-slate-800 text-center shadow-2xl">
-            <div id="content-cover" class="tab-pane">
-              <img src="assets/start48-cover.jpg" alt="START 48 표지" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
-            </div>
-            <div id="content-contents" class="tab-pane hidden">
-              <img src="assets/start48-contents.jpg" alt="START 48 목차" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
-            </div>
-            <div id="content-sample" class="tab-pane hidden">
-              <img src="assets/start48-sample-page.jpg" alt="START 48 내지 분석표" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
-            </div>
-            <div id="content-fullmap" class="tab-pane hidden">
-              <img src="assets/start48-full-map.jpg" alt="START 48 전체 전개도" class="max-h-[500px] mx-auto rounded-xl shadow-2xl" />
+            <div class="relative z-10 space-y-5">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold tracking-wider">
+                <span>⏳ SERVICE PREPARATION · 정식 오픈 준비중</span>
+              </div>
+              <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+                MYEONGSIM START 48<br />
+                <span class="text-[#E2CF9F]">개인 맞춤형 리포트북 서비스 준비중</span>
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+                철저한 데이터 보안 및 최고 품질의 1:1 맞춤형 실물 하드커버 양장본(POD) 인쇄 시스템 구축을 위해<br class="hidden sm:inline" />
+                모든 상세 내지 및 전개도는 현재 비공개 상태로 정식 서비스를 준비하고 있습니다.
+              </p>
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10 max-w-md mx-auto text-xs text-slate-300">
+                <span>🛡️ PDF 무단 유출 방지 및 1:1 양장 인쇄 배송 시스템 완비 후 정식 오픈됩니다.</span>
+              </div>
+              <div class="pt-3">
+                <a href="https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#C7A86B] via-[#E2CF9F] to-[#C7A86B] text-slate-950 font-black text-xs sm:text-sm shadow-md hover:opacity-95 transition">
+                  <span>📖 YES24 정식 출간 도서 보러가기 &rarr;</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
