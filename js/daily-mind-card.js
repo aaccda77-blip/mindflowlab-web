@@ -4506,7 +4506,7 @@ ${currentCard.tenPercentAction}
     }
   }
   // =================================================================
-  // 16. 인스타·카톡 공유용 처방전 카드 이미지 생성 및 다운로드 (Canvas 2D)
+  // 16. 인스타·카톡 공유용 코칭솔루션 카드 이미지 생성 및 다운로드 (Canvas 2D)
   // =================================================================
   function drawRoundedRect(ctx, x, y, width, height, radius) {
     ctx.beginPath();
@@ -4578,7 +4578,7 @@ ${currentCard.tenPercentAction}
     trackMindEvent('prescription_card_click', { cardId: card.id, category: card.category });
 
     try {
-      showToastNotification("🎨 고화질 처방전 티켓 이미지를 생성 중입니다...");
+      showToastNotification("🎨 고화질 코칭솔루션 티켓 이미지를 생성 중입니다...");
 
       // 캔버스 크기: 1080 x 1350 (Instagram portrait / 카카오톡 4:5 고화질 규격)
       const width = 1080;
@@ -4627,7 +4627,7 @@ ${currentCard.tenPercentAction}
 
       // 5-1. 상단 미니 뱃지 알약
       ctx.fillStyle = 'rgba(199, 168, 107, 0.18)';
-      drawRoundedRect(ctx, width / 2 - 220, 85, 440, 38, 19);
+      drawRoundedRect(ctx, width / 2 - 245, 85, 490, 38, 19);
       ctx.fill();
       ctx.strokeStyle = 'rgba(199, 168, 107, 0.5)';
       ctx.lineWidth = 1;
@@ -4635,12 +4635,12 @@ ${currentCard.tenPercentAction}
 
       ctx.font = 'bold 15px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
       ctx.fillStyle = '#E2CF9F';
-      ctx.fillText('🌿 MINDFLOW LAB · 10-SEC PRESCRIPTION', width / 2, 110);
+      ctx.fillText('🌿 MINDFLOW LAB · 10-SEC COACHING SOLUTION', width / 2, 110);
 
       // 5-2. 메인 헤더 타이틀
       ctx.font = '900 36px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
       ctx.fillStyle = '#FFFFFF';
-      ctx.fillText('오늘의 명심 처방전', width / 2, 170);
+      ctx.fillText('오늘의 명심 코칭솔루션', width / 2, 170);
 
       // 5-3. 카테고리 & 일자 서브 라벨
       ctx.font = '600 19px -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif';
@@ -4780,7 +4780,7 @@ ${currentCard.tenPercentAction}
         }
 
         const safeCardId = card.id ? card.id.replace(/[^a-zA-Z0-9_-]/g, '') : 'daily';
-        const fileName = `mindflow-prescription-${safeCardId}-${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}.png`;
+        const fileName = `mindflow-coaching-solution-${safeCardId}-${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}.png`;
         const file = new File([blob], fileName, { type: 'image/png' });
 
         // Web Share API 지원 여부 확인 (모바일 환경 네이티브 공유창)
@@ -4788,10 +4788,10 @@ ${currentCard.tenPercentAction}
           try {
             await navigator.share({
               files: [file],
-              title: `[오늘의 명심 처방전] ${card.question}`,
+              title: `[오늘의 명심 코칭솔루션] ${card.question}`,
               text: `💡 사이다 통찰: ${card.sodaAnswer}\n\n🌿 마인드플로우 랩에서 확인하기: https://lab.mindflowlab.co.kr`
             });
-            showToastNotification("✨ 처방전 카드가 성공적으로 공유되었습니다!");
+            showToastNotification("✨ 코칭솔루션 카드가 성공적으로 공유되었습니다!");
             trackMindEvent('prescription_card_shared', { cardId: card.id });
             return;
           } catch (shareErr) {
@@ -4813,13 +4813,13 @@ ${currentCard.tenPercentAction}
         document.body.removeChild(a);
         setTimeout(() => URL.revokeObjectURL(fileUrl), 2000);
 
-        showToastNotification("📸 감각적인 처방전 카드가 저장되었습니다! 인스타·카톡에 공유해보세요.");
+        showToastNotification("📸 감각적인 코칭솔루션 카드가 저장되었습니다! 인스타·카톡에 공유해보세요.");
         trackMindEvent('prescription_card_downloaded', { cardId: card.id });
       }, 'image/png', 0.95);
 
     } catch (err) {
       console.error('[Prescription Card Export Error]', err);
-      showToastNotification("처방전 카드 생성 중 오류가 발생했습니다.");
+      showToastNotification("코칭솔루션 카드 생성 중 오류가 발생했습니다.");
     }
   };
 
