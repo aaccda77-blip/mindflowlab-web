@@ -70,6 +70,13 @@
   50% { transform: translateY(-6px) rotate(3deg); }
 }
 
+.mind-floating-left,
+.mind-floating-center,
+.mind-floating-right {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .mind-floating-left {
   animation: mindFloatLeft 5s ease-in-out infinite;
 }
@@ -78,6 +85,35 @@
 }
 .mind-floating-right {
   animation: mindFloatRight 5.2s ease-in-out infinite 1.0s;
+}
+
+@keyframes mindShuffleLeft {
+  0%, 100% { transform: translateX(0) rotate(-3deg); }
+  25% { transform: translateX(36px) translateY(-10px) rotate(6deg) scale(0.96); }
+  50% { transform: translateX(-14px) translateY(4px) rotate(-8deg); }
+  75% { transform: translateX(18px) translateY(-6px) rotate(3deg); }
+}
+@keyframes mindShuffleCenter {
+  0%, 100% { transform: translateY(-3px) rotate(0deg); }
+  25% { transform: translateY(-18px) scale(1.04) rotate(-5deg); }
+  50% { transform: translateY(6px) scale(0.95) rotate(5deg); }
+  75% { transform: translateY(-10px) rotate(-2deg); }
+}
+@keyframes mindShuffleRight {
+  0%, 100% { transform: translateX(0) rotate(3deg); }
+  25% { transform: translateX(-36px) translateY(-10px) rotate(-6deg) scale(0.96); }
+  50% { transform: translateX(14px) translateY(4px) rotate(8deg); }
+  75% { transform: translateX(-18px) translateY(-6px) rotate(-3deg); }
+}
+
+#mind-fanned-deck.is-shuffling .mind-floating-left {
+  animation: mindShuffleLeft 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#mind-fanned-deck.is-shuffling .mind-floating-center {
+  animation: mindShuffleCenter 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#mind-fanned-deck.is-shuffling .mind-floating-right {
+  animation: mindShuffleRight 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Clean Step Transition Keyframe Animation */

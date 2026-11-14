@@ -65,7 +65,14 @@
 
     serviceConfigPromise = (async () => {
       try {
-        const response = await fetch('data/service-config.json', { cache: 'no-cache' });
+        const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        const timeoutId = controller ? setTimeout(() => controller.abort(), 2000) : null;
+        let response;
+        try {
+          response = await fetch('data/service-config.json', { cache: 'no-cache', signal: controller ? controller.signal : undefined });
+        } finally {
+          if (timeoutId) clearTimeout(timeoutId);
+        }
         if (response.ok) {
           const json = await response.json();
           if (json && typeof json === 'object') {
@@ -85,7 +92,8 @@
           DARK_CODE_BOOK_URL: 'https://www.yes24.com/product/goods/196721492',
           NEURAL_CODE_BOOK_URL: 'https://www.yes24.com/product/goods/197163321',
           ZERO_POINT_BOOK_URL: 'https://www.yes24.com/product/goods/195946431',
-          BELIEF_BOOK_URL: 'https://www.yes24.com/product/goods/196550353'
+          BELIEF_BOOK_URL: 'https://www.yes24.com/product/goods/196550353',
+          GENRE_BOOK_URL: 'https://www.yes24.com/product/goods/198056147'
         };
       }
       return window.MIND_CONFIG;
@@ -110,6 +118,8 @@
       return cfg.ZERO_POINT_URL || cfg.ZERO_POINT_BOOK_URL || cfg.PUBLISHER_URL || 'https://www.yes24.com/product/goods/195946431';
     } else if (bookTitle.includes('믿는다') || bookTitle.includes('갇히지')) {
       return cfg.BELIEF_BOOK_URL || 'https://www.yes24.com/product/goods/196550353';
+    } else if (bookTitle.includes('장르') || bookTitle.includes('오류가')) {
+      return cfg.GENRE_BOOK_URL || 'https://www.yes24.com/product/goods/198056147';
     }
     return cfg.PUBLISHER_URL || 'https://www.yes24.com/Product/Search?domain=BOOK&query=%EC%B2%AD%EB%A5%98+%EC%9D%B4%EA%B2%BD%EC%9C%A4';
   }
@@ -135,7 +145,10 @@
     dataLoadPromise = (async () => {
       // 1. data/mind-cards.json 순수 JSON 파일 비동기 fetch
       try {
-        const response = await fetch('data/mind-cards.json', { cache: 'no-cache' });
+        const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        const timeoutId = controller ? setTimeout(() => controller.abort(), 2000) : null;
+        const response = await fetch('data/mind-cards.json', { cache: 'no-cache', signal: controller ? controller.signal : undefined });
+        if (timeoutId) clearTimeout(timeoutId);
         if (response.ok) {
           const json = await response.json();
           if (Array.isArray(json) && json.length > 0) {
@@ -297,10 +310,18 @@
   // 3. 카드 선택 및 3D 플립 (PICK & REVEAL -> 3단계 코칭 흐름)
   // =================================================================
   window.pickMindCard = async function (slotIndex, customCardId) {
+    try {
     if (isShuffling) return;
 
     await Promise.all([ensureServiceConfig(), ensureCardsData()]);
-    if (!cardsData || cardsData.length === 0) return;
+    if ((!cardsData || cardsData.length === 0) && Array.isArray(window.MIND_CARDS_DATA) && window.MIND_CARDS_DATA.length > 0) {
+      cardsData = window.MIND_CARDS_DATA;
+      isDataLoaded = true;
+    }
+    if (!cardsData || cardsData.length === 0) {
+      showToastNotification('카드 데이터를 불러오는 중입니다. 잠시 후 다시 시도해 주세요.');
+      return;
+    }
 
     // 특정 카드 ID 지정 또는 가중치/랜덤 선택
     let targetCard = null;
@@ -396,6 +417,16 @@
           card3D.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
         }, 30);
       }
+    }
+
+    } catch (err) {
+      console.error('[Mindflow Card] pickMindCard failed:', err);
+      const homeView = document.getElementById('mind-home-view');
+      const resultView = document.getElementById('mind-result-view');
+      if (homeView) homeView.classList.remove('hidden');
+      if (resultView) resultView.classList.add('hidden');
+      showToastNotification('카드를 여는 중 문제가 발생했습니다. 새로고침 후 다시 시도해 주세요.');
+      return;
     }
 
     // 부드러운 스크롤 이동
@@ -721,7 +752,8 @@
       btn.classList.remove('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
       btn.classList.add('border-amber-200/80', 'bg-white', 'text-slate-700');
     });
-    const clickedBtn = event ? event.currentTarget : null;
+    const ev = (typeof window !== 'undefined' && window.event) ? window.event : null;
+    const clickedBtn = ev ? ev.currentTarget : null;
     if (clickedBtn) {
       clickedBtn.classList.remove('border-amber-200/80', 'bg-white', 'text-slate-700');
       clickedBtn.classList.add('border-[#0F6B5B]', 'bg-emerald-50', 'text-[#0F6B5B]', 'font-black');
@@ -4446,6 +4478,33 @@ ${currentCard.tenPercentAction}
       }).catch(() => {
         fallbackCopyText(shareText);
       });
+    } else {
+      fallbackCopyText(shareText);
+    }
+  };
+
+  function fallbackCopyText(text) {
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+      if (successful) {
+        showToastNotification("📋 오늘의 명심 카드가 복사되었습니다! 소중한 분과 나눠보세요.");
+      } else {
+        showToastNotification("복사에 실패했습니다. 텍스트를 직접 복사해주세요.");
+      }
+    } catch (e) {
+      showToastNotification("복사에 실패했습니다. 텍스트를 직접 복사해주세요.");
+    }
+  }
   // =================================================================
   // 16. 인스타·카톡 공유용 처방전 카드 이미지 생성 및 다운로드 (Canvas 2D)
   // =================================================================
