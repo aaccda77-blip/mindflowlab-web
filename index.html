@@ -682,7 +682,7 @@
     }
   </style>
   <link rel="canonical" href="https://lab.mindflowlab.co.kr/" />
-  <link rel="stylesheet" href="css/daily-mind-card.css?v=20261114_v1" />
+  <link rel="stylesheet" href="css/daily-mind-card.css?v=20261115_v1" />
 
   <!-- Schema.org Books & ItemList Structured Data (골든래빗 벤치마킹: Google & Naver Search SEO) -->
   <script type="application/ld+json">
@@ -1087,72 +1087,272 @@
                     “생각하지 말고 지금 끌리는 질문 한 장.”
                   </p>
 
-                  <!-- Fanned 3-Card Deck with Zero Point Orbit Art -->
-                  <div id="mind-fanned-deck" class="flex items-center justify-center gap-3 sm:gap-6 py-4 mind-card-stage select-none">
-                    
-                    <!-- Card 1: SCAN (Left) -->
-                    <div onclick="pickMindCard(0)" class="mind-floating-left cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
-                      <div class="w-[105px] h-[175px] sm:w-[170px] sm:h-[280px] md:w-[190px] md:h-[310px] rounded-2xl bg-gradient-to-br from-[#14233B] via-[#0E2F2B] to-[#0A1B29] border-2 border-[#C7A86B]/60 shadow-[0_12px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_15px_40px_rgba(15,107,91,0.4)] group-hover:border-emerald-300 relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden">
-                        <div class="absolute inset-1.5 border border-[#C7A86B]/20 rounded-xl pointer-events-none"></div>
-                        <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SCAN · 발견</div>
-                        
-                        <!-- Zero Point Orbit Artwork -->
-                        <div class="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full border border-[#C7A86B]/40 flex items-center justify-center bg-[#C7A86B]/5">
-                          <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.4)" stroke-dasharray="4 4" stroke-width="1.5" fill="none"/>
-                            <circle cx="50" cy="8" r="3" fill="#C7A86B"/>
-                          </svg>
-                          <span class="text-lg sm:text-2xl font-black text-[#E2CF9F] font-serif">0</span>
+                  <!-- Fanned 3-Card Deck with Luxury Celestial Sacred Geometry SVG Artwork -->
+                  <div id="mind-fanned-deck" class="flex items-center justify-center gap-2.5 sm:gap-6 py-5 mind-card-stage select-none">
+
+                    <!-- Card 1: SCAN · 발견 (Astrolabe & Body Signal Radar) -->
+                    <div onclick="pickMindCard(0)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pickMindCard(0);}" class="mind-floating-left cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4 focus:outline-none">
+                      <div class="mind-tarot-card w-[104px] h-[178px] sm:w-[176px] sm:h-[290px] md:w-[196px] md:h-[322px] rounded-2xl border-[1.5px] border-[#C7A86B]/70 shadow-[0_18px_45px_rgba(0,0,0,0.68)] group-hover:shadow-[0_22px_55px_rgba(16,185,129,0.34)] group-hover:border-[#F5E6C4] relative flex flex-col items-center justify-between p-2.5 sm:p-4 overflow-hidden">
+                        <!-- Luxury Gold-Foil Frame SVG -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                          <defs>
+                            <linearGradient id="scan-gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#FFF3D1" stop-opacity="0.9"/>
+                              <stop offset="50%" stop-color="#C7A86B" stop-opacity="0.5"/>
+                              <stop offset="100%" stop-color="#6EE7B7" stop-opacity="0.45"/>
+                            </linearGradient>
+                          </defs>
+                          <rect x="8" y="8" width="184" height="304" rx="12" fill="none" stroke="url(#scan-gold-foil)" stroke-width="0.9" opacity="0.5"/>
+                          <rect x="13" y="13" width="174" height="294" rx="9" fill="none" stroke="#C7A86B" stroke-width="0.5" stroke-dasharray="2 3" opacity="0.35"/>
+                          <path d="M13 30 L13 13 L30 13 M170 13 L187 13 L187 30 M13 290 L13 307 L30 307 M170 307 L187 307 L187 290" fill="none" stroke="#F5E6C4" stroke-width="1.3" opacity="0.85"/>
+                          <polygon points="100,17 104,22 100,27 96,22" fill="#E2CF9F" opacity="0.7"/>
+                          <polygon points="100,293 104,298 100,303 96,298" fill="#E2CF9F" opacity="0.7"/>
+                          <line x1="100" y1="30" x2="100" y2="70" stroke="#C7A86B" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.35"/>
+                          <line x1="100" y1="250" x2="100" y2="290" stroke="#C7A86B" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.35"/>
+                        </svg>
+
+                        <div class="relative z-10 text-center pt-0.5">
+                          <div class="text-[8px] sm:text-[10px] font-bold text-[#C7A86B]/85 tracking-[0.22em] uppercase">I · OBSERVER</div>
+                          <div class="text-[9px] sm:text-xs font-black text-[#F5E6C4] tracking-widest uppercase">SCAN · 발견</div>
                         </div>
 
-                        <div class="text-center space-y-0.5">
-                          <div class="text-[10px] sm:text-xs font-bold text-slate-200">생각과 몸의 신호</div>
-                          <div class="text-[8px] sm:text-[10px] text-emerald-300/80 font-medium">터치하여 발견하기</div>
+                        <!-- Centerpiece Kinetic Astrolabe & Signal Radar SVG -->
+                        <svg class="relative z-10 w-[76px] h-[76px] sm:w-[118px] sm:h-[118px] md:w-[132px] md:h-[132px] pointer-events-none" viewBox="0 0 140 140" aria-hidden="true">
+                          <defs>
+                            <radialGradient id="scan-aura" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#34D399" stop-opacity="0.36"/>
+                              <stop offset="55%" stop-color="#C7A86B" stop-opacity="0.12"/>
+                              <stop offset="100%" stop-color="#071320" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="scan-beam" x1="50%" y1="50%" x2="100%" y2="0%">
+                              <stop offset="0%" stop-color="#6EE7B7" stop-opacity="0"/>
+                              <stop offset="100%" stop-color="#6EE7B7" stop-opacity="0.32"/>
+                            </linearGradient>
+                            <linearGradient id="scan-ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#FFF3D1"/>
+                              <stop offset="50%" stop-color="#C7A86B"/>
+                              <stop offset="100%" stop-color="#6EE7B7"/>
+                            </linearGradient>
+                          </defs>
+
+                          <circle cx="70" cy="70" r="64" fill="url(#scan-aura)"/>
+
+                          <!-- Rotating Radar Sweep Wedge -->
+                          <g class="mind-svg-radar-sweep">
+                            <path d="M70 70 L70 14 A56 56 0 0 1 118 42 Z" fill="url(#scan-beam)"/>
+                            <line x1="70" y1="70" x2="70" y2="14" stroke="#6EE7B7" stroke-width="1" opacity="0.65"/>
+                          </g>
+
+                          <!-- Outer Degree Astrolabe Ring -->
+                          <g class="mind-svg-spin-slow">
+                            <circle cx="70" cy="70" r="57" fill="none" stroke="url(#scan-ring-grad)" stroke-width="1" opacity="0.72"/>
+                            <circle cx="70" cy="70" r="52" fill="none" stroke="#C7A86B" stroke-width="0.7" stroke-dasharray="1.5 5" opacity="0.5"/>
+                            <line x1="70" y1="9" x2="70" y2="16" stroke="#FFF3D1" stroke-width="1.4"/>
+                            <line x1="70" y1="124" x2="70" y2="131" stroke="#FFF3D1" stroke-width="1.4"/>
+                            <line x1="9" y1="70" x2="16" y2="70" stroke="#FFF3D1" stroke-width="1.4"/>
+                            <line x1="124" y1="70" x2="131" y2="70" stroke="#FFF3D1" stroke-width="1.4"/>
+                            <circle cx="70" cy="13" r="2.6" fill="#6EE7B7"/>
+                            <circle cx="70" cy="127" r="2" fill="#E2CF9F"/>
+                          </g>
+
+                          <!-- Counter-Rotating Inner Azimuth Ring -->
+                          <g class="mind-svg-spin-ccw">
+                            <circle cx="70" cy="70" r="42" fill="none" stroke="#E2CF9F" stroke-width="1" stroke-dasharray="4 4" opacity="0.65"/>
+                            <circle cx="112" cy="70" r="2.2" fill="#FFF3D1"/>
+                            <circle cx="28" cy="70" r="2.2" fill="#6EE7B7"/>
+                          </g>
+
+                          <!-- Breathing Bio-Signal Pulse Waves -->
+                          <circle class="mind-svg-pulse" cx="70" cy="70" r="32" fill="none" stroke="#6EE7B7" stroke-width="1.1"/>
+                          <circle class="mind-svg-pulse-delay" cx="70" cy="70" r="25" fill="none" stroke="#E2CF9F" stroke-width="0.9"/>
+
+                          <!-- Sacred Observer Eye & Zero-Point Core -->
+                          <path d="M41 70 Q70 43 99 70 Q70 97 41 70 Z" fill="#081C24" fill-opacity="0.78" stroke="url(#scan-ring-grad)" stroke-width="1.3"/>
+                          <circle cx="70" cy="70" r="15" fill="#091B26" stroke="#F5E6C4" stroke-width="1.4"/>
+                          <text x="70" y="76.5" text-anchor="middle" fill="#FFF3D1" font-family="Georgia, serif" font-size="20" font-weight="bold">0</text>
+
+                          <!-- Twinkling Micro Stars -->
+                          <path class="mind-svg-twinkle" d="M25 26 L26.5 29 L29.5 30.5 L26.5 32 L25 35 L23.5 32 L20.5 30.5 L23.5 29 Z" fill="#FFF3D1"/>
+                          <path class="mind-svg-twinkle-delay" d="M115 104 L116.3 107 L119 108.3 L116.3 109.6 L115 112.5 L113.7 109.6 L111 108.3 L113.7 107 Z" fill="#6EE7B7"/>
+                        </svg>
+
+                        <div class="relative z-10 text-center space-y-0.5 pb-0.5">
+                          <div class="text-[10px] sm:text-xs font-bold text-slate-100">생각과 몸의 신호</div>
+                          <div class="text-[8px] sm:text-[10px] text-emerald-300/90 font-semibold">터치하여 발견하기</div>
                         </div>
                       </div>
                     </div>
 
-                    <!-- Card 2: SYNC (Center) -->
-                    <div onclick="pickMindCard(1)" class="mind-floating-center cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
-                      <div class="w-[110px] h-[185px] sm:w-[180px] sm:h-[295px] md:w-[200px] md:h-[325px] rounded-2xl bg-gradient-to-br from-[#182C49] via-[#0F3832] to-[#0D2436] border-2 border-[#C7A86B] shadow-[0_15px_40px_rgba(0,0,0,0.7)] group-hover:shadow-[0_20px_50px_rgba(199,168,107,0.45)] group-hover:border-[#E2CF9F] relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden ring-2 ring-[#C7A86B]/30">
-                        <div class="absolute inset-1.5 border border-[#C7A86B]/40 rounded-xl pointer-events-none"></div>
-                        <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SYNC · 머무름</div>
-                        
-                        <!-- Zero Point Orbit Artwork -->
-                        <div class="relative w-16 h-16 sm:w-22 sm:h-22 rounded-full border-2 border-[#C7A86B]/60 flex items-center justify-center bg-[#C7A86B]/10">
-                          <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.6)" stroke-dasharray="6 4" stroke-width="2" fill="none"/>
-                            <circle cx="50" cy="8" r="4" fill="#E2CF9F"/>
-                            <circle cx="92" cy="50" r="3" fill="#C7A86B"/>
-                          </svg>
-                          <span class="text-xl sm:text-3xl font-black text-[#E2CF9F] font-serif">0</span>
+                    <!-- Card 2: SYNC · 머무름 (Flagship Zero-Point Celestial Lotus Mandala) -->
+                    <div onclick="pickMindCard(1)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pickMindCard(1);}" class="mind-floating-center cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4 focus:outline-none">
+                      <div class="mind-tarot-card mind-tarot-card--center w-[112px] h-[192px] sm:w-[190px] sm:h-[312px] md:w-[214px] md:h-[346px] rounded-2xl border-2 border-[#E2CF9F] shadow-[0_22px_55px_rgba(0,0,0,0.78)] group-hover:shadow-[0_26px_65px_rgba(226,207,159,0.42)] group-hover:border-[#FFF3D1] relative flex flex-col items-center justify-between p-2.5 sm:p-4 overflow-hidden ring-1 ring-[#C7A86B]/45">
+                        <!-- Ornate Gold-Foil Crown Frame SVG -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 210 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                          <defs>
+                            <linearGradient id="sync-gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#FFF6DC"/>
+                              <stop offset="50%" stop-color="#E2CF9F"/>
+                              <stop offset="100%" stop-color="#A68242"/>
+                            </linearGradient>
+                          </defs>
+                          <rect x="7" y="7" width="196" height="326" rx="13" fill="none" stroke="url(#sync-gold-foil)" stroke-width="1.1" opacity="0.65"/>
+                          <rect x="13" y="13" width="184" height="314" rx="9" fill="none" stroke="#E2CF9F" stroke-width="0.6" opacity="0.38"/>
+                          <!-- Celestial Corner Brackets -->
+                          <path d="M13 33 L13 13 L33 13 M177 13 L197 13 L197 33 M13 307 L13 327 L33 327 M177 327 L197 327 L197 307" fill="none" stroke="#FFF3D1" stroke-width="1.6" opacity="0.92"/>
+                          <!-- Top & Bottom Crescent Filigree -->
+                          <path d="M88 22 Q105 30 122 22" fill="none" stroke="#FFF3D1" stroke-width="1" opacity="0.8"/>
+                          <path d="M88 318 Q105 310 122 318" fill="none" stroke="#FFF3D1" stroke-width="1" opacity="0.8"/>
+                          <polygon points="105,15 109,21 105,27 101,21" fill="#FFF3D1" opacity="0.9"/>
+                          <polygon points="105,313 109,319 105,325 101,319" fill="#FFF3D1" opacity="0.9"/>
+                        </svg>
+
+                        <div class="relative z-10 text-center pt-0.5">
+                          <div class="text-[8px] sm:text-[10px] font-bold text-[#FFF3D1]/90 tracking-[0.22em] uppercase">0 · ZERO POINT</div>
+                          <div class="text-[9px] sm:text-xs font-black text-[#FFF3D1] tracking-widest uppercase">SYNC · 머무름</div>
                         </div>
 
-                        <div class="text-center space-y-0.5">
-                          <div class="text-[11px] sm:text-sm font-black text-[#E2CF9F]">오늘의 자동반응</div>
-                          <div class="text-[8px] sm:text-[10px] text-[#C7A86B] font-bold">터치하여 발견하기</div>
+                        <!-- Centerpiece Kinetic Tourbillon & Luminous Lotus Mandala SVG -->
+                        <svg class="relative z-10 w-[86px] h-[86px] sm:w-[136px] sm:h-[136px] md:w-[152px] md:h-[152px] pointer-events-none" viewBox="0 0 160 160" aria-hidden="true">
+                          <defs>
+                            <radialGradient id="sync-aura" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#F5E6C4" stop-opacity="0.42"/>
+                              <stop offset="48%" stop-color="#10B981" stop-opacity="0.22"/>
+                              <stop offset="100%" stop-color="#071320" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="sync-gold-bright" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#FFF7DF"/>
+                              <stop offset="50%" stop-color="#E2CF9F"/>
+                              <stop offset="100%" stop-color="#B7924F"/>
+                            </linearGradient>
+                          </defs>
+
+                          <circle cx="80" cy="80" r="75" fill="url(#sync-aura)"/>
+
+                          <!-- Outer Celestial Zodiac Ring -->
+                          <g class="mind-svg-spin-slow">
+                            <circle cx="80" cy="80" r="68" fill="none" stroke="url(#sync-gold-bright)" stroke-width="1.2" opacity="0.82"/>
+                            <circle cx="80" cy="80" r="62" fill="none" stroke="#E2CF9F" stroke-width="0.7" stroke-dasharray="2 5" opacity="0.55"/>
+                            <line x1="80" y1="8" x2="80" y2="16" stroke="#FFF7DF" stroke-width="1.6"/>
+                            <line x1="80" y1="144" x2="80" y2="152" stroke="#FFF7DF" stroke-width="1.6"/>
+                            <line x1="8" y1="80" x2="16" y2="80" stroke="#FFF7DF" stroke-width="1.6"/>
+                            <line x1="144" y1="80" x2="152" y2="80" stroke="#FFF7DF" stroke-width="1.6"/>
+                            <circle cx="80" cy="12" r="3.4" fill="#FFF7DF"/>
+                            <circle cx="80" cy="148" r="2.6" fill="#6EE7B7"/>
+                            <circle cx="12" cy="80" r="2.4" fill="#C7A86B"/>
+                            <circle cx="148" cy="80" r="2.4" fill="#C7A86B"/>
+                          </g>
+
+                          <!-- Counter-Rotating Sacred Octagram Seal -->
+                          <g class="mind-svg-spin-ccw">
+                            <rect x="44" y="44" width="72" height="72" fill="none" stroke="#E2CF9F" stroke-width="0.9" opacity="0.48"/>
+                            <rect x="44" y="44" width="72" height="72" transform="rotate(45 80 80)" fill="none" stroke="#6EE7B7" stroke-width="0.9" opacity="0.45"/>
+                            <circle cx="80" cy="80" r="51" fill="none" stroke="#FFF3D1" stroke-width="0.8" stroke-dasharray="6 4" opacity="0.55"/>
+                          </g>
+
+                          <!-- Sacred 8-Petal Flowing Golden Lotus -->
+                          <g class="mind-svg-spin-med">
+                            <ellipse cx="80" cy="80" rx="37" ry="15" fill="none" stroke="#C7A86B" stroke-width="0.9" opacity="0.45"/>
+                            <ellipse cx="80" cy="80" rx="37" ry="15" transform="rotate(45 80 80)" fill="none" stroke="#C7A86B" stroke-width="0.9" opacity="0.45"/>
+                            <ellipse cx="80" cy="80" rx="37" ry="15" transform="rotate(90 80 80)" fill="none" stroke="#C7A86B" stroke-width="0.9" opacity="0.45"/>
+                            <ellipse cx="80" cy="80" rx="37" ry="15" transform="rotate(135 80 80)" fill="none" stroke="#C7A86B" stroke-width="0.9" opacity="0.45"/>
+                            <ellipse class="mind-svg-dash-flow" cx="80" cy="80" rx="37" ry="15" fill="none" stroke="#FFF7DF" stroke-width="1.3" stroke-dasharray="32 108" opacity="0.9"/>
+                            <ellipse class="mind-svg-dash-flow" cx="80" cy="80" rx="37" ry="15" transform="rotate(90 80 80)" fill="none" stroke="#6EE7B7" stroke-width="1.2" stroke-dasharray="32 108" opacity="0.8"/>
+                          </g>
+
+                          <!-- Radiant Zero-Point Core Portal -->
+                          <circle class="mind-svg-pulse" cx="80" cy="80" r="27" fill="none" stroke="#FFF3D1" stroke-width="1.2"/>
+                          <circle cx="80" cy="80" r="21" fill="#071822" stroke="url(#sync-gold-bright)" stroke-width="1.8"/>
+                          <circle cx="80" cy="80" r="17" fill="none" stroke="#6EE7B7" stroke-width="0.7" opacity="0.5"/>
+                          <text x="80" y="88.5" text-anchor="middle" fill="#FFF7DF" font-family="Georgia, serif" font-size="26" font-weight="bold">0</text>
+
+                          <!-- Twinkling Starlight Dust -->
+                          <path class="mind-svg-twinkle" d="M27 28 L29 32 L33 34 L29 36 L27 40 L25 36 L21 34 L25 32 Z" fill="#FFF7DF"/>
+                          <path class="mind-svg-twinkle-delay" d="M133 120 L134.8 123.5 L138 125 L134.8 126.5 L133 130 L131.2 126.5 L128 125 L131.2 123.5 Z" fill="#FFF7DF"/>
+                          <circle class="mind-svg-twinkle-delay" cx="132" cy="30" r="1.8" fill="#6EE7B7"/>
+                          <circle class="mind-svg-twinkle" cx="28" cy="128" r="1.8" fill="#E2CF9F"/>
+                        </svg>
+
+                        <div class="relative z-10 text-center space-y-0.5 pb-0.5">
+                          <div class="text-[11px] sm:text-sm font-black text-[#FFF3D1]">오늘의 자동반응</div>
+                          <div class="text-[8px] sm:text-[10px] text-[#E2CF9F] font-bold">터치하여 발견하기</div>
                         </div>
                       </div>
                     </div>
 
-                    <!-- Card 3: SHIFT (Right) -->
-                    <div onclick="pickMindCard(2)" class="mind-floating-right cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4">
-                      <div class="w-[105px] h-[175px] sm:w-[170px] sm:h-[280px] md:w-[190px] md:h-[310px] rounded-2xl bg-gradient-to-br from-[#14233B] via-[#0E2F2B] to-[#0A1B29] border-2 border-[#C7A86B]/60 shadow-[0_12px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_15px_40px_rgba(15,107,91,0.4)] group-hover:border-emerald-300 relative flex flex-col items-center justify-between p-3 sm:p-5 overflow-hidden">
-                        <div class="absolute inset-1.5 border border-[#C7A86B]/20 rounded-xl pointer-events-none"></div>
-                        <div class="text-[9px] sm:text-xs font-black text-[#E2CF9F] tracking-widest uppercase">SHIFT · 선택</div>
-                        
-                        <!-- Zero Point Orbit Artwork -->
-                        <div class="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full border border-[#C7A86B]/40 flex items-center justify-center bg-[#C7A86B]/5">
-                          <svg class="absolute inset-0 w-full h-full zero-orbit-ring" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="42" stroke="rgba(199, 168, 107, 0.4)" stroke-dasharray="4 4" stroke-width="1.5" fill="none"/>
-                            <circle cx="50" cy="8" r="3" fill="#C7A86B"/>
-                          </svg>
-                          <span class="text-lg sm:text-2xl font-black text-[#E2CF9F] font-serif">0</span>
+                    <!-- Card 3: SHIFT · 선택 (Bifurcation Trajectory & North-Star Compass) -->
+                    <div onclick="pickMindCard(2)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pickMindCard(2);}" class="mind-floating-right cursor-pointer group transition-transform duration-300 hover:scale-105 hover:-translate-y-4 focus:outline-none">
+                      <div class="mind-tarot-card mind-tarot-card--right w-[104px] h-[178px] sm:w-[176px] sm:h-[290px] md:w-[196px] md:h-[322px] rounded-2xl border-[1.5px] border-[#C7A86B]/70 shadow-[0_18px_45px_rgba(0,0,0,0.68)] group-hover:shadow-[0_22px_55px_rgba(16,185,129,0.34)] group-hover:border-[#F5E6C4] relative flex flex-col items-center justify-between p-2.5 sm:p-4 overflow-hidden">
+                        <!-- Luxury Gold-Foil Frame SVG -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                          <defs>
+                            <linearGradient id="shift-gold-foil" x1="0%" y1="100%" x2="100%" y2="0%">
+                              <stop offset="0%" stop-color="#C7A86B" stop-opacity="0.5"/>
+                              <stop offset="50%" stop-color="#6EE7B7" stop-opacity="0.55"/>
+                              <stop offset="100%" stop-color="#FFF3D1" stop-opacity="0.92"/>
+                            </linearGradient>
+                          </defs>
+                          <rect x="8" y="8" width="184" height="304" rx="12" fill="none" stroke="url(#shift-gold-foil)" stroke-width="0.9" opacity="0.5"/>
+                          <rect x="13" y="13" width="174" height="294" rx="9" fill="none" stroke="#C7A86B" stroke-width="0.5" stroke-dasharray="2 3" opacity="0.35"/>
+                          <path d="M13 30 L13 13 L30 13 M170 13 L187 13 L187 30 M13 290 L13 307 L30 307 M170 307 L187 307 L187 290" fill="none" stroke="#F5E6C4" stroke-width="1.3" opacity="0.85"/>
+                          <line x1="35" y1="265" x2="165" y2="55" stroke="#6EE7B7" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.22"/>
+                          <polygon points="100,17 104,22 100,27 96,22" fill="#E2CF9F" opacity="0.7"/>
+                          <polygon points="100,293 104,298 100,303 96,298" fill="#E2CF9F" opacity="0.7"/>
+                        </svg>
+
+                        <div class="relative z-10 text-center pt-0.5">
+                          <div class="text-[8px] sm:text-[10px] font-bold text-[#C7A86B]/85 tracking-[0.22em] uppercase">II · CHOICE</div>
+                          <div class="text-[9px] sm:text-xs font-black text-[#F5E6C4] tracking-widest uppercase">SHIFT · 선택</div>
                         </div>
 
-                        <div class="text-center space-y-0.5">
-                          <div class="text-[10px] sm:text-xs font-bold text-slate-200">10% 다른 선택</div>
-                          <div class="text-[8px] sm:text-[10px] text-emerald-300/80 font-medium">터치하여 발견하기</div>
+                        <!-- Centerpiece Kinetic Bifurcation Vector & North Star Compass SVG -->
+                        <svg class="relative z-10 w-[76px] h-[76px] sm:w-[118px] sm:h-[118px] md:w-[132px] md:h-[132px] pointer-events-none" viewBox="0 0 140 140" aria-hidden="true">
+                          <defs>
+                            <radialGradient id="shift-aura" cx="60%" cy="40%" r="52%">
+                              <stop offset="0%" stop-color="#F5E6C4" stop-opacity="0.32"/>
+                              <stop offset="48%" stop-color="#10B981" stop-opacity="0.22"/>
+                              <stop offset="100%" stop-color="#071320" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="shift-arc-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                              <stop offset="0%" stop-color="#6EE7B7"/>
+                              <stop offset="50%" stop-color="#FFF3D1"/>
+                              <stop offset="100%" stop-color="#F5E6C4"/>
+                            </linearGradient>
+                          </defs>
+
+                          <circle cx="70" cy="70" r="64" fill="url(#shift-aura)"/>
+
+                          <!-- Rotating Outer Compass Ring -->
+                          <g class="mind-svg-spin-slow">
+                            <circle cx="70" cy="70" r="57" fill="none" stroke="url(#shift-arc-grad)" stroke-width="1" opacity="0.68"/>
+                            <circle cx="70" cy="70" r="51" fill="none" stroke="#6EE7B7" stroke-width="0.7" stroke-dasharray="2 6" opacity="0.45"/>
+                            <polygon points="70,8 73,16 67,16" fill="#FFF3D1"/>
+                            <polygon points="70,132 73,124 67,124" fill="#C7A86B"/>
+                          </g>
+
+                          <!-- Counter-Rotating Inner Reference Ring -->
+                          <g class="mind-svg-spin-ccw">
+                            <circle cx="70" cy="70" r="41" fill="none" stroke="#C7A86B" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.5"/>
+                            <circle cx="70" cy="29" r="2" fill="#FFF3D1"/>
+                          </g>
+
+                          <!-- Old Habit Loop (Lower Left) vs 10% Golden Shift Trajectory -->
+                          <circle cx="48" cy="88" r="17" fill="none" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+                          <path d="M40 94 C44 64, 62 50, 99 37" fill="none" stroke="#C7A86B" stroke-width="1.3" opacity="0.35"/>
+                          <path class="mind-svg-dash-flow" d="M40 94 C44 64, 62 50, 99 37" fill="none" stroke="url(#shift-arc-grad)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="36 104"/>
+
+                          <!-- Center Zero Equilibrium Node -->
+                          <circle cx="70" cy="70" r="15" fill="#081A24" fill-opacity="0.88" stroke="#E2CF9F" stroke-width="1.3"/>
+                          <text x="70" y="76.5" text-anchor="middle" fill="#FFF3D1" font-family="Georgia, serif" font-size="20" font-weight="bold">0</text>
+
+                          <!-- Breakthrough North Star at Trajectory Apex -->
+                          <circle class="mind-svg-pulse" cx="99" cy="37" r="11" fill="none" stroke="#6EE7B7" stroke-width="1.1"/>
+                          <path class="mind-svg-twinkle" d="M99 24 L102 34 L112 37 L102 40 L99 50 L96 40 L86 37 L96 34 Z" fill="#FFF3D1"/>
+                          <circle class="mind-svg-twinkle-delay" cx="34" cy="40" r="1.8" fill="#6EE7B7"/>
+                        </svg>
+
+                        <div class="relative z-10 text-center space-y-0.5 pb-0.5">
+                          <div class="text-[10px] sm:text-xs font-bold text-slate-100">10% 다른 선택</div>
+                          <div class="text-[8px] sm:text-[10px] text-emerald-300/90 font-semibold">터치하여 발견하기</div>
                         </div>
                       </div>
                     </div>
@@ -20365,7 +20565,7 @@
 
   <script src="js/mind-cards-data.js?v=20260919_v1"></script>
   <script src="js/myeongsim-ai-router.js?v=20260919_v1"></script>
-  <script src="js/daily-mind-card.js?v=20261114_v2"></script>
+  <script src="js/daily-mind-card.js?v=20261115_v1"></script>
   <script src="js/myungsim-personal-home.js?v=20260921_v1"></script>
   <script src="js/myungsim-behavior-experiment.js?v=20260921_v1"></script>
   <script src="js/myungsim-core-flow.js?v=20260920_v1"></script>

@@ -51,23 +51,199 @@
   100% { transform: rotate(360deg); }
 }
 
+@keyframes zeroOrbitReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes mindSvgPulse {
+  0%, 100% {
+    transform: scale(0.94);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.95;
+  }
+}
+
+@keyframes mindSvgDashFlow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -140; }
+}
+
+@keyframes mindSvgTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.78);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes mindFoilSweep {
+  0%, 62% {
+    transform: translateX(-160%) rotate(22deg);
+    opacity: 0;
+  }
+  72% {
+    opacity: 0.42;
+  }
+  88%, 100% {
+    transform: translateX(220%) rotate(22deg);
+    opacity: 0;
+  }
+}
+
 .zero-orbit-ring {
   animation: zeroOrbitSmooth 30s linear infinite;
   transform-origin: center center;
 }
 
+.mind-svg-spin-slow {
+  animation: zeroOrbitSmooth 44s linear infinite;
+  transform-box: view-box;
+  transform-origin: center center;
+}
+
+.mind-svg-spin-med {
+  animation: zeroOrbitSmooth 24s linear infinite;
+  transform-box: view-box;
+  transform-origin: center center;
+}
+
+.mind-svg-spin-ccw {
+  animation: zeroOrbitReverse 34s linear infinite;
+  transform-box: view-box;
+  transform-origin: center center;
+}
+
+.mind-svg-radar-sweep {
+  animation: zeroOrbitSmooth 8s linear infinite;
+  transform-box: view-box;
+  transform-origin: center center;
+}
+
+.mind-svg-pulse {
+  animation: mindSvgPulse 3.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.mind-svg-pulse-delay {
+  animation: mindSvgPulse 3.8s ease-in-out infinite 1.4s;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.mind-svg-dash-flow {
+  animation: mindSvgDashFlow 4.2s linear infinite;
+}
+
+.mind-svg-twinkle {
+  animation: mindSvgTwinkle 3.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.mind-svg-twinkle-delay {
+  animation: mindSvgTwinkle 3.6s ease-in-out infinite 1.5s;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+/* Luxury Foil Tarot Card Shell */
+.mind-tarot-card {
+  --mx: 50%;
+  --my: 50%;
+  --sheen-opacity: 0;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  position: relative;
+  isolation: isolate;
+  background: radial-gradient(circle at 50% 35%, rgba(20, 66, 58, 0.96) 0%, rgba(11, 27, 45, 0.98) 58%, rgba(7, 15, 27, 1) 100%);
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  will-change: transform;
+}
+
+.mind-tarot-card--center {
+  background: radial-gradient(circle at 50% 36%, rgba(25, 78, 67, 0.98) 0%, rgba(15, 36, 58, 0.99) 55%, rgba(7, 16, 29, 1) 100%);
+}
+
+/* Periodic Champagne-Gold Foil Glint */
+.mind-tarot-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 55%;
+  height: 180%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(226, 207, 159, 0.04) 35%,
+    rgba(255, 244, 214, 0.24) 50%,
+    rgba(226, 207, 159, 0.04) 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+  animation: mindFoilSweep 7.5s ease-in-out infinite;
+}
+
+.mind-tarot-card--center::before {
+  animation-delay: 1.6s;
+}
+
+.mind-tarot-card--right::before {
+  animation-delay: 3.2s;
+}
+
+/* Specular Cursor Spotlight (Fine Pointers) */
+.mind-tarot-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    220px circle at var(--mx) var(--my),
+    rgba(255, 243, 209, 0.22) 0%,
+    rgba(199, 168, 107, 0.08) 42%,
+    transparent 75%
+  );
+  opacity: var(--sheen-opacity);
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.mind-floating-left:hover .mind-svg-spin-slow,
+.mind-floating-center:hover .mind-svg-spin-slow,
+.mind-floating-right:hover .mind-svg-spin-slow {
+  animation-duration: 18s;
+}
+
+.mind-floating-left:active .mind-tarot-card,
+.mind-floating-center:active .mind-tarot-card,
+.mind-floating-right:active .mind-tarot-card {
+  transform: scale(0.96);
+}
+
 /* Floating Animations for 3-Card Deck (Calm & Subtle) */
 @keyframes mindFloatLeft {
-  0%, 100% { transform: translateY(0px) rotate(-3deg); }
-  50% { transform: translateY(-6px) rotate(-3deg); }
+  0%, 100% { transform: translateY(0px) rotate(-3.2deg); }
+  50% { transform: translateY(-7px) rotate(-2.5deg); }
 }
 @keyframes mindFloatCenter {
-  0%, 100% { transform: translateY(-3px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(0deg); }
+  0%, 100% { transform: translateY(-4px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0deg); }
 }
 @keyframes mindFloatRight {
-  0%, 100% { transform: translateY(0px) rotate(3deg); }
-  50% { transform: translateY(-6px) rotate(3deg); }
+  0%, 100% { transform: translateY(0px) rotate(3.2deg); }
+  50% { transform: translateY(-7px) rotate(2.5deg); }
 }
 
 .mind-floating-left,
@@ -78,32 +254,32 @@
 }
 
 .mind-floating-left {
-  animation: mindFloatLeft 5s ease-in-out infinite;
+  animation: mindFloatLeft 5.2s ease-in-out infinite;
 }
 .mind-floating-center {
-  animation: mindFloatCenter 4.5s ease-in-out infinite 0.5s;
+  animation: mindFloatCenter 4.6s ease-in-out infinite 0.5s;
 }
 .mind-floating-right {
-  animation: mindFloatRight 5.2s ease-in-out infinite 1.0s;
+  animation: mindFloatRight 5.4s ease-in-out infinite 1.0s;
 }
 
 @keyframes mindShuffleLeft {
-  0%, 100% { transform: translateX(0) rotate(-3deg); }
-  25% { transform: translateX(36px) translateY(-10px) rotate(6deg) scale(0.96); }
-  50% { transform: translateX(-14px) translateY(4px) rotate(-8deg); }
-  75% { transform: translateX(18px) translateY(-6px) rotate(3deg); }
+  0%, 100% { transform: translateX(0) rotate(-3.2deg) scale(1); }
+  22% { transform: translateX(46px) translateY(-12px) rotate(7deg) scale(0.95); }
+  52% { transform: translateX(-18px) translateY(6px) rotate(-9deg) scale(1.02); }
+  78% { transform: translateX(20px) translateY(-6px) rotate(3deg) scale(0.98); }
 }
 @keyframes mindShuffleCenter {
-  0%, 100% { transform: translateY(-3px) rotate(0deg); }
-  25% { transform: translateY(-18px) scale(1.04) rotate(-5deg); }
-  50% { transform: translateY(6px) scale(0.95) rotate(5deg); }
-  75% { transform: translateY(-10px) rotate(-2deg); }
+  0%, 100% { transform: translateY(-4px) rotate(0deg) scale(1); }
+  22% { transform: translateY(-22px) scale(1.06) rotate(-5deg); }
+  52% { transform: translateY(8px) scale(0.94) rotate(5deg); }
+  78% { transform: translateY(-12px) scale(1.02) rotate(-2deg); }
 }
 @keyframes mindShuffleRight {
-  0%, 100% { transform: translateX(0) rotate(3deg); }
-  25% { transform: translateX(-36px) translateY(-10px) rotate(-6deg) scale(0.96); }
-  50% { transform: translateX(14px) translateY(4px) rotate(8deg); }
-  75% { transform: translateX(-18px) translateY(-6px) rotate(-3deg); }
+  0%, 100% { transform: translateX(0) rotate(3.2deg) scale(1); }
+  22% { transform: translateX(-46px) translateY(-12px) rotate(-7deg) scale(0.95); }
+  52% { transform: translateX(18px) translateY(6px) rotate(9deg) scale(1.02); }
+  78% { transform: translateX(-20px) translateY(-6px) rotate(-3deg) scale(0.98); }
 }
 
 #mind-fanned-deck.is-shuffling .mind-floating-left {
@@ -151,14 +327,30 @@
 @media (prefers-reduced-motion: reduce) {
   .mind-card-3d,
   .zero-orbit-ring,
+  .mind-svg-spin-slow,
+  .mind-svg-spin-med,
+  .mind-svg-spin-ccw,
+  .mind-svg-radar-sweep,
+  .mind-svg-pulse,
+  .mind-svg-pulse-delay,
+  .mind-svg-dash-flow,
+  .mind-svg-twinkle,
+  .mind-svg-twinkle-delay,
   .mind-floating-left,
   .mind-floating-center,
   .mind-floating-right,
   .step-container.is-active {
     animation: none !important;
     transition: none !important;
-    opacity: 1 !important;
     transform: none !important;
+  }
+  .mind-card-3d,
+  .step-container.is-active {
+    opacity: 1 !important;
+  }
+  .mind-tarot-card::before {
+    animation: none !important;
+    display: none;
   }
 }
 

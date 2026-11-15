@@ -204,6 +204,7 @@
     renderThreeCodeQuestions();
     renderWeeklyDiscovery();
     setupSwipeGesture();
+    setupTarotCardSpotlight();
     // 기본 검색 제안 렌더링
     handleMindCardSearch('');
   });
@@ -991,6 +992,43 @@
   // =================================================================
   // 10. 모바일 스와이프 제스처 지원 (390px 모바일 최적화)
   // =================================================================
+  function setupTarotCardSpotlight() {
+    if (typeof window.matchMedia !== 'function') return;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!finePointer.matches || reducedMotion.matches) return;
+
+    const cards = document.querySelectorAll('.mind-tarot-card');
+    if (!cards || cards.length === 0) return;
+
+    cards.forEach((card) => {
+      let rafId = null;
+      card.addEventListener('mousemove', (e) => {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const px = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+          const py = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+          const tiltY = ((px - 0.5) * 9).toFixed(2);
+          const tiltX = ((0.5 - py) * 9).toFixed(2);
+          card.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
+          card.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
+          card.style.setProperty('--tilt-x', `${tiltX}deg`);
+          card.style.setProperty('--tilt-y', `${tiltY}deg`);
+          card.style.setProperty('--sheen-opacity', '1');
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        card.style.setProperty('--sheen-opacity', '0');
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+      });
+    });
+  }
+
   function setupSwipeGesture() {
     const activeCard = document.getElementById('mind-active-card-3d');
     if (!activeCard) return;
